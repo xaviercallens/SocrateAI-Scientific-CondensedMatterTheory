@@ -45,6 +45,15 @@ contre arXiv. `[EXTERNE]` = référence hors corpus. Tiers Elenchus
 
 Les prochaines étapes visent précisément ces trois objections.
 
+**Revue par les pairs (reçue le 2026-09-27).** Une revue de v1.0, enregistrée mot pour mot dans
+`experiments/track_h_hyperbolic_network/paper/reviews/`, demande quatre choses : la loi plate au-delà de la double
+précision, un test à conductances inhomogènes, la disparité de dimension du contrôle à sondes égales, et l'argument
+topologique de la Proposition 1. Les quatre ont été préenregistrées (`PREREGISTRATION_3.md`) puis calculées pour
+v1.1. Résultat notable : le contrôle à dimension égale a **réfuté notre propre prédiction** ; l'avantage à sondes et
+dimension égales est au plus d'une demi-décade (et inversé à $N\approx112$). v1.0 est corrigé en ce sens dans v1.1,
+publié comme nouvelle version Zenodo sous le même DOI de concept. Les régimes désordonnés confirment l'avantage
+(l'écart s'élargit à 8,3 décades sous désordre log-uniforme sur deux décades).
+
 ### Prochaines étapes, par priorité
 
 Chaque étape reprend la même discipline : préenregistrement commité *avant* le calcul, formes rivales énoncées, verdict au grand livre.
@@ -52,7 +61,7 @@ Chaque étape reprend la même discipline : préenregistrement commité *avant* 
 | # | Étape | Pourquoi (objection visée) | Livrable | Critère d'arrêt / de réfutation |
 |---|---|---|---|---|
 | **H-1** | Fusionner la PR #2 et publier la release `v1.0` sur GitHub | clôt la version publiée | tag `v1.0`, PDF attaché | — |
-| **H-2** | **Loi d'échelle multi-pavages** : $\{8,3\}$, $\{5,4\}$, $\{p,q\}$ ; plat au-delà de $N\approx400$ en précision étendue (mpmath) ou exacte | « un seul pavage », « loi plate indéterminée » | `PREREGISTRATION_3.md`, puis tableau $\log\kappa$ contre $(N, \text{taux de croissance du bord})$ | l'exposant local de $\kappa$ n'est **pas** ordonné par le taux de croissance du bord ⇒ le mécanisme « profondeur » est insuffisant, on l'écrit |
+| **H-2** | **Loi d'échelle multi-pavages** : $\{8,3\}$, $\{5,4\}$, $\{p,q\}$ (le volet « plat au-delà de $N\approx400$ en précision étendue » est traité dans v1.1, `PREREGISTRATION_3.md` A) | « un seul pavage » | `PREREGISTRATION_4.md`, puis tableau $\log\kappa$ contre $(N, \text{taux de croissance du bord})$ | l'exposant local de $\kappa$ n'est **pas** ordonné par le taux de croissance du bord ⇒ le mécanisme « profondeur » est insuffisant, on l'écrit |
 | **H-3** | **Reconstruction effective** : imagerie différentielle (localiser $\delta g$ sur quelques arêtes) avec bruit, hyperbolique contre plat | « mesure linéarisée seulement » | taux de localisation contre profondeur et bruit, seuils fixés d'avance | l'avantage hyperbolique disparaît en localisation ⇒ le résultat reste limité au conditionnement linéarisé |
 | **H-4** | **Mesure physique RC** : $\{7,3\}$, $L=2$ ($N=112$, 140 résistances, 35 condensateurs sur les nœuds intérieurs, 77 nœuds de bord pilotés), plus témoin carré $R=6$ (200 résistances, 69 condensateurs), ESP32 en domaine temporel | « pas de donnée » ; c'est le vrai saut de légitimité | prédictions déjà écrites : $\tau=2{,}75\,RC$ contre $4{,}55\,RC$, raideur $14{,}9$ contre $35{,}4$ ; contrôles K1/K2 sur le circuit | écart $>20\,\%$ sur $\tau$ après correction des tolérances ⇒ modèle de circuit à revoir avant toute conclusion |
 | **H-5** | **Avis d'un spécialiste** (problèmes inverses sur réseaux, p. ex. le groupe Borcea / Guevara Vasquez), puis arXiv (`math.NA` ou `math-ph`, parrainage nécessaire) et revue (*Inverse Problems*, *SIAM J. Appl. Math.*) | nouveauté non confirmée, pas de relecture | message de 5 lignes + lien DOI ; soumission | le spécialiste signale un antécédent ⇒ le citer et recentrer la contribution |
