@@ -19,7 +19,7 @@
 \author{Xavier Callens\\[2pt]
 \small SocrateAI Lab, Cagnes-sur-Mer, France\\
 \small \texttt{callensxavier@gmail.com}}
-\date{September 2026 \\ \small Preprint, version 1.0}
+\date{September 2026 \\ \small Preprint, version 1.1 (revised after peer review; version 1.0: doi:10.5281/zenodo.23000391)}
 
 \begin{document}
 \maketitle
@@ -188,13 +188,21 @@ increases with depth; only on the flat lattice does depth grow as a power of $N$
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.49\linewidth]{fig_kappa.pdf}\hfill
-\includegraphics[width=0.49\linewidth]{fig_h2.pdf}
-\caption{Left: $\log_{10}\kappa$ of the DtN sensitivity Jacobian versus $N$; crosses mark numerically singular
-cases, plotted at the double-precision floor. Right: Dirichlet spectral gap $\lambda_{\min}(L_{ii})$ of the RC
-network; the $\{7,3\}$ points at $N=2240$ and $5887$ are exploratory. The grey line is the upper bound
-$3-2\sqrt2$ on the bottom of the spectrum of the infinite $\{7,3\}$ graph.}
+\includegraphics[width=\linewidth]{fig_kappa.pdf}
+\caption{Left: $\log_{10}\kappa$ of the DtN sensitivity Jacobian versus $N$. Filled markers are double-precision
+values; open markers are the ball-arithmetic values of Section~\ref{sec:arb} for instances that are singular in
+double precision (crosses at the floor where no such value is available). Right: the two flat families against
+$\sqrt N$, the abscissa on which the depth mechanism predicts a straight line.}
 \label{fig:kappa}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.55\linewidth]{fig_h2.pdf}
+\caption{Dirichlet spectral gap $\lambda_{\min}(L_{ii})$ of the RC network; the $\{7,3\}$ points at $N=2240$ and
+$5887$ are exploratory. The grey line is the upper bound $3-2\sqrt2$ on the bottom of the spectrum of the infinite
+$\{7,3\}$ graph.}
+\label{fig:h2}
 \end{figure}
 
 \subsection{Identifiability is exact; the difference is conditioning}
@@ -260,9 +268,10 @@ edge of one node at maximal depth raises the hyperbolic $\kappa$ by $1.2$ and $1
 property of the geometry, not of the homogeneous background.
 
 \subsection{RC dynamics and the Dirichlet spectral gap}
+\label{sec:h2}
 The preregistered prediction was that $\lambda_{\min}(L_{ii})$ on $\{7,3\}$ is constant over $L=2$--$4$, refuted
 if it fell by a factor of two or more. It fell by $2.37$ ($0.364\to0.153$), so the prediction is refuted as
-stated. The flat-lattice prediction, $\lambda_{\min}\sim1/N$, holds (Table~\ref{tab:h2}).
+stated. The flat-lattice prediction, $\lambda_{\min}\sim1/N$, holds (Table~\ref{tab:h2}, Fig.~\ref{fig:h2}).
 
 The asymptotic question is nevertheless settled by the following observation.
 
@@ -372,6 +381,16 @@ determines whether the static comparison, or only the time-domain one, is feasib
 \paragraph{Formalisation.} The proposition above, and the finite-dimensional core of the bulk-boundary
 correspondence for the Su--Schrieffer--Heeger chain, are candidates for machine-checked proofs in Lean~4 with
 Mathlib, whose Schur-complement library already contains the block-matrix identities used here.
+
+\section*{Changes from version 1.0}
+Version 1.1 responds to a peer review of version 1.0 (both the review and the response are in the repository).
+Every added computation was preregistered before it was run. (a) The flat-lattice growth law is now measured beyond
+double precision in ball arithmetic (Section~\ref{sec:arb}, Section~\ref{sec:cond}). (b) Conditioning under
+disorder and defects is added (Section~\ref{sec:disorder}); all predictions held. (c) A dimension-matched
+probe control refuted our own prediction and \emph{corrects} version 1.0: at matched probe count and matched
+dimension the advantage is at most half a decade (Section~\ref{sec:probe}). (d) The degree-three premise of
+Proposition~1 is now argued for general $L$ (Section~\ref{sec:h2}). Version 1.0 remains available under its own
+DOI; the ledger records the correction against the original claim without altering it.
 
 \section*{Verification status}
 Every claim in this paper is recorded in a machine-readable ledger~\cite{TrackHRepo} with an evidence tier:
