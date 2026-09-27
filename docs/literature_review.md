@@ -1,7 +1,8 @@
 # AdS/CMT et correspondance volume–frontière — revue de littérature
 
-**Corpus** : 52 articles arXiv (49 théoriques + 3 du pilier `experiment`, cités
-par le programme expérimental), téléchargés et vérifiés (titre réel confronté au titre
+**Corpus** : 73 articles arXiv (49 pour cette revue, 3 du pilier `experiment`
+cités par le programme expérimental, 21 du pilier `ryu` pour
+[`ryu_review.md`](ryu_review.md)), téléchargés et vérifiés (titre réel confronté au titre
 attendu pour chaque identifiant), indexés dans `papers/index.json`.
 **Date de la revue** : 2026-09-27.
 **Portée** : dualité holographique, ses applications à la matière condensée, la
@@ -58,6 +59,16 @@ parce que presque tout ce qui suit en dépend.
    propres bandes. Ce que l'invariant fixe, c'est une **obstruction** — il
    interdit de gapper le bord sans briser la symétrie protectrice. C'est une
    contrainte discrète, pas un encodage intégral.
+
+**Nuance importante, apportée par le dossier de Ryu.** Ces trois écarts valent
+pour AdS/CFT au sens strict, avec gravité dynamique. Mais il existe une autre
+forme de dualité holographique, fondée sur les réseaux de tenseurs (*exact
+holographic mapping*), où l'intuition de départ devient un énoncé démontré :
+Gu, Lee, Wen, Cho & Ryu (`1605.00570`) montrent que le dual holographique d'un
+état de Hall anomal quantique en $(2+1)$ dimensions est un **isolant
+topologique en $(3+1)$ dimensions**. La topologie passe bien de la frontière au
+volume — pour des états de bandes libres, dans un espace hyperbolique discret,
+sans gravité dynamique. Voir [`ryu_review.md`](ryu_review.md) §0 et §2.3.
 
 **Ce qui relie réellement les deux mondes** — et c'est plus intéressant que le
 slogan — tient en quatre mécanismes, documentés en §5 :

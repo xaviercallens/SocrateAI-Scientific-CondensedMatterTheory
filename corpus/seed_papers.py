@@ -87,4 +87,31 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     # scattering in a vortex flow". The gate matches the arXiv record.
     ("1612.06180", "experiment", "Observation of superradiance in a vortex flow"),
     ("1511.08145", "experiment", "Observation of noise correlated by the Hawking effect in a water tank"),
+
+    # --- Pillar 6: Shinsei Ryu -------------------------------------------
+    # Selected from his full arXiv record (tools/arxiv_author.py ->
+    # docs/assets/ryu_arxiv.json, 202 papers). Papers of his already in the
+    # other pillars (hep-th/0603001, 0803.2786, 0912.2157, 1001.0763,
+    # 1010.0936, 1505.03535) are not repeated. See docs/ryu_review.md.
+    ("cond-mat/0112197", "ryu", "Topological Origin of Zero-Energy Edge States in Particle-Hole Symmetric"),
+    ("hep-th/0605073", "ryu", "Aspects of Holographic Entanglement Entropy"),
+    ("0905.0932", "ryu", "Holographic Entanglement Entropy: An Overview"),
+    ("0708.1639", "ryu", "Many-body generalization of the Z2 topological invariant"),
+    ("0810.5394", "ryu", "Disordered Systems and the Replica Method in AdS/CFT"),
+    ("0901.0924", "ryu", "Fractional Quantum Hall Effect via Holography"),
+    ("1007.4234", "ryu", "Topological Insulators and Superconductors from String Theory"),
+    ("1202.5805", "ryu", "Interaction effect on topological classification of superconductors"),
+    ("1208.3469", "ryu", "Holographic Geometry of Entanglement Renormalization in Quantum Field"),
+    ("1406.0307", "ryu", "CPT theorem and classification of topological insulators"),
+    ("1605.00570", "ryu", "Holographic duality between"),
+    ("1605.07199", "ryu", "Holographic Entanglement Renormalization of Topological Insulators"),
+    ("1607.03896", "ryu", "Many-body topological invariants for fermionic symmetry-protected"),
+    ("1705.03892", "ryu", "Anomaly Manifestation of Lieb-Schultz-Mattis Theorem"),
+    ("2109.02649", "ryu", "Negativity Spectra in Random Tensor Networks and Holography"),
+    ("2112.13489", "ryu", "Lindbladian dynamics of the Sachdev-Ye-Kitaev model"),
+    ("2202.02548", "ryu", "Many-body topology of non-Hermitian systems"),
+    ("2212.00605", "ryu", "Symmetry of Open Quantum Systems"),
+    ("2312.17318", "ryu", "Spectral sum rules reflect topological and quantum-geometric invariants"),
+    ("2405.05327", "ryu", "Higher Berry Connection for Matrix Product States"),
+    ("2601.00761", "ryu", "Exponentially Accelerated Sampling of Pauli Strings"),
 ]

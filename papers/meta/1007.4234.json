@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1007.4234",
+  "version": "v2",
+  "title": "Topological Insulators and Superconductors from String Theory",
+  "abstract": "Topological insulators and superconductors in different spatial dimensions and with different discrete symmetries have been fully classified recently, revealing a periodic structure for the pattern of possible types of topological insulators and supercondutors, both in terms of spatial dimensions and in terms of symmetry classes. It was proposed that K-theory is behind the periodicity. On the other hand, D-branes, a solitonic object in string theory, are also known to be classified by K-theory. In this paper, by inspecting low-energy effective field theories realized by two parallel D-branes, we establish a one-to-one correspondence between the K-theory classification of topological insulators/superconductors and D-brane charges. In addition, the string theory realization of topological insulators and superconductors comes naturally with gauge interactions, and the Wess-Zumino term of the D-branes gives rise to a gauge field theory of topological nature, such as ones with the Chern-Simons term or the $θ$-term in various dimensions. This sheds light on topological insulators and superconductors beyond non-interacting systems, and the underlying topological field theory description thereof. In particular, our string theory realization includes the honeycomb lattice Kitaev model in two spatial dimensions, and its higher-dimensional extensions. Increasing the number of D-branes naturally leads to a realization of topological insulators and superconductors in terms of holography (AdS/CFT).",
+  "authors": [
+    "Shinsei Ryu",
+    "Tadashi Takayanagi"
+  ],
+  "published": "2010-07-24T00:03:51Z",
+  "updated": "2010-08-01T05:41:16Z",
+  "year": "2010",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1103/PhysRevD.82.086014",
+  "journal_ref": "Phys.Rev.D82:086014,2010",
+  "abs_url": "https://arxiv.org/abs/1007.4234",
+  "pdf_url": "https://arxiv.org/pdf/1007.4234",
+  "pillar": "ryu",
+  "slug": "1007.4234",
+  "pdf_local": "papers/pdf/1007.4234.pdf"
+}

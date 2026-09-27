@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "2405.05327",
+  "version": "v1",
+  "title": "Higher Berry Connection for Matrix Product States",
+  "abstract": "In one spatial dimension, families of short-range entangled many-body quantum states, parameterized over some parameter space, can be topologically distinguished and classified by topological invariants built from the higher Berry phase -- a many-body generalization of the Berry phase. Previous works identified the underlying mathematical structure (the gerbe structure) and introduced a multi-wavefunction overlap, a generalization of the inner product in quantum mechanics, which allows for the extraction of the higher Berry phase and topological invariants. In this paper, building on these works, we introduce a connection, the higher Berry connection, for a family of parameterized Matrix Product States (MPS) over a parameter space. We demonstrate the use of our formula for simple non-trivial models.",
+  "authors": [
+    "Shuhei Ohyama",
+    "Shinsei Ryu"
+  ],
+  "published": "2024-05-08T18:00:33Z",
+  "updated": "2024-05-08T18:00:33Z",
+  "year": "2024",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el",
+    "hep-th",
+    "math-ph",
+    "quant-ph"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2405.05327",
+  "pdf_url": "https://arxiv.org/pdf/2405.05327",
+  "pillar": "ryu",
+  "slug": "2405.05327",
+  "pdf_local": "papers/pdf/2405.05327.pdf"
+}

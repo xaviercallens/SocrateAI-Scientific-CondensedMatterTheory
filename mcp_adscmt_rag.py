@@ -37,7 +37,7 @@ CHROMA_PATH = os.environ.get(
 ANSE_ROOT = os.environ.get("ANSE_ROOT", str(Path.home() / "AutoevolveAI"))
 COLLECTION = os.environ.get("ADSCMT_COLLECTION", "adscmt_literature")
 
-PILLARS = ("holography", "adscmt", "topology", "bridge", "experiment")
+PILLARS = ("holography", "adscmt", "topology", "bridge", "experiment", "ryu")
 
 # ANSE's default is 120 s. While the shared T4 is held by another session's
 # prover, a single query embedding can wait longer than that, so the timeout is

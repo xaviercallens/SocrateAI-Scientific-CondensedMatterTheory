@@ -1,0 +1,31 @@
+{
+  "arxiv_id": "2212.00605",
+  "version": "v2",
+  "title": "Symmetry of Open Quantum Systems: Classification of Dissipative Quantum Chaos",
+  "abstract": "We develop a theory of symmetry in open quantum systems. Using the operator-state mapping, we characterize symmetry of Liouvillian superoperators for the open quantum dynamics by symmetry of operators in the double Hilbert space and apply the 38-fold internal-symmetry classification of non-Hermitian operators. We find rich symmetry classification due to the interplay between symmetry in the corresponding closed quantum systems and symmetry inherent in the construction of the Liouvillian superoperators. As an illustrative example of open quantum bosonic systems, we study symmetry classes of dissipative quantum spin models. For open quantum fermionic systems, we develop the $\\mathbb{Z}_4$ classification of fermion parity symmetry and antiunitary symmetry in the double Hilbert space, which contrasts with the $\\mathbb{Z}_8$ classification in closed quantum systems. We also develop the symmetry classification of open quantum fermionic many-body systems -- a dissipative generalization of the Sachdev-Ye-Kitaev (SYK) model described by the Lindblad master equation. We establish the periodic tables of the SYK Lindbladians and elucidate the difference from the SYK Hamiltonians. Furthermore, from extensive numerical calculations, we study its complex-spectral statistics and demonstrate dissipative quantum chaos enriched by symmetry.",
+  "authors": [
+    "Kohei Kawabata",
+    "Anish Kulkarni",
+    "Jiachen Li",
+    "Tokiro Numasawa",
+    "Shinsei Ryu"
+  ],
+  "published": "2022-12-01T15:59:09Z",
+  "updated": "2023-08-29T14:25:33Z",
+  "year": "2022",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.str-el",
+    "hep-th",
+    "math-ph",
+    "quant-ph"
+  ],
+  "doi": "10.1103/PRXQuantum.4.030328",
+  "journal_ref": "PRX Quantum 4, 030328 (2023)",
+  "abs_url": "https://arxiv.org/abs/2212.00605",
+  "pdf_url": "https://arxiv.org/pdf/2212.00605",
+  "pillar": "ryu",
+  "slug": "2212.00605",
+  "pdf_local": "papers/pdf/2212.00605.pdf"
+}

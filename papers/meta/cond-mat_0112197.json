@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "cond-mat/0112197",
+  "version": "v3",
+  "title": "Topological Origin of Zero-Energy Edge States in Particle-Hole Symmetric Systems",
+  "abstract": "A criterion to determine the existence of zero-energy edge states is discussed for a class of particle-hole symmetric Hamiltonians. A ``loop'' in a parameter space is assigned for each one-dimensional bulk Hamiltonian, and its topological properties, combined with the chiral symmetry, play an essential role. It provides a unified framework to discuss zero-energy edge modes for several systems such as fully gapped superconductors, two-dimensional d-wave superconductors, and graphite ribbons. A variants of the Peierls instability caused by the presence of edges is also discussed.",
+  "authors": [
+    "Shinsei Ryu",
+    "Yasuhiro Hatsugai"
+  ],
+  "published": "2001-12-11T20:12:41Z",
+  "updated": "2002-08-06T01:08:32Z",
+  "year": "2001",
+  "primary_category": "cond-mat.supr-con",
+  "categories": [
+    "cond-mat.supr-con",
+    "cond-mat.mes-hall"
+  ],
+  "doi": "10.1103/PhysRevLett.89.077002",
+  "journal_ref": "Phys. Rev. Lett. 89, 077002 (2002)",
+  "abs_url": "https://arxiv.org/abs/cond-mat/0112197",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/0112197",
+  "pillar": "ryu",
+  "slug": "cond-mat_0112197",
+  "pdf_local": "papers/pdf/cond-mat_0112197.pdf"
+}

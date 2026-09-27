@@ -3,7 +3,7 @@
 Deux volets, reliés par la **correspondance volume–frontière** :
 
 1. **Théorie** — revue de littérature sur AdS/CMT et les isolants topologiques,
-   corpus de 52 articles arXiv, et pipeline RAG branché sur le vector store
+   corpus de 73 articles arXiv, et pipeline RAG branché sur le vector store
    Chroma d'AutoevolveAI (ANSE).
 2. **Expérience** — programme « Garage Deep Tech » en 5 axes (matériel de
    récupération → données → TDA Gudhi → preuve Lean 4), revu de façon critique
@@ -18,6 +18,9 @@ toute affirmation doit avoir été exposée à une manière précise d'échouer.
 |---|---|
 | [`docs/experimental_program.md`](docs/experimental_program.md) | **Revue critique du plan en 5 axes** : verdicts de faisabilité chiffrés, erreurs de physique, protocoles révisés, ordre d'exécution |
 | [`docs/literature_review.md`](docs/literature_review.md) | Revue de littérature AdS/CMT ↔ isolants topologiques |
+| [`docs/ryu_review.md`](docs/ryu_review.md) | **Le programme de Shinsei Ryu**, depuis son dossier arXiv complet (202 articles) |
+| [`docs/contribution_map.md`](docs/contribution_map.md) | **Où votre expertise contribue** (Lean, GPU, Rust, HPC, Gudhi, IA) : trois projets classés |
+| [`docs/assets/README.md`](docs/assets/README.md) | Actifs réutilisables de cette machine, vérifiés un par un |
 | [`docs/rigor_protocol.md`](docs/rigor_protocol.md) | Protocole Elenchus : 5 portes, préenregistrement, verdicts |
 | [`docs/safety.md`](docs/safety.md) | **À lire avant toute manipulation** : four à micro-ondes, lasers, eau |
 | [`lean/README.md`](lean/README.md) | Échelle des objectifs Lean 4, T0 → T3 |
@@ -30,9 +33,15 @@ toute affirmation doit avoir été exposée à une manière précise d'échouer.
 ```
 docs/
   literature_review.md       revue AdS/CMT ↔ isolants topologiques
+  ryu_review.md              le programme de Shinsei Ryu (202 articles)
+  contribution_map.md        expertise → contributions, trois projets classés
   experimental_program.md    revue critique du plan expérimental en 5 axes
   rigor_protocol.md          protocole Elenchus : portes, préenregistrement, verdicts
   safety.md                  sécurité : micro-ondes, lasers, eau
+  assets/                    inventaire des actifs de la machine ; dossier arXiv de Ryu
+tools/
+  inventory_assets.py        inventaire en lecture seule des dépôts de la machine
+  arxiv_author.py            dossier arXiv complet d'un auteur
 experiments/
   axis1_topological_waves/   SSH 1D puis valley-Hall 2D, aquarium
   axis2_analogue_horizon/    superradiance sur vortex de vidange
@@ -102,7 +111,7 @@ python3 corpus/fetch_papers.py --no-pdf     # métadonnées seules
 
 # 2. Ingérer dans Chroma
 python3 corpus/ingest_chroma.py --dry-run            # découpage seul, aucune écriture
-python3 corpus/ingest_chroma.py --abstracts-only --resume   # 52 chunks
+python3 corpus/ingest_chroma.py --abstracts-only --resume   # 73 chunks
 python3 corpus/ingest_chroma.py --resume             # texte intégral, ~1500 chunks
 
 # 3. Vérifier
@@ -128,7 +137,7 @@ plusieurs minutes. D'où :
 
 Lancer les ~1500 chunks du texte intégral quand le prouveur est inactif
 (`curl -s localhost:11434/api/ps` ne doit pas lister de prouveur).
-`--abstracts-only` (52 chunks) donne un index utilisable bien plus tôt.
+`--abstracts-only` (73 chunks) donne un index utilisable bien plus tôt.
 
 `--verify` n'imprime pas seulement des statistiques : il vérifie que la
 dimension vaut bien 1024 et lance six requêtes-sondes dont le résultat attendu
@@ -187,6 +196,7 @@ K-théorie, déjà partiellement formalisées de ce côté.
 | `topology` | 13 | effet Hall de spin quantique, Altland–Zirnbauer, dix classes |
 | `bridge` | 12 | anomalies, spectre d'intrication, code torique, semi-métaux holographiques |
 | `experiment` | 3 | expériences de gravité analogue sur table (Hawking stimulé, superradiance) |
+| `ryu` | 21 | travaux de Shinsei Ryu hors des piliers précédents (sélection sur 202) |
 
 Les PDF (`papers/pdf/`) ne sont pas versionnés — `corpus/fetch_papers.py` les
 régénère à l'identique. Les métadonnées (`papers/meta/`, `papers/index.json`)

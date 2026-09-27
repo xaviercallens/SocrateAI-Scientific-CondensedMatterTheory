@@ -1318,5 +1318,571 @@
     "pillar": "experiment",
     "slug": "1511.08145",
     "pdf_local": "papers/pdf/1511.08145.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/0112197",
+    "version": "v3",
+    "title": "Topological Origin of Zero-Energy Edge States in Particle-Hole Symmetric Systems",
+    "abstract": "A criterion to determine the existence of zero-energy edge states is discussed for a class of particle-hole symmetric Hamiltonians. A ``loop'' in a parameter space is assigned for each one-dimensional bulk Hamiltonian, and its topological properties, combined with the chiral symmetry, play an essential role. It provides a unified framework to discuss zero-energy edge modes for several systems such as fully gapped superconductors, two-dimensional d-wave superconductors, and graphite ribbons. A variants of the Peierls instability caused by the presence of edges is also discussed.",
+    "authors": [
+      "Shinsei Ryu",
+      "Yasuhiro Hatsugai"
+    ],
+    "published": "2001-12-11T20:12:41Z",
+    "updated": "2002-08-06T01:08:32Z",
+    "year": "2001",
+    "primary_category": "cond-mat.supr-con",
+    "categories": [
+      "cond-mat.supr-con",
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/PhysRevLett.89.077002",
+    "journal_ref": "Phys. Rev. Lett. 89, 077002 (2002)",
+    "abs_url": "https://arxiv.org/abs/cond-mat/0112197",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/0112197",
+    "pillar": "ryu",
+    "slug": "cond-mat_0112197",
+    "pdf_local": "papers/pdf/cond-mat_0112197.pdf"
+  },
+  {
+    "arxiv_id": "hep-th/0605073",
+    "version": "v3",
+    "title": "Aspects of Holographic Entanglement Entropy",
+    "abstract": "This is an extended version of our short report hep-th/0603001, where a holographic interpretation of entanglement entropy in conformal field theories is proposed from AdS/CFT correspondence. In addition to a concise review of relevant recent progresses of entanglement entropy and details omitted in the earlier letter, this paper includes the following several new results : We give a more direct derivation of our claim which relates the entanglement entropy with the minimal area surfaces in the AdS_3/CFT_2 case as well as some further discussions on higher dimensional cases. Also the relation between the entanglement entropy and central charges in 4D conformal field theories is examined. We check that the logarithmic part of the 4D entanglement entropy computed in the CFT side agrees with the AdS_5 result at least under a specific condition. Finally we estimate the entanglement entropy of massive theories in generic dimensions by making use of our proposal.",
+    "authors": [
+      "Shinsei Ryu",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2006-05-06T08:49:11Z",
+    "updated": "2006-06-20T07:45:55Z",
+    "year": "2006",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el",
+      "gr-qc",
+      "quant-ph"
+    ],
+    "doi": "10.1088/1126-6708/2006/08/045",
+    "journal_ref": "JHEP 0608:045,2006",
+    "abs_url": "https://arxiv.org/abs/hep-th/0605073",
+    "pdf_url": "https://arxiv.org/pdf/hep-th/0605073",
+    "pillar": "ryu",
+    "slug": "hep-th_0605073",
+    "pdf_local": "papers/pdf/hep-th_0605073.pdf"
+  },
+  {
+    "arxiv_id": "0905.0932",
+    "version": "v2",
+    "title": "Holographic Entanglement Entropy: An Overview",
+    "abstract": "In this article, we review recent progresses on the holographic understandings of the entanglement entropy in the AdS/CFT correspondence. After reviewing the general idea of holographic entanglement entropy, we will explain its applications to confinement/deconfinement phase transitions, black hole entropy and covariant formulation of holography.",
+    "authors": [
+      "Tatsuma Nishioka",
+      "Shinsei Ryu",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2009-05-07T11:53:40Z",
+    "updated": "2009-06-15T16:08:26Z",
+    "year": "2009",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el",
+      "gr-qc",
+      "quant-ph"
+    ],
+    "doi": "10.1088/1751-8113/42/50/504008",
+    "journal_ref": "J.Phys.A42:504008,2009",
+    "abs_url": "https://arxiv.org/abs/0905.0932",
+    "pdf_url": "https://arxiv.org/pdf/0905.0932",
+    "pillar": "ryu",
+    "slug": "0905.0932",
+    "pdf_local": "papers/pdf/0905.0932.pdf"
+  },
+  {
+    "arxiv_id": "0708.1639",
+    "version": "v2",
+    "title": "Many-body generalization of the Z2 topological invariant for the quantum spin Hall effect",
+    "abstract": "We propose a many-body generalization of the Z2 topological invariant for the quantum spin Hall insulator, which does not rely on single-particle band structures. The invariant is derived as a topological obstruction that distinguishes topologically distinct many-body ground states on a torus. It is also expressed as a Wilson-loop of the SU(2) Berry gauge field, which is quantized due to the time-reversal symmetry.",
+    "authors": [
+      "Sung-Sik Lee",
+      "Shinsei Ryu"
+    ],
+    "published": "2007-08-13T02:12:08Z",
+    "updated": "2008-05-02T18:18:26Z",
+    "year": "2007",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/PhysRevLett.100.186807",
+    "journal_ref": "Phys. Rev. Lett. 100, 186807 (2008)",
+    "abs_url": "https://arxiv.org/abs/0708.1639",
+    "pdf_url": "https://arxiv.org/pdf/0708.1639",
+    "pillar": "ryu",
+    "slug": "0708.1639",
+    "pdf_local": "papers/pdf/0708.1639.pdf"
+  },
+  {
+    "arxiv_id": "0810.5394",
+    "version": "v4",
+    "title": "Disordered Systems and the Replica Method in AdS/CFT",
+    "abstract": "We formulate a holographic description of effects of disorder in conformal field theories based on the replica method and the AdS/CFT correspondence. Starting with $n$ copies of conformal field theories, randomness with a gaussian distribution is described by a deformation of double trace operators. After computing physical quantities, we take the $n \\to 0$ limit at the final step. We compute correlation functions in the disordered systems by using the holographic replica method as well as the formulation in the conformal field theory. We find examples where disorder changes drastically the scaling of two point functions. The renormalization group flow of the effective central charge in our disordered systems is also discussed.",
+    "authors": [
+      "Mitsutoshi Fujita",
+      "Yasuaki Hikida",
+      "Shinsei Ryu",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2008-10-30T01:15:26Z",
+    "updated": "2008-12-18T01:06:05Z",
+    "year": "2008",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.dis-nn",
+      "gr-qc"
+    ],
+    "doi": "10.1088/1126-6708/2008/12/065",
+    "journal_ref": "JHEP 0812:065,2008",
+    "abs_url": "https://arxiv.org/abs/0810.5394",
+    "pdf_url": "https://arxiv.org/pdf/0810.5394",
+    "pillar": "ryu",
+    "slug": "0810.5394",
+    "pdf_local": "papers/pdf/0810.5394.pdf"
+  },
+  {
+    "arxiv_id": "0901.0924",
+    "version": "v3",
+    "title": "Fractional Quantum Hall Effect via Holography: Chern-Simons, Edge States, and Hierarchy",
+    "abstract": "We present three holographic constructions of fractional quantum Hall effect (FQHE) via string theory. The first model studies edge states in FQHE using supersymmetric domain walls in N=6 Chern-Simons theory. We show that D4-branes wrapped on CP^1 or D8-branes wrapped on CP^3 create edge states that shift the rank or the level of the gauge group, respectively. These holographic edge states correctly reproduce the Hall conductivity. The second model presents a holographic dual to the pure U(N)_k (Yang-Mills-)Chern-Simons theory based on a D3-D7 system. Its holography is equivalent to the level-rank duality, which enables us to compute the Hall conductivity and the topological entanglement entropy. The third model introduces the first string theory embedding of hierarchical FQHEs, using IIA string on C^2/Z_n.",
+    "authors": [
+      "Mitsutoshi Fujita",
+      "Wei Li",
+      "Shinsei Ryu",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2009-01-08T04:40:24Z",
+    "updated": "2009-04-21T11:04:46Z",
+    "year": "2009",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1088/1126-6708/2009/06/066",
+    "journal_ref": "JHEP 0906:066,2009",
+    "abs_url": "https://arxiv.org/abs/0901.0924",
+    "pdf_url": "https://arxiv.org/pdf/0901.0924",
+    "pillar": "ryu",
+    "slug": "0901.0924",
+    "pdf_local": "papers/pdf/0901.0924.pdf"
+  },
+  {
+    "arxiv_id": "1007.4234",
+    "version": "v2",
+    "title": "Topological Insulators and Superconductors from String Theory",
+    "abstract": "Topological insulators and superconductors in different spatial dimensions and with different discrete symmetries have been fully classified recently, revealing a periodic structure for the pattern of possible types of topological insulators and supercondutors, both in terms of spatial dimensions and in terms of symmetry classes. It was proposed that K-theory is behind the periodicity. On the other hand, D-branes, a solitonic object in string theory, are also known to be classified by K-theory. In this paper, by inspecting low-energy effective field theories realized by two parallel D-branes, we establish a one-to-one correspondence between the K-theory classification of topological insulators/superconductors and D-brane charges. In addition, the string theory realization of topological insulators and superconductors comes naturally with gauge interactions, and the Wess-Zumino term of the D-branes gives rise to a gauge field theory of topological nature, such as ones with the Chern-Simons term or the $θ$-term in various dimensions. This sheds light on topological insulators and superconductors beyond non-interacting systems, and the underlying topological field theory description thereof. In particular, our string theory realization includes the honeycomb lattice Kitaev model in two spatial dimensions, and its higher-dimensional extensions. Increasing the number of D-branes naturally leads to a realization of topological insulators and superconductors in terms of holography (AdS/CFT).",
+    "authors": [
+      "Shinsei Ryu",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2010-07-24T00:03:51Z",
+    "updated": "2010-08-01T05:41:16Z",
+    "year": "2010",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevD.82.086014",
+    "journal_ref": "Phys.Rev.D82:086014,2010",
+    "abs_url": "https://arxiv.org/abs/1007.4234",
+    "pdf_url": "https://arxiv.org/pdf/1007.4234",
+    "pillar": "ryu",
+    "slug": "1007.4234",
+    "pdf_local": "papers/pdf/1007.4234.pdf"
+  },
+  {
+    "arxiv_id": "1202.5805",
+    "version": "v2",
+    "title": "Interaction effect on topological classification of superconductors in two dimensions",
+    "abstract": "We introduce a new class of superconductors (SCs) in two spatial dimensions with time reversal symmetry and reflection (i.e., mirror) symmetry. In the absence of interactions, topological classes of these SCs are distinguished by an integer-valued ($\\mathbb{Z}$) topological invariant. When interactions are included, we show that the topological classification is modified to $\\mathbb{Z}_8$. This clearly demonstrates that interactions can have qualitative effect on topological classifications of gapped states of matter in more than one dimension.",
+    "authors": [
+      "Hong Yao",
+      "Shinsei Ryu"
+    ],
+    "published": "2012-02-27T00:06:30Z",
+    "updated": "2014-02-04T04:04:18Z",
+    "year": "2012",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevB.88.064507",
+    "journal_ref": "Phys. Rev. B 88, 064507 (2013)",
+    "abs_url": "https://arxiv.org/abs/1202.5805",
+    "pdf_url": "https://arxiv.org/pdf/1202.5805",
+    "pillar": "ryu",
+    "slug": "1202.5805",
+    "pdf_local": "papers/pdf/1202.5805.pdf"
+  },
+  {
+    "arxiv_id": "1208.3469",
+    "version": "v3",
+    "title": "Holographic Geometry of Entanglement Renormalization in Quantum Field Theories",
+    "abstract": "We study a conjectured connection between the AdS/CFT and a real-space quantum renormalization group scheme, the multi-scale entanglement renormalization ansatz (MERA). By making a close contact with the holographic formula of the entanglement entropy, we propose a general definition of the metric in the MERA in the extra holographic direction, which is formulated purely in terms of quantum field theoretical data. Using the continuum version of the MERA (cMERA), we calculate this emergent holographic metric explicitly for free scalar boson and free fermions theories, and check that the metric so computed has the properties expected from AdS/CFT. We also discuss the cMERA in a time-dependent background induced by quantum quench and estimate its corresponding metric.",
+    "authors": [
+      "Masahiro Nozaki",
+      "Shinsei Ryu",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2012-08-16T20:00:13Z",
+    "updated": "2012-10-02T11:07:58Z",
+    "year": "2012",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el",
+      "gr-qc",
+      "quant-ph"
+    ],
+    "doi": "10.1007/JHEP10(2012)193",
+    "journal_ref": "JHEP10(2012)193",
+    "abs_url": "https://arxiv.org/abs/1208.3469",
+    "pdf_url": "https://arxiv.org/pdf/1208.3469",
+    "pillar": "ryu",
+    "slug": "1208.3469",
+    "pdf_local": "papers/pdf/1208.3469.pdf"
+  },
+  {
+    "arxiv_id": "1406.0307",
+    "version": "v1",
+    "title": "CPT theorem and classification of topological insulators and superconductors",
+    "abstract": "We present a systematic topological classification of fermionic and bosonic topological phases protected by time-reversal, particle-hole, parity, and combination of these symmetries. We use two complementary approaches: one in terms of K-theory classification of gapped quadratic fermion theories with symmetries, and the other in terms of the K-matrix theory description of the edge theory of (2+1)-dimensional bulk theories. The first approach is specific to free fermion theories in general spatial dimensions while the second approach is limited to two spatial dimensions but incorporates effects of interactions. We also clarify the role of CPT theorem in classification of symmetry-protected topological phases, and show, in particular, topological superconductors dis- cussed before are related by CPT theorem.",
+    "authors": [
+      "Chang-Tse Hsieh",
+      "Takahiro Morimoto",
+      "Shinsei Ryu"
+    ],
+    "published": "2014-06-02T09:45:47Z",
+    "updated": "2014-06-02T09:45:47Z",
+    "year": "2014",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevB.90.245111",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1406.0307",
+    "pdf_url": "https://arxiv.org/pdf/1406.0307",
+    "pillar": "ryu",
+    "slug": "1406.0307",
+    "pdf_local": "papers/pdf/1406.0307.pdf"
+  },
+  {
+    "arxiv_id": "1605.00570",
+    "version": "v1",
+    "title": "Holographic duality between $(2+1)$-d quantum anomalous Hall state and $(3+1)$-d topological insulators",
+    "abstract": "In this paper, we study $(2+1)$-dimensional quantum anomalous Hall states, i.e. band insulators with quantized Hall conductance, using the exact holographic mapping. The exact holographic mapping is an approach to holographic duality which maps the quantum anomalous Hall state to a different state living in $(3+1)$-dimensional hyperbolic space. By studying topological response properties and the entanglement spectrum, we demonstrate that the holographic dual theory of a quantum anomalous Hall state is a $(3+1)$-dimensional topological insulator. The dual description enables a new characterization of topological properties of a system by the quantum entanglement between degrees of freedom at different length scales.",
+    "authors": [
+      "Yingfei Gu",
+      "Ching Hua Lee",
+      "Xueda Wen",
+      "Gil Young Cho",
+      "Shinsei Ryu",
+      "Xiao-Liang Qi"
+    ],
+    "published": "2016-05-02T17:13:45Z",
+    "updated": "2016-05-02T17:13:45Z",
+    "year": "2016",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el",
+      "hep-th",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PhysRevB.94.125107",
+    "journal_ref": "Phys. Rev. B 94, 125107 (2016)",
+    "abs_url": "https://arxiv.org/abs/1605.00570",
+    "pdf_url": "https://arxiv.org/pdf/1605.00570",
+    "pillar": "ryu",
+    "slug": "1605.00570",
+    "pdf_local": "papers/pdf/1605.00570.pdf"
+  },
+  {
+    "arxiv_id": "1605.07199",
+    "version": "v1",
+    "title": "Holographic Entanglement Renormalization of Topological Insulators",
+    "abstract": "We study the real-space entanglement renormalization group flows of topological band insulators in (2+1) dimensions by using the continuum multi-scale entanglement renormalization ansatz (cMERA). Given the ground state of a Chern insulator, we construct and study its cMERA by paying attention, in particular, to how the bulk holographic geometry and the Berry curvature depend on the topological properties of the ground state. It is found that each state defined at different energy scale of cMERA carries a nonzero Berry flux, which is emanated from the UV layer of cMERA, and flows towards the IR. Hence, a topologically nontrivial UV state flows under the RG to an IR state, which is also topologically nontrivial. On the other hand, we found that there is an obstruction to construct the exact ground state of a topological insulator with a topologically trivial IR state. I.e., if we try to construct a cMERA for the ground state of a Chern insulator by taking a topologically trivial IR state, the resulting cMERA does not faithfully reproduce the exact ground state at all length scales.",
+    "authors": [
+      "Xueda Wen",
+      "Gil Young Cho",
+      "Pedro L. S. Lopes",
+      "Yingfei Gu",
+      "Xiao-Liang Qi",
+      "Shinsei Ryu"
+    ],
+    "published": "2016-05-23T20:06:11Z",
+    "updated": "2016-05-23T20:06:11Z",
+    "year": "2016",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el",
+      "hep-th"
+    ],
+    "doi": "10.1103/PhysRevB.94.075124",
+    "journal_ref": "Phys. Rev. B 94, 075124 (2016)",
+    "abs_url": "https://arxiv.org/abs/1605.07199",
+    "pdf_url": "https://arxiv.org/pdf/1605.07199",
+    "pillar": "ryu",
+    "slug": "1605.07199",
+    "pdf_local": "papers/pdf/1605.07199.pdf"
+  },
+  {
+    "arxiv_id": "1607.03896",
+    "version": "v3",
+    "title": "Many-body topological invariants for fermionic symmetry-protected topological phases",
+    "abstract": "We define and compute many-body topological invariants of interacting fermionic symmetry-protected topological phases, protected by an orientation-reversing symmetry, such as time-reversal or reflection symmetry. The topological invariants are given by partition functions obtained by a path integral on unoriented spacetime which, as we show, can be computed for a given ground state wave function by considering a non-local operation, \"partial\" reflection or transpose. As an application of our scheme, we study the $\\mathbb{Z}_8$ and $\\mathbb{Z}_{16}$ classification of topological superconductors in one and three dimensions.",
+    "authors": [
+      "Hassan Shapourian",
+      "Ken Shiozaki",
+      "Shinsei Ryu"
+    ],
+    "published": "2016-07-13T20:00:02Z",
+    "updated": "2017-05-29T18:03:55Z",
+    "year": "2016",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.mes-hall",
+      "cond-mat.supr-con"
+    ],
+    "doi": "10.1103/PhysRevLett.118.216402",
+    "journal_ref": "Phys. Rev. Lett. 118, 216402 (2017)",
+    "abs_url": "https://arxiv.org/abs/1607.03896",
+    "pdf_url": "https://arxiv.org/pdf/1607.03896",
+    "pillar": "ryu",
+    "slug": "1607.03896",
+    "pdf_local": "papers/pdf/1607.03896.pdf"
+  },
+  {
+    "arxiv_id": "1705.03892",
+    "version": "v2",
+    "title": "Anomaly Manifestation of Lieb-Schultz-Mattis Theorem and Topological Phases",
+    "abstract": "The Lieb-Schultz-Mattis (LSM) theorem dictates that emergent low-energy states from a lattice model cannot be a trivial symmetric insulator if the filling per unit cell is not integral and if the lattice translation symmetry and particle number conservation are strictly imposed. In this paper, we compare the one-dimensional gapless states enforced by the LSM theorem and the boundaries of one-higher dimensional strong symmetry-protected topological (SPT) phases from the perspective of quantum anomalies. We first note that, they can be both described by the same low-energy effective field theory with the same effective symmetry realizations on low-energy modes, wherein non-on-site lattice translation symmetry is encoded as if it is a local symmetry. In spite of the identical form of the low-energy effective field theories, we show that the quantum anomalies of the theories play different roles in the two systems. In particular, We find that the chiral anomaly is equivalent to the LSM theorem, whereas there is another anomaly, which is not related to the LSM theorem but is intrinsic to the SPT states. As an application, we extend the conventional LSM theorem to multiple-charge multiple-species problems and construct several exotic symmetric insulators. We also find that the (3+1)d chiral anomaly provides only the perturbative stability of the gapless-ness local in the parameter space.",
+    "authors": [
+      "Gil Young Cho",
+      "Chang-Tse Hsieh",
+      "Shinsei Ryu"
+    ],
+    "published": "2017-05-10T18:00:04Z",
+    "updated": "2017-08-01T06:14:23Z",
+    "year": "2017",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.mes-hall",
+      "hep-th"
+    ],
+    "doi": "10.1103/PhysRevB.96.195105",
+    "journal_ref": "Physical Review B 96, 195105 (2017)",
+    "abs_url": "https://arxiv.org/abs/1705.03892",
+    "pdf_url": "https://arxiv.org/pdf/1705.03892",
+    "pillar": "ryu",
+    "slug": "1705.03892",
+    "pdf_local": "papers/pdf/1705.03892.pdf"
+  },
+  {
+    "arxiv_id": "2109.02649",
+    "version": "v1",
+    "title": "Negativity Spectra in Random Tensor Networks and Holography",
+    "abstract": "Negativity is a measure of entanglement that can be used both in pure and mixed states. The negativity spectrum is the spectrum of eigenvalues of the partially transposed density matrix, and characterizes the degree and \"phase\" of entanglement. For pure states, it is simply determined by the entanglement spectrum. We use a diagrammatic method complemented by a modification of the Ford-Fulkerson algorithm to find the negativity spectrum in general random tensor networks with large bond dimensions. In holography, these describe the entanglement of fixed-area states. It was found that many fixed-area states have a negativity spectrum given by a semi-circle. More generally, we find new negativity spectra that appear in random tensor networks, as well as in phase transitions in holographic states, wormholes, and holographic states with bulk matter. The smallest random tensor network is the same as a micro-canonical version of Jackiw-Teitelboim (JT) gravity decorated with end-of-the-world branes. We consider the semi-classical negativity of Hawking radiation and find that contributions from islands should be included. We verify this in the JT gravity model, showing the Euclidean wormhole origin of these contributions.",
+    "authors": [
+      "Jonah Kudler-Flam",
+      "Vladimir Narovlansky",
+      "Shinsei Ryu"
+    ],
+    "published": "2021-09-06T18:00:01Z",
+    "updated": "2021-09-06T18:00:01Z",
+    "year": "2021",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el",
+      "quant-ph"
+    ],
+    "doi": "10.1007/JHEP02(2022)076",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2109.02649",
+    "pdf_url": "https://arxiv.org/pdf/2109.02649",
+    "pillar": "ryu",
+    "slug": "2109.02649",
+    "pdf_local": "papers/pdf/2109.02649.pdf"
+  },
+  {
+    "arxiv_id": "2112.13489",
+    "version": "v2",
+    "title": "Lindbladian dynamics of the Sachdev-Ye-Kitaev model",
+    "abstract": "We study the Lindbladian dynamics of the Sachdev-Ye-Kitaev (SYK) model, where the SYK model is coupled to Markovian reservoirs with jump operators that are either linear or quadratic in the Majorana fermion operators. Here, the linear jump operators are non-random while the quadratic jump operators are sampled from a Gaussian distribution. In the limit of large $N$, where $N$ is the number of Majorana fermion operators, and also in the limit of large $N$ and $M$, where $M$ is the number of jump operators, the SYK Lindbladians are analytically tractable, and we obtain their stationary Green's functions, from which we can read off the decay rate. For finite $N$, we also study the distribution of the eigenvalues of the SYK Lindbladians.",
+    "authors": [
+      "Anish Kulkarni",
+      "Tokiro Numasawa",
+      "Shinsei Ryu"
+    ],
+    "published": "2021-12-27T03:04:32Z",
+    "updated": "2022-12-15T17:34:15Z",
+    "year": "2021",
+    "primary_category": "cond-mat.stat-mech",
+    "categories": [
+      "cond-mat.stat-mech",
+      "hep-th",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PhysRevB.106.075138",
+    "journal_ref": "Phys. Rev. B 106, 075138 (2022)",
+    "abs_url": "https://arxiv.org/abs/2112.13489",
+    "pdf_url": "https://arxiv.org/pdf/2112.13489",
+    "pillar": "ryu",
+    "slug": "2112.13489",
+    "pdf_local": "papers/pdf/2112.13489.pdf"
+  },
+  {
+    "arxiv_id": "2202.02548",
+    "version": "v2",
+    "title": "Many-body topology of non-Hermitian systems",
+    "abstract": "Non-Hermiticity gives rise to unique topological phases that have no counterparts in Hermitian systems. Such intrinsic non-Hermitian topological phases appear even in one dimension while no topological phases appear in one-dimensional Hermitian systems. Despite the recent considerable interest, the intrinsic non-Hermitian topological phases have been mainly investigated in noninteracting systems described by band theory. It has been unclear whether they survive or reduce in the presence of many-body interactions. Here, we demonstrate that the intrinsic non-Hermitian topological phases in one dimension survive even in the presence of many-body interactions. We formulate a many-body topological invariant by the winding of the complex-valued many-body spectrum in terms of a U (1) gauge field (magnetic flux). As an illustrative example, we investigate the interacting Hatano-Nelson model and find a unique topological phase and skin effect induced by many-body interactions.",
+    "authors": [
+      "Kohei Kawabata",
+      "Ken Shiozaki",
+      "Shinsei Ryu"
+    ],
+    "published": "2022-02-05T13:14:03Z",
+    "updated": "2022-03-17T15:22:46Z",
+    "year": "2022",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.mes-hall",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PhysRevB.105.165137",
+    "journal_ref": "Phys. Rev. B 105, 165137 (2022)",
+    "abs_url": "https://arxiv.org/abs/2202.02548",
+    "pdf_url": "https://arxiv.org/pdf/2202.02548",
+    "pillar": "ryu",
+    "slug": "2202.02548",
+    "pdf_local": "papers/pdf/2202.02548.pdf"
+  },
+  {
+    "arxiv_id": "2212.00605",
+    "version": "v2",
+    "title": "Symmetry of Open Quantum Systems: Classification of Dissipative Quantum Chaos",
+    "abstract": "We develop a theory of symmetry in open quantum systems. Using the operator-state mapping, we characterize symmetry of Liouvillian superoperators for the open quantum dynamics by symmetry of operators in the double Hilbert space and apply the 38-fold internal-symmetry classification of non-Hermitian operators. We find rich symmetry classification due to the interplay between symmetry in the corresponding closed quantum systems and symmetry inherent in the construction of the Liouvillian superoperators. As an illustrative example of open quantum bosonic systems, we study symmetry classes of dissipative quantum spin models. For open quantum fermionic systems, we develop the $\\mathbb{Z}_4$ classification of fermion parity symmetry and antiunitary symmetry in the double Hilbert space, which contrasts with the $\\mathbb{Z}_8$ classification in closed quantum systems. We also develop the symmetry classification of open quantum fermionic many-body systems -- a dissipative generalization of the Sachdev-Ye-Kitaev (SYK) model described by the Lindblad master equation. We establish the periodic tables of the SYK Lindbladians and elucidate the difference from the SYK Hamiltonians. Furthermore, from extensive numerical calculations, we study its complex-spectral statistics and demonstrate dissipative quantum chaos enriched by symmetry.",
+    "authors": [
+      "Kohei Kawabata",
+      "Anish Kulkarni",
+      "Jiachen Li",
+      "Tokiro Numasawa",
+      "Shinsei Ryu"
+    ],
+    "published": "2022-12-01T15:59:09Z",
+    "updated": "2023-08-29T14:25:33Z",
+    "year": "2022",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el",
+      "hep-th",
+      "math-ph",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PRXQuantum.4.030328",
+    "journal_ref": "PRX Quantum 4, 030328 (2023)",
+    "abs_url": "https://arxiv.org/abs/2212.00605",
+    "pdf_url": "https://arxiv.org/pdf/2212.00605",
+    "pillar": "ryu",
+    "slug": "2212.00605",
+    "pdf_local": "papers/pdf/2212.00605.pdf"
+  },
+  {
+    "arxiv_id": "2312.17318",
+    "version": "v1",
+    "title": "Spectral sum rules reflect topological and quantum-geometric invariants",
+    "abstract": "Topological invariants are fundamental characteristics reflecting global properties of quantum systems, yet their exploration has predominantly been limited to the static (DC) transport and transverse (Hall) channel. In this work, we extend the spectral sum rules for frequency-resolved electric conductivity $σ(ω)$ in topological systems, and show that the sum rule for the longitudinal channel is expressed through topological and quantum-geometric invariants. We find that for dispersionless (flat) Chern bands, the rule is expressed as, $ \\int_{-\\infty}^{+\\infty} dω\\, \\text{Re}(σ_{xx} + σ_{yy}) = C Δe^2$, where $C$ is the Chern number, $Δ$ the topological gap, and $e$ the electric charge. In scenarios involving dispersive Chern bands, the rule is defined by the invariant of the quantum metric, and Luttinger invariant, $\\int_{-\\infty}^{+\\infty} dω\\, \\text{Re}(σ_{xx} + σ_{yy}) = 2 πe^2 Δ\\sum_{\\boldsymbol{k}} \\text{Tr} \\, \\mathcal{G}_{ij}(\\boldsymbol{k})$+(Luttinger invariant), where $\\text{Tr} \\, \\mathcal {G}_{ij}$ is invariant of the Fubini-Study metric (defining spread of Wannier orbitals). We further discuss the physical role of topological and quantum-geometric invariants in spectral sum rules. Our approach is adaptable across varied topologies and system dimensionalities.",
+    "authors": [
+      "Alexander Kruchkov",
+      "Shinsei Ryu"
+    ],
+    "published": "2023-12-28T19:00:02Z",
+    "updated": "2023-12-28T19:00:02Z",
+    "year": "2023",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.mes-hall"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2312.17318",
+    "pdf_url": "https://arxiv.org/pdf/2312.17318",
+    "pillar": "ryu",
+    "slug": "2312.17318",
+    "pdf_local": "papers/pdf/2312.17318.pdf"
+  },
+  {
+    "arxiv_id": "2405.05327",
+    "version": "v1",
+    "title": "Higher Berry Connection for Matrix Product States",
+    "abstract": "In one spatial dimension, families of short-range entangled many-body quantum states, parameterized over some parameter space, can be topologically distinguished and classified by topological invariants built from the higher Berry phase -- a many-body generalization of the Berry phase. Previous works identified the underlying mathematical structure (the gerbe structure) and introduced a multi-wavefunction overlap, a generalization of the inner product in quantum mechanics, which allows for the extraction of the higher Berry phase and topological invariants. In this paper, building on these works, we introduce a connection, the higher Berry connection, for a family of parameterized Matrix Product States (MPS) over a parameter space. We demonstrate the use of our formula for simple non-trivial models.",
+    "authors": [
+      "Shuhei Ohyama",
+      "Shinsei Ryu"
+    ],
+    "published": "2024-05-08T18:00:33Z",
+    "updated": "2024-05-08T18:00:33Z",
+    "year": "2024",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "hep-th",
+      "math-ph",
+      "quant-ph"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2405.05327",
+    "pdf_url": "https://arxiv.org/pdf/2405.05327",
+    "pillar": "ryu",
+    "slug": "2405.05327",
+    "pdf_local": "papers/pdf/2405.05327.pdf"
+  },
+  {
+    "arxiv_id": "2601.00761",
+    "version": "v2",
+    "title": "Exponentially Accelerated Sampling of Pauli Strings for Nonstabilizerness",
+    "abstract": "Quantum magic, quantified by nonstabilizerness, measures departures from stabilizer structure and underlies potential quantum speedups. We introduce an efficient classical framework for computing stabilizer Rényi entropies and stabilizer nullity of generic $N$-qubit wavefunctions. The method combines the fast Walsh-Hadamard transform with an exact partition of Pauli operators, reducing the average cost per sampled Pauli string from $\\mathcal{O}(2^N)$ to $\\mathcal{O}(N)$. We further develop a Monte Carlo estimator with Clifford preconditioning and find that the required number of samples shows no visible growth with $N$ in our benchmarks. Applying the method to $T$-doped random Clifford circuits, we identify the scrambling ratio $η$ (Clifford gates per $T$ gate) as the key parameter governing magic growth. Each $T$ gate approaches its dilute-limit nonstabilizerness power with only modest Clifford scrambling. Our approach enables quantitative studies of magic in highly entangled states and long-time nonequilibrium dynamics.",
+    "authors": [
+      "Zhenyu Xiao",
+      "Shinsei Ryu"
+    ],
+    "published": "2026-01-02T17:37:04Z",
+    "updated": "2026-04-19T19:43:48Z",
+    "year": "2026",
+    "primary_category": "quant-ph",
+    "categories": [
+      "quant-ph",
+      "cond-mat.mes-hall",
+      "cond-mat.stat-mech"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2601.00761",
+    "pdf_url": "https://arxiv.org/pdf/2601.00761",
+    "pillar": "ryu",
+    "slug": "2601.00761",
+    "pdf_local": "papers/pdf/2601.00761.pdf"
   }
 ]

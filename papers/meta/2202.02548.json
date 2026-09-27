@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "2202.02548",
+  "version": "v2",
+  "title": "Many-body topology of non-Hermitian systems",
+  "abstract": "Non-Hermiticity gives rise to unique topological phases that have no counterparts in Hermitian systems. Such intrinsic non-Hermitian topological phases appear even in one dimension while no topological phases appear in one-dimensional Hermitian systems. Despite the recent considerable interest, the intrinsic non-Hermitian topological phases have been mainly investigated in noninteracting systems described by band theory. It has been unclear whether they survive or reduce in the presence of many-body interactions. Here, we demonstrate that the intrinsic non-Hermitian topological phases in one dimension survive even in the presence of many-body interactions. We formulate a many-body topological invariant by the winding of the complex-valued many-body spectrum in terms of a U (1) gauge field (magnetic flux). As an illustrative example, we investigate the interacting Hatano-Nelson model and find a unique topological phase and skin effect induced by many-body interactions.",
+  "authors": [
+    "Kohei Kawabata",
+    "Ken Shiozaki",
+    "Shinsei Ryu"
+  ],
+  "published": "2022-02-05T13:14:03Z",
+  "updated": "2022-03-17T15:22:46Z",
+  "year": "2022",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el",
+    "cond-mat.mes-hall",
+    "quant-ph"
+  ],
+  "doi": "10.1103/PhysRevB.105.165137",
+  "journal_ref": "Phys. Rev. B 105, 165137 (2022)",
+  "abs_url": "https://arxiv.org/abs/2202.02548",
+  "pdf_url": "https://arxiv.org/pdf/2202.02548",
+  "pillar": "ryu",
+  "slug": "2202.02548",
+  "pdf_local": "papers/pdf/2202.02548.pdf"
+}

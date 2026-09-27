@@ -1,0 +1,1946 @@
+[
+  {
+    "root": "/home/callensxavier_gmail_com/AutoevolveAI",
+    "readme": [
+      "<div align=\"center\">",
+      "# ANSE · AutoevolveAI",
+      "### Verification-first agentic AI for computational science",
+      "**A research harness that refuses to report success it has not earned.**",
+      "[![Tests](https://img.shields.io/badge/tests-1079_passing-brightgreen?style=flat-square&logo=pytest)](#measured-status)",
+      "[![Lean 4](https://img.shields.io/badge/Lean_4-225_theorems-blue?style=flat-square&logo=lean)](formal/ANSE)"
+    ],
+    "markers": [
+      "container",
+      "lean",
+      "python",
+      "rust"
+    ],
+    "mcp_servers": [
+      "claude-subtask-workflow",
+      "leanmaster",
+      "python-code-guard"
+    ],
+    "python_envs": {
+      ".venv/python3.11": [
+        "chromadb",
+        "scipy",
+        "sympy",
+        "torch"
+      ]
+    },
+    "files_scanned": 1142,
+    "top_extensions": [
+      [
+        ".py",
+        618
+      ],
+      [
+        ".json",
+        190
+      ],
+      [
+        ".lean",
+        146
+      ],
+      [
+        ".jsonl",
+        145
+      ],
+      [
+        ".md",
+        67
+      ],
+      [
+        ".rs",
+        53
+      ],
+      [
+        ".pdf",
+        39
+      ],
+      [
+        ".tex",
+        30
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "coverage.json",
+        "test.tex",
+        "run_v10_swarm.py",
+        "DATA_LAKE_CARTOGRAPHY.md",
+        "papers/phd_8_top_cases_compendium_paper.tex",
+        "papers/anse_physical_world_model_formal_paper.tex",
+        "papers/phd_case2_formal_math_tribunal_paper.md",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_case3_silicon_cyber_swarm_paper.tex",
+        "papers/anse_physical_world_model_formal_paper.md",
+        "papers/peer_review_3_phd_cases.json",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md"
+      ],
+      "chern": [
+        "papers/anse_physical_world_model_formal_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/anse_physical_world_model_formal_paper.md",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/peer_review_gemini_3_1_pro.json",
+        "papers/peer_review_120_phd_cases.json",
+        "papers/phd_200_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_200_cases_frontier_llm_hardness_paper.md",
+        "papers/200_compendium/sec02_methodology.tex",
+        "papers/200_compendium/sec04_physics_p51_p100.tex",
+        "papers/references/arxiv_d40df3a3.json",
+        "results/200_solutions_dossier.tex"
+      ],
+      "winding": [
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/sec04_physics_p51_p100.tex",
+        "papers/200_compendium/compendium_sources/PYTHON-34.py",
+        "results/200_solutions_dossier.tex",
+        "results/100_physics_math_receipts.json",
+        "results/100_physics_math_final_report.tex",
+        "results/200_unified_eval_report.json",
+        "scripts/execute_100_physics_math_tribunal.py",
+        "anse/physics/advanced_world_models.py",
+        "anse/benchmark/pure_physics_cases.py",
+        "anse/benchmark/complex_python_cases.py"
+      ],
+      "berry": [
+        "papers/anse_physical_world_model_formal_paper.tex",
+        "papers/anse_physical_world_model_formal_paper.md",
+        "papers/200_compendium/sec04_physics_p51_p100.tex",
+        "papers/references/arxiv_d40df3a3.json",
+        "results/200_solutions_dossier.tex",
+        "results/100_physics_math_receipts.json",
+        "results/100_physics_math_final_report.tex",
+        "results/rl_100_problems_gain_report.json",
+        "results/ultra_complex_physics_and_rl_transfer_report.json",
+        "results/200_unified_eval_report.json",
+        "formal/ANSE/MasterMathTribunal_Part6.lean",
+        "scripts/build_latex_paper.py"
+      ],
+      "k_theory": [
+        "anse/benchmark/pure_math_cases.py"
+      ],
+      "clifford": [
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/sec03_math_p01_p50.tex",
+        "papers/200_compendium/compendium_sources/PYTHON-06.py",
+        "papers/200_compendium/compendium_sources/MP-32.lean",
+        "results/50_physics_math_receipts.json",
+        "results/100_unified_eval_report.json",
+        "results/200_solutions_dossier.tex",
+        "results/100_physics_math_receipts.json",
+        "results/50_physics_math_final_report.tex",
+        "results/100_physics_math_final_report.tex"
+      ],
+      "tight_binding": [
+        "coverage.json",
+        "README.md",
+        "CHANGELOG.md",
+        "run_v10_swarm.py",
+        "update_second_brain.py",
+        "papers/phd_8_top_cases_compendium_paper.tex",
+        "papers/anse_physical_world_model_formal_paper.tex",
+        "papers/anse_v6_millennium_prizes.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/peer_review_gemini_3_1_pro.json",
+        "papers/peer_review_120_phd_cases.json"
+      ],
+      "entanglement": [
+        "phd_new_benchmark_page_curve.py",
+        "coverage.json",
+        "papers/anse_physical_world_model_formal_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/sec03_math_p01_p50.tex",
+        "papers/200_compendium/sec04_physics_p51_p100.tex",
+        "papers/200_compendium/compendium_sources/PYTHON-03.py",
+        "results/50_physics_math_receipts.json",
+        "results/100_unified_eval_report.json",
+        "results/200_solutions_dossier.tex"
+      ],
+      "tensor_network": [
+        "main.py",
+        "deploy_anse.py",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/compendium_sources/PYTHON-03.py",
+        "results/100_unified_eval_report.json",
+        "results/200_solutions_dossier.tex",
+        "results/200_unified_eval_report.json",
+        "tests/phase1/test_encoder.py",
+        "anse/core/encoder.py",
+        "anse/benchmark/invariant_registry.yaml"
+      ],
+      "holography": [
+        "coverage.json",
+        "papers/anse_physical_world_model_formal_paper.tex",
+        "papers/200_compendium/sec03_math_p01_p50.tex",
+        "papers/200_compendium/sec04_physics_p51_p100.tex",
+        "docs/ANTIGRAVITY_HARNESS.md",
+        "results/50_physics_math_receipts.json",
+        "results/100_unified_eval_report.json",
+        "results/200_solutions_dossier.tex",
+        "results/100_physics_math_receipts.json",
+        "results/50_physics_math_final_report.tex",
+        "results/100_physics_math_final_report.tex",
+        "results/rl_100_problems_gain_report.json"
+      ],
+      "syk": [
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/peer_review_120_phd_cases.json",
+        "papers/phd_200_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_200_cases_frontier_llm_hardness_paper.md",
+        "docs/ANTIGRAVITY_HARNESS.md",
+        "docs/EVOLUTION_LAB.md",
+        "scripts/build_phd_200_paper.py",
+        "scripts/review_phd_120_paper.py",
+        "anse/benchmark/pure_physics_cases.py",
+        "anse/benchmark/invariant_registry.yaml"
+      ],
+      "anomaly": [
+        "coverage.json",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/phd_case1_symplectic_quantum_paper.tex",
+        "papers/phd_200_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_200_cases_frontier_llm_hardness_paper.md",
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/sec04_physics_p51_p100.tex",
+        "papers/references/phd_3cases_literature_review.json",
+        "papers/references/arxiv_34830fb3.json",
+        "docs/ANTIGRAVITY_HARNESS.md",
+        "docs/EVOLUTION_LAB.md"
+      ],
+      "lattice": [
+        "memory.md",
+        "papers/phd_8_top_cases_compendium_paper.tex",
+        "papers/anse_physical_world_model_formal_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/peer_review_3_phd_cases.json",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/peer_review_120_phd_cases.json",
+        "papers/phd_case4_advanced_paper.tex",
+        "papers/phd_case1_symplectic_quantum_paper.tex",
+        "papers/phd_200_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_200_cases_frontier_llm_hardness_paper.md",
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex"
+      ],
+      "persistent_homology": [
+        "harvest_training_pipeline.py",
+        "ROADMAP.md",
+        "demo_self_evolution.py",
+        "CHANGELOG.md",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.tex",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/compendium_sources/PYTHON-04.py",
+        "papers/references/arxiv_bd721ee5.json",
+        "docs/LITERATURE_REVIEW_RAG.md",
+        "docs/ANTIGRAVITY_HARNESS.md",
+        "docs/remediation/AUDIT_2026-09-26.md"
+      ],
+      "gpu_cuda": [
+        "train_checkpoint.py",
+        "validate_v2_linux_oracle.py",
+        "README.md",
+        "main.py",
+        "train_jepa.py",
+        "CHANGELOG.md",
+        "deploy_anse.py",
+        "papers/references/arxiv_ac769341.json",
+        "papers/references/phd_3cases_literature_review.json",
+        "docs/remediation/AUDIT_2026-09-26.md",
+        "docs/remediation/IMPROVEMENT_PLAN_2026-09-26.md",
+        "docs/remediation/tasks.yaml"
+      ],
+      "ode_dae_solver": [
+        "papers/anse_physical_world_model_formal_paper.tex",
+        "papers/anse_physical_world_model_formal_paper.md",
+        "papers/phd_case1_symplectic_quantum_paper.tex",
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/sec05_rust_simd_r01_r50.tex",
+        "papers/200_compendium/compendium_sources/PYTHON-41.py",
+        "results/100_unified_eval_report.json",
+        "results/200_solutions_dossier.tex",
+        "results/redis_lora_execution_report.json",
+        "results/200_unified_eval_report.json",
+        ".claude/settings.local.json",
+        "scripts/build_3_phd_papers.py"
+      ],
+      "eigensolver": [
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/sec03_math_p01_p50.tex",
+        "papers/200_compendium/sec05_rust_simd_r01_r50.tex",
+        "papers/200_compendium/sec04_physics_p51_p100.tex",
+        "papers/200_compendium/compendium_sources/RUST-44.rs",
+        "papers/200_compendium/compendium_sources/MP-24.lean",
+        "papers/200_compendium/compendium_sources/PYTHON-44.py",
+        "papers/200_compendium/compendium_sources/PYTHON-15.py",
+        "papers/200_compendium/compendium_sources/PYTHON-43.py",
+        "papers/phd_demo_verlet/verlet_symplectic.tex",
+        "papers/references/arxiv_3ac64a0a.json",
+        "papers/references/phd_3cases_literature_review.json"
+      ],
+      "hpc": [
+        "cloudbuild.yaml",
+        "deploy_qwen.sh",
+        "data_lake_cartography.json",
+        "DATA_LAKE_CARTOGRAPHY.md",
+        "papers/phd_120_cases_frontier_llm_hardness_paper.md",
+        "papers/200_compendium/sec06_python_pdes_py01_py50.tex",
+        "papers/200_compendium/sec05_rust_simd_r01_r50.tex",
+        "papers/200_compendium/compendium_sources/RUST-16.rs",
+        "papers/200_compendium/compendium_sources/PYTHON-08.py",
+        "docs/EVOLUTION_LAB.md",
+        "docs/remediation/IMPROVEMENT_PLAN_2026-09-26.md",
+        "docs/remediation/tasks.yaml"
+      ],
+      "mcp": [
+        "memory.md",
+        "CLAUDE.md",
+        "TODO.md",
+        "mcp_guard_server.py",
+        "setup_mcp_cluster.sh",
+        "README.md",
+        "DEPLOYMENT_REPORT.md",
+        "pyproject.toml",
+        "mcp_config.json",
+        ".mcp.json",
+        "CHANGELOG.md",
+        "mcp_claude_workflow.py"
+      ]
+    }
+  },
+  {
+    "root": "/home/callensxavier_gmail_com/SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal",
+    "readme": [
+      "# Stream 1 — Theory: Lean 4 Formalization",
+      "**Dual-Scale Topological Universe Model: Arithmetic & Formal Verification**",
+      "This is **Stream 1** of the Dual-Scale Topological Universe Model project. Its role is to **machine-certify the mathematical claims** (Tier A) and formalize the conjectures (Tier B) in Lean 4.",
+      "**See [VISION.md](VISION.md) for the full project scope, roadmap, and epistemic framework.**",
+      "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22853238.svg)](https://doi.org/10.5281/zenodo.22853238)",
+      "**Paper:** *A kernel-checked symmetric-square structure theorem for Cooper's sporadic Apéry-like"
+    ],
+    "markers": [
+      "lean",
+      "python"
+    ],
+    "mcp_servers": [],
+    "python_envs": {},
+    "files_scanned": 413,
+    "top_extensions": [
+      [
+        ".p",
+        406
+      ],
+      [
+        ".lean",
+        170
+      ],
+      [
+        ".md",
+        115
+      ],
+      [
+        ".py",
+        71
+      ],
+      [
+        ".pdf",
+        36
+      ],
+      [
+        ".tex",
+        28
+      ],
+      [
+        ".svg",
+        27
+      ],
+      [
+        ".json",
+        20
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        ".zenodo.json",
+        "lake-manifest.json",
+        "CONTRIBUTING.md",
+        "MEMORY.md",
+        "README.md",
+        "NEXT_STEPS.md",
+        "PHASE_8_FTHEORY_PROPOSAL.md",
+        "VISION.md",
+        "lakefile.lean",
+        "manuscript/main.tex",
+        "docs/S1_analysis_report_2026-07-18.md",
+        "docs/REFERENCES.md"
+      ],
+      "chern": [
+        "briefs/STREAM2_EFT_MATCHING_ANALYSIS.md",
+        "briefs/STREAM2_EFT_ESCALATION_STATUS.md",
+        "briefs/ESCALATIONS.md",
+        "data/EFT_DBRANE_DIVISOR_ANALYSIS.md",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/discussion.tex"
+      ],
+      "winding": [
+        "Agora/Geometry/MnLattice.lean",
+        "Agora/Geometry/SelfDual.lean",
+        "paper/sections/08-dolgachev-doran.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/background.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/discussion.tex"
+      ],
+      "berry": [
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/.zenodo.json",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/citation.csl.json",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/methods.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/introduction.tex"
+      ],
+      "k_theory": [
+        "briefs/STREAM2_EFT_MATCHING_ANALYSIS.md",
+        "briefs/STREAM2_EFT_ESCALATION_STATUS.md",
+        "briefs/XAVIER_DECISION_EFT_MATCHING_UNLOCK_2026_07_25.md",
+        "briefs/ESCALATIONS.md",
+        "data/EFT_DBRANE_DIVISOR_ANALYSIS.md",
+        "data/EFT_HIERARCHY_ANALYSIS.md",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/.zenodo.json",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/citation.csl.json"
+      ],
+      "clifford": [
+        "external/Lean-QuantumInfo/TODO.md"
+      ],
+      "tight_binding": [
+        "external/Lean-QuantumInfo/StatMech.lean",
+        "external/Lean-QuantumInfo/StatMech/ThermoQuantities.lean",
+        "external/Lean-QuantumInfo/StatMech/Hamiltonian.lean",
+        "external/Lean-QuantumInfo/StatMech/IdealGas.lean",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/.zenodo.json",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/citation.csl.json",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/methods.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/introduction.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/discussion.tex"
+      ],
+      "entanglement": [
+        "external/Lean-QuantumInfo/TODO.md",
+        "external/Lean-QuantumInfo/DOC.md",
+        "external/Lean-QuantumInfo/QuantumInfo.lean",
+        "external/Lean-QuantumInfo/QuantumInfo/Finite/Capacity_doc.lean",
+        "external/Lean-QuantumInfo/QuantumInfo/Finite/Braket.lean",
+        "external/Lean-QuantumInfo/QuantumInfo/Finite/Entanglement.lean",
+        "external/Lean-QuantumInfo/QuantumInfo/Finite/Capacity.lean",
+        "external/Lean-QuantumInfo/QuantumInfo/Finite/Entropy/VonNeumann.lean",
+        "external/Lean-QuantumInfo/QuantumInfo/Finite/CPTPMap/CPTP.lean",
+        "external/Lean-QuantumInfo/QuantumInfo/Finite/CPTPMap/Unbundled.lean",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/.zenodo.json",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/citation.csl.json"
+      ],
+      "holography": [
+        "data/EFT_MODULAR_COUPLING_ANALYSIS.md",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/.zenodo.json",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/citation.csl.json",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/background.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/acknowledgments.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/introduction.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/src/chapters/discussion.tex",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/scripts/figures/generators/comparative_dimensional_mechanisms.py"
+      ],
+      "anomaly": [
+        "open_goals.json",
+        "PHASE_8_FTHEORY_PROPOSAL.md",
+        "OpenGoals/PartnerIntegrality.lean",
+        "briefs/STREAM2_EFT_MATCHING_ANALYSIS.md",
+        "briefs/STREAM2_EFT_ESCALATION_STATUS.md",
+        "briefs/XAVIER_DECISION_EFT_MATCHING_UNLOCK_2026_07_25.md",
+        "briefs/DEEPTHINK_L2_PARTNERS_RESPONSE_2026_07_26.md",
+        "briefs/STREAM1_S1_10_11_12_STATUS_AND_UNBLOCK_2026_07_26.md",
+        "briefs/DEEPTHINK_REVIEW_REQUEST_S1_10_12_2026_07_26.md",
+        "Agora/Sequences/FormalSqrt.lean",
+        ".claude/projects/-home-callensxavier-gmail-com-SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal/memory/lean4_core_theorems.md",
+        "paper/sections/07-integrality.tex"
+      ],
+      "lattice": [
+        "ROADMAP.md",
+        ".zenodo.json",
+        "K3_CRITERIA.md",
+        "CLAUDE.md",
+        "TODO.md",
+        "STATUS_2026-07-24_PHASE_SETUP_COMPLETE.md",
+        "README.md",
+        "LL.md",
+        "K3_CRITERIA.MIRROR_FROM_STREAM2.md",
+        "EXECUTION_PLAN.md",
+        "lakefile.lean",
+        "checkers/check_C2_picard_lattice.py"
+      ],
+      "persistent_homology": [
+        "PHASE_8_FTHEORY_PROPOSAL.md",
+        "docs/REFERENCES.md",
+        "docs/statement_lock.json",
+        "Agora/Geometry/FTheoryFibration.lean",
+        "Agora/Unverified/DiscriminantLocus.lean",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/scripts/schemas/cff-schema.json"
+      ],
+      "eigensolver": [
+        "README.md",
+        "briefs/ESCALATIONS.md",
+        "Agora/Geometry/MnLattice.lean",
+        "Agora/Unverified/DualScaleStability.lean",
+        ".claude/projects/-home-callensxavier-gmail-com-SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal/memory/axioms_constraints_inventory.md",
+        ".claude/projects/-home-callensxavier-gmail-com-SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal/memory/dependencies_integration.md",
+        ".claude/projects/-home-callensxavier-gmail-com-SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal/memory/project_architecture.md",
+        "paper/sections/05-irreducibility.tex",
+        "external/Lean-QuantumInfo/TODO.md",
+        "external/Lean-QuantumInfo/DOC.md",
+        "external/Lean-QuantumInfo/QuantumInfo/ForMathlib/Majorization.lean",
+        "external/Lean-QuantumInfo/QuantumInfo/ForMathlib/Isometry.lean"
+      ],
+      "hpc": [
+        "briefs/CROSS_STREAM_STATE_AND_RESTART_2026_07_27.md",
+        "briefs/WP_S2G_X4_EXHIBITION_PLAN_2026_07_27.md",
+        "briefs/DEEPTHINK_ALIGNMENT_BRIEF_2026_07_27_NIGHT.md",
+        "external/Lean4PHYS/LeanPhysBench/LeanPhysBench_v0.json",
+        "external/Lean4PHYS/eval/scripts/slurm_launcher.py",
+        "external/zenodo_20290893/omega-pcf-01-hilbert-polya-65ab6d0/scripts/schemas/cff-schema.json"
+      ]
+    }
+  },
+  {
+    "root": "/home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-Home",
+    "readme": [
+      "# DarkMatterK3@Home",
+      "## Distributed Topological Analysis of the Cosmic Web via K3 Moduli Spaces",
+      "DarkMatterK3@Home is a planetary-scale distributed computing project aiming to prove that the macroscopic large-scale structure of the universe (the Cosmic Web) is homologically equivalent to the microscopic algebraic geometry of K3 surface moduli spaces (specifically the $S_{1,2}$ Picard-Fuchs integration path).",
+      "By crowdsourcing dormant compute power across standard web browsers and high-performance native computers, we are building a decentralized, elastic supercomputer to hunt for the topological signatures of Dark Energy and Chameleon Gravitino knots.",
+      "---",
+      "## ⚠️ Scientific status — read before citing any result (updated 2026-07-25)"
+    ],
+    "markers": [
+      "container",
+      "python"
+    ],
+    "mcp_servers": [],
+    "python_envs": {},
+    "files_scanned": 913,
+    "top_extensions": [
+      [
+        ".json",
+        433
+      ],
+      [
+        ".md",
+        239
+      ],
+      [
+        ".py",
+        209
+      ],
+      [
+        ".pdf",
+        48
+      ],
+      [
+        ".pth",
+        30
+      ],
+      [
+        ".png",
+        21
+      ],
+      [
+        ".pkl",
+        20
+      ],
+      [
+        ".tex",
+        16
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "real_euclid_worker.py",
+        "stream3_pipeline.py",
+        "v6_continuous_netrunner.py",
+        "PHASE4_FORMAL_REPORT_MASTER.tex",
+        "DarkMatterK3_Phase3_Report.tex",
+        "DarkEnergy_Amas_Certification.tex",
+        "boeinc_deployment_plan.md",
+        "V5_DualScale_K3_Discovery.tex",
+        "PHASE0_EXIT_CHECKLIST.md",
+        "formal_proof_generator.py",
+        "generate_tex.py",
+        "phase4_discovery_analyzer.py"
+      ],
+      "entanglement": [
+        "checkers/check_C3_sym2.py",
+        "briefs/ANALYSIS_PROTOCOL_DRAFT_2026_07_28.md",
+        "pipeline/compare_p1d.py"
+      ],
+      "anomaly": [
+        "real_euclid_worker.py",
+        "v6_continuous_netrunner.py",
+        "PHASE4_FORMAL_REPORT_MASTER.tex",
+        "DarkEnergy_Amas_Certification.tex",
+        "V5_DualScale_K3_Discovery.tex",
+        "formal_proof_generator.py",
+        "generate_tex.py",
+        "discoveries_cooper_s7.json",
+        "phase4_discovery_analyzer.py",
+        "phase8_design.md",
+        "v5experimentationplan.md",
+        "phase4_dashboard_server.py"
+      ],
+      "lattice": [
+        "STREAM3_AUTHORIZATION_SIGN_OFF_2026_07_25.md",
+        "K3_CRITERIA.md",
+        "PREDICTION.md",
+        "CLAUDE.md",
+        "ASSUMPTIONS.md",
+        "RELEASE_NOTES_v5.3.md",
+        "LEGACY_CODE_DISPOSITION_2026_07_25.md",
+        "README.md",
+        "NO_PREDICTION_BRANCH.md",
+        "PREDICTION_APPENDIX_A.md",
+        "K3_SELECTION_REPORT.md",
+        "EXECUTION_PLAN.md"
+      ],
+      "persistent_homology": [
+        "WP_A2_CIRCULARITY_AUDIT.md",
+        "LESSONS_LEARNED.md",
+        "DarkMatterK3_Phase3_Report.tex",
+        "boeinc_deployment_plan.md",
+        "RELEASE_NOTES.md",
+        "phase8_design.md",
+        "v5experimentationplan.md",
+        "V5_RIGOROUS_THEORY_PLAN.md",
+        "v5_cooper_worker.py",
+        "PHASE5_IMPLEMENTATION_PLAN.md",
+        "LEGACY_CODE_DISPOSITION_2026_07_25.md",
+        "LL.md"
+      ],
+      "gpu_cuda": [
+        "real_euclid_worker.py",
+        "ImplemenationPlanPhase1.md",
+        "v6_continuous_netrunner.py",
+        "v5experimentationplan.md",
+        "euclid_validation_run.py",
+        "RELEASE_NOTES_v5.3.md",
+        "pipeline_runs.json",
+        "report_callens_k3_validation.tex",
+        "v5_cooper_worker.py",
+        "README.md",
+        "report_callens_k3_validation_en.tex",
+        "PHASE2_QUICKSTART.md"
+      ],
+      "ode_dae_solver": [
+        "real_euclid_worker.py"
+      ],
+      "eigensolver": [
+        "cooper_periods.py",
+        "translations.py",
+        "briefs/WP_E6_P2A_COVARIANCE_RESULT_2026_07_29.md",
+        "briefs/WP_E6_BINMAP_C_RESULT_2026_07_31.md",
+        "briefs/EXECUTION_PLAN_2026_07_29_TWISTED_AND_WPE6.md",
+        "scripts/wp_e6_sweep_aggregate_9x9.py",
+        "scripts/wp_e6_binmap_c_extract.py",
+        "data/derived/wp_e6_covariance_2026_07_29.json",
+        "data/derived/wp_e6_binmap_c_cov_z4p2_2026_07_31.json",
+        "data/derived/wp_e6_sweep_cov_agg9_z4p2_2026_09_16.json",
+        "pipeline/binmap.py",
+        "pipeline/wp_e6_covariance.py"
+      ],
+      "hpc": [
+        "ImplemenationPlanPhase1.md",
+        "phase8_design.md",
+        "MEMORY.md",
+        "README.md",
+        "LL.md",
+        "DarkMatterK3_Halo_Detection_Validation.tex",
+        "astronomy_discovery_analyzer.py",
+        "full_plan_downloaded.md",
+        "phase1_work/agent1_emulator/lya-mfdm/neyman.py",
+        "briefs/FUTURE_PHASE_EMULATOR_EXTENSION_2026_07_27.md",
+        "briefs/CROSS_STREAM_STATE_AND_RESTART_2026_07_27.md",
+        "briefs/SOURCE_autoresearch_brief_2026_07_25.md"
+      ]
+    }
+  },
+  {
+    "root": "/home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter",
+    "readme": [
+      "# Dual-Scale Topological Universe Model",
+      "> **F6 disclosure (2026-07-24): C1/C2 lattice numbers retracted.** `check_C1.py` extracted",
+      "> singular loci as roots of the recurrence coefficient B(k) in the discrete **index k** and",
+      "> mislabeled them as z-space singular points, with **hardcoded** exponents → \"type II\". The",
+      "> resulting fibre configs and the Picard/transcendental numbers **ρ=4, T=18** (cooper_s7/s10",
+      "> partners, in prior `C1C2_LATTICE_REPORT` and v0.3.0) are **NOT valid** and are retracted"
+    ],
+    "markers": [
+      "container",
+      "lean",
+      "python"
+    ],
+    "mcp_servers": [
+      "leanmaster"
+    ],
+    "python_envs": {},
+    "files_scanned": 602,
+    "top_extensions": [
+      [
+        ".md",
+        242
+      ],
+      [
+        ".py",
+        175
+      ],
+      [
+        ".json",
+        94
+      ],
+      [
+        ".lean",
+        64
+      ],
+      [
+        ".pdf",
+        32
+      ],
+      [
+        ".txt",
+        23
+      ],
+      [
+        ".log",
+        18
+      ],
+      [
+        ".tex",
+        17
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "ROADMAP.md",
+        "AGORA_GUIDELINES.md",
+        "ASSUMPTIONS.md",
+        "README.md",
+        "VISION.md",
+        "ESCALATIONS.md",
+        "archive/pre-ledger/PROJECT_STATUS_TRACKER.md",
+        "archive/pre-ledger/K3xT2_DEEP_IMPROVEMENT_PLAN.md",
+        "archive/pre-ledger/K3_CRITERIA_INTERFACE.md",
+        "archive/pre-ledger/VALIDATION_GUIDE.md",
+        "archive/pre-ledger/DUAL_SCALE_THREE_STREAM_PLAN.md",
+        "archive/pre-ledger/DUAL_SCALE_HYPOTHESIS.md"
+      ],
+      "chern": [
+        "checkers/check_TW0_hodge_degree.py",
+        "manuscripts_and_proofs/Part_VIII_Hypothesis_Foundry.tex"
+      ],
+      "tight_binding": [
+        "lean4_formal_proofs/Agora/BimodalStability.lean",
+        "lean4_formal_proofs/Agora/Discovery/BimodalStability.lean"
+      ],
+      "entanglement": [
+        "AGORA_GUIDELINES.md",
+        "archive/pre-ledger/LL.md",
+        "empirical_crucible/verify_k3_gitn.py",
+        "scripts/neuro_symbolic_generalization_harness.py",
+        "lean4_formal_proofs/neuro_symbolic/K3_GITN_Integration.lean",
+        "lean4_formal_proofs/Structures/K3GitnBlueprint.lean"
+      ],
+      "tensor_network": [
+        "AGORA_GUIDELINES.md",
+        "archive/pre-ledger/AGORA_IMPLEMENTATION_PLAN.md",
+        "empirical_crucible/black_hole_gitn/gitn_model.py",
+        "lean4_formal_proofs/Structures/K3GitnBlueprint.lean",
+        "manuscripts_and_proofs/AGORA_EMPIRICAL_RESULTS_PHASE2.tex",
+        "manuscripts_and_proofs/DarkMatterK3_Phase2_Report.tex"
+      ],
+      "anomaly": [
+        "AUTORESEARCH_IMPLEMENTATION_GUIDE.md",
+        "archive/pre-ledger/V5_COOPER_S7_OBSERVATORY.md",
+        "archive/pre-ledger/AGORA_IMPLEMENTATION_PLAN.md",
+        "empirical_crucible/joint_epsilon_likelihood.py",
+        "empirical_crucible/_quarantine_cooper_s7_euclid_worker.py",
+        "empirical_crucible/empirical_resonance_matrix.md",
+        "empirical_crucible/class_fork_validation.py",
+        "checkers/check_s7_partner_integrality_modular.py",
+        "checkers/spike_disc_form_vs_atkin_lehner.py",
+        "docs/OEIS_FTHEORY_CLAIMS_REGISTER.md",
+        "docs/STREAM3_READINESS_MEMO.md",
+        "docs/STREAM2_CONTINGENCY_ANALYSIS_2026_07_25.md"
+      ],
+      "lattice": [
+        "ROADMAP.md",
+        "K3_CRITERIA.md",
+        "PREDICTION.md",
+        "CLAUDE.md",
+        "ASSUMPTIONS.md",
+        "TODO.md",
+        "README.md",
+        "ESCALATIONS.md",
+        "EXECUTION_PLAN.md",
+        "lakefile.lean",
+        "archive/pre-ledger/STREAM3_AUTHORIZATION_SIGN_OFF_2026_07_25.md",
+        "archive/pre-ledger/PROJECT_STATUS_TRACKER.md"
+      ],
+      "persistent_homology": [
+        "archive/pre-ledger/K3xT2_DEEP_IMPROVEMENT_PLAN.md",
+        "archive/pre-ledger/DUAL_SCALE_THREE_STREAM_PLAN.md",
+        "archive/pre-ledger/V5_COOPER_S7_OBSERVATORY.md",
+        "archive/pre-ledger/PHASE_1_CHECKLIST.md",
+        "empirical_crucible/black_hole_gitn/gitn_model.py",
+        "checkers/check_C2_transcendental_rank.py",
+        "docs/K3xT2_M24_MOONSHINE_CLAIMS_REGISTER_2026_09_16.md",
+        "docs/reference/dmk3_home/DarkMatterK3_Phase3_Report.tex",
+        "docs/reference/dmk3_home/AGORA_K3_T2_BRIDGE_PLAN.md",
+        "briefs/STREAM2_TO_STREAM3_WPE_SEQUENCE_REVIEW_2026_07_26.md",
+        "briefs/DEEPTHINK_M1_PROPOSAL_AS_RECEIVED_2026_07_26.md",
+        "scripts/project_rosetta_sieve.py"
+      ],
+      "gpu_cuda": [
+        "AGORA_GUIDELINES.md",
+        "archive/pre-ledger/RELEASE_v2.1.1_OPTIMIZATION.md",
+        "archive/pre-ledger/OPTIMIZATION_PARALLEL_EXECUTION_SUMMARY.md",
+        "archive/pre-ledger/README_PARALLEL_OPTIMIZATION_IN_PROGRESS.md",
+        "archive/pre-ledger/CURRENT_SESSION_CONTINUATION_STATUS.md",
+        "archive/pre-ledger/PHASE_1_CHECKLIST.md",
+        "archive/pre-ledger/AGORA_IMPLEMENTATION_PLAN.md",
+        "empirical_crucible/s2_1_singular_locus_observable_vectorized.py",
+        "empirical_crucible/run_parallel_battery_comparison.py",
+        "empirical_crucible/compare_battery_results.py",
+        "empirical_crucible/k3_gitn_results.json",
+        "empirical_crucible/_quarantine_cooper_s7_euclid_worker.py"
+      ],
+      "ode_dae_solver": [
+        "empirical_crucible/tracker_ics.py",
+        "empirical_crucible/joint_epsilon_likelihood.py",
+        "agora_ai_agents/Reviewer_Response.md",
+        "scripts/candelas_mcmc_aede.py",
+        "simulations/vafa_quintessence.py",
+        "manuscripts_and_proofs/DarkMatterK3_Phase2_Report.tex"
+      ],
+      "eigensolver": [
+        "AGORA_GUIDELINES.md",
+        "archive/pre-ledger/VALIDATION_GUIDE.md",
+        "archive/pre-ledger/CAVEATS.md",
+        "archive/pre-ledger/LL.md",
+        "archive/pre-ledger/scientificplan.md",
+        "empirical_crucible/verify_k3_gitn.py",
+        "empirical_crucible/black_hole_gitn/gitn_model.py",
+        "empirical_crucible/black_hole_gitn/test_gitn.py",
+        "checkers/check_NS_genus_G0.py",
+        "checkers/independent_rederivation_C2_s10_v4.py",
+        "checkers/check_M19_exhibition_small_n.py",
+        "checkers/check_C1_kodaira_consistency.py"
+      ],
+      "hpc": [
+        "archive/pre-ledger/CAVEATS.md",
+        "briefs/CROSS_STREAM_STATE_AND_RESTART_2026_07_27.md",
+        "briefs/WP_S2G_X4_EXHIBITION_PLAN_2026_07_27.md",
+        "briefs/DEEPTHINK_ALIGNMENT_BRIEF_2026_07_27_NIGHT.md",
+        "scripts/s21_bare_analysis.py"
+      ],
+      "mcp": [
+        ".mcp.json"
+      ]
+    }
+  },
+  {
+    "root": "/home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-LeanMaster",
+    "readme": [
+      "# SocrateAI Scientific Agora: LeanMaster Engine",
+      "### A Lean 4 Companion Formalization for Double Field Theory, Mathieu Moonshine Arithmetic & the Dual-Scale String Cosmology Proposal",
+      "[![Lean 4](https://img.shields.io/badge/Lean_4-v4.34.0--rc2-blue.svg)](https://leanprover.github.io/)",
+      "[![Zero Sorry](https://img.shields.io/badge/Kernel_Soundness-Strict_0_Sorry_(Certified)-success.svg)](https://github.com/xaviercallens/SocrateAI-Scientific-Agora-LeanMaster)",
+      "[![Free Parameters](https://img.shields.io/badge/Free_Parameters-0_(Conjecture%2C_Tier_C)-yellow.svg)](#3-a-zero-free-parameter-conjecture-what-is-and-isnt-mechanically-locked)",
+      "[![Solved Problems](https://img.shields.io/badge/Frontier_Problems-11_Certified-purple.svg)](#5-the-lean-5-scientific-agora-corpus-11-certified-frontier-problems)"
+    ],
+    "markers": [
+      "lean",
+      "python"
+    ],
+    "mcp_servers": [
+      "leanmaster"
+    ],
+    "python_envs": {},
+    "files_scanned": 2520,
+    "top_extensions": [
+      [
+        ".lean",
+        2410
+      ],
+      [
+        ".json",
+        38
+      ],
+      [
+        ".md",
+        30
+      ],
+      [
+        ".yaml",
+        22
+      ],
+      [
+        ".py",
+        19
+      ],
+      [
+        ".gitignore",
+        3
+      ],
+      [
+        "lean-toolchain",
+        3
+      ],
+      [
+        "LICENSE",
+        3
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "phase2_scorecard.md",
+        "ROADMAP.md",
+        "LEDGER.md",
+        "StringTheoryFoundation.lean",
+        "workflow.py",
+        "workflow_prove2me_sprint1.py",
+        "README.md",
+        "LL.md",
+        "workflowphase1run1.py",
+        "workflowphase2.py",
+        "phase1_run3_scorecard.md",
+        "LEAN5_SCIENTIFIC_CORPUS.md"
+      ],
+      "chern": [
+        "DualScaleStream2/Lattice/Mukai.lean",
+        "StringTheoryFormalization/StringDynamics/MukaiLattice.lean",
+        "StringTheoryFormalization/StringDynamics/TadpoleConstraint.lean",
+        "Lean5Corpus/Problems/Problem10_SYMInstanton.lean",
+        "prove2me_engine/dag_manifest.json",
+        "lean4basesource/lean-stat-learning-theory/SLT/GaussianLipConcen.lean",
+        "lean4basesource/lean-stat-learning-theory/SLT/HansonWright.lean",
+        "lean4basesource/lean-stat-learning-theory/SLT/SubGaussian.lean",
+        "lean4basesource/lean-stat-learning-theory/SLT/GaussianMeasure.lean",
+        "lean4basesource/lean-stat-learning-theory/SLT/MeasureInfrastructure.lean",
+        "lean4basesource/lean-stat-learning-theory/SLT/RMT/Basic.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/ProbabilisticMethodsInCombinatorics/report.json"
+      ],
+      "winding": [
+        "workflow.py",
+        "README.md",
+        "LL.md",
+        "foundation_retrieval_map.json",
+        "DUAL_SCALE_STRING_THEORY_PLAN.md",
+        "DualScaleStream2/TDuality/Spectrum.lean",
+        "DualScaleStream2/TDuality/Mirror.lean",
+        "DualScaleStream2/TDuality/ODD.lean",
+        "DualScaleStream2/TDuality/Factorized.lean",
+        "DualScaleStream2/DFT/GeneralizedMetric.lean",
+        "DualScaleStream2/DFT/SectionCondition.lean",
+        "DualScaleStream2/DualScale/TraceBound.lean"
+      ],
+      "berry": [
+        "lean4basesource/atlas-lean/v1/Atlas/TheoryOfProbability/report.json",
+        "lean4basesource/atlas-lean/v1/Atlas/TheoryOfProbability/targets.yaml",
+        "lean4basesource/atlas-lean/v1/Atlas/TheoryOfProbability/TheoryOfProbability.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/TheoryOfProbability/code/BerryEsseen.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/BooleanFunctions/report.json",
+        "lean4basesource/atlas-lean/v1/Atlas/BooleanFunctions/targets.yaml"
+      ],
+      "k_theory": [
+        "DualScaleM24Formalization.lean",
+        "LEDGER.md",
+        "LL.md",
+        "workflowphase2.py",
+        "RELEASE_PHASE1B.md",
+        "phase1b_completion_certificate.json",
+        "prove2me_engine/dag_manifest.json"
+      ],
+      "clifford": [
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/report.json",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/code/GaugeAction.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/code/ClassInstances.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/code/FourManifoldsSW.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/code/BundleDFS.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/code/SpinCConnectionsAffine.lean"
+      ],
+      "tight_binding": [
+        "FOUNDATIONS.md",
+        "lean4basesource/atlas-lean/v1/Atlas/DifferentialGeometry/report.json",
+        "lean4basesource/atlas-lean/v1/Atlas/DifferentialGeometry/targets.yaml",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/report.json",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/GeometryOfManifolds.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/targets.yaml",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/code/HamiltonianVectorFields.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/code/MoserDarboux.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/GeometryOfManifolds/code/ArnoldConjecture.lean"
+      ],
+      "entanglement": [
+        "ROADMAP.md",
+        "LEDGER.md",
+        "workflow.py",
+        "README.md",
+        "Lean5Corpus.lean",
+        "Lean5Corpus/Problems/Problem11_EntanglementEntropy.lean",
+        "prove2me_engine/dag_manifest.json"
+      ],
+      "tensor_network": [
+        "ROADMAP.md",
+        "StringTheoryFoundation.lean",
+        "workflow.py",
+        "LL.md",
+        "LEAN5_SCIENTIFIC_CORPUS.md",
+        "FOUNDATIONS.md",
+        "FINAL_SESSION_SUMMARY_2026_09_16.md",
+        "RELEASE_v2.0.0.md",
+        "memory.md",
+        "prove2me_engine/dag_manifest.json",
+        "autoresearch/README.md"
+      ],
+      "holography": [
+        "DualScaleM24Formalization.lean",
+        "ROADMAP.md",
+        "LEDGER.md",
+        "StringTheoryFoundation.lean",
+        "workflow.py",
+        "README.md",
+        "workflowphase2.py",
+        "LEAN5_SCIENTIFIC_CORPUS.md",
+        "RELEASE_PHASE1B.md",
+        "Lean5Corpus.lean",
+        "DualScaleValidation.lean",
+        "FINAL_SESSION_SUMMARY_2026_09_16.md"
+      ],
+      "anomaly": [
+        "README.md",
+        "workflowphase2.py",
+        "DualScaleStream2/Flux/Tadpole.lean",
+        "StringTheoryFormalization/UseCases/CriticalDimension.lean",
+        "StringTheoryFormalization/Frontier/CentralCharge.lean",
+        "StringTheoryFormalization/Frontier/HodgeNumbers.lean",
+        "prove2me_engine/dag_manifest.json"
+      ],
+      "lattice": [
+        "phase2_scorecard.md",
+        "CLAUDE.md",
+        "LEDGER.md",
+        "StringTheoryFoundation.lean",
+        "workflow.py",
+        "workflow_prove2me_sprint1.py",
+        "StringTheoryFormalization.lean",
+        "README.md",
+        "LL.md",
+        "workflowphase1run1.py",
+        "DualScaleStream2.lean",
+        "phase1_run3_scorecard.md"
+      ],
+      "persistent_homology": [
+        "StringTheoryFoundation.lean",
+        "LL.md",
+        "workflowphase1run1.py",
+        "phase1_run3_scorecard.md",
+        "FOUNDATIONS.md",
+        "phase1_run2_scorecard.md",
+        "workflowphase1run2.py",
+        "workflowphase1run3.py",
+        "LEAN_CACHE_OPTIMIZATION.md",
+        "workflow_dual_scale_validation.py",
+        "PEER_REVIEW_REPORT.md",
+        "StringTheoryFormalization/UseCases/K3SignatureTheorem.lean"
+      ],
+      "gpu_cuda": [
+        "autoresearch/prepare.py",
+        "autoresearch/train.py"
+      ],
+      "ode_dae_solver": [
+        "StringTheoryFormalization/StringDynamics/StiffIntegrators.lean"
+      ],
+      "eigensolver": [
+        "HANDOFF_STREAM2_KICKOFF.md",
+        "LL.md",
+        "FOUNDATIONS.md",
+        "DualScaleStream2/DualScale/TraceBound.lean",
+        "DualScaleStream2/Lattice/K3T2Signature.lean",
+        "DualScaleStream2/Lattice/Hyperbolic.lean",
+        "DualScaleStream2/Orientifold/CrystallographicOrders.lean",
+        "DualScaleStream2/Orientifold/CrystallographicArithmetic.lean",
+        "DualScaleStream2/Orientifold/Crystallography.lean",
+        "StringTheoryFormalization/StringDynamics/StiffIntegrators.lean",
+        "DualScaleDyons/TwistedDyons.lean",
+        "prove2me_engine/dag_manifest.json"
+      ],
+      "hpc": [
+        "ROADMAP.md",
+        "LEDGER.md",
+        "DUAL_SCALE_STRING_THEORY_PLAN.md",
+        "DualScaleDyons/ForgerE4.lean",
+        "DualScaleDyons/WhichK3.lean",
+        "DualScaleDyons/KummerOmegaE4.lean",
+        "DualScaleDyons/KummerD4.lean",
+        "DualScaleDyons/FormAutomorphs.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/DifferentialAnalysis/code/HadamardFTCIdentity.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/NumberTheoryI/targets.yaml",
+        "lean4basesource/atlas-lean/v1/Atlas/NumberTheoryI/code/GlobalCFTMain.lean",
+        "lean4basesource/atlas-lean/v1/Atlas/Buildings/code/Building/InfinityMaps.lean"
+      ],
+      "mcp": [
+        "README.md",
+        ".mcp.json",
+        "lean4basesource/lean-stat-learning-theory/README.md",
+        "lean4basesource/lean-stat-learning-theory/vibe-recipe/README.md"
+      ]
+    }
+  },
+  {
+    "root": "/home/callensxavier_gmail_com/SocrateAI-Scientific-DualScaleSimulator",
+    "readme": [],
+    "markers": [
+      "lean",
+      "python",
+      "rust"
+    ],
+    "mcp_servers": [],
+    "python_envs": {
+      ".venv-tda/python3.10": [
+        "gudhi",
+        "scipy",
+        "sympy"
+      ]
+    },
+    "files_scanned": 519,
+    "top_extensions": [
+      [
+        ".json",
+        213
+      ],
+      [
+        ".py",
+        213
+      ],
+      [
+        ".md",
+        47
+      ],
+      [
+        ".png",
+        39
+      ],
+      [
+        ".txt",
+        29
+      ],
+      [
+        ".lean",
+        26
+      ],
+      [
+        ".csv",
+        18
+      ],
+      [
+        ".pdf",
+        13
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "workshopcosmo.py",
+        "lakefile.lean",
+        ".zenodo.json",
+        "proofs/GysinBEMSequence.lean",
+        "proofs/KummerOrbifoldResolution.lean",
+        "proofs/FTheoryCosmology.lean",
+        "proofs/BuscherRules.lean",
+        "proofs/KummerTDAAnomalyCertification.lean",
+        "proofs/TachyonCondensationKTheory.lean",
+        "proofs/LeanscratchDB/TopologicalTDuality.lean",
+        "proofs/LeanscratchDB/HoloAlg.lean",
+        "deployment/huggingface/README.md"
+      ],
+      "chern": [
+        "proofs/GysinBEMSequence.lean",
+        "proofs/FourierMukai.lean",
+        "proofs/MukaiLatticeK3.lean",
+        "proofs/TachyonCondensationKTheory.lean",
+        "proofs/DbraneBoundaryStates.lean",
+        "deployment/huggingface/space/leanflow/core/dbrane_inflow.py",
+        "deployment/huggingface/space/leanflow/datasets/cicy.py",
+        "papers/leanflow-engine/leanflow_engine.tex",
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "papers/T-dulaity alone/submission/COMMUNITY_DEFENSE_PLAYBOOK.md",
+        "papers/T-dulaity alone/submission/CONFERENCE_PITCH_AND_SEMINAR.md",
+        "zenodo_bundle/T_duality_Alone.tex"
+      ],
+      "winding": [
+        "proofs/SwamplandDistanceConjecture.lean",
+        "proofs/KummerTDAAnomalyCertification.lean",
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "papers/T-dulaity alone/submission/COMMUNITY_DEFENSE_PLAYBOOK.md",
+        "papers/T-dulaity alone/submission/CONFERENCE_PITCH_AND_SEMINAR.md",
+        "zenodo_bundle/T_duality_Alone.tex",
+        "rust_simulator/src/swampland_geodesic.rs",
+        "audit/physics_claims_ledger.md",
+        "audit/physics_findings.json",
+        "audit/k3t2_rigidity_v2/agreement_ledger_v2.json",
+        "audit/k3t2_rigidity_v2/comparison.json",
+        "audit/reverse_zero/ledger_reverse_zero.json"
+      ],
+      "k_theory": [
+        "workshopcosmo.py",
+        "lakefile.lean",
+        "frontier_loops_summary.json",
+        "tachyon_condensation_summary.json",
+        "proofs/TachyonCondensationKTheory.lean",
+        "proofs/LeanscratchDB/HoloAlg.lean",
+        "deployment/huggingface/space/leanflow/bridge/lean_ipc.py",
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "papers/T-dulaity alone/submission/COMMUNITY_DEFENSE_PLAYBOOK.md",
+        "papers/T-dulaity alone/submission/CONFERENCE_PITCH_AND_SEMINAR.md",
+        "tests/test_phase2_leanflow.py",
+        "tests/test_workshopcosmo.py"
+      ],
+      "clifford": [
+        "audit/k3t2_rigidity/comparison.json",
+        "audit/k3t2_rigidity/REPORT.md",
+        "audit/k3t2_rigidity/agreement_ledger.json",
+        "audit/k3t2_rigidity/tda-gudhi/06_pointcloud_results.json",
+        "audit/k3t2_rigidity/tda-gudhi/00_master_summary.py",
+        "audit/k3t2_rigidity/tda-gudhi/06_pointcloud_clifford_torus.py",
+        "audit/k3t2_rigidity/tda-gudhi/00_master_summary.json",
+        "audit/k3t2_rigidity/skeptic/rerun_all.sh"
+      ],
+      "entanglement": [
+        "lakefile.lean",
+        "proofs/LeanscratchDB/QuantumEntanglement.lean",
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "zenodo_bundle/T_duality_Alone.tex",
+        "audit/physics_claims_ledger.md",
+        "audit/lean_replacement_map.md",
+        "audit/physics_findings.json",
+        "audit/lean_axiom_report.json",
+        "specs/spec phase 1.md"
+      ],
+      "holography": [
+        "workshopcosmo.py",
+        "frontier_loops_summary.json",
+        "proofs/FluxVacuumDecayCTheorem.lean",
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "papers/T-dulaity alone/submission/COVER_LETTER_JHEP.tex",
+        "papers/T-dulaity alone/submission/COVER_LETTER_SCIPOST.tex",
+        "papers/T-dulaity alone/submission/CONFERENCE_PITCH_AND_SEMINAR.md",
+        "tests/test_workshopcosmo.py",
+        "zenodo_bundle/T_duality_Alone.tex",
+        "rust_simulator/src/main.rs",
+        "audit/physics_claims_ledger.md",
+        "audit/parameter_reduction_proposal.md"
+      ],
+      "anomaly": [
+        "workshopcosmo.py",
+        "simulation_results.json",
+        "lakefile.lean",
+        "parameter_sweep_results.json",
+        "proofs/GysinBEMSequence.lean",
+        "proofs/TadpoleCancellation.lean",
+        "proofs/KummerTDAAnomalyCertification.lean",
+        "proofs/DbraneBoundaryStates.lean",
+        "proofs/LeanscratchDB/HoloAlg.lean",
+        "deployment/huggingface/space/app.py",
+        "deployment/huggingface/space/README.md",
+        "deployment/huggingface/space/leanflow/working_groups/topological_defects.py"
+      ],
+      "lattice": [
+        "lakefile.lean",
+        ".zenodo.json",
+        "proofs/MukaiLatticeK3.lean",
+        "deployment/huggingface/space/leanflow/datasets/kreuzer_skarke.py",
+        "papers/leanflow-engine/leanflow_engine.tex",
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "papers/T-dulaity alone/submission/COVER_LETTER_CPC.tex",
+        "tests/test_stream1_bridge.py",
+        "zenodo_bundle/STREAM1_BRIDGE.md",
+        "zenodo_bundle/PRE_REGISTRATION.md",
+        "zenodo_bundle/T_duality_Alone.tex",
+        "zenodo_bundle/.zenodo.json"
+      ],
+      "persistent_homology": [
+        "workshopcosmo.py",
+        "tda_mapper_skeleton.json",
+        "proofs/KummerOrbifoldResolution.lean",
+        "proofs/FluxVacuumDecayCTheorem.lean",
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "papers/T-dulaity alone/submission/COVER_LETTER_CPC.tex",
+        "papers/T-dulaity alone/submission/COVER_LETTER_JHEP.tex",
+        "papers/T-dulaity alone/submission/COMMUNITY_DEFENSE_PLAYBOOK.md",
+        "papers/T-dulaity alone/submission/COVER_LETTER_SCIPOST.tex",
+        "papers/T-dulaity alone/submission/CONFERENCE_PITCH_AND_SEMINAR.md",
+        "tests/test_workshopcosmo.py",
+        "tests/test_cross_consistency.py"
+      ],
+      "gpu_cuda": [
+        "scripts/generate_colab_notebook.py"
+      ],
+      "ode_dae_solver": [
+        "workshopcosmo.py",
+        "simulation_results.json",
+        ".zenodo.json",
+        "deployment/huggingface/space/leanflow/core/solver.py",
+        "papers/leanflow-engine/README.md",
+        "papers/leanflow-engine/leanflow_engine.tex",
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "papers/T-dulaity alone/Simulatot Phase 2.md",
+        "papers/T-dulaity alone/submission/COVER_LETTER_CPC.tex",
+        "papers/T-dulaity alone/submission/SOCIAL_AND_COMMUNITY_ANNOUNCEMENT.md",
+        "papers/T-dulaity alone/submission/CONFERENCE_PITCH_AND_SEMINAR.md",
+        "tests/test_workshopcosmo.py"
+      ],
+      "eigensolver": [
+        "proofs/KummerOrbifoldResolution.lean",
+        "proofs/DbraneBoundaryStates.lean",
+        "deployment/huggingface/models/quintic_metric_pinn.py",
+        "deployment/huggingface/space/app.py",
+        "deployment/huggingface/space/leanflow/working_groups/cymetric_kahler.py",
+        "deployment/huggingface/space/leanflow/core/projections.py",
+        "papers/leanflow-engine/README.md",
+        "papers/leanflow-engine/leanflow_engine.tex",
+        "papers/T-dulaity alone/submission/SOCIAL_AND_COMMUNITY_ANNOUNCEMENT.md",
+        "papers/T-dulaity alone/submission/CONFERENCE_PITCH_AND_SEMINAR.md",
+        "examples/phase2_string_community_quickstart.py",
+        "tests/test_phase2_leanflow.py"
+      ],
+      "hpc": [
+        "papers/T-dulaity alone/T_duality_Alone.tex",
+        "zenodo_bundle/T_duality_Alone.tex",
+        "scripts/deploy_leanflow_serverless.sh"
+      ]
+    }
+  },
+  {
+    "root": "/home/callensxavier_gmail_com/SocrateAI-Scientific-Mensura",
+    "readme": [
+      "# SOCRATES",
+      "**Dual-Scale Topological Geometry and the Regularization of Singular Cascades**",
+      "*Computational companion to the Socrate AI Lab programme on Navier–Stokes global regularity.*",
+      "This repository is the **Tier B layer** of the programme described in",
+      "`paper/` — the exact-arithmetic and numerical-experiment counterpart to the",
+      "Lean 4 kernel certificates (Tier A). Every claim here is decided by computation:"
+    ],
+    "markers": [
+      "lean",
+      "python",
+      "rust"
+    ],
+    "mcp_servers": [],
+    "python_envs": {},
+    "files_scanned": 213,
+    "top_extensions": [
+      [
+        ".py",
+        147
+      ],
+      [
+        ".json",
+        37
+      ],
+      [
+        ".md",
+        16
+      ],
+      [
+        ".log",
+        12
+      ],
+      [
+        ".png",
+        6
+      ],
+      [
+        ".tex",
+        4
+      ],
+      [
+        ".pdf",
+        4
+      ],
+      [
+        ".toml",
+        3
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "README.md",
+        "pyproject.toml",
+        "src/socrates/__init__.py",
+        "src/socrates/hypergraph/pointcloud.py",
+        "src/socrates/hypergraph/cic.py",
+        "src/socrates/tda/__init__.py",
+        "src/socrates/tda/persistence.py",
+        "src/socrates/core/variety.py",
+        "src/socrates/cosmos/__init__.py",
+        "src/socrates/cosmos/nbody.py",
+        "src/socrates/cosmos/cosmic_web.py",
+        "reports/MENSURA_Phase2_Stage2_Report_FR.tex"
+      ],
+      "tight_binding": [
+        "src/socrates/solvers/symplectic.py",
+        "src/socrates/solvers/__init__.py",
+        "docs/MENSURA_BENCHMARK.md",
+        "scripts/hypergraph_benchmark/01_harmonic_oscillator.py",
+        "scripts/hypergraph_benchmark/round2/01_harmonic_oscillator.py"
+      ],
+      "holography": [
+        "docs/W1_sym2_contract.md",
+        "paper/REVIEW_haloalg.md",
+        "paper/haloalg_spec.md"
+      ],
+      "anomaly": [
+        "docs/FINDINGS.md",
+        "docs/LL.md",
+        "docs/IMPLEMENTATION_PLAN.md",
+        ".claude/skills/decisive-experiment/SKILL.md",
+        ".claude/skills/mensura/SKILL.md",
+        "scripts/visualize_results.py",
+        "scripts/hypergraph_benchmark/06_brownian_motion.py"
+      ],
+      "lattice": [
+        "src/socrates/hypergraph/pointcloud.py",
+        "src/socrates/hypergraph/cic.py",
+        "src/socrates/hypergraph/dimension.py",
+        "src/socrates/hypergraph/comparison.py",
+        "src/socrates/cosmos/nbody.py",
+        "reports/MENSURA_Phase2_Stage2_Report_EN.tex",
+        "docs/HYPERGRAPH_NOTES.md",
+        "docs/LL.md",
+        "docs/MENSURA_BENCHMARK.md",
+        "lean/CallensDualScale.lean",
+        "tests/test_hypergraph_comparison.py",
+        "tests/test_hypergraph_dimension_saturation.py"
+      ],
+      "persistent_homology": [
+        "README.md",
+        "pyproject.toml",
+        "src/socrates/__init__.py",
+        "src/socrates/tda/__init__.py",
+        "src/socrates/tda/persistence.py",
+        "src/socrates/core/variety.py",
+        "src/socrates/cosmos/fetch.py",
+        "src/socrates/cosmos/cosmic_web.py",
+        "docs/W1_sym2_contract.md",
+        "scripts/visualize_results.py"
+      ],
+      "ode_dae_solver": [
+        "src/socrates/cosmos/nbody.py",
+        "reports/SOCRATES_Stage1_Report_EN.tex",
+        "reports/SOCRATES_Stage1_Report_FR.tex",
+        "docs/MENSURA_BENCHMARK.md",
+        "scripts/generate_reports.py",
+        "scripts/hypergraph_benchmark/05_quasiperiodic_torus.py",
+        "scripts/hypergraph_benchmark/round3/n8_near_constant_shell_gate.py"
+      ],
+      "eigensolver": [
+        "src/socrates/hypergraph/pointcloud.py",
+        "src/socrates/dualscale/shell_sym2.py",
+        "docs/MENSURA_BENCH_V2.md",
+        "docs/W1_sym2_contract.md",
+        "docs/STAGE1_ACHIEVEMENTS.md",
+        "scripts/visualize_results.py",
+        "scripts/hypergraph_benchmark/07_restricted_three_body.py",
+        "scripts/hypergraph_benchmark/round3/07_restricted_three_body.py",
+        "scripts/hypergraph_benchmark/round2/07_restricted_three_body.py",
+        "scripts/hypergraph_benchmark/diagnostics/f3_lyapunov_ref.py",
+        "scripts/hypergraph_benchmark/v2/scale_aware_v2.py",
+        "scripts/hypergraph_benchmark/v2/scale_aware_prototype.py"
+      ],
+      "hpc": [
+        "paper/haloalg_spec.md"
+      ]
+    }
+  },
+  {
+    "root": "/home/callensxavier_gmail_com/SocrateAI-Wolfram-Hypergraph",
+    "readme": [
+      "# SocrateAI Stream 4: Discrete Hypergraph Cosmology & Wolfram CAG",
+      "**Repository**: `xaviercallens/SocrateAI-Wolfram-Hypergraph`",
+      "**Target Branch**: `feature/gcp-alpha-antigravity` / `experimental/stream4-cag-poc`",
+      "---",
+      "## 🌌 Architectural Pivot: RAG to CAG",
+      "This repository implements the **Computation-Augmented Generation (CAG)** paradigm for the **Dual-Scale Topological Universe Model**."
+    ],
+    "markers": [
+      "container",
+      "python"
+    ],
+    "mcp_servers": [],
+    "python_envs": {},
+    "files_scanned": 34,
+    "top_extensions": [
+      [
+        ".py",
+        28
+      ],
+      [
+        ".lean",
+        4
+      ],
+      [
+        ".md",
+        1
+      ],
+      [
+        ".toml",
+        1
+      ],
+      [
+        ".tf",
+        1
+      ],
+      [
+        "Dockerfile",
+        1
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "README.md",
+        "agents/topology_agent/topology_agent.py",
+        "agents/core/base_agent.py",
+        "proofs/Lean4/Oligon_Topology.lean",
+        "proofs/Lean4/K3_Surfaces.lean",
+        "hypergraph/gpu_accelerated_engine.py",
+        "hypergraph/oligon_simulations/oligon_mfdm_mapper.py",
+        "mcp/tools/cosmology_data.py",
+        "tests/test_oligon_mapping.py"
+      ],
+      "winding": [
+        "hypergraph/oligon_simulations/oligon_mfdm_mapper.py",
+        "tests/test_oligon_mapping.py"
+      ],
+      "anomaly": [
+        "proofs/Lean4/Oligon_Topology.lean"
+      ],
+      "persistent_homology": [
+        "proofs/Lean4/Oligon_Topology.lean",
+        "proofs/Lean4/K3_Surfaces.lean"
+      ],
+      "gpu_cuda": [
+        "agents/topology_agent/topology_agent.py",
+        "hypergraph/gpu_accelerated_engine.py",
+        "tests/test_gpu_engine.py"
+      ],
+      "hpc": [
+        "gcp-infrastructure/cloud_run/app.py"
+      ],
+      "mcp": [
+        "README.md",
+        "agents/core/base_agent.py",
+        "agents/cosmology_agent/cosmology_agent.py",
+        "mcp/tools/unit_manager.py",
+        "mcp/tools/cosmology_data.py",
+        "mcp/tools/evaluate_symbolic.py",
+        "tests/test_oligon_mapping.py",
+        "gcp-infrastructure/cloud_run/app.py"
+      ]
+    }
+  },
+  {
+    "root": "/home/callensxavier_gmail_com/runux-ai-runtime",
+    "readme": [
+      "<h1 align=\"center\">RunuX AI Runtime</h1>",
+      "<p align=\"center\">",
+      "<em>A research runtime in Rust and Python for memory-efficient LLM inference —<br>",
+      "KV-cache compression, deterministic integer attention and hardware-aware scheduling.</em>",
+      "</p>",
+      "<p align=\"center\">"
+    ],
+    "markers": [
+      "container",
+      "lean",
+      "python",
+      "rust"
+    ],
+    "mcp_servers": [],
+    "python_envs": {},
+    "files_scanned": 461,
+    "top_extensions": [
+      [
+        ".py",
+        147
+      ],
+      [
+        ".json",
+        100
+      ],
+      [
+        ".md",
+        96
+      ],
+      [
+        ".rs",
+        37
+      ],
+      [
+        ".toml",
+        36
+      ],
+      [
+        ".sh",
+        16
+      ],
+      [
+        ".lean",
+        16
+      ],
+      [
+        ".log",
+        12
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "docs/SPEC_AIENGINE_V10.md",
+        "docs/SYMBRAIN_V4.md",
+        "docs/SPEC_SYMBRAIN_V4.md",
+        "scripts/query_scientific_qa.py",
+        "scripts/biomimetic_training/peer_review_loop.py",
+        "scripts/biomimetic_training/SOCRATE_AI_LAB_PAPER.md",
+        "scripts/biomimetic_training/run_socratic_peer_review_loop.py",
+        "scripts/biomimetic_training/autoresearch_run_99pct/peer_reviews_99pct.json",
+        "scripts/biomimetic_training/autoresearch_run_99pct/RESEARCH_REPORT_99PCT.md",
+        "eval/french_concours/exam_bank.py",
+        "symbrain_v4/inference_server_v4.py",
+        "symbrain_v4/pfc_calibrated.py"
+      ],
+      "winding": [
+        "eval/french_concours/exam_bank.py"
+      ],
+      "tight_binding": [
+        "docs/SPEC_SCIML_V1.md",
+        "docs/SYMBRAIN_V4.md",
+        "docs/SPEC_SYMBRAIN_V4.md",
+        "scripts/quantum_ltn/simulator.py",
+        "scripts/quantum_ltn/bench_ea_spin_glass.py",
+        "scripts/quantum_ltn/PAPER_DRAFT.md",
+        "symbrain_v4/pfc_calibrated.py"
+      ],
+      "entanglement": [
+        "SPECS.md",
+        "docs/SPEC_SCIML_V1.md",
+        "scripts/biomimetic_training/inference_server.py",
+        "scripts/biomimetic_training/test_serverless_mathematician.py",
+        "scripts/biomimetic_training/autoresearch_run_99pct/peer_reviews_99pct.json",
+        "scripts/biomimetic_training/autoresearch_run_99pct/RESEARCH_REPORT_99PCT.md",
+        "scripts/biomimetic_training/autoresearch_run_20260526T204248/RESEARCH_REPORT.md",
+        "scripts/biomimetic_training/autoresearch_run_20260526T204248/peer_reviews.json",
+        "scripts/quantum_ltn/HF_DATASET_README.md",
+        "scripts/quantum_ltn/simulator.py",
+        "scripts/quantum_ltn/PAPER_DRAFT.md"
+      ],
+      "tensor_network": [
+        "ROADMAP.md",
+        "TODO.md",
+        "SPECS.md",
+        "benchmarks/tpu_large/publish_proof_paper.py",
+        "benchmarks/tpu_large/spec_proof_paper.md",
+        "benchmarks/tpu_large/compile_academic_papers.py",
+        "examples/macos_m2_inference_demo/src/main.rs",
+        "docs/COMPARATIVE_ANALYSIS.md",
+        "docs/PHYSICS_SUSTAINABILITY_BRAINSTORM.md",
+        "docs/AUDIT_REPORT.md",
+        "docs/SPEC_SCIML_V1.md",
+        "docs/SPEC_RUNUX_V1.md"
+      ],
+      "anomaly": [
+        "docs/NEURO_SYMBOLIC_INFERENCE.md",
+        "docs/SYMBRAIN_V4.md",
+        "scripts/biomimetic_training/gemini_peer_review.py",
+        "eval/peer_review.py",
+        "symbrain_v4/pfc_calibrated.py",
+        "spec/RunuxSpec/PFCRouter.lean"
+      ],
+      "lattice": [
+        "docs/SPEC_SCIML_V1.md",
+        "scripts/quantum_ltn/HF_DATASET_README.md",
+        "scripts/quantum_ltn/simulator.py",
+        "scripts/quantum_ltn/HF_MODEL_README.md",
+        "scripts/quantum_ltn/PAPER_DRAFT.md"
+      ],
+      "persistent_homology": [
+        "workflow_soak_benchmark.py",
+        "MEMORY.md",
+        "monitor_t4_1hour_benchmark.py",
+        "scripts/biomimetic_training/autoresearch_90pct.py",
+        "scripts/biomimetic_training/autoresearch_run_99pct/peer_reviews_99pct.json",
+        "scripts/biomimetic_training/autoresearch_run_99pct/RESEARCH_REPORT_99PCT.md"
+      ],
+      "gpu_cuda": [
+        "IMPROVEMENT_PLAN.md",
+        "workflow_soak_benchmark.py",
+        "MEMORY.md",
+        "LOCAL_80PCT_ROADMAP.md",
+        "validate_gpu_t4.py",
+        "GPU_T4_VALIDATION_REPORT.md",
+        "GPU_T4_DEEP_VALIDATION.md",
+        "AUDIT_REPORT.md",
+        "README.md",
+        "monitor_t4_1hour_benchmark.py",
+        "workflowscientificproof.py",
+        "pyproject.toml"
+      ],
+      "ode_dae_solver": [
+        "workflowNSEsimu.py",
+        "autoresearch_agent/orchestrator.py",
+        "autoresearch_agent/physics_validator.py"
+      ],
+      "eigensolver": [
+        "docs/SPEC_SYMBRAIN_V1.md",
+        "docs/SPEC_SYMBRAIN_V4.md",
+        "docs/SYMBRAIN_V4_IMPROVEMENT_PROPOSAL.md",
+        "scripts/query_symbrain_math.py",
+        "scripts/biomimetic_training/test_math_scenarios.py",
+        "eval/french_concours/exam_bank.py",
+        "symbrain_v4/inference_server_v4.py",
+        "symbrain_v4/pfc_calibrated.py"
+      ],
+      "hpc": [
+        "MEMORY.md",
+        "workflowscientificproof.py",
+        "docs/SPEC_SYMBRAIN_V1.md",
+        "docs/SPEC_SYMBRAIN_V3.md",
+        "docs/SYMBRAIN_V4.md",
+        "docs/SPEC_SYMBRAIN_V4.md",
+        "legal/patents/INPI_DEMANDE_BREVET_PROVISOIRE_RUNUX.md",
+        "deploy/deploy.sh",
+        "deploy/cloudbuild.yaml",
+        "deploy/monitor_cost_deployment.sh",
+        "scripts/reconduct_v3_benchmarks.py",
+        "scripts/biomimetic_training/gemini_peer_review.py"
+      ]
+    }
+  },
+  {
+    "root": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/DarkMatterK3-Home-stream4-diagnostics",
+    "readme": [
+      "# Stream-4 AlphaEvolve convergence diagnostics (auto-snapshot branch)",
+      "**EXPLORATORY SANDBOX — Stream-4 material (CLAUDE.md ledger item 5, T0 ruling DL-3,",
+      "2026-07-31). Not citable as evidence in Streams 1–3 or any Tier A/B/C claim.**",
+      "This orphan branch holds snapshots of the harvest daemon's convergence figures for the",
+      "AlphaEvolve evolutionary run(s) synced from the GCS datalake. Per T0 ruling 2026-09-16",
+      "(`briefs/T0_RULINGS_2026_09_16.md` §A4 on `main`), these figures are no longer refreshed on"
+    ],
+    "markers": [],
+    "mcp_servers": [],
+    "python_envs": {},
+    "files_scanned": 2,
+    "top_extensions": [
+      [
+        ".png",
+        2
+      ],
+      [
+        ".git",
+        1
+      ],
+      [
+        ".md",
+        1
+      ],
+      [
+        ".json",
+        1
+      ]
+    ],
+    "keywords": {}
+  },
+  {
+    "root": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/S2-sandbox-r2-overnight-sweep",
+    "readme": [
+      "# Dual-Scale Topological Universe Model",
+      "> **F6 disclosure (2026-07-24): C1/C2 lattice numbers retracted.** `check_C1.py` extracted",
+      "> singular loci as roots of the recurrence coefficient B(k) in the discrete **index k** and",
+      "> mislabeled them as z-space singular points, with **hardcoded** exponents → \"type II\". The",
+      "> resulting fibre configs and the Picard/transcendental numbers **ρ=4, T=18** (cooper_s7/s10",
+      "> partners, in prior `C1C2_LATTICE_REPORT` and v0.3.0) are **NOT valid** and are retracted"
+    ],
+    "markers": [
+      "container",
+      "lean",
+      "python"
+    ],
+    "mcp_servers": [],
+    "python_envs": {},
+    "files_scanned": 542,
+    "top_extensions": [
+      [
+        ".md",
+        222
+      ],
+      [
+        ".py",
+        155
+      ],
+      [
+        ".json",
+        80
+      ],
+      [
+        ".lean",
+        59
+      ],
+      [
+        ".pdf",
+        20
+      ],
+      [
+        ".txt",
+        18
+      ],
+      [
+        ".tex",
+        17
+      ],
+      [
+        ".sh",
+        8
+      ]
+    ],
+    "keywords": {
+      "topology": [
+        "PROJECT_STATUS_TRACKER.md",
+        "ROADMAP.md",
+        "K3xT2_DEEP_IMPROVEMENT_PLAN.md",
+        "AGORA_GUIDELINES.md",
+        "K3_CRITERIA_INTERFACE.md",
+        "ASSUMPTIONS.md",
+        "VALIDATION_GUIDE.md",
+        "DUAL_SCALE_THREE_STREAM_PLAN.md",
+        "DUAL_SCALE_HYPOTHESIS.md",
+        "README.md",
+        "CAVEATS.md",
+        "V5_COOPER_S7_OBSERVATORY.md"
+      ],
+      "chern": [
+        "checkers/check_TW0_hodge_degree.py",
+        "manuscripts_and_proofs/Part_VIII_Hypothesis_Foundry.tex"
+      ],
+      "tight_binding": [
+        "lean4_formal_proofs/Agora/BimodalStability.lean",
+        "lean4_formal_proofs/Agora/Discovery/BimodalStability.lean"
+      ],
+      "entanglement": [
+        "AGORA_GUIDELINES.md",
+        "LL.md",
+        "empirical_crucible/verify_k3_gitn.py",
+        "docs/reference/el_naschie_2013.md",
+        "scripts/neuro_symbolic_generalization_harness.py",
+        "lean4_formal_proofs/neuro_symbolic/K3_GITN_Integration.lean",
+        "lean4_formal_proofs/Structures/K3GitnBlueprint.lean"
+      ],
+      "tensor_network": [
+        "AGORA_GUIDELINES.md",
+        "AGORA_IMPLEMENTATION_PLAN.md",
+        "empirical_crucible/black_hole_gitn/gitn_model.py",
+        "lean4_formal_proofs/Structures/K3GitnBlueprint.lean",
+        "manuscripts_and_proofs/AGORA_EMPIRICAL_RESULTS_PHASE2.tex",
+        "manuscripts_and_proofs/DarkMatterK3_Phase2_Report.tex"
+      ],
+      "anomaly": [
+        "V5_COOPER_S7_OBSERVATORY.md",
+        "AUTORESEARCH_IMPLEMENTATION_GUIDE.md",
+        "AGORA_IMPLEMENTATION_PLAN.md",
+        "empirical_crucible/joint_epsilon_likelihood.py",
+        "empirical_crucible/_quarantine_cooper_s7_euclid_worker.py",
+        "empirical_crucible/empirical_resonance_matrix.md",
+        "empirical_crucible/class_fork_validation.py",
+        "checkers/check_s7_partner_integrality_modular.py",
+        "docs/OEIS_FTHEORY_CLAIMS_REGISTER.md",
+        "docs/STREAM3_READINESS_MEMO.md",
+        "docs/STREAM2_CONTINGENCY_ANALYSIS_2026_07_25.md",
+        "docs/gap1/ORDER_VERIFICATION_FINDINGS.md"
+      ],
+      "lattice": [
+        "STREAM3_AUTHORIZATION_SIGN_OFF_2026_07_25.md",
+        "PROJECT_STATUS_TRACKER.md",
+        "ROADMAP.md",
+        "K3xT2_DEEP_IMPROVEMENT_PLAN.md",
+        "K3_CRITERIA_INTERFACE.md",
+        "PREDICTION.md",
+        "ASSUMPTIONS.md",
+        "DUAL_SCALE_THREE_STREAM_PLAN.md",
+        "TODO.md",
+        "RELEASE_v0.3.0.md",
+        "README.md",
+        "GUIDELINES.md"
+      ],
+      "persistent_homology": [
+        "K3xT2_DEEP_IMPROVEMENT_PLAN.md",
+        "DUAL_SCALE_THREE_STREAM_PLAN.md",
+        "V5_COOPER_S7_OBSERVATORY.md",
+        "PHASE_1_CHECKLIST.md",
+        "empirical_crucible/black_hole_gitn/gitn_model.py",
+        "checkers/check_C2_transcendental_rank.py",
+        "docs/reference/dmk3_home/DarkMatterK3_Phase3_Report.tex",
+        "docs/reference/dmk3_home/AGORA_K3_T2_BRIDGE_PLAN.md",
+        "briefs/STREAM2_TO_STREAM3_WPE_SEQUENCE_REVIEW_2026_07_26.md",
+        "briefs/DEEPTHINK_M1_PROPOSAL_AS_RECEIVED_2026_07_26.md",
+        "scripts/project_rosetta_sieve.py",
+        "lean4_formal_proofs/Agora/K3_Topology.lean"
+      ],
+      "gpu_cuda": [
+        "RELEASE_v2.1.1_OPTIMIZATION.md",
+        "AGORA_GUIDELINES.md",
+        "OPTIMIZATION_PARALLEL_EXECUTION_SUMMARY.md",
+        "README_PARALLEL_OPTIMIZATION_IN_PROGRESS.md",
+        "CURRENT_SESSION_CONTINUATION_STATUS.md",
+        "PHASE_1_CHECKLIST.md",
+        "AGORA_IMPLEMENTATION_PLAN.md",
+        "empirical_crucible/s2_1_singular_locus_observable_vectorized.py",
+        "empirical_crucible/run_parallel_battery_comparison.py",
+        "empirical_crucible/compare_battery_results.py",
+        "empirical_crucible/k3_gitn_results.json",
+        "empirical_crucible/_quarantine_cooper_s7_euclid_worker.py"
+      ],
+      "ode_dae_solver": [
+        "empirical_crucible/tracker_ics.py",
+        "empirical_crucible/joint_epsilon_likelihood.py",
+        "agora_ai_agents/Reviewer_Response.md",
+        "scripts/candelas_mcmc_aede.py",
+        "simulations/vafa_quintessence.py",
+        "manuscripts_and_proofs/DarkMatterK3_Phase2_Report.tex"
+      ],
+      "eigensolver": [
+        "AGORA_GUIDELINES.md",
+        "VALIDATION_GUIDE.md",
+        "CAVEATS.md",
+        "LL.md",
+        "scientificplan.md",
+        "empirical_crucible/verify_k3_gitn.py",
+        "empirical_crucible/black_hole_gitn/gitn_model.py",
+        "empirical_crucible/black_hole_gitn/test_gitn.py",
+        "checkers/check_NS_genus_G0.py",
+        "checkers/check_M19_exhibition_small_n.py",
+        "checkers/check_C1_kodaira_consistency.py",
+        "checkers/check_neron_severi_ambient.py"
+      ],
+      "hpc": [
+        "CAVEATS.md",
+        "briefs/CROSS_STREAM_STATE_AND_RESTART_2026_07_27.md",
+        "briefs/WP_S2G_X4_EXHIBITION_PLAN_2026_07_27.md",
+        "briefs/DEEPTHINK_ALIGNMENT_BRIEF_2026_07_27_NIGHT.md",
+        "scripts/s21_bare_analysis.py"
+      ]
+    }
+  }
+]
