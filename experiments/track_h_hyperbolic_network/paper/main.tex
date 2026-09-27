@@ -254,8 +254,9 @@ Both controls pass for both integrators on $\{7,3\}$, $L=2$ and square $R=6$ (Ta
 are of order $10^{-8}$ for both, well inside the $10^{-5}$ threshold, so the two codes agree with the exact
 solution, and hence with each other, to about $3\times10^{-8}$. K2 errors are of order $10^{-13}$ (SciPy) and
 $10^{-12}$ (CVODE). The CVODE leg used the rusty-SUNDIALS Python binding (version 6.0.0) built from
-commit \texttt{af4886f}. The same harness, packaged as a benchmark with the two fixture networks, is
-proposed to rusty-SUNDIALS as an example and regression test.
+commit \texttt{af4886f}. The same harness, packaged as a benchmark with the two fixture networks, has been
+contributed to rusty-SUNDIALS as an example and regression test (\texttt{examples/python/rc\_network}, pull
+request \#62, merged as commit \texttt{4ce8abb}).
 
 \section{Discussion and limitations}
 
@@ -283,7 +284,7 @@ are not yet cross-validated.
 \paragraph{Geometry-controlled stiffness benchmark for rusty-SUNDIALS.} Equation~\eqref{eq:rc} with the K1/K2
 controls is a stiff linear system with an exact solution and a static cross-check, at tunable size and stiffness.
 Its stiffness is bounded in $N$ on hyperbolic networks and grows linearly on flat ones. The two-network version is
-packaged and proposed to rusty-SUNDIALS as a regression benchmark. Natural extensions are:
+now part of rusty-SUNDIALS as a regression benchmark. Natural extensions are:
 \begin{itemize}
 \item cross-validation at $N\sim10^3$--$10^4$, where the flat stiffness exceeds $300$;
 \item an analytic-Jacobian argument ($-L_{ii}/C$) in the Python binding, which it does not currently accept, so

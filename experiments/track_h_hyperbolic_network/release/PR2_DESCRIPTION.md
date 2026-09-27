@@ -21,7 +21,7 @@ This update adds **Track H**: the conditioning of the discrete inverse conductan
   - A domain-monotonicity argument shows λ_min decreases to λ₀({7,3}) > 0, so τ ≤ C/λ₀ for all N.
   - Its premises are certified for L ≤ 6: interior degree 3, and interior(G_L) = G_{L−1} by coordinates and edge sets.
 - **Integrator controls.** K1 and K2 pass with **both** SciPy BDF and the rusty-SUNDIALS CVODE solver (binding 6.0.0 from af4886f). Both agree with the exact solution to about 3e-8 (H2-X-0004).
-- **rusty-SUNDIALS contribution.** `release/rusty_sundials_contrib/` holds the RC-network benchmark (two fixture networks, pytest) and `apply.sh`, which opens a PR in rusty-SUNDIALS.
+- **rusty-SUNDIALS contribution.** `release/rusty_sundials_contrib/` holds the RC-network benchmark (two fixture networks, pytest) and `apply.sh`. Merged upstream as [rusty-SUNDIALS#62](https://github.com/xaviercallens/rusty-SUNDIALS/pull/62) (4ce8abb).
 
 ### Ledger
 - The Elenchus ledger has 19 claims and a content-addressed evidence store in `docs/elenchus/evidence/`.
