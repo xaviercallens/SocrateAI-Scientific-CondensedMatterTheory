@@ -1,14 +1,23 @@
 # Protocole de rigueur — Elenchus
 
-> **Statut d'accès.** Le dépôt `xaviercallens/SocrateAI-Scientific-Elenchus`
-> renvoie 404 en accès non authentifié, et aucune copie locale n'existe sur
-> cette machine (`~` et `/mnt/disks/disk-socrateai-local-1/...` vérifiés). Les
-> commandes d'accès authentifié (`gh`, `git ls-remote`) sont refusées par le
-> mode de permission de cette session. **Le protocole ci-dessous est donc
-> reconstruit depuis les principes, et non importé du dépôt.** Dès que le dépôt
-> sera accessible, il faudra confronter ce document au protocole réel et
-> l'aligner : noms des portes, schéma des verdicts, format des artefacts.
-> Voir la section « Entrées manquantes » du rapport de session.
+> **Statut d'accès (mis à jour).** Le dépôt `xaviercallens/SocrateAI-Scientific-Elenchus`
+> a d'abord renvoyé 404 en accès non authentifié ; il est privé, et cette
+> session ne peut pas exécuter `git clone` elle-même (mode de permission). La
+> personne à la console l'a cloné avec `! git clone` dans
+> `~/.claude/jobs/9fcde7bc/tmp/elenchus`, et ce document a été relu et **aligné
+> sur le protocole réel** (`docs/ELENCHUS.md`, `tools/ledger.py`) plutôt que
+> laissé comme une reconstruction de principe. Ce qui suit garde la structure
+> déjà écrite (portes, préenregistrement, verdicts, applications) mais en
+> adoptant le vocabulaire et les tiers réels d'Elenchus là où ils diffèrent.
+>
+> **Différence principale avec la version précédente de ce document :** Elenchus
+> n'a pas cinq portes nommées G1–G5, il a une **échelle de tiers** à cinq
+> niveaux ordonnée `X < C < L < B < A`, plafonnée par la *façon dont* une
+> affirmation a été établie (`kind`), et un **grand livre** (`ledger.json`)
+> vérifié mécaniquement par `tools/ledger.py`. §1 ci-dessous adopte ces tiers
+> directement ; les « portes » G1–G5 de la version précédente restent valables
+> comme liste de contrôle pratique (§1bis) mais ne sont plus la structure
+> principale.
 
 L'*elenchos* (ἔλεγχος) est la réfutation socratique : on n'établit pas une thèse
 en l'appuyant, on la teste en cherchant ce qui la contredit. Appliqué ici, cela
@@ -22,10 +31,43 @@ le **programme expérimental** (§2–§3).
 
 ---
 
-## 1. Les cinq portes
+## 1. L'échelle de tiers réelle d'Elenchus
 
-Toute affirmation portée par ce dépôt doit franchir cinq portes. Chacune peut
-échouer, et un échec est enregistré, pas contourné.
+Cinq tiers, ordonnés `X < C < L < B < A`, fixés par le contrôle mécanique le
+plus fort passé — et **plafonnés** par la façon dont l'affirmation a été
+établie (`kind`), pour qu'une citation ne dépasse jamais L et qu'une sortie de
+modèle ne dépasse jamais X, aussi convaincante soit-elle.
+
+| Tier | Sens | La porte |
+|---|---|---|
+| **A** | établi : théorème Lean 4, compilé par le noyau contre une révision de bibliothèque fixée | zéro `sorry` ; l'empreinte d'axiomes **du théorème compilé**, imprimée par le noyau, ne nomme aucun axiome hors de la liste déclarée |
+| **B** | vérifiable : identité vérifiée en arithmétique rationnelle exacte, sur des instances concrètes | harnais entiers/rationnels uniquement, sortie zéro, avec un contrôle négatif **démontré en échec** et, pour tout verdict, un contrôle positif **démontré en déclenchement** |
+| **L** | littérature : théorème publié, cité à son **énoncé**, avec ses hypothèses | ne décharge jamais une obligation formelle |
+| **C** | conjecture : proposition, analogie, réduction non vérifiée | aucune porte mécanique ; l'étiquette est obligatoire |
+| **X** | exploratoire : flottants, échantillonnage, sortie de modèle | peut orienter une recherche ; **ne peut jamais soutenir une affirmation** |
+
+**Premier exemple filé dans ce dépôt :** [`docs/elenchus/ledger.json`](elenchus/ledger.json),
+quatre affirmations sur l'énoncé Lean T2 (§4 de
+[`lean/README.md`](../lean/README.md)) — deux en **B** (le harnais
+`experiments/axis1_topological_waves/ssh_exact.py`, en arithmétique
+`fractions.Fraction` exacte, avec ses contrôles négatifs et positif), une en
+**L** (le lemme Mathlib cité, avec le trou qu'il ne couvre pas nommé), une en
+**C** (le lien avec la lecture physique bulk-boundary, explicitement une
+interprétation). Vérifié par le grand livre réel d'Elenchus :
+```
+python3 <elenchus>/tools/ledger.py docs/elenchus/ledger.json --json
+# {"findings": [], "skipped": [], "claims": 4, "evidence_verified": false}
+```
+`evidence_verified: false` signifie que le schéma et les tiers sont corrects,
+mais que les empreintes n'ont **pas** été confrontées aux fichiers binaires
+(l'option `--evidence-dir` suppose une convention de nommage de blob que ce
+dépôt ne suit pas encore) — Elenchus rapporte honnêtement cette distinction au
+lieu de la faire disparaître, exactement le point de son « absence assertion ».
+
+## 1bis. Les cinq portes pratiques (complément, pas la structure principale)
+
+Une liste de contrôle utile au quotidien, qui recoupe l'échelle de tiers sans
+la remplacer :
 
 | Porte | Question | Échec typique |
 |---|---|---|
@@ -38,8 +80,9 @@ Toute affirmation portée par ce dépôt doit franchir cinq portes. Chacune peut
 **G1 est déjà automatisée** dans ce dépôt : `corpus/fetch_papers.py` refuse tout
 article dont le titre arXiv réel ne contient pas le fragment attendu déclaré
 dans `corpus/seed_papers.py`. Ce n'est pas une précaution théorique — la
-première passe a rejeté **6 identifiants sur 36**. Sans cette porte, six
-articles faux seraient entrés dans le vector store, sans aucun signal.
+première passe a rejeté **6 identifiants sur 36**, et une passe ultérieure a
+rejeté le titre d'Altland–Zirnbauer, cité de mémoire. Sans cette porte, ces
+articles seraient entrés dans le vector store, sans aucun signal.
 
 ---
 

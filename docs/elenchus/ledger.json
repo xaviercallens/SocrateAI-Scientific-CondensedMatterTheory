@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "SSH-B-0001",
+      "statement": "For the SSH chain with intra-cell hopping v and inter-cell hopping w (v, w rational, nonzero, |v| != |w|): the open chain with 2N+1 sites has nullity(H) = 1 exactly, with kernel vector psi_A(n) = (-v/w)^n on A sites and 0 on B sites; the open chain with 2N sites has rank(H) = 2N exactly (no zero mode), because det(D) = v^N for its lower-bidiagonal sublattice block D. Verified on 6 rational (v,w) instances x 3 chain sizes (N = 2, 3, 5) = 18 parameter points, in exact fractions.Fraction arithmetic (no floating point).",
+      "tier": "B",
+      "kind": "exact_harness",
+      "depends_on": [],
+      "evidence": "sha256:24b8d09b64284782d5eb8c3563e69b7e18a6cfa4783f6664674b023fef418fdf",
+      "audit": null,
+      "notes": "experiments/axis1_topological_waves/ssh_exact.py. Negative controls demonstrated to fail: NC1 (wrong-sign kernel vector rejected), NC2 (generic rational vector rejected). Positive control demonstrated to fire: PC1 (v=0 decoupled-site chain triggers the zero-mode detector), guarding against a rank/nullity check that never reports a zero mode."
+    },
+    {
+      "id": "SSH-B-0002",
+      "statement": "For the same instances: the zero mode of the odd chain is concentrated at the left end (|psi_A(0)| > |psi_A(N)|) if and only if |w| > |v|.",
+      "tier": "B",
+      "kind": "exact_harness",
+      "depends_on": ["SSH-B-0001"],
+      "evidence": "sha256:24b8d09b64284782d5eb8c3563e69b7e18a6cfa4783f6664674b023fef418fdf",
+      "audit": null,
+      "notes": "Same harness and evidence blob as SSH-B-0001 (check tag B2). Filed separately because it is a logically distinct claim (localisation side, not existence/uniqueness side)."
+    },
+    {
+      "id": "SSH-L-0001",
+      "statement": "For h(z) = v + wz on the counterclockwise unit circle |z| = 1 with |v/w| < 1 (pole inside), (1/2*pi*i) * oint h'(z)/h(z) dz = 1, by Mathlib's circleIntegral.integral_sub_inv_of_mem_ball (h'/h = (z + v/w)^-1, a simple pole at -v/w inside the ball). The case |v/w| > 1 (pole outside) is not covered by that lemma and needs Cauchy's theorem for a pole outside the contour; the exact Mathlib name for that step has not yet been identified.",
+      "tier": "L",
+      "kind": "citation",
+      "depends_on": [],
+      "evidence": "sha256:93611b0a0f1f6fcdb9f29ca3fd3b2e64d365b912bc6caec69fe3ddc966664737",
+      "audit": null,
+      "notes": "Evidence blob: docs/elenchus/evidence/ssh_L_0001_mathlib_circleintegral.txt (the quoted Mathlib docstring plus the application to this SSH parametrisation and the named open gap). The Mathlib revision pin inside that file is LeanMaster's own recorded commit prefix, not independently re-verified in this session -- see lean/README.md for the plain-language version and the open Cauchy-theorem step."
+    },
+    {
+      "id": "SSH-C-0001",
+      "statement": "The Lean T2 target (nu in {0,1} and unique zero-mode existence/side, per SSH-B-0001/0002 and SSH-L-0001) is the finite, kernel-provable core of the bulk-boundary correspondence measured by axis 1a (experiments/axis1_topological_waves/PREREGISTRATION.md) and is an instance of the general bulk-boundary statement discussed in docs/literature_review.md section 4 and docs/ryu_review.md section 2.1 (Ryu-Hatsugai, cond-mat/0112197).",
+      "tier": "C",
+      "kind": "argument",
+      "depends_on": ["SSH-B-0001", "SSH-B-0002", "SSH-L-0001"],
+      "evidence": "sha256:270d04a4f8c655b29ef6dcb88dca5443f4ed95bc379f43ca5f774a7fbbd1ad9f",
+      "audit": null,
+      "notes": "Evidence blob: docs/elenchus/evidence/ssh_C_0001_argument.txt. This is the claim that ties the SSH kernel facts to the physical bulk-boundary reading; it is explicitly capped at C (argument) because that link is an interpretation, not a mechanically checked fact."
+    }
+  ]
+}

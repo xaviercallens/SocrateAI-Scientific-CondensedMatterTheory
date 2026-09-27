@@ -1,0 +1,43 @@
+Citation evidence for ledger claim SSH-L-0001.
+
+Source: Mathlib.MeasureTheory.Integral.CircleIntegral
+Checkout read: /home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-LeanMaster/.lake/packages/mathlib
+Pinned library revision (per LeanMaster docs/VERIFIED_FOUNDATION.md, toolchain migration
+2026-09-19): Mathlib tag v4.34.0-rc2, commit 85e3a25e... (LeanMaster's own record; the
+digits after "85e3a25e" were not re-verified independently in this session and should be
+re-pinned to the exact full commit hash before this claim is treated as more than L).
+
+Quoted docstring (Mathlib.MeasureTheory.Integral.CircleIntegral, module doc, as read):
+
+  * `circleIntegral.integral_sub_zpow_of_undef`, `circleIntegral.integral_sub_zpow_of_ne`, and
+    `circleIntegral.integral_sub_inv_of_mem_ball`: formulas for `oint z in C(c, R), (z - w) ^ n`,
+    `n : Int`. These lemmas cover the following cases:
+
+    - `circleIntegral.integral_sub_zpow_of_undef`, `n < 0` and `|w - c| = |R|`: in this case the
+      function is not integrable, so the integral is equal to its default value (zero);
+
+    - `circleIntegral.integral_sub_zpow_of_ne`, `n != -1`: in the cases not covered by the previous
+      lemma, we have `(z - w) ^ n = ((z - w) ^ (n + 1) / (n + 1))'`, thus the integral equals zero;
+
+    - `circleIntegral.integral_sub_inv_of_mem_ball`, `n = -1`, `|w - c| < R`: in this case the
+      integral is equal to `2*pi*i`.
+
+    The case `n = -1`, `|w - c| > R` is not covered by these lemmas. While it is possible to
+    construct an explicit primitive, it is easier to apply Cauchy theorem, so we postpone the
+    proof till we have this theorem (see https://github.com/leanprover-community/mathlib4/pull/10000).
+
+  Notation: `oint z in C(c, R), f z` is `int_{0}^{2*pi} (c + R*e^{theta*i})' f(c+R*e^{theta*i}) dtheta`,
+  i.e. C(c,R) traverses the circle counterclockwise as theta runs 0 to 2*pi (circleMap orientation).
+
+Application to SSH-B-0001/0002 and the Lean T2 target (docs/../../lean/README.md):
+h(z) = v + w*z, h'(z)/h(z) = w / (v + w*z) = (z + v/w)^{-1} * (w/w) up to the constant factor
+handled by the lemma's normalisation; the pole is at z = -v/w. For |v/w| < 1 (pole strictly
+inside the unit ball, i.e. |w| > |v|) circleIntegral.integral_sub_inv_of_mem_ball applies directly
+and gives winding number +1 in the counterclockwise (circleMap) orientation. For |v/w| > 1
+(|v| > |w|, pole outside) this lemma's own docstring says it is NOT covered, and the module
+doc names Cauchy's theorem as the intended route, without giving its lemma name -- that name
+has not been identified in this session and is the concrete remaining gap before SSH-L-0001
+could be discharged formally (Tier A) rather than merely cited (Tier L).
+
+This file is filed as citation evidence per Elenchus's rule ("a citation may not be filed above
+L however distinguished the source"); it is not a proof and decides nothing about the physics.

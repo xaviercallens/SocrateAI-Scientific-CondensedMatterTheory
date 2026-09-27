@@ -21,7 +21,8 @@ toute affirmation doit avoir été exposée à une manière précise d'échouer.
 | [`docs/ryu_review.md`](docs/ryu_review.md) | **Le programme de Shinsei Ryu**, depuis son dossier arXiv complet (202 articles) |
 | [`docs/contribution_map.md`](docs/contribution_map.md) | **Où votre expertise contribue** (Lean, GPU, Rust, HPC, Gudhi, IA) : trois projets classés |
 | [`docs/assets/README.md`](docs/assets/README.md) | Actifs réutilisables de cette machine, vérifiés un par un |
-| [`docs/rigor_protocol.md`](docs/rigor_protocol.md) | Protocole Elenchus : 5 portes, préenregistrement, verdicts |
+| [`docs/rigor_protocol.md`](docs/rigor_protocol.md) | Protocole Elenchus : tiers X<C<L<B<A réels, grand livre, préenregistrement |
+| [`docs/elenchus/ledger.json`](docs/elenchus/ledger.json) | Premier grand livre filé : 4 affirmations sur l'énoncé SSH, vérifié par le gate réel d'Elenchus |
 | [`docs/safety.md`](docs/safety.md) | **À lire avant toute manipulation** : four à micro-ondes, lasers, eau |
 | [`lean/README.md`](lean/README.md) | Échelle des objectifs Lean 4, T0 → T3 |
 | `experiments/axis*/PREREGISTRATION.md` | Un préenregistrement par axe, à commiter **avant** toute acquisition |
@@ -44,11 +45,17 @@ tools/
   arxiv_author.py            dossier arXiv complet d'un auteur
 experiments/
   axis1_topological_waves/   SSH 1D puis valley-Hall 2D, aquarium
+    ssh_check.py               Tier X : témoin numérique flottant (rapide, jamais une preuve)
+    ssh_exact.py               Tier B : harnais en arithmétique Fraction exacte, avec contrôles
+                                négatif/positif -- l'évidence citée par docs/elenchus/ledger.json
   axis2_analogue_horizon/    superradiance sur vortex de vidange
   axis3_vortex/              vortex acoustique (ou hologramme en fourche)
   axis4_wave_chaos/          billard micro-ondes + VNA, loi de Weyl
   axis5_caustics/            caustiques, classification d'Arnold
 lean/                        échelle des théorèmes, T0 → T3
+docs/elenchus/
+  ledger.json                grand livre Elenchus (tiers B/L/C) pour l'énoncé SSH
+  evidence/                  blobs cités par le grand livre (citation Mathlib, argument)
 corpus/
   seed_papers.py             liste (arxiv_id, pilier, fragment_de_titre_attendu)
   fetch_papers.py            API arXiv -> papers/meta, papers/pdf, papers/index.json
@@ -153,11 +160,25 @@ automatiquement. Pour l'activer :
 
 ```bash
 cp config/mcp.json.example .mcp.json
+python3 -m pip install --user "mcp>=1.2"   # v1 (FastMCP) ou v2 (MCPServer) : les deux marchent
 ```
 
 Puis relancer Claude Code et approuver les serveurs.
 
-### `adscmt-rag` — le serveur du corpus
+**Compatibilité `mcp` v1/v2.** Le SDK `mcp` a renommé `FastMCP` en `MCPServer`
+en version 2 (`mcp>=2`). `mcp_adscmt_rag.py` et `mcp_rusty_sundials.py`
+essaient d'abord l'import v1, puis retombent sur v2 :
+```python
+try:
+    from mcp.server.fastmcp import FastMCP        # mcp < 2
+except ModuleNotFoundError:
+    from mcp.server.mcpserver import MCPServer as FastMCP  # mcp >= 2
+```
+Vérifié sur cette machine avec `mcp==2.2.0` : sans ce `try/except`, les deux
+serveurs échouent à l'import avec `ModuleNotFoundError`. À garder si `mcp` est
+mis à jour.
+
+### `adscmt-rag` — le serveur du corpus (fonctionnel)
 
 Trois outils : `adscmt_search(query, n_results, pillar)`,
 `adscmt_paper(arxiv_id)`, `adscmt_corpus_stats()`.
@@ -169,7 +190,7 @@ aucune option d'embedding Ollama : ses choix sont `default`, `cohere`,
 écrite en 1024-d avec son modèle par défaut en 384-d. Le serveur `adscmt-rag`
 interroge avec **exactement** la fonction d'embedding utilisée à l'ingestion.
 
-### `chroma-admin` — inspection générique
+### `chroma-admin` — inspection générique (fonctionnel)
 
 `chroma-mcp` est conservé pour l'administration : lister les collections,
 compter, récupérer des documents par identifiant. Ces opérations ne passent pas
@@ -178,12 +199,50 @@ par l'embedding. En revanche, **`chroma_query_documents` sur
 c'est un échec bruyant, pas un résultat silencieusement faux. Pour la recherche
 sémantique, utiliser `adscmt-rag`.
 
-### `leanmaster`
+### `leanmaster` — théorèmes Lean 4 vérifiés (fonctionnel)
 
 Serveur MCP du dépôt frère SocrateAI-Agora-LeanMaster, pour les théorèmes Lean 4
 vérifiés par le noyau (réseaux, T-dualité, O(d,d), K3). Utile ici parce que la
 classification en dix classes repose sur la périodicité de Bott et la
 K-théorie, déjà partiellement formalisées de ce côté.
+
+### `anse-python-code-guard`, `anse-claude-subtask-workflow` — serveurs ANSE (fonctionnels, si `~/AutoevolveAI/.venv` existe)
+
+Copiés **tels quels** depuis `~/AutoevolveAI/.mcp.json`, pour que les agents de
+ce dépôt atteignent directement le garde-fou de code et l'orchestrateur de
+sous-tâches d'ANSE, sans ouvrir une seconde session dans AutoevolveAI. Ils
+dépendent du `.venv` d'AutoevolveAI (setup propre à ce dépôt, pas au nôtre) ;
+si ce `.venv` n'existe pas encore, lancer l'installation côté AutoevolveAI
+d'abord. Le troisième serveur d'ANSE, `leanmaster`, fait doublon avec l'entrée
+`leanmaster` ci-dessus et n'est donc pas dupliqué.
+
+### `rusty-sundials` — **squelette honnête, pas encore fonctionnel**
+
+`rusty-SUNDIALS` (solveur EDO/EDA en Rust, port de SUNDIALS/CVODE — voir
+[`docs/contribution_map.md`](docs/contribution_map.md), « Solveur Rust ») **n'a
+pas de serveur MCP dans son propre dépôt** (vérifié : ni `mcp_server.py` ni
+`.mcp.json`), et **aucun checkout local n'existe sur cette machine**. Cette
+session ne peut pas exécuter `git clone` elle-même (mode de permission), donc
+`mcp_rusty_sundials.py` reste, pour l'instant, un serveur **réel mais limité** :
+
+- `sundials_status()` — diagnostic pur, sans effet de bord ;
+- `sundials_list_examples()` — liste `examples/*.rs`, sans rien compiler ;
+- `sundials_run_example(name, args)` — exécute
+  `cargo run --release --example <name> -- <args>` et renvoie stdout/stderr
+  **bruts, non interprétés** — parce que le format de sortie réel de ce dépôt
+  n'a jamais été inspecté ici, et lui inventer un format serait exactement le
+  genre d'affirmation non vérifiée que ce dépôt évite ailleurs (voir
+  [`docs/rigor_protocol.md`](docs/rigor_protocol.md)).
+
+Pour le rendre pleinement utile :
+
+```bash
+! git clone --depth 1 https://github.com/xaviercallens/rusty-SUNDIALS ~/rusty-SUNDIALS
+```
+
+(même mécanisme que pour Elenchus : la personne à la console lance le clone,
+la session s'en sert ensuite). Un `cargo` (Rust) doit aussi être sur le `PATH` ;
+`sundials_status()` le signale s'il manque.
 
 ---
 

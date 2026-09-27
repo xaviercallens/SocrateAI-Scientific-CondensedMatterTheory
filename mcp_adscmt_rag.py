@@ -29,7 +29,10 @@ import importlib.util
 import os
 from pathlib import Path
 
-from mcp.server.fastmcp import FastMCP
+try:
+    from mcp.server.fastmcp import FastMCP  # mcp < 2
+except ModuleNotFoundError:
+    from mcp.server.mcpserver import MCPServer as FastMCP  # mcp >= 2: FastMCP renamed
 
 CHROMA_PATH = os.environ.get(
     "CHROMA_PATH", str(Path.home() / "AutoevolveAI" / "data" / "chroma")
