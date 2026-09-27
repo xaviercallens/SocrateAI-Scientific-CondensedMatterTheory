@@ -1,0 +1,56 @@
+Numeric evidence for ledger claim POC-X-0002 (Tier X: exploratory/numeric --
+may steer, may never support a claim on its own).
+
+Source: experiments/poc_entanglement_tda/syk_entanglement.py
+Preregistration: experiments/poc_entanglement_tda/PREREGISTRATION.md Part B
+Full results: experiments/poc_entanglement_tda/results.md Part B
+Raw data: experiments/poc_entanglement_tda/data/syk.json
+Figure: experiments/poc_entanglement_tda/figures/syk_degeneracy.png
+
+Claim tested: for the 4-body Majorana SYK model, the exact-degeneracy rate of
+the ground state (within a fixed fermion-parity sector) depends on N mod 8.
+Motivated by, but not derived from: Fidkowski-Kitaev (arXiv:0904.2197, in
+this repo's corpus, `poc` pillar) -- the free Majorana chain's Z invariant
+collapses to Z8 under interactions -- and You-Ludwig-Xu (arXiv:1602.06964,
+same pillar) -- SYK's level statistics, as the boundary theory of a
+many-body-localized 1D SPT phase, cycle through the Wigner-Dyson ensembles
+with a period tied to that topological index. Neither paper's symmetry
+operator was constructed or verified here; this is an empirical test of the
+resulting qualitative pattern only.
+
+Method: Majorana operators built as signed permutations of the N/2-qubit
+computational basis (Jordan-Wigner), self-tested against a brute-force dense
+Kronecker-product construction on N=4 and against {gamma_i,gamma_j}=2*delta_ij
+and [H,P]=0 on N=6/N=8 before any physics run (`syk_entanglement.py
+--self-test`, 8/8 checks pass). Couplings: i.i.d. Gaussian J_ijkl, variance
+6/N^3 (J=1 unit of energy, Maldacena-Stanford 1604.07818 normalization up to
+the overall constant). Ground state identified within its own fermion-parity
+sector (parity purity checked, not assumed); a realization whose same-sector
+gap to the next level is below 1e-8 of the energy scale is flagged
+"degenerate" rather than having its entanglement spectrum computed from an
+arbitrarily-chosen vector in a near-degenerate subspace.
+
+Result, N=8  (N mod 8 = 0): 0/40 realizations degenerate.
+Result, N=12 (N mod 8 = 4): 40/40 realizations degenerate.
+Result, N=16 (N mod 8 = 0): 0/40 realizations degenerate.
+Result, N=20 (N mod 8 = 4): 40/40 realizations degenerate.
+Result, N=24 (N mod 8 = 0): 0/40 realizations degenerate.
+
+Perfect all-or-nothing split at every tested N, not merely "more frequent":
+same-sector gap / energy scale is ~1e-15 (machine precision) for every
+N mod 8 = 4 realization and ~1e-4 to 1e0 (a real physical gap) for every
+N mod 8 = 0 realization -- roughly 14 orders of magnitude of separation,
+visible directly in the raw per-realization scatter (figures/syk_degeneracy.
+png, middle panel), which is the actual evidence; the persistence panel
+(rightmost) reproduces the same separation UNSUPERVISED, run on all 200
+realizations pooled with no N-mod-8 label given to Gudhi, and returns one H0
+bar of length 10.7 decades far above all others.
+
+Explicitly NOT established by this evidence: the antiunitary symmetry
+operator behind the pattern (not constructed); generality beyond N <= 24 or
+beyond the N mod 8 in {0, 4} classes reachable with N % 4 == 0 (N mod 8 in
+{2, 6} were not tested, they would need an odd number of qubit pairs and a
+different bipartition); any claim that this is the same kind of topological
+invariant as the winding number nu proved for SSH (SSH-B-0001/0002) -- there,
+an exact quantity is proved in exact arithmetic; here, a pattern is measured
+in floating point over a small sample of N values, and is reported as such.

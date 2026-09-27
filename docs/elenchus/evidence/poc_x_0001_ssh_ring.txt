@@ -1,0 +1,38 @@
+Numeric evidence for ledger claim POC-X-0001 (Tier X: exploratory/numeric --
+may steer, may never support a claim on its own).
+
+Source: experiments/poc_entanglement_tda/ssh_ring_entanglement.py
+Preregistration: experiments/poc_entanglement_tda/PREREGISTRATION.md Part A
+Full results: experiments/poc_entanglement_tda/results.md Part A
+Raw data: experiments/poc_entanglement_tda/data/ssh_ring.json
+Figure: experiments/poc_entanglement_tda/figures/ssh_ring_baseline_and_barcodes.png
+
+Claim tested: on an SSH ring (h(z) = v + wz convention, matching
+ssh_exact.py), the entanglement spectrum of a subsystem of ell whole unit
+cells (severing exactly two w-type bonds, for any ell) has exactly two
+eigenvalues zeta_n = 1/2 when |w| > |v|, and none when |v| > |w|.
+
+Result, positive control (|w| > |v|): confirmed exactly (to floating-point
+precision, |zeta_n - 1/2| = 0.0000) at every tested r = v/w in (0, 1),
+including probes down to |r - 1| = 1e-6, at both L=100 and L=300 sites.
+
+Result, negative control (|v| > |w|): confirmed, 0 levels near 1/2 at every
+tested r > 1, min distance to 1/2 saturating around 0.28-0.4 (L-dependent
+constant) rather than approaching 0.
+
+Preregistered sub-prediction REFUTED: "finite-size smearing near r=1 narrows
+between L=100 and L=300." Measured: no smearing at all, at either L, down to
+|r-1|=1e-6 -- the near-half count jumps exactly at r=1 for both sizes with no
+observable difference. Localised cause: the near-half count is a quantised
+topological invariant (protected by the same chiral symmetry that pins the
+exact zero mode proved in ssh_exact.py / SSH-B-0001), not a generic
+crossing-over order parameter, so it does not smear continuously with system
+size -- the assumption that it would behave like a generic order parameter
+was the error, not the measurement.
+
+Gudhi H0 persistence on the |zeta_n - 1/2| point cloud reproduces the same
+information as the two baseline scalar metrics computed directly (near-half
+count, min distance to 1/2); for a 1D point cloud, H0 persistence is exactly
+the sorted list of consecutive gaps, so this is stated as illustration, not
+as an independent discovery -- see docs/experimental_program.md section 1.4
+and this PoC's own module docstring in tda_persistence.py.

@@ -40,6 +40,26 @@
       "evidence": "sha256:270d04a4f8c655b29ef6dcb88dca5443f4ed95bc379f43ca5f774a7fbbd1ad9f",
       "audit": null,
       "notes": "Evidence blob: docs/elenchus/evidence/ssh_C_0001_argument.txt. This is the claim that ties the SSH kernel facts to the physical bulk-boundary reading; it is explicitly capped at C (argument) because that link is an interpretation, not a mechanically checked fact."
+    },
+    {
+      "id": "POC-X-0001",
+      "statement": "On an SSH ring, the entanglement spectrum of a subsystem of ell whole unit cells (severing exactly two w-bonds, for any ell) has exactly two eigenvalues zeta_n = 1/2, exact to floating-point precision, when |w| > |v|, and none when |v| > |w|. A preregistered sub-prediction (finite-size smearing near r=1 narrows between L=100 and L=300) was REFUTED: no smearing was found at either size, down to |r-1|=1e-6 -- the count is a quantised invariant, not a smoothly crossing-over order parameter.",
+      "tier": "X",
+      "kind": "numeric",
+      "depends_on": ["SSH-B-0001"],
+      "evidence": "sha256:56842f4c4353bad1fa4d0edba1c7ed174d8d6ad351c3f37c4ad9bbec051387e3",
+      "audit": null,
+      "notes": "experiments/poc_entanglement_tda/ssh_ring_entanglement.py + results.md Part A. Positive and negative controls both confirmed exactly. Gudhi H0 persistence reproduces the same information as the two baseline scalar metrics (near-half count, min distance to 1/2); for a 1D point cloud this is expected and stated as such, not claimed as an independent discovery."
+    },
+    {
+      "id": "POC-X-0002",
+      "statement": "For the 4-body Majorana SYK model (N Majoranas, N % 4 == 0, exact diagonalization), the exact-degeneracy rate of the parity-sector ground state is a clean all-or-nothing function of N mod 8 at every tested N <= 24: 0/40 realizations degenerate at N in {8, 16, 24} (N mod 8 = 0), 40/40 at N in {12, 20} (N mod 8 = 4). The same-sector gap/energy-scale ratio separates the two classes by ~14 orders of magnitude (~1e-15 vs ~1e-4 to 1e0). Gudhi H0 persistence on the pooled, unlabelled 200-realization point cloud recovers this split unsupervised: one bar of length 10.7 decades, far above all others.",
+      "tier": "X",
+      "kind": "numeric",
+      "depends_on": [],
+      "evidence": "sha256:b3c25604cc38937fa02c36596e0c3c715119616639aecf5eb807302ea6940c19",
+      "audit": null,
+      "notes": "experiments/poc_entanglement_tda/syk_entanglement.py (--self-test: 8/8 pass, including a brute-force Kronecker-product cross-check and [H,P]=0) + results.md Part B. Motivated by, not derived from, Fidkowski-Kitaev 0904.2197 and You-Ludwig-Xu 1602.06964 (both in corpus, `poc` pillar); no symmetry operator was constructed here, and no claim is made about N mod 8 in {2, 6} (not reachable with this bipartition) or N > 24."
     }
   ]
 }
