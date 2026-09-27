@@ -1,0 +1,30 @@
+{
+  "arxiv_id": "1605.07199",
+  "version": "v1",
+  "title": "Holographic Entanglement Renormalization of Topological Insulators",
+  "abstract": "We study the real-space entanglement renormalization group flows of topological band insulators in (2+1) dimensions by using the continuum multi-scale entanglement renormalization ansatz (cMERA). Given the ground state of a Chern insulator, we construct and study its cMERA by paying attention, in particular, to how the bulk holographic geometry and the Berry curvature depend on the topological properties of the ground state. It is found that each state defined at different energy scale of cMERA carries a nonzero Berry flux, which is emanated from the UV layer of cMERA, and flows towards the IR. Hence, a topologically nontrivial UV state flows under the RG to an IR state, which is also topologically nontrivial. On the other hand, we found that there is an obstruction to construct the exact ground state of a topological insulator with a topologically trivial IR state. I.e., if we try to construct a cMERA for the ground state of a Chern insulator by taking a topologically trivial IR state, the resulting cMERA does not faithfully reproduce the exact ground state at all length scales.",
+  "authors": [
+    "Xueda Wen",
+    "Gil Young Cho",
+    "Pedro L. S. Lopes",
+    "Yingfei Gu",
+    "Xiao-Liang Qi",
+    "Shinsei Ryu"
+  ],
+  "published": "2016-05-23T20:06:11Z",
+  "updated": "2016-05-23T20:06:11Z",
+  "year": "2016",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.str-el",
+    "hep-th"
+  ],
+  "doi": "10.1103/PhysRevB.94.075124",
+  "journal_ref": "Phys. Rev. B 94, 075124 (2016)",
+  "abs_url": "https://arxiv.org/abs/1605.07199",
+  "pdf_url": "https://arxiv.org/pdf/1605.07199",
+  "pillar": "ryu",
+  "slug": "1605.07199",
+  "pdf_local": "papers/pdf/1605.07199.pdf"
+}

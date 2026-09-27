@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "0910.1811",
+  "version": "v2",
+  "title": "Entanglement spectrum of a topological phase in one dimension",
+  "abstract": "We show that the Haldane phase of S=1 chains is characterized by a double degeneracy of the entanglement spectrum. The degeneracy is protected by a set of symmetries (either the dihedral group of $π$-rotations about two orthogonal axes, time-reversal symmetry, or bond centered inversion symmetry), and cannot be lifted unless either a phase boundary to another, \"topologically trivial\", phase is crossed, or the symmetry is broken. More generally, these results offer a scheme to classify gapped phases of one dimensional systems. Physically, the degeneracy of the entanglement spectrum can be observed by adiabatically weakening a bond to zero, which leaves the two disconnected halves of the system in a finitely entangled state.",
+  "authors": [
+    "Frank Pollmann",
+    "Erez Berg",
+    "Ari M. Turner",
+    "Masaki Oshikawa"
+  ],
+  "published": "2009-10-09T18:59:13Z",
+  "updated": "2010-04-22T17:39:46Z",
+  "year": "2009",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1103/PhysRevB.81.064439",
+  "journal_ref": "Phys. Rev. B 81, 064439 (2010)",
+  "abs_url": "https://arxiv.org/abs/0910.1811",
+  "pdf_url": "https://arxiv.org/pdf/0910.1811",
+  "pillar": "poc",
+  "slug": "0910.1811",
+  "pdf_local": "papers/pdf/0910.1811.pdf"
+}

@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "quant-ph/9707021",
+  "version": "v1",
+  "title": "Fault-tolerant quantum computation by anyons",
+  "abstract": "A two-dimensional quantum system with anyonic excitations can be considered as a quantum computer. Unitary transformations can be performed by moving the excitations around each other. Measurements can be performed by joining excitations in pairs and observing the result of fusion. Such computation is fault-tolerant by its physical nature.",
+  "authors": [
+    "A. Yu. Kitaev"
+  ],
+  "published": "1997-07-09T18:28:27Z",
+  "updated": "1997-07-09T18:28:27Z",
+  "year": "1997",
+  "primary_category": "quant-ph",
+  "categories": [
+    "quant-ph",
+    "cond-mat.mes-hall",
+    "hep-th"
+  ],
+  "doi": "10.1016/S0003-4916(02)00018-0",
+  "journal_ref": "Annals Phys. 303 (2003) 2-30",
+  "abs_url": "https://arxiv.org/abs/quant-ph/9707021",
+  "pdf_url": "https://arxiv.org/pdf/quant-ph/9707021",
+  "pillar": "bridge",
+  "slug": "quant-ph_9707021",
+  "pdf_local": "papers/pdf/quant-ph_9707021.pdf"
+}

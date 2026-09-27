@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "cond-mat/9212030",
+  "version": "v1",
+  "title": "Gapless Spin-Fluid Ground State in a Random Quantum Heisenberg Magnet",
+  "abstract": "We examine the spin-$S$ quantum Heisenberg magnet with Gaussian-random, infinite-range exchange interactions. The quantum-disordered phase is accessed by generalizing to $SU(M)$ symmetry and studying the large $M$ limit. For large $S$ the ground state is a spin-glass, while quantum fluctuations produce a spin-fluid state for small $S$. The spin-fluid phase is found to be generically gapless - the average, zero temperature, local dynamic spin-susceptibility obeys $\\barχ (ω) \\sim \\log(1/|ω|) + i (π/2) \\mbox{sgn} (ω)$ at low frequencies. This form is identical to the phenomenological `marginal' spectrum proposed by Varma {\\em et. al.\\/} for the doped cuprates.",
+  "authors": [
+    "Subir Sachdev",
+    "Jinwu Ye"
+  ],
+  "published": "1992-12-21T23:52:03Z",
+  "updated": "1992-12-21T23:52:03Z",
+  "year": "1992",
+  "primary_category": "cond-mat",
+  "categories": [
+    "cond-mat"
+  ],
+  "doi": "10.1103/PhysRevLett.70.3339",
+  "journal_ref": "Phys.Rev.Lett.70:3339,1993",
+  "abs_url": "https://arxiv.org/abs/cond-mat/9212030",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/9212030",
+  "pillar": "adscmt",
+  "slug": "cond-mat_9212030",
+  "pdf_local": "papers/pdf/cond-mat_9212030.pdf"
+}

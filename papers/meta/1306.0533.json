@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "1306.0533",
+  "version": "v2",
+  "title": "Cool horizons for entangled black holes",
+  "abstract": "General relativity contains solutions in which two distant black holes are connected through the interior via a wormhole, or Einstein-Rosen bridge. These solutions can be interpreted as maximally entangled states of two black holes that form a complex EPR pair. We suggest that similar bridges might be present for more general entangled states. In the case of entangled black holes one can formulate versions of the AMPS(S) paradoxes and resolve them. This suggests possible resolutions of the firewall paradoxes for more general situations.",
+  "authors": [
+    "Juan Maldacena",
+    "Leonard Susskind"
+  ],
+  "published": "2013-06-03T18:56:30Z",
+  "updated": "2013-07-11T21:45:19Z",
+  "year": "2013",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th"
+  ],
+  "doi": "10.1002/prop.201300020",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1306.0533",
+  "pdf_url": "https://arxiv.org/pdf/1306.0533",
+  "pillar": "holography",
+  "slug": "1306.0533",
+  "pdf_local": "papers/pdf/1306.0533.pdf"
+}

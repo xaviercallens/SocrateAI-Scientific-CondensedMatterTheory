@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "1202.5805",
+  "version": "v2",
+  "title": "Interaction effect on topological classification of superconductors in two dimensions",
+  "abstract": "We introduce a new class of superconductors (SCs) in two spatial dimensions with time reversal symmetry and reflection (i.e., mirror) symmetry. In the absence of interactions, topological classes of these SCs are distinguished by an integer-valued ($\\mathbb{Z}$) topological invariant. When interactions are included, we show that the topological classification is modified to $\\mathbb{Z}_8$. This clearly demonstrates that interactions can have qualitative effect on topological classifications of gapped states of matter in more than one dimension.",
+  "authors": [
+    "Hong Yao",
+    "Shinsei Ryu"
+  ],
+  "published": "2012-02-27T00:06:30Z",
+  "updated": "2014-02-04T04:04:18Z",
+  "year": "2012",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1103/PhysRevB.88.064507",
+  "journal_ref": "Phys. Rev. B 88, 064507 (2013)",
+  "abs_url": "https://arxiv.org/abs/1202.5805",
+  "pdf_url": "https://arxiv.org/pdf/1202.5805",
+  "pillar": "ryu",
+  "slug": "1202.5805",
+  "pdf_local": "papers/pdf/1202.5805.pdf"
+}

@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "0905.0932",
+  "version": "v2",
+  "title": "Holographic Entanglement Entropy: An Overview",
+  "abstract": "In this article, we review recent progresses on the holographic understandings of the entanglement entropy in the AdS/CFT correspondence. After reviewing the general idea of holographic entanglement entropy, we will explain its applications to confinement/deconfinement phase transitions, black hole entropy and covariant formulation of holography.",
+  "authors": [
+    "Tatsuma Nishioka",
+    "Shinsei Ryu",
+    "Tadashi Takayanagi"
+  ],
+  "published": "2009-05-07T11:53:40Z",
+  "updated": "2009-06-15T16:08:26Z",
+  "year": "2009",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el",
+    "gr-qc",
+    "quant-ph"
+  ],
+  "doi": "10.1088/1751-8113/42/50/504008",
+  "journal_ref": "J.Phys.A42:504008,2009",
+  "abs_url": "https://arxiv.org/abs/0905.0932",
+  "pdf_url": "https://arxiv.org/pdf/0905.0932",
+  "pillar": "ryu",
+  "slug": "0905.0932",
+  "pdf_local": "papers/pdf/0905.0932.pdf"
+}

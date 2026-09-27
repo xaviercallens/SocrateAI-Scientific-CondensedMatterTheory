@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "0810.5394",
+  "version": "v4",
+  "title": "Disordered Systems and the Replica Method in AdS/CFT",
+  "abstract": "We formulate a holographic description of effects of disorder in conformal field theories based on the replica method and the AdS/CFT correspondence. Starting with $n$ copies of conformal field theories, randomness with a gaussian distribution is described by a deformation of double trace operators. After computing physical quantities, we take the $n \\to 0$ limit at the final step. We compute correlation functions in the disordered systems by using the holographic replica method as well as the formulation in the conformal field theory. We find examples where disorder changes drastically the scaling of two point functions. The renormalization group flow of the effective central charge in our disordered systems is also discussed.",
+  "authors": [
+    "Mitsutoshi Fujita",
+    "Yasuaki Hikida",
+    "Shinsei Ryu",
+    "Tadashi Takayanagi"
+  ],
+  "published": "2008-10-30T01:15:26Z",
+  "updated": "2008-12-18T01:06:05Z",
+  "year": "2008",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.dis-nn",
+    "gr-qc"
+  ],
+  "doi": "10.1088/1126-6708/2008/12/065",
+  "journal_ref": "JHEP 0812:065,2008",
+  "abs_url": "https://arxiv.org/abs/0810.5394",
+  "pdf_url": "https://arxiv.org/pdf/0810.5394",
+  "pillar": "ryu",
+  "slug": "0810.5394",
+  "pdf_local": "papers/pdf/0810.5394.pdf"
+}

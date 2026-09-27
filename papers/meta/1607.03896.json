@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "1607.03896",
+  "version": "v3",
+  "title": "Many-body topological invariants for fermionic symmetry-protected topological phases",
+  "abstract": "We define and compute many-body topological invariants of interacting fermionic symmetry-protected topological phases, protected by an orientation-reversing symmetry, such as time-reversal or reflection symmetry. The topological invariants are given by partition functions obtained by a path integral on unoriented spacetime which, as we show, can be computed for a given ground state wave function by considering a non-local operation, \"partial\" reflection or transpose. As an application of our scheme, we study the $\\mathbb{Z}_8$ and $\\mathbb{Z}_{16}$ classification of topological superconductors in one and three dimensions.",
+  "authors": [
+    "Hassan Shapourian",
+    "Ken Shiozaki",
+    "Shinsei Ryu"
+  ],
+  "published": "2016-07-13T20:00:02Z",
+  "updated": "2017-05-29T18:03:55Z",
+  "year": "2016",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el",
+    "cond-mat.mes-hall",
+    "cond-mat.supr-con"
+  ],
+  "doi": "10.1103/PhysRevLett.118.216402",
+  "journal_ref": "Phys. Rev. Lett. 118, 216402 (2017)",
+  "abs_url": "https://arxiv.org/abs/1607.03896",
+  "pdf_url": "https://arxiv.org/pdf/1607.03896",
+  "pillar": "ryu",
+  "slug": "1607.03896",
+  "pdf_local": "papers/pdf/1607.03896.pdf"
+}

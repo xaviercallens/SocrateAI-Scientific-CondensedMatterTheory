@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "0901.2686",
+  "version": "v2",
+  "title": "Periodic table for topological insulators and superconductors",
+  "abstract": "Gapped phases of noninteracting fermions, with and without charge conservation and time-reversal symmetry, are classified using Bott periodicity. The symmetry and spatial dimension determines a general universality class, which corresponds to one of the 2 types of complex and 8 types of real Clifford algebras. The phases within a given class are further characterized by a topological invariant, an element of some Abelian group that can be 0, Z, or Z_2. The interface between two infinite phases with different topological numbers must carry some gapless mode. Topological properties of finite systems are described in terms of K-homology. This classification is robust with respect to disorder, provided electron states near the Fermi energy are absent or localized. In some cases (e.g., integer quantum Hall systems) the K-theoretic classification is stable to interactions, but a counterexample is also given.",
+  "authors": [
+    "Alexei Kitaev"
+  ],
+  "published": "2009-01-18T08:46:17Z",
+  "updated": "2009-01-20T07:33:13Z",
+  "year": "2009",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.supr-con",
+    "hep-th",
+    "math-ph"
+  ],
+  "doi": "10.1063/1.3149495",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/0901.2686",
+  "pdf_url": "https://arxiv.org/pdf/0901.2686",
+  "pillar": "topology",
+  "slug": "0901.2686",
+  "pdf_local": "papers/pdf/0901.2686.pdf"
+}

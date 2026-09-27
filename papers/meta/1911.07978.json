@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "1911.07978",
+  "version": "v1",
+  "title": "Holographic Topological Semimetals",
+  "abstract": "The holographic duality allows to construct and study models of strongly coupled quantum matter via dual gravitational theories. In general such models are characterized by the absence of quasiparticles, hydrodynamic behavior and Planckian dissipation times. One particular interesting class of quantum materials are ungapped topological semimetals which have many interesting properties from Hall transport to topologically protected edge states. We review the application of the holographic duality to this type of quantum matter including the construction of holographic Weyl semimetals, nodal line semimetals, quantum phase transition to trivial states (ungapped and gapped), the holographic dual of Fermi arcs and how new unexpected transport properties, such as Hall viscosities arise. The holographic models promise to lead to new insights into the properties of this type of quantum matter.",
+  "authors": [
+    "Karl Landsteiner",
+    "Yan Liu",
+    "Ya-Wen Sun"
+  ],
+  "published": "2019-11-18T22:01:18Z",
+  "updated": "2019-11-18T22:01:18Z",
+  "year": "2019",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1911.07978",
+  "pdf_url": "https://arxiv.org/pdf/1911.07978",
+  "pillar": "bridge",
+  "slug": "1911.07978",
+  "pdf_local": "papers/pdf/1911.07978.pdf"
+}

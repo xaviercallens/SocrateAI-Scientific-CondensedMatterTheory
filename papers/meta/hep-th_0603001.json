@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "hep-th/0603001",
+  "version": "v2",
+  "title": "Holographic Derivation of Entanglement Entropy from AdS/CFT",
+  "abstract": "A holographic derivation of the entanglement entropy in quantum (conformal) field theories is proposed from AdS/CFT correspondence. We argue that the entanglement entropy in d+1 dimensional conformal field theories can be obtained from the area of d dimensional minimal surfaces in AdS_{d+2}, analogous to the Bekenstein-Hawking formula for black hole entropy. We show that our proposal perfectly reproduces the correct entanglement entropy in 2D CFT when applied to AdS_3. We also compare the entropy computed in AdS_5 \\times S^5 with that of the free N=4 super Yang-Mills.",
+  "authors": [
+    "Shinsei Ryu",
+    "Tadashi Takayanagi"
+  ],
+  "published": "2006-02-28T21:29:24Z",
+  "updated": "2006-03-07T19:21:09Z",
+  "year": "2006",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el",
+    "gr-qc",
+    "quant-ph"
+  ],
+  "doi": "10.1103/PhysRevLett.96.181602",
+  "journal_ref": "Phys.Rev.Lett.96:181602,2006",
+  "abs_url": "https://arxiv.org/abs/hep-th/0603001",
+  "pdf_url": "https://arxiv.org/pdf/hep-th/0603001",
+  "pillar": "holography",
+  "slug": "hep-th_0603001",
+  "pdf_local": "papers/pdf/hep-th_0603001.pdf"
+}

@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1406.0307",
+  "version": "v1",
+  "title": "CPT theorem and classification of topological insulators and superconductors",
+  "abstract": "We present a systematic topological classification of fermionic and bosonic topological phases protected by time-reversal, particle-hole, parity, and combination of these symmetries. We use two complementary approaches: one in terms of K-theory classification of gapped quadratic fermion theories with symmetries, and the other in terms of the K-matrix theory description of the edge theory of (2+1)-dimensional bulk theories. The first approach is specific to free fermion theories in general spatial dimensions while the second approach is limited to two spatial dimensions but incorporates effects of interactions. We also clarify the role of CPT theorem in classification of symmetry-protected topological phases, and show, in particular, topological superconductors dis- cussed before are related by CPT theorem.",
+  "authors": [
+    "Chang-Tse Hsieh",
+    "Takahiro Morimoto",
+    "Shinsei Ryu"
+  ],
+  "published": "2014-06-02T09:45:47Z",
+  "updated": "2014-06-02T09:45:47Z",
+  "year": "2014",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1103/PhysRevB.90.245111",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1406.0307",
+  "pdf_url": "https://arxiv.org/pdf/1406.0307",
+  "pillar": "ryu",
+  "slug": "1406.0307",
+  "pdf_local": "papers/pdf/1406.0307.pdf"
+}

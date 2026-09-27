@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "1405.3651",
+  "version": "v3",
+  "title": "Theory of universal incoherent metallic transport",
+  "abstract": "In an incoherent metal, transport is controlled by the collective diffusion of energy and charge rather than by quasiparticle or momentum relaxation. We explore the possibility of a universal bound $D \\gtrsim \\hbar v_F^2/(k_B T)$ on the underlying diffusion constants in an incoherent metal. Such a bound is loosely motivated by results from holographic duality, the uncertainty principle and from measurements of diffusion in strongly interacting non-metallic systems. Metals close to saturating this bound are shown to have a linear in temperature resistivity with an underlying dissipative timescale matching that recently deduced from experimental data on a wide range of metals. This bound may be responsible for the ubiquitous appearance of high temperature regimes in metals with $T$-linear resistivity, motivating direct probes of diffusive processes and measurements of charge susceptibilities.",
+  "authors": [
+    "Sean A. Hartnoll"
+  ],
+  "published": "2014-05-14T20:00:03Z",
+  "updated": "2014-07-24T01:56:30Z",
+  "year": "2014",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el",
+    "hep-th"
+  ],
+  "doi": "10.1038/nphys3174",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1405.3651",
+  "pdf_url": "https://arxiv.org/pdf/1405.3651",
+  "pillar": "adscmt",
+  "slug": "1405.3651",
+  "pdf_local": "papers/pdf/1405.3651.pdf"
+}

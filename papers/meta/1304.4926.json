@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "1304.4926",
+  "version": "v2",
+  "title": "Generalized gravitational entropy",
+  "abstract": "We consider classical Euclidean gravity solutions with a boundary. The boundary contains a non-contractible circle. These solutions can be interpreted as computing the trace of a density matrix in the full quantum gravity theory, in the classical approximation. When the circle is contractible in the bulk, we argue that the entropy of this density matrix is given by the area of a minimal surface. This is a generalization of the usual black hole entropy formula to euclidean solutions without a Killing vector. A particular example of this set up appears in the computation of the entanglement entropy of a subregion of a field theory with a gravity dual. In this context, the minimal area prescription was proposed by Ryu and Takayanagi. Our arguments explain their conjecture.",
+  "authors": [
+    "Aitor Lewkowycz",
+    "Juan Maldacena"
+  ],
+  "published": "2013-04-17T19:30:11Z",
+  "updated": "2013-06-13T14:48:06Z",
+  "year": "2013",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th"
+  ],
+  "doi": "10.1007/JHEP08(2013)090",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1304.4926",
+  "pdf_url": "https://arxiv.org/pdf/1304.4926",
+  "pillar": "holography",
+  "slug": "1304.4926",
+  "pdf_local": "papers/pdf/1304.4926.pdf"
+}

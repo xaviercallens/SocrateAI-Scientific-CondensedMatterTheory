@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "2312.17318",
+  "version": "v1",
+  "title": "Spectral sum rules reflect topological and quantum-geometric invariants",
+  "abstract": "Topological invariants are fundamental characteristics reflecting global properties of quantum systems, yet their exploration has predominantly been limited to the static (DC) transport and transverse (Hall) channel. In this work, we extend the spectral sum rules for frequency-resolved electric conductivity $σ(ω)$ in topological systems, and show that the sum rule for the longitudinal channel is expressed through topological and quantum-geometric invariants. We find that for dispersionless (flat) Chern bands, the rule is expressed as, $ \\int_{-\\infty}^{+\\infty} dω\\, \\text{Re}(σ_{xx} + σ_{yy}) = C Δe^2$, where $C$ is the Chern number, $Δ$ the topological gap, and $e$ the electric charge. In scenarios involving dispersive Chern bands, the rule is defined by the invariant of the quantum metric, and Luttinger invariant, $\\int_{-\\infty}^{+\\infty} dω\\, \\text{Re}(σ_{xx} + σ_{yy}) = 2 πe^2 Δ\\sum_{\\boldsymbol{k}} \\text{Tr} \\, \\mathcal{G}_{ij}(\\boldsymbol{k})$+(Luttinger invariant), where $\\text{Tr} \\, \\mathcal {G}_{ij}$ is invariant of the Fubini-Study metric (defining spread of Wannier orbitals). We further discuss the physical role of topological and quantum-geometric invariants in spectral sum rules. Our approach is adaptable across varied topologies and system dimensionalities.",
+  "authors": [
+    "Alexander Kruchkov",
+    "Shinsei Ryu"
+  ],
+  "published": "2023-12-28T19:00:02Z",
+  "updated": "2023-12-28T19:00:02Z",
+  "year": "2023",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el",
+    "cond-mat.mes-hall"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2312.17318",
+  "pdf_url": "https://arxiv.org/pdf/2312.17318",
+  "pillar": "ryu",
+  "slug": "2312.17318",
+  "pdf_local": "papers/pdf/2312.17318.pdf"
+}

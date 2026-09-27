@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1510.07698",
+  "version": "v2",
+  "title": "Three Lectures On Topological Phases Of Matter",
+  "abstract": "These notes are based on lectures at the PSSCMP/PiTP summer school that was held at Princeton University and the Institute for Advanced Study in July, 2015. They are devoted largely to topological phases of matter that can be understood in terms of free fermions and band theory. They also contain an introduction to the fractional quantum Hall effect from the point of view of effective field theory.",
+  "authors": [
+    "Edward Witten"
+  ],
+  "published": "2015-10-26T21:42:40Z",
+  "updated": "2016-06-13T16:16:26Z",
+  "year": "2015",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.str-el",
+    "hep-th"
+  ],
+  "doi": "10.1393/ncr/i2016-10125-3",
+  "journal_ref": "La Rivista del Nuovo Cimento, 39 (2016) 313-370",
+  "abs_url": "https://arxiv.org/abs/1510.07698",
+  "pdf_url": "https://arxiv.org/pdf/1510.07698",
+  "pillar": "bridge",
+  "slug": "1510.07698",
+  "pdf_local": "papers/pdf/1510.07698.pdf"
+}

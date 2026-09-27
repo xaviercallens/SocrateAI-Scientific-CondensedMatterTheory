@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "1511.08145",
+  "version": "v4",
+  "title": "Observation of noise correlated by the Hawking effect in a water tank",
+  "abstract": "We measured the power spectrum and two-point correlation function for the randomly fluctuating free surface on the downstream side of a stationary flow with a maximum Froude number $F_{\\rm max} \\approx 0.85$ reached above a localised obstacle. On such a flow the scattering of incident long wavelength modes is analogous to that responsible for black hole radiation (the Hawking effect). Our measurements of the noise show a clear correlation between pairs of modes of opposite energies. We also measure the scattering coefficients by applying the same analysis of correlations to waves produced by a wave maker.",
+  "authors": [
+    "L. -P. Euvé",
+    "F. Michel",
+    "R. Parentani",
+    "T. G. Philbin",
+    "G. Rousseaux"
+  ],
+  "published": "2015-11-25T18:40:17Z",
+  "updated": "2016-07-29T18:31:45Z",
+  "year": "2015",
+  "primary_category": "physics.flu-dyn",
+  "categories": [
+    "physics.flu-dyn",
+    "gr-qc"
+  ],
+  "doi": "10.1103/PhysRevLett.117.121301",
+  "journal_ref": "Phys. Rev. Lett. 117, 121301 (2016)",
+  "abs_url": "https://arxiv.org/abs/1511.08145",
+  "pdf_url": "https://arxiv.org/pdf/1511.08145",
+  "pillar": "experiment",
+  "slug": "1511.08145",
+  "pdf_local": "papers/pdf/1511.08145.pdf"
+}

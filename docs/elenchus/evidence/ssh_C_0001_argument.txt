@@ -1,0 +1,32 @@
+Argument evidence for ledger claim SSH-C-0001 (Tier C: proposal / interpretation, not a
+mechanically checked fact -- filed per Elenchus's rule that a model's argument may not be
+filed above C however convincing it reads).
+
+Claim: the Lean T2 target (winding number nu in {0,1} on the counterclockwise unit circle,
+tied to unique zero-mode existence and end-localisation of the finite open SSH chain, per
+SSH-B-0001 and SSH-B-0002 for the finite/exact half and SSH-L-0001 for the winding-number
+half) is the finite, checkable core of the general bulk-boundary correspondence statement.
+
+Basis for the claim (this is the argument, not a derivation):
+1. SSH-B-0001/0002 establish, in exact rational arithmetic with negative and positive controls,
+   that the finite open chain's zero-mode count and location are exactly determined by which of
+   |v| > |w| or |w| > |v| holds -- i.e. by a sign/comparison that is the finite shadow of the
+   winding number's value.
+2. SSH-L-0001 identifies the topological (infinite-chain / Brillouin-zone) half of the same
+   statement with a specific existing Mathlib lemma for the pole-inside case, and names the
+   remaining gap (pole-outside case) precisely rather than assuming it is equally easy.
+3. Ryu & Hatsugai (cond-mat/0112197, in this repo's corpus under the `ryu` pillar; see
+   docs/ryu_review.md section 2.1) state the general principle this instance realises: a loop in
+   parameter space, combined with chiral symmetry, decides zero-energy edge-mode existence for a
+   class of particle-hole-symmetric 1D Hamiltonians that includes SSH as a special case.
+4. docs/literature_review.md section 4 and docs/experimental_program.md section 8 already treat
+   this SSH instance as the intended Lean T2 target and the intended axis-1a experimental target;
+   this claim just states, as a single ledger row, that the three (exact arithmetic, citation,
+   physical reading) are being treated as one coherent target rather than three unrelated facts.
+
+What this claim is NOT: it is not a proof that the printed aquarium experiment (axis 1a) will
+measure this invariant faithfully (that is an open experimental question, flagged in
+experiments/axis1_topological_waves/PREREGISTRATION.md as the geometry that must first be fixed
+by a band calculation), and it is not a claim that Ryu & Hatsugai's paper proves the winding-number
+formulation used here in exactly this normalisation (their loop construction and this SSH
+z-parametrisation have not been checked line-by-line against each other in this session).

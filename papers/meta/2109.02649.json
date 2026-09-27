@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "2109.02649",
+  "version": "v1",
+  "title": "Negativity Spectra in Random Tensor Networks and Holography",
+  "abstract": "Negativity is a measure of entanglement that can be used both in pure and mixed states. The negativity spectrum is the spectrum of eigenvalues of the partially transposed density matrix, and characterizes the degree and \"phase\" of entanglement. For pure states, it is simply determined by the entanglement spectrum. We use a diagrammatic method complemented by a modification of the Ford-Fulkerson algorithm to find the negativity spectrum in general random tensor networks with large bond dimensions. In holography, these describe the entanglement of fixed-area states. It was found that many fixed-area states have a negativity spectrum given by a semi-circle. More generally, we find new negativity spectra that appear in random tensor networks, as well as in phase transitions in holographic states, wormholes, and holographic states with bulk matter. The smallest random tensor network is the same as a micro-canonical version of Jackiw-Teitelboim (JT) gravity decorated with end-of-the-world branes. We consider the semi-classical negativity of Hawking radiation and find that contributions from islands should be included. We verify this in the JT gravity model, showing the Euclidean wormhole origin of these contributions.",
+  "authors": [
+    "Jonah Kudler-Flam",
+    "Vladimir Narovlansky",
+    "Shinsei Ryu"
+  ],
+  "published": "2021-09-06T18:00:01Z",
+  "updated": "2021-09-06T18:00:01Z",
+  "year": "2021",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el",
+    "quant-ph"
+  ],
+  "doi": "10.1007/JHEP02(2022)076",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2109.02649",
+  "pdf_url": "https://arxiv.org/pdf/2109.02649",
+  "pillar": "ryu",
+  "slug": "2109.02649",
+  "pdf_local": "papers/pdf/2109.02649.pdf"
+}

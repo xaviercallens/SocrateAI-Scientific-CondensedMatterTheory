@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "cond-mat/0506581",
+  "version": "v2",
+  "title": "$Z_2$ Topological Order and the Quantum Spin Hall Effect",
+  "abstract": "The quantum spin Hall (QSH) phase is a time reversal invariant electronic state with a bulk electronic band gap that supports the transport of charge and spin in gapless edge states. We show that this phase is associated with a novel $Z_2$ topological invariant, which distinguishes it from an ordinary insulator. The $Z_2$ classification, which is defined for time reversal invariant Hamiltonians, is analogous to the Chern number classification of the quantum Hall effect. We establish the $Z_2$ order of the QSH phase in the two band model of graphene and propose a generalization of the formalism applicable to multi band and interacting systems.",
+  "authors": [
+    "C. L. Kane",
+    "E. J. Mele"
+  ],
+  "published": "2005-06-22T19:17:46Z",
+  "updated": "2005-06-27T18:43:47Z",
+  "year": "2005",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall"
+  ],
+  "doi": "10.1103/PhysRevLett.95.146802",
+  "journal_ref": "Phys. Rev. Lett. 95, 146802 (2005)",
+  "abs_url": "https://arxiv.org/abs/cond-mat/0506581",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/0506581",
+  "pillar": "topology",
+  "slug": "cond-mat_0506581",
+  "pdf_local": "papers/pdf/cond-mat_0506581.pdf"
+}

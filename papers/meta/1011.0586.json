@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "1011.0586",
+  "version": "v2",
+  "title": "Topological field theory and thermal responses of interacting topological superconductors",
+  "abstract": "We investigate the three-dimensional, time-reversal invariant topological superconductors with generic interaction by their response to external fields. The first description is a gravitational topological field theory, which gives a $Z_2$ classification of topological superconductors, and predicts a half-quantized thermal Hall effect on the surface. The second description introduces an s-wave proximity pairing field on the surface, and the associated topological defects give an integer $Z$ classification of the topological superconductors.",
+  "authors": [
+    "Zhong Wang",
+    "Xiao-Liang Qi",
+    "Shou-Cheng Zhang"
+  ],
+  "published": "2010-11-02T11:54:31Z",
+  "updated": "2011-07-28T15:19:10Z",
+  "year": "2010",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el",
+    "cond-mat.supr-con",
+    "hep-th"
+  ],
+  "doi": "10.1103/PhysRevB.84.014527",
+  "journal_ref": "Phys. Rev. B 84, 014527 (2011)",
+  "abs_url": "https://arxiv.org/abs/1011.0586",
+  "pdf_url": "https://arxiv.org/pdf/1011.0586",
+  "pillar": "bridge",
+  "slug": "1011.0586",
+  "pdf_local": "papers/pdf/1011.0586.pdf"
+}

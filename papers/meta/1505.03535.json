@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "1505.03535",
+  "version": "v2",
+  "title": "Classification of topological quantum matter with symmetries",
+  "abstract": "Topological materials have become the focus of intense research in recent years, since they exhibit fundamentally new physical phenomena with potential applications for novel devices and quantum information technology. One of the hallmarks of topological materials is the existence of protected gapless surface states, which arise due to a nontrivial topology of the bulk wave functions. This review provides a pedagogical introduction into the field of topological quantum matter with an emphasis on classification schemes. We consider both fully gapped and gapless topological materials and their classification in terms of nonspatial symmetries, such as time-reversal, as well as spatial symmetries, such as reflection. Furthermore, we survey the classification of gapless modes localized on topological defects. The classification of these systems is discussed by use of homotopy groups, Clifford algebras, K-theory, and non-linear sigma models describing the Anderson (de-)localization at the surface or inside a defect of the material. Theoretical model systems and their topological invariants are reviewed together with recent experimental results in order to provide a unified and comprehensive perspective of the field. While the bulk of this article is concerned with the topological properties of noninteracting or mean-field Hamiltonians, we also provide a brief overview of recent results and open questions concerning the topological classifications of interacting systems.",
+  "authors": [
+    "Ching-Kai Chiu",
+    "Jeffrey C. Y. Teo",
+    "Andreas P. Schnyder",
+    "Shinsei Ryu"
+  ],
+  "published": "2015-05-13T20:01:39Z",
+  "updated": "2016-04-14T15:25:07Z",
+  "year": "2015",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.str-el",
+    "cond-mat.supr-con"
+  ],
+  "doi": "10.1103/RevModPhys.88.035005",
+  "journal_ref": "Rev. Mod. Phys. 88, 035005 (2016)",
+  "abs_url": "https://arxiv.org/abs/1505.03535",
+  "pdf_url": "https://arxiv.org/pdf/1505.03535",
+  "pillar": "topology",
+  "slug": "1505.03535",
+  "pdf_local": "papers/pdf/1505.03535.pdf"
+}

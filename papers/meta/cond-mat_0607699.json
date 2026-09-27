@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "cond-mat/0607699",
+  "version": "v2",
+  "title": "Topological Insulators in Three Dimensions",
+  "abstract": "We study three dimensional generalizations of the quantum spin Hall (QSH) effect. Unlike two dimensions, where the QSH effect is distinguished by a single $Z_2$ topological invariant, in three dimensions there are 4 invariants distinguishing 16 \"topological insulator\" phases. There are two general classes: weak (WTI) and strong (STI) topological insulators. The WTI states are equivalent to layered 2D QSH states, but are fragile because disorder continuously connects them to band insulators. The STI states are robust and have surface states that realize the 2+1 dimensional parity anomaly without fermion doubling, giving rise to a novel \"topological metal\" surface phase. We introduce a tight binding model which realizes both the WTI and STI phases, and we discuss the relevance of this model to real three dimensional materials, including bismuth.",
+  "authors": [
+    "Liang Fu",
+    "C. L. Kane",
+    "E. J. Mele"
+  ],
+  "published": "2006-07-26T20:00:34Z",
+  "updated": "2007-07-11T20:50:42Z",
+  "year": "2006",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall"
+  ],
+  "doi": "10.1103/PhysRevLett.98.106803",
+  "journal_ref": "Phys. Rev. Lett. 98, 106803 (2007)",
+  "abs_url": "https://arxiv.org/abs/cond-mat/0607699",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/0607699",
+  "pillar": "topology",
+  "slug": "cond-mat_0607699",
+  "pdf_local": "papers/pdf/cond-mat_0607699.pdf"
+}

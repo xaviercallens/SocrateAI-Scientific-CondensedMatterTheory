@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1103.5437",
+  "version": "v1",
+  "title": "General Relationship Between the Entanglement Spectrum and the Edge State Spectrum of Topological Quantum States",
+  "abstract": "We consider (2+1)-dimensional topological quantum states which possess edge states described by a chiral (1+1)-dimensional Conformal Field Theory (CFT), such as e.g. a general quantum Hall state. We demonstrate that for such states the reduced density matrix of a finite spatial region of the gapped topological state is a thermal density matrix of the chiral edge state CFT which would appear at the spatial boundary of that region. We obtain this result by applying a physical instantaneous cut to the gapped system, and by viewing the cutting process as a sudden \"quantum quench\" into a CFT, using the tools of boundary conformal field theory. We thus provide a demonstration of the observation made by Li and Haldane about the relationship between the entanglement spectrum and the spectrum of a physical edge state.",
+  "authors": [
+    "Xiao-Liang Qi",
+    "Hosho Katsura",
+    "Andreas W. W. Ludwig"
+  ],
+  "published": "2011-03-28T18:28:22Z",
+  "updated": "2011-03-28T18:28:22Z",
+  "year": "2011",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall"
+  ],
+  "doi": "10.1103/PhysRevLett.108.196402",
+  "journal_ref": "Phys. Rev. Lett. 108, 196402 (2012)",
+  "abs_url": "https://arxiv.org/abs/1103.5437",
+  "pdf_url": "https://arxiv.org/pdf/1103.5437",
+  "pillar": "bridge",
+  "slug": "1103.5437",
+  "pdf_local": "papers/pdf/1103.5437.pdf"
+}

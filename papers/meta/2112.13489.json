@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "2112.13489",
+  "version": "v2",
+  "title": "Lindbladian dynamics of the Sachdev-Ye-Kitaev model",
+  "abstract": "We study the Lindbladian dynamics of the Sachdev-Ye-Kitaev (SYK) model, where the SYK model is coupled to Markovian reservoirs with jump operators that are either linear or quadratic in the Majorana fermion operators. Here, the linear jump operators are non-random while the quadratic jump operators are sampled from a Gaussian distribution. In the limit of large $N$, where $N$ is the number of Majorana fermion operators, and also in the limit of large $N$ and $M$, where $M$ is the number of jump operators, the SYK Lindbladians are analytically tractable, and we obtain their stationary Green's functions, from which we can read off the decay rate. For finite $N$, we also study the distribution of the eigenvalues of the SYK Lindbladians.",
+  "authors": [
+    "Anish Kulkarni",
+    "Tokiro Numasawa",
+    "Shinsei Ryu"
+  ],
+  "published": "2021-12-27T03:04:32Z",
+  "updated": "2022-12-15T17:34:15Z",
+  "year": "2021",
+  "primary_category": "cond-mat.stat-mech",
+  "categories": [
+    "cond-mat.stat-mech",
+    "hep-th",
+    "quant-ph"
+  ],
+  "doi": "10.1103/PhysRevB.106.075138",
+  "journal_ref": "Phys. Rev. B 106, 075138 (2022)",
+  "abs_url": "https://arxiv.org/abs/2112.13489",
+  "pdf_url": "https://arxiv.org/pdf/2112.13489",
+  "pillar": "ryu",
+  "slug": "2112.13489",
+  "pdf_local": "papers/pdf/2112.13489.pdf"
+}
