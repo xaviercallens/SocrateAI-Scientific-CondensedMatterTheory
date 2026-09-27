@@ -25,7 +25,8 @@ Before any new work, read `LL.md` (lessons learned) and the "État au …" secti
 | Physics training labels | `training/physics_predictions.jsonl`, `training/ledger_claims.jsonl` (`tools/build_physics_verdicts.py`) |
 | Session input/output export | `tools/export_session_traces.py` → `~/AutoevolveAI/data/training/adscmt_sessions/`. Drops thinking blocks and scrubs secrets |
 | rusty-SUNDIALS benchmark | upstream `examples/python/rc_network/` (PR #62). Local wheel: `maturin build`, then `pip install --user` |
-| Release and publish wrapper | `experiments/track_h_hyperbolic_network/release/publish.sh {check,hf,zenodo,publish <id>}` |
+| Release and publish wrapper | `experiments/track_h_hyperbolic_network/release/publish.sh {check,hf,zenodo,newversion <published id> <version>,publish <draft id>}` |
+| Peer reviews and responses | `experiments/track_h_hyperbolic_network/paper/reviews/` (review recorded verbatim; every requested computation preregistered first) |
 
 ## 3. Non-negotiable rules
 - **Preregistration.** Commit predictions, with rival forms and refutation criteria, **before** computing. Report deviations and refutations as results.
@@ -35,7 +36,9 @@ Before any new work, read `LL.md` (lessons learned) and the "État au …" secti
 - **Generated numbers.** Tables and figures come from `data/*.json` via `make_assets.py`. Never type numbers by hand.
 - **Irreversible or outward actions** (Zenodo publish, merges, uploads):
   - prepare a script, have the human run it, then verify the result anonymously;
-  - for Zenodo, create a draft first, verify its MD5 checksums and metadata, then publish.
+  - for Zenodo, create a draft first, verify its MD5 checksums and metadata, then publish;
+  - a published Zenodo version is frozen: corrections go in a **new version** (`publish.sh newversion`), and the paper carries a "Changes from version N" paragraph.
+- **Reviews.** Record a review verbatim, check "typos" against the LaTeX source (PDF extraction lies), preregister every requested computation with rival forms, and report a refuted self-prediction as a correction, never as a footnote.
 - **Training data.**
   - Never train on the model's thinking, and never export transcripts that haven't been scrubbed.
   - ANSE's `phase1_traces` contain reward-hacked "perfect" traces (see LL-E1). Filter them before training.

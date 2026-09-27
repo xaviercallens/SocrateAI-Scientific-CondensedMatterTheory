@@ -109,6 +109,64 @@ def predictions():
         "note": "Preregistered metric undefined (series-resistor non-identifiability); replacement metric is post hoc. "
                 "Label as deviation, not as confirmation.",
     })
+    # ---- PREREGISTRATION_3 (peer-review revisions, v1.1) ----
+    sub = D / "subspace_control.json"
+    if sub.exists():
+        rows = json.loads(sub.read_text())
+        r117, r306 = rows[0], rows[1]
+        recs.append({
+            "id": "P3-C-dimension", "source": ["PREREGISTRATION_3.md", "data/subspace_control.json"],
+            "context": "Probe-matched control: square lattice's best-conditioned r-dimensional parameter subspace "
+                       "(sigma_1/sigma_r) vs hyperbolic identifiable-subspace kappa, r = hyperbolic identifiable dimension.",
+            "prediction": {"square_log10_sigma1_over_sigma306": "between 4 and 7", "ordering": "flat > hyperbolic at both r"},
+            "outcome": {"r117": [round(r117["square_log10_sigma1_over_sigma_r"], 2), r117["hyp_log10_kappa_identifiable"]],
+                        "r306": [round(r306["square_log10_sigma1_over_sigma_r"], 2), r306["hyp_log10_kappa_identifiable"]]},
+            "verdict": "refuted", "energy": 1.0,
+            "note": "Flat is BETTER at r=117; only 0.48 decades worse at r=306. Corrects v1.0's probe-matching claim.",
+        })
+    dis = D / "disorder.json"
+    if dis.exists():
+        s = json.loads(dis.read_text())["summary_median_logparam"]
+        for regime, pred, refute, key in (("U[0.5,1.5]", ">= 5 decades", "< 3", "gap_N316"),
+                                          ("logU[0.1,10]", ">= 3 decades", "< 2", "gap_N316")):
+            gap = s[regime][key]
+            ok = gap is not None and gap >= float(pred.split()[1])
+            recs.append({
+                "id": f"P3-B-{regime}", "source": ["PREREGISTRATION_3.md", "data/disorder.json"],
+                "context": f"Conditioning gap (square R=10 minus {{7,3}} L=3, log-parametrised kappa, median of 5 seeds) "
+                           f"under conductances {regime}.",
+                "prediction": {"gap_N316": pred, "refuted_if": refute},
+                "outcome": {"gap_N316": None if gap is None else round(gap, 2),
+                            "hyp_L3": round(s[regime]["{7,3} L=3"], 2), "square_R10": round(s[regime]["square R=10"], 2)},
+                "verdict": "confirmed" if ok else "refuted", "energy": 0.0 if ok else 1.0,
+            })
+        unit = s["unit"]["{7,3} L=3"]
+        change = max(abs(s["defect x100"]["{7,3} L=3"] - unit), abs(s["defect x0.01"]["{7,3} L=3"] - unit))
+        recs.append({
+            "id": "P3-B-defect", "source": ["PREREGISTRATION_3.md", "data/disorder.json"],
+            "context": "x100 and x0.01 contrast on every edge of one interior node at maximal depth, {7,3} L=3.",
+            "prediction": {"hyperbolic_log10_kappa_change": "< 2 decades", "refuted_if": "> 3"},
+            "outcome": {"max_change_decades": round(change, 2)},
+            "verdict": "confirmed" if change < 2 else "refuted", "energy": round(min(1.0, change / 3), 3),
+        })
+    mp = D / "flat_scaling_mp.json"
+    if mp.exists():
+        pred = json.loads((D / "prereg3_predictions.json").read_text())
+        for r in json.loads(mp.read_text()):
+            if r["control_pass"] is not None:
+                continue
+            fam = "square" if r["case"].startswith("square") else "triangular"
+            p = pred[fam]["predictions"][str(r["N"])]
+            k = r["log10_kappa_arb"]
+            recs.append({
+                "id": f"P3-A-{fam}-{r['N']}", "source": ["PREREGISTRATION_3.md", "data/flat_scaling_mp.json"],
+                "context": f"{r['case']}: log10 kappa in 512-bit ball arithmetic (float64-singular instance).",
+                "prediction": {"exp_sqrtN": p["exp_sqrtN"], "power_law": p["power_last_exponent"],
+                               "favoured": "exp_sqrtN", "window_decades": 2.0},
+                "outcome": {"log10_kappa_arb": round(k, 3), "max_rel_radius": r["max_rel_radius_Ginv"]},
+                "verdict": "confirmed" if abs(k - p["exp_sqrtN"]) <= 2.0 else "refuted",
+                "energy": round(min(1.0, abs(k - p["exp_sqrtN"]) / 2.0), 3),
+            })
     return recs
 
 
