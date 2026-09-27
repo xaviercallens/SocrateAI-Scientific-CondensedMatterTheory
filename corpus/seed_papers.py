@@ -140,6 +140,9 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("1105.1183", "hyperbolic", "Study of noise effects in electrical impedance tomography with resistor networks"),
     ("2412.02315", "hyperbolic", "Topology Reconstruction of a Resistor Network with Limited Boundary Measurements"),
     ("0909.1518", "hyperbolic", "Resistance boundaries of infinite networks"),
+    # cited in the Track H preprint (v1.0, doi:10.5281/zenodo.23000391)
+    ("2007.13574", "hyperbolic", "Phylogenetic networks as circuits with resistance distance"),
+    ("math/0008191", "hyperbolic", "Explicit isoperimetric constants and phase transitions in the random-cluster model"),
 
     # --- Pillar 6: Shinsei Ryu -------------------------------------------
     # Selected from his full arXiv record (tools/arxiv_author.py ->

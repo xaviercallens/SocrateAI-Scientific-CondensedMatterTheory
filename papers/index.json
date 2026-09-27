@@ -1957,6 +1957,132 @@
     "pdf_local": "papers/pdf/1104.4858.pdf"
   },
   {
+    "arxiv_id": "1105.1183",
+    "version": "v2",
+    "title": "Study of noise effects in electrical impedance tomography with resistor networks",
+    "abstract": "We present a study of the numerical solution of the two dimensional electrical impedance tomography problem, with noisy measurements of the Dirichlet to Neumann map. The inversion uses parametrizations of the conductivity on optimal grids. The grids are optimal in the sense that finite volume discretizations on them give spectrally accurate approximations of the Dirichlet to Neumann map. The approximations are Dirichlet to Neumann maps of special resistor networks, that are uniquely recoverable from the measurements. Inversion on optimal grids has been proposed and analyzed recently, but the study of noise effects on the inversion has not been carried out. In this paper we present a numerical study of both the linearized and the nonlinear inverse problem. We take three different parametrizations of the unknown conductivity, with the same number of degrees of freedom. We obtain that the parametrization induced by the inversion on optimal grids is the most efficient of the three, because it gives the smallest standard deviation of the maximum a posteriori estimates of the conductivity, uniformly in the domain. For the nonlinear problem we compute the mean and variance of the maximum a posteriori estimates of the conductivity, on optimal grids. For small noise, we obtain that the estimates are unbiased and their variance is very close to the optimal one, given by the Cramer-Rao bound. For larger noise we use regularization and quantify the trade-off between reducing the variance and introducing bias in the solution. Both the full and partial measurement setups are considered.",
+    "authors": [
+      "Liliana Borcea",
+      "Fernando Guevara Vasquez",
+      "Alexander V. Mamonov"
+    ],
+    "published": "2011-05-05T22:12:13Z",
+    "updated": "2011-12-12T17:32:08Z",
+    "year": "2011",
+    "primary_category": "math-ph",
+    "categories": [
+      "math-ph"
+    ],
+    "doi": "10.3934/ipi.2013.7.417",
+    "journal_ref": "Inverse Probl. Imaging, 7 (2013), no. 2, pp 417-443",
+    "abs_url": "https://arxiv.org/abs/1105.1183",
+    "pdf_url": "https://arxiv.org/pdf/1105.1183",
+    "pillar": "hyperbolic",
+    "slug": "1105.1183",
+    "pdf_local": "papers/pdf/1105.1183.pdf"
+  },
+  {
+    "arxiv_id": "2412.02315",
+    "version": "v2",
+    "title": "Topology Reconstruction of a Resistor Network with Limited Boundary Measurements: An Optimization Approach",
+    "abstract": "A problem of reconstruction of the topology and the respective edge resistance values of an unknown circular planar passive resistive network using limitedly available resistance distance measurements is considered. We develop a multistage topology reconstruction method, assuming that the number of boundary and interior nodes, the maximum and minimum edge conductance, and the Kirchhoff index are known apriori. First, a maximal circular planar electrical network consisting of edges with resistors and switches is constructed; no interior nodes are considered. A sparse difference in convex program $\\mathbfΠ_1$ accompanied by round down algorithm is posed to determine the switch positions. The solution gives us a topology that is then utilized to develop a heuristic method to place the interior nodes. The heuristic method consists of reformulating $\\mathbfΠ_1$ as a difference of convex program $\\mathbfΠ_2$ with relaxed edge weight constraints and the quadratic cost. The interior node placement thus obtained may lead to a non-planar topology. We then use the modified Auslander, Parter, and Goldstein algorithm to obtain a set of planar network topologies and re-optimize the edge weights by solving $\\mathbfΠ_3$ for each topology. Optimization problems posed are difference of convex programming problem, as a consequence of constraints triangle inequality and the Kalmansons inequality. A numerical example is used to demonstrate the proposed method.",
+    "authors": [
+      "Shivanagouda Biradar",
+      "Deepak U Patil"
+    ],
+    "published": "2024-12-03T09:31:36Z",
+    "updated": "2026-04-28T12:28:45Z",
+    "year": "2024",
+    "primary_category": "eess.SY",
+    "categories": [
+      "eess.SY"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2412.02315",
+    "pdf_url": "https://arxiv.org/pdf/2412.02315",
+    "pillar": "hyperbolic",
+    "slug": "2412.02315",
+    "pdf_local": "papers/pdf/2412.02315.pdf"
+  },
+  {
+    "arxiv_id": "0909.1518",
+    "version": "v2",
+    "title": "Resistance boundaries of infinite networks",
+    "abstract": "A resistance network is a connected graph $(G,c)$. The conductance function $c_{xy}$ weights the edges, which are then interpreted as conductors of possibly varying strengths. The Dirichlet energy form $\\mathcal E$ produces a Hilbert space structure ${\\mathcal H}_{\\mathcal E}$ on the space of functions of finite energy. The relationship between the natural Dirichlet form $\\mathcal E$ and the discrete Laplace operator $Δ$ on a finite network is given by $\\mathcal E(u,v) = \\la u, \\Lap v\\ra_2$, where the latter is the usual $\\ell^2$ inner product. We describe a reproducing kernel $\\{v_x\\}$ for $\\mathcal E$ and used it to extends the discrete Gauss-Green identity to infinite networks: \\[{\\mathcal E}(u,v) = \\sum_{G} u Δv + \\sum_{\\operatorname{bd}G} u \\tfrac{\\partial}{\\partial \\mathbf{n}} v,\\] where the latter sum is understood in a limiting sense, analogous to a Riemann sum. This formula immediately yields a boundary sum representation for the harmonic functions of finite energy. Techniques from stochastic integration allow one to make the boundary $\\operatorname{bd}G$ precise as a measure space, and give a boundary integral representation (in a sense analogous to that of Poisson or Martin boundary theory). This is done in terms of a Gel'fand triple $S \\ci {\\mathcal H}_{\\mathcal E} \\ci S'$ and gives a probability measure $\\mathbb{P}$ and an isometric embedding of ${\\mathcal H}_{\\mathcal E}$ into $L^2(S',\\mathbb{P})$, and yields a concrete representation of the boundary as a set of linear functionals on $S$.",
+    "authors": [
+      "Palle E. T. Jorgensen",
+      "Erin P. J. Pearse"
+    ],
+    "published": "2009-09-08T17:03:09Z",
+    "updated": "2010-01-22T18:34:17Z",
+    "year": "2009",
+    "primary_category": "math.FA",
+    "categories": [
+      "math.FA",
+      "math.MG",
+      "math.PR"
+    ],
+    "doi": "",
+    "journal_ref": "Boundaries and Spectral Theory, volume 64 of Progress in Probability, pages 113-143. Birkhauser, 2009",
+    "abs_url": "https://arxiv.org/abs/0909.1518",
+    "pdf_url": "https://arxiv.org/pdf/0909.1518",
+    "pillar": "hyperbolic",
+    "slug": "0909.1518",
+    "pdf_local": "papers/pdf/0909.1518.pdf"
+  },
+  {
+    "arxiv_id": "2007.13574",
+    "version": "v4",
+    "title": "Phylogenetic networks as circuits with resistance distance",
+    "abstract": "Phylogenetic networks are notoriously difficult to reconstruct. Here we suggest that it can be useful to view unknown genetic distance along edges in phylogenetic networks as analogous to unknown resistance in electric circuits. This resistance distance, well known in graph theory, turns out to have nice mathematical properties which allow the precise reconstruction of networks. Specifically we show that the resistance distance for a weighted 1-nested network is Kalmanson, and that the unique associated circular split network fully represents the splits of the original phylogenetic network (or circuit). In fact, this full representation corresponds to a face of the balanced minimal evolution polytope for level-1 networks. Thus the unweighted class of the original network can be reconstructed by either the greedy algorithm neighbor-net or by linear programming over a balanced minimal evolution polytope. We begin study of 2-nested networks with both minimum path and resistance distance, and include some counting results for 2-nested networks.",
+    "authors": [
+      "Stefan Forcey",
+      "Drew Scalzo"
+    ],
+    "published": "2020-07-23T23:41:08Z",
+    "updated": "2020-09-29T18:31:06Z",
+    "year": "2020",
+    "primary_category": "math.CO",
+    "categories": [
+      "math.CO",
+      "math.OC"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2007.13574",
+    "pdf_url": "https://arxiv.org/pdf/2007.13574",
+    "pillar": "hyperbolic",
+    "slug": "2007.13574",
+    "pdf_local": "papers/pdf/2007.13574.pdf"
+  },
+  {
+    "arxiv_id": "math/0008191",
+    "version": "v2",
+    "title": "Explicit isoperimetric constants and phase transitions in the random-cluster model",
+    "abstract": "The random-cluster model is a dependent percolation model that has applications in the study of Ising and Potts models. In this paper, several new results are obtained for the random-cluster model on nonamenable graphs with cluster parameter $q\\geq 1$. Among these, the main ones are the absence of percolation for the free random-cluster measure at the critical value, and examples of planar regular graphs with regular dual where $\\pc^\\f (q) > \\pu^\\w (q)$ for $q$ large enough. The latter follows from considerations of isoperimetric constants, and we give the first nontrivial explicit calculations of such constants. Such considerations are also used to prove non-robust phase transition for the Potts model on nonamenable regular graphs.",
+    "authors": [
+      "Olle Haggstrom",
+      "Johan Jonasson",
+      "Russell Lyons"
+    ],
+    "published": "2000-08-24T22:18:34Z",
+    "updated": "2001-04-17T20:51:57Z",
+    "year": "2000",
+    "primary_category": "math.PR",
+    "categories": [
+      "math.PR",
+      "math-ph"
+    ],
+    "doi": "",
+    "journal_ref": "Ann. Probab. 30 (2002), 443--473",
+    "abs_url": "https://arxiv.org/abs/math/0008191",
+    "pdf_url": "https://arxiv.org/pdf/math/0008191",
+    "pillar": "hyperbolic",
+    "slug": "math_0008191",
+    "pdf_local": "papers/pdf/math_0008191.pdf"
+  },
+  {
     "arxiv_id": "cond-mat/0112197",
     "version": "v3",
     "title": "Topological Origin of Zero-Energy Edge States in Particle-Hole Symmetric Systems",

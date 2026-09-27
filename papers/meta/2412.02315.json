@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "2412.02315",
+  "version": "v2",
+  "title": "Topology Reconstruction of a Resistor Network with Limited Boundary Measurements: An Optimization Approach",
+  "abstract": "A problem of reconstruction of the topology and the respective edge resistance values of an unknown circular planar passive resistive network using limitedly available resistance distance measurements is considered. We develop a multistage topology reconstruction method, assuming that the number of boundary and interior nodes, the maximum and minimum edge conductance, and the Kirchhoff index are known apriori. First, a maximal circular planar electrical network consisting of edges with resistors and switches is constructed; no interior nodes are considered. A sparse difference in convex program $\\mathbfΠ_1$ accompanied by round down algorithm is posed to determine the switch positions. The solution gives us a topology that is then utilized to develop a heuristic method to place the interior nodes. The heuristic method consists of reformulating $\\mathbfΠ_1$ as a difference of convex program $\\mathbfΠ_2$ with relaxed edge weight constraints and the quadratic cost. The interior node placement thus obtained may lead to a non-planar topology. We then use the modified Auslander, Parter, and Goldstein algorithm to obtain a set of planar network topologies and re-optimize the edge weights by solving $\\mathbfΠ_3$ for each topology. Optimization problems posed are difference of convex programming problem, as a consequence of constraints triangle inequality and the Kalmansons inequality. A numerical example is used to demonstrate the proposed method.",
+  "authors": [
+    "Shivanagouda Biradar",
+    "Deepak U Patil"
+  ],
+  "published": "2024-12-03T09:31:36Z",
+  "updated": "2026-04-28T12:28:45Z",
+  "year": "2024",
+  "primary_category": "eess.SY",
+  "categories": [
+    "eess.SY"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2412.02315",
+  "pdf_url": "https://arxiv.org/pdf/2412.02315",
+  "pillar": "hyperbolic",
+  "slug": "2412.02315",
+  "pdf_local": "papers/pdf/2412.02315.pdf"
+}
