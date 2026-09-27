@@ -34,6 +34,14 @@ This update adds **Track H**: the conditioning of the discrete inverse conductan
 - `hf_upload.py` uploads to Hugging Face.
 - `zenodo_draft.py` creates a Zenodo draft only and never publishes.
 
+### v1.1 (revised after peer review, 2026-09-27)
+- The review is recorded verbatim with a point-by-point response in `paper/reviews/`; all requested computations were preregistered first (`PREREGISTRATION_3.md`).
+- **Correction of v1.0:** a dimension-matched probe control refuted our prediction; at matched probe count and matched dimension the advantage is ≤ 0.5 decades (reversed at N≈112). Ledger H0-X-0005 + correction note on H0-X-0003.
+- **Disorder:** all predictions held; the gap widens to 8.3 decades under two-decade log-uniform disorder (H0-X-0006).
+- **Flat scaling beyond float64:** 512-bit Arb gives log₁₀κ = 15.99 (triangular N=421) and 16.54 (square N=797), within 0.4 decades of the preregistered exp(c√N) extrapolation and ≥ 2.7 decades from a power law; local exponent keeps increasing. See Table 1 for the largest case.
+- Proposition 1's degree-three premise argued for general L; the seven "typos" in the review were PDF-extraction artefacts.
+- New Zenodo version under the concept DOI (v1.0 stays frozen); three new dataset tables.
+
 ### Published
 - **Zenodo:** DOI [10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391) (paper, dataset, code).
 - **Hugging Face:** the [dataset](https://huggingface.co/datasets/callensxavier/hyperbolic-resistor-networks) and the [simulator](https://huggingface.co/callensxavier/hyperbolic-resistor-network-simulator).

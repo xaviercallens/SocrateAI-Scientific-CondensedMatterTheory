@@ -52,7 +52,10 @@ topologique de la Proposition 1. Les quatre ont été préenregistrées (`PREREG
 v1.1. Résultat notable : le contrôle à dimension égale a **réfuté notre propre prédiction** ; l'avantage à sondes et
 dimension égales est au plus d'une demi-décade (et inversé à $N\approx112$). v1.0 est corrigé en ce sens dans v1.1,
 publié comme nouvelle version Zenodo sous le même DOI de concept. Les régimes désordonnés confirment l'avantage
-(l'écart s'élargit à 8,3 décades sous désordre log-uniforme sur deux décades).
+(l'écart s'élargit à 8,3 décades sous désordre log-uniforme sur deux décades). La loi plate au-delà de la double
+précision, calculée en arithmétique de boules à 512 bits, suit la forme $e^{c\sqrt N}$ préenregistrée
+($\log_{10}\kappa = 15{,}99$ à $N=421$, $16{,}54$ à $N=797$, à 0,4 décade des extrapolations ; une loi de puissance
+manque de 2,7 décades ou plus) : la limitation (i) de v1.0 est levée.
 
 ### Prochaines étapes, par priorité
 
