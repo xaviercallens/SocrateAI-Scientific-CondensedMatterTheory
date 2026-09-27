@@ -1,0 +1,20 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "title": "Logarithmic boundary depth and the conditioning of the discrete inverse conductance problem on hyperbolic lattices",
+ "creators": [
+  {"name": "Callens, Xavier", "affiliation": "SocrateAI Lab"}
+ ],
+ "description": "<p>Preprint, data and code. We study the discrete inverse conductance (Calderón) problem on layer-truncated hyperbolic {7,3} tilings and matched square and triangular lattice disks. The condition number of the Dirichlet-to-Neumann sensitivity Jacobian grows polynomially on the hyperbolic lattice (log10 kappa = 3.89 at N = 847, inside a preregistered band) and exceeds float64 resolution by N ~ 400 on flat lattices, because boundary depth scales as O(log N) versus O(sqrt N). Exact GF(p) ranks show all tested networks are identifiable: the difference is conditioning. The advantage persists under probe matching (post hoc identifiable-subspace metric) and for the Neumann-to-Dirichlet map. For the RC version, a preregistered finite-size prediction was refuted; a domain-monotonicity argument shows the Dirichlet spectral gap decreases to a positive limit, bounding the RC relaxation time uniformly in N.</p><p>Files: paper.pdf; dataset.zip (graphs, DtN matrices, conditioning, exact ranks, spectral gaps, integrator controls, RC step responses; CC BY 4.0); code.zip (simulator and analysis scripts; MIT). The rusty-SUNDIALS CVODE integrator cross-check is specified but not run in this version.</p>",
+ "access_right": "open",
+ "license": "cc-by-4.0",
+ "keywords": ["inverse problems", "electrical impedance tomography", "resistor networks", "hyperbolic lattices", "Calderon problem", "condition number", "spectral gap", "RC networks"],
+ "language": "eng",
+ "version": "1.0",
+ "prereserve_doi": true,
+ "related_identifiers": [
+  {"identifier": "https://github.com/xaviercallens/SocrateAI-Scientific-CondensedMatterTheory", "relation": "isSupplementTo", "resource_type": "software"},
+  {"identifier": "https://github.com/xaviercallens/rusty-SUNDIALS", "relation": "references", "resource_type": "software"}
+ ],
+ "notes": "Code in code.zip is MIT-licensed; data and paper are CC BY 4.0. Prepared with AI assistance (Claude, Anthropic); the author reviewed all claims."
+}
