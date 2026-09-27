@@ -66,10 +66,11 @@ Une seule **Tesla T4 (15 Go)**, partagée. Mesuré le 2026-09-27 : GPU à 99 %,
 13 Go de VRAM occupés par `Goedel-Prover-V2-8B`. Toute charge GPU de ce
 programme — embeddings, diagonalisation, transformée de Walsh–Hadamard —
 **entre en concurrence avec le prouveur Lean**. Ordre de grandeur utile : un
-vecteur d'état de $N$ qubits en `complex128` occupe $16 \cdot 2^N$ octets, soit
-8,6 Go à $N = 29$ ; **$N = 29$ est le plafond sur cette carte, prouveur
-arrêté**. Au-delà : calcul distribué (§1, lignes « calcul distribué » et
-« infra GCP »).
+vecteur d'état de $N$ qubits en `complex128` occupe $16 \cdot 2^N$ octets, et
+un calcul par transformée en tient deux (état + tampon). Plafond sur cette
+carte, prouveur arrêté : **$N = 28$ en `complex128`** (2 × 4,3 Go), $N = 29$ en
+`complex64` ou en place. Au-delà : calcul distribué (§1, lignes « calcul
+distribué » et « infra GCP »).
 
 ---
 

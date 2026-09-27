@@ -17,7 +17,7 @@ niveau suivant échoue, l'acquis reste.
 
 | Axe | T0 — définitions | T1 — théorème jouet | T2 — **cible réaliste** | T3 — ambition |
 |---|---|---|---|---|
-| **1 SSH** | hamiltonien SSH, symétrie chirale $\Gamma H \Gamma^{-1} = -H$ | le spectre est symétrique par rapport à 0 | **$\nu\in\{0,-1\}$ ; chaîne impaire : un unique mode nul, au bord gauche ssi $\lvert w\rvert>\lvert v\rvert$** | demi-droite : $\dim\ker=\lvert\nu\rvert$ (Toeplitz) ; dix classes (Bott) |
+| **1 SSH** | hamiltonien SSH, symétrie chirale $\Gamma H \Gamma^{-1} = -H$ | le spectre est symétrique par rapport à 0 | **$\nu\in\{0,1\}$ (sens trigonométrique) ; chaîne impaire : un unique mode nul, au bord gauche ssi $\lvert w\rvert>\lvert v\rvert$** | demi-droite : $\dim\ker=\lvert\nu\rvert$ (Toeplitz) ; dix classes (Bott) |
 | **2 Horizon** | écoulement barotrope irrotationnel, métrique acoustique $g_{\mu\nu}$ | $g_{\mu\nu}$ lorentzienne hors horizon | **perturbations $\Rightarrow \partial_\mu(\sqrt{-g}g^{\mu\nu}\partial_\nu\phi)=0$** | spectre thermique |
 | **3 Vortex** | phase, indice d'enroulement | invariance par homotopie | **quantification entière (Stokes), additivité** | classification OAM |
 | **4 Billard** | Laplacien de Dirichlet, comptage $N(k)$ | valeurs propres explicites du rectangle | **$N(k)\sim Ak^2/4\pi$ pour le rectangle** | loi de Weyl générale |
@@ -30,15 +30,22 @@ niveau suivant échoue, l'acquis reste.
 C'est le sommet scientifique du programme, et la seule cible où théorie,
 expérience et preuve formelle se referment sur le même énoncé.
 
-**Énoncé**, vérifié numériquement par
-[`../experiments/axis1_topological_waves/ssh_check.py`](../experiments/axis1_topological_waves/ssh_check.py)
-avant d'être verrouillé. Soit $h(k) = v + w e^{-ik}$, avec $v, w$ réels non nuls
-et $|v| \ne |w|$.
+**Énoncé**, fixé et vérifié numériquement par
+[`../experiments/axis1_topological_waves/ssh_check.py`](../experiments/axis1_topological_waves/ssh_check.py).
+Il n'a **pas encore** été passé à `statement_lock.py` de LeanMaster : ce sera la
+première étape du projet. Soit $h(z) = v + wz$, avec $v, w$ réels non nuls et
+$|v| \ne |w|$.
 
-1. **Volume.** Le nombre d'enroulement
-   $\nu = \frac{1}{2\pi i}\oint_{\text{BZ}} \frac{h'(k)}{h(k)}\,dk$ est un
-   entier ; $\nu = 0$ si $|v|>|w|$, et $\nu = -1$ si $|w|>|v|$ (le contour est
-   parcouru dans le sens horaire).
+1. **Volume.** Le nombre d'enroulement de $h$ sur le cercle unité **parcouru
+   dans le sens trigonométrique** (l'orientation de `circleMap` et de
+   `circleIntegral` dans Mathlib),
+   $\nu = \frac{1}{2\pi i}\oint_{|z|=1} \frac{h'(z)}{h(z)}\,dz$, vaut $0$ si
+   $|v|>|w|$ et $+1$ si $|w|>|v|$.
+   *Convention.* Avec le paramétrage répandu $h(k) = v + we^{-ik}$, le cercle
+   est parcouru dans le sens horaire et l'on obtient $-\nu$. On verrouille la
+   convention trigonométrique **parce que** c'est celle du lemme Mathlib qui
+   fait la preuve : verrouiller « $-1$ » puis prouver par `circleIntegral`
+   pousserait à retourner l'énoncé.
 2. **Bord.** La chaîne ouverte **impaire** $A_0B_0A_1\dots B_{N-1}A_N$
    ($2N+1$ sites, couplage intra-cellule $v$, inter-cellule $w$) possède
    **exactement un** mode d'énergie nulle, porté par le sous-réseau A,
@@ -54,8 +61,17 @@ et $|v| \ne |w|$.
   $\det D = v^N \neq 0$, et il n'existe **aucun** mode exactement nul. Les
   modes de bord de la phase topologique ont une énergie $\sim (v/w)^N$ :
   exponentiellement petite, jamais nulle.
-- « $\nu = +1$ dans la phase topologique » : faux avec cette convention de
-  signe. Sous verrou d'énoncé, le signe n'est pas un détail.
+- Un énoncé qui ne précise pas l'orientation : « $\nu = 1$ » et « $\nu = -1$ »
+  sont tous deux vrais, chacun dans sa convention. Sous verrou d'énoncé, le
+  signe n'est pas un détail.
+
+**Plan de preuve du point 1.** Comme $h'(z)/h(z) = (z + v/w)^{-1}$ :
+- **phase topologique** ($|v/w| < 1$, pôle intérieur) : c'est exactement
+  `circleIntegral.integral_sub_inv_of_mem_ball` (Mathlib), qui donne $2\pi i$ ;
+- **phase triviale** ($|v/w| > 1$, pôle extérieur) : ce lemme ne couvre **pas**
+  ce cas (sa documentation le dit) ; il faut le théorème de Cauchy de
+  `Mathlib.Analysis.Complex.CauchyIntegral`, dont le nom exact de lemme reste à
+  identifier avant d'écrire la preuve.
 
 L'égalité $\dim\ker = |\nu|$ est **vraie sur la demi-droite infinie** : c'est
 le théorème d'indice de Toeplitz. C'est la bonne cible **T3**, pas T2.

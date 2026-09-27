@@ -42,13 +42,17 @@ commencent tous par une reproduction.
 - **Projet.** Formaliser le théorème de Ryu–Hatsugai (`cond-mat/0112197`) sous
   sa forme SSH : enroulement du volume ↔ mode de bord de la chaîne ouverte
   impaire.
-- **Pourquoi c'est réaliste.** L'énoncé est déjà verrouillé et vérifié
-  numériquement ([`lean/README.md`](../lean/README.md),
-  [`ssh_check.py`](../experiments/axis1_topological_waves/ssh_check.py)). Le
-  membre topologique se ramène à un lemme **existant** de Mathlib : pour
+- **Pourquoi c'est réaliste.** L'énoncé est fixé et vérifié numériquement
+  ([`lean/README.md`](../lean/README.md),
+  [`ssh_check.py`](../experiments/axis1_topological_waves/ssh_check.py)) ; il
+  reste à le passer au `statement_lock.py` de LeanMaster. Le **cas
+  topologique** se ramène à un lemme existant de Mathlib : pour
   $h(z) = v + wz$, $h'/h = (z + v/w)^{-1}$, et
   `circleIntegral.integral_sub_inv_of_mem_ball` donne $2\pi i$ quand
-  $|v/w| < 1$. Le membre de bord est de l'algèbre linéaire finie.
+  $|v/w| < 1$ — d'où $\nu = +1$ dans le sens trigonométrique, convention
+  choisie pour cette raison. Le **cas trivial** (pôle extérieur) n'est pas
+  couvert par ce lemme et demande le théorème de Cauchy. Le membre de bord est
+  de l'algèbre linéaire finie.
 - **Suite (T3).** La table périodique par le problème d'extension de Clifford
   (Kitaev `0901.2686`), avec la `CliffordAlgebra` de Mathlib. Projet long, de
   valeur de référence durable.
@@ -64,8 +68,11 @@ commencent tous par une reproduction.
 - **Pourquoi.** Le cœur est une transformée en $O(N 2^N)$ sur un vecteur de
   $2^N$ amplitudes : un noyau limité par la bande passante mémoire, idéal pour
   le GPU. Reproduire leurs courbes, puis repousser $N$.
-- **Chiffre qui borne le projet.** $16 \cdot 2^N$ octets en `complex128` :
-  **$N = 29$ au maximum** sur la T4 de 15 Go, et seulement prouveur arrêté.
+- **Chiffre qui borne le projet.** Le calcul tient le vecteur d'état **et** un
+  second tableau de $2^N$ entrées (produit ou transformée) :
+  $2 \times 16 \cdot 2^N$ octets en `complex128`. Sur la T4 de 15 Go :
+  **$N = 28$** en `complex128` (8,6 Go), **$N = 29$** seulement en `complex64`
+  ou avec une transformée en place — et dans les deux cas, prouveur arrêté.
   Au-delà, découpage multi-GPU de la transformée (elle se factorise par blocs).
 - **Actifs.** Chaîne CUDA 11.8 / PyTorch 2.7.1 validée sur T4 et discipline de
   reproductibilité bit à bit de `runux-ai-runtime`.
@@ -137,12 +144,13 @@ checkout local non plus.
 
 | # | Projet | Compétences | Première étape vérifiable | Durée indicative |
 |---|---|---|---|---|
-| **1** | **Ryu–Hatsugai / SSH en Lean 4** | Lean, IA, noyau (méthode) | le membre topologique via `circleIntegral.integral_sub_inv_of_mem_ball` compile, sans `sorry` | semaines |
+| **1** | **Ryu–Hatsugai / SSH en Lean 4** | Lean, IA, noyau (méthode) | énoncé passé à `statement_lock.py` ; puis le cas topologique via `circleIntegral.integral_sub_inv_of_mem_ball` compile, sans `sorry` | semaines |
 | **2** | **Moteur d'entropie de stabilisateur GPU** (Xiao–Ryu) | GPU, Rust, noyau (méthode), HPC | reproduire une courbe de `2601.00761` à $N \le 20$ | semaines à mois |
 | **3** | **TDA de transitions topologiques** | Gudhi, HPC, IA | le modèle SSH : la transition en $\lvert v\rvert = \lvert w\rvert$ est détectée, et le témoin sans transition ne l'est pas | semaines |
 
-**Pourquoi cet ordre.** Le projet 1 a l'énoncé le plus sûr (vérifié, et appuyé
-sur un lemme Mathlib existant), il réutilise le pipeline le plus mature de la
+**Pourquoi cet ordre.** Le projet 1 a l'énoncé le plus sûr (vérifié
+numériquement, et dont le cas topologique s'appuie sur un lemme Mathlib
+existant), il réutilise le pipeline le plus mature de la
 machine, et il **boucle avec l'expérience** de l'axe 1a : le même énoncé est
 prouvé en Lean, vérifié numériquement, et mesuré dans l'aquarium. Le projet 2
 est l'entrée la plus directe dans les travaux actuels de Ryu. Le projet 3 est

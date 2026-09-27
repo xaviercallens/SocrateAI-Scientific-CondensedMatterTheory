@@ -577,14 +577,14 @@ ajouté.** Le dépôt LeanMaster fournit la porte de vérification.
 
 | Axe | T0 — définitions | T1 — théorème jouet | T2 — cible réaliste | T3 — ambition |
 |---|---|---|---|---|
-| **1 SSH** | hamiltonien SSH, symétrie chirale | le spectre est symétrique par rapport à 0 | **$\nu \in \{0,-1\}$ selon $\lvert v\rvert \gtrless \lvert w\rvert$ ; chaîne impaire : exactement un mode nul, $\psi_A(n)\propto(-v/w)^n$, au bord gauche ssi $\lvert w\rvert>\lvert v\rvert$** | demi-droite : $\dim\ker = \lvert\nu\rvert$ (indice de Toeplitz) ; dix classes |
+| **1 SSH** | hamiltonien SSH, symétrie chirale | le spectre est symétrique par rapport à 0 | **$\nu \in \{0,1\}$ (sens trigonométrique) selon $\lvert v\rvert \gtrless \lvert w\rvert$ ; chaîne impaire : exactement un mode nul, $\psi_A(n)\propto(-v/w)^n$, au bord gauche ssi $\lvert w\rvert>\lvert v\rvert$** | demi-droite : $\dim\ker = \lvert\nu\rvert$ (indice de Toeplitz) ; dix classes |
 | **2 Horizon** | écoulement barotrope, métrique acoustique | $g_{\mu\nu}$ est lorentzienne hors horizon | **perturbations $\Rightarrow \Box_g\phi = 0$** | spectre thermique de Hawking |
 | **3 Vortex** | phase, indice d'enroulement | enroulement invariant par homotopie | **quantification entière par Stokes ; additivité des charges** | classification complète des faisceaux OAM |
 | **4 Billard** | Laplacien de Dirichlet, comptage $N(k)$ | valeurs propres explicites du rectangle | **$N(k)\sim Ak^2/4\pi$ pour le rectangle** | loi de Weyl générale |
 | **5 Caustiques** | famille génératrice, ensemble critique | le pli est stable | **forme normale de la fronce ; pour $\tfrac{x^4}{4}+\tfrac{u_2x^2}{2}+u_1x$, caustique $=\{4u_2^3+27u_1^2=0\}$** | classification ADE |
 
 **Le T2 de l'axe 1 est le sommet scientifique du programme.** C'est la
-correspondance volume–frontière sous sa forme la plus élémentaire : *le signe
+correspondance volume–frontière sous sa forme la plus élémentaire : *la valeur
 d'un invariant du volume décide de quel côté de la chaîne vit le mode de bord.*
 Il est démontrable en Lean, mesurable dans l'aquarium, et relié au §4 de
 [`literature_review.md`](literature_review.md).
@@ -597,9 +597,11 @@ le bloc de sous-réseau a $\det D = v^N \ne 0$ : les modes de bord y ont une
 énergie $\sim (v/w)^N$, exponentiellement petite mais non nulle. La version
 exacte et finie porte sur la **chaîne impaire**. L'égalité
 $\dim\ker = \lvert\nu\rvert$ est vraie sur la **demi-droite** infinie (théorème
-d'indice de Toeplitz), et relève de T3. Enfin, avec $h(k)=v+we^{-ik}$, le
-contour est parcouru dans le sens horaire : $\nu = -1$, pas $+1$, quand
-$\lvert w\rvert>\lvert v\rvert$.
+d'indice de Toeplitz), et relève de T3. Enfin, l'orientation : on fixe le sens
+trigonométrique (celui de `circleIntegral` dans Mathlib), où $\nu = +1$ quand
+$\lvert w\rvert>\lvert v\rvert$ ; le paramétrage $h(k)=v+we^{-ik}$ parcourt le
+cercle dans le sens horaire et donne $-1$. Voir
+[`lean/README.md`](../lean/README.md).
 
 ---
 

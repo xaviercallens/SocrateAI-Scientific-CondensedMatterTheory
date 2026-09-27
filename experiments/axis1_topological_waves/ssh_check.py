@@ -8,9 +8,12 @@ first artifact of axis 1.
 
 It checks four claims, and exits non-zero if any fails:
 
-  1. Winding number of h(k) = v + w e^{-ik} is 0 for |v|>|w| and **-1** for
-     |w|>|v| (the curve is traversed clockwise -- the sign is not cosmetic
-     under a statement lock).
+  1. Winding number of z -> v + w z on the COUNTERCLOCKWISE unit circle (the
+     orientation of Mathlib's circleIntegral) is 0 for |v|>|w| and **+1** for
+     |w|>|v|. With the other common convention h(k) = v + w e^{-ik} the
+     circle runs clockwise and the answer is -1. The sign is not cosmetic
+     under a statement lock: proving a "-1" statement through circleIntegral
+     would push someone to flip it.
   2. An open chain with an EVEN number of sites (2N) has **no exact zero mode**
      for v != 0: its sublattice block is bidiagonal with v on the diagonal, so
      det D = v^N. Edge modes of the topological phase sit at energy ~ (v/w)^N,
@@ -38,10 +41,15 @@ import sys
 import numpy as np
 
 
-def winding_number(v: float, w: float, samples: int = 4096) -> int:
-    """Winding of h(k) = v + w e^{-ik} around 0, k from 0 to 2pi."""
+def winding_number(v: float, w: float, samples: int = 4096, sign: int = +1) -> int:
+    """Winding of h = v + w e^{sign*ik} around 0, k from 0 to 2pi.
+
+    sign=+1 traverses the unit circle z = e^{ik} counterclockwise -- the
+    orientation of Mathlib's circleIntegral / circleMap, and the convention
+    locked for Lean. sign=-1 is the e^{-ik} convention, which reverses it.
+    """
     k = np.linspace(0.0, 2.0 * math.pi, samples, endpoint=False)
-    h = v + w * np.exp(-1j * k)
+    h = v + w * np.exp(sign * 1j * k)
     phase = np.unwrap(np.angle(np.append(h, h[0])))
     return int(round((phase[-1] - phase[0]) / (2.0 * math.pi)))
 
@@ -89,9 +97,12 @@ def main() -> int:
         if not ok:
             failures.append(label)
 
-    print("1. winding number, h(k) = v + w e^{-ik}")
-    check(winding_number(1.0, 0.5) == 0, "|v|>|w| -> nu = 0")
-    check(winding_number(0.5, 1.0) == -1, "|w|>|v| -> nu = -1 (clockwise)")
+    print("1. winding number of z -> v + w z on the unit circle")
+    print("   locked convention: counterclockwise (z = e^{ik}), as in Mathlib circleIntegral")
+    check(winding_number(1.0, 0.5, sign=+1) == 0, "|v|>|w| -> nu = 0")
+    check(winding_number(0.5, 1.0, sign=+1) == 1, "|w|>|v| -> nu = +1 (counterclockwise)")
+    print("   other convention: h(k) = v + w e^{-ik} runs clockwise and flips the sign")
+    check(winding_number(0.5, 1.0, sign=-1) == -1, "|w|>|v| -> -1 with e^{-ik}")
 
     print("2. even open chain (2N sites): no exact zero mode, because det D = v^N")
     # Tested on det D itself, not by counting eigenvalues under a tolerance: for
