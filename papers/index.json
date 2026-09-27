@@ -1610,6 +1610,303 @@
     "pdf_local": "papers/pdf/1802.09649.pdf"
   },
   {
+    "arxiv_id": "1802.09549",
+    "version": "v2",
+    "title": "Hyperbolic Lattices in Circuit Quantum Electrodynamics",
+    "abstract": "After close to two decades of research and development, superconducting circuits have emerged as a rich platform for both quantum computation and quantum simulation. Lattices of superconducting coplanar waveguide (CPW) resonators have been shown to produce artificial materials for microwave photons, where weak interactions can be introduced either via non-linear resonator materials or strong interactions via qubit-resonator coupling. Here, we highlight the previously-overlooked property that these lattice sites are deformable and allow the realization of tight-binding lattices which are unattainable, even in conventional solid-state systems. In particular, we show that networks of CPW resonators can create a new class of materials which constitute regular lattices in an effective hyperbolic space with constant negative curvature. We present numerical simulations of a series of hyperbolic analogs of the kagome lattice which show unusual densities of states with a spectrally-isolated degenerate flat band. We also present a proof-of-principle experimental realization of one of these lattices. This paper represents the first step towards on-chip quantum simulation of materials science and interacting particles in curved space.",
+    "authors": [
+      "Alicia J. Kollár",
+      "Mattias Fitzpatrick",
+      "Andrew A. Houck"
+    ],
+    "published": "2018-02-26T19:00:20Z",
+    "updated": "2019-01-29T19:00:03Z",
+    "year": "2018",
+    "primary_category": "quant-ph",
+    "categories": [
+      "quant-ph",
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1038/s41586-019-1348-3",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1802.09549",
+    "pdf_url": "https://arxiv.org/pdf/1802.09549",
+    "pillar": "hyperbolic",
+    "slug": "1802.09549",
+    "pdf_local": "papers/pdf/1802.09549.pdf"
+  },
+  {
+    "arxiv_id": "2008.05489",
+    "version": "v2",
+    "title": "Hyperbolic band theory",
+    "abstract": "The notions of Bloch wave, crystal momentum, and energy bands are commonly regarded as unique features of crystalline materials with commutative translation symmetries. Motivated by the recent realization of hyperbolic lattices in circuit quantum electrodynamics, we exploit ideas from algebraic geometry to construct the first hyperbolic generalization of Bloch theory, despite the absence of commutative translation symmetries. For a quantum particle propagating in a hyperbolic lattice potential, we construct a continuous family of eigenstates that acquire Bloch-like phase factors under a discrete but noncommutative group of hyperbolic translations, the Fuchsian group of the lattice. A hyperbolic analog of crystal momentum arises as the set of Aharonov-Bohm phases threading the cycles of a higher-genus Riemann surface associated with this group. This crystal momentum lives in a higher-dimensional Brillouin zone torus, the Jacobian of the Riemann surface, over which a discrete set of continuous energy bands can be computed.",
+    "authors": [
+      "Joseph Maciejko",
+      "Steven Rayan"
+    ],
+    "published": "2020-08-12T18:00:11Z",
+    "updated": "2021-09-08T18:00:03Z",
+    "year": "2020",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "hep-th",
+      "math-ph",
+      "math.AG",
+      "quant-ph"
+    ],
+    "doi": "10.1126/sciadv.abe9170",
+    "journal_ref": "Science Advances 7, eabe9170 (2021)",
+    "abs_url": "https://arxiv.org/abs/2008.05489",
+    "pdf_url": "https://arxiv.org/pdf/2008.05489",
+    "pillar": "hyperbolic",
+    "slug": "2008.05489",
+    "pdf_local": "papers/pdf/2008.05489.pdf"
+  },
+  {
+    "arxiv_id": "1910.12318",
+    "version": "v2",
+    "title": "Quantum Simulation of Hyperbolic Space with Circuit Quantum Electrodynamics: From Graphs to Geometry",
+    "abstract": "We show how quantum many-body systems on hyperbolic lattices with nearest-neighbor hopping and local interactions can be mapped onto quantum field theories in continuous negatively curved space. The underlying lattices have recently been realized experimentally with superconducting resonators and therefore allow for a table-top quantum simulation of quantum physics in curved background. Our mapping provides a computational tool to determine observables of the discrete system even for large lattices, where exact diagonalization fails. As an application and proof of principle we quantitatively reproduce the ground state energy, spectral gap, and correlation functions of the noninteracting lattice system by means of analytic formulas on the Poincaré disk, and show how conformal symmetry emerges for large lattices. This sets the stage for studying interactions and disorder on hyperbolic graphs in the future. Importantly, our analysis reveals that even relatively small discrete hyperbolic lattices emulate the continuous geometry of negatively curved space, and thus can be used to experimentally resolve fundamental open problems at the interface of interacting many-body systems, quantum field theory in curved space, and quantum gravity.",
+    "authors": [
+      "Igor Boettcher",
+      "Przemyslaw Bienias",
+      "Ron Belyansky",
+      "Alicia J. Kollár",
+      "Alexey V. Gorshkov"
+    ],
+    "published": "2019-10-27T18:28:42Z",
+    "updated": "2020-09-11T16:18:05Z",
+    "year": "2019",
+    "primary_category": "quant-ph",
+    "categories": [
+      "quant-ph",
+      "cond-mat.mes-hall",
+      "gr-qc",
+      "hep-th",
+      "math-ph"
+    ],
+    "doi": "10.1103/PhysRevA.102.032208",
+    "journal_ref": "Phys. Rev. A 102, 032208 (2020)",
+    "abs_url": "https://arxiv.org/abs/1910.12318",
+    "pdf_url": "https://arxiv.org/pdf/1910.12318",
+    "pillar": "hyperbolic",
+    "slug": "1910.12318",
+    "pdf_local": "papers/pdf/1910.12318.pdf"
+  },
+  {
+    "arxiv_id": "2105.01087",
+    "version": "v2",
+    "title": "Crystallography of Hyperbolic Lattices",
+    "abstract": "Hyperbolic lattices are a revolutionary platform for tabletop simulations of holography and quantum physics in curved space and facilitate efficient quantum error correcting codes. Their underlying geometry is non-Euclidean, and the absence of Bloch's theorem precludes the straightforward application of the often indispensable energy band theory to study model Hamiltonians on hyperbolic lattices. Motivated by recent insights into hyperbolic band theory, we initiate a crystallography of hyperbolic lattices. We show that many hyperbolic lattices feature a hidden crystal structure characterized by unit cells, hyperbolic Bravais lattices, and associated symmetry groups. Using the mathematical framework of higher-genus Riemann surfaces and Fuchsian groups, we derive, for the first time, a list of example hyperbolic $\\{p,q\\}$ lattices and their hyperbolic Bravais lattices, including five infinite families and several graphs relevant for experiments in circuit quantum electrodynamics and topolectrical circuits. This dramatically simplifies the computation of energy spectra of tight-binding Hamiltonians on hyperbolic lattices, from exact diagonalization on the graph to solving a finite set of equations in terms of irreducible representations. The significance of this achievement needs to be compared to the all-important role played by conventional Euclidean crystallography in the study of solids. We exemplify the high potential of this approach by constructing and diagonalizing finite-dimensional Bloch wave Hamiltonians. Our work lays the foundation for generalizing some of the most powerful concepts of solid state physics, crystal momentum and Brillouin zone, to the emerging field of hyperbolic lattices and tabletop simulations of gravitational theories, and reveals the connections to concepts from topology and algebraic geometry.",
+    "authors": [
+      "Igor Boettcher",
+      "Alexey V. Gorshkov",
+      "Alicia J. Kollár",
+      "Joseph Maciejko",
+      "Steven Rayan",
+      "Ronny Thomale"
+    ],
+    "published": "2021-05-03T18:00:07Z",
+    "updated": "2022-01-17T18:37:22Z",
+    "year": "2021",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.mes-hall",
+      "cond-mat.stat-mech",
+      "math-ph",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PhysRevB.105.125118",
+    "journal_ref": "Phys. Rev. B 105, 125118 (2022)",
+    "abs_url": "https://arxiv.org/abs/2105.01087",
+    "pdf_url": "https://arxiv.org/pdf/2105.01087",
+    "pillar": "hyperbolic",
+    "slug": "2105.01087",
+    "pdf_local": "papers/pdf/2105.01087.pdf"
+  },
+  {
+    "arxiv_id": "2109.01148",
+    "version": "v2",
+    "title": "Simulating hyperbolic space on a circuit board",
+    "abstract": "The Laplace operator encodes the behavior of physical systems at vastly different scales, describing heat flow, fluids, as well as electric, gravitational, and quantum fields. A key input for the Laplace equation is the curvature of space. Here we discuss and experimentally demonstrate that the spectral ordering of Laplacian eigenstates for hyperbolic (negatively curved) and flat two-dimensional spaces has a universally different structure. We use a lattice regularization of hyperbolic space in an electric-circuit network to measure the eigenstates of a \"hyperbolic drum\", and in a time-resolved experiment we verify signal propagation along the curved geodesics. Our experiments showcase both a versatile platform to emulate hyperbolic lattices in tabletop experiments, and a set of methods to verify the effective hyperbolic metric in this and other platforms. The presented techniques can be utilized to explore novel aspects of both classical and quantum dynamics in negatively curved spaces, and to realise the emerging models of topological hyperbolic matter.",
+    "authors": [
+      "Patrick M. Lenggenhager",
+      "Alexander Stegmaier",
+      "Lavi K. Upreti",
+      "Tobias Hofmann",
+      "Tobias Helbig",
+      "Achim Vollhardt",
+      "Martin Greiter",
+      "Ching Hua Lee",
+      "Stefan Imhof",
+      "Hauke Brand",
+      "Tobias Kießling",
+      "Igor Boettcher",
+      "Titus Neupert",
+      "Ronny Thomale",
+      "Tomáš Bzdušek"
+    ],
+    "published": "2021-09-02T18:00:03Z",
+    "updated": "2022-08-25T20:26:43Z",
+    "year": "2021",
+    "primary_category": "cond-mat.other",
+    "categories": [
+      "cond-mat.other",
+      "cond-mat.mes-hall",
+      "physics.app-ph"
+    ],
+    "doi": "10.1038/s41467-022-32042-4",
+    "journal_ref": "Nat. Commun. 13, 4373 (2022)",
+    "abs_url": "https://arxiv.org/abs/2109.01148",
+    "pdf_url": "https://arxiv.org/pdf/2109.01148",
+    "pillar": "hyperbolic",
+    "slug": "2109.01148",
+    "pdf_local": "papers/pdf/2109.01148.pdf"
+  },
+  {
+    "arxiv_id": "2203.07292",
+    "version": "v2",
+    "title": "Hyperbolic Topological Band Insulators",
+    "abstract": "Recently, hyperbolic lattices that tile the negatively curved hyperbolic plane emerged as a new paradigm of synthetic matter, and their energy levels were characterized by a band structure in a four- (or higher-)dimensional momentum space. To explore the uncharted topological aspects arising in hyperbolic band theory, we here introduce elementary models of hyperbolic topological band insulators: the hyperbolic Haldane model and the hyperbolic Kane-Mele model; both obtained by replacing the hexagonal cells of their Euclidean counterparts by octagons. Their non-trivial topology is revealed by computing topological invariants in both position and momentum space. The bulk-boundary correspondence is evidenced by comparing bulk and boundary density of states, by modelling propagation of edge excitations, and by their robustness against disorder.",
+    "authors": [
+      "David M. Urwyler",
+      "Patrick M. Lenggenhager",
+      "Igor Boettcher",
+      "Ronny Thomale",
+      "Titus Neupert",
+      "Tomáš Bzdušek"
+    ],
+    "published": "2022-03-14T17:01:33Z",
+    "updated": "2023-01-08T20:38:38Z",
+    "year": "2022",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.other"
+    ],
+    "doi": "10.1103/PhysRevLett.129.246402",
+    "journal_ref": "Phys. Rev. Lett. 129, 246402 (2022)",
+    "abs_url": "https://arxiv.org/abs/2203.07292",
+    "pdf_url": "https://arxiv.org/pdf/2203.07292",
+    "pillar": "hyperbolic",
+    "slug": "2203.07292",
+    "pdf_local": "papers/pdf/2203.07292.pdf"
+  },
+  {
+    "arxiv_id": "2005.12726",
+    "version": "v2",
+    "title": "Holography on tessellations of hyperbolic space",
+    "abstract": "We compute boundary correlation functions for scalar fields on tessellations of two- and three-dimensional hyperbolic geometries. We present evidence that the continuum relation between the scalar bulk mass and the scaling dimension associated with boundary-to-boundary correlation functions survives the truncation of approximating the continuum hyperbolic space with a lattice.",
+    "authors": [
+      "Muhammad Asaduzzaman",
+      "Simon Catterall",
+      "Jay Hubisz",
+      "Roice Nelson",
+      "Judah Unmuth-Yockey"
+    ],
+    "published": "2020-05-26T13:53:54Z",
+    "updated": "2020-08-14T14:14:53Z",
+    "year": "2020",
+    "primary_category": "hep-lat",
+    "categories": [
+      "hep-lat",
+      "hep-th"
+    ],
+    "doi": "10.1103/PhysRevD.102.034511",
+    "journal_ref": "Phys. Rev. D 102, 034511 (2020)",
+    "abs_url": "https://arxiv.org/abs/2005.12726",
+    "pdf_url": "https://arxiv.org/pdf/2005.12726",
+    "pillar": "hyperbolic",
+    "slug": "2005.12726",
+    "pdf_local": "papers/pdf/2005.12726.pdf"
+  },
+  {
+    "arxiv_id": "2205.05693",
+    "version": "v2",
+    "title": "Towards Explicit Discrete Holography: Aperiodic Spin Chains from Hyperbolic Tilings",
+    "abstract": "We propose a new example of discrete holography that provides a new step towards establishing the AdS/CFT duality for discrete spaces. A class of boundary Hamiltonians is obtained in a natural way from regular tilings of the hyperbolic Poincaré disk, via an inflation rule that allows to construct the tiling using concentric layers of tiles. The models in this class are aperiodic spin chains, whose sequences of couplings are obtained from the bulk inflation rule. We explicitly choose the aperiodic XXZ spin chain with spin 1/2 degrees of freedom as an example. The properties of this model are studied by using strong disorder renormalization group techniques, which provide a tensor network construction for the ground state of this spin chain. This can be regarded as discrete bulk reconstruction. Moreover we compute the entanglement entropy in this setup in two different ways: a discretization of the Ryu-Takayanagi formula and a generalization of the standard computation for the boundary aperiodic Hamiltonian. For both approaches, a logarithmic growth of the entanglement entropy in the subsystem size is identified. The coefficients, i.e. the effective central charges, depend on the bulk discretization parameters in both cases, albeit in a different way.",
+    "authors": [
+      "Pablo Basteiro",
+      "Giuseppe Di Giulio",
+      "Johanna Erdmenger",
+      "Jonathan Karl",
+      "René Meyer",
+      "Zhuo-Yu Xian"
+    ],
+    "published": "2022-05-11T18:00:01Z",
+    "updated": "2022-08-26T15:31:53Z",
+    "year": "2022",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.dis-nn",
+      "cond-mat.stat-mech"
+    ],
+    "doi": "10.21468/SciPostPhys.13.5.103",
+    "journal_ref": "SciPost Phys. 13, 103 (2022)",
+    "abs_url": "https://arxiv.org/abs/2205.05693",
+    "pdf_url": "https://arxiv.org/pdf/2205.05693",
+    "pillar": "hyperbolic",
+    "slug": "2205.05693",
+    "pdf_local": "papers/pdf/2205.05693.pdf"
+  },
+  {
+    "arxiv_id": "1912.07606",
+    "version": "v1",
+    "title": "Lattice Setup for Quantum Field Theory in AdS$_2$",
+    "abstract": "Holographic Conformal Field Theories (CFTs) are usually studied in a limit where the gravity description is weakly coupled. By contrast, lattice quantum field theory can be used as a tool for doing computations in a wider class of holographic CFTs where gravity remains weak but nongravitational interactions {\\it in AdS} become strong. We take preliminary steps for studying such theories on the lattice by constructing the discretized theory of a scalar field in AdS$_2$ and investigating its approach to the continuum limit in the free and perturbative regimes. Our main focus is on finite sub-lattices of maximally symmetric tilings of hyperbolic space. Up to boundary effects, these tilings preserve the triangle group as a large discrete subgroup of AdS$_2$, but have a minimum lattice spacing that is comparable to the radius of curvature of the underlying spacetime. We quantify the effects of the lattice spacing as well as the boundary effects, and find that they can be accurately modeled by modifications within the framework of the continuum limit description. We also show how to do refinements of the lattice that shrink the lattice spacing at the cost of breaking the triangle group symmetry of the maximally symmetric tilings.",
+    "authors": [
+      "Richard C. Brower",
+      "Cameron V. Cogburn",
+      "A. Liam Fitzpatrick",
+      "Dean Howarth",
+      "Chung-I Tan"
+    ],
+    "published": "2019-12-16T19:00:00Z",
+    "updated": "2019-12-16T19:00:00Z",
+    "year": "2019",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "hep-lat"
+    ],
+    "doi": "10.1103/PhysRevD.103.094507",
+    "journal_ref": "Phys. Rev. D 103, 094507 (2021)",
+    "abs_url": "https://arxiv.org/abs/1912.07606",
+    "pdf_url": "https://arxiv.org/pdf/1912.07606",
+    "pillar": "hyperbolic",
+    "slug": "1912.07606",
+    "pdf_local": "papers/pdf/1912.07606.pdf"
+  },
+  {
+    "arxiv_id": "2102.02619",
+    "version": "v3",
+    "title": "Holographic tensor network models and quantum error correction: A topical review",
+    "abstract": "Recent progress in studies of holographic dualities, originally motivated by insights from string theory, has led to a confluence with concepts and techniques from quantum information theory. A particularly successful approach has involved capturing holographic properties by means of tensor networks which not only give rise to physically meaningful correlations of holographic boundary states, but also reproduce and refine features of quantum error correction in holography. This topical review provides an overview over recent successful realizations of such models. It does so by building on an introduction of the theoretical foundations of AdS/CFT and necessary quantum information concepts, many of which have themselves developed into independent, rapidly evolving research fields.",
+    "authors": [
+      "Alexander Jahn",
+      "Jens Eisert"
+    ],
+    "published": "2021-02-04T14:09:21Z",
+    "updated": "2022-05-19T06:24:40Z",
+    "year": "2021",
+    "primary_category": "quant-ph",
+    "categories": [
+      "quant-ph",
+      "cond-mat.str-el",
+      "hep-th"
+    ],
+    "doi": "10.1088/2058-9565/ac0293",
+    "journal_ref": "Quant. Sc. Tech. 6, 033002 (2021)",
+    "abs_url": "https://arxiv.org/abs/2102.02619",
+    "pdf_url": "https://arxiv.org/pdf/2102.02619",
+    "pillar": "hyperbolic",
+    "slug": "2102.02619",
+    "pdf_local": "papers/pdf/2102.02619.pdf"
+  },
+  {
     "arxiv_id": "cond-mat/0112197",
     "version": "v3",
     "title": "Topological Origin of Zero-Energy Edge States in Particle-Hole Symmetric Systems",

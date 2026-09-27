@@ -117,6 +117,21 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("1411.7100", "analogue", "Topological Acoustics"),
     ("1802.09649", "analogue", "Topological waves in fluids with odd viscosity"),
 
+    # --- Pillar 9: hyperbolic lattices and discrete holography -------------
+    # The salvageable core of the "garage analogue holography" proposal
+    # (docs/roadmap_holographie_analogique.md): boundary correlators on a
+    # hyperbolic tessellation, realised in circuits, as a discrete AdS.
+    ("1802.09549", "hyperbolic", "Hyperbolic Lattices in Circuit Quantum Electrodynamics"),
+    ("2008.05489", "hyperbolic", "Hyperbolic band theory"),
+    ("1910.12318", "hyperbolic", "Quantum simulation of hyperbolic space with circuit quantum electrodynamics"),
+    ("2105.01087", "hyperbolic", "Crystallography of hyperbolic lattices"),
+    ("2109.01148", "hyperbolic", "Simulating hyperbolic space on a circuit board"),
+    ("2203.07292", "hyperbolic", "Hyperbolic topological band insulators"),
+    ("2005.12726", "hyperbolic", "Holography on tessellations of hyperbolic space"),
+    ("2205.05693", "hyperbolic", "Towards explicit discrete holography"),
+    ("1912.07606", "hyperbolic", "Lattice setup for quantum field theory in AdS"),
+    ("2102.02619", "hyperbolic", "Holographic tensor network models and quantum error correction"),
+
     # --- Pillar 6: Shinsei Ryu -------------------------------------------
     # Selected from his full arXiv record (tools/arxiv_author.py ->
     # docs/assets/ryu_arxiv.json, 202 papers). Papers of his already in the

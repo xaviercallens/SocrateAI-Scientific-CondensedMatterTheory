@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "1912.07606",
+  "version": "v1",
+  "title": "Lattice Setup for Quantum Field Theory in AdS$_2$",
+  "abstract": "Holographic Conformal Field Theories (CFTs) are usually studied in a limit where the gravity description is weakly coupled. By contrast, lattice quantum field theory can be used as a tool for doing computations in a wider class of holographic CFTs where gravity remains weak but nongravitational interactions {\\it in AdS} become strong. We take preliminary steps for studying such theories on the lattice by constructing the discretized theory of a scalar field in AdS$_2$ and investigating its approach to the continuum limit in the free and perturbative regimes. Our main focus is on finite sub-lattices of maximally symmetric tilings of hyperbolic space. Up to boundary effects, these tilings preserve the triangle group as a large discrete subgroup of AdS$_2$, but have a minimum lattice spacing that is comparable to the radius of curvature of the underlying spacetime. We quantify the effects of the lattice spacing as well as the boundary effects, and find that they can be accurately modeled by modifications within the framework of the continuum limit description. We also show how to do refinements of the lattice that shrink the lattice spacing at the cost of breaking the triangle group symmetry of the maximally symmetric tilings.",
+  "authors": [
+    "Richard C. Brower",
+    "Cameron V. Cogburn",
+    "A. Liam Fitzpatrick",
+    "Dean Howarth",
+    "Chung-I Tan"
+  ],
+  "published": "2019-12-16T19:00:00Z",
+  "updated": "2019-12-16T19:00:00Z",
+  "year": "2019",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "hep-lat"
+  ],
+  "doi": "10.1103/PhysRevD.103.094507",
+  "journal_ref": "Phys. Rev. D 103, 094507 (2021)",
+  "abs_url": "https://arxiv.org/abs/1912.07606",
+  "pdf_url": "https://arxiv.org/pdf/1912.07606",
+  "pillar": "hyperbolic",
+  "slug": "1912.07606",
+  "pdf_local": "papers/pdf/1912.07606.pdf"
+}

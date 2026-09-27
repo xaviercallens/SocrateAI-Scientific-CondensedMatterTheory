@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "2008.05489",
+  "version": "v2",
+  "title": "Hyperbolic band theory",
+  "abstract": "The notions of Bloch wave, crystal momentum, and energy bands are commonly regarded as unique features of crystalline materials with commutative translation symmetries. Motivated by the recent realization of hyperbolic lattices in circuit quantum electrodynamics, we exploit ideas from algebraic geometry to construct the first hyperbolic generalization of Bloch theory, despite the absence of commutative translation symmetries. For a quantum particle propagating in a hyperbolic lattice potential, we construct a continuous family of eigenstates that acquire Bloch-like phase factors under a discrete but noncommutative group of hyperbolic translations, the Fuchsian group of the lattice. A hyperbolic analog of crystal momentum arises as the set of Aharonov-Bohm phases threading the cycles of a higher-genus Riemann surface associated with this group. This crystal momentum lives in a higher-dimensional Brillouin zone torus, the Jacobian of the Riemann surface, over which a discrete set of continuous energy bands can be computed.",
+  "authors": [
+    "Joseph Maciejko",
+    "Steven Rayan"
+  ],
+  "published": "2020-08-12T18:00:11Z",
+  "updated": "2021-09-08T18:00:03Z",
+  "year": "2020",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "hep-th",
+    "math-ph",
+    "math.AG",
+    "quant-ph"
+  ],
+  "doi": "10.1126/sciadv.abe9170",
+  "journal_ref": "Science Advances 7, eabe9170 (2021)",
+  "abs_url": "https://arxiv.org/abs/2008.05489",
+  "pdf_url": "https://arxiv.org/pdf/2008.05489",
+  "pillar": "hyperbolic",
+  "slug": "2008.05489",
+  "pdf_local": "papers/pdf/2008.05489.pdf"
+}

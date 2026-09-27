@@ -242,6 +242,17 @@ l'analyse est un script du dépôt, jamais un calcul à la main.
 
 ---
 
+## 6bis. Piste H — « Holographie analogique de garage » (évaluée séparément)
+
+Le projet fusion proposé (réseau hyperbolique imprimé, laser dans la
+carcasse du four, photodiodes solaires sur le pourtour, IA de reconstruction,
+Gudhi, Lean) est évalué étape par étape dans
+[`roadmap_holographie_analogique.md`](roadmap_holographie_analogique.md) :
+ce qui est faux tel quel, ce qui est réel et déjà publié (holographie
+discrète sur pavages hyperboliques, problèmes inverses sur réseaux), et le
+protocole de remplacement qui garde l'objectif — *la frontière détermine le
+volume* — sans les moyens qui ne peuvent pas marcher.
+
 ## 7. Ce que ce programme ne prétend pas
 
 - Le bassin ne teste **pas** l'holographie. Il teste la correspondance

@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "2203.07292",
+  "version": "v2",
+  "title": "Hyperbolic Topological Band Insulators",
+  "abstract": "Recently, hyperbolic lattices that tile the negatively curved hyperbolic plane emerged as a new paradigm of synthetic matter, and their energy levels were characterized by a band structure in a four- (or higher-)dimensional momentum space. To explore the uncharted topological aspects arising in hyperbolic band theory, we here introduce elementary models of hyperbolic topological band insulators: the hyperbolic Haldane model and the hyperbolic Kane-Mele model; both obtained by replacing the hexagonal cells of their Euclidean counterparts by octagons. Their non-trivial topology is revealed by computing topological invariants in both position and momentum space. The bulk-boundary correspondence is evidenced by comparing bulk and boundary density of states, by modelling propagation of edge excitations, and by their robustness against disorder.",
+  "authors": [
+    "David M. Urwyler",
+    "Patrick M. Lenggenhager",
+    "Igor Boettcher",
+    "Ronny Thomale",
+    "Titus Neupert",
+    "Tomáš Bzdušek"
+  ],
+  "published": "2022-03-14T17:01:33Z",
+  "updated": "2023-01-08T20:38:38Z",
+  "year": "2022",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.other"
+  ],
+  "doi": "10.1103/PhysRevLett.129.246402",
+  "journal_ref": "Phys. Rev. Lett. 129, 246402 (2022)",
+  "abs_url": "https://arxiv.org/abs/2203.07292",
+  "pdf_url": "https://arxiv.org/pdf/2203.07292",
+  "pillar": "hyperbolic",
+  "slug": "2203.07292",
+  "pdf_local": "papers/pdf/2203.07292.pdf"
+}
