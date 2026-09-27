@@ -137,6 +137,9 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     # rather than re-derived from scratch.
     ("1107.0343", "hyperbolic", "Resistor network approaches to electrical impedance tomography"),
     ("1104.4858", "hyperbolic", "Uniform stability estimates for the discrete Calderon problems"),
+    ("1105.1183", "hyperbolic", "Study of noise effects in electrical impedance tomography with resistor networks"),
+    ("2412.02315", "hyperbolic", "Topology Reconstruction of a Resistor Network with Limited Boundary Measurements"),
+    ("0909.1518", "hyperbolic", "Resistance boundaries of infinite networks"),
 
     # --- Pillar 6: Shinsei Ryu -------------------------------------------
     # Selected from his full arXiv record (tools/arxiv_author.py ->
