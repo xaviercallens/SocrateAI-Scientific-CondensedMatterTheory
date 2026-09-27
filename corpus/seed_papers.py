@@ -131,6 +131,12 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("2205.05693", "hyperbolic", "Towards explicit discrete holography"),
     ("1912.07606", "hyperbolic", "Lattice setup for quantum field theory in AdS"),
     ("2102.02619", "hyperbolic", "Holographic tensor network models and quantum error correction"),
+    # Discrete Calderon / EIT instability literature, motivating and
+    # contextualising H1 (experiments/track_h_hyperbolic_network): the flat-
+    # lattice instability-with-depth is an established phenomenon, cited
+    # rather than re-derived from scratch.
+    ("1107.0343", "hyperbolic", "Resistor network approaches to electrical impedance tomography"),
+    ("1104.4858", "hyperbolic", "Uniform stability estimates for the discrete Calderon problems"),
 
     # --- Pillar 6: Shinsei Ryu -------------------------------------------
     # Selected from his full arXiv record (tools/arxiv_author.py ->

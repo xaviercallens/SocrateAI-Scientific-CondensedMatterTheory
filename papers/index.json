@@ -1907,6 +1907,56 @@
     "pdf_local": "papers/pdf/2102.02619.pdf"
   },
   {
+    "arxiv_id": "1107.0343",
+    "version": "v1",
+    "title": "Resistor network approaches to electrical impedance tomography",
+    "abstract": "We review a resistor network approach to the numerical solution of the inverse problem of electrical impedance tomography (EIT). The networks arise in the context of finite volume discretizations of the elliptic equation for the electric potential, on sparse and adaptively refined grids that we call optimal. The name refers to the fact that the grids give spectrally accurate approximations of the Dirichlet to Neumann map, the data in EIT. The fundamental feature of the optimal grids in inversion is that they connect the discrete inverse problem for resistor networks to the continuum EIT problem.",
+    "authors": [
+      "Liliana Borcea",
+      "Vladimir Druskin",
+      "Fernando Guevara Vasquez",
+      "Alexander V. Mamonov"
+    ],
+    "published": "2011-07-01T22:49:07Z",
+    "updated": "2011-07-01T22:49:07Z",
+    "year": "2011",
+    "primary_category": "math-ph",
+    "categories": [
+      "math-ph"
+    ],
+    "doi": "",
+    "journal_ref": "Chapter in book \"Inside Out II\", MSRI Publications vol. 60, 2012, ed. G. Uhlmann",
+    "abs_url": "https://arxiv.org/abs/1107.0343",
+    "pdf_url": "https://arxiv.org/pdf/1107.0343",
+    "pillar": "hyperbolic",
+    "slug": "1107.0343",
+    "pdf_local": "papers/pdf/1107.0343.pdf"
+  },
+  {
+    "arxiv_id": "1104.4858",
+    "version": "v1",
+    "title": "Uniform stability estimates for the discrete Calderon problems",
+    "abstract": "In this article, we focus on the analysis of discrete versions of the Calderon problem in dimension d \\geq 3. In particular, our goal is to obtain stability estimates for the discrete Calderon problems that hold uniformly with respect to the discretization parameter. Our approach mimics the one in the continuous setting. Namely, we shall prove discrete Carleman estimates for the discrete Laplace operator. A main difference with the continuous ones is that there, the Carleman parameters cannot be taken arbitrarily large, but should be smaller than some frequency scale depending on the mesh size. Following the by-now classical Complex Geometric Optics (CGO) approach, we can thus derive discrete CGO solutions, but with limited range of parameters. As in the continuous case, we then use these solutions to obtain uniform stability estimates for the discrete Calderon problems.",
+    "authors": [
+      "S. Ervedoza",
+      "F. de Gournay"
+    ],
+    "published": "2011-04-26T07:59:26Z",
+    "updated": "2011-04-26T07:59:26Z",
+    "year": "2011",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "doi": "10.1088/0266-5611/27/12/125012",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1104.4858",
+    "pdf_url": "https://arxiv.org/pdf/1104.4858",
+    "pillar": "hyperbolic",
+    "slug": "1104.4858",
+    "pdf_local": "papers/pdf/1104.4858.pdf"
+  },
+  {
     "arxiv_id": "cond-mat/0112197",
     "version": "v3",
     "title": "Topological Origin of Zero-Energy Edge States in Particle-Hole Symmetric Systems",
