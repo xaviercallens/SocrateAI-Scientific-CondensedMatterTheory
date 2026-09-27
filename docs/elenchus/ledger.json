@@ -1,95 +1,169 @@
 {
-  "schema_version": 1,
-  "claims": [
-    {
-      "id": "SSH-B-0001",
-      "statement": "For the SSH chain with intra-cell hopping v and inter-cell hopping w (v, w rational, nonzero, |v| != |w|): the open chain with 2N+1 sites has nullity(H) = 1 exactly, with kernel vector psi_A(n) = (-v/w)^n on A sites and 0 on B sites; the open chain with 2N sites has rank(H) = 2N exactly (no zero mode), because det(D) = v^N for its lower-bidiagonal sublattice block D. Verified on 6 rational (v,w) instances x 3 chain sizes (N = 2, 3, 5) = 18 parameter points, in exact fractions.Fraction arithmetic (no floating point).",
-      "tier": "B",
-      "kind": "exact_harness",
-      "depends_on": [],
-      "evidence": "sha256:24b8d09b64284782d5eb8c3563e69b7e18a6cfa4783f6664674b023fef418fdf",
-      "audit": null,
-      "notes": "experiments/axis1_topological_waves/ssh_exact.py. Negative controls demonstrated to fail: NC1 (wrong-sign kernel vector rejected), NC2 (generic rational vector rejected). Positive control demonstrated to fire: PC1 (v=0 decoupled-site chain triggers the zero-mode detector), guarding against a rank/nullity check that never reports a zero mode."
-    },
-    {
-      "id": "SSH-B-0002",
-      "statement": "For the same instances: the zero mode of the odd chain is concentrated at the left end (|psi_A(0)| > |psi_A(N)|) if and only if |w| > |v|.",
-      "tier": "B",
-      "kind": "exact_harness",
-      "depends_on": ["SSH-B-0001"],
-      "evidence": "sha256:24b8d09b64284782d5eb8c3563e69b7e18a6cfa4783f6664674b023fef418fdf",
-      "audit": null,
-      "notes": "Same harness and evidence blob as SSH-B-0001 (check tag B2). Filed separately because it is a logically distinct claim (localisation side, not existence/uniqueness side)."
-    },
-    {
-      "id": "SSH-L-0001",
-      "statement": "For h(z) = v + wz on the counterclockwise unit circle |z| = 1 with |v/w| < 1 (pole inside), (1/2*pi*i) * oint h'(z)/h(z) dz = 1, by Mathlib's circleIntegral.integral_sub_inv_of_mem_ball (h'/h = (z + v/w)^-1, a simple pole at -v/w inside the ball). The case |v/w| > 1 (pole outside) is not covered by that lemma and needs Cauchy's theorem for a pole outside the contour; the exact Mathlib name for that step has not yet been identified.",
-      "tier": "L",
-      "kind": "citation",
-      "depends_on": [],
-      "evidence": "sha256:93611b0a0f1f6fcdb9f29ca3fd3b2e64d365b912bc6caec69fe3ddc966664737",
-      "audit": null,
-      "notes": "Evidence blob: docs/elenchus/evidence/ssh_L_0001_mathlib_circleintegral.txt (the quoted Mathlib docstring plus the application to this SSH parametrisation and the named open gap). The Mathlib revision pin inside that file is LeanMaster's own recorded commit prefix, not independently re-verified in this session -- see lean/README.md for the plain-language version and the open Cauchy-theorem step."
-    },
-    {
-      "id": "SSH-C-0001",
-      "statement": "The Lean T2 target (nu in {0,1} and unique zero-mode existence/side, per SSH-B-0001/0002 and SSH-L-0001) is the finite, kernel-provable core of the bulk-boundary correspondence measured by axis 1a (experiments/axis1_topological_waves/PREREGISTRATION.md) and is an instance of the general bulk-boundary statement discussed in docs/literature_review.md section 4 and docs/ryu_review.md section 2.1 (Ryu-Hatsugai, cond-mat/0112197).",
-      "tier": "C",
-      "kind": "argument",
-      "depends_on": ["SSH-B-0001", "SSH-B-0002", "SSH-L-0001"],
-      "evidence": "sha256:270d04a4f8c655b29ef6dcb88dca5443f4ed95bc379f43ca5f774a7fbbd1ad9f",
-      "audit": null,
-      "notes": "Evidence blob: docs/elenchus/evidence/ssh_C_0001_argument.txt. This is the claim that ties the SSH kernel facts to the physical bulk-boundary reading; it is explicitly capped at C (argument) because that link is an interpretation, not a mechanically checked fact."
-    },
-    {
-      "id": "POC-X-0001",
-      "statement": "CORRECTED 2026-09-27 (v2). On an SSH ring of L cells (|w|>|v|, subsystem of ell whole cells severing two w-bonds), the two entanglement levels closest to 1/2 form an exact chiral pair z1+z2=1 and sit at |z-1/2| ~ (v/w)^min(ell, L-ell): ordinary exponential finite-size smearing, with decay length fitted within 15% of xi = 1/ln(w/v) at r = 0.5, 0.7, 0.8, 0.9 (L=200). They are pinned to 1/2 EXACTLY only at ell = L/2, where a reflection through the two cuts combined with chiral symmetry cancels the hybridisation. When |v|>|w| no level is near 1/2. Version 1 of this claim stated there was NO finite-size smearing and explained it as a quantised invariant that cannot smear; that was an artefact of measuring only ell = L/2 (at two ring sizes) and is retracted. Positive and negative controls stand.",
-      "tier": "X",
-      "kind": "numeric",
-      "depends_on": ["SSH-B-0001"],
-      "evidence": "sha256:bd4be0daaa01d49feea1dad15503d42765118c8629c5ff59df9d21bdc52a86c6",
-      "audit": null,
-      "notes": "Evidence v2: docs/elenchus/evidence/poc_x_0001_ssh_ring_v2.txt (finite_size_scaling.py, 32 checks). Evidence v1 (sha256:56842f4c...) is kept at docs/elenchus/evidence/poc_x_0001_ssh_ring.txt as the record of the retracted version; the erratum is in results.md and RELEASE_NOTES_v0.1.md. Also yields the axis-1a design numbers: domain-wall mode (open chain, strong-bond terminations, odd site count) has E=0 exactly, peaks at the wall, xi = 1.44/2.80/4.48/9.49 cells, 99% weight within 3/6/10/21 cells per side. Caught by an external reviewer asking 'what about ell != L/2'; producer != verifier."
-    },
-    {
-      "id": "POC-X-0002",
-      "statement": "For the 4-body Majorana SYK model (N Majoranas, N % 4 == 0, exact diagonalization), the exact-degeneracy rate of the parity-sector ground state is a clean all-or-nothing function of N mod 8 at every tested N <= 24: 0/40 realizations degenerate at N in {8, 16, 24} (N mod 8 = 0), 40/40 at N in {12, 20} (N mod 8 = 4). The same-sector gap/energy-scale ratio separates the two classes by ~14 orders of magnitude (~1e-15 vs ~1e-4 to 1e0). Gudhi H0 persistence on the pooled, unlabelled 200-realization point cloud recovers this split unsupervised: one bar of length 10.7 decades, far above all others.",
-      "tier": "X",
-      "kind": "numeric",
-      "depends_on": [],
-      "evidence": "sha256:b3c25604cc38937fa02c36596e0c3c715119616639aecf5eb807302ea6940c19",
-      "audit": null,
-      "notes": "experiments/poc_entanglement_tda/syk_entanglement.py (--self-test: 8/8 pass, including a brute-force Kronecker-product cross-check and [H,P]=0) + results.md Part B. Motivated by, not derived from, Fidkowski-Kitaev 0904.2197 and You-Ludwig-Xu 1602.06964 (both in corpus, `poc` pillar); no symmetry operator was constructed here, and no claim is made about N mod 8 in {2, 6} (not reachable with this bipartition) or N > 24."
-    },
-    {
-      "id": "H0-X-0001",
-      "statement": "On layer-truncated hyperbolic {7,3} tilings vs Euclidean square/triangular disks (same node counts), the condition number of the boundary-to-bulk inverse-conductance Jacobian grows only polynomially with N for the hyperbolic case and super-polynomially (locally exp(c*depth) with depth ~ sqrt(N)) for the Euclidean case. Preregistered confirmatory point (L=4, N=847, not previously computed): predicted log10(cond) = 4.2 +/- 0.5, measured 3.89 (within band); max depth predicted 7, measured 7 (exact). At matched N~800-850, log10(cond) = 3.89 (hyperbolic) vs 11.77 (square) vs 11.71 (triangular): a 7.9-decade gap, wider than the 6.4-decade gap measured at N~315-320 in the prior exploratory pass. Unplanned but consistent finding: the hyperbolic graph stays full rank at every tested size (up to 1078/1078 at N=847), while the Euclidean graphs develop growing rank deficiency (up to 1143/3071 unidentifiable edges at N=1069).",
-      "tier": "X",
-      "kind": "numeric",
-      "depends_on": [],
-      "evidence": "sha256:5c0e53b50f9a1dea447f99afd4ca4a89716a685b4564f8fd191ed3bd4d99a55f",
-      "audit": null,
-      "notes": "SUPERSEDED IN PART by H0-X-0002 (kappa reporting bug) and H0-B-0001 (rank-deficiency claim retracted). Kept as the record of the original, since-corrected run; not to be cited alone. experiments/track_h_hyperbolic_network/{HYPOTHESIS.md,PREREGISTRATION.md,RESULTS.md,hyperbolic_network.py} (45/45 self-test checks pass, incl. exact-vs-finite-difference Jacobian cross-check to 1.15e-11). Original HYPOTHESIS.md claimed exponential (not polynomial) edge-sensitivity decay on FLAT lattices by direct analogy to continuum Calderon-problem instability; an external reviewer showed this derivation was dimensionally inconsistent (Poisson-kernel decay is polynomial), so an unlocked exploratory pass was run before any prediction was locked, and the mechanism was revised in HYPOTHESIS.md (dated, original argument left visible) to: exponential decay in DEPTH is common to both geometries, but depth itself scales as log N (hyperbolic) vs sqrt N (flat). Real code bugs found and fixed before this result, all now caught mechanically in self_test(): boundary classification used vertex degree (misses rim-junction vertices) rather than face incidence; a triangular-lattice face had a non-adjacent vertex offset, breaking the Euler characteristic check (caught: V-E+F=-5 instead of 1); the finite-difference Jacobian's eps=1e-6 imposed a ~1e-10-relative floor on resolvable singular values, replaced by the exact harmonic-extension formula dLambda/dg_e=(P_a-P_b)^T(P_a-P_b). Novelty search bounded (2 queries): found 1107.0343 (Borcea, Druskin, Guevara Vasquez & Mamonov -- NOT 'Deban, Borcea et al.' as first mis-cited here, corrected in H0-X-0002) and 1104.4858 (Ervedoza & de Gournay); reported as 'not found in this search', not 'novel'."
-    },
-    {
-      "id": "H0-X-0002",
-      "statement": "CORRECTS H0-X-0001. The kappa this script reported was capped by its own rank-tolerance formula (kappa = s_max/s[rank-1], and s[rank-1] > tol = s_max*max(J.shape)*eps by construction, so kappa < 1/(max(J.shape)*eps) ALWAYS) -- not by float64's true precision floor, which H0-X-0001 wrongly attributed the large-N flat-lattice 'plateau' to. Verified: the reported 'saturated' log10(kappa) for the 3 largest flat cases matched log10(1/(max(J.shape)*eps)) to 4 significant figures. Corrected: kappa is now the RAW untruncated ratio s_max/s_min, and cases where s_min rounds to float64 noise are reported as NUMERICALLY SINGULAR, not as a finite number. Net effect: the corrected result is STRONGER. Points unaffected by the bug (all {7,3} L=1..4; flat lattices at N<=317) are unchanged -- the 6.4-decade gap at N~315-320 (log10 kappa 3.27 vs 9.72) stands. At N~800-850, the hyperbolic lattice remains measurable (3.89) while the flat lattice's Jacobian is correctly reported as beyond float64's ability to assign ANY condition number -- a stronger separation than a finite decade count. Also corrects a citation error: 1107.0343's authors are Borcea, Druskin, Guevara Vasquez & Mamonov, not 'Deban, Borcea et al.' as first (wrongly) attributed from a search snippet without checking papers/meta/.",
-      "tier": "X",
-      "kind": "numeric",
-      "depends_on": [],
-      "evidence": "sha256:93169534502b945e1b1a56ffef24918997c09e3f851bdd74945676ed8f3802c6",
-      "audit": null,
-      "notes": "docs/elenchus/evidence/h0_x_0002_kappa_correction.txt. Caught by an external reviewer; verified directly by this session (the cap formula reproduced the 'saturated' values to 4 sig figs, not a coincidence). Does NOT correct the rank-deficiency claim in H0-X-0001 (a separate bug on a separate quantity) -- see H0-B-0001."
-    },
-    {
-      "id": "H0-B-0001",
-      "statement": "RETRACTS the rank-deficiency claim in H0-X-0001 (e.g. triangular N=1069: 1143/3071 'unidentifiable' edges), for the sizes tested here. Exact rank certified by modular arithmetic (GF(p), two independent primes, agreement required) over the SAME harmonic-extension Jacobian construction: {7,3} L=1 (E=42) and L=2 (E=140) are FULL RANK, certified. Flat lattices: square N=113 (E=200) and triangular N=187 (E=502) are FULL RANK, certified (agreeing with float64 at these unsaturated sizes). DECISIVE: triangular N=475 (E=1331), a size comparable to the N=421 instance float64 reported as deficient (102/1176), is EXACTLY FULL RANK, certified across both primes. The float64 'structural deficiency' was a numerical-precision artefact, not a genuine algebraic property. Consequence: H1's real content is NOT a difference in structural identifiability between hyperbolic and flat boundary-to-bulk inverse problems (both are exactly full rank at these sizes) -- it is a difference in CONDITIONING, i.e. the precision required to exploit that full rank, which grows polynomially (hyperbolic) vs super-polynomially, past float64's representable range by N~1000 (flat).",
-      "tier": "B",
-      "kind": "exact_harness",
-      "depends_on": [],
-      "evidence": "sha256:389ebe387d78fd46ded6f388447fc06472547343bfef1733dedf57402d6715d6",
-      "audit": null,
-      "notes": "experiments/track_h_hyperbolic_network/hyperbolic_exact.py (--self-test: 6/6 pass, including a cross-check of the modular rank against float64's trusted rank on the small {7,3} L=1 case). Not yet certified: N>475 for flat lattices (GF(p) Gaussian elimination on ~3500x1300 was the practical runtime limit reached in this session); full rank at N=475 is evidence against, not proof against, a deficiency appearing at some larger N. Any future prose using 'structurally unrecoverable' for the flat-lattice case must be corrected against this entry."
-    }
-  ]
+ "schema_version": 1,
+ "claims": [
+  {
+   "id": "SSH-B-0001",
+   "statement": "For the SSH chain with intra-cell hopping v and inter-cell hopping w (v, w rational, nonzero, |v| != |w|): the open chain with 2N+1 sites has nullity(H) = 1 exactly, with kernel vector psi_A(n) = (-v/w)^n on A sites and 0 on B sites; the open chain with 2N sites has rank(H) = 2N exactly (no zero mode), because det(D) = v^N for its lower-bidiagonal sublattice block D. Verified on 6 rational (v,w) instances x 3 chain sizes (N = 2, 3, 5) = 18 parameter points, in exact fractions.Fraction arithmetic (no floating point).",
+   "tier": "B",
+   "kind": "exact_harness",
+   "depends_on": [],
+   "evidence": "sha256:24b8d09b64284782d5eb8c3563e69b7e18a6cfa4783f6664674b023fef418fdf",
+   "audit": null,
+   "notes": "experiments/axis1_topological_waves/ssh_exact.py. Negative controls demonstrated to fail: NC1 (wrong-sign kernel vector rejected), NC2 (generic rational vector rejected). Positive control demonstrated to fire: PC1 (v=0 decoupled-site chain triggers the zero-mode detector), guarding against a rank/nullity check that never reports a zero mode."
+  },
+  {
+   "id": "SSH-B-0002",
+   "statement": "For the same instances: the zero mode of the odd chain is concentrated at the left end (|psi_A(0)| > |psi_A(N)|) if and only if |w| > |v|.",
+   "tier": "B",
+   "kind": "exact_harness",
+   "depends_on": [
+    "SSH-B-0001"
+   ],
+   "evidence": "sha256:24b8d09b64284782d5eb8c3563e69b7e18a6cfa4783f6664674b023fef418fdf",
+   "audit": null,
+   "notes": "Same harness and evidence blob as SSH-B-0001 (check tag B2). Filed separately because it is a logically distinct claim (localisation side, not existence/uniqueness side)."
+  },
+  {
+   "id": "SSH-L-0001",
+   "statement": "For h(z) = v + wz on the counterclockwise unit circle |z| = 1 with |v/w| < 1 (pole inside), (1/2*pi*i) * oint h'(z)/h(z) dz = 1, by Mathlib's circleIntegral.integral_sub_inv_of_mem_ball (h'/h = (z + v/w)^-1, a simple pole at -v/w inside the ball). The case |v/w| > 1 (pole outside) is not covered by that lemma and needs Cauchy's theorem for a pole outside the contour; the exact Mathlib name for that step has not yet been identified.",
+   "tier": "L",
+   "kind": "citation",
+   "depends_on": [],
+   "evidence": "sha256:93611b0a0f1f6fcdb9f29ca3fd3b2e64d365b912bc6caec69fe3ddc966664737",
+   "audit": null,
+   "notes": "Evidence blob: docs/elenchus/evidence/ssh_L_0001_mathlib_circleintegral.txt (the quoted Mathlib docstring plus the application to this SSH parametrisation and the named open gap). The Mathlib revision pin inside that file is LeanMaster's own recorded commit prefix, not independently re-verified in this session -- see lean/README.md for the plain-language version and the open Cauchy-theorem step."
+  },
+  {
+   "id": "SSH-C-0001",
+   "statement": "The Lean T2 target (nu in {0,1} and unique zero-mode existence/side, per SSH-B-0001/0002 and SSH-L-0001) is the finite, kernel-provable core of the bulk-boundary correspondence measured by axis 1a (experiments/axis1_topological_waves/PREREGISTRATION.md) and is an instance of the general bulk-boundary statement discussed in docs/literature_review.md section 4 and docs/ryu_review.md section 2.1 (Ryu-Hatsugai, cond-mat/0112197).",
+   "tier": "C",
+   "kind": "argument",
+   "depends_on": [
+    "SSH-B-0001",
+    "SSH-B-0002",
+    "SSH-L-0001"
+   ],
+   "evidence": "sha256:270d04a4f8c655b29ef6dcb88dca5443f4ed95bc379f43ca5f774a7fbbd1ad9f",
+   "audit": null,
+   "notes": "Evidence blob: docs/elenchus/evidence/ssh_C_0001_argument.txt. This is the claim that ties the SSH kernel facts to the physical bulk-boundary reading; it is explicitly capped at C (argument) because that link is an interpretation, not a mechanically checked fact."
+  },
+  {
+   "id": "POC-X-0001",
+   "statement": "CORRECTED 2026-09-27 (v2). On an SSH ring of L cells (|w|>|v|, subsystem of ell whole cells severing two w-bonds), the two entanglement levels closest to 1/2 form an exact chiral pair z1+z2=1 and sit at |z-1/2| ~ (v/w)^min(ell, L-ell): ordinary exponential finite-size smearing, with decay length fitted within 15% of xi = 1/ln(w/v) at r = 0.5, 0.7, 0.8, 0.9 (L=200). They are pinned to 1/2 EXACTLY only at ell = L/2, where a reflection through the two cuts combined with chiral symmetry cancels the hybridisation. When |v|>|w| no level is near 1/2. Version 1 of this claim stated there was NO finite-size smearing and explained it as a quantised invariant that cannot smear; that was an artefact of measuring only ell = L/2 (at two ring sizes) and is retracted. Positive and negative controls stand.",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "SSH-B-0001"
+   ],
+   "evidence": "sha256:bd4be0daaa01d49feea1dad15503d42765118c8629c5ff59df9d21bdc52a86c6",
+   "audit": null,
+   "notes": "Evidence v2: docs/elenchus/evidence/poc_x_0001_ssh_ring_v2.txt (finite_size_scaling.py, 32 checks). Evidence v1 (sha256:56842f4c...) is kept at docs/elenchus/evidence/poc_x_0001_ssh_ring.txt as the record of the retracted version; the erratum is in results.md and RELEASE_NOTES_v0.1.md. Also yields the axis-1a design numbers: domain-wall mode (open chain, strong-bond terminations, odd site count) has E=0 exactly, peaks at the wall, xi = 1.44/2.80/4.48/9.49 cells, 99% weight within 3/6/10/21 cells per side. Caught by an external reviewer asking 'what about ell != L/2'; producer != verifier."
+  },
+  {
+   "id": "POC-X-0002",
+   "statement": "For the 4-body Majorana SYK model (N Majoranas, N % 4 == 0, exact diagonalization), the exact-degeneracy rate of the parity-sector ground state is a clean all-or-nothing function of N mod 8 at every tested N <= 24: 0/40 realizations degenerate at N in {8, 16, 24} (N mod 8 = 0), 40/40 at N in {12, 20} (N mod 8 = 4). The same-sector gap/energy-scale ratio separates the two classes by ~14 orders of magnitude (~1e-15 vs ~1e-4 to 1e0). Gudhi H0 persistence on the pooled, unlabelled 200-realization point cloud recovers this split unsupervised: one bar of length 10.7 decades, far above all others.",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [],
+   "evidence": "sha256:b3c25604cc38937fa02c36596e0c3c715119616639aecf5eb807302ea6940c19",
+   "audit": null,
+   "notes": "experiments/poc_entanglement_tda/syk_entanglement.py (--self-test: 8/8 pass, including a brute-force Kronecker-product cross-check and [H,P]=0) + results.md Part B. Motivated by, not derived from, Fidkowski-Kitaev 0904.2197 and You-Ludwig-Xu 1602.06964 (both in corpus, `poc` pillar); no symmetry operator was constructed here, and no claim is made about N mod 8 in {2, 6} (not reachable with this bipartition) or N > 24."
+  },
+  {
+   "id": "H0-X-0001",
+   "statement": "On layer-truncated hyperbolic {7,3} tilings vs Euclidean square/triangular disks (same node counts), the condition number of the boundary-to-bulk inverse-conductance Jacobian grows only polynomially with N for the hyperbolic case and super-polynomially (locally exp(c*depth) with depth ~ sqrt(N)) for the Euclidean case. Preregistered confirmatory point (L=4, N=847, not previously computed): predicted log10(cond) = 4.2 +/- 0.5, measured 3.89 (within band); max depth predicted 7, measured 7 (exact). At matched N~800-850, log10(cond) = 3.89 (hyperbolic) vs 11.77 (square) vs 11.71 (triangular): a 7.9-decade gap, wider than the 6.4-decade gap measured at N~315-320 in the prior exploratory pass. Unplanned but consistent finding: the hyperbolic graph stays full rank at every tested size (up to 1078/1078 at N=847), while the Euclidean graphs develop growing rank deficiency (up to 1143/3071 unidentifiable edges at N=1069).",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [],
+   "evidence": "sha256:5c0e53b50f9a1dea447f99afd4ca4a89716a685b4564f8fd191ed3bd4d99a55f",
+   "audit": null,
+   "notes": "SUPERSEDED IN PART by H0-X-0002 (kappa reporting bug) and H0-B-0001 (rank-deficiency claim retracted). Kept as the record of the original, since-corrected run; not to be cited alone. experiments/track_h_hyperbolic_network/{HYPOTHESIS.md,PREREGISTRATION.md,RESULTS.md,hyperbolic_network.py} (45/45 self-test checks pass, incl. exact-vs-finite-difference Jacobian cross-check to 1.15e-11). Original HYPOTHESIS.md claimed exponential (not polynomial) edge-sensitivity decay on FLAT lattices by direct analogy to continuum Calderon-problem instability; an external reviewer showed this derivation was dimensionally inconsistent (Poisson-kernel decay is polynomial), so an unlocked exploratory pass was run before any prediction was locked, and the mechanism was revised in HYPOTHESIS.md (dated, original argument left visible) to: exponential decay in DEPTH is common to both geometries, but depth itself scales as log N (hyperbolic) vs sqrt N (flat). Real code bugs found and fixed before this result, all now caught mechanically in self_test(): boundary classification used vertex degree (misses rim-junction vertices) rather than face incidence; a triangular-lattice face had a non-adjacent vertex offset, breaking the Euler characteristic check (caught: V-E+F=-5 instead of 1); the finite-difference Jacobian's eps=1e-6 imposed a ~1e-10-relative floor on resolvable singular values, replaced by the exact harmonic-extension formula dLambda/dg_e=(P_a-P_b)^T(P_a-P_b). Novelty search bounded (2 queries): found 1107.0343 (Borcea, Druskin, Guevara Vasquez & Mamonov -- NOT 'Deban, Borcea et al.' as first mis-cited here, corrected in H0-X-0002) and 1104.4858 (Ervedoza & de Gournay); reported as 'not found in this search', not 'novel'."
+  },
+  {
+   "id": "H0-X-0002",
+   "statement": "CORRECTS H0-X-0001. The kappa this script reported was capped by its own rank-tolerance formula (kappa = s_max/s[rank-1], and s[rank-1] > tol = s_max*max(J.shape)*eps by construction, so kappa < 1/(max(J.shape)*eps) ALWAYS) -- not by float64's true precision floor, which H0-X-0001 wrongly attributed the large-N flat-lattice 'plateau' to. Verified: the reported 'saturated' log10(kappa) for the 3 largest flat cases matched log10(1/(max(J.shape)*eps)) to 4 significant figures. Corrected: kappa is now the RAW untruncated ratio s_max/s_min, and cases where s_min rounds to float64 noise are reported as NUMERICALLY SINGULAR, not as a finite number. Net effect: the corrected result is STRONGER. Points unaffected by the bug (all {7,3} L=1..4; flat lattices at N<=317) are unchanged -- the 6.4-decade gap at N~315-320 (log10 kappa 3.27 vs 9.72) stands. At N~800-850, the hyperbolic lattice remains measurable (3.89) while the flat lattice's Jacobian is correctly reported as beyond float64's ability to assign ANY condition number -- a stronger separation than a finite decade count. Also corrects a citation error: 1107.0343's authors are Borcea, Druskin, Guevara Vasquez & Mamonov, not 'Deban, Borcea et al.' as first (wrongly) attributed from a search snippet without checking papers/meta/.",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [],
+   "evidence": "sha256:93169534502b945e1b1a56ffef24918997c09e3f851bdd74945676ed8f3802c6",
+   "audit": null,
+   "notes": "docs/elenchus/evidence/h0_x_0002_kappa_correction.txt. Caught by an external reviewer; verified directly by this session (the cap formula reproduced the 'saturated' values to 4 sig figs, not a coincidence). Does NOT correct the rank-deficiency claim in H0-X-0001 (a separate bug on a separate quantity) -- see H0-B-0001."
+  },
+  {
+   "id": "H0-B-0001",
+   "statement": "RETRACTS the rank-deficiency claim in H0-X-0001 (e.g. triangular N=1069: 1143/3071 'unidentifiable' edges), for the sizes tested here. Exact rank certified by modular arithmetic (GF(p), two independent primes, agreement required) over the SAME harmonic-extension Jacobian construction: {7,3} L=1 (E=42) and L=2 (E=140) are FULL RANK, certified. Flat lattices: square N=113 (E=200) and triangular N=187 (E=502) are FULL RANK, certified (agreeing with float64 at these unsaturated sizes). DECISIVE: triangular N=475 (E=1331), a size comparable to the N=421 instance float64 reported as deficient (102/1176), is EXACTLY FULL RANK, certified across both primes. The float64 'structural deficiency' was a numerical-precision artefact, not a genuine algebraic property. Consequence: H1's real content is NOT a difference in structural identifiability between hyperbolic and flat boundary-to-bulk inverse problems (both are exactly full rank at these sizes) -- it is a difference in CONDITIONING, i.e. the precision required to exploit that full rank, which grows polynomially (hyperbolic) vs super-polynomially, past float64's representable range by N~1000 (flat).",
+   "tier": "B",
+   "kind": "exact_harness",
+   "depends_on": [],
+   "evidence": "sha256:389ebe387d78fd46ded6f388447fc06472547343bfef1733dedf57402d6715d6",
+   "audit": null,
+   "notes": "experiments/track_h_hyperbolic_network/hyperbolic_exact.py (--self-test: 6/6 pass, including a cross-check of the modular rank against float64's trusted rank on the small {7,3} L=1 case). Not yet certified: N>475 for flat lattices (GF(p) Gaussian elimination on ~3500x1300 was the practical runtime limit reached in this session); full rank at N=475 is evidence against, not proof against, a deficiency appearing at some larger N. Any future prose using 'structurally unrecoverable' for the flat-lattice case must be corrected against this entry."
+  },
+  {
+   "id": "H0-B-0002",
+   "tier": "B",
+   "kind": "exact_harness",
+   "depends_on": [
+    "H0-B-0001"
+   ],
+   "evidence": "sha256:eb142dac9e8c8fbdf36b6d650c5830116099aea620a4aeaf8c26f9859b75503a",
+   "statement": "In the probe-matched control (PREREGISTRATION_2 part A), making unused {7,3} boundary nodes zero-current interior nodes creates structural non-identifiability: the exact GF(p) rank deficiency (two primes, agreeing) equals the number of unmeasured degree-2 nodes (L=2, 44 probes: 23 = 23; L=3, 76 probes: 93 = 93). Full-boundary square disks R=6, R=10 are exactly full rank.",
+   "notes": "experiments/track_h_hyperbolic_network/identifiability.py. The series-resistor mechanism (g1 g2/(g1+g2) is the only observable) explains the count; the equality is certified only at these two sizes.",
+   "audit": null
+  },
+  {
+   "id": "H0-X-0003",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H0-B-0002"
+   ],
+   "evidence": "sha256:eb142dac9e8c8fbdf36b6d650c5830116099aea620a4aeaf8c26f9859b75503a",
+   "statement": "DEVIATION FROM PREREGISTRATION_2 part A: the preregistered probe-matched kappa is SINGULAR by design (H0-B-0002), so the prediction as written is untestable. Corrected comparison, chosen after seeing the singularity: kappa restricted to the identifiable subspace (dropping exactly the certified deficiency). log10 kappa: {7,3} L=2/44 probes 2.70 vs square R=6 5.07; {7,3} L=3/76 probes 2.97 vs square R=10 9.72 (gap 6.75 decades). The advantage survives probe matching at these two sizes.",
+   "notes": "float64 SVD; post hoc metric; must be reported as a deviation everywhere it is cited.",
+   "audit": null
+  },
+  {
+   "id": "H0-X-0004",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [],
+   "evidence": "sha256:d01138d131e5b47769569f941128cf12652043c81e67357b28e9a2998e6bf735",
+   "statement": "PREREGISTRATION_2 part B (confirmed as predicted): for the Neumann-to-Dirichlet map (Moore-Penrose inverse of the DtN map, what current-injection hardware measures), the conditioning ordering is preserved at full boundary: log10 kappa {7,3} L=2 1.99, L=3 2.42 vs square R=6 5.41, R=10 10.08.",
+   "notes": "experiments/track_h_hyperbolic_network/probe_matched.py; float64, two sizes.",
+   "audit": null
+  },
+  {
+   "id": "H2-X-0001",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [],
+   "evidence": "sha256:287d1082fa4257cc18e547201b914709ace1f6aa10d1eb8d46b2093e1691e210",
+   "statement": "PREREGISTRATION_2 part C, H2 prediction (i) REFUTED at the tested sizes: lambda_min(L_ii) of the {7,3} tiling fell 2.37x between L=2 and L=4, past the preregistered 2x refutation threshold. Prediction (ii) holds: flat square/triangular lambda_min scales as ~1/N.",
+   "notes": "experiments/track_h_hyperbolic_network/rc_network.py (dense eigvalsh).",
+   "audit": null
+  },
+  {
+   "id": "H2-X-0002",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H2-X-0001"
+   ],
+   "evidence": "sha256:f8caab0a3f260efe02b200121d8b998330fad34d4f8a1de937e365ef0b324f8f",
+   "statement": "EXPLORATORY, post hoc (cannot rescue H2-X-0001): {7,3} lambda_min at L=2..6 = 0.3636, 0.2133, 0.1534, 0.1232, 0.1058; successive ratios 0.587, 0.719, 0.803, 0.859 -- the decrease is slowing, consistent with a positive limit or ~1/log N, and far slower than 1/N. At N~800: tau 6.52 vs 39.06 (flat), stiffness 36 vs 311.",
+   "notes": "experiments/track_h_hyperbolic_network/h2_explore.py (sparse eigsh). Five points cannot discriminate a positive limit from 1/log N.",
+   "audit": null
+  },
+  {
+   "id": "H2-X-0003",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [],
+   "evidence": "sha256:287d1082fa4257cc18e547201b914709ace1f6aa10d1eb8d46b2093e1691e210",
+   "statement": "RC integrator controls: K1 (expm known answer, max rel err < 1e-5) and K2 (integrated steady state equals the Schur-complement DtN column, < 1e-6) PASS with scipy BDF on {7,3} L=2 and square R=6. The rusty-SUNDIALS CVODE backend is NOT RUN (Python extension not built); no cross-code agreement is claimed.",
+   "notes": "Re-run rc_network.py after `maturin develop` in ~/rusty-SUNDIALS/crates/rusty-sundials-py.",
+   "audit": null
+  }
+ ]
 }
