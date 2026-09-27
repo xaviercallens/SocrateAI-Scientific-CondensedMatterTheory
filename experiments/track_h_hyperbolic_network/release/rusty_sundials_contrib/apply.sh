@@ -20,8 +20,12 @@ if [ ! -d "$WT" ]; then
 fi
 cd "$WT/crates/rusty-sundials-py"
 maturin build --release
-# maturin names the wheel after the package: rusty_sundials_py-<ver>-...whl
-WHL="$(ls -t "$WT"/target/wheels/rusty_sundials_py-*.whl "$WT"/crates/rusty-sundials-py/target/wheels/rusty_sundials_py-*.whl 2>/dev/null | head -1)"
+# maturin names the wheel after the package: rusty_sundials_py-<ver>-...whl.
+# (find, not ls: with pipefail a missing candidate directory must not abort the script)
+WHL="$(find "$WT/target/wheels" "$WT/crates/rusty-sundials-py/target/wheels" -maxdepth 1 \
+        -name 'rusty_sundials_py-*.whl' -printf '%T@ %p\n' 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2- || true)"
+if [ -z "$WHL" ]; then echo "no wheel found under $WT/target/wheels" >&2; exit 1; fi
+echo "installing $WHL"
 python3 -m pip install --user --force-reinstall "$WHL"
 python3 -c "import rusty_sundials; print('rusty_sundials importable:', rusty_sundials.__file__)"
 
@@ -31,7 +35,7 @@ mkdir -p examples/python
 cp -r "$SRC/examples/python/rc_network" examples/python/
 
 echo "== 3/4 run it against the installed binding (the PR is opened only if it passes)"
-python3 examples/python/rc_network/rc_network_benchmark.py
+PYTHONDONTWRITEBYTECODE=1 python3 examples/python/rc_network/rc_network_benchmark.py
 
 echo "== 4/4 commit, push, open PR (not merged)"
 git add examples/python/rc_network
