@@ -1,13 +1,19 @@
 # AdS/CMT et correspondance volume–frontière — revue de littérature
 
-**Corpus** : 47 articles arXiv, téléchargés et vérifiés (titre réel confronté au titre
+**Corpus** : 49 articles arXiv, téléchargés et vérifiés (titre réel confronté au titre
 attendu pour chaque identifiant), indexés dans `papers/index.json`.
 **Date de la revue** : 2026-09-27.
 **Portée** : dualité holographique, ses applications à la matière condensée, la
 classification des isolants topologiques, et les mécanismes qui relient
 réellement les deux.
 
-Tous les articles cités ici sont dans le corpus ingéré ; aucun n'est cité de mémoire.
+**Statut des citations** (voir [`rigor_protocol.md`](rigor_protocol.md) §4).
+Toute référence donnée avec un identifiant arXiv est dans le corpus et a passé
+le contrôle d'identité. Trois références sont citées **hors corpus**, parce
+qu'elles sont antérieures à arXiv ou n'y figurent pas, et sont marquées
+**[EXTERNE]** dans le texte : Callan & Harvey (1985), Jackiw (1985) et
+Teitelboim (1983). Les jugements propres à cette revue, qui ne sont pas des
+résultats de la littérature, sont marqués **[INTERPRÉTATION]**.
 
 ---
 
@@ -22,14 +28,20 @@ parce que presque tout ce qui suit en dépend.
 
 **Trois écarts précis :**
 
-1. **La direction est inversée entre les deux cas.**
-   Dans un isolant topologique, c'est l'invariant du **volume** qui impose
-   l'existence des modes de **bord** : volume → frontière (Kane & Mele,
-   `cond-mat/0506581` ; Hasan & Kane, `1002.3895`).
-   En AdS/CFT, c'est la théorie de **frontière** qui encode le **volume** :
-   frontière → volume (Maldacena, `hep-th/9711200` ; Witten, `hep-th/9802150`).
-   Le slogan « $N-1$ dicte $N$ » est la direction holographique, pas la
-   direction de la matière topologique.
+1. **Les deux correspondances n'ont pas la même forme logique.**
+   Dans un isolant topologique, c'est une **implication à sens unique, portant
+   sur des données de basse énergie** : un invariant discret du volume *impose*
+   l'existence de modes de bord protégés (Kane & Mele, `cond-mat/0506581` ;
+   Hasan & Kane, `1002.3895`). Le bord ne permet pas, en retour, de reconstruire
+   le volume.
+   En AdS/CFT, c'est une **équivalence exacte entre deux théories complètes** :
+   la fonction de partition de la frontière *égale* celle du volume
+   (Gubser–Klebanov–Polyakov, `hep-th/9802109` ; Witten, `hep-th/9802150`).
+   Aucun des deux côtés n'est plus fondamental que l'autre.
+   Le slogan « $N-1$ dicte $N$ » ne décrit donc correctement ni l'un ni
+   l'autre : trop fort pour les isolants topologiques (où rien n'est
+   « intégralement encodé »), mal orienté pour AdS/CFT (où l'encodage va dans
+   les deux sens).
 
 2. **La frontière holographique n'est *pas* topologique.**
    Le dual de $\mathrm{AdS}_5\times S^5$ est $\mathcal{N}=4$ super-Yang–Mills :
@@ -73,8 +85,8 @@ plutôt un avantage : les fondations sont stabilisées.
 |---|---:|---|
 | `holography` | 11 | AdS/CFT, entropie d'intrication holographique, codes |
 | `adscmt` | 13 | supraconducteurs holographiques, non-Fermi liquides, SYK |
-| `topology` | 12 | effet Hall de spin quantique, classification en dix classes |
-| `bridge` | 11 | anomalies, spectre d'intrication, semi-métaux holographiques |
+| `topology` | 13 | effet Hall de spin quantique, classes d'Altland–Zirnbauer, classification en dix classes |
+| `bridge` | 12 | anomalies, spectre d'intrication, code torique, semi-métaux holographiques |
 
 Chaque entrée de `papers/index.json` porte : `arxiv_id`, titre réel,
 auteurs, année, catégorie primaire, DOI, `journal_ref`, pilier, et le chemin du
@@ -162,7 +174,7 @@ liquide de Fermi marginal, postulé phénoménologiquement pour les cuprates,
 *émerge* ici d'une géométrie. C'est le résultat conceptuellement le plus fort
 d'AdS/CMT.
 
-**Transport.** Hartnoll (`1405.3651`) dérive une borne inférieure universelle sur
+**Transport.** Hartnoll (`1405.3651`) propose une borne inférieure universelle sur
 la diffusivité dans les métaux incohérents, où la quantité de contrôle est la
 diffusion et non le libre parcours moyen — ce qui explique la résistivité
 linéaire en $T$ sans invoquer de quasiparticules.
@@ -174,7 +186,8 @@ Bekenstein–Hawking d'un trou noir extrémal $\mathrm{AdS}_2$), puis à Maldace
 Stanford (`1604.07818`). Le modèle SYK est un système quantique à $N$ fermions
 en couplage aléatoire à quatre corps, **résoluble**, sans quasiparticules, qui
 sature la borne au chaos et dont l'infrarouge est gouverné par le mode
-Schwarzien — exactement la gravité de Jackiw–Teitelboim en $\mathrm{AdS}_2$.
+Schwarzien — exactement la gravité de Jackiw–Teitelboim **[EXTERNE]** en
+$\mathrm{AdS}_2$.
 
 SYK change la nature de l'argument. Ailleurs en AdS/CMT, on postule un dual
 gravitationnel et on espère. Ici, on part d'un hamiltonien de matière condensée
@@ -218,7 +231,7 @@ interdit la rétrodiffusion, d'où une conduction de bord sans dissipation.
 **La classification complète.** Schnyder, Ryu, Furusaki & Ludwig (`0803.2786`),
 puis Kitaev (`0901.2686`) par K-théorie, et Ryu, Schnyder, Furusaki & Ludwig
 (`0912.2157`), établissent la « **table périodique** » : les dix classes de
-symétrie d'Altland–Zirnbauer (générées par les symétries antiunitaires de
+symétrie d'Altland–Zirnbauer (`cond-mat/9602137` ; générées par les symétries antiunitaires de
 renversement du temps et particule-trou, plus la symétrie chirale) admettent en
 chaque dimension spatiale un groupe de classification qui vaut
 $0$, $\mathbb{Z}$ ou $\mathbb{Z}_2$, avec une périodicité de Bott en dimension
@@ -248,7 +261,8 @@ Hasan & Kane (`1002.3895`) et Qi & Zhang (`1008.2026`).
 
 Une théorie de champs en $d$ dimensions peut porter une **anomalie** : une
 symétrie classique que la quantification ne préserve pas. Une anomalie de jauge
-rend une théorie incohérente *isolément*. La résolution de Callan–Harvey (1985) :
+rend une théorie incohérente *isolément*. La résolution de Callan–Harvey
+(1985, **[EXTERNE]**) :
 la théorie anomale vit sur le bord d'un volume en $d+1$ dimensions dont le terme
 topologique produit exactement le flux compensateur. L'ensemble est cohérent ;
 ni l'une ni l'autre moitié ne l'est.
@@ -336,13 +350,17 @@ l'intérieur de la théorie des cordes et de l'holographie.
 
 ### 5.4 Codes correcteurs quantiques : l'unification structurelle la plus profonde
 
-C'est, à mon sens, le lien le plus solide et le moins exploité du corpus.
+**[INTERPRÉTATION]** C'est, à mon sens, le lien le plus solide et le moins
+exploité du corpus. Les deux faits ci-dessous sont établis ; leur
+rapprochement en un seul phénomène est un jugement de cette revue, pas un
+théorème.
 
 - L'ordre topologique **est** un code correcteur quantique. Le code torique de
-  Kitaev est simultanément un modèle de matière topologiquement ordonnée et un
-  code : l'information logique est stockée dans des degrés de liberté globaux,
-  inaccessibles à toute mesure locale — d'où sa protection. C'est exactement ce
-  que mesure $\gamma$ (`hep-th/0510092`, `cond-mat/0510613`).
+  Kitaev (`quant-ph/9707021`) est simultanément un modèle de matière
+  topologiquement ordonnée et un code : l'information logique est stockée dans
+  des degrés de liberté globaux, inaccessibles à toute mesure locale — d'où sa
+  protection. C'est exactement ce que mesure $\gamma$ (`hep-th/0510092`,
+  `cond-mat/0510613`).
 - L'holographie **est** un code correcteur quantique. Pastawski, Yoshida,
   Harlow & Preskill (`1503.06237`) : un opérateur du volume admet plusieurs
   représentations sur la frontière, et l'information du volume survit à
@@ -360,7 +378,7 @@ l'objectif est une unification conceptuelle plutôt qu'un calcul.
 
 | | Isolant topologique | AdS/CFT |
 |---|---|---|
-| Direction | volume → frontière | frontière → volume |
+| Forme logique | implication : invariant du volume ⇒ modes de bord | équivalence exacte : $Z_{\text{frontière}} = Z_{\text{volume}}$ |
 | Nature du volume | gappé, topologique, **sans** d.d.l. local | gravitationnel, **dynamique** |
 | Nature de la frontière | modes gapless protégés | CFT fortement couplée, grand $N$ |
 | Ce qui est encodé | une obstruction discrète | la trajectoire RG complète |
@@ -372,8 +390,9 @@ La formulation défendable est donc :
 
 > Les deux domaines instancient une même famille de correspondances
 > volume–frontière, dont le membre commun exact est l'écoulement d'anomalie, et
-> dont le langage commun est l'intrication. Ils ne sont pas le même énoncé, et
-> la direction de l'encodage s'inverse de l'un à l'autre.
+> dont le langage commun est l'intrication. Ils ne sont pas le même énoncé :
+> l'un est une implication sur des données de basse énergie, l'autre une
+> équivalence exacte entre théories complètes.
 
 ---
 
@@ -425,7 +444,7 @@ Chiu–Teo–Schnyder–Ryu `1505.03535`.
 
 ## 9. Bibliographie
 
-Voir `papers/index.json` pour les 47 entrées avec auteurs complets, DOI,
+Voir `papers/index.json` pour les 49 entrées avec auteurs complets, DOI,
 `journal_ref` et chemins des PDF. La liste des identifiants et de leur pilier
 est dans `corpus/seed_papers.py`, avec pour chacun le fragment de titre servant
 de contrôle d'identité à la récupération.

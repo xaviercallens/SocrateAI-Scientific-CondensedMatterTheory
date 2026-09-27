@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "cond-mat/9602137",
+  "version": "v2",
+  "title": "Novel Symmetry Classes in Mesoscopic Normal-Superconducting Hybrid Structures",
+  "abstract": "Normal-conducting mesoscopic systems in contact with a superconductor are classified by the symmetry operations of time reversal and rotation of the electron's spin. Four symmetry classes are identified, which correspond to Cartan's symmetric spaces of type C, CI, D, and DIII. A detailed study is made of the systems where the phase shift due to Andreev reflection averages to zero along a typical semiclassical single-electron trajectory. Such systems are particularly interesting because they do not have a genuine excitation gap but support quasiparticle states close to the chemical potential. Disorder or dynamically generated chaos mixes the states and produces novel forms of universal level statistics. For two of the four universality classes, the n-level correlation functions are calculated by the mapping on a free 1D Fermi gas with a boundary. The remaining two classes are related to the Laguerre orthogonal and symplectic random-matrix ensembles. For a quantum dot with an NS-geometry, the weak localization correction to the conductance is calculated as a function of sticking probability and two perturbations breaking time-reversal symmetry and spin-rotation invariance. The universal conductance fluctuations are computed from a maximum-entropy S-matrix ensemble. They are larger by a factor of two than what is naively expected from the analogy with normal-conducting systems. This enhancement is explained by the doubling of the number of slow modes: owing to the coupling of particles and holes by the proximity to the superconductor, every cooperon and diffuson mode in the advanced-retarded channel entails a corresponding mode in the advanced-advanced (or retarded-retarded) channel.",
+  "authors": [
+    "Alexander Altland",
+    "Martin R. Zirnbauer"
+  ],
+  "published": "1996-02-27T18:08:19Z",
+  "updated": "2001-04-19T15:32:49Z",
+  "year": "1996",
+  "primary_category": "cond-mat",
+  "categories": [
+    "cond-mat"
+  ],
+  "doi": "10.1103/PhysRevB.55.1142",
+  "journal_ref": "Phys. Rev. B 55, 1142 (1997)",
+  "abs_url": "https://arxiv.org/abs/cond-mat/9602137",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/9602137",
+  "pillar": "topology",
+  "slug": "cond-mat_9602137",
+  "pdf_local": "papers/pdf/cond-mat_9602137.pdf"
+}

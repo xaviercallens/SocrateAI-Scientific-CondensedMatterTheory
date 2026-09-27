@@ -9,3 +9,5 @@ venv/
 
 # MCP config is copied from config/mcp.json.example and may hold local paths.
 .mcp.json
+
+.git-commit-msg.tmp

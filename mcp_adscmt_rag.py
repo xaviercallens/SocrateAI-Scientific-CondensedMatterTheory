@@ -95,7 +95,7 @@ def _format(results: dict) -> str:
 
 @mcp.tool()
 def adscmt_search(query: str, n_results: int = 5, pillar: str = "") -> str:
-    """Semantic search over the AdS/CMT literature corpus (47 arXiv papers).
+    """Semantic search over the AdS/CMT literature corpus (49 arXiv papers).
 
     Covers holographic duality (AdS/CFT), its condensed-matter applications
     (holographic superconductors, non-Fermi liquids, SYK), topological

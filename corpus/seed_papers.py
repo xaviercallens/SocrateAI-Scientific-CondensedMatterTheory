@@ -70,4 +70,10 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("1011.0586", "bridge", "Topological field theory and thermal responses of interacting"),
     ("1510.07698", "bridge", "Three Lectures On Topological Phases Of Matter"),
     ("1911.07978", "bridge", "Holographic Topological Semimetals"),
+    # Section 5.4 of the review argues that topological order and holography are
+    # both quantum error-correcting codes. The toric code is one half of that
+    # claim, so it belongs in the corpus rather than being cited from memory.
+    ("quant-ph/9707021", "bridge", "Fault-tolerant quantum computation by anyons"),
+    # Altland-Zirnbauer: the ten symmetry classes the periodic table is built on.
+    ("cond-mat/9602137", "topology", "Novel Symmetry Classes in Mesoscopic"),
 ]

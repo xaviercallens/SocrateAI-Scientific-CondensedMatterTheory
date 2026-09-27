@@ -181,7 +181,18 @@ def main() -> int:
     parser.add_argument("--collection", default=COLLECTION)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--abstracts-only", action="store_true")
-    parser.add_argument("--batch-size", type=int, default=32)
+    parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument(
+        "--timeout",
+        type=float,
+        default=float(os.environ.get("ANSE_EMBED_TIMEOUT", "900")),
+        help="per-request embedding timeout in seconds",
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="skip chunk ids already present in the collection",
+    )
     args = parser.parse_args()
 
     index_path = PAPERS / "index.json"
@@ -199,9 +210,12 @@ def main() -> int:
         return 0
 
     embedding_cls = load_anse_embedding_function()
-    embedder = embedding_cls()
+    # The host's Ollama serves embeddings slowly and serially (measured: ~33 s
+    # cold load, and requests queue behind each other), so ANSE's 120 s default
+    # times out mid-run. Raise it rather than lower the work.
+    embedder = embedding_cls(timeout_s=args.timeout, max_retries=2)
     probe = embedder.probe()  # raises EmbeddingUnavailableError if Ollama is down
-    print(f"embeddings: {probe['model']} @ {probe['host']} -> {probe['dimension']}-d")
+    print(f"embeddings: {probe['model']} @ {probe['host']} -> {probe['dimension']}-d", flush=True)
 
     import chromadb
 
@@ -212,6 +226,16 @@ def main() -> int:
         metadata={"hnsw:space": "cosine"},
     )
 
+    if args.resume:
+        present = set(collection.get(ids=ids, include=[]).get("ids") or [])
+        if present:
+            keep = [i for i, cid in enumerate(ids) if cid not in present]
+            print(f"resume: {len(present)} chunks already stored, {len(keep)} to go", flush=True)
+            ids = [ids[i] for i in keep]
+            documents = [documents[i] for i in keep]
+            metadatas = [metadatas[i] for i in keep]
+
+    done = 0
     for start in range(0, len(ids), args.batch_size):
         stop = start + args.batch_size
         collection.upsert(
@@ -219,7 +243,8 @@ def main() -> int:
             documents=documents[start:stop],
             metadatas=metadatas[start:stop],
         )
-        print(f"  upserted {min(stop, len(ids))}/{len(ids)}")
+        done = min(stop, len(ids))
+        print(f"  upserted {done}/{len(ids)} (collection={collection.count()})", flush=True)
 
     print(f"\ncollection '{args.collection}' now holds {collection.count()} chunks")
     print(f"store: {args.chroma_path}")

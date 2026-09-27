@@ -1,26 +1,53 @@
 # SocrateAI — Condensed Matter Theory : AdS/CMT
 
-Corpus de recherche et pipeline RAG sur la **correspondance AdS/CMT** et la
-**correspondance volume–frontière**, branché sur le vector store Chroma
-d'AutoevolveAI (ANSE).
+Deux volets, reliés par la **correspondance volume–frontière** :
 
-- **Revue de littérature** : [`docs/literature_review.md`](docs/literature_review.md)
-- **Corpus** : 47 articles arXiv, métadonnées + PDF, définis dans
-  [`corpus/seed_papers.py`](corpus/seed_papers.py)
-- **Collection Chroma** : `adscmt_literature`, dans le store ANSE
-  `~/AutoevolveAI/data/chroma`
+1. **Théorie** — revue de littérature sur AdS/CMT et les isolants topologiques,
+   corpus de 49 articles arXiv, et pipeline RAG branché sur le vector store
+   Chroma d'AutoevolveAI (ANSE).
+2. **Expérience** — programme « Garage Deep Tech » en 5 axes (matériel de
+   récupération → données → TDA Gudhi → preuve Lean 4), revu de façon critique
+   et préenregistré.
+
+Les deux sont tenus par un même **protocole de rigueur** de type *elenchus* :
+toute affirmation doit avoir été exposée à une manière précise d'échouer.
+
+## Par où commencer
+
+| Document | Contenu |
+|---|---|
+| [`docs/experimental_program.md`](docs/experimental_program.md) | **Revue critique du plan en 5 axes** : verdicts de faisabilité chiffrés, erreurs de physique, protocoles révisés, ordre d'exécution |
+| [`docs/literature_review.md`](docs/literature_review.md) | Revue de littérature AdS/CMT ↔ isolants topologiques |
+| [`docs/rigor_protocol.md`](docs/rigor_protocol.md) | Protocole Elenchus : 5 portes, préenregistrement, verdicts |
+| [`docs/safety.md`](docs/safety.md) | **À lire avant toute manipulation** : four à micro-ondes, lasers, eau |
+| [`lean/README.md`](lean/README.md) | Échelle des objectifs Lean 4, T0 → T3 |
+| `experiments/axis*/PREREGISTRATION.md` | Un préenregistrement par axe, à commiter **avant** toute acquisition |
 
 ---
 
 ## 1. Architecture
 
 ```
-corpus/seed_papers.py    liste (arxiv_id, pilier, fragment_de_titre_attendu)
-corpus/fetch_papers.py   API arXiv -> papers/meta/*.json, papers/pdf/*.pdf, papers/index.json
-corpus/ingest_chroma.py  découpage + embeddings -> collection adscmt_literature
-corpus/query_chroma.py   interrogation et vérification en ligne de commande
-mcp_adscmt_rag.py        serveur MCP exposant la recherche aux agents
-config/mcp.json.example  configuration MCP à recopier en .mcp.json
+docs/
+  literature_review.md       revue AdS/CMT ↔ isolants topologiques
+  experimental_program.md    revue critique du plan expérimental en 5 axes
+  rigor_protocol.md          protocole Elenchus : portes, préenregistrement, verdicts
+  safety.md                  sécurité : micro-ondes, lasers, eau
+experiments/
+  axis1_topological_waves/   SSH 1D puis valley-Hall 2D, aquarium
+  axis2_analogue_horizon/    superradiance sur vortex de vidange
+  axis3_vortex/              vortex acoustique (ou hologramme en fourche)
+  axis4_wave_chaos/          billard micro-ondes + VNA, loi de Weyl
+  axis5_caustics/            caustiques, classification d'Arnold
+lean/                        échelle des théorèmes, T0 → T3
+corpus/
+  seed_papers.py             liste (arxiv_id, pilier, fragment_de_titre_attendu)
+  fetch_papers.py            API arXiv -> papers/meta, papers/pdf, papers/index.json
+  ingest_chroma.py           découpage + embeddings -> collection adscmt_literature
+  query_chroma.py            interrogation et vérification (--verify)
+papers/                      métadonnées versionnées ; PDF régénérables (non versionnés)
+mcp_adscmt_rag.py            serveur MCP exposant la recherche aux agents
+config/mcp.json.example      configuration MCP à recopier en .mcp.json
 ```
 
 ### Deux garde-fous, hérités de la philosophie « fail closed » d'ANSE
@@ -29,9 +56,10 @@ config/mcp.json.example  configuration MCP à recopier en .mcp.json
 porte un fragment du titre attendu. `fetch_papers.py` refuse tout article dont
 le titre réel arXiv ne contient pas ce fragment, et le signale au lieu de
 l'indexer. Ce n'est pas théorique : la première passe a rejeté 6 identifiants
-sur 47 — parmi eux, `1304.4926` supposé être « Cool horizons for entangled
-black holes » est en réalité « Generalized gravitational entropy ». Sans ce
-contrôle, six articles faux seraient entrés dans le vector store, et rien ne
+sur 36 — parmi eux, `1304.4926` supposé être « Cool horizons for entangled
+black holes » est en réalité « Generalized gravitational entropy ». Plus tard,
+elle a encore rejeté le titre d'Altland–Zirnbauer cité de mémoire. Sans ce
+contrôle, ces articles faux seraient entrés dans le vector store, et rien ne
 l'aurait signalé.
 
 **Refus de l'embedding non sémantique.** ANSE embarque deux fonctions
@@ -73,9 +101,9 @@ python3 corpus/fetch_papers.py
 python3 corpus/fetch_papers.py --no-pdf     # métadonnées seules
 
 # 2. Ingérer dans Chroma
-python3 corpus/ingest_chroma.py --dry-run   # découpage seul, aucune écriture
-python3 corpus/ingest_chroma.py             # ~1500 chunks
-python3 corpus/ingest_chroma.py --abstracts-only   # rapide : 47 chunks
+python3 corpus/ingest_chroma.py --dry-run            # découpage seul, aucune écriture
+python3 corpus/ingest_chroma.py --abstracts-only --resume   # 49 chunks
+python3 corpus/ingest_chroma.py --resume             # texte intégral, ~1500 chunks
 
 # 3. Vérifier
 python3 corpus/query_chroma.py --verify
@@ -85,9 +113,22 @@ python3 corpus/query_chroma.py "why do topological insulators have edge states"
 python3 corpus/query_chroma.py "strange metal transport" --pillar adscmt -n 3
 ```
 
-L'ingestion complète est **bornée par le CPU** : les embeddings passent par
-Ollama un chunk à la fois. Compter plusieurs dizaines de minutes pour les
-~1500 chunks. `--abstracts-only` donne un index utilisable en une minute.
+**Contention GPU — à connaître avant de lancer.** L'Ollama de cette machine
+partage une unique Tesla T4 avec les autres sessions SocrateAI. Mesuré le
+2026-09-27 : GPU à 99 %, 13 Go de VRAM sur 15 occupés par
+`Goedel-Prover-V2-8B` (le prouveur Lean de LeanMaster). Les requêtes
+d'embedding attendent alors derrière le prouveur, et une seule peut prendre
+plusieurs minutes. D'où :
+
+- `--timeout 900` (par défaut) plutôt que les 120 s d'ANSE ;
+- `--batch-size 4` (par défaut), pour que la progression soit enregistrée
+  souvent ;
+- **`--resume`**, qui saute les chunks déjà présents : une ingestion
+  interrompue reprend là où elle s'est arrêtée au lieu de tout refaire.
+
+Lancer les ~1500 chunks du texte intégral quand le prouveur est inactif
+(`curl -s localhost:11434/api/ps` ne doit pas lister de prouveur).
+`--abstracts-only` (49 chunks) donne un index utilisable bien plus tôt.
 
 `--verify` n'imprime pas seulement des statistiques : il vérifie que la
 dimension vaut bien 1024 et lance six requêtes-sondes dont le résultat attendu
@@ -143,8 +184,8 @@ K-théorie, déjà partiellement formalisées de ce côté.
 |---|---:|---|
 | `holography` | 11 | AdS/CFT, entropie d'intrication holographique, codes QEC |
 | `adscmt` | 13 | supraconducteurs holographiques, non-Fermi liquides, SYK |
-| `topology` | 12 | effet Hall de spin quantique, classification en dix classes |
-| `bridge` | 11 | anomalies, spectre d'intrication, semi-métaux holographiques |
+| `topology` | 13 | effet Hall de spin quantique, Altland–Zirnbauer, dix classes |
+| `bridge` | 12 | anomalies, spectre d'intrication, code torique, semi-métaux holographiques |
 
 Les PDF (`papers/pdf/`) ne sont pas versionnés — `corpus/fetch_papers.py` les
 régénère à l'identique. Les métadonnées (`papers/meta/`, `papers/index.json`)
