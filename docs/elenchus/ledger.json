@@ -43,13 +43,13 @@
     },
     {
       "id": "POC-X-0001",
-      "statement": "On an SSH ring, the entanglement spectrum of a subsystem of ell whole unit cells (severing exactly two w-bonds, for any ell) has exactly two eigenvalues zeta_n = 1/2, exact to floating-point precision, when |w| > |v|, and none when |v| > |w|. A preregistered sub-prediction (finite-size smearing near r=1 narrows between L=100 and L=300) was REFUTED: no smearing was found at either size, down to |r-1|=1e-6 -- the count is a quantised invariant, not a smoothly crossing-over order parameter.",
+      "statement": "CORRECTED 2026-09-27 (v2). On an SSH ring of L cells (|w|>|v|, subsystem of ell whole cells severing two w-bonds), the two entanglement levels closest to 1/2 form an exact chiral pair z1+z2=1 and sit at |z-1/2| ~ (v/w)^min(ell, L-ell): ordinary exponential finite-size smearing, with decay length fitted within 15% of xi = 1/ln(w/v) at r = 0.5, 0.7, 0.8, 0.9 (L=200). They are pinned to 1/2 EXACTLY only at ell = L/2, where a reflection through the two cuts combined with chiral symmetry cancels the hybridisation. When |v|>|w| no level is near 1/2. Version 1 of this claim stated there was NO finite-size smearing and explained it as a quantised invariant that cannot smear; that was an artefact of measuring only ell = L/2 (at two ring sizes) and is retracted. Positive and negative controls stand.",
       "tier": "X",
       "kind": "numeric",
       "depends_on": ["SSH-B-0001"],
-      "evidence": "sha256:56842f4c4353bad1fa4d0edba1c7ed174d8d6ad351c3f37c4ad9bbec051387e3",
+      "evidence": "sha256:bd4be0daaa01d49feea1dad15503d42765118c8629c5ff59df9d21bdc52a86c6",
       "audit": null,
-      "notes": "experiments/poc_entanglement_tda/ssh_ring_entanglement.py + results.md Part A. Positive and negative controls both confirmed exactly. Gudhi H0 persistence reproduces the same information as the two baseline scalar metrics (near-half count, min distance to 1/2); for a 1D point cloud this is expected and stated as such, not claimed as an independent discovery."
+      "notes": "Evidence v2: docs/elenchus/evidence/poc_x_0001_ssh_ring_v2.txt (finite_size_scaling.py, 32 checks). Evidence v1 (sha256:56842f4c...) is kept at docs/elenchus/evidence/poc_x_0001_ssh_ring.txt as the record of the retracted version; the erratum is in results.md and RELEASE_NOTES_v0.1.md. Also yields the axis-1a design numbers: domain-wall mode (open chain, strong-bond terminations, odd site count) has E=0 exactly, peaks at the wall, xi = 1.44/2.80/4.48/9.49 cells, 99% weight within 3/6/10/21 cells per side. Caught by an external reviewer asking 'what about ell != L/2'; producer != verifier."
     },
     {
       "id": "POC-X-0002",

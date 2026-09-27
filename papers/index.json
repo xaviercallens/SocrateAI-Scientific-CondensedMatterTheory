@@ -1452,6 +1452,164 @@
     "pdf_local": "papers/pdf/1611.04650.pdf"
   },
   {
+    "arxiv_id": "cond-mat/0212631",
+    "version": "v1",
+    "title": "Calculation of reduced density matrices from correlation functions",
+    "abstract": "It is shown that for solvable fermionic and bosonic lattice systems, the reduced density matrices can be determined from the properties of the correlation functions. This provides the simplest way to these quantities which are used in the density-matrix renormalization group method.",
+    "authors": [
+      "Ingo Peschel"
+    ],
+    "published": "2002-12-30T11:28:23Z",
+    "updated": "2002-12-30T11:28:23Z",
+    "year": "2002",
+    "primary_category": "cond-mat",
+    "categories": [
+      "cond-mat"
+    ],
+    "doi": "10.1088/0305-4470/36/14/101",
+    "journal_ref": "J.Phys.A: Math.Gen. 36, L205 (2003)",
+    "abs_url": "https://arxiv.org/abs/cond-mat/0212631",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/0212631",
+    "pillar": "poc",
+    "slug": "cond-mat_0212631",
+    "pdf_local": "papers/pdf/cond-mat_0212631.pdf"
+  },
+  {
+    "arxiv_id": "1702.07583",
+    "version": "v3",
+    "title": "Topological Origin of Equatorial Waves",
+    "abstract": "Topology sheds new light on the emergence of unidirectional edge waves in a variety of physical systems, from condensed matter to artificial lattices. Waves observed in geophysical flows are also robust to perturbations, which suggests a role for topology. We show a topological origin for two celebrated equatorially trapped waves known as Kelvin and Yanai modes, due to the Earth's rotation that breaks time-reversal symmetry. The non-trivial structure of the bulk Poincaré wave modes encoded through the first Chern number of value $2$ guarantees existence for these waves. This invariant demonstrates that ocean and atmospheric waves share fundamental properties with topological insulators, and that topology plays an unexpected role in the Earth climate system.",
+    "authors": [
+      "Pierre Delplace",
+      "J. B. Marston",
+      "Antoine Venaille"
+    ],
+    "published": "2017-02-24T13:56:56Z",
+    "updated": "2017-10-25T07:17:05Z",
+    "year": "2017",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "astro-ph.EP",
+      "physics.ao-ph",
+      "physics.flu-dyn",
+      "quant-ph"
+    ],
+    "doi": "10.1126/science.aan8819",
+    "journal_ref": "Science 358, 1075 -- 1077 (2017)",
+    "abs_url": "https://arxiv.org/abs/1702.07583",
+    "pdf_url": "https://arxiv.org/pdf/1702.07583",
+    "pillar": "analogue",
+    "slug": "1702.07583",
+    "pdf_local": "papers/pdf/1702.07583.pdf"
+  },
+  {
+    "arxiv_id": "1503.06808",
+    "version": "v1",
+    "title": "Observation of phononic helical edge states in a mechanical 'topological insulator'",
+    "abstract": "A topological insulator is characterized by a dichotomy between the interior and the edge of a finite system: While the bulk has a non-zero energy gap, the edges are forced to sustain excitations traversing these gaps. Originally proposed for electrons governed by quantum mechanics, it has remained an important open question if the same physics can be observed for systems obeying Newton's equations of motion. Here, we report on measurements that characterize the collective behavior of mechanical oscillators exhibiting the phenomenology of the quantum spin hall effect. The phononic edge modes are shown to be helical and we demonstrate their topological protection via the stability against imperfections. Our results open the door to the design of topological acoustic meta-materials that can capitalize on the stability of the surfaces phonons as reliable wave guides.",
+    "authors": [
+      "Roman Süsstrunk",
+      "Sebastian D. Huber"
+    ],
+    "published": "2015-03-23T20:01:57Z",
+    "updated": "2015-03-23T20:01:57Z",
+    "year": "2015",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "physics.class-ph"
+    ],
+    "doi": "10.1126/science.aab0239",
+    "journal_ref": "Science, 349, 47 (2015)",
+    "abs_url": "https://arxiv.org/abs/1503.06808",
+    "pdf_url": "https://arxiv.org/pdf/1503.06808",
+    "pillar": "analogue",
+    "slug": "1503.06808",
+    "pdf_local": "papers/pdf/1503.06808.pdf"
+  },
+  {
+    "arxiv_id": "1308.0554",
+    "version": "v2",
+    "title": "Topological Boundary Modes in Isostatic Lattices",
+    "abstract": "Frames, or lattices consisting of mass points connected by rigid bonds or central force springs, are important model constructs that have applications in such diverse fields as structural engineering, architecture, and materials science. The difference between the number of bonds and the number of degrees of freedom of these lattices determines the number of their zero-frequency \"floppy modes\". When these are balanced, the system is on the verge of mechanical instability and is termed isostatic. It has recently been shown that certain extended isostatic lattices exhibit floppy modes localized at their boundary. These boundary modes are insensitive to local perturbations, and appear to have a topological origin, reminiscent of the protected electronic boundary modes that occur in the quantum Hall effect and in topological insulators. In this paper we establish the connection between the topological mechanical modes and the topological band theory of electronic systems, and we predict the existence of new topological bulk mechanical phases with distinct boundary modes. We introduce model systems in one and two dimensions that exemplify this phenomenon.",
+    "authors": [
+      "C. L. Kane",
+      "T. C. Lubensky"
+    ],
+    "published": "2013-08-02T17:14:01Z",
+    "updated": "2013-11-12T15:16:20Z",
+    "year": "2013",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.soft"
+    ],
+    "doi": "10.1038/nphys2835",
+    "journal_ref": "Nature Physics 10, 39 (2014)",
+    "abs_url": "https://arxiv.org/abs/1308.0554",
+    "pdf_url": "https://arxiv.org/pdf/1308.0554",
+    "pillar": "analogue",
+    "slug": "1308.0554",
+    "pdf_local": "papers/pdf/1308.0554.pdf"
+  },
+  {
+    "arxiv_id": "1411.7100",
+    "version": "v2",
+    "title": "Topological Acoustics",
+    "abstract": "The manipulation of acoustic wave propagation in fluids has numerous applications, including some in everyday life. Acoustic technologies frequently develop in tandem with optics, using shared concepts such as waveguiding and metamedia. It is thus noteworthy that an entirely novel class of electromagnetic waves, known as topological edge states, has recently been demonstrated. These are inspired by the electronic edge states occurring in topological insulators, and possess a striking and technologically promising property: the ability to travel in a single direction along a surface without backscattering, regardless of the existence of defects or disorder. Here, we develop an analogous theory of topological fluid acoustics, and propose a scheme for realizing topological edge states in an acoustic structure containing circulating fluids. The phenomenon of disorder-free one-way sound propagation, which does not occur in ordinary acoustic devices, may have novel applications for acoustic isolators, modulators, and transducers.",
+    "authors": [
+      "Zhaoju Yang",
+      "Fei Gao",
+      "Xihang Shi",
+      "Xiao Lin",
+      "Zhen Gao",
+      "Yidong Chong",
+      "Baile Zhang"
+    ],
+    "published": "2014-11-26T03:56:47Z",
+    "updated": "2015-03-21T01:51:27Z",
+    "year": "2014",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/PhysRevLett.114.114301",
+    "journal_ref": "Phys. Rev. Lett. 114, 114301 (2015)",
+    "abs_url": "https://arxiv.org/abs/1411.7100",
+    "pdf_url": "https://arxiv.org/pdf/1411.7100",
+    "pillar": "analogue",
+    "slug": "1411.7100",
+    "pdf_local": "papers/pdf/1411.7100.pdf"
+  },
+  {
+    "arxiv_id": "1802.09649",
+    "version": "v3",
+    "title": "Topological waves in fluids with odd viscosity",
+    "abstract": "Fluids in which both time-reversal and parity are broken can display a dissipationless viscosity that is odd under each of these symmetries. Here, we show how this odd viscosity has a dramatic effect on topological sound waves in fluids, including the number and spatial profile of topological edge modes. Odd viscosity provides a short-distance cutoff that allows us to define a bulk topological invariant on a compact momentum space. As the sign of odd viscosity changes, a topological phase transition occurs without closing the bulk gap. Instead, at the transition point, the topological invariant becomes ill-defined because momentum space cannot be compactified. This mechanism is unique to continuum models and can describe fluids ranging from electronic to chiral active systems.",
+    "authors": [
+      "Anton Souslov",
+      "Kinjal Dasbiswas",
+      "Michel Fruchart",
+      "Suriyanarayanan Vaikuntanathan",
+      "Vincenzo Vitelli"
+    ],
+    "published": "2018-02-26T23:56:11Z",
+    "updated": "2019-05-27T13:32:07Z",
+    "year": "2018",
+    "primary_category": "cond-mat.soft",
+    "categories": [
+      "cond-mat.soft"
+    ],
+    "doi": "10.1103/PhysRevLett.122.128001",
+    "journal_ref": "Phys. Rev. Lett. 122, 128001 (2019)",
+    "abs_url": "https://arxiv.org/abs/1802.09649",
+    "pdf_url": "https://arxiv.org/pdf/1802.09649",
+    "pillar": "analogue",
+    "slug": "1802.09649",
+    "pdf_local": "papers/pdf/1802.09649.pdf"
+  },
+  {
     "arxiv_id": "cond-mat/0112197",
     "version": "v3",
     "title": "Topological Origin of Zero-Energy Edge States in Particle-Hole Symmetric Systems",

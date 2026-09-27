@@ -138,3 +138,62 @@ l'opérateur antiunitaire $T$ prédit par la classification et vérifier
 $T^2=\pm 1$ directement (calcul Tier B, en arithmétique exacte sur les
 représentations de Majorana), ce qui élèverait la Partie B au niveau où se
 trouve déjà la Partie A.
+
+---
+
+## ERRATUM — Partie A (2026-09-27, après la publication de v0.1)
+
+**Ce qui était faux.** La section « La sous-prédiction réfutée » ci-dessus
+affirme que le comptage de niveaux à $\zeta=1/2$ ne présente **aucun** flou
+de taille finie, et l'explique par la quantification de l'invariant. Cette
+affirmation, et son explication, sont **fausses**. Elle est aussi reprise
+dans `docs/RELEASE_NOTES_v0.1.md` et dans l'entrée `POC-X-0001` du grand
+livre ; les deux reçoivent un erratum, le texte publié n'est pas réécrit.
+
+**Ce qui s'est passé.** Toutes les mesures de la Partie A utilisaient un
+sous-système de $\ell = L/2$ cellules. C'est une géométrie **spéciale** :
+l'anneau possède alors une réflexion passant par les deux points de coupure
+qui échange sous-système et complément ; combinée à la symétrie chirale,
+elle annule **exactement** l'hybridation des deux modes de bord. Tester
+« deux tailles » avec la même géométrie symétrique ne testait donc rien.
+
+**Le test discriminant** ([`finite_size_scaling.py`](finite_size_scaling.py),
+32 contrôles, tous passés) : pour $\ell \neq L/2$, les deux niveaux les plus
+proches de $1/2$ s'en écartent de $\delta \sim (v/w)^{\min(\ell,\,L-\ell)}$ —
+exactement le flou de taille finie que le préenregistrement prédisait. Taux
+de décroissance ajusté contre la théorie $\xi = 1/\ln(w/v)$ :
+
+| $r$ | $\xi$ ajusté | $\xi$ théorique |
+|---|---|---|
+| 0,5 | 1,39 | 1,44 |
+| 0,7 | 2,68 | 2,80 |
+| 0,8 | 4,23 | 4,48 |
+| 0,9 | 8,42 | 9,49 |
+
+Les rapports successifs $\delta(\ell+1)/\delta(\ell)$ sont monotones, sans
+changement de signe, d'écart-type $\sim 0{,}01$ (platitude compensée, au sens
+d'Elenchus). L'appariement chiral $\zeta_1+\zeta_2=1$ tient à $10^{-15}$ pour
+tous les $(r,\ell)$ : la **paire** était réelle, seule sa distance à $1/2$
+était mal rapportée. À $\ell=L/2$, $\delta < 10^{-15}$ : l'artefact est
+reproduit et compris.
+
+**Verdict corrigé.** Contrôles positif et négatif : toujours `CONFIRMÉS`
+(2 niveaux vs 0, à toute distance raisonnable de $r=1$). Sous-prédiction
+de flou fini-taille : `CONFIRMÉE`, et non « réfutée ». L'explication par
+« l'invariant quantifié ne peut pas se lisser » est retirée : l'invariant du
+système infini est quantifié, mais son image dans le spectre d'intrication
+d'un système **fini** se lisse exponentiellement en $\ell/\xi$, comme le
+prévoit la relation exacte de Fidkowski (`0909.2654`) entre spectre
+d'intrication et modes de bord d'un système fini.
+
+**Comment l'erreur a été attrapée.** Par un relecteur extérieur à la session
+(producteur ≠ vérificateur), sur la question « et si $\ell \ne L/2$ ? ». Le
+résultat était celui qu'on souhaitait — c'est exactement le cas où Elenchus
+demande le plus de suspicion, et où elle a manqué.
+
+**Ce que l'erreur apporte.** La longueur $\xi$ et le nombre de cellules
+nécessaires pour contenir 99 % du mode de mur de domaine
+(3 / 6 / 10 / 21 cellules par côté pour $r=0{,}5/0{,}7/0{,}8/0{,}9$, calcul
+`D1` du même script, mode à énergie exactement nulle, piqué au mur) sont
+**les nombres de conception de l'Axe 1a** — voir
+[`../../docs/roadmap.md`](../../docs/roadmap.md).

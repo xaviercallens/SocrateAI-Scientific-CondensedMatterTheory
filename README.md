@@ -22,7 +22,8 @@ toute affirmation doit avoir été exposée à une manière précise d'échouer.
 | [`docs/contribution_map.md`](docs/contribution_map.md) | **Où votre expertise contribue** (Lean, GPU, Rust, HPC, Gudhi, IA) : trois projets classés |
 | [`docs/assets/README.md`](docs/assets/README.md) | Actifs réutilisables de cette machine, vérifiés un par un |
 | [`docs/rigor_protocol.md`](docs/rigor_protocol.md) | Protocole Elenchus : tiers X<C<L<B<A réels, grand livre, préenregistrement |
-| [`docs/elenchus/ledger.json`](docs/elenchus/ledger.json) | Premier grand livre filé : 4 affirmations sur l'énoncé SSH, vérifié par le gate réel d'Elenchus |
+| [`docs/roadmap.md`](docs/roadmap.md) | **Feuille de route** théorie / numérique / observation / expérimentation, avec les nombres de conception du premier montage et la stratégie de légitimité |
+| [`docs/elenchus/ledger.json`](docs/elenchus/ledger.json) | Grand livre : 6 affirmations (SSH exact, citation Mathlib, PoC), vérifié par le gate réel d'Elenchus. `POC-X-0001` porte un erratum |
 | [`docs/safety.md`](docs/safety.md) | **À lire avant toute manipulation** : four à micro-ondes, lasers, eau |
 | [`lean/README.md`](lean/README.md) | Échelle des objectifs Lean 4, T0 → T3 |
 | `experiments/axis*/PREREGISTRATION.md` | Un préenregistrement par axe, à commiter **avant** toute acquisition |

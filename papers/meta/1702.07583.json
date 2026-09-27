@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "1702.07583",
+  "version": "v3",
+  "title": "Topological Origin of Equatorial Waves",
+  "abstract": "Topology sheds new light on the emergence of unidirectional edge waves in a variety of physical systems, from condensed matter to artificial lattices. Waves observed in geophysical flows are also robust to perturbations, which suggests a role for topology. We show a topological origin for two celebrated equatorially trapped waves known as Kelvin and Yanai modes, due to the Earth's rotation that breaks time-reversal symmetry. The non-trivial structure of the bulk Poincaré wave modes encoded through the first Chern number of value $2$ guarantees existence for these waves. This invariant demonstrates that ocean and atmospheric waves share fundamental properties with topological insulators, and that topology plays an unexpected role in the Earth climate system.",
+  "authors": [
+    "Pierre Delplace",
+    "J. B. Marston",
+    "Antoine Venaille"
+  ],
+  "published": "2017-02-24T13:56:56Z",
+  "updated": "2017-10-25T07:17:05Z",
+  "year": "2017",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "astro-ph.EP",
+    "physics.ao-ph",
+    "physics.flu-dyn",
+    "quant-ph"
+  ],
+  "doi": "10.1126/science.aan8819",
+  "journal_ref": "Science 358, 1075 -- 1077 (2017)",
+  "abs_url": "https://arxiv.org/abs/1702.07583",
+  "pdf_url": "https://arxiv.org/pdf/1702.07583",
+  "pillar": "analogue",
+  "slug": "1702.07583",
+  "pdf_local": "papers/pdf/1702.07583.pdf"
+}

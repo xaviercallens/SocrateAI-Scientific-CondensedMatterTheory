@@ -101,6 +101,21 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("0904.2197", "poc", "Effects of interactions on the topological classification of free fermion systems"),
     ("1602.06964", "poc", "Sachdev-Ye-Kitaev Model and Thermalization on the Boundary of Many-Body Localized"),
     ("1611.04650", "poc", "Black Holes and Random Matrices"),
+    # Peschel: the correlation-matrix method every free-fermion entanglement
+    # spectrum in experiments/poc_entanglement_tda/ relies on.
+    ("cond-mat/0212631", "poc", "Calculation of reduced density matrices from correlation functions"),
+
+    # --- Pillar 8: analogue platforms (for the experimental roadmap) --------
+    # Published realisations of SSH/topological band physics in classical
+    # waves. Each is a template for axis 1 (tank) and for what "confirmation
+    # by experiment" has looked like in this field.
+    ("1702.07583", "analogue", "Topological origin of equatorial waves"),
+    # arXiv title has quote marks around 'topological insulator'; fragment
+    # stops before them.
+    ("1503.06808", "analogue", "Observation of phononic helical edge states in a mechanical"),
+    ("1308.0554", "analogue", "Topological boundary modes in isostatic lattices"),
+    ("1411.7100", "analogue", "Topological Acoustics"),
+    ("1802.09649", "analogue", "Topological waves in fluids with odd viscosity"),
 
     # --- Pillar 6: Shinsei Ryu -------------------------------------------
     # Selected from his full arXiv record (tools/arxiv_author.py ->
