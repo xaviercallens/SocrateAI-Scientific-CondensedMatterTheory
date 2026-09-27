@@ -57,6 +57,7 @@ $\{7,3\}$\textsuperscript{e} & 5887 & 0.1058 & 9.45 & --- \\
 \begin{tabular}{llrlrl}\toprule
 Network & Integrator & K1 error & & K2 error & \\ \midrule
 $\{7,3\}$, $L=2$ & SciPy BDF & $7.3\times10^{-9}$ & pass & $4.2\times10^{-13}$ & pass \\
+$\{7,3\}$, $L=2$ & rusty-SUNDIALS CVODE (BDF) & $1.1\times10^{-8}$ & pass & $1.1\times10^{-12}$ & pass \\
 square, $R=6$ & SciPy BDF & $1.4\times10^{-8}$ & pass & $4.1\times10^{-13}$ & pass \\
-all & rusty-SUNDIALS CVODE (BDF) & \multicolumn{4}{c}{not run: Python extension not built} \\
+square, $R=6$ & rusty-SUNDIALS CVODE (BDF) & $2.6\times10^{-8}$ & pass & $1.1\times10^{-12}$ & pass \\
 \bottomrule\end{tabular}\end{table}

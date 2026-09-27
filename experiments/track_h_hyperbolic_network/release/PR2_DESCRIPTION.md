@@ -20,10 +20,11 @@ This update adds **Track H**: the conditioning of the discrete inverse conductan
   - The finite-size prediction is **refuted** as preregistered.
   - A domain-monotonicity argument shows λ_min decreases to λ₀({7,3}) > 0, so τ ≤ C/λ₀ for all N.
   - Its premises are certified for L ≤ 6: interior degree 3, and interior(G_L) = G_{L−1} by coordinates and edge sets.
-- **Integrator controls.** K1 and K2 pass with SciPy. The **rusty-SUNDIALS CVODE leg has not been run** because the extension is not built.
+- **Integrator controls.** K1 and K2 pass with **both** SciPy BDF and the rusty-SUNDIALS CVODE solver (binding 6.0.0 from af4886f). Both agree with the exact solution to about 3e-8 (H2-X-0004).
+- **rusty-SUNDIALS contribution.** `release/rusty_sundials_contrib/` holds the RC-network benchmark (two fixture networks, pytest) and `apply.sh`, which opens a PR in rusty-SUNDIALS.
 
 ### Ledger
-- The Elenchus ledger has 18 claims and a content-addressed evidence store in `docs/elenchus/evidence/`.
+- The Elenchus ledger has 19 claims and a content-addressed evidence store in `docs/elenchus/evidence/`.
 - `ledger.py --evidence-dir` verifies every claim the paper cites.
 - It blocks on 5 older digests that match no tracked file: SSH-L-0001, SSH-C-0001, POC-X-0001, POC-X-0002, and the superseded H0-X-0001. Each is flagged in its notes, and no statement was changed.
 
@@ -37,7 +38,7 @@ This update adds **Track H**: the conditioning of the discrete inverse conductan
 - [x] `python3 paper/build.py`: 0 undefined references, 0 overfull boxes
 - [x] `python3 release/check_bundle.py`: all checks pass
 - [x] Ledger gate: no findings without `--evidence-dir`; with it, every paper-cited claim verifies (5 older, unrelated digests flagged)
-- [ ] `maturin develop` for rusty-SUNDIALS, then re-run `rc_network.py`, `paper/build.py` and `release/export.py` (fills the CVODE row)
+- [x] rusty-SUNDIALS wheel built and installed; `rc_network.py` re-run with both integrators, all controls pass
 - [ ] `hf auth login`, then `release/hf_upload.py --namespace <user>`
 - [ ] `ZENODO_TOKEN=... release/zenodo_draft.py`, review the draft, then publish manually
 

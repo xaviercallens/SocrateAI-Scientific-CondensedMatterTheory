@@ -20,7 +20,8 @@ if [ ! -d "$WT" ]; then
 fi
 cd "$WT/crates/rusty-sundials-py"
 maturin build --release
-WHL="$(ls -t "$WT"/target/wheels/rusty_sundials-*.whl "$WT"/crates/rusty-sundials-py/target/wheels/rusty_sundials-*.whl 2>/dev/null | head -1)"
+# maturin names the wheel after the package: rusty_sundials_py-<ver>-...whl
+WHL="$(ls -t "$WT"/target/wheels/rusty_sundials_py-*.whl "$WT"/crates/rusty-sundials-py/target/wheels/rusty_sundials_py-*.whl 2>/dev/null | head -1)"
 python3 -m pip install --user --force-reinstall "$WHL"
 python3 -c "import rusty_sundials; print('rusty_sundials importable:', rusty_sundials.__file__)"
 

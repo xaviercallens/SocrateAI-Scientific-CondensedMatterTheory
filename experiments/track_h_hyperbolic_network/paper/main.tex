@@ -40,8 +40,9 @@ Neumann-to-Dirichlet map measured by current-injection hardware. For the time-re
 a preregistered finite-size prediction that the Dirichlet spectral gap is constant was refuted; we show instead,
 by domain monotonicity and the positive spectral gap of the nonamenable $\{7,3\}$ graph, that the gap decreases
 monotonically to a strictly positive limit, so the RC relaxation time is bounded uniformly in $N$, whereas it grows
-linearly in $N$ on flat lattices. A two-integrator protocol (SciPy and rusty-SUNDIALS CVODE) with analytic
-controls is specified for the RC model; the SciPy leg passes both controls. All data, code and a claim-by-claim
+linearly in $N$ on flat lattices. The RC dynamics are cross-validated with two independent BDF integrators
+(SciPy and the rusty-SUNDIALS CVODE solver), both of which reproduce the exact matrix-exponential solution and the
+static Dirichlet-to-Neumann map to within $3\times10^{-8}$ and $10^{-11}$ respectively. All data, code and a claim-by-claim
 verification ledger are released.
 \end{abstract}
 
@@ -128,7 +129,7 @@ $\lambda_{\max}(L_{ii})/\lambda_{\min}(L_{ii})$. Equation~\eqref{eq:rc} is the t
 network sampled by a microcontroller produces.
 
 \subsection{Integrators and controls}
-Equation~\eqref{eq:rc} is integrated with two independent implementations of variable-order BDF: SciPy's
+Equation~\eqref{eq:rc} is integrated with two independently developed implementations of variable-order BDF: SciPy's
 \texttt{solve\_ivp}~\cite{SciPy2020} and the CVODE solver of rusty-SUNDIALS~\cite{RustySundials}, a Rust
 implementation of the SUNDIALS suite~\cite{Hindmarsh2005} exposed to Python through PyO3. Both use
 $\mathrm{rtol}=10^{-8}$, $\mathrm{atol}=10^{-10}$. Two controls gate every reported integration.
@@ -249,11 +250,12 @@ whereas on flat disks $\tau$ grows linearly in $N$. At $N\approx800$, $\tau=6.5\
 ratio is $36$ versus $311$.
 
 \subsection{Integrator controls}
-Both controls pass for the SciPy integrator on $\{7,3\}$, $L=2$ and square $R=6$, with K1 errors of order $10^{-8}$
-and K2 errors of order $10^{-13}$ (Table~\ref{tab:controls}). The rusty-SUNDIALS CVODE leg of the protocol has not
-been run for this version, because the Python extension was not built in the computing environment, and no
-cross-code agreement is claimed. The harness runs it automatically when the extension is importable, and the
-tables in this paper are generated from its output.
+Both controls pass for both integrators on $\{7,3\}$, $L=2$ and square $R=6$ (Table~\ref{tab:controls}). K1 errors
+are of order $10^{-8}$ for both, well inside the $10^{-5}$ threshold, so the two codes agree with the exact
+solution, and hence with each other, to about $3\times10^{-8}$. K2 errors are of order $10^{-13}$ (SciPy) and
+$10^{-12}$ (CVODE). The CVODE leg used the rusty-SUNDIALS Python binding (version 6.0.0) built from
+commit \texttt{af4886f}. The same harness, packaged as a benchmark with the two fixture networks, has been
+contributed to rusty-SUNDIALS as an example and regression test.
 
 \section{Discussion and limitations}
 
@@ -272,17 +274,22 @@ benchmarked, and the behaviour at strongly inhomogeneous conductances is not stu
 larger $N$.
 (iv) The probe-matched comparison uses a post hoc metric and compares different identifiable targets.
 (v) Only $\{7,3\}$ is studied among hyperbolic tilings.
-(vi) The CVODE cross-validation is specified but not yet executed.
+(vi) The two-integrator cross-validation covers two networks of about $110$ nodes; larger and stiffer instances
+are not yet cross-validated.
 (vii) The novelty search was targeted, not systematic.
 
 \section{Research directions}
 
-\paragraph{Cross-validated RC benchmark with rusty-SUNDIALS.} Equation~\eqref{eq:rc} with the K1/K2 controls is a
-stiff linear system with an exact solution and a static cross-check, at tunable size and stiffness. Its stiffness
-is bounded in $N$ on hyperbolic networks and grows linearly on flat ones. This makes it a natural regression
-benchmark for rusty-SUNDIALS, and running both integrators is the immediate next step. Supplying the analytic
-Jacobian $-L_{ii}/C$ to CVODE, which the current binding does not accept, would let solver cost be studied as a
-function of geometry.
+\paragraph{Geometry-controlled stiffness benchmark for rusty-SUNDIALS.} Equation~\eqref{eq:rc} with the K1/K2
+controls is a stiff linear system with an exact solution and a static cross-check, at tunable size and stiffness.
+Its stiffness is bounded in $N$ on hyperbolic networks and grows linearly on flat ones. The two-network version is
+packaged and proposed to rusty-SUNDIALS as a regression benchmark. Natural extensions are:
+\begin{itemize}
+\item cross-validation at $N\sim10^3$--$10^4$, where the flat stiffness exceeds $300$;
+\item an analytic-Jacobian argument ($-L_{ii}/C$) in the Python binding, which it does not currently accept, so
+that solver cost can be measured as a function of geometry;
+\item sparse linear algebra inside the BDF Newton iterations.
+\end{itemize}
 
 \paragraph{Difference imaging.} Localising a change $\delta g$ of a few conductances from
 $\Lambda(g+\delta g)-\Lambda(g)$ is better conditioned than absolute recovery. Its depth dependence on hyperbolic
@@ -326,7 +333,7 @@ $\lambda_{\min}$ at $L=5,6$ (exploratory) & X & H2-X-0002 \\
 Interior degree 3, nested interiors, $L\le6$ & B & H2-B-0001 \\
 $\lambda_0>0$ for $\{7,3\}$ & L & H2-L-0001 \\
 Uniform bound $\tau\le C/\lambda_0$ (Proposition) & C & H2-C-0001 \\
-Integrator controls K1/K2 (SciPy); CVODE not run & X & H2-X-0003 \\ \bottomrule
+Integrator controls K1/K2, SciPy and rusty-SUNDIALS CVODE & X & H2-X-0004 \\ \bottomrule
 \end{tabular}
 \end{center}
 

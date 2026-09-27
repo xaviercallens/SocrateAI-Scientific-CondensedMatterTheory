@@ -37,6 +37,12 @@ CODE_FILES = ["hyperbolic_network.py", "hyperbolic_exact.py", "probe_matched.py"
               "rc_network.py", "h2_explore.py", "interior_degree.py", "paper/make_assets.py", "paper/build.py",
               "paper/main.tex", "paper/refs.bib", "release/export.py", "release/hf_upload.py",
               "release/zenodo_draft.py", "release/zenodo_metadata.json", "release/check_bundle.py",
+              "release/rusty_sundials_contrib/examples/python/rc_network/rc_network_benchmark.py",
+              "release/rusty_sundials_contrib/examples/python/rc_network/test_rc_network.py",
+              "release/rusty_sundials_contrib/examples/python/rc_network/README.md",
+              "release/rusty_sundials_contrib/examples/python/rc_network/fixtures/hyperbolic_7_3_L2.json",
+              "release/rusty_sundials_contrib/examples/python/rc_network/fixtures/square_R6.json",
+              "release/rusty_sundials_contrib/apply.sh",
               "PREREGISTRATION.md", "PREREGISTRATION_2.md"]
 HERE_TEX = TRACK / "release"
 
@@ -215,7 +221,7 @@ Each claim built on these data carries an evidence tier in `docs/elenchus/ledger
 ## Known limitations
 
 - Condition numbers are float64 SVD values; "numerically singular" means unresolved, not infinite.
-- The CVODE (rusty-SUNDIALS) integrator leg is recorded as not run in this version.
+- The two-integrator (SciPy BDF, rusty-SUNDIALS CVODE) cross-validation covers two networks of ~110 nodes.
 - The probe-matched identifiable-subspace metric was chosen post hoc (deviation from preregistration).
 
 ## License

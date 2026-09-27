@@ -162,7 +162,7 @@
    "depends_on": [],
    "evidence": "sha256:287d1082fa4257cc18e547201b914709ace1f6aa10d1eb8d46b2093e1691e210",
    "statement": "RC integrator controls: K1 (expm known answer, max rel err < 1e-5) and K2 (integrated steady state equals the Schur-complement DtN column, < 1e-6) PASS with scipy BDF on {7,3} L=2 and square R=6. The rusty-SUNDIALS CVODE backend is NOT RUN (Python extension not built); no cross-code agreement is claimed.",
-   "notes": "Re-run rc_network.py after `maturin develop` in ~/rusty-SUNDIALS/crates/rusty-sundials-py.",
+   "notes": "Re-run rc_network.py after `maturin develop` in ~/rusty-SUNDIALS/crates/rusty-sundials-py. [SUPERSEDED by H2-X-0004: the CVODE leg has since been run.]",
    "audit": null
   },
   {
@@ -197,6 +197,18 @@
    "evidence": "sha256:533a9bd8f2308fb8b28bacbe407303c9837717e8c4fa8979c6e4d658be63d760",
    "notes": "The degree premise is checked only for L<=6; for general L it follows from the face-incidence boundary definition but that step is argued, not certified. Does NOT rescue the refuted finite-size prediction H2-X-0001. [evidence replaced: previous digest sha256:74d524ad3978... hashed a literal string, not a file; now a JSON blob in docs/elenchus/evidence]",
    "audit": null
+  },
+  {
+   "id": "H2-X-0004",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H2-X-0003"
+   ],
+   "evidence": "sha256:5fa97eb124707117313d3d1290628afb6c28bd60ce062d755be8f01c8c822526",
+   "audit": null,
+   "statement": "Two-code cross-validation of the RC network: rusty-SUNDIALS CvodeSolver (BDF, Python binding rusty-sundials-py 6.0.0 built from rusty-SUNDIALS commit af4886f) passes K1 (max rel err 2.6e-08 < 1e-5 vs the matrix exponential) and K2 (max rel err 1.1e-12 < 1e-6 vs the Schur-complement DtN column) on {7,3} L=2 and square R=6, as does SciPy BDF; both integrators therefore agree with the exact solution, and with each other, to ~3e-8.",
+   "notes": "experiments/track_h_hyperbolic_network/rc_network.py; same rtol=1e-8, atol=1e-10 for both. Wheel built with maturin 1.15.0 from the local checkout (branch merge-mcp-temp)."
   }
  ]
 }

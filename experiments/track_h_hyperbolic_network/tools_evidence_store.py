@@ -20,6 +20,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 LEDGER = ROOT / "docs" / "elenchus" / "ledger.json"
 STORE = ROOT / "docs" / "elenchus" / "evidence"
+NOT_RECOVERED = (" [EVIDENCE BLOB NOT RECOVERED: no tracked file hashes to this digest; the gate with "
+                 "--evidence-dir reports it. Statement unchanged.]")
 
 BLOBS = {
     "H2-L-0001": {
@@ -87,6 +89,11 @@ def main():
     for c in d["claims"]:
         if c["id"] in BLOBS:
             continue
+        stored = STORE / (c["evidence"].split(":")[1] + ".json")
+        if stored.exists() and sha(stored.read_bytes()) == c["evidence"]:
+            # already archived (the live data file may have been regenerated since)
+            c["notes"] = (c.get("notes") or "").replace(NOT_RECOVERED, "")
+            continue
         src = index.get(c["evidence"])
         if src:
             shutil.copy(ROOT / src, STORE / (c["evidence"].split(":")[1] + ".json"))
@@ -94,8 +101,7 @@ def main():
         else:
             missing.append(c["id"])
             if "EVIDENCE BLOB NOT RECOVERED" not in (c.get("notes") or ""):
-                c["notes"] = (c.get("notes") or "") + (" [EVIDENCE BLOB NOT RECOVERED: no tracked file hashes to this "
-                                                       "digest; the gate with --evidence-dir reports it. Statement unchanged.]")
+                c["notes"] = (c.get("notes") or "") + NOT_RECOVERED
     LEDGER.write_text(json.dumps(d, indent=1, ensure_ascii=False) + "\n")
     print("not recovered:", missing or "none")
 
