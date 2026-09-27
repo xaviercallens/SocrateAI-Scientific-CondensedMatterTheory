@@ -97,6 +97,14 @@ d'au moins 8–10 cellules pour qu'une structure de bande ait un sens :
 **aquarium de 80–120 cm de long minimum**. Profondeur $h > \lambda/2 \approx 3$ cm
 pour rester en eau profonde ; 8–10 cm est confortable.
 
+**Les piliers doivent traverser la surface.** En eau profonde, le mouvement
+décroît comme $e^{-kz}$ : à $h = 8$ cm et $\lambda = 6$ cm, $kh \approx 8$, et
+l'amplitude au fond vaut $e^{-8} \approx 3\times10^{-4}$ de celle de surface.
+Des piliers posés au fond, comme dans le plan initial, sont **invisibles** pour
+l'onde. Il faut des cylindres émergents, ou bien passer en eau peu profonde
+avec une topographie de fond — mais alors $\omega = k\sqrt{gh}$ et tout le
+tableau ci-dessus change.
+
 **Le risque sous-estimé, c'est l'amortissement.** Aux fréquences visées, la
 dissipation n'est pas dominée par la viscosité de volume mais par la
 **contamination de surface** : un film de tensioactif invisible rend la surface
@@ -122,11 +130,21 @@ incompatibles :
 
 **Ce qui est réellement atteignable, en deux étapes :**
 
-**1a — Chaîne SSH (à faire en premier).** Une rangée 1D de piliers avec
-espacements alternés court/long. Un mur de domaine (là où l'alternance
-s'inverse) porte un **mode localisé** protégé par la symétrie chirale.
-Simple, robuste, peu de matériel, et c'est **exactement** l'énoncé formalisable
-en Lean. À faire avant toute chose.
+**1a — Chaîne SSH (à faire en premier).** Attention : une simple rangée de
+piliers dans un bassin ouvert n'est **pas** un système 1D — l'énergie fuit
+latéralement. Il faut un **canal** de largeur $< \lambda/2$ (un seul mode
+transverse) dont la section alterne étroit/large, ce qui réalise une chaîne de
+résonateurs couplés à couplages alternés $v, w$. Un mur de domaine (là où
+l'alternance s'inverse) porte un **mode localisé** protégé par la symétrie
+chirale. Simple, peu de matériel, et c'est l'énoncé formalisable en Lean
+(§8). À faire avant toute chose.
+
+**La fréquence d'excitation se calcule, elle ne se choisit pas.** Le premier
+gap de Bragg est à $k = \pi/a$ : pour une période de 8 cm, $\lambda = 16$ cm et
+$f \approx 3{,}1$ Hz — pas 5 Hz. Le script
+[`experiments/axis1_topological_waves/ssh_check.py`](../experiments/axis1_topological_waves/ssh_check.py)
+est le premier artefact de l'axe : il vérifie numériquement l'énoncé SSH visé
+en Lean et donne la fréquence de Bragg selon la période.
 
 **1b — Réseau valley-Hall 2D.** Réseau nid d'abeille de piliers, avec inversion
 brisée (deux diamètres de piliers différents). Ouvre un gap aux points de Dirac
@@ -148,7 +166,8 @@ Mesurer une surface d'eau avec des panneaux solaires ne donne **aucune
 résolution spatiale** (un panneau = un pixel) et une bande passante médiocre.
 
 **La bonne technique existe, elle est peu coûteuse et standard :
-la Synthetic Schlieren de surface libre** (FS-SS, Moisy–Rabaud–Salsac 2009) :
+la Synthetic Schlieren de surface libre** (FS-SS, Moisy–Rabaud–Salsac 2009,
+**[EXTERNE]**) :
 
 1. Imprimer un motif de points aléatoires, le placer **sous** l'aquarium
    (fond transparent, rétroéclairé).
@@ -209,8 +228,9 @@ rayonnement de Hawking) » — ne peut pas aboutir tel qu'écrit.
 ### 2.2 Ce qui se mesure réellement, et qui a déjà été fait
 
 L'expérience réalisable est la **diffusion Hawking stimulée**, c'est ce qu'ont
-mesuré Weinfurtner *et al.* (2011) dans un canal hydraulique, puis Euvé *et al.*
-(2016), et Torres *et al.* (2017) sur un vortex de vidange (superradiance).
+mesuré Weinfurtner *et al.* (`1008.1911`) dans un canal hydraulique, puis Euvé
+*et al.* (`1511.08145`), et Torres *et al.* (`1612.06180`) sur un vortex de
+vidange (superradiance). Les trois sont dans le corpus (pilier `experiment`).
 
 Principe : au lieu d'attendre une émission spontanée, on **envoie** une onde
 de surface à contre-courant vers l'horizon et on mesure le **rapport de
@@ -282,7 +302,8 @@ hélicoïdale — une figure de franges avec une dislocation au centre). Une
 imprimante laser à 1200 dpi donne des traits de ~21 µm ; avec un pas de réseau
 de 50–100 µm, l'ordre $\pm1$ diffracté porte la charge topologique $\pm\ell$.
 
-C'est la méthode historique de Bazhenov, Vasnetsov & Soskin, et elle fonctionne
+C'est la méthode historique de Bazhenov, Vasnetsov & Soskin (1990,
+**[EXTERNE]**), et elle fonctionne
 avec un pointeur laser. **Voie recommandée si l'optique est l'objectif.**
 
 Variante supérieure si un vidéoprojecteur est disponible : sa **dalle LCD**,
@@ -295,9 +316,21 @@ laboratoires, avec du matériel de récupération.
 
 L'obstacle est un rapport d'échelle entre $\lambda$ et la résolution
 d'impression. Il disparaît si l'on change de $\lambda$ : à 3 kHz dans l'air,
-$\lambda \approx 11$ cm. Une **lame spirale acoustique** imprimée en 3D est
-alors parfaitement dans les tolérances — on imprime des structures
-centimétriques pour une onde décimétrique.
+$\lambda \approx 11$ cm.
+
+**Mais une lame *transmissive* ne marche pas en acoustique.** L'impédance du
+PLA ($\sim 3\times10^6$ Rayl) vaut environ $10^4$ fois celle de l'air
+($\sim 413$ Rayl) : une plaque de 1 cm transmet environ −44 dB à 3 kHz (loi de
+masse). Elle se comporte en **miroir**, pas en lame de phase. Deux montages qui
+fonctionnent :
+
+- **Surface hélicoïdale réfléchissante** imprimée : à la réflexion, le chemin
+  est doublé, donc la hauteur totale vaut $\ell\lambda/2 \approx 5{,}5$ cm — très
+  facile à imprimer.
+- **Anneau de 4 à 8 petits haut-parleurs**, alimentés par une interface audio
+  multicanal avec des déphasages $2\pi\ell n/N$. C'est le plus simple, et
+  $\ell$ devient un **paramètre logiciel** : on passe de $\ell = 1$ à
+  $\ell = -2$ sans rien refabriquer. **Montage recommandé.**
 
 Le **vortex acoustique** porte exactement le même moment cinétique orbital, la
 même singularité de phase, le même nombre d'enroulement quantifié. La mesure est
@@ -306,8 +339,8 @@ ce qui est bien plus difficile en optique). Et le théorème Lean visé — le
 nombre d'enroulement est un entier conservé — est **identique**.
 
 **C'est la meilleure voie du point de vue coût/rigueur** : elle préserve
-l'intégralité du contenu mathématique, supprime le blocage physique, et utilise
-l'imprimante 3D pour ce qu'elle sait faire.
+l'intégralité du contenu mathématique et supprime le blocage physique ;
+l'imprimante 3D ne sert plus qu'aux supports, ou au réflecteur hélicoïdal.
 
 ### 3.4 Correction factuelle
 
@@ -342,7 +375,8 @@ excellent et bon marché.**
 
 ### 4.2 Le pivot : billard micro-ondes
 
-C'est l'expérience canonique du chaos ondulatoire (Stöckmann, Richter), et elle
+C'est l'expérience canonique du chaos ondulatoire (Stöckmann, Richter,
+**[EXTERNE]**), et elle
 devient accessible :
 
 - La **carcasse du four** est une cavité métallique d'environ 30 × 30 cm.
@@ -383,7 +417,8 @@ deux mathématiques différentes, sans énoncé reliant l'une à l'autre.
 Le rapprochement est une métaphore. La garder dans un texte scientifique
 coûterait la crédibilité de l'ensemble, y compris des axes solides. **La vraie
 histoire — « la forme géométrique dicte le spectre », c'est-à-dire la loi de
-Weyl et le problème de Kac « peut-on entendre la forme d'un tambour ? » — est
+Weyl et le problème de Kac (1966, **[EXTERNE]**) « peut-on entendre la forme
+d'un tambour ? » — est
 déjà excellente et, elle, exacte.**
 
 ### 4.4 Lean 4 : échelonner
@@ -439,8 +474,13 @@ usage de la TDA à la fois naturel et non substituable.
 **Lean 4.** La classification ADE complète des singularités simples est hors de
 portée. Cible réaliste et néanmoins significative : prouver les **formes
 normales** du pli et de la fronce par le théorème des fonctions implicites, et
-que la caustique de la famille $F(x,u) = x^4 + u_2x^2 + u_1x$ est bien la
-courbe semi-cubique $4u_2^3 + 27u_1^2 = 0$. C'est un calcul algébrique explicite,
+que la caustique de la famille
+$F(x,u) = \tfrac{x^4}{4} + \tfrac{u_2x^2}{2} + u_1x$ est bien la courbe
+semi-cubique $4u_2^3 + 27u_1^2 = 0$ (paramétrée par $u_2 = -3x^2$,
+$u_1 = 2x^3$). Attention à la normalisation : pour
+$x^4 + u_2x^2 + u_1x$ sans les facteurs $1/4$ et $1/2$, la courbe devient
+$8u_2^3 + 27u_1^2 = 0$ — vérifié numériquement, et c'est exactement le genre
+d'écart qui fait échouer une preuve Lean ou pousse à affaiblir l'énoncé. C'est un calcul algébrique explicite,
 donc atteignable.
 
 ---
@@ -537,18 +577,29 @@ ajouté.** Le dépôt LeanMaster fournit la porte de vérification.
 
 | Axe | T0 — définitions | T1 — théorème jouet | T2 — cible réaliste | T3 — ambition |
 |---|---|---|---|---|
-| **1 SSH** | hamiltonien SSH, symétrie chirale | le spectre est symétrique par rapport à 0 | **nombre d'enroulement $\in \mathbb{Z}$, et $=$ nombre de modes de bord** (bulk–boundary SSH) | classification complète des dix classes |
+| **1 SSH** | hamiltonien SSH, symétrie chirale | le spectre est symétrique par rapport à 0 | **$\nu \in \{0,-1\}$ selon $\lvert v\rvert \gtrless \lvert w\rvert$ ; chaîne impaire : exactement un mode nul, $\psi_A(n)\propto(-v/w)^n$, au bord gauche ssi $\lvert w\rvert>\lvert v\rvert$** | demi-droite : $\dim\ker = \lvert\nu\rvert$ (indice de Toeplitz) ; dix classes |
 | **2 Horizon** | écoulement barotrope, métrique acoustique | $g_{\mu\nu}$ est lorentzienne hors horizon | **perturbations $\Rightarrow \Box_g\phi = 0$** | spectre thermique de Hawking |
 | **3 Vortex** | phase, indice d'enroulement | enroulement invariant par homotopie | **quantification entière par Stokes ; additivité des charges** | classification complète des faisceaux OAM |
 | **4 Billard** | Laplacien de Dirichlet, comptage $N(k)$ | valeurs propres explicites du rectangle | **$N(k)\sim Ak^2/4\pi$ pour le rectangle** | loi de Weyl générale |
-| **5 Caustiques** | famille génératrice, ensemble critique | le pli est stable | **forme normale de la fronce ; caustique $=4u_2^3+27u_1^2=0$** | classification ADE |
+| **5 Caustiques** | famille génératrice, ensemble critique | le pli est stable | **forme normale de la fronce ; pour $\tfrac{x^4}{4}+\tfrac{u_2x^2}{2}+u_1x$, caustique $=\{4u_2^3+27u_1^2=0\}$** | classification ADE |
 
 **Le T2 de l'axe 1 est le sommet scientifique du programme.** C'est la
-correspondance volume–frontière elle-même, sous sa forme la plus pure :
-*un invariant topologique du volume compte exactement les modes de bord.* Il
-est démontrable en Lean, mesurable dans l'aquarium, et c'est exactement l'énoncé
-étudié au §4 de [`literature_review.md`](literature_review.md). La boucle
-théorie → expérience → preuve formelle se ferme là, et seulement là.
+correspondance volume–frontière sous sa forme la plus élémentaire : *le signe
+d'un invariant du volume décide de quel côté de la chaîne vit le mode de bord.*
+Il est démontrable en Lean, mesurable dans l'aquarium, et relié au §4 de
+[`literature_review.md`](literature_review.md).
+
+**Précision d'énoncé, vérifiée numériquement** par
+[`ssh_check.py`](../experiments/axis1_topological_waves/ssh_check.py) : la
+version naïve — « le nombre de modes de bord *exactement* nuls d'une chaîne
+ouverte égale $\lvert\nu\rvert$ » — est **fausse** pour une chaîne paire, dont
+le bloc de sous-réseau a $\det D = v^N \ne 0$ : les modes de bord y ont une
+énergie $\sim (v/w)^N$, exponentiellement petite mais non nulle. La version
+exacte et finie porte sur la **chaîne impaire**. L'égalité
+$\dim\ker = \lvert\nu\rvert$ est vraie sur la **demi-droite** infinie (théorème
+d'indice de Toeplitz), et relève de T3. Enfin, avec $h(k)=v+we^{-ik}$, le
+contour est parcouru dans le sens horaire : $\nu = -1$, pas $+1$, quand
+$\lvert w\rvert>\lvert v\rvert$.
 
 ---
 
@@ -565,8 +616,10 @@ Détail en [`safety.md`](safety.md). Les trois points non négociables :
    reflets spéculaires sur un CD sont des faisceaux à part entière : un disque
    diffracte en de multiples ordres, dans des directions inattendues. Travailler
    en faisceau horizontal, au-dessous du niveau des yeux, sur fond mat.
-   Attention particulière aux **OPU de DVD**, dont la diode infrarouge à 780 nm
-   est **invisible** — le réflexe de clignement ne protège pas.
+   **Traiter tout bloc optique comme émettant un faisceau infrarouge
+   invisible** : la diode de lecture CD est à 780 nm, présente dans tout lecteur
+   CD et dans la plupart des lecteurs combo DVD. Le réflexe de clignement ne
+   protège pas.
 3. **Eau et électricité.** Toute alimentation près de l'aquarium sur
    **différentiel 30 mA**, pompes en très basse tension, connexions au-dessus
    du niveau d'eau.

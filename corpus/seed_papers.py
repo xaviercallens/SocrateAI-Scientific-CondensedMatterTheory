@@ -5,11 +5,12 @@ decoration: `fetch_papers.py` refuses any record whose real arXiv title does not
 contain it, so a mistyped identifier fails loudly instead of quietly ingesting
 the wrong paper into the vector store.
 
-Pillars follow the four-part structure of the review:
+Pillars follow the structure of the two review documents:
   holography - AdS/CFT and holographic entanglement
   adscmt     - holographic applications to condensed matter
   topology   - topological insulators/superconductors and their classification
   bridge     - anomaly inflow, entanglement spectra, holographic topological matter
+  experiment - tabletop analogue-gravity results cited by the experimental programme
 """
 
 SEED_PAPERS: list[tuple[str, str, str]] = [
@@ -76,4 +77,14 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("quant-ph/9707021", "bridge", "Fault-tolerant quantum computation by anyons"),
     # Altland-Zirnbauer: the ten symmetry classes the periodic table is built on.
     ("cond-mat/9602137", "topology", "Novel Symmetry Classes in Mesoscopic"),
+
+    # --- Pillar 5: experiment ---------------------------------------------
+    # The feasibility verdicts in docs/experimental_program.md lean on these
+    # tabletop results. They are in the corpus so that those verdicts rest on
+    # verified sources, not on memory.
+    ("1008.1911", "experiment", "Measurement of stimulated Hawking emission in an analogue system"),
+    # arXiv title; the Nature Physics version is "Rotational superradiant
+    # scattering in a vortex flow". The gate matches the arXiv record.
+    ("1612.06180", "experiment", "Observation of superradiance in a vortex flow"),
+    ("1511.08145", "experiment", "Observation of noise correlated by the Hawking effect in a water tank"),
 ]

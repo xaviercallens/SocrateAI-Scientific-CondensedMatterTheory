@@ -1,6 +1,7 @@
 # AdS/CMT et correspondance volume–frontière — revue de littérature
 
-**Corpus** : 49 articles arXiv, téléchargés et vérifiés (titre réel confronté au titre
+**Corpus** : 52 articles arXiv (49 théoriques + 3 du pilier `experiment`, cités
+par le programme expérimental), téléchargés et vérifiés (titre réel confronté au titre
 attendu pour chaque identifiant), indexés dans `papers/index.json`.
 **Date de la revue** : 2026-09-27.
 **Portée** : dualité holographique, ses applications à la matière condensée, la
@@ -444,7 +445,7 @@ Chiu–Teo–Schnyder–Ryu `1505.03535`.
 
 ## 9. Bibliographie
 
-Voir `papers/index.json` pour les 49 entrées avec auteurs complets, DOI,
+Voir `papers/index.json` pour les 52 entrées avec auteurs complets, DOI,
 `journal_ref` et chemins des PDF. La liste des identifiants et de leur pilier
 est dans `corpus/seed_papers.py`, avec pour chacun le fragment de titre servant
 de contrôle d'identité à la récupération.

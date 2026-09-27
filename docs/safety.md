@@ -47,10 +47,13 @@ la rétine n'a pas de récepteurs de douleur. On ne s'aperçoit de rien.
 - **Lunettes adaptées à la longueur d'onde et à la densité optique.** Des
   lunettes pour 650 nm ne protègent pas à 780 nm. Elles doivent porter la
   longueur d'onde et l'OD imprimés.
-- **Les diodes des blocs optiques de DVD sont à 780 nm : invisibles.** Aucun
-  éblouissement, aucun réflexe de clignement, aucune sensation — et une
-  puissance qui peut atteindre plusieurs centaines de mW en écriture. C'est le
-  composant le plus dangereux du programme. Le traiter avec plus de précaution
+- **Traiter tout bloc optique (OPU) comme émettant un faisceau infrarouge
+  invisible.** La diode de lecture CD est à 780 nm : elle équipe tout lecteur
+  CD et la plupart des lecteurs combo DVD (la diode DVD, à 650 nm, est rouge
+  visible). Aucun éblouissement, aucun réflexe de clignement, aucune
+  sensation — et une puissance qui peut atteindre plusieurs centaines de mW
+  pour une diode de graveur. C'est le composant le plus dangereux du
+  programme. Le traiter avec plus de précaution
   que le laser de chantier, pas moins. Vérifier la présence du faisceau avec une
   carte de détection IR ou la caméra d'un téléphone, jamais à l'œil.
 - **Les CD et DVD sont des réseaux de diffraction**, pas des miroirs : un

@@ -3,7 +3,7 @@
 Deux volets, reliés par la **correspondance volume–frontière** :
 
 1. **Théorie** — revue de littérature sur AdS/CMT et les isolants topologiques,
-   corpus de 49 articles arXiv, et pipeline RAG branché sur le vector store
+   corpus de 52 articles arXiv, et pipeline RAG branché sur le vector store
    Chroma d'AutoevolveAI (ANSE).
 2. **Expérience** — programme « Garage Deep Tech » en 5 axes (matériel de
    récupération → données → TDA Gudhi → preuve Lean 4), revu de façon critique
@@ -102,7 +102,7 @@ python3 corpus/fetch_papers.py --no-pdf     # métadonnées seules
 
 # 2. Ingérer dans Chroma
 python3 corpus/ingest_chroma.py --dry-run            # découpage seul, aucune écriture
-python3 corpus/ingest_chroma.py --abstracts-only --resume   # 49 chunks
+python3 corpus/ingest_chroma.py --abstracts-only --resume   # 52 chunks
 python3 corpus/ingest_chroma.py --resume             # texte intégral, ~1500 chunks
 
 # 3. Vérifier
@@ -128,7 +128,7 @@ plusieurs minutes. D'où :
 
 Lancer les ~1500 chunks du texte intégral quand le prouveur est inactif
 (`curl -s localhost:11434/api/ps` ne doit pas lister de prouveur).
-`--abstracts-only` (49 chunks) donne un index utilisable bien plus tôt.
+`--abstracts-only` (52 chunks) donne un index utilisable bien plus tôt.
 
 `--verify` n'imprime pas seulement des statistiques : il vérifie que la
 dimension vaut bien 1024 et lance six requêtes-sondes dont le résultat attendu
@@ -186,6 +186,7 @@ K-théorie, déjà partiellement formalisées de ce côté.
 | `adscmt` | 13 | supraconducteurs holographiques, non-Fermi liquides, SYK |
 | `topology` | 13 | effet Hall de spin quantique, Altland–Zirnbauer, dix classes |
 | `bridge` | 12 | anomalies, spectre d'intrication, code torique, semi-métaux holographiques |
+| `experiment` | 3 | expériences de gravité analogue sur table (Hawking stimulé, superradiance) |
 
 Les PDF (`papers/pdf/`) ne sont pas versionnés — `corpus/fetch_papers.py` les
 régénère à l'identique. Les métadonnées (`papers/meta/`, `papers/index.json`)

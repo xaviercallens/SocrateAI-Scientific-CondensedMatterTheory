@@ -1231,5 +1231,92 @@
     "pillar": "topology",
     "slug": "cond-mat_9602137",
     "pdf_local": "papers/pdf/cond-mat_9602137.pdf"
+  },
+  {
+    "arxiv_id": "1008.1911",
+    "version": "v2",
+    "title": "Measurement of stimulated Hawking emission in an analogue system",
+    "abstract": "There is a mathematical analogy between the propagation of fields in a general relativistic space-time and long (shallow water) surface waves on moving water. Hawking argued that black holes emit thermal radiation via a quantum spontaneous emission. Similar arguments predict the same effect near wave horizons in fluid flow. By placing a streamlined obstacle into an open channel flow we create a region of high velocity over the obstacle that can include wave horizons. Long waves propagating upstream towards this region are blocked and converted into short (deep water) waves. This is the analogue of the stimulated emission by a white hole (the time inverse of a black hole), and our measurements of the amplitudes of the converted waves demonstrate the thermal nature of the conversion process for this system. Given the close relationship between stimulated and spontaneous emission, our findings attest to the generality of the Hawking process.",
+    "authors": [
+      "Silke Weinfurtner",
+      "Edmund W. Tedford",
+      "Matthew C. J. Penrice",
+      "William G. Unruh",
+      "Gregory A. Lawrence"
+    ],
+    "published": "2010-08-11T14:10:45Z",
+    "updated": "2010-08-18T01:42:50Z",
+    "year": "2010",
+    "primary_category": "gr-qc",
+    "categories": [
+      "gr-qc",
+      "physics.flu-dyn"
+    ],
+    "doi": "10.1103/PhysRevLett.106.021302",
+    "journal_ref": "Phys.Rev.Lett.106:021302,2011",
+    "abs_url": "https://arxiv.org/abs/1008.1911",
+    "pdf_url": "https://arxiv.org/pdf/1008.1911",
+    "pillar": "experiment",
+    "slug": "1008.1911",
+    "pdf_local": "papers/pdf/1008.1911.pdf"
+  },
+  {
+    "arxiv_id": "1612.06180",
+    "version": "v1",
+    "title": "Observation of superradiance in a vortex flow",
+    "abstract": "Wave scattering phenomena are ubiquitous to almost all Sciences, from Biology to Physics. When an incident wave scatters off of an obstacle, it is partially reflected and partially transmitted. Since the scatterer absorbs part of the incident energy, the reflected wave carries less energy than the incident one. However, if the obstacle is rotating, this process can be reversed and waves can be amplified, extracting energy from the scatterer. Even though this phenomenon, known as superradiance, has been thoroughly analysed in several theoretical scenarios (from eletromagnetic radiation scattering on a rotating cylinder to gravitational waves incident upon a rotating black hole), it has never been observed. Here we describe in detail the first laboratory detection of superradiance. We observed that plane waves propagating on the surface of water are amplified after being scattered by a draining vortex. The maximum amplification measured in the experiment was 20%, obtained for 3.70 Hz waves, in a 6.25 cm deep fluid. Our results are consistent with superradiant scattering caused by rapid rotation. In particular, a draining fluid can transfer part of its rotational energy to incident low-frequency waves. Our experimental findings will shed new light on Black Hole Physics, since shallow water waves scattering on a draining fluid constitute an analogue of a black hole. We believe, especially in view of the recent observations of gravitational waves, that our results will motivate further research (both theoretical and experimental) on the observation of superradiance of gravitational waves.",
+    "authors": [
+      "Theo Torres",
+      "Sam Patrick",
+      "Antonin Coutant",
+      "Mauricio Richartz",
+      "Edmund W. Tedford",
+      "Silke Weinfurtner"
+    ],
+    "published": "2016-12-19T13:52:42Z",
+    "updated": "2016-12-19T13:52:42Z",
+    "year": "2016",
+    "primary_category": "gr-qc",
+    "categories": [
+      "gr-qc",
+      "hep-ex",
+      "hep-th",
+      "physics.flu-dyn"
+    ],
+    "doi": "10.1038/nphys4151",
+    "journal_ref": "Nature Physics 13, 833-836 (2017)",
+    "abs_url": "https://arxiv.org/abs/1612.06180",
+    "pdf_url": "https://arxiv.org/pdf/1612.06180",
+    "pillar": "experiment",
+    "slug": "1612.06180",
+    "pdf_local": "papers/pdf/1612.06180.pdf"
+  },
+  {
+    "arxiv_id": "1511.08145",
+    "version": "v4",
+    "title": "Observation of noise correlated by the Hawking effect in a water tank",
+    "abstract": "We measured the power spectrum and two-point correlation function for the randomly fluctuating free surface on the downstream side of a stationary flow with a maximum Froude number $F_{\\rm max} \\approx 0.85$ reached above a localised obstacle. On such a flow the scattering of incident long wavelength modes is analogous to that responsible for black hole radiation (the Hawking effect). Our measurements of the noise show a clear correlation between pairs of modes of opposite energies. We also measure the scattering coefficients by applying the same analysis of correlations to waves produced by a wave maker.",
+    "authors": [
+      "L. -P. Euvé",
+      "F. Michel",
+      "R. Parentani",
+      "T. G. Philbin",
+      "G. Rousseaux"
+    ],
+    "published": "2015-11-25T18:40:17Z",
+    "updated": "2016-07-29T18:31:45Z",
+    "year": "2015",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "gr-qc"
+    ],
+    "doi": "10.1103/PhysRevLett.117.121301",
+    "journal_ref": "Phys. Rev. Lett. 117, 121301 (2016)",
+    "abs_url": "https://arxiv.org/abs/1511.08145",
+    "pdf_url": "https://arxiv.org/pdf/1511.08145",
+    "pillar": "experiment",
+    "slug": "1511.08145",
+    "pdf_local": "papers/pdf/1511.08145.pdf"
   }
 ]

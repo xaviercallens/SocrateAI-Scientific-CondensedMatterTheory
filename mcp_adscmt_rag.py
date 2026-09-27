@@ -37,7 +37,12 @@ CHROMA_PATH = os.environ.get(
 ANSE_ROOT = os.environ.get("ANSE_ROOT", str(Path.home() / "AutoevolveAI"))
 COLLECTION = os.environ.get("ADSCMT_COLLECTION", "adscmt_literature")
 
-PILLARS = ("holography", "adscmt", "topology", "bridge")
+PILLARS = ("holography", "adscmt", "topology", "bridge", "experiment")
+
+# ANSE's default is 120 s. While the shared T4 is held by another session's
+# prover, a single query embedding can wait longer than that, so the timeout is
+# configurable. Expect cold-start latency of ~30 s even on an idle GPU.
+EMBED_TIMEOUT_S = float(os.environ.get("ANSE_EMBED_TIMEOUT", "600"))
 
 mcp = FastMCP("adscmt-rag")
 
@@ -51,7 +56,7 @@ def _load_embedding_function():
     spec = importlib.util.spec_from_file_location("anse_ollama_embeddings", module_path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    return module.OllamaEmbeddingFunction()
+    return module.OllamaEmbeddingFunction(timeout_s=EMBED_TIMEOUT_S, max_retries=2)
 
 
 def get_collection():
@@ -95,7 +100,7 @@ def _format(results: dict) -> str:
 
 @mcp.tool()
 def adscmt_search(query: str, n_results: int = 5, pillar: str = "") -> str:
-    """Semantic search over the AdS/CMT literature corpus (49 arXiv papers).
+    """Semantic search over the AdS/CMT literature corpus (52 arXiv papers).
 
     Covers holographic duality (AdS/CFT), its condensed-matter applications
     (holographic superconductors, non-Fermi liquids, SYK), topological
@@ -106,7 +111,8 @@ def adscmt_search(query: str, n_results: int = 5, pillar: str = "") -> str:
     Args:
         query: natural-language question or topic.
         n_results: how many chunks to return (1-20).
-        pillar: optional filter, one of holography, adscmt, topology, bridge.
+        pillar: optional filter, one of holography, adscmt, topology, bridge,
+            experiment.
     """
     n_results = max(1, min(int(n_results), 20))
     where = None

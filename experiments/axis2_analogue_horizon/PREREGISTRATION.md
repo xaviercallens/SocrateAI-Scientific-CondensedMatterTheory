@@ -13,8 +13,9 @@ $$T_H = \frac{\hbar\kappa}{2\pi k_B} \sim 10^{-12}\ \mathrm{K}$$
 soit **quatorze ordres de grandeur** sous le bruit thermique ambiant. L'émission
 spontanée est hors d'atteinte, définitivement et pour tout capteur.
 
-Ce qui est mesurable, et qui l'a été (Weinfurtner *et al.* 2011 ; Torres *et al.*
-2017), c'est la **diffusion stimulée** : on envoie une onde connue et on mesure
+Ce qui est mesurable, et qui l'a été (Weinfurtner *et al.*, `1008.1911` ;
+Euvé *et al.*, `1511.08145` ; Torres *et al.*, `1612.06180` — tous trois dans le
+corpus), c'est la **diffusion stimulée** : on envoie une onde connue et on mesure
 la conversion de modes. C'est l'objet de ce préenregistrement.
 
 ---

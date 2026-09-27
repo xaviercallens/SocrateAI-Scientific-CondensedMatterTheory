@@ -13,9 +13,10 @@ théorème Lean sur le cas le plus simple.
 ## 1a — Chaîne SSH : mode de mur de domaine
 
 ### Affirmation
-Une rangée 1D de piliers à espacements alternés, comportant un mur de domaine où
-l'alternance s'inverse, porte un mode localisé à la fréquence du milieu du gap,
-absent d'une rangée à espacement uniforme.
+Un canal étroit dont la section alterne (résonateurs couplés à couplages
+alternés $v$, $w$), comportant un mur de domaine où l'alternance s'inverse,
+porte un mode localisé à la fréquence du milieu du gap, absent d'un canal à
+section uniforme.
 
 ### Observable
 Amplitude de surface $|\eta(x)|$ le long de la chaîne, en détection synchrone à
@@ -23,14 +24,28 @@ la fréquence d'excitation, mesurée par FS-SS.
 Grandeur dérivée : **longueur de localisation** $\xi$, par ajustement de
 $|\eta(x)| \propto e^{-|x - x_0|/\xi}$ autour du mur.
 
-### Protocole
-- Aquarium ≥ 100 cm, profondeur 8 cm (eau profonde pour $\lambda \le 6$ cm).
-- Piliers imprimés, diamètre 1,5 cm ; espacements alternés 3 / 5 cm ;
-  ≥ 10 cellules de part et d'autre du mur.
-- Excitation : moteur pas-à-pas piloté par microcontrôleur, $f = 5$ Hz
-  ($\lambda \approx 6{,}2$ cm), verrouillée au quartz.
+### Protocole — valeurs **provisoires**
+Les nombres ci-dessous sont provisoires jusqu'à ce qu'un calcul de bandes du
+canal (matrice de transfert) les fixe. Ce calcul doit être commité **avant**
+de verrouiller ce préenregistrement. Premier artefact déjà disponible :
+[`ssh_check.py`](ssh_check.py), qui vérifie l'énoncé SSH et donne la fréquence
+de Bragg selon la période.
+
+- Aquarium ≥ 100 cm ; profondeur $h$ telle que $h > \lambda/2$ (eau profonde).
+- **Canal** de largeur $< \lambda/2$ (un seul mode transverse), parois
+  imprimées, sections alternées étroit/large ; ≥ 10 cellules de part et
+  d'autre du mur. Une rangée de piliers dans le bassin ouvert **ne convient
+  pas** : l'énergie fuit latéralement.
+- **Toutes les parois et tous les obstacles traversent la surface.** En eau
+  profonde, l'amplitude au fond vaut $e^{-kh}$ — à $kh \approx 8$, $3\times10^{-4}$ :
+  un obstacle posé au fond est invisible.
+- Période du canal $a = 8$ cm → premier gap de Bragg à $\lambda = 2a = 16$ cm,
+  **$f \approx 3{,}1$ Hz** (`ssh_check.py`), donc $h \ge 8$ cm. La fréquence au
+  milieu du gap sera fixée par le calcul de bandes.
+- Excitation : moteur pas-à-pas piloté par microcontrôleur, verrouillé au
+  quartz.
 - Eau déminéralisée ; surface écrémée avant chaque acquisition.
-- 5 répétitions ; chaîne uniforme (sans mur) comme témoin.
+- 5 répétitions ; canal uniforme (sans mur) comme témoin.
 
 ### Prédiction
 Un pic d'amplitude au mur de domaine, avec $\xi$ entre 1 et 3 pas de réseau
@@ -54,6 +69,7 @@ entre configurations mur et témoin.
   d'atteindre le mur, rien n'est mesuré. **À vérifier en premier**, sans réseau.
 - Ondes stationnaires sur les parois : absorbeurs en biseau aux extrémités.
 - Régime capillaire si $\lambda < 1{,}7$ cm : rester à $f \le 7$ Hz.
+- Obstacles ne traversant pas la surface : invisibles en eau profonde.
 - Dérive de fréquence du générateur : à enregistrer en continu.
 
 ---
@@ -73,7 +89,8 @@ $\eta(x,y,t)$.
 
 ### Protocole
 - Nid d'abeille, pas $a = 5$ cm, deux diamètres de piliers (1,0 et 2,0 cm) pour
-  briser l'inversion ; ≥ 8 cellules de chaque côté du mur.
+  briser l'inversion ; ≥ 8 cellules de chaque côté du mur. **Piliers émergents**
+  (traversant la surface), pour la même raison qu'en 1a.
 - Balayage $f$ de 3 à 7 Hz par pas de 0,25 Hz pour localiser le gap.
 - Trois configurations : guide intact ; **un** pilier retiré du guide ; guide
   trivial de contrôle (même géométrie, pilier unique — pas de topologie).

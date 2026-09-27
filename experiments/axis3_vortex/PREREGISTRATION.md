@@ -13,20 +13,29 @@ imprimante FDM ou SLA. Ce n'est pas un problème de réglage.
 | Voie | Support | Charge quantifiée | Mesure de phase | 3D utile |
 |---|---|---|---|---|
 | **A** — hologramme en fourche | film transparent + laser | oui | interférométrie (difficile) | non |
-| **B** — vortex acoustique | lame spirale imprimée + haut-parleur | oui | microphone balayé (facile) | **oui** |
+| **B** — vortex acoustique | anneau de haut-parleurs déphasés | oui | microphone balayé (facile) | supports seulement |
 
-**Voie B recommandée.** À 3 kHz dans l'air, $\lambda \approx 11$ cm : la lame
-spirale imprimée tombe largement dans les tolérances. Le contenu mathématique —
-singularité de phase, moment cinétique orbital, nombre d'enroulement entier —
-est **identique**, et la phase se mesure directement, ce qui est le point dur en
-optique. Le préenregistrement ci-dessous est rédigé pour la voie B ; la voie A
-utilise les mêmes critères sur l'intensité seule.
+**Voie B recommandée.** À 3 kHz dans l'air, $\lambda \approx 11$ cm. Le contenu
+mathématique — singularité de phase, moment cinétique orbital, nombre
+d'enroulement entier — est **identique** au cas optique, et la phase se mesure
+directement, ce qui est le point dur en optique.
+
+**Pas de lame transmissive.** L'impédance acoustique du PLA vaut ~$10^4$ fois
+celle de l'air : une plaque de 1 cm transmet environ −44 dB à 3 kHz. C'est un
+miroir, pas une lame de phase, et la formule $h = \ell\lambda/(n-1)$ ne
+s'applique pas. Le vortex est donc produit par un **anneau de $N = 8$
+haut-parleurs** alimentés avec des déphasages $2\pi\ell n/N$ ; $\ell$ devient un
+paramètre logiciel. (Alternative : surface hélicoïdale **réfléchissante**
+imprimée, de hauteur totale $\ell\lambda/2 \approx 5{,}5$ cm.)
+
+Le préenregistrement ci-dessous est rédigé pour la voie B ; la voie A utilise
+les mêmes critères sur l'intensité seule.
 
 ---
 
 ## Affirmation
-Une onde traversant une lame de phase hélicoïdale acquiert une singularité de
-phase sur l'axe ; l'intégrale de la phase sur un contour fermé entourant l'axe
+Un anneau de sources déphasées de $2\pi\ell n/N$ produit une onde portant une
+singularité de phase sur l'axe ; l'intégrale de la phase sur un contour fermé entourant l'axe
 vaut $2\pi\ell$ avec $\ell$ **entier**, et cet entier est **inchangé** lorsqu'un
 obstacle est inséré dans le faisceau.
 
@@ -38,12 +47,15 @@ Grandeur dérivée : $\ell = \frac{1}{2\pi}\oint \nabla\varphi \cdot d\mathbf{l}
 sur plusieurs contours de rayons différents.
 
 ## Protocole
-- Haut-parleur, $f = 3$ kHz ($\lambda = 11$ cm).
-- Lames spirales imprimées pour $\ell = 1$ et $\ell = 2$ ; hauteur de marche
-  $\ell\lambda/(n_{\text{eff}}-1)$, $n_{\text{eff}}$ étalonné sur une lame plane.
-- Grille de mesure 30 × 30 points, pas 2 cm, à 50 cm de la lame.
+- $f = 3$ kHz ($\lambda = 11$ cm).
+- Anneau de $N = 8$ petits haut-parleurs sur un cercle de rayon ~10 cm, support
+  imprimé ; interface audio 8 canaux ; déphasage du canal $n$ : $2\pi\ell n/N$.
+- **Étalonnage préalable** : amplitude et phase de chaque haut-parleur mesurées
+  isolément, puis compensées. Sans cela, $\ell$ n'est pas entier *par
+  construction*.
+- Grille de mesure 30 × 30 points, pas 2 cm, à 50 cm de l'anneau.
 - Microphone + interface audio ; référence de phase = signal d'excitation.
-- Conditions : $\ell = 0$ (lame plane, témoin) ; $\ell = 1$ ; $\ell = 2$ ;
+- Conditions : $\ell = 0$ (tous en phase, témoin) ; $\ell = 1$ ; $\ell = 2$ ;
   $\ell = 1$ **avec obstacle** (disque imprimé de 3 cm décentré).
 - 3 répétitions.
 
@@ -73,10 +85,12 @@ comme contrôle négatif.
 ## Causes d'échec connues (→ `INVALIDE`)
 - Réflexions sur les murs de la cave : mousse absorbante, ou fenêtrage temporel
   pour isoler le front direct.
-- Champ proche : rester à $\ge 3\lambda$ de la lame.
+- Champ proche : rester à $\ge 3\lambda$ de l'anneau.
 - Dérive de phase de l'interface audio : réinjecter la référence à chaque point.
-- $n_{\text{eff}}$ mal étalonné → mauvaise hauteur de marche → $\ell$ non entier
-  **par construction**. À étalonner avant, sur une lame plane.
+- Haut-parleurs non appariés en amplitude ou en phase → $\ell$ non entier
+  **par construction**. Étalonner chaque voie isolément avant la campagne.
+- Trop peu de sources ($N < 2|\ell|+1$) : le champ n'échantillonne pas la
+  phase azimutale ; garder $N = 8$ pour $|\ell| \le 2$.
 
 ## Correction factuelle reportée du plan initial
 Pas de piste : **CD 1,6 µm, DVD 0,74 µm, Blu-ray 0,32 µm** (le plan attribuait
