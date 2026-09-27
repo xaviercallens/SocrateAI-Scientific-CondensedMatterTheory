@@ -1,0 +1,67 @@
+{
+ "square": {
+  "unsaturated": [
+   [
+    29,
+    1.7284483652720413
+   ],
+   [
+    113,
+    5.072443594703144
+   ],
+   [
+    317,
+    9.717820796894493
+   ]
+  ],
+  "fit_exp": {
+   "a": -1.749,
+   "c": 0.6436
+  },
+  "fit_power": {
+   "a": -9.709,
+   "p": 7.587
+  },
+  "local_exponent_last": 10.37,
+  "predictions": {
+   "797": {
+    "exp_sqrtN": 16.42,
+    "power_global": 12.3,
+    "power_last_exponent": 13.87
+   }
+  }
+ },
+ "triangular": {
+  "unsaturated": [
+   [
+    37,
+    3.4232144853431334
+   ],
+   [
+    151,
+    8.672449080228727
+   ]
+  ],
+  "fit_exp": {
+   "a": -1.722,
+   "c": 0.8459
+  },
+  "fit_power": {
+   "a": -10.055,
+   "p": 8.594
+  },
+  "local_exponent_last": 8.59,
+  "predictions": {
+   "421": {
+    "exp_sqrtN": 15.63,
+    "power_global": 12.5,
+    "power_last_exponent": 12.5
+   },
+   "1069": {
+    "exp_sqrtN": 25.94,
+    "power_global": 15.98,
+    "power_last_exponent": 15.98
+   }
+  }
+ }
+}
