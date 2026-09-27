@@ -31,7 +31,7 @@
    "depends_on": [],
    "evidence": "sha256:93611b0a0f1f6fcdb9f29ca3fd3b2e64d365b912bc6caec69fe3ddc966664737",
    "audit": null,
-   "notes": "Evidence blob: docs/elenchus/evidence/ssh_L_0001_mathlib_circleintegral.txt (the quoted Mathlib docstring plus the application to this SSH parametrisation and the named open gap). The Mathlib revision pin inside that file is LeanMaster's own recorded commit prefix, not independently re-verified in this session -- see lean/README.md for the plain-language version and the open Cauchy-theorem step."
+   "notes": "Evidence blob: docs/elenchus/evidence/ssh_L_0001_mathlib_circleintegral.txt (the quoted Mathlib docstring plus the application to this SSH parametrisation and the named open gap). The Mathlib revision pin inside that file is LeanMaster's own recorded commit prefix, not independently re-verified in this session -- see lean/README.md for the plain-language version and the open Cauchy-theorem step. [EVIDENCE BLOB NOT RECOVERED: no tracked file hashes to this digest; the gate with --evidence-dir reports it. Statement unchanged.]"
   },
   {
    "id": "SSH-C-0001",
@@ -45,7 +45,7 @@
    ],
    "evidence": "sha256:270d04a4f8c655b29ef6dcb88dca5443f4ed95bc379f43ca5f774a7fbbd1ad9f",
    "audit": null,
-   "notes": "Evidence blob: docs/elenchus/evidence/ssh_C_0001_argument.txt. This is the claim that ties the SSH kernel facts to the physical bulk-boundary reading; it is explicitly capped at C (argument) because that link is an interpretation, not a mechanically checked fact."
+   "notes": "Evidence blob: docs/elenchus/evidence/ssh_C_0001_argument.txt. This is the claim that ties the SSH kernel facts to the physical bulk-boundary reading; it is explicitly capped at C (argument) because that link is an interpretation, not a mechanically checked fact. [EVIDENCE BLOB NOT RECOVERED: no tracked file hashes to this digest; the gate with --evidence-dir reports it. Statement unchanged.]"
   },
   {
    "id": "POC-X-0001",
@@ -57,7 +57,7 @@
    ],
    "evidence": "sha256:bd4be0daaa01d49feea1dad15503d42765118c8629c5ff59df9d21bdc52a86c6",
    "audit": null,
-   "notes": "Evidence v2: docs/elenchus/evidence/poc_x_0001_ssh_ring_v2.txt (finite_size_scaling.py, 32 checks). Evidence v1 (sha256:56842f4c...) is kept at docs/elenchus/evidence/poc_x_0001_ssh_ring.txt as the record of the retracted version; the erratum is in results.md and RELEASE_NOTES_v0.1.md. Also yields the axis-1a design numbers: domain-wall mode (open chain, strong-bond terminations, odd site count) has E=0 exactly, peaks at the wall, xi = 1.44/2.80/4.48/9.49 cells, 99% weight within 3/6/10/21 cells per side. Caught by an external reviewer asking 'what about ell != L/2'; producer != verifier."
+   "notes": "Evidence v2: docs/elenchus/evidence/poc_x_0001_ssh_ring_v2.txt (finite_size_scaling.py, 32 checks). Evidence v1 (sha256:56842f4c...) is kept at docs/elenchus/evidence/poc_x_0001_ssh_ring.txt as the record of the retracted version; the erratum is in results.md and RELEASE_NOTES_v0.1.md. Also yields the axis-1a design numbers: domain-wall mode (open chain, strong-bond terminations, odd site count) has E=0 exactly, peaks at the wall, xi = 1.44/2.80/4.48/9.49 cells, 99% weight within 3/6/10/21 cells per side. Caught by an external reviewer asking 'what about ell != L/2'; producer != verifier. [EVIDENCE BLOB NOT RECOVERED: no tracked file hashes to this digest; the gate with --evidence-dir reports it. Statement unchanged.]"
   },
   {
    "id": "POC-X-0002",
@@ -67,7 +67,7 @@
    "depends_on": [],
    "evidence": "sha256:b3c25604cc38937fa02c36596e0c3c715119616639aecf5eb807302ea6940c19",
    "audit": null,
-   "notes": "experiments/poc_entanglement_tda/syk_entanglement.py (--self-test: 8/8 pass, including a brute-force Kronecker-product cross-check and [H,P]=0) + results.md Part B. Motivated by, not derived from, Fidkowski-Kitaev 0904.2197 and You-Ludwig-Xu 1602.06964 (both in corpus, `poc` pillar); no symmetry operator was constructed here, and no claim is made about N mod 8 in {2, 6} (not reachable with this bipartition) or N > 24."
+   "notes": "experiments/poc_entanglement_tda/syk_entanglement.py (--self-test: 8/8 pass, including a brute-force Kronecker-product cross-check and [H,P]=0) + results.md Part B. Motivated by, not derived from, Fidkowski-Kitaev 0904.2197 and You-Ludwig-Xu 1602.06964 (both in corpus, `poc` pillar); no symmetry operator was constructed here, and no claim is made about N mod 8 in {2, 6} (not reachable with this bipartition) or N > 24. [EVIDENCE BLOB NOT RECOVERED: no tracked file hashes to this digest; the gate with --evidence-dir reports it. Statement unchanged.]"
   },
   {
    "id": "H0-X-0001",
@@ -77,7 +77,7 @@
    "depends_on": [],
    "evidence": "sha256:5c0e53b50f9a1dea447f99afd4ca4a89716a685b4564f8fd191ed3bd4d99a55f",
    "audit": null,
-   "notes": "SUPERSEDED IN PART by H0-X-0002 (kappa reporting bug) and H0-B-0001 (rank-deficiency claim retracted). Kept as the record of the original, since-corrected run; not to be cited alone. experiments/track_h_hyperbolic_network/{HYPOTHESIS.md,PREREGISTRATION.md,RESULTS.md,hyperbolic_network.py} (45/45 self-test checks pass, incl. exact-vs-finite-difference Jacobian cross-check to 1.15e-11). Original HYPOTHESIS.md claimed exponential (not polynomial) edge-sensitivity decay on FLAT lattices by direct analogy to continuum Calderon-problem instability; an external reviewer showed this derivation was dimensionally inconsistent (Poisson-kernel decay is polynomial), so an unlocked exploratory pass was run before any prediction was locked, and the mechanism was revised in HYPOTHESIS.md (dated, original argument left visible) to: exponential decay in DEPTH is common to both geometries, but depth itself scales as log N (hyperbolic) vs sqrt N (flat). Real code bugs found and fixed before this result, all now caught mechanically in self_test(): boundary classification used vertex degree (misses rim-junction vertices) rather than face incidence; a triangular-lattice face had a non-adjacent vertex offset, breaking the Euler characteristic check (caught: V-E+F=-5 instead of 1); the finite-difference Jacobian's eps=1e-6 imposed a ~1e-10-relative floor on resolvable singular values, replaced by the exact harmonic-extension formula dLambda/dg_e=(P_a-P_b)^T(P_a-P_b). Novelty search bounded (2 queries): found 1107.0343 (Borcea, Druskin, Guevara Vasquez & Mamonov -- NOT 'Deban, Borcea et al.' as first mis-cited here, corrected in H0-X-0002) and 1104.4858 (Ervedoza & de Gournay); reported as 'not found in this search', not 'novel'."
+   "notes": "SUPERSEDED IN PART by H0-X-0002 (kappa reporting bug) and H0-B-0001 (rank-deficiency claim retracted). Kept as the record of the original, since-corrected run; not to be cited alone. experiments/track_h_hyperbolic_network/{HYPOTHESIS.md,PREREGISTRATION.md,RESULTS.md,hyperbolic_network.py} (45/45 self-test checks pass, incl. exact-vs-finite-difference Jacobian cross-check to 1.15e-11). Original HYPOTHESIS.md claimed exponential (not polynomial) edge-sensitivity decay on FLAT lattices by direct analogy to continuum Calderon-problem instability; an external reviewer showed this derivation was dimensionally inconsistent (Poisson-kernel decay is polynomial), so an unlocked exploratory pass was run before any prediction was locked, and the mechanism was revised in HYPOTHESIS.md (dated, original argument left visible) to: exponential decay in DEPTH is common to both geometries, but depth itself scales as log N (hyperbolic) vs sqrt N (flat). Real code bugs found and fixed before this result, all now caught mechanically in self_test(): boundary classification used vertex degree (misses rim-junction vertices) rather than face incidence; a triangular-lattice face had a non-adjacent vertex offset, breaking the Euler characteristic check (caught: V-E+F=-5 instead of 1); the finite-difference Jacobian's eps=1e-6 imposed a ~1e-10-relative floor on resolvable singular values, replaced by the exact harmonic-extension formula dLambda/dg_e=(P_a-P_b)^T(P_a-P_b). Novelty search bounded (2 queries): found 1107.0343 (Borcea, Druskin, Guevara Vasquez & Mamonov -- NOT 'Deban, Borcea et al.' as first mis-cited here, corrected in H0-X-0002) and 1104.4858 (Ervedoza & de Gournay); reported as 'not found in this search', not 'novel'. [EVIDENCE BLOB NOT RECOVERED: no tracked file hashes to this digest; the gate with --evidence-dir reports it. Statement unchanged.]"
   },
   {
    "id": "H0-X-0002",
@@ -85,9 +85,9 @@
    "tier": "X",
    "kind": "numeric",
    "depends_on": [],
-   "evidence": "sha256:93169534502b945e1b1a56ffef24918997c09e3f851bdd74945676ed8f3802c6",
+   "evidence": "sha256:4c136f0b5807dbfac4551585f51def21367bd2fd3fde72a2a0f31d1bec3eefab",
    "audit": null,
-   "notes": "docs/elenchus/evidence/h0_x_0002_kappa_correction.txt. Caught by an external reviewer; verified directly by this session (the cap formula reproduced the 'saturated' values to 4 sig figs, not a coincidence). Does NOT correct the rank-deficiency claim in H0-X-0001 (a separate bug on a separate quantity) -- see H0-B-0001."
+   "notes": "docs/elenchus/evidence/h0_x_0002_kappa_correction.txt. Caught by an external reviewer; verified directly by this session (the cap formula reproduced the 'saturated' values to 4 sig figs, not a coincidence). Does NOT correct the rank-deficiency claim in H0-X-0001 (a separate bug on a separate quantity) -- see H0-B-0001. [evidence re-pointed to data/h0.json (regenerated by the current code); previous digest sha256:93169534502b... matches no tracked file]"
   },
   {
    "id": "H0-B-0001",
@@ -95,9 +95,9 @@
    "tier": "B",
    "kind": "exact_harness",
    "depends_on": [],
-   "evidence": "sha256:389ebe387d78fd46ded6f388447fc06472547343bfef1733dedf57402d6715d6",
+   "evidence": "sha256:ee1394a347a03da40fec8e04d7d3bb27d79619baba123a42e589e81ae3ccf4f2",
    "audit": null,
-   "notes": "experiments/track_h_hyperbolic_network/hyperbolic_exact.py (--self-test: 6/6 pass, including a cross-check of the modular rank against float64's trusted rank on the small {7,3} L=1 case). Not yet certified: N>475 for flat lattices (GF(p) Gaussian elimination on ~3500x1300 was the practical runtime limit reached in this session); full rank at N=475 is evidence against, not proof against, a deficiency appearing at some larger N. Any future prose using 'structurally unrecoverable' for the flat-lattice case must be corrected against this entry."
+   "notes": "experiments/track_h_hyperbolic_network/hyperbolic_exact.py (--self-test: 6/6 pass, including a cross-check of the modular rank against float64's trusted rank on the small {7,3} L=1 case). Not yet certified: N>475 for flat lattices (GF(p) Gaussian elimination on ~3500x1300 was the practical runtime limit reached in this session); full rank at N=475 is evidence against, not proof against, a deficiency appearing at some larger N. Any future prose using 'structurally unrecoverable' for the flat-lattice case must be corrected against this entry. [evidence re-pointed to data/exact_rank_full.json (regenerated by the current code); previous digest sha256:389ebe387d78... matches no tracked file]"
   },
   {
    "id": "H0-B-0002",
@@ -170,9 +170,9 @@
    "tier": "B",
    "kind": "exact_harness",
    "depends_on": [],
-   "evidence": "sha256:fb864973d549bf7f37f0fa2eb2f8c83409678895472214958d00b7f8e9b88c1a",
+   "evidence": "sha256:d6942bf01bdbd116c9db9ea5f002e4475e7f69445b885548d0de0f589ddb13e3",
    "statement": "For the {7,3} truncations L=1..6 (N=35..5887), every interior node (not on the outer face) has degree exactly 3, and the interior node count at layer L equals N at layer L-1 (7, 35, 112, 315, 847, 2240).",
-   "notes": "experiments/track_h_hyperbolic_network/interior_degree.py; integer degree counts, no floating point.",
+   "notes": "experiments/track_h_hyperbolic_network/interior_degree.py; integer degree counts, no floating point. [evidence re-pointed to data/interior_degree.json (regenerated by the current code); previous digest sha256:fb864973d549... matches no tracked file]",
    "audit": null
   },
   {
@@ -180,9 +180,9 @@
    "tier": "L",
    "kind": "citation",
    "depends_on": [],
-   "evidence": "sha256:da41fda569225e02b55bd35a78a14827f0d0e535a87f8f218d7bfc56bb5d939b",
+   "evidence": "sha256:7359e8e78e584754c8d6bdfdb476ee17f2a11555618bb34b69f83474d28fbd3d",
    "statement": "The bottom of the spectrum lambda_0 of the combinatorial Laplacian of an infinite graph of bounded degree is positive iff its edge-isoperimetric (Cheeger) constant is positive [Dodziuk, Trans. AMS 284 (1984) 787-794; Mohar, Linear Algebra Appl. 103 (1988) 119-131]; the {7,3} tiling graph has an explicit positive isoperimetric constant [Haggstrom, Jonasson & Lyons, Ann. Probab. 30 (2002) 443-473].",
-   "notes": "Cited, not re-derived. Upper bound lambda_0 <= 3 - 2 sqrt 2 follows from the 3-regular tree covering.",
+   "notes": "Cited, not re-derived. Upper bound lambda_0 <= 3 - 2 sqrt 2 follows from the 3-regular tree covering. [evidence replaced: previous digest sha256:da41fda56922... hashed a literal string, not a file; now a JSON blob in docs/elenchus/evidence]",
    "audit": null
   },
   {
@@ -194,8 +194,8 @@
     "H2-L-0001"
    ],
    "statement": "For every tested {7,3} truncation, lambda_min(L_ii) is the Rayleigh-quotient minimum of the infinite {7,3} Laplacian over functions supported on the interior (by H2-B-0001), hence lambda_min(L_ii) >= lambda_0 > 0 and the RC relaxation time tau = C/lambda_min(L_ii) <= C/lambda_0 uniformly; since the interiors are nested and exhaust the tiling, lambda_min(L_ii) is non-increasing in L and converges to lambda_0. Flat disks have lambda_min -> 0.",
-   "evidence": "sha256:74d524ad397832ba788cbe89d176932452dceed98ab1191ea51dadffadb20573",
-   "notes": "The degree premise is checked only for L<=6; for general L it follows from the face-incidence boundary definition but that step is argued, not certified. Does NOT rescue the refuted finite-size prediction H2-X-0001.",
+   "evidence": "sha256:533a9bd8f2308fb8b28bacbe407303c9837717e8c4fa8979c6e4d658be63d760",
+   "notes": "The degree premise is checked only for L<=6; for general L it follows from the face-incidence boundary definition but that step is argued, not certified. Does NOT rescue the refuted finite-size prediction H2-X-0001. [evidence replaced: previous digest sha256:74d524ad3978... hashed a literal string, not a file; now a JSON blob in docs/elenchus/evidence]",
    "audit": null
   }
  ]

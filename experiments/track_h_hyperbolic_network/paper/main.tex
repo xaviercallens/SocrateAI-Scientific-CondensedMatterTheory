@@ -234,8 +234,10 @@ eventually supported in some interior. Finally $\lambda_0>0$ because the $\{7,3\
 edge-isoperimetric constant~\cite{HJL2002} and bounded degree~\cite{Dodziuk1984,Mohar1988}.
 \end{proof}
 
-For $L=1,\dots,6$ we verified by integer computation that every interior node has degree three and that the interior
-of $G_L$ is exactly $G_{L-1}$ (interior counts $7, 35, 112, 315, 847, 2240$). For general $L$ the hypothesis follows
+For $L=1,\dots,6$ we verified that every interior node has degree three (integer degree counts), and for
+$L=2,\dots,6$ that the interior of $G_L$ is $G_{L-1}$: interior node coordinates match those of $G_{L-1}$ to
+$10^{-9}$ in the Poincar\'e disk, and the induced edge set equals the edge set of $G_{L-1}$ (interior counts
+$7, 35, 112, 315, 847, 2240$). For general $L$ the hypothesis follows
 from the face-incidence definition of the boundary; this step is argued, not machine-checked. The computed values
 $0.364, 0.213, 0.153, 0.123, 0.106$ ($L=2$--$6$; the last two exploratory) decrease with successive ratios
 $0.59, 0.72, 0.80, 0.86$, as the proposition requires, and lie below the tree bound $\lambda_0\le3-2\sqrt2\approx0.172$
@@ -307,12 +309,14 @@ Mathlib, whose Schur-complement library already contains the block-matrix identi
 
 \section*{Verification status}
 Every claim in this paper is recorded in a machine-readable ledger~\cite{TrackHRepo} with an evidence tier:
-X (numerical), C (argument), L (literature), B (exact computation). The ledger's consistency gate reports no findings.
+X (numerical), C (argument), L (literature), B (exact computation), and a SHA-256 digest of its evidence. For every
+claim in the table below, the ledger gate verifies the digest against the released evidence store and reports no
+findings.
 
 \begin{center}\small
 \begin{tabular}{lll}\toprule
 Claim & Tier & Ledger \\ \midrule
-Conditioning versus $N$ (Table~\ref{tab:kappa}), preregistered $L=4$ point & X & H0-X-0001/0002 \\
+Conditioning versus $N$ (Table~\ref{tab:kappa}), preregistered $L=4$ point & X & H0-X-0002 \\
 Full rank of all tested full-boundary networks & B & H0-B-0001 \\
 Probe-matched deficiency $=$ number of unmeasured degree-2 nodes & B & H0-B-0002 \\
 Probe-matched $\kappa$ on identifiable subspace (post hoc) & X & H0-X-0003 \\
@@ -327,8 +331,9 @@ Integrator controls K1/K2 (SciPy); CVODE not run & X & H2-X-0003 \\ \bottomrule
 \end{center}
 
 \section*{Data and code availability}
-Code, preregistrations, raw data (JSON), network edge lists and the claim ledger are available
-at~\cite{TrackHRepo} and in the archived dataset accompanying this preprint. Every table in this paper is generated
+Code, preregistrations, raw data (JSON), network edge lists, Dirichlet-to-Neumann matrices, the exact rank
+certificates (\texttt{data/exact\_rank\_full.json}, \texttt{data/identifiability.json}) and the claim ledger with
+its evidence store are available at~\cite{TrackHRepo} and in the archived dataset accompanying this preprint. Every table in this paper is generated
 from the released data by \texttt{paper/make\_assets.py}.
 
 \section*{Use of AI tools}

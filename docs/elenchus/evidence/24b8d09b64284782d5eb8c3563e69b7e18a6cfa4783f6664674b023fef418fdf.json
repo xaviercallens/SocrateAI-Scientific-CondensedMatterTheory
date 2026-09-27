@@ -1,0 +1,321 @@
+{
+ "arithmetic": "fractions.Fraction",
+ "harness": "ssh_exact.py",
+ "records": [
+  {
+   "check": "B1",
+   "detail": "v=1/2, w=1, N=2: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1/2, w=1, N=2: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1/2, w=1, N=2: even rank=4/4, det D=1/4 (v^N=1/4)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=1/2, w=1, N=3: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1/2, w=1, N=3: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1/2, w=1, N=3: even rank=6/6, det D=1/8 (v^N=1/8)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=1/2, w=1, N=5: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1/2, w=1, N=5: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1/2, w=1, N=5: even rank=10/10, det D=1/32 (v^N=1/32)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=1, w=1/2, N=2: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1, w=1/2, N=2: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1, w=1/2, N=2: even rank=4/4, det D=1 (v^N=1)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=1, w=1/2, N=3: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1, w=1/2, N=3: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1, w=1/2, N=3: even rank=6/6, det D=1 (v^N=1)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=1, w=1/2, N=5: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1, w=1/2, N=5: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1, w=1/2, N=5: even rank=10/10, det D=1 (v^N=1)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=2/3, w=5/4, N=2: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=2/3, w=5/4, N=2: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=2/3, w=5/4, N=2: even rank=4/4, det D=4/9 (v^N=4/9)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=2/3, w=5/4, N=3: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=2/3, w=5/4, N=3: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=2/3, w=5/4, N=3: even rank=6/6, det D=8/27 (v^N=8/27)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=2/3, w=5/4, N=5: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=2/3, w=5/4, N=5: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=2/3, w=5/4, N=5: even rank=10/10, det D=32/243 (v^N=32/243)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=-3/4, w=1, N=2: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=-3/4, w=1, N=2: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=-3/4, w=1, N=2: even rank=4/4, det D=9/16 (v^N=9/16)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=-3/4, w=1, N=3: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=-3/4, w=1, N=3: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=-3/4, w=1, N=3: even rank=6/6, det D=-27/64 (v^N=-27/64)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=-3/4, w=1, N=5: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=-3/4, w=1, N=5: left end heavier=True, |w|>|v|=True",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=-3/4, w=1, N=5: even rank=10/10, det D=-243/1024 (v^N=-243/1024)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=1, w=-2/5, N=2: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1, w=-2/5, N=2: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1, w=-2/5, N=2: even rank=4/4, det D=1 (v^N=1)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=1, w=-2/5, N=3: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1, w=-2/5, N=3: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1, w=-2/5, N=3: even rank=6/6, det D=1 (v^N=1)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=1, w=-2/5, N=5: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=1, w=-2/5, N=5: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=1, w=-2/5, N=5: even rank=10/10, det D=1 (v^N=1)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=7/5, w=3/5, N=2: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=7/5, w=3/5, N=2: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=7/5, w=3/5, N=2: even rank=4/4, det D=49/25 (v^N=49/25)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=7/5, w=3/5, N=3: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=7/5, w=3/5, N=3: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=7/5, w=3/5, N=3: even rank=6/6, det D=343/125 (v^N=343/125)",
+   "ok": true
+  },
+  {
+   "check": "B1",
+   "detail": "v=7/5, w=3/5, N=5: odd chain nullity=1, psi in kernel=True",
+   "ok": true
+  },
+  {
+   "check": "B2",
+   "detail": "v=7/5, w=3/5, N=5: left end heavier=False, |w|>|v|=False",
+   "ok": true
+  },
+  {
+   "check": "B3",
+   "detail": "v=7/5, w=3/5, N=5: even rank=10/10, det D=16807/3125 (v^N=16807/3125)",
+   "ok": true
+  },
+  {
+   "check": "NC1",
+   "detail": "v=1/2, w=1: wrong-sign vector rejected=True",
+   "ok": true
+  },
+  {
+   "check": "NC2",
+   "detail": "v=1/2, w=1: generic vector rejected=True",
+   "ok": true
+  },
+  {
+   "check": "NC1",
+   "detail": "v=1, w=1/2: wrong-sign vector rejected=True",
+   "ok": true
+  },
+  {
+   "check": "NC2",
+   "detail": "v=1, w=1/2: generic vector rejected=True",
+   "ok": true
+  },
+  {
+   "check": "NC1",
+   "detail": "v=2/3, w=5/4: wrong-sign vector rejected=True",
+   "ok": true
+  },
+  {
+   "check": "NC2",
+   "detail": "v=2/3, w=5/4: generic vector rejected=True",
+   "ok": true
+  },
+  {
+   "check": "PC1",
+   "detail": "v=0, w=1, N=2: zero-mode detector fired=True",
+   "ok": true
+  },
+  {
+   "check": "PC1",
+   "detail": "v=0, w=1, N=3: zero-mode detector fired=True",
+   "ok": true
+  },
+  {
+   "check": "PC1",
+   "detail": "v=0, w=1, N=5: zero-mode detector fired=True",
+   "ok": true
+  }
+ ]
+}

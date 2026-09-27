@@ -36,13 +36,14 @@ DS, MD, ZD = BUILD / "hf_dataset", BUILD / "hf_model", BUILD / "zenodo"
 CODE_FILES = ["hyperbolic_network.py", "hyperbolic_exact.py", "probe_matched.py", "identifiability.py",
               "rc_network.py", "h2_explore.py", "interior_degree.py", "paper/make_assets.py", "paper/build.py",
               "paper/main.tex", "paper/refs.bib", "release/export.py", "release/hf_upload.py",
-              "release/zenodo_draft.py", "PREREGISTRATION.md", "PREREGISTRATION_2.md"]
+              "release/zenodo_draft.py", "release/zenodo_metadata.json", "release/check_bundle.py",
+              "PREREGISTRATION.md", "PREREGISTRATION_2.md"]
 HERE_TEX = TRACK / "release"
 
 GRAPHS = ([("{7,3}", f"L={L}", lambda L=L: build_hyperbolic(7, 3, L)) for L in range(1, 7)]
           + [("square", f"R={R}", lambda R=R: build_square_disk(R)) for R in (3, 6, 10, 16)]
           + [("triangular", f"R={R}", lambda R=R: build_triangular_disk(R))
-             for R in (3.225, 6.45, 10.75, 17.2)])
+             for R in (3.225, 6.45, 7.0, 10.75, 11.5, 17.2, 18.5)])
 DTN_MAX_N = 900  # dense DtN matrices stored up to this size
 
 
@@ -104,8 +105,13 @@ def export_tables():
          "deficiency": r["deficiency"], "unmeasured_degree2_nodes": r["unmeasured_degree2_nodes"],
          "float_gap_at_rank": "" if r.get("float_gap_at_rank") is None else r["float_gap_at_rank"],
          "log10_kappa_identifiable_subspace": r["log10_kappa_identifiable"]} for r in ident])
+    full = json.loads((D / "exact_rank_full.json").read_text())
+    write_csv(DS / "exact_rank_full_boundary.csv", [
+        {"case": r["case"], "N": r["N"], "E": r["E"], "rank_mod_2147483647": r["ranks"]["2147483647"],
+         "rank_mod_998244353": r["ranks"]["998244353"], "primes_agree": r["primes_agree"],
+         "full_rank_certified": r["full_rank_certified"]} for r in full])
     rc = json.loads((D / "rc_network.json").read_text())
-    ex = json.loads((D / "h2_explore.json").read_text())
+    ex =json.loads((D / "h2_explore.json").read_text())
     gap = [{"family": r["family"], "N": r["N"], "lambda_min": r["lambda_min"], "lambda_max": r["lambda_max"],
             "tau": r["tau"], "stiffness": r["stiffness"], "exploratory": False} for r in rc["H2"]]
     gap += [{"family": "{7,3}", "N": r["N"], "lambda_min": r["lambda_min"], "lambda_max": "",
@@ -161,6 +167,8 @@ configs:
   data_files: probe_matched.csv
 - config_name: exact_rank
   data_files: exact_rank.csv
+- config_name: exact_rank_full_boundary
+  data_files: exact_rank_full_boundary.csv
 - config_name: spectral_gap
   data_files: spectral_gap.csv
 - config_name: integrator_controls
@@ -183,8 +191,9 @@ inverse conductance problem on hyperbolic lattices* (X. Callens, 2026), included
 | `conditioning.csv` | log10 condition number of the DtN sensitivity Jacobian; empty and `numerically_singular_float64=True` where float64 cannot resolve it |
 | `probe_matched.csv` | DtN and Neumann-to-Dirichlet conditioning, full vs subsampled boundary |
 | `exact_rank.csv` | Exact Jacobian ranks over GF(p) for two primes; deficiency vs number of unmeasured degree-2 nodes; condition number on the identifiable subspace |
+| `exact_rank_full_boundary.csv` | Exact full-boundary Jacobian ranks over GF(p), two primes: full-rank certificates |
 | `spectral_gap.csv` | Dirichlet spectral gap, RC relaxation time and stiffness; `exploratory=True` rows were not preregistered |
-| `interior_degree.json` | Integer check that interior nodes of the {{7,3}} truncations have degree 3 |
+| `interior_degree.json` | Integer check that interior nodes of the {{7,3}} truncations have degree 3, and that the interior of G_L is G_(L-1) (coordinates and edge sets) |
 | `integrator_controls.csv` | K1 (matrix-exponential known answer) and K2 (steady state = DtN column) controls per integrator; rows with `status` other than `run` were not executed |
 | `rc_step_response.csv` | Reference (matrix-exponential) RC step response V_i(t), C=1, on {{7,3}} L=2 and square R=6 |
 
@@ -196,7 +205,7 @@ https://github.com/xaviercallens/SocrateAI-Scientific-CondensedMatterTheory, dir
 
 ```
 python3 hyperbolic_network.py --self-test && python3 hyperbolic_exact.py --self-test
-python3 probe_matched.py && python3 identifiability.py && python3 rc_network.py
+python3 hyperbolic_exact.py && python3 probe_matched.py && python3 identifiability.py && python3 rc_network.py
 python3 h2_explore.py && python3 interior_degree.py
 python3 release/export.py
 ```

@@ -31,6 +31,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -192,6 +193,12 @@ def main() -> int:
         return self_test()
 
     print("Exact rank certification (2 independent primes; agreement = certificate)\n")
+    rows = []
+
+    def record(label, n, E, ranks):
+        agree = len(set(ranks.values())) == 1 and None not in ranks.values()
+        rows.append({"case": label, "N": n, "E": E, "ranks": {str(p): r for p, r in ranks.items()},
+                     "primes_agree": agree, "full_rank_certified": agree and list(ranks.values())[0] == E})
 
     print("hyperbolic {7,3}")
     for L in (1, 2):
@@ -199,6 +206,7 @@ def main() -> int:
         n = len(g["nodes"]); bnd = boundary_nodes(g); E = len(g["edges"])
         ranks = certified_rank(n, g["edges"], bnd)
         agree = len(set(ranks.values())) == 1
+        record(f"{{7,3}} L={L}", n, E, ranks)
         print(f"  L={L}: N={n} E={E}  ranks={ranks}  {'FULL RANK, CERTIFIED' if agree and list(ranks.values())[0] == E else 'see ranks'}")
 
     print("\neuclidean controls")
@@ -217,8 +225,12 @@ def main() -> int:
         status = "FULL RANK, CERTIFIED" if agree and list(ranks.values())[0] == E else \
                  f"DEFICIENT by {E - list(ranks.values())[0]}, CERTIFIED (agrees across primes)" if agree else \
                  "primes DISAGREE -- inconclusive, need a third prime"
+        record(f"{label.split()[0]} N={n}", n, E, ranks)
         print(f"  {label}: N={n} E={E}  ranks={ranks}  {status}")
 
+    out = Path(__file__).resolve().parent / "data" / "exact_rank_full.json"
+    out.write_text(json.dumps(rows, indent=1))
+    print(f"\nwrote {out}")
     return 0
 
 
