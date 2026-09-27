@@ -1,0 +1,61 @@
+Exact-arithmetic evidence for ledger claim H0-B-0001 (Tier B: exact
+identity verified on concrete instances, no floating point, with the
+controls Elenchus requires).
+
+Source: experiments/track_h_hyperbolic_network/hyperbolic_exact.py
+(--self-test: 6/6 checks pass, including a cross-check of the modular rank
+against float64's trusted small-case rank on {7,3} L=1, 42/42, agreeing
+across two independent primes).
+
+Method: with unit conductances the Laplacian L is an integer matrix. For a
+prime p with det(L_ii) != 0 mod p, the boundary-to-bulk Jacobian J is
+p-integral by the same harmonic-extension construction used in
+hyperbolic_network.jacobian() (dLambda/dg_e = (P_a-P_b)^T(P_a-P_b), carried
+out over the finite field GF(p) instead of R), and
+rank_Q(J) >= rank_{GF(p)}(J mod p): a full-rank result mod p is an EXACT
+CERTIFICATE of full rational rank for that instance, not a measurement.
+Agreement across two independent primes (2^31-1 and 998244353) is required
+before a result is reported as certified rather than possibly prime-
+specific.
+
+Results:
+- {7,3} L=1 (N=35, E=42): rank 42 mod both primes. FULL RANK, CERTIFIED.
+  (Cross-checks float64's rank 42/42 on this small, unsaturated case.)
+- {7,3} L=2 (N=112, E=140): rank 140 mod both primes. FULL RANK, CERTIFIED.
+- square N=113 (E=200): rank 200 mod both primes. FULL RANK, CERTIFIED.
+  (float64 also reported 200/200 here -- agreement, as expected at a size
+  well away from any precision floor.)
+- triangular N=187 (E=502): rank 502 mod both primes. FULL RANK, CERTIFIED.
+- triangular N=475 (E=1331): rank 1331 mod both primes. FULL RANK,
+  CERTIFIED.
+
+The last result is the decisive one. This graph is comparable in size to
+the triangular N=421 instance for which float64 (in the original,
+now-corrected H0-X-0001 run) reported a rank deficiency of 102/1176
+edges -- interpreted there as "structurally unrecoverable" interior
+conductances. This exact result PROVES that interpretation wrong for this
+family and this size range: the matrix IS exactly full rank; the float64
+"deficiency" was a numerical-precision artefact of the SVD-based rank
+tolerance, not a genuine algebraic property, exactly analogous to (but
+distinct from) the kappa-capping bug corrected in H0-X-0002.
+
+Consequence for the hypothesis (H1), stated plainly: H1's real content is
+NOT a difference in structural identifiability between hyperbolic and flat
+boundary-to-bulk inverse problems -- at the sizes tested here, BOTH
+families are exactly full rank. H1's real content is a difference in
+CONDITIONING: the precision required to actually exploit that full rank
+grows polynomially with N for the hyperbolic case (H0-X-0002) and becomes
+astronomically, super-polynomially large for the flat case, to the point
+of exceeding float64's representable dynamic range well before N~1000.
+Any prose (in RESULTS.md, the ledger, or a future manuscript) using
+"structurally unrecoverable" or "inrecouvrable" for the flat-lattice case
+is retracted by this entry and should be replaced with language about
+conditioning / required precision, not identifiability.
+
+Not yet certified: larger flat-lattice instances (N > 475 was not run
+here, for runtime reasons -- Gaussian elimination over GF(p) on a
+~3500x1300 matrix is the practical limit reached in this session). Full-
+rank at N=475 does not by itself imply full rank at all larger N; it is
+evidence against a genuine structural deficiency appearing at the same
+scale where float64 first reported one, which is the specific claim this
+entry retracts.

@@ -460,13 +460,51 @@ def analyse(g: dict, rng: np.random.Generator, do_recon: bool = True) -> dict:
     g1 = np.ones(E)
     J = jacobian(n, g["edges"], g1, bnd)  # exact; see jacobian() docstring
     s = np.linalg.svd(J, compute_uv=False)
-    # With the exact Jacobian the rank tolerance is genuine machine-precision
-    # scale, not the ~1e-10-relative floor a finite-difference eps=1e-6
-    # Jacobian imposed (which sat right where this hypothesis's evidence
-    # lives, and was caught before any run rather than after).
+
+    # Two DISTINCT quantities, reported separately and never conflated (an
+    # earlier version of this function conflated them, which produced a
+    # measurement artefact: see the module-level ERRATUM comment above
+    # main() for the full account).
+    #
+    # (1) kappa_raw = s_max / s_min, the UNTRUNCATED singular-value ratio.
+    #     This is what "condition number" means, and it is the quantity
+    #     this hypothesis is actually about. It is limited only by the
+    #     floating-point precision of the SVD computation itself (~1e-16
+    #     relative to s_max for a well-implemented LAPACK routine), NOT by
+    #     any tolerance this script chooses.
+    #
+    # (2) rank = a NUMERICAL RANK ESTIMATE, using the standard tolerance
+    #     tol = s_max * max(shape) * eps (numpy/scipy/MATLAB's convention).
+    #     This tolerance is a heuristic for "how many singular values are
+    #     distinguishable from zero given the matrix's size and machine
+    #     precision" -- it is NOT a bound on how large kappa_raw can be. The
+    #     bug: an earlier version computed kappa as s_max / s[rank-1], i.e.
+    #     the ratio to the SMALLEST value ABOVE this rank threshold. Since
+    #     s[rank-1] > tol by construction, that ratio is bounded above by
+    #     s_max/tol = 1/(max(shape)*eps) -- an artefact of the rank formula,
+    #     not a physical or numerical limit. Checked directly: for the three
+    #     largest flat-lattice cases in the exploratory run, the reported
+    #     "saturated" kappa matched 1/(max(shape)*eps) to 4 significant
+    #     figures (square N=797: cap 10^11.771 vs reported 10^11.77; tri
+    #     N=1069: 10^11.710 vs 10^11.71; tri N=421: 10^12.111 vs 10^12.10).
+    #     That is not a coincidence at that precision; it is the formula.
     tol = s.max() * max(J.shape) * np.finfo(float).eps
     rank = int(np.sum(s > tol))
-    kappa = float(s.max() / s[rank - 1]) if rank > 0 else float("inf")
+    # s.min() itself can round to exactly 0.0, or to float64 noise indistin-
+    # guishable from 0, once the TRUE smallest singular value is far below
+    # s_max * eps (~1e-16 relative). At that point kappa_raw = s_max/s_min is
+    # not a measurement of anything -- it is a report that this method's
+    # floating-point precision has been exhausted. That is itself a real
+    # finding (the matrix is numerically singular in double precision at
+    # this N), but it must be reported AS that, not as a specific large or
+    # infinite number, which would misrepresent a computational breakdown as
+    # data. Resolving whether the TRUE mathematical rank is full (merely
+    # astronomically ill-conditioned) or genuinely deficient (a true null
+    # space) needs exact or extended-precision arithmetic -- see
+    # hyperbolic_exact.py.
+    numerically_singular = bool(s.min() <= s.max() * np.finfo(float).eps)
+    kappa_raw = float(s.max() / s.min()) if not numerically_singular and s.min() > 0 else None
+    at_precision_floor = bool(numerically_singular or s.min() < 10 * s.max() * np.finfo(float).eps)
     sens = np.linalg.norm(J, axis=0)
     by_depth = {int(d): float(np.median(sens[edge_depth == d])) for d in np.unique(edge_depth)}
 
@@ -501,8 +539,11 @@ def analyse(g: dict, rng: np.random.Generator, do_recon: bool = True) -> dict:
         "name": g["name"], "N": n, "E": E, "boundary": int(len(bnd)),
         "boundary_fraction": len(bnd) / n, "max_depth": int(dep.max()),
         "dtn_entries": int(len(bnd) * (len(bnd) - 1) // 2),
-        "J_rank": rank, "J_rank_deficit": E - rank, "log10_kappa": math.log10(kappa),
-        "sigma_min": float(s[rank - 1]) if rank > 0 else 0.0,
+        "J_rank": rank, "J_rank_deficit": E - rank,
+        "log10_kappa": math.log10(kappa_raw) if kappa_raw is not None else None,
+        "numerically_singular": numerically_singular,  # kappa is meaningless if True
+        "at_precision_floor": at_precision_floor,  # True => treat any kappa as a LOWER bound
+        "sigma_min_raw": float(s.min()), "sigma_min_at_rank": float(s[rank - 1]) if rank > 0 else 0.0,
         "sensitivity_by_depth": by_depth,
         "coherence_by_depth": coherence_by_depth,
     }
@@ -537,6 +578,22 @@ def analyse(g: dict, rng: np.random.Generator, do_recon: bool = True) -> dict:
     return out
 
 
+# ERRATUM (2026-09-27, after the first commit of this file and its L=4
+# preregistered result). The kappa this script reported was capped by its
+# own rank-tolerance formula (kappa = s_max/s[rank-1], and s[rank-1] > tol =
+# s_max*max(shape)*eps by construction, so kappa < 1/(max(shape)*eps)
+# always) -- NOT by float64's true precision floor (~1e-16 relative), which
+# is what RESULTS.md and H0-X-0001 originally, and wrongly, attributed the
+# large-N flat-lattice "plateau" to. Caught by an external reviewer, then
+# verified directly: for the three largest flat cases in the L<=4 run, the
+# reported "saturated" log10(kappa) matched log10(1/(max(shape)*eps)) to 4
+# significant figures (not a coincidence at that precision). analyse() now
+# reports kappa_raw = s_max/s_min, untruncated, plus an at_precision_floor
+# flag for when it should be read as a lower bound rather than a value. The
+# original bugged numbers are superseded, not deleted -- see RESULTS.md's
+# ERRATUM section and ledger.json's H0-X-0002 for the corrected record.
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--self-test", action="store_true")
@@ -553,8 +610,10 @@ def main() -> int:
         g = build_hyperbolic(7, 3, L)
         r = analyse(g, rng, do_recon=(len(g["nodes"]) <= 700))
         results.append(r); hyp_sizes.append(r["N"])
+        kstr = "SINGULAR" if r["log10_kappa"] is None else f"{r['log10_kappa']:.2f}"
+        floor = "(floor)" if r["at_precision_floor"] else ""
         print(f"  L={L}: N={r['N']} E={r['E']} bnd={r['boundary']} ({r['boundary_fraction']:.2f}) "
-              f"dmax={r['max_depth']} rank={r['J_rank']}/{r['E']} log10k={r['log10_kappa']:.2f} "
+              f"dmax={r['max_depth']} rank={r['J_rank']}/{r['E']} log10k={kstr}{floor} "
               f"recon={r.get('recon', {}).get('success', 'n/a')}")
 
     print("euclidean controls at matched N")
@@ -565,8 +624,10 @@ def main() -> int:
             g = builder(R if label == "square" else R * 1.075)  # tri lattice is denser
             r = analyse(g, rng, do_recon=(len(g["nodes"]) <= 700))
             results.append(r)
+            kstr = "SINGULAR" if r["log10_kappa"] is None else f"{r['log10_kappa']:.2f}"
+            floor = "(floor)" if r["at_precision_floor"] else ""
             print(f"  {label:6} N={r['N']} E={r['E']} bnd={r['boundary']} ({r['boundary_fraction']:.2f}) "
-                  f"dmax={r['max_depth']} rank={r['J_rank']}/{r['E']} log10k={r['log10_kappa']:.2f} "
+                  f"dmax={r['max_depth']} rank={r['J_rank']}/{r['E']} log10k={kstr}{floor} "
                   f"recon={r.get('recon', {}).get('success', 'n/a')}")
 
     DATA.parent.mkdir(parents=True, exist_ok=True)
@@ -579,16 +640,25 @@ def main() -> int:
     hyp = [r for r in results if r["name"].startswith("{")]
     sq = [r for r in results if r["name"].startswith("square")]
     tr = [r for r in results if r["name"].startswith("tri")]
+    SINGULAR_MARK = 16.5  # placed above float64's ~1e-16 relative precision floor
     for series, lab, mk in ((hyp, "{7,3}", "o"), (sq, "square", "s"), (tr, "triangular", "^")):
         axes[0].plot([r["N"] for r in series], [r["boundary_fraction"] for r in series], mk + "-", label=lab)
         axes[1].plot([r["N"] for r in series], [r["max_depth"] for r in series], mk + "-", label=lab)
-        axes[2].plot([r["N"] for r in series], [r["log10_kappa"] for r in series], mk + "-", label=lab)
+        finite = [r for r in series if r["log10_kappa"] is not None]
+        singular = [r for r in series if r["log10_kappa"] is None]
+        line, = axes[2].plot([r["N"] for r in finite], [r["log10_kappa"] for r in finite], mk + "-", label=lab)
+        if singular:
+            axes[2].plot([r["N"] for r in singular], [SINGULAR_MARK] * len(singular),
+                        "x", color=line.get_color(), ms=10, mew=2)
     axes[0].set_xlabel("N"); axes[0].set_ylabel("boundary fraction"); axes[0].set_xscale("log"); axes[0].legend()
     axes[1].set_xlabel("N"); axes[1].set_ylabel("max depth"); axes[1].set_xscale("log"); axes[1].legend()
-    axes[2].set_xlabel("N"); axes[2].set_ylabel("log10 cond(J)"); axes[2].set_xscale("log"); axes[2].legend()
+    axes[2].axhline(SINGULAR_MARK, color="grey", ls=":", lw=1)
+    axes[2].text(40, SINGULAR_MARK + 0.3,
+                "x = numerically singular in float64 (not a value)", fontsize=7, color="grey")
+    axes[2].set_xlabel("N"); axes[2].set_ylabel("log10 cond(J), raw/untruncated"); axes[2].set_xscale("log"); axes[2].legend()
     axes[0].set_title("Boundary stays a finite fraction (hyperbolic)")
     axes[1].set_title("Depth ~ log N vs ~ sqrt N")
-    axes[2].set_title("Conditioning of boundary->bulk inverse")
+    axes[2].set_title("Conditioning: hyperbolic stays measurable, flat goes singular")
     fig.suptitle("H0: hyperbolic {7,3} vs Euclidean disks, unit conductances (Tier X)")
     fig.tight_layout()
     FIG.parent.mkdir(parents=True, exist_ok=True)
