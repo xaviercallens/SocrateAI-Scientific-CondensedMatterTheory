@@ -34,6 +34,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** word a claim to match the check exactly, or strengthen the check.
 - **Evidence:** H2-B-0001.
 
+**LL-A7: match dimension before comparing condition numbers.**
+- **What happened:** v1.0 read a 6.7-decade probe-matched gap as a geometry effect. A reviewer asked whether it was dimensionality (306 vs 592 recovered parameters). The preregistered dimension-matched control (flat best-r subspace) showed the residual is ≤ 0.5 decades and reversed at N≈112; my own prediction (1–4 decades) was wrong.
+- **Rule:** when two κ's are compared on subspaces of different dimension, also compare against the other side's best subspace of the same dimension. Any comparison of conditioning is a comparison of the same number of unknowns, or it is not a comparison.
+- **Evidence:** H0-X-0005; the correction is stated in the paper (v1.1 §3.3), not hidden.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.
@@ -92,6 +97,14 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 **LL-D7: branch protection with an already-red `main`.**
 - **What happened:** rusty-SUNDIALS `main` failed 4 CI jobs before PR #62, and auto-merge is disabled in that repository. #62 was merged with admin rights after it was shown to add no new failure.
 - **Rule:** compare the PR's checks with `main`'s, job by job, before overriding protection, and record why.
+
+**LL-D9: Python 3.10 f-strings.**
+- **What happened:** twice, scripts failed with `SyntaxError` for a nested same-quote f-string and for a backslash inside an f-string expression (both allowed only from Python 3.12).
+- **Rule:** compute the fragment in a variable first; keep f-string expressions free of quotes and backslashes.
+
+**LL-D10: a PDF-to-text reviewer sees a different paper.**
+- **What happened:** all seven "typographical" points of the v1.0 review were artefacts of PDF text extraction (dropped math, a period, a brace). The LaTeX source was correct.
+- **Rule:** check every typographical remark against the source before "fixing" it, and say so in the response rather than silently ignoring it.
 
 **LL-D8: permission boundaries are part of the design.**
 - **What happened:** the assistant session could not use tokens, touch sibling repositories, or read transcripts.

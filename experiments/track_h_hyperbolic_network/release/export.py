@@ -34,8 +34,11 @@ from hyperbolic_network import (  # noqa: E402
 BUILD = TRACK / "release" / "build"
 DS, MD, ZD = BUILD / "hf_dataset", BUILD / "hf_model", BUILD / "zenodo"
 CODE_FILES = ["hyperbolic_network.py", "hyperbolic_exact.py", "probe_matched.py", "identifiability.py",
-              "rc_network.py", "h2_explore.py", "interior_degree.py", "paper/make_assets.py", "paper/build.py",
-              "paper/main.tex", "paper/refs.bib", "release/export.py", "release/hf_upload.py",
+              "rc_network.py", "h2_explore.py", "interior_degree.py", "flat_scaling_mp.py", "disorder.py",
+              "subspace_control.py", "prereg3_predictions.py", "paper/make_assets.py", "paper/build.py",
+              "paper/main.tex", "paper/refs.bib", "paper/reviews/REVIEW_2026-09-27_v1.0.md",
+              "paper/reviews/RESPONSE_2026-09-27_v1.0.md", "PREREGISTRATION_3.md",
+              "release/export.py", "release/hf_upload.py", "release/zenodo_new_version.py", "release/zenodo_publish.py",
               "release/zenodo_draft.py", "release/zenodo_metadata.json", "release/check_bundle.py",
               "release/rusty_sundials_contrib/examples/python/rc_network/rc_network_benchmark.py",
               "release/rusty_sundials_contrib/examples/python/rc_network/test_rc_network.py",
@@ -116,6 +119,23 @@ def export_tables():
         {"case": r["case"], "N": r["N"], "E": r["E"], "rank_mod_2147483647": r["ranks"]["2147483647"],
          "rank_mod_998244353": r["ranks"]["998244353"], "primes_agree": r["primes_agree"],
          "full_rank_certified": r["full_rank_certified"]} for r in full])
+    # v1.1 additions (peer-review revisions); each file is optional so export works at any stage
+    for name, csvname, conv in (
+        ("flat_scaling_mp.json", "conditioning_arb.csv", lambda rows: [
+            {"case": r["case"], "N": r["N"], "E": r["E"], "boundary_size": r["boundary"], "prec_bits": r["prec_bits"],
+             "log10_kappa_arb": r["log10_kappa_arb"], "max_rel_radius_Ginv": r["max_rel_radius_Ginv"],
+             "float64_log10_kappa": "" if r["float64_log10_kappa"] is None else r["float64_log10_kappa"],
+             "control_pass": "" if r["control_pass"] is None else r["control_pass"]} for r in rows]),
+        ("disorder.json", "disorder.csv", lambda d: [
+            {"graph": r["graph"], "N": r["N"], "regime": r["regime"], "seed": "" if r["seed"] is None else r["seed"],
+             "defect_node": r.get("defect_node", ""), "defect_depth": r.get("defect_depth", ""),
+             "log10_kappa_logparam": "" if r["log10_kappa_log"] is None else r["log10_kappa_log"],
+             "log10_kappa_raw": "" if r["log10_kappa_raw"] is None else r["log10_kappa_raw"]} for r in d["rows"]]),
+        ("subspace_control.json", "subspace_control.csv", lambda rows: rows),
+    ):
+        p = D / name
+        if p.exists():
+            write_csv(DS / csvname, conv(json.loads(p.read_text())))
     rc = json.loads((D / "rc_network.json").read_text())
     ex =json.loads((D / "h2_explore.json").read_text())
     gap = [{"family": r["family"], "N": r["N"], "lambda_min": r["lambda_min"], "lambda_max": r["lambda_max"],
@@ -175,6 +195,12 @@ configs:
   data_files: exact_rank.csv
 - config_name: exact_rank_full_boundary
   data_files: exact_rank_full_boundary.csv
+- config_name: conditioning_arb
+  data_files: conditioning_arb.csv
+- config_name: disorder
+  data_files: disorder.csv
+- config_name: subspace_control
+  data_files: subspace_control.csv
 - config_name: spectral_gap
   data_files: spectral_gap.csv
 - config_name: integrator_controls
@@ -198,6 +224,9 @@ inverse conductance problem on hyperbolic lattices* (X. Callens, 2026), included
 | `probe_matched.csv` | DtN and Neumann-to-Dirichlet conditioning, full vs subsampled boundary |
 | `exact_rank.csv` | Exact Jacobian ranks over GF(p) for two primes; deficiency vs number of unmeasured degree-2 nodes; condition number on the identifiable subspace |
 | `exact_rank_full_boundary.csv` | Exact full-boundary Jacobian ranks over GF(p), two primes: full-rank certificates |
+| `conditioning_arb.csv` | (v1.1) log10 condition number in 512-bit ball arithmetic for the float64-singular flat lattices, with certified radii and the two unsaturated controls |
+| `disorder.csv` | (v1.1) log10 kappa (log-parametrised and raw Jacobian) under U[0.5,1.5] and log-uniform [0.1,10] conductances (5 seeds) and x100 / x0.01 defects |
+| `subspace_control.csv` | (v1.1) probe-matched dimensionality control: square lattice sigma_1/sigma_r vs hyperbolic identifiable-subspace kappa |
 | `spectral_gap.csv` | Dirichlet spectral gap, RC relaxation time and stiffness; `exploratory=True` rows were not preregistered |
 | `interior_degree.json` | Integer check that interior nodes of the {{7,3}} truncations have degree 3, and that the interior of G_L is G_(L-1) (coordinates and edge sets) |
 | `integrator_controls.csv` | K1 (matrix-exponential known answer) and K2 (steady state = DtN column) controls per integrator; rows with `status` other than `run` were not executed |

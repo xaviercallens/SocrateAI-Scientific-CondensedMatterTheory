@@ -120,7 +120,7 @@
    ],
    "evidence": "sha256:926e7dc1d93e3f8fb44624d7bc900110bc6e437c301c908e9a5d523a6c22c232",
    "statement": "DEVIATION FROM PREREGISTRATION_2 part A: the preregistered probe-matched kappa is SINGULAR by design (H0-B-0002), so the prediction as written is untestable. Corrected comparison, chosen after seeing the singularity: kappa restricted to the identifiable subspace (dropping exactly the certified deficiency). log10 kappa: {7,3} L=2/44 probes 2.70 vs square R=6 5.07; {7,3} L=3/76 probes 2.97 vs square R=10 9.72 (gap 6.75 decades). The advantage survives probe matching at these two sizes.",
-   "notes": "float64 SVD; post hoc metric; must be reported as a deviation everywhere it is cited. [evidence re-hashed: identifiability.json regenerated with an added field; previous digest sha256:eb142dac9e8c...]",
+   "notes": "float64 SVD; post hoc metric; must be reported as a deviation everywhere it is cited. [evidence re-hashed: identifiability.json regenerated with an added field; previous digest sha256:eb142dac9e8c...] CORRECTION (2026-09-27, appended; statement unchanged): the 6.75-decade gap compares subspaces of different dimension; see H0-X-0005 -- against the flat lattice's best r-dimensional subspace the residual is <= 0.5 decades and reversed at N~112.",
    "audit": null
   },
   {
@@ -209,6 +209,28 @@
    "audit": null,
    "statement": "Two-code cross-validation of the RC network: rusty-SUNDIALS CvodeSolver (BDF, Python binding rusty-sundials-py 6.0.0 built from rusty-SUNDIALS commit af4886f) passes K1 (max rel err 2.6e-08 < 1e-5 vs the matrix exponential) and K2 (max rel err 1.1e-12 < 1e-6 vs the Schur-complement DtN column) on {7,3} L=2 and square R=6, as does SciPy BDF; both integrators therefore agree with the exact solution, and with each other, to ~3e-8.",
    "notes": "experiments/track_h_hyperbolic_network/rc_network.py; same rtol=1e-8, atol=1e-10 for both. Wheel built with maturin 1.15.0 from the local checkout (branch merge-mcp-temp)."
+  },
+  {
+   "id": "H0-X-0005",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H0-X-0003"
+   ],
+   "evidence": "sha256:2353e8a4314fbee2dd73dd2bf09ae60cae2ce4f7576bf03d7ec58452d55b9e39",
+   "statement": "PREREGISTRATION_3 part C, prediction REFUTED. The probe-matched gap of H0-X-0003 is mostly a dimensionality effect. Against the square lattice's best-conditioned r-dimensional parameter subspace (top-r right singular vectors, r = hyperbolic identifiable dimension): at N~112, r=117, square log10(sigma_1/sigma_r) = 2.14 < hyperbolic kappa_id 2.70 (flat BETTER by 0.56 decades); at N~316, r=306, square 3.45 vs hyperbolic 2.97 (hyperbolic better by 0.48 decades, not the predicted 1-4). At matched probe count AND matched dimension the residual conditioning advantage is at most half a decade at these sizes.",
+   "notes": "experiments/track_h_hyperbolic_network/subspace_control.py. The full-boundary comparison (H0-X-0002: 6.4 decades at N~316) is unaffected: the large boundary IS the geometry. What is withdrawn is the v1.0 reading that the advantage is independent of probe count.",
+   "audit": null
+  },
+  {
+   "id": "H0-X-0006",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [],
+   "evidence": "sha256:a56bee6867b340c1bab9bf794b51aed66a027bb92f0cae0ac1932e056ea2bf99",
+   "statement": "PREREGISTRATION_3 part B (log-parametrised kappa, medians over 5 seeds). Mild disorder U[0.5,1.5]: gap at N~316 = 5.97 decades (as predicted; prediction >= 5, refute < 3); {7,3} L=3 moved from 3.27 to 3.52. Strong disorder logU[0.1,10]: gap at N~316 = 8.26 (as predicted; prediction >= 3, refute < 2), at N~112 = 3.57. Defects x100 / x0.01 at maximal depth: {7,3} L=3 kappa 4.47 / 4.80 (max change 1.53 decades; prediction < 2, refute > 3).",
+   "notes": "experiments/track_h_hyperbolic_network/disorder.py; float64; SINGULAR rows excluded from medians.",
+   "audit": null
   }
  ]
 }

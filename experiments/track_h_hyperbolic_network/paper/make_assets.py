@@ -46,20 +46,95 @@ def sci(x, digits=1):
     return rf"${m}\times10^{{{int(e)}}}$"
 
 
-def table_kappa(h0):
+def load_opt(name):
+    p = DATA / name
+    return json.loads(p.read_text()) if p.exists() else None
+
+
+def table_kappa(h0, mp):
+    """mp: flat_scaling_mp.json rows (Arb), keyed by the h0 row name; None if absent."""
+    arb = {}
+    for r in (mp or []):
+        for h in h0:
+            if r["case"].split(" (")[0] == tex_key(h["name"]):
+                arb[h["name"]] = r
     rows = []
     for r in h0:
         k = r"\textsc{sing.}" if r["log10_kappa"] is None else f"{r['log10_kappa']:.2f}"
-        rows.append(f"{tex_name(r['name'])} & {r['N']} & {r['E']} & {r['boundary']} & {r['max_depth']} & {k} \\\\")
+        a = arb.get(r["name"])
+        ka = "" if a is None else f"{a['log10_kappa_arb']:.2f}"
+        rows.append(f"{tex_name(r['name'])} & {r['N']} & {r['E']} & {r['boundary']} & {r['max_depth']} & {k} & {ka} \\\\")
     return "\n".join([
         r"\begin{table}[t]\centering\small",
         r"\caption{Conditioning of the DtN sensitivity Jacobian, unit conductances, full boundary. "
         r"$d_{\max}$: maximal graph distance to the boundary. \textsc{sing.}: smallest singular value at or "
-        r"below $\varepsilon_{\mathrm{mach}}\,\sigma_{\max}$ in IEEE double precision (the true $\kappa$ is not "
-        r"resolved there). The $\{7,3\}$, $L=4$ row is the preregistered confirmatory point.}",
+        r"below $\varepsilon_{\mathrm{mach}}\,\sigma_{\max}$ in IEEE double precision. The last column is the "
+        r"512-bit ball-arithmetic value (Sec.~\ref{sec:arb}), given for the two unsaturated controls and for the "
+        r"double-precision-singular flat instances. The $\{7,3\}$, $L=4$ row is the preregistered confirmatory point.}",
         r"\label{tab:kappa}",
-        r"\begin{tabular}{lrrrrr}\toprule",
-        r"Lattice & $N$ & $|E|$ & $|\partial G|$ & $d_{\max}$ & $\log_{10}\kappa$ \\ \midrule",
+        r"\begin{tabular}{lrrrrrr}\toprule",
+        r"Lattice & $N$ & $|E|$ & $|\partial G|$ & $d_{\max}$ & $\log_{10}\kappa$ (float64) & $\log_{10}\kappa$ (Arb) \\ \midrule",
+        *rows,
+        r"\bottomrule\end{tabular}\end{table}",
+    ])
+
+
+def tex_key(name):
+    """'triangular R=10.75' -> 'triangular R=10.75'; float radii normalised like flat_scaling_mp CASES."""
+    head, _, par = name.partition(" ")
+    if "=" not in par:
+        return head
+    k, v = par.split("=", 1)
+    v = f"{float(v):g}" if "." not in v else f"{float(v):.2f}".rstrip("0").rstrip(".")
+    return f"{head} {k}={v}"
+
+
+def table_disorder(dis):
+    if dis is None:
+        return ""
+    s = dis["summary_median_logparam"]
+    def f(x): return r"\textsc{sing.}" if x is None else f"{x:.2f}"
+    rows = []
+    for regime, label in (("unit", "unit ($g_e=1$)"), ("U[0.5,1.5]", r"$g_e\sim\mathcal U[0.5,1.5]$"),
+                          ("logU[0.1,10]", r"$\log_{10} g_e\sim\mathcal U[-1,1]$"),
+                          ("defect x100", r"defect $\times100$"), ("defect x0.01", r"defect $\times0.01$")):
+        d = s[regime]
+        rows.append(rf"{label} & {f(d['{7,3} L=2'])} & {f(d['square R=6'])} & {f(d['gap_N112'])} & "
+                    rf"{f(d['{7,3} L=3'])} & {f(d['square R=10'])} & {f(d['gap_N316'])} \\")
+    return "\n".join([
+        r"\begin{table}[t]\centering\small",
+        r"\caption{Conditioning under inhomogeneous conductances: $\log_{10}\kappa$ of the log-parametrised "
+        r"Jacobian $\partial\Lambda/\partial\ln g_e$, medians over five seeds for the random regimes. The defect "
+        r"multiplies every edge of one interior node at maximal depth. Gap: square minus hyperbolic.}",
+        r"\label{tab:disorder}",
+        r"\begin{tabular}{lrrrrrr}\toprule",
+        r" & \multicolumn{3}{c}{$N\approx112$} & \multicolumn{3}{c}{$N\approx316$} \\",
+        r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}",
+        r"Conductances & $\{7,3\}$ $L{=}2$ & square $R{=}6$ & gap & $\{7,3\}$ $L{=}3$ & square $R{=}10$ & gap \\ \midrule",
+        *rows,
+        r"\bottomrule\end{tabular}\end{table}",
+    ])
+
+
+def table_subspace(sub):
+    if sub is None:
+        return ""
+    rows = []
+    for r in sub:
+        hyp = r["hyperbolic"].replace("{7,3}", "$\\{7,3\\}$")
+        rows.append(f"{hyp} & {r['r']} & {r['hyp_log10_kappa_identifiable']:.2f} & "
+                    f"square ${r['square']}$ & {r['square_E']} & {r['square_full_log10_kappa']:.2f} & "
+                    f"{r['square_log10_sigma1_over_sigma_r']:.2f} \\\\")
+    return "\n".join([
+        r"\begin{table}[t]\centering\small",
+        r"\caption{Dimensionality in the probe-matched control. $r$: hyperbolic identifiable dimension. "
+        r"$\sigma_1/\sigma_r$: condition number of the square lattice's best-conditioned $r$-dimensional "
+        r"parameter subspace (top-$r$ right singular vectors), the most favourable $r$-dimensional comparison "
+        r"for the flat lattice.}",
+        r"\label{tab:subspace}",
+        r"\begin{tabular}{lrrlrrr}\toprule",
+        r"Hyperbolic (subsampled) & $r$ & $\log_{10}\kappa_{\mathrm{id}}$ & Flat & $|E|$ & $\log_{10}\kappa$ (all $|E|$) & "
+        r"$\log_{10}\sigma_1/\sigma_r$ \\ \midrule",
         *rows,
         r"\bottomrule\end{tabular}\end{table}",
     ])
@@ -144,23 +219,38 @@ def table_controls(rc):
     ])
 
 
-def fig_kappa(h0):
-    fig, ax = plt.subplots(figsize=(4.6, 3.2))
+def fig_kappa(h0, mp):
+    """Left: log10 kappa vs N (Arb values replace float64-singular points). Right: flat families vs sqrt N."""
+    arb = {}
+    for r in (mp or []):
+        if r["control_pass"] is None:  # saturated cases only
+            for h in h0:
+                if r["case"] == tex_key(h["name"]):
+                    arb[h["name"]] = r["log10_kappa_arb"]
+    fig, (ax, ax2) = plt.subplots(1, 2, figsize=(9.2, 3.2))
     style = {"{7,3}": ("o-", "C0"), "square": ("s--", "C1"), "triangular": ("^:", "C2")}
+    ymax = 17
     for f, (m, c) in style.items():
-        pts = [(r["N"], r["log10_kappa"]) for r in h0 if fam(r["name"]) == f]
+        pts = [(r["N"], r["log10_kappa"] if r["log10_kappa"] is not None else arb.get(r["name"]))
+               for r in h0 if fam(r["name"]) == f]
         fin = [(n, k) for n, k in pts if k is not None]
         ax.plot(*zip(*fin), m, color=c, label=f"{{{f[1:-1]}}}" if f == "{7,3}" else f)
-        sing = [n for n, k in pts if k is None]
-        if sing:
-            ax.scatter(sing, [15.7] * len(sing), marker="x", color=c)
+        ymax = max(ymax, max(k for _, k in fin) + 1)
+        for r in h0:
+            if fam(r["name"]) == f and r["log10_kappa"] is None:
+                if r["name"] in arb:
+                    ax.scatter([r["N"]], [arb[r["name"]]], marker="o", facecolors="none", edgecolors=c, s=60)
+                else:
+                    ax.scatter([r["N"]], [15.7], marker="x", color=c)
+        if f != "{7,3}":
+            ax2.plot([math.sqrt(n) for n, _ in fin], [k for _, k in fin], m, color=c, label=f)
     ax.axhline(math.log10(1 / 2.220446049250313e-16), color="grey", lw=0.6)
     ax.text(40, 15.95, "float64 floor", fontsize=7, color="grey")
-    ax.set_xscale("log")
-    ax.set_xlabel("$N$ (nodes)")
-    ax.set_ylabel(r"$\log_{10}\kappa$")
-    ax.set_ylim(0, 17)
+    ax.set_xscale("log"); ax.set_xlabel("$N$ (nodes)"); ax.set_ylabel(r"$\log_{10}\kappa$"); ax.set_ylim(0, ymax)
     ax.legend(fontsize=8, frameon=False)
+    ax2.set_xlabel(r"$\sqrt{N}$"); ax2.set_ylabel(r"$\log_{10}\kappa$")
+    ax2.legend(fontsize=8, frameon=False)
+    ax2.set_title("flat lattices (open markers: Arb)" if arb else "flat lattices", fontsize=8)
     fig.tight_layout()
     fig.savefig(HERE / "fig_kappa.pdf")
 
@@ -186,9 +276,11 @@ def fig_h2(rc, explore):
 def main():
     h0, pm, ident = load("h0.json"), load("probe_matched.json"), load("identifiability.json")
     rc, explore = load("rc_network.json"), load("h2_explore.json")
+    mp, dis, sub = load_opt("flat_scaling_mp.json"), load_opt("disorder.json"), load_opt("subspace_control.json")
     (HERE / "tables.tex").write_text("% GENERATED by make_assets.py from data/*.json -- do not edit\n" + "\n\n".join(
-        [table_kappa(h0), table_probe(pm, ident), table_h2(rc, explore), table_controls(rc)]) + "\n")
-    fig_kappa(h0)
+        [table_kappa(h0, mp), table_probe(pm, ident), table_subspace(sub), table_disorder(dis),
+         table_h2(rc, explore), table_controls(rc)]) + "\n")
+    fig_kappa(h0, mp)
     fig_h2(rc, explore)
     print("wrote tables.tex, fig_kappa.pdf, fig_h2.pdf")
 

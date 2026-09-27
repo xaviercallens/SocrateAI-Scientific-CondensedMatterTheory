@@ -44,6 +44,7 @@ case "$STEP" in
   hf)     python3 release/hf_upload.py ;;
   zenodo) python3 release/zenodo_draft.py ;;
   publish) python3 release/zenodo_publish.py "${2:?deposition id required}" ;;
+  newversion) python3 release/zenodo_new_version.py "${2:?published deposition id required}" "${3:?version string required}" ;;
   check)  echo "check only" ;;
   *)      echo "unknown step $STEP"; exit 2 ;;
 esac

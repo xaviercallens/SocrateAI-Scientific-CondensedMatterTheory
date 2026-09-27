@@ -1,0 +1,30 @@
+[
+ {
+  "case": "square R=10 (control)",
+  "N": 317,
+  "E": 592,
+  "boundary": 76,
+  "prec_bits": 512,
+  "log10_kappa_arb": 9.717820783998446,
+  "max_rel_radius_Ginv": 2.4310848839151277e-119,
+  "lambda_max_G": 1.023455272487897,
+  "lambda_min_G": 3.7534211744001225e-20,
+  "float64_log10_kappa": 9.717820796894493,
+  "control_pass": true,
+  "seconds": 153.3
+ },
+ {
+  "case": "triangular R=6.45 (control)",
+  "N": 151,
+  "E": 401,
+  "boundary": 49,
+  "prec_bits": 512,
+  "log10_kappa_arb": 8.67244907995092,
+  "max_rel_radius_Ginv": 1.9895185886713393e-120,
+  "lambda_max_G": 1.1082557527002908,
+  "lambda_min_G": 5.008893922793431e-18,
+  "float64_log10_kappa": 8.672449080228727,
+  "control_pass": true,
+  "seconds": 42.9
+ }
+]

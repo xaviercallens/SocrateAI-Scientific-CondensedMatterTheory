@@ -34,9 +34,10 @@ lattices it reaches $10^{9.7}$ at $N=317$ and exceeds the resolution of IEEE dou
 The mechanism is geometric: the maximal distance from a node to the boundary grows as $O(\log N)$ on the hyperbolic
 lattice and as $O(\sqrt N)$ on flat ones. Exact rank computations over two finite fields show that every tested
 network is algebraically identifiable; the difference is one of conditioning, not of identifiability. The
-advantage persists when the hyperbolic boundary is subsampled to the flat lattice's probe count (on the
-identifiable subspace, $\log_{10}\kappa = 2.97$ versus $9.72$ at $N\approx 316$; a post hoc metric) and for the
-Neumann-to-Dirichlet map measured by current-injection hardware. For the time-resolved RC version of the network,
+advantage holds for the Neumann-to-Dirichlet map measured by current-injection hardware and survives inhomogeneous
+conductances (uniform disorder, two-decade log-uniform disorder, and a $\times100$ defect); at matched probe count
+\emph{and} matched dimension, however, it shrinks to at most half a decade, which corrects a reading in version
+1.0. For the time-resolved RC version of the network,
 a preregistered finite-size prediction that the Dirichlet spectral gap is constant was refuted; we show instead,
 by domain monotonicity and the positive spectral gap of the nonamenable $\{7,3\}$ graph, that the gap decreases
 monotonically to a strictly positive limit, so the RC relaxation time is bounded uniformly in $N$, whereas it grows
@@ -112,6 +113,24 @@ be evaluated exactly in $\F_p$, and $\operatorname{rank}_{\mathbb{Q}} J \ge \ope
 A full-rank result modulo $p$ therefore certifies full rank over $\mathbb Q$; for rank-deficient cases we require
 agreement between $p=2^{31}-1$ and $p=998244353$.
 
+\subsection{Condition numbers beyond double precision}
+\label{sec:arb}
+Where $\kappa\gtrsim10^{16}$, $\sigma_{\min}$ lies below the rounding error of $J$'s own entries and no
+double-precision SVD can recover it. We therefore compute $\kappa$ for the double-precision-singular flat instances
+in ball arithmetic (Arb, through python-flint) at 512 bits, which tracks a rigorous error radius through every
+operation. The harmonic extension is solved from the integer Laplacian in Arb, and the Gram matrix $G=J^\top J$ is
+formed in Arb without materialising $J$: with $d_e = h_a-h_b$ restricted to the boundary and rows of $J$ indexed by
+boundary pairs $i<j$,
+\begin{equation}
+G_{ef}=\sum_{i<j} d_{e,i}d_{e,j}d_{f,i}d_{f,j}=\tfrac12\big[(d_e\!\cdot\! d_f)^2-(d_e^{\,2}\!\cdot\! d_f^{\,2})\big].
+\end{equation}
+$G^{-1}$ is computed in Arb, and $\lambda_{\max}(G^{-1})=1/\sigma_{\min}^2$, a well-conditioned quantity, is read
+off after casting the certified midpoints to double precision; $\sigma_{\max}$ is read from $G$ likewise. A value is
+reported only if every entry of $G^{-1}$ has relative radius below $10^{-20}$. As a control, the same code must
+reproduce the double-precision $\kappa$ of two unsaturated instances to $10^{-6}$ in $\log_{10}\kappa$ before any
+saturated instance is reported. The rival forms for the flat growth law, and their extrapolations, were fixed in a
+preregistration before this computation was run.
+
 \subsection{Neumann-to-Dirichlet map}
 Hardware that injects currents and reads voltages measures the Neumann-to-Dirichlet map $\Lambda^{+}$ (the
 Moore--Penrose inverse, the inverse on the zero-sum subspace), with sensitivity
@@ -150,6 +169,7 @@ including refutation criteria and rival functional forms~\cite{TrackHRepo}. Devi
 \section{Results}
 
 \subsection{Conditioning versus network size}
+\label{sec:cond}
 Table~\ref{tab:kappa} and Fig.~\ref{fig:kappa} give $\kappa$ for all three families. On the $\{7,3\}$ lattice the
 maximal boundary depth is $d_{\max}=2L-1$, and $\log_{10}\kappa$ rises from $1.39$ ($N=35$) to $3.89$ ($N=847$).
 The local exponent $\mathrm{d}\log\kappa/\mathrm{d}\log N$ \emph{decreases} over the tested range ($2.1$, $1.8$,
@@ -187,6 +207,7 @@ networks~\cite{CurtisIngermanMorrow1998,ColinDeVerdiere1994}, which concerns ide
 conditioning.
 
 \subsection{Probe-matched control}
+\label{sec:probe}
 A truncated hyperbolic tiling has more boundary probes than a flat disk of equal $N$ ($77$ versus $44$ at
 $N\approx112$; $203$ versus $76$ at $N\approx316$). To test whether the advantage is only a probe-count effect, the
 $\{7,3\}$ boundary was subsampled to the flat probe count, evenly in angle, with unused boundary nodes carrying zero
@@ -204,13 +225,39 @@ As a replacement metric, chosen after the singularity was observed and therefore
 the identifiable subspace, discarding exactly the certified number of singular values. It is $10^{2.70}$ versus
 $10^{5.07}$ at $N\approx112$ and $10^{2.97}$ versus $10^{9.72}$ at $N\approx316$. The two sides then recover
 different targets: $306$ identifiable combinations of $399$ hyperbolic conductances, versus all $592$ square-lattice
-conductances. With that caveat, the conditioning advantage survives probe matching and is not a probe-count
-artefact at these sizes.
+conductances. Recovering fewer combinations is a genuine loss of resolution, not a bookkeeping choice.
+
+Version 1.0 of this paper read the $6.7$-decade gap as evidence that the advantage survives probe matching. That
+reading does not survive a dimension-matched comparison, which we preregistered in response to review and report in
+Table~\ref{tab:subspace}. For the square lattice at the same probe count we take the \emph{best}-conditioned
+$r$-dimensional parameter subspace, spanned by its top-$r$ right singular vectors, with $r$ equal to the hyperbolic
+identifiable dimension; its condition number is $\sigma_1/\sigma_r$, the most favourable $r$-dimensional
+comparison the flat lattice can be given. At $N\approx112$ ($r=117$) the flat subspace is \emph{better} conditioned,
+$10^{2.14}$ against $10^{2.70}$; at $N\approx316$ ($r=306$) the hyperbolic side is better by $0.5$ decades,
+$10^{2.97}$ against $10^{3.45}$, not by the $1$--$4$ decades we had predicted. Most of the $6.7$-decade gap is
+therefore dimensionality, and at matched probe count \emph{and} matched dimension the residual advantage is at most
+half a decade at these sizes. The full-boundary comparison of Section~\ref{sec:cond} is unaffected: a boundary that
+holds a fixed fraction of the nodes is the geometric property at issue, and subsampling it discards exactly that
+property. What is withdrawn is the claim that the advantage is independent of probe count.
 
 \subsection{Neumann-to-Dirichlet map}
 For the map measured by current-injection hardware, the ordering is preserved, as preregistered:
 $\log_{10}\kappa_{\mathrm{NtD}} = 1.99$ and $2.42$ ($\{7,3\}$, $L=2,3$) versus $5.41$ and $10.08$ (square,
 $R=6,10$) (Table~\ref{tab:probe}).
+
+\subsection{Inhomogeneous conductances}
+\label{sec:disorder}
+Version 1.0 evaluated $\kappa$ only at unit conductances. In response to review we preregistered and ran three
+inhomogeneous regimes (Table~\ref{tab:disorder}), reporting the condition number of the log-parametrised Jacobian
+$\partial\Lambda/\partial\ln g_e = g_e\,\partial\Lambda/\partial g_e$, that is, for relative perturbations, the
+quantity that component tolerances set. Under mild disorder $g_e\sim\mathcal U[0.5,1.5]$ the median gap at
+$N\approx316$ is $6.0$ decades (unit conductances: $6.4$) and the hyperbolic $\kappa$ moves by $0.25$ decades, as
+predicted (the refutation threshold was a gap below $3$). Under two-decade log-uniform disorder both condition
+numbers rise, the hyperbolic by $1.9$ decades and the square by $3.7$, so the gap \emph{widens} to $8.3$ decades
+($3.6$ at $N\approx112$); the prediction was a gap of at least $3$. A $\times100$ or $\times0.01$ contrast on every
+edge of one node at maximal depth raises the hyperbolic $\kappa$ by $1.2$ and $1.5$ decades respectively
+(prediction: below $2$) and leaves the gap at $6.3$--$6.4$ decades. All three predictions held: the advantage is a
+property of the geometry, not of the homogeneous background.
 
 \subsection{RC dynamics and the Dirichlet spectral gap}
 The preregistered prediction was that $\lambda_{\min}(L_{ii})$ on $\{7,3\}$ is constant over $L=2$--$4$, refuted
@@ -238,8 +285,18 @@ edge-isoperimetric constant~\cite{HJL2002} and bounded degree~\cite{Dodziuk1984,
 For $L=1,\dots,6$ we verified that every interior node has degree three (integer degree counts), and for
 $L=2,\dots,6$ that the interior of $G_L$ is $G_{L-1}$: interior node coordinates match those of $G_{L-1}$ to
 $10^{-9}$ in the Poincar\'e disk, and the induced edge set equals the edge set of $G_{L-1}$ (interior counts
-$7, 35, 112, 315, 847, 2240$). For general $L$ the hypothesis follows
-from the face-incidence definition of the boundary; this step is argued, not machine-checked. The computed values
+$7, 35, 112, 315, 847, 2240$). For general $L$ the degree-three hypothesis follows from two facts. First, the union
+of the heptagons within $L$ dual steps of the central tile is a closed topological disk: it is a connected union of
+closed tiles in the plane, and its Euler characteristic $V-E+F=1$, which the network builder checks for every
+instance, forces genus zero with one boundary component. Second, every vertex of the tiling lies on exactly three
+heptagons whose union covers a neighbourhood of it. If all three are in $G_L$, the vertex's three edges are in $G_L$
+(each edge is shared by two of the heptagons) and the vertex is not on the outer face. If one is missing, the
+missing sector belongs to the complement of the disk, which is connected and hence part of the outer face, so the
+vertex is a boundary node. Thus an interior node has all three heptagons, and degree three. Nesting is immediate:
+a vertex whose three heptagons lie within $L$ layers has them within $L+1$, so $\operatorname{int}G_L\subset
+\operatorname{int}G_{L+1}$, and the interiors exhaust the tiling. The stronger statement
+$\operatorname{int}G_L=G_{L-1}$ is not needed by the proposition and remains certified only for $L\le6$. The
+computed values
 $0.364, 0.213, 0.153, 0.123, 0.106$ ($L=2$--$6$; the last two exploratory) decrease with successive ratios
 $0.59, 0.72, 0.80, 0.86$, as the proposition requires, and lie below the tree bound $\lambda_0\le3-2\sqrt2\approx0.172$
 from $L=4$ on. The finite-size refutation and the uniform bound are compatible: the refuted prediction concerned the
@@ -269,11 +326,12 @@ The limitations are as follows.
 (i) The flat-lattice growth law is not determined: three unsaturated flat data points do not distinguish
 $\kappa\sim e^{c\sqrt N}$ from a steep power law, and ``numerically singular'' states only that double precision
 cannot resolve $\kappa$, not its magnitude.
-(ii) $\kappa$ is a linearised sensitivity at unit conductances. No nonlinear reconstruction algorithm is
-benchmarked, and the behaviour at strongly inhomogeneous conductances is not studied.
+(ii) $\kappa$ is a linearised sensitivity; disorder and single defects are tested (Section~\ref{sec:disorder}),
+but no nonlinear reconstruction algorithm is benchmarked.
 (iii) Exact rank certificates cover $N\le475$ for flat lattices; full rank there does not exclude deficiency at
 larger $N$.
-(iv) The probe-matched comparison uses a post hoc metric and compares different identifiable targets.
+(iv) The probe-matched comparison uses a post hoc metric; once dimension is matched as well, the residual
+advantage is at most half a decade, and reversed at $N\approx112$ (Section~\ref{sec:probe}).
 (v) Only $\{7,3\}$ is studied among hyperbolic tilings.
 (vi) The two-integrator cross-validation covers two networks of about $110$ nodes; larger and stiffer instances
 are not yet cross-validated.
