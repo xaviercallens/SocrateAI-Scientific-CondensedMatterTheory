@@ -23,7 +23,7 @@ review asked for was **preregistered before it was run** (`PREREGISTRATION_3.md`
 - Seven "typographical" points in the review were artefacts of PDF text extraction; the source was correct.
 
 ### Records
-- Zenodo: new version under concept DOI 10.5281/zenodo.23000390 (v1.0 stays at 10.5281/zenodo.23000391).
+- Zenodo: **DOI 10.5281/zenodo.23002378** (v1.1), under concept DOI 10.5281/zenodo.23000390; v1.0 stays at 10.5281/zenodo.23000391.
 - Hugging Face dataset: three new tables (`conditioning_arb.csv`, `disorder.csv`, `subspace_control.csv`).
 - Ledger: H0-X-0005 (dimension control, refuted prediction), H0-X-0006 (disorder), H0-X-0007 (Arb scaling);
   correction note appended to H0-X-0003.

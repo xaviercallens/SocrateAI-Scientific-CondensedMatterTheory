@@ -43,7 +43,7 @@ This update adds **Track H**: the conditioning of the discrete inverse conductan
 - New Zenodo version under the concept DOI (v1.0 stays frozen); three new dataset tables.
 
 ### Published
-- **Zenodo:** DOI [10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391) (paper, dataset, code).
+- **Zenodo v1.1:** DOI [10.5281/zenodo.23002378](https://doi.org/10.5281/zenodo.23002378); v1.0: [10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391); concept DOI 10.5281/zenodo.23000390.
 - **Hugging Face:** the [dataset](https://huggingface.co/datasets/callensxavier/hyperbolic-resistor-networks) and the [simulator](https://huggingface.co/callensxavier/hyperbolic-resistor-network-simulator).
 - See `release/PUBLISHED.md`.
 
