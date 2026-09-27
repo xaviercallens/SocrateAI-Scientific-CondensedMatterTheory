@@ -34,13 +34,18 @@ This update adds **Track H**: the conditioning of the discrete inverse conductan
 - `hf_upload.py` uploads to Hugging Face.
 - `zenodo_draft.py` creates a Zenodo draft only and never publishes.
 
+### Published
+- **Zenodo:** DOI [10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391) (paper, dataset, code).
+- **Hugging Face:** the [dataset](https://huggingface.co/datasets/callensxavier/hyperbolic-resistor-networks) and the [simulator](https://huggingface.co/callensxavier/hyperbolic-resistor-network-simulator).
+- See `release/PUBLISHED.md`.
+
 ## Test plan
 - [x] `python3 paper/build.py`: 0 undefined references, 0 overfull boxes
 - [x] `python3 release/check_bundle.py`: all checks pass
 - [x] Ledger gate: no findings without `--evidence-dir`; with it, every paper-cited claim verifies (5 older, unrelated digests flagged)
 - [x] rusty-SUNDIALS wheel built and installed; `rc_network.py` re-run with both integrators, all controls pass
-- [ ] `hf auth login`, then `release/hf_upload.py --namespace <user>`
-- [ ] `ZENODO_TOKEN=... release/zenodo_draft.py`, review the draft, then publish manually
+- [x] Hugging Face repositories published and checked without a token (all files present)
+- [x] Zenodo draft checked against the build (MD5 checksums and metadata), then published
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
