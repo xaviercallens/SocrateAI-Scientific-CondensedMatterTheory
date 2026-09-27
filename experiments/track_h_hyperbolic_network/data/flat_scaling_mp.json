@@ -26,5 +26,33 @@
   "float64_log10_kappa": 8.672449080228727,
   "control_pass": true,
   "seconds": 42.9
+ },
+ {
+  "case": "triangular R=10.75",
+  "N": 421,
+  "E": 1176,
+  "boundary": 84,
+  "prec_bits": 512,
+  "log10_kappa_arb": 15.994313354282726,
+  "max_rel_radius_Ginv": 2.8909465912264443e-91,
+  "lambda_max_G": 1.1123608294645213,
+  "lambda_min_G": 1.1418760885359682e-32,
+  "float64_log10_kappa": null,
+  "control_pass": null,
+  "seconds": 507.1
+ },
+ {
+  "case": "square R=16",
+  "N": 797,
+  "E": 1528,
+  "boundary": 124,
+  "prec_bits": 512,
+  "log10_kappa_arb": 16.537546103641652,
+  "max_rel_radius_Ginv": 6.787436727649826e-94,
+  "lambda_max_G": 1.0240469703937831,
+  "lambda_min_G": 8.614452284448327e-34,
+  "float64_log10_kappa": null,
+  "control_pass": null,
+  "seconds": 1006.5
  }
 ]

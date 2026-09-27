@@ -14,6 +14,9 @@
 \newtheorem{proposition}{Proposition}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\R}{\mathbb{R}}
+% sentence for the largest ball-arithmetic case; filled when data/flat_scaling_mp.json holds N=1069
+\newcommand{\ARBLARGE}{The largest instance, triangular $N=1069$, is reported in Table~\ref{tab:kappa} once its
+computation completes; it is not part of the decision above.}
 
 \title{Logarithmic boundary depth and the conditioning of the discrete\\ inverse conductance problem on hyperbolic lattices}
 \author{Xavier Callens\\[2pt]
@@ -30,7 +33,9 @@ network from boundary voltage--current data---on layer-truncated hyperbolic $\{7
 square and triangular lattice disks of matched node count $N$. Using an exact formula for the sensitivity Jacobian
 of the Dirichlet-to-Neumann (DtN) map, we find that its condition number $\kappa$ grows polynomially on the
 hyperbolic lattice ($\log_{10}\kappa = 3.89$ at $N=847$, inside a preregistered prediction band), while on the flat
-lattices it reaches $10^{9.7}$ at $N=317$ and exceeds the resolution of IEEE double precision by $N\approx 400$.
+lattices it reaches $10^{9.7}$ at $N=317$ and exceeds the resolution of IEEE double precision by $N\approx 400$;
+in 512-bit ball arithmetic it continues as $e^{c\sqrt N}$, reaching $10^{16.5}$ at $N=797$, within $0.2$ decades of
+the value extrapolated from the unsaturated data and far from any power law.
 The mechanism is geometric: the maximal distance from a node to the boundary grows as $O(\log N)$ on the hyperbolic
 lattice and as $O(\sqrt N)$ on flat ones. Exact rank computations over two finite fields show that every tested
 network is algebraically identifiable; the difference is one of conditioning, not of identifiability. The
@@ -186,6 +191,19 @@ $b_{n+2} = 3b_{n+1}-b_n$, which grows geometrically (ratio $(3+\sqrt5)/2$), so t
 the nodes and $d_{\max}=O(\log N)$. On a flat disk $d_{\max}\sim R\sim\sqrt N$. In both geometries $\log\kappa$
 increases with depth; only on the flat lattice does depth grow as a power of $N$.
 
+\paragraph{The flat growth law beyond double precision.}
+Version 1.0 could not say whether the flat-lattice $\kappa$ grows as $e^{c\sqrt N}$ or as a steep power law. In ball
+arithmetic (Section~\ref{sec:arb}; Table~\ref{tab:kappa}, last column; Fig.~\ref{fig:kappa}, open markers) the
+triangular disk at $N=421$ has $\log_{10}\kappa=15.99$ and the square disk at $N=797$ has $16.54$, with certified
+relative radii below $10^{-90}$. The extrapolations fixed in the preregistration, from the unsaturated points alone,
+were $15.63$ and $16.42$ for the depth form $\log_{10}\kappa=a+c\sqrt N$ ($c=0.85$ triangular, $0.64$ square), against
+$12.5$ and $12.3$--$13.9$ for a power law. Both measurements lie within $0.4$ decades of the depth form and at least
+$2.7$ decades from the power law, and the local exponent $\mathrm d\log\kappa/\mathrm d\log N$ keeps increasing
+($8.6\to16.4$ triangular, $10.4\to17.0$ square), as an exponential in $\sqrt N$ requires and a power law forbids.
+\ARBLARGE
+Over the whole tested range the flat-lattice condition number is therefore exponential in $\sqrt N$, that is,
+exponential in the boundary depth; limitation (i) of version 1.0 is resolved.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{fig_kappa.pdf}
@@ -332,9 +350,8 @@ within $O(\log N)$ of the boundary. Negative curvature buys a better-conditioned
 for the RC model a uniformly bounded relaxation time.
 
 The limitations are as follows.
-(i) The flat-lattice growth law is not determined: three unsaturated flat data points do not distinguish
-$\kappa\sim e^{c\sqrt N}$ from a steep power law, and ``numerically singular'' states only that double precision
-cannot resolve $\kappa$, not its magnitude.
+(i) The flat-lattice growth law $\kappa\sim e^{c\sqrt N}$ is supported by the ball-arithmetic values at the sizes
+tested, not proven; the constant $c$ is fitted, not derived.
 (ii) $\kappa$ is a linearised sensitivity; disorder and single defects are tested (Section~\ref{sec:disorder}),
 but no nonlinear reconstruction algorithm is benchmarked.
 (iii) Exact rank certificates cover $N\le475$ for flat lattices; full rank there does not exclude deficiency at
