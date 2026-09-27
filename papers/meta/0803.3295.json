@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "0803.3295",
+  "version": "v1",
+  "title": "Building an AdS/CFT superconductor",
+  "abstract": "We show that a simple gravitational theory can provide a holographically dual description of a superconductor. There is a critical temperature, below which a charged condensate forms via a second order phase transition and the (DC) conductivity becomes infinite. The frequency dependent conductivity develops a gap determined by the condensate. We find evidence that the condensate consists of pairs of quasiparticles.",
+  "authors": [
+    "Sean A. Hartnoll",
+    "Christopher P. Herzog",
+    "Gary T. Horowitz"
+  ],
+  "published": "2008-03-22T21:33:37Z",
+  "updated": "2008-03-22T21:33:37Z",
+  "year": "2008",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.supr-con",
+    "gr-qc"
+  ],
+  "doi": "10.1103/PhysRevLett.101.031601",
+  "journal_ref": "Phys.Rev.Lett.101:031601,2008",
+  "abs_url": "https://arxiv.org/abs/0803.3295",
+  "pdf_url": "https://arxiv.org/pdf/0803.3295",
+  "pillar": "adscmt",
+  "slug": "0803.3295",
+  "pdf_local": "papers/pdf/0803.3295.pdf"
+}

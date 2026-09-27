@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "1612.07324",
+  "version": "v3",
+  "title": "Holographic quantum matter",
+  "abstract": "We present a review of theories of states of quantum matter without quasiparticle excitations. Solvable examples of such states are provided through a holographic duality with gravitational theories in an emergent spatial dimension. We review the duality between gravitational backgrounds and the various states of quantum matter which live on the boundary. We then describe quantum matter at a fixed commensurate density (often described by conformal field theories), and also compressible quantum matter with variable density, providing an extensive discussion of transport in both cases. We present a unified discussion of the holographic theory of transport with memory matrix and hydrodynamic methods, allowing a direct connection to experimentally realized quantum matter. We also explore other important challenges in non-quasiparticle physics, including symmetry broken phases such as superconductors and non-equilibrium dynamics.",
+  "authors": [
+    "Sean A. Hartnoll",
+    "Andrew Lucas",
+    "Subir Sachdev"
+  ],
+  "published": "2016-12-21T21:00:03Z",
+  "updated": "2018-03-20T16:40:17Z",
+  "year": "2016",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1612.07324",
+  "pdf_url": "https://arxiv.org/pdf/1612.07324",
+  "pillar": "adscmt",
+  "slug": "1612.07324",
+  "pdf_local": "papers/pdf/1612.07324.pdf"
+}

@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "0810.1563",
+  "version": "v1",
+  "title": "Holographic Superconductors",
+  "abstract": "It has been shown that a gravitational dual to a superconductor can be obtained by coupling anti-de Sitter gravity to a Maxwell field and charged scalar. We review our earlier analysis of this theory and extend it in two directions. First, we consider all values for the charge of the scalar field. Away from the large charge limit, backreaction on the spacetime metric is important. While the qualitative behaviour of the dual superconductor is found to be similar for all charges, in the limit of arbitrarily small charge a new type of black hole instability is found. We go on to add a perpendicular magnetic field B and obtain the London equation and magnetic penetration depth. We show that these holographic superconductors are Type II, i.e., starting in a normal phase at large B and low temperatures, they develop superconducting droplets as B is reduced.",
+  "authors": [
+    "Sean A. Hartnoll",
+    "Christopher P. Herzog",
+    "Gary T. Horowitz"
+  ],
+  "published": "2008-10-09T03:40:28Z",
+  "updated": "2008-10-09T03:40:28Z",
+  "year": "2008",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th"
+  ],
+  "doi": "10.1088/1126-6708/2008/12/015",
+  "journal_ref": "JHEP 0812:015,2008",
+  "abs_url": "https://arxiv.org/abs/0810.1563",
+  "pdf_url": "https://arxiv.org/pdf/0810.1563",
+  "pillar": "adscmt",
+  "slug": "0810.1563",
+  "pdf_local": "papers/pdf/0810.1563.pdf"
+}

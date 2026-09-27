@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "1511.05505",
+  "version": "v3",
+  "title": "Quantum phase transition between a topological and a trivial semimetal from holography",
+  "abstract": "We present a holographic model of a topological Weyl semimetal. A key ingredient is a time-reversal breaking parameter and a mass deformation. Upon varying the ratio of mass to time-reversal breaking parameter the model undergoes a quantum phase transition from a topologically nontrivial semimetal to a trivial one. The topological nontrivial semimetal is characterised by the presence of an anomalous Hall effect. The results can be interpreted in terms of the holographic renormalization group (RG) flow leading to restoration of time-reversal at the end point of the RG flow in the trivial phase.",
+  "authors": [
+    "Karl Landsteiner",
+    "Yan Liu",
+    "Ya-Wen Sun"
+  ],
+  "published": "2015-11-17T18:58:04Z",
+  "updated": "2016-04-05T17:05:44Z",
+  "year": "2015",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1103/PhysRevLett.116.081602",
+  "journal_ref": "Phys. Rev. Lett. 116, 081602 (2016)",
+  "abs_url": "https://arxiv.org/abs/1511.05505",
+  "pdf_url": "https://arxiv.org/pdf/1511.05505",
+  "pillar": "bridge",
+  "slug": "1511.05505",
+  "pdf_local": "papers/pdf/1511.05505.pdf"
+}

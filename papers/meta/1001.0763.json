@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1001.0763",
+  "version": "v2",
+  "title": "Topological Insulators and Superconductors from D-branes",
+  "abstract": "Realization of topological insulators (TIs) and superconductors (TSCs), such as the quantum spin Hall effect and the Z_2 topological insulator, in terms of D-branes in string theory is proposed. We establish a one-to-one correspondence between the K-theory classification of TIs/TSCs and D-brane charges. The string theory realization of TIs and TSCs comes naturally with gauge interactions, and the Wess-Zumino term of the D-branes gives rise to a gauge field theory of topological nature. This sheds light on TIs and TSCs beyond non-interacting systems, and the underlying topological field theory description thereof. In particular, our string theory realization includes the honeycomb lattice Kitaev model in two spatial dimensions, and its higher-dimensional extensions.",
+  "authors": [
+    "Shinsei Ryu",
+    "Tadashi Takayanagi"
+  ],
+  "published": "2010-01-05T21:00:15Z",
+  "updated": "2010-08-08T19:58:29Z",
+  "year": "2010",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1016/j.physletb.2010.08.019",
+  "journal_ref": "Phys.Lett.B693:175-179,2010",
+  "abs_url": "https://arxiv.org/abs/1001.0763",
+  "pdf_url": "https://arxiv.org/pdf/1001.0763",
+  "pillar": "bridge",
+  "slug": "1001.0763",
+  "pdf_local": "papers/pdf/1001.0763.pdf"
+}

@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "1610.04413",
+  "version": "v4",
+  "title": "Notes on Anomaly Induced Transport",
+  "abstract": "Chiral anomalies give rise to dissipationless transport phenomena such as the chiral magnetic and vortical effects. In these notes I review the theory from a quantum field theoretic, hydrodynamic and holographic perspective. A physical interpretation of the otherwise somewhat obscure concepts of consistent and covariant anomalies will be given. Vanishing of the CME in strict equilibrium will be connected to the boundary conditions in momentum space imposed by the regularization. The role of the gravitational anomaly will be explained. That it contributes to transport in an unexpectedly low order in the derivative expansion can be easiest understood via holography. Anomalous transport is supposed to play also a key role in understanding the electronics of advanced materials, the Dirac- and Weyl (semi)metals. Anomaly related phenomena such as negative magnetoresistivity, anomalous Hall effect, thermal anomalous Hall effect and Fermi arcs can be understood via anomalous transport. Finally I briefly review a holographic model of Weyl semimetal which allows to infer a new phenomenon related to the gravitational anomaly: the presence of odd viscosity.",
+  "authors": [
+    "Karl Landsteiner"
+  ],
+  "published": "2016-10-14T11:35:04Z",
+  "updated": "2017-04-28T12:20:07Z",
+  "year": "2016",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.other"
+  ],
+  "doi": "10.5506/APhysPolB.47.2617",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1610.04413",
+  "pdf_url": "https://arxiv.org/pdf/1610.04413",
+  "pillar": "bridge",
+  "slug": "1610.04413",
+  "pdf_local": "papers/pdf/1610.04413.pdf"
+}

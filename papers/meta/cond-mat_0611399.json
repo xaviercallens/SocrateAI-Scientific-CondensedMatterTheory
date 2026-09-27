@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "cond-mat/0611399",
+  "version": "v1",
+  "title": "Quantum Spin Hall Effect and Topological Phase Transition in HgTe Quantum Wells",
+  "abstract": "We show that the Quantum Spin Hall Effect, a state of matter with topological properties distinct from conventional insulators, can be realized in HgTe/CdTe semiconductor quantum wells. By varying the thickness of the quantum well, the electronic state changes from a normal to an \"inverted\" type at a critical thickness $d_c$. We show that this transition is a topological quantum phase transition between a conventional insulating phase and a phase exhibiting the QSH effect with a single pair of helical edge states. We also discuss the methods for experimental detection of the QSH effect.",
+  "authors": [
+    "B. Andrei Bernevig",
+    "Taylor L. Hughes",
+    "Shou-Cheng Zhang"
+  ],
+  "published": "2006-11-15T17:47:40Z",
+  "updated": "2006-11-15T17:47:40Z",
+  "year": "2006",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall"
+  ],
+  "doi": "10.1126/science.1133734",
+  "journal_ref": "Science, 314, 1757 (2006)",
+  "abs_url": "https://arxiv.org/abs/cond-mat/0611399",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/0611399",
+  "pillar": "topology",
+  "slug": "cond-mat_0611399",
+  "pdf_local": "papers/pdf/cond-mat_0611399.pdf"
+}

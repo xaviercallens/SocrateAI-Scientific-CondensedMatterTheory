@@ -1,0 +1,1186 @@
+[
+  {
+    "arxiv_id": "hep-th/9711200",
+    "version": "v3",
+    "title": "The Large N Limit of Superconformal Field Theories and Supergravity",
+    "abstract": "We show that the large $N$ limit of certain conformal field theories in various dimensions include in their Hilbert space a sector describing supergravity on the product of Anti-deSitter spacetimes, spheres and other compact manifolds. This is shown by taking some branes in the full M/string theory and then taking a low energy limit where the field theory on the brane decouples from the bulk. We observe that, in this limit, we can still trust the near horizon geometry for large $N$. The enhanced supersymmetries of the near horizon geometry correspond to the extra supersymmetry generators present in the superconformal group (as opposed to just the super-Poincare group). The 't Hooft limit of 4-d ${\\cal N} =4$ super-Yang-Mills at the conformal point is shown to contain strings: they are IIB strings. We conjecture that compactifications of M/string theory on various Anti-deSitter spacetimes are dual to various conformal field theories. This leads to a new proposal for a definition of M-theory which could be extended to include five non-compact dimensions.",
+    "authors": [
+      "Juan M. Maldacena"
+    ],
+    "published": "1997-11-27T23:53:13Z",
+    "updated": "1998-01-22T15:42:41Z",
+    "year": "1997",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th"
+    ],
+    "doi": "10.1023/A:1026654312961",
+    "journal_ref": "Adv.Theor.Math.Phys.2:231-252,1998",
+    "abs_url": "https://arxiv.org/abs/hep-th/9711200",
+    "pdf_url": "https://arxiv.org/pdf/hep-th/9711200",
+    "pillar": "holography",
+    "slug": "hep-th_9711200",
+    "pdf_local": "papers/pdf/hep-th_9711200.pdf"
+  },
+  {
+    "arxiv_id": "hep-th/9802109",
+    "version": "v2",
+    "title": "Gauge Theory Correlators from Non-Critical String Theory",
+    "abstract": "We suggest a means of obtaining certain Green's functions in 3+1-dimensional ${\\cal N} = 4$ supersymmetric Yang-Mills theory with a large number of colors via non-critical string theory. The non-critical string theory is related to critical string theory in anti-deSitter background. We introduce a boundary of the anti-deSitter space analogous to a cut-off on the Liouville coordinate of the two-dimensional string theory. Correlation functions of operators in the gauge theory are related to the dependence of the supergravity action on the boundary conditions. From the quadratic terms in supergravity we read off the anomalous dimensions. For operators that couple to massless string states it has been established through absorption calculations that the anomalous dimensions vanish, and we rederive this result. The operators that couple to massive string states at level $n$ acquire anomalous dimensions that grow as $2\\left (n g_{YM} \\sqrt {2 N} )^{1/2}$ for large `t Hooft coupling. This is a new prediction about the strong coupling behavior of large $N$ SYM theory.",
+    "authors": [
+      "S. S. Gubser",
+      "I. R. Klebanov",
+      "A. M. Polyakov"
+    ],
+    "published": "1998-02-16T18:38:17Z",
+    "updated": "1998-03-27T22:25:16Z",
+    "year": "1998",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th"
+    ],
+    "doi": "10.1016/S0370-2693(98)00377-3",
+    "journal_ref": "Phys.Lett.B428:105-114,1998",
+    "abs_url": "https://arxiv.org/abs/hep-th/9802109",
+    "pdf_url": "https://arxiv.org/pdf/hep-th/9802109",
+    "pillar": "holography",
+    "slug": "hep-th_9802109",
+    "pdf_local": "papers/pdf/hep-th_9802109.pdf"
+  },
+  {
+    "arxiv_id": "hep-th/9802150",
+    "version": "v2",
+    "title": "Anti De Sitter Space And Holography",
+    "abstract": "Recently, it has been proposed by Maldacena that large $N$ limits of certain conformal field theories in $d$ dimensions can be described in terms of supergravity (and string theory) on the product of $d+1$-dimensional $AdS$ space with a compact manifold. Here we elaborate on this idea and propose a precise correspondence between conformal field theory observables and those of supergravity: correlation functions in conformal field theory are given by the dependence of the supergravity action on the asymptotic behavior at infinity. In particular, dimensions of operators in conformal field theory are given by masses of particles in supergravity. As quantitative confirmation of this correspondence, we note that the Kaluza-Klein modes of Type IIB supergravity on $AdS_5\\times {\\bf S}^5$ match with the chiral operators of $\\N=4$ super Yang-Mills theory in four dimensions. With some further assumptions, one can deduce a Hamiltonian version of the correspondence and show that the $\\N=4$ theory has a large $N$ phase transition related to the thermodynamics of $AdS$ black holes.",
+    "authors": [
+      "Edward Witten"
+    ],
+    "published": "1998-02-20T22:41:01Z",
+    "updated": "1998-04-06T20:45:58Z",
+    "year": "1998",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th"
+    ],
+    "doi": "",
+    "journal_ref": "Adv.Theor.Math.Phys.2:253-291,1998",
+    "abs_url": "https://arxiv.org/abs/hep-th/9802150",
+    "pdf_url": "https://arxiv.org/pdf/hep-th/9802150",
+    "pillar": "holography",
+    "slug": "hep-th_9802150",
+    "pdf_local": "papers/pdf/hep-th_9802150.pdf"
+  },
+  {
+    "arxiv_id": "hep-th/0603001",
+    "version": "v2",
+    "title": "Holographic Derivation of Entanglement Entropy from AdS/CFT",
+    "abstract": "A holographic derivation of the entanglement entropy in quantum (conformal) field theories is proposed from AdS/CFT correspondence. We argue that the entanglement entropy in d+1 dimensional conformal field theories can be obtained from the area of d dimensional minimal surfaces in AdS_{d+2}, analogous to the Bekenstein-Hawking formula for black hole entropy. We show that our proposal perfectly reproduces the correct entanglement entropy in 2D CFT when applied to AdS_3. We also compare the entropy computed in AdS_5 \\times S^5 with that of the free N=4 super Yang-Mills.",
+    "authors": [
+      "Shinsei Ryu",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2006-02-28T21:29:24Z",
+    "updated": "2006-03-07T19:21:09Z",
+    "year": "2006",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el",
+      "gr-qc",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PhysRevLett.96.181602",
+    "journal_ref": "Phys.Rev.Lett.96:181602,2006",
+    "abs_url": "https://arxiv.org/abs/hep-th/0603001",
+    "pdf_url": "https://arxiv.org/pdf/hep-th/0603001",
+    "pillar": "holography",
+    "slug": "hep-th_0603001",
+    "pdf_local": "papers/pdf/hep-th_0603001.pdf"
+  },
+  {
+    "arxiv_id": "0705.0016",
+    "version": "v3",
+    "title": "A Covariant Holographic Entanglement Entropy Proposal",
+    "abstract": "With an aim towards understanding the time-dependence of entanglement entropy in generic quantum field theories, we propose a covariant generalization of the holographic entanglement entropy proposal of hep-th/0603001. Apart from providing several examples of possible covariant generalizations, we study a particular construction based on light-sheets, motivated in similar spirit to the covariant entropy bound underlying the holographic principle. In particular, we argue that the entanglement entropy associated with a specified region on the boundary in the context of the AdS/CFT correspondence is given by the area of a co-dimension two bulk surface with vanishing expansions of null geodesics. We demonstrate our construction with several examples to illustrate its reduction to the holographic entanglement entropy proposal in static spacetimes. We further show how this proposal may be used to understand the time evolution of entanglement entropy in a time varying QFT state dual to a collapsing black hole background. Finally, we use our proposal to argue that the Euclidean wormhole geometries with multiple boundaries should be regarded as states in a non-interacting but entangled set of QFTs, one associated to each boundary.",
+    "authors": [
+      "Veronika E. Hubeny",
+      "Mukund Rangamani",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2007-05-01T15:54:13Z",
+    "updated": "2012-06-14T13:23:35Z",
+    "year": "2007",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.stat-mech",
+      "gr-qc"
+    ],
+    "doi": "10.1088/1126-6708/2007/07/062",
+    "journal_ref": "JHEP0707:062,2007",
+    "abs_url": "https://arxiv.org/abs/0705.0016",
+    "pdf_url": "https://arxiv.org/pdf/0705.0016",
+    "pillar": "holography",
+    "slug": "0705.0016",
+    "pdf_local": "papers/pdf/0705.0016.pdf"
+  },
+  {
+    "arxiv_id": "0905.1317",
+    "version": "v1",
+    "title": "Entanglement Renormalization and Holography",
+    "abstract": "I show how recent progress in real space renormalization group methods can be used to define a generalized notion of holography inspired by holographic dualities in quantum gravity. The generalization is based upon organizing information in a quantum state in terms of scale and defining a higher dimensional geometry from this structure. While states with a finite correlation length typically give simple geometries, the state at a quantum critical point gives a discrete version of anti de Sitter space. Some finite temperature quantum states include black hole-like objects. The gross features of equal time correlation functions are also reproduced in this geometric framework. The relationship between this framework and better understood versions of holography is discussed.",
+    "authors": [
+      "Brian Swingle"
+    ],
+    "published": "2009-05-08T19:27:55Z",
+    "updated": "2009-05-08T19:27:55Z",
+    "year": "2009",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "hep-th"
+    ],
+    "doi": "10.1103/PhysRevD.86.065007",
+    "journal_ref": "Phys. Rev. D 86, 065007 (2012)",
+    "abs_url": "https://arxiv.org/abs/0905.1317",
+    "pdf_url": "https://arxiv.org/pdf/0905.1317",
+    "pillar": "holography",
+    "slug": "0905.1317",
+    "pdf_local": "papers/pdf/0905.1317.pdf"
+  },
+  {
+    "arxiv_id": "1005.3035",
+    "version": "v2",
+    "title": "Building up spacetime with quantum entanglement",
+    "abstract": "In this essay based on 0907.2939, we argue that the emergence of classically connected spacetimes is intimately related to the quantum entanglement of degrees of freedom in a non-perturbative description of quantum gravity. Disentangling the degrees of freedom associated with two regions of spacetime results in these regions pulling apart and pinching off from each other in a way that can be quantified by standard measures of entanglement.",
+    "authors": [
+      "Mark Van Raamsdonk"
+    ],
+    "published": "2010-05-17T20:17:32Z",
+    "updated": "2025-07-07T17:31:58Z",
+    "year": "2010",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "gr-qc",
+      "quant-ph"
+    ],
+    "doi": "10.1007/s10714-010-1034-0",
+    "journal_ref": "Gen.Rel.Grav.42:2323-2329,2010; Int.J.Mod.Phys.D19:2429-2435,2010",
+    "abs_url": "https://arxiv.org/abs/1005.3035",
+    "pdf_url": "https://arxiv.org/pdf/1005.3035",
+    "pillar": "holography",
+    "slug": "1005.3035",
+    "pdf_local": "papers/pdf/1005.3035.pdf"
+  },
+  {
+    "arxiv_id": "1304.4926",
+    "version": "v2",
+    "title": "Generalized gravitational entropy",
+    "abstract": "We consider classical Euclidean gravity solutions with a boundary. The boundary contains a non-contractible circle. These solutions can be interpreted as computing the trace of a density matrix in the full quantum gravity theory, in the classical approximation. When the circle is contractible in the bulk, we argue that the entropy of this density matrix is given by the area of a minimal surface. This is a generalization of the usual black hole entropy formula to euclidean solutions without a Killing vector. A particular example of this set up appears in the computation of the entanglement entropy of a subregion of a field theory with a gravity dual. In this context, the minimal area prescription was proposed by Ryu and Takayanagi. Our arguments explain their conjecture.",
+    "authors": [
+      "Aitor Lewkowycz",
+      "Juan Maldacena"
+    ],
+    "published": "2013-04-17T19:30:11Z",
+    "updated": "2013-06-13T14:48:06Z",
+    "year": "2013",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th"
+    ],
+    "doi": "10.1007/JHEP08(2013)090",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1304.4926",
+    "pdf_url": "https://arxiv.org/pdf/1304.4926",
+    "pillar": "holography",
+    "slug": "1304.4926",
+    "pdf_local": "papers/pdf/1304.4926.pdf"
+  },
+  {
+    "arxiv_id": "1306.0533",
+    "version": "v2",
+    "title": "Cool horizons for entangled black holes",
+    "abstract": "General relativity contains solutions in which two distant black holes are connected through the interior via a wormhole, or Einstein-Rosen bridge. These solutions can be interpreted as maximally entangled states of two black holes that form a complex EPR pair. We suggest that similar bridges might be present for more general entangled states. In the case of entangled black holes one can formulate versions of the AMPS(S) paradoxes and resolve them. This suggests possible resolutions of the firewall paradoxes for more general situations.",
+    "authors": [
+      "Juan Maldacena",
+      "Leonard Susskind"
+    ],
+    "published": "2013-06-03T18:56:30Z",
+    "updated": "2013-07-11T21:45:19Z",
+    "year": "2013",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th"
+    ],
+    "doi": "10.1002/prop.201300020",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1306.0533",
+    "pdf_url": "https://arxiv.org/pdf/1306.0533",
+    "pillar": "holography",
+    "slug": "1306.0533",
+    "pdf_local": "papers/pdf/1306.0533.pdf"
+  },
+  {
+    "arxiv_id": "1503.06237",
+    "version": "v2",
+    "title": "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence",
+    "abstract": "We propose a family of exactly solvable toy models for the AdS/CFT correspondence based on a novel construction of quantum error-correcting codes with a tensor network structure. Our building block is a special type of tensor with maximal entanglement along any bipartition, which gives rise to an isometry from the bulk Hilbert space to the boundary Hilbert space. The entire tensor network is an encoder for a quantum error-correcting code, where the bulk and boundary degrees of freedom may be identified as logical and physical degrees of freedom respectively. These models capture key features of entanglement in the AdS/CFT correspondence; in particular, the Ryu-Takayanagi formula and the negativity of tripartite information are obeyed exactly in many cases. That bulk logical operators can be represented on multiple boundary regions mimics the Rindler-wedge reconstruction of boundary operators from bulk operators, realizing explicitly the quantum error-correcting features of AdS/CFT recently proposed by Almheiri et. al in arXiv:1411.7041.",
+    "authors": [
+      "Fernando Pastawski",
+      "Beni Yoshida",
+      "Daniel Harlow",
+      "John Preskill"
+    ],
+    "published": "2015-03-20T21:56:06Z",
+    "updated": "2015-07-22T01:31:24Z",
+    "year": "2015",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "quant-ph"
+    ],
+    "doi": "10.1007/JHEP06(2015)149",
+    "journal_ref": "JHEP 06 (2015) 149",
+    "abs_url": "https://arxiv.org/abs/1503.06237",
+    "pdf_url": "https://arxiv.org/pdf/1503.06237",
+    "pillar": "holography",
+    "slug": "1503.06237",
+    "pdf_local": "papers/pdf/1503.06237.pdf"
+  },
+  {
+    "arxiv_id": "hep-th/0405231",
+    "version": "v2",
+    "title": "Viscosity in Strongly Interacting Quantum Field Theories from Black Hole Physics",
+    "abstract": "The ratio of shear viscosity to volume density of entropy can be used to characterize how close a given fluid is to being perfect. Using string theory methods, we show that this ratio is equal to a universal value of $\\hbar/4πk_B$ for a large class of strongly interacting quantum field theories whose dual description involves black holes in anti--de Sitter space. We provide evidence that this value may serve as a lower bound for a wide class of systems, thus suggesting that black hole horizons are dual to the most ideal fluids.",
+    "authors": [
+      "P. Kovtun",
+      "D. T. Son",
+      "A. O. Starinets"
+    ],
+    "published": "2004-05-26T02:04:08Z",
+    "updated": "2005-03-17T01:44:41Z",
+    "year": "2004",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "gr-qc",
+      "hep-ph"
+    ],
+    "doi": "10.1103/PhysRevLett.94.111601",
+    "journal_ref": "Phys.Rev.Lett. 94 (2005) 111601",
+    "abs_url": "https://arxiv.org/abs/hep-th/0405231",
+    "pdf_url": "https://arxiv.org/pdf/hep-th/0405231",
+    "pillar": "holography",
+    "slug": "hep-th_0405231",
+    "pdf_local": "papers/pdf/hep-th_0405231.pdf"
+  },
+  {
+    "arxiv_id": "0903.3246",
+    "version": "v3",
+    "title": "Lectures on holographic methods for condensed matter physics",
+    "abstract": "These notes are loosely based on lectures given at the CERN Winter School on Supergravity, Strings and Gauge theories, February 2009 and at the IPM String School in Tehran, April 2009. I have focused on a few concrete topics and also on addressing questions that have arisen repeatedly. Background condensed matter physics material is included as motivation and easy reference for the high energy physics community. The discussion of holographic techniques progresses from equilibrium, to transport and to superconductivity.",
+    "authors": [
+      "Sean A. Hartnoll"
+    ],
+    "published": "2009-03-18T22:37:42Z",
+    "updated": "2010-01-17T12:26:06Z",
+    "year": "2009",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1088/0264-9381/26/22/224002",
+    "journal_ref": "Class.Quant.Grav.26:224002,2009",
+    "abs_url": "https://arxiv.org/abs/0903.3246",
+    "pdf_url": "https://arxiv.org/pdf/0903.3246",
+    "pillar": "adscmt",
+    "slug": "0903.3246",
+    "pdf_local": "papers/pdf/0903.3246.pdf"
+  },
+  {
+    "arxiv_id": "0909.0518",
+    "version": "v3",
+    "title": "Holographic duality with a view toward many-body physics",
+    "abstract": "These are notes based on a series of lectures given at the KITP workshop \"Quantum Criticality and the AdS/CFT Correspondence\" in July, 2009. The goal of the lectures was to introduce condensed matter physicists to the AdS/CFT correspondence. Discussion of string theory and of supersymmetry is avoided to the extent possible.",
+    "authors": [
+      "John McGreevy"
+    ],
+    "published": "2009-09-03T19:24:01Z",
+    "updated": "2010-05-08T18:36:57Z",
+    "year": "2009",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1155/2010/723105",
+    "journal_ref": "Adv.High Energy Phys.2010:723105,2010",
+    "abs_url": "https://arxiv.org/abs/0909.0518",
+    "pdf_url": "https://arxiv.org/pdf/0909.0518",
+    "pillar": "adscmt",
+    "slug": "0909.0518",
+    "pdf_local": "papers/pdf/0909.0518.pdf"
+  },
+  {
+    "arxiv_id": "0801.2977",
+    "version": "v1",
+    "title": "Breaking an Abelian gauge symmetry near a black hole horizon",
+    "abstract": "I argue that coupling the Abelian Higgs model to gravity plus a negative cosmological constant leads to black holes which spontaneously break the gauge invariance via a charged scalar condensate slightly outside their horizon. This suggests that black holes can superconduct.",
+    "authors": [
+      "Steven S. Gubser"
+    ],
+    "published": "2008-01-18T21:23:56Z",
+    "updated": "2008-01-18T21:23:56Z",
+    "year": "2008",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th"
+    ],
+    "doi": "10.1103/PhysRevD.78.065034",
+    "journal_ref": "Phys.Rev.D78:065034,2008",
+    "abs_url": "https://arxiv.org/abs/0801.2977",
+    "pdf_url": "https://arxiv.org/pdf/0801.2977",
+    "pillar": "adscmt",
+    "slug": "0801.2977",
+    "pdf_local": "papers/pdf/0801.2977.pdf"
+  },
+  {
+    "arxiv_id": "0803.3295",
+    "version": "v1",
+    "title": "Building an AdS/CFT superconductor",
+    "abstract": "We show that a simple gravitational theory can provide a holographically dual description of a superconductor. There is a critical temperature, below which a charged condensate forms via a second order phase transition and the (DC) conductivity becomes infinite. The frequency dependent conductivity develops a gap determined by the condensate. We find evidence that the condensate consists of pairs of quasiparticles.",
+    "authors": [
+      "Sean A. Hartnoll",
+      "Christopher P. Herzog",
+      "Gary T. Horowitz"
+    ],
+    "published": "2008-03-22T21:33:37Z",
+    "updated": "2008-03-22T21:33:37Z",
+    "year": "2008",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.supr-con",
+      "gr-qc"
+    ],
+    "doi": "10.1103/PhysRevLett.101.031601",
+    "journal_ref": "Phys.Rev.Lett.101:031601,2008",
+    "abs_url": "https://arxiv.org/abs/0803.3295",
+    "pdf_url": "https://arxiv.org/pdf/0803.3295",
+    "pillar": "adscmt",
+    "slug": "0803.3295",
+    "pdf_local": "papers/pdf/0803.3295.pdf"
+  },
+  {
+    "arxiv_id": "0810.1563",
+    "version": "v1",
+    "title": "Holographic Superconductors",
+    "abstract": "It has been shown that a gravitational dual to a superconductor can be obtained by coupling anti-de Sitter gravity to a Maxwell field and charged scalar. We review our earlier analysis of this theory and extend it in two directions. First, we consider all values for the charge of the scalar field. Away from the large charge limit, backreaction on the spacetime metric is important. While the qualitative behaviour of the dual superconductor is found to be similar for all charges, in the limit of arbitrarily small charge a new type of black hole instability is found. We go on to add a perpendicular magnetic field B and obtain the London equation and magnetic penetration depth. We show that these holographic superconductors are Type II, i.e., starting in a normal phase at large B and low temperatures, they develop superconducting droplets as B is reduced.",
+    "authors": [
+      "Sean A. Hartnoll",
+      "Christopher P. Herzog",
+      "Gary T. Horowitz"
+    ],
+    "published": "2008-10-09T03:40:28Z",
+    "updated": "2008-10-09T03:40:28Z",
+    "year": "2008",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th"
+    ],
+    "doi": "10.1088/1126-6708/2008/12/015",
+    "journal_ref": "JHEP 0812:015,2008",
+    "abs_url": "https://arxiv.org/abs/0810.1563",
+    "pdf_url": "https://arxiv.org/pdf/0810.1563",
+    "pillar": "adscmt",
+    "slug": "0810.1563",
+    "pdf_local": "papers/pdf/0810.1563.pdf"
+  },
+  {
+    "arxiv_id": "0907.2694",
+    "version": "v2",
+    "title": "Emergent quantum criticality, Fermi surfaces, and AdS2",
+    "abstract": "Gravity solutions dual to d-dimensional field theories at finite charge density have a near-horizon region which is AdS_2 x R^{d-1}. The scale invariance of the AdS_2 region implies that at low energies the dual field theory exhibits emergent quantum critical behavior controlled by a (0+1)-dimensional CFT. This interpretation sheds light on recently-discovered holographic descriptions of Fermi surfaces, allowing an analytic understanding of their low-energy excitations. For example, the scaling behavior near the Fermi surfaces is determined by conformal dimensions in the emergent IR CFT. In particular, when the operator is marginal in the IR CFT, the corresponding spectral function is precisely of the \"Marginal Fermi Liquid\" form, postulated to describe the optimally doped cuprates.",
+    "authors": [
+      "Thomas Faulkner",
+      "Hong Liu",
+      "John McGreevy",
+      "David Vegh"
+    ],
+    "published": "2009-07-16T19:48:36Z",
+    "updated": "2011-10-30T22:35:08Z",
+    "year": "2009",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th"
+    ],
+    "doi": "10.1103/PhysRevD.83.125002",
+    "journal_ref": "Phys.Rev.D83:125002,2011",
+    "abs_url": "https://arxiv.org/abs/0907.2694",
+    "pdf_url": "https://arxiv.org/pdf/0907.2694",
+    "pillar": "adscmt",
+    "slug": "0907.2694",
+    "pdf_local": "papers/pdf/0907.2694.pdf"
+  },
+  {
+    "arxiv_id": "0904.1993",
+    "version": "v2",
+    "title": "String Theory, Quantum Phase Transitions and the Emergent Fermi-Liquid",
+    "abstract": "A central problem in quantum condensed matter physics is the critical theory governing the zero temperature quantum phase transition between strongly renormalized Fermi-liquids as found in heavy fermion intermetallics and possibly high Tc superconductors. We present here results showing that the mathematics of string theory is capable of describing such fermionic quantum critical states. Using the Anti-de-Sitter/Conformal Field Theory (AdS/CFT) correspondence to relate fermionic quantum critical fields to a gravitational problem, we compute the spectral functions of fermions in the field theory. By increasing the fermion density away from the relativistic quantum critical point, a state emerges with all the features of the Fermi-liquid.",
+    "authors": [
+      "Mihailo Cubrovic",
+      "Jan Zaanen",
+      "Koenraad Schalm"
+    ],
+    "published": "2009-04-13T19:37:16Z",
+    "updated": "2009-12-24T14:33:17Z",
+    "year": "2009",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1126/science.1174962",
+    "journal_ref": "Science 325:439-444,2009",
+    "abs_url": "https://arxiv.org/abs/0904.1993",
+    "pdf_url": "https://arxiv.org/pdf/0904.1993",
+    "pillar": "adscmt",
+    "slug": "0904.1993",
+    "pdf_local": "papers/pdf/0904.1993.pdf"
+  },
+  {
+    "arxiv_id": "1612.07324",
+    "version": "v3",
+    "title": "Holographic quantum matter",
+    "abstract": "We present a review of theories of states of quantum matter without quasiparticle excitations. Solvable examples of such states are provided through a holographic duality with gravitational theories in an emergent spatial dimension. We review the duality between gravitational backgrounds and the various states of quantum matter which live on the boundary. We then describe quantum matter at a fixed commensurate density (often described by conformal field theories), and also compressible quantum matter with variable density, providing an extensive discussion of transport in both cases. We present a unified discussion of the holographic theory of transport with memory matrix and hydrodynamic methods, allowing a direct connection to experimentally realized quantum matter. We also explore other important challenges in non-quasiparticle physics, including symmetry broken phases such as superconductors and non-equilibrium dynamics.",
+    "authors": [
+      "Sean A. Hartnoll",
+      "Andrew Lucas",
+      "Subir Sachdev"
+    ],
+    "published": "2016-12-21T21:00:03Z",
+    "updated": "2018-03-20T16:40:17Z",
+    "year": "2016",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1612.07324",
+    "pdf_url": "https://arxiv.org/pdf/1612.07324",
+    "pillar": "adscmt",
+    "slug": "1612.07324",
+    "pdf_local": "papers/pdf/1612.07324.pdf"
+  },
+  {
+    "arxiv_id": "1110.3814",
+    "version": "v1",
+    "title": "Lectures on holographic non-Fermi liquids and quantum phase transitions",
+    "abstract": "In these lecture notes we review some recent attempts at searching for non-Fermi liquids and novel quantum phase transitions in holographic systems using gauge/gravity duality. We do this by studying the simplest finite density system arising from the duality, obtained by turning on a nonzero chemical potential for a U(1) global symmetry of a CFT, and described on the gravity side by a charged black hole. We address the following questions of such a finite density system: 1. Does the system have a Fermi surface? What are the properties of low energy excitations near the Fermi surface? 2. Does the system have an instability to condensation of scalar operators? What is the critical behavior near the corresponding quantum critical point? We find interesting parallels with those of high T_c cuprates and heavy electron systems. Playing a crucial role in our discussion is a universal intermediate-energy phase, called a \"semi-local quantum liquid\", which underlies the non-Fermi liquid and novel quantum critical behavior of a system. It also provides a novel mechanism for the emergence of lower energy states such as a Fermi liquid or a superconductor.",
+    "authors": [
+      "Nabil Iqbal",
+      "Hong Liu",
+      "Márk Mezei"
+    ],
+    "published": "2011-10-17T20:39:29Z",
+    "updated": "2011-10-17T20:39:29Z",
+    "year": "2011",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1142/9789814350525_0013",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1110.3814",
+    "pdf_url": "https://arxiv.org/pdf/1110.3814",
+    "pillar": "adscmt",
+    "slug": "1110.3814",
+    "pdf_local": "papers/pdf/1110.3814.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/9212030",
+    "version": "v1",
+    "title": "Gapless Spin-Fluid Ground State in a Random Quantum Heisenberg Magnet",
+    "abstract": "We examine the spin-$S$ quantum Heisenberg magnet with Gaussian-random, infinite-range exchange interactions. The quantum-disordered phase is accessed by generalizing to $SU(M)$ symmetry and studying the large $M$ limit. For large $S$ the ground state is a spin-glass, while quantum fluctuations produce a spin-fluid state for small $S$. The spin-fluid phase is found to be generically gapless - the average, zero temperature, local dynamic spin-susceptibility obeys $\\barχ (ω) \\sim \\log(1/|ω|) + i (π/2) \\mbox{sgn} (ω)$ at low frequencies. This form is identical to the phenomenological `marginal' spectrum proposed by Varma {\\em et. al.\\/} for the doped cuprates.",
+    "authors": [
+      "Subir Sachdev",
+      "Jinwu Ye"
+    ],
+    "published": "1992-12-21T23:52:03Z",
+    "updated": "1992-12-21T23:52:03Z",
+    "year": "1992",
+    "primary_category": "cond-mat",
+    "categories": [
+      "cond-mat"
+    ],
+    "doi": "10.1103/PhysRevLett.70.3339",
+    "journal_ref": "Phys.Rev.Lett.70:3339,1993",
+    "abs_url": "https://arxiv.org/abs/cond-mat/9212030",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/9212030",
+    "pillar": "adscmt",
+    "slug": "cond-mat_9212030",
+    "pdf_local": "papers/pdf/cond-mat_9212030.pdf"
+  },
+  {
+    "arxiv_id": "1604.07818",
+    "version": "v1",
+    "title": "Comments on the Sachdev-Ye-Kitaev model",
+    "abstract": "We study a quantum mechanical model proposed by Sachdev, Ye and Kitaev. The model consists of $N$ Majorana fermions with random interactions of a few fermions at a time. It it tractable in the large $N$ limit, where the classical variable is a bilocal fermion bilinear. The model becomes strongly interacting at low energies where it develops an emergent conformal symmetry. We study two and four point functions of the fundamental fermions. This provides the spectrum of physical excitations for the bilocal field. The emergent conformal symmetry is a reparametrization symmetry, which is spontaneously broken to $SL(2,R)$, leading to zero modes. These zero modes are lifted by a small residual explicit breaking, which produces an enhanced contribution to the four point function. This contribution displays a maximal Lyapunov exponent in the chaos region (out of time ordered correlator). We expect these features to be universal properties of large $N$ quantum mechanics systems with emergent reparametrization symmetry. This article is largely based on talks given by Kitaev \\cite{KitaevTalks}, which motivated us to work out the details of the ideas described there.",
+    "authors": [
+      "Juan Maldacena",
+      "Douglas Stanford"
+    ],
+    "published": "2016-04-26T19:59:47Z",
+    "updated": "2016-04-26T19:59:47Z",
+    "year": "2016",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevD.94.106002",
+    "journal_ref": "Phys. Rev. D 94, 106002 (2016)",
+    "abs_url": "https://arxiv.org/abs/1604.07818",
+    "pdf_url": "https://arxiv.org/pdf/1604.07818",
+    "pillar": "adscmt",
+    "slug": "1604.07818",
+    "pdf_local": "papers/pdf/1604.07818.pdf"
+  },
+  {
+    "arxiv_id": "1506.05111",
+    "version": "v4",
+    "title": "Bekenstein-Hawking Entropy and Strange Metals",
+    "abstract": "We examine models of fermions with infinite-range interactions which realize non-Fermi liquids with a continuously variable U(1) charge density $\\mathcal{Q}$, and a non-zero entropy density $\\mathcal{S}$ at vanishing temperature. Real time correlators of operators carrying U(1) charge $q$ at a low temperature $T$ are characterized by a $\\mathcal{Q}$-dependent frequency $ω_{\\mathcal{S}} = (q \\, T/\\hbar) (\\partial \\mathcal{S}/\\partial{\\mathcal{Q}})$ which determines a spectral asymmetry. We show that the correlators match precisely with those of the AdS$_2$ horizons of extremal charged black holes. On the black hole side, the matching employs $\\mathcal{S}$ as the Bekenstein-Hawking entropy density, and the laws of black hole thermodynamics which relate $(\\partial{\\mathcal{S}}/\\partial{\\mathcal{Q}})/(2 π)$ to the electric field strength in AdS$_2$. The fermion model entropy is computed using the microscopic degrees of freedom of a UV complete theory without supersymmetry.",
+    "authors": [
+      "Subir Sachdev"
+    ],
+    "published": "2015-06-16T20:00:43Z",
+    "updated": "2015-08-12T01:00:55Z",
+    "year": "2015",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el",
+      "gr-qc"
+    ],
+    "doi": "10.1103/PhysRevX.5.041025",
+    "journal_ref": "Phys. Rev. X 5, 041025 (2015)",
+    "abs_url": "https://arxiv.org/abs/1506.05111",
+    "pdf_url": "https://arxiv.org/pdf/1506.05111",
+    "pillar": "adscmt",
+    "slug": "1506.05111",
+    "pdf_local": "papers/pdf/1506.05111.pdf"
+  },
+  {
+    "arxiv_id": "1405.3651",
+    "version": "v3",
+    "title": "Theory of universal incoherent metallic transport",
+    "abstract": "In an incoherent metal, transport is controlled by the collective diffusion of energy and charge rather than by quasiparticle or momentum relaxation. We explore the possibility of a universal bound $D \\gtrsim \\hbar v_F^2/(k_B T)$ on the underlying diffusion constants in an incoherent metal. Such a bound is loosely motivated by results from holographic duality, the uncertainty principle and from measurements of diffusion in strongly interacting non-metallic systems. Metals close to saturating this bound are shown to have a linear in temperature resistivity with an underlying dissipative timescale matching that recently deduced from experimental data on a wide range of metals. This bound may be responsible for the ubiquitous appearance of high temperature regimes in metals with $T$-linear resistivity, motivating direct probes of diffusive processes and measurements of charge susceptibilities.",
+    "authors": [
+      "Sean A. Hartnoll"
+    ],
+    "published": "2014-05-14T20:00:03Z",
+    "updated": "2014-07-24T01:56:30Z",
+    "year": "2014",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "hep-th"
+    ],
+    "doi": "10.1038/nphys3174",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1405.3651",
+    "pdf_url": "https://arxiv.org/pdf/1405.3651",
+    "pillar": "adscmt",
+    "slug": "1405.3651",
+    "pdf_local": "papers/pdf/1405.3651.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/0506581",
+    "version": "v2",
+    "title": "$Z_2$ Topological Order and the Quantum Spin Hall Effect",
+    "abstract": "The quantum spin Hall (QSH) phase is a time reversal invariant electronic state with a bulk electronic band gap that supports the transport of charge and spin in gapless edge states. We show that this phase is associated with a novel $Z_2$ topological invariant, which distinguishes it from an ordinary insulator. The $Z_2$ classification, which is defined for time reversal invariant Hamiltonians, is analogous to the Chern number classification of the quantum Hall effect. We establish the $Z_2$ order of the QSH phase in the two band model of graphene and propose a generalization of the formalism applicable to multi band and interacting systems.",
+    "authors": [
+      "C. L. Kane",
+      "E. J. Mele"
+    ],
+    "published": "2005-06-22T19:17:46Z",
+    "updated": "2005-06-27T18:43:47Z",
+    "year": "2005",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/PhysRevLett.95.146802",
+    "journal_ref": "Phys. Rev. Lett. 95, 146802 (2005)",
+    "abs_url": "https://arxiv.org/abs/cond-mat/0506581",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/0506581",
+    "pillar": "topology",
+    "slug": "cond-mat_0506581",
+    "pdf_local": "papers/pdf/cond-mat_0506581.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/0607699",
+    "version": "v2",
+    "title": "Topological Insulators in Three Dimensions",
+    "abstract": "We study three dimensional generalizations of the quantum spin Hall (QSH) effect. Unlike two dimensions, where the QSH effect is distinguished by a single $Z_2$ topological invariant, in three dimensions there are 4 invariants distinguishing 16 \"topological insulator\" phases. There are two general classes: weak (WTI) and strong (STI) topological insulators. The WTI states are equivalent to layered 2D QSH states, but are fragile because disorder continuously connects them to band insulators. The STI states are robust and have surface states that realize the 2+1 dimensional parity anomaly without fermion doubling, giving rise to a novel \"topological metal\" surface phase. We introduce a tight binding model which realizes both the WTI and STI phases, and we discuss the relevance of this model to real three dimensional materials, including bismuth.",
+    "authors": [
+      "Liang Fu",
+      "C. L. Kane",
+      "E. J. Mele"
+    ],
+    "published": "2006-07-26T20:00:34Z",
+    "updated": "2007-07-11T20:50:42Z",
+    "year": "2006",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/PhysRevLett.98.106803",
+    "journal_ref": "Phys. Rev. Lett. 98, 106803 (2007)",
+    "abs_url": "https://arxiv.org/abs/cond-mat/0607699",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/0607699",
+    "pillar": "topology",
+    "slug": "cond-mat_0607699",
+    "pdf_local": "papers/pdf/cond-mat_0607699.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/0611341",
+    "version": "v2",
+    "title": "Topological Insulators with Inversion Symmetry",
+    "abstract": "Topological insulators are materials with a bulk excitation gap generated by the spin orbit interaction, and which are different from conventional insulators. This distinction is characterized by Z_2 topological invariants, which characterize the groundstate. In two dimensions there is a single Z_2 invariant which distinguishes the ordinary insulator from the quantum spin Hall phase. In three dimensions there are four Z_2 invariants, which distinguish the ordinary insulator from \"weak\" and \"strong\" topological insulators. These phases are characterized by the presence of gapless surface (or edge) states. In the 2D quantum spin Hall phase and the 3D strong topological insulator these states are robust and are insensitive to weak disorder and interactions. In this paper we show that the presence of inversion symmetry greatly simplifies the problem of evaluating the Z_2 invariants. We show that the invariants can be determined from the knowledge of the parity of the occupied Bloch wavefunctions at the time reversal invariant points in the Brillouin zone. Using this approach, we predict a number of specific materials are strong topological insulators, including the semiconducting alloy Bi_{1-x} Sb_x as well as α-Sn and HgTe under uniaxial strain. This paper also includes an expanded discussion of our formulation of the topological insulators in both two and three dimensions, as well as implications for experiments.",
+    "authors": [
+      "Liang Fu",
+      "C. L. Kane"
+    ],
+    "published": "2006-11-14T20:04:23Z",
+    "updated": "2007-07-11T20:59:48Z",
+    "year": "2006",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/PhysRevB.76.045302",
+    "journal_ref": "Phys. Rev. B 76, 045302 (2007)",
+    "abs_url": "https://arxiv.org/abs/cond-mat/0611341",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/0611341",
+    "pillar": "topology",
+    "slug": "cond-mat_0611341",
+    "pdf_local": "papers/pdf/cond-mat_0611341.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/0611399",
+    "version": "v1",
+    "title": "Quantum Spin Hall Effect and Topological Phase Transition in HgTe Quantum Wells",
+    "abstract": "We show that the Quantum Spin Hall Effect, a state of matter with topological properties distinct from conventional insulators, can be realized in HgTe/CdTe semiconductor quantum wells. By varying the thickness of the quantum well, the electronic state changes from a normal to an \"inverted\" type at a critical thickness $d_c$. We show that this transition is a topological quantum phase transition between a conventional insulating phase and a phase exhibiting the QSH effect with a single pair of helical edge states. We also discuss the methods for experimental detection of the QSH effect.",
+    "authors": [
+      "B. Andrei Bernevig",
+      "Taylor L. Hughes",
+      "Shou-Cheng Zhang"
+    ],
+    "published": "2006-11-15T17:47:40Z",
+    "updated": "2006-11-15T17:47:40Z",
+    "year": "2006",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1126/science.1133734",
+    "journal_ref": "Science, 314, 1757 (2006)",
+    "abs_url": "https://arxiv.org/abs/cond-mat/0611399",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/0611399",
+    "pillar": "topology",
+    "slug": "cond-mat_0611399",
+    "pdf_local": "papers/pdf/cond-mat_0611399.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/0010440",
+    "version": "v2",
+    "title": "Unpaired Majorana fermions in quantum wires",
+    "abstract": "Certain one-dimensional Fermi systems have an energy gap in the bulk spectrum while boundary states are described by one Majorana operator per boundary point. A finite system of length $L$ possesses two ground states with an energy difference proportional to $\\exp(-L/l_0)$ and different fermionic parities. Such systems can be used as qubits since they are intrinsically immune to decoherence. The property of a system to have boundary Majorana fermions is expressed as a condition on the bulk electron spectrum. The condition is satisfied in the presence of an arbitrary small energy gap induced by proximity of a 3-dimensional p-wave superconductor, provided that the normal spectrum has an odd number of Fermi points in each half of the Brillouin zone (each spin component counts separately).",
+    "authors": [
+      "Alexei Kitaev"
+    ],
+    "published": "2000-10-27T08:59:57Z",
+    "updated": "2000-10-30T00:01:44Z",
+    "year": "2000",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "quant-ph"
+    ],
+    "doi": "10.1070/1063-7869/44/10S/S29",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/cond-mat/0010440",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/0010440",
+    "pillar": "topology",
+    "slug": "cond-mat_0010440",
+    "pdf_local": "papers/pdf/cond-mat_0010440.pdf"
+  },
+  {
+    "arxiv_id": "1002.3895",
+    "version": "v2",
+    "title": "Topological Insulators",
+    "abstract": "Topological insulators are electronic materials that have a bulk band gap like an ordinary insulator, but have protected conducting states on their edge or surface. The 2D topological insulator is a quantum spin Hall insulator, which is a close cousin of the integer quantum Hall state. A 3D topological insulator supports novel spin polarized 2D Dirac fermions on its surface. In this Colloquium article we will review the theoretical foundation for these electronic states and describe recent experiments in which their signatures have been observed. We will describe transport experiments on HgCdTe quantum wells that demonstrate the existence of the edge states predicted for the quantum spin Hall insulator. We will then discuss experiments on Bi_{1-x}Sb_x, Bi_2 Se_3, Bi_2 Te_3 and Sb_2 Te_3 that establish these materials as 3D topological insulators and directly probe the topology of their surface states. We will then describe exotic states that can occur at the surface of a 3D topological insulator due to an induced energy gap. A magnetic gap leads to a novel quantum Hall state that gives rise to a topological magnetoelectric effect. A superconducting energy gap leads to a state that supports Majorana fermions, and may provide a new venue for realizing proposals for topological quantum computation. We will close by discussing prospects for observing these exotic states, a well as other potential device applications of topological insulators.",
+    "authors": [
+      "M. Z. Hasan",
+      "C. L. Kane"
+    ],
+    "published": "2010-02-20T14:23:36Z",
+    "updated": "2010-11-09T19:40:21Z",
+    "year": "2010",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/RevModPhys.82.3045",
+    "journal_ref": "Rev.Mod.Phys.82:3045,2010",
+    "abs_url": "https://arxiv.org/abs/1002.3895",
+    "pdf_url": "https://arxiv.org/pdf/1002.3895",
+    "pillar": "topology",
+    "slug": "1002.3895",
+    "pdf_local": "papers/pdf/1002.3895.pdf"
+  },
+  {
+    "arxiv_id": "1008.2026",
+    "version": "v1",
+    "title": "Topological insulators and superconductors",
+    "abstract": "Topological insulators are new states of quantum matter which can not be adiabatically connected to conventional insulators and semiconductors. They are characterized by a full insulating gap in the bulk and gapless edge or surface states which are protected by time-reversal symmetry. These topological materials have been theoretically predicted and experimentally observed in a variety of systems, including HgTe quantum wells, BiSb alloys, and Bi$_2$Te$_3$ and Bi$_2$Se$_3$ crystals. We review theoretical models, materials properties and experimental results on two-dimensional and three-dimensional topological insulators, and discuss both the topological band theory and the topological field theory. Topological superconductors have a full pairing gap in the bulk and gapless surface states consisting of Majorana fermions. We review the theory of topological superconductors in close analogy to the theory of topological insulators.",
+    "authors": [
+      "Xiao-Liang Qi",
+      "Shou-Cheng Zhang"
+    ],
+    "published": "2010-08-12T00:00:22Z",
+    "updated": "2010-08-12T00:00:22Z",
+    "year": "2010",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.supr-con"
+    ],
+    "doi": "10.1103/RevModPhys.83.1057",
+    "journal_ref": "Rev. Mod. Phys. 83, 1057-1110 (2011)",
+    "abs_url": "https://arxiv.org/abs/1008.2026",
+    "pdf_url": "https://arxiv.org/pdf/1008.2026",
+    "pillar": "topology",
+    "slug": "1008.2026",
+    "pdf_local": "papers/pdf/1008.2026.pdf"
+  },
+  {
+    "arxiv_id": "0802.3537",
+    "version": "v1",
+    "title": "Topological Field Theory of Time-Reversal Invariant Insulators",
+    "abstract": "We show that the fundamental time reversal invariant (TRI) insulator exists in 4+1 dimensions, where the effective field theory is described by the 4+1 dimensional Chern-Simons theory and the topological properties of the electronic structure is classified by the second Chern number. These topological properties are the natural generalizations of the time reversal breaking (TRB) quantum Hall insulator in 2+1 dimensions. The TRI quantum spin Hall insulator in 2+1 dimensions and the topological insulator in 3+1 dimension can be obtained as descendants from the fundamental TRI insulator in 4+1 dimensions through a dimensional reduction procedure. The effective topological field theory, and the $Z_2$ topological classification for the TRI insulators in 2+1 and 3+1 dimensions are naturally obtained from this procedure. All physically measurable topological response functions of the TRI insulators are completely described by the effective topological field theory. Our effective topological field theory predicts a number of novel and measurable phenomena, the most striking of which is the topological magneto-electric effect, where an electric field generates a magnetic field in the same direction, with an universal constant of proportionality quantized in odd multiples of the fine structure constant $α=e^2/\\hbar c$. Finally, we present a general classification of all topological insulators in various dimensions, and describe them in terms of a unified topological Chern-Simons field theory in phase space.",
+    "authors": [
+      "Xiao-Liang Qi",
+      "Taylor Hughes",
+      "Shou-Cheng Zhang"
+    ],
+    "published": "2008-02-24T20:55:07Z",
+    "updated": "2008-02-24T20:55:07Z",
+    "year": "2008",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "hep-th"
+    ],
+    "doi": "10.1103/PhysRevB.78.195424",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/0802.3537",
+    "pdf_url": "https://arxiv.org/pdf/0802.3537",
+    "pillar": "topology",
+    "slug": "0802.3537",
+    "pdf_local": "papers/pdf/0802.3537.pdf"
+  },
+  {
+    "arxiv_id": "0803.2786",
+    "version": "v3",
+    "title": "Classification of topological insulators and superconductors in three spatial dimensions",
+    "abstract": "We systematically study topological phases of insulators and superconductors (SCs) in 3D. We find that there exist 3D topologically non-trivial insulators or SCs in 5 out of 10 symmetry classes introduced by Altland and Zirnbauer within the context of random matrix theory. One of these is the recently introduced Z_2 topological insulator in the symplectic symmetry class. We show there exist precisely 4 more topological insulators. For these systems, all of which are time-reversal (TR) invariant in 3D, the space of insulating ground states satisfying certain discrete symmetry properties is partitioned into topological sectors that are separated by quantum phase transitions. 3 of the above 5 topologically non-trivial phases can be realized as TR invariant SCs, and in these the different topological sectors are characterized by an integer winding number defined in momentum space. When such 3D topological insulators are terminated by a 2D surface, they support a number (which may be an arbitrary non-vanishing even number for singlet pairing) of Dirac fermion (Majorana fermion when spin rotation symmetry is completely broken) surface modes which remain gapless under arbitrary perturbations that preserve the characteristic discrete symmetries. In particular, these surface modes completely evade Anderson localization. These topological phases can be thought of as 3D analogues of well known paired topological phases in 2D such as the chiral p-wave SC. In the corresponding topologically non-trivial and topologically trivial 3D phases, the wavefunctions exhibit markedly distinct behavior. When an electromagnetic U(1) gauge field and fluctuations of the gap functions are included in the dynamics, the SC phases with non-vanishing winding number possess non-trivial topological ground state degeneracies.",
+    "authors": [
+      "Andreas P. Schnyder",
+      "Shinsei Ryu",
+      "Akira Furusaki",
+      "Andreas W. W. Ludwig"
+    ],
+    "published": "2008-03-19T11:17:37Z",
+    "updated": "2009-06-15T04:43:42Z",
+    "year": "2008",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevB.78.195125",
+    "journal_ref": "Phys. Rev. B 78, 195125 (2008)",
+    "abs_url": "https://arxiv.org/abs/0803.2786",
+    "pdf_url": "https://arxiv.org/pdf/0803.2786",
+    "pillar": "topology",
+    "slug": "0803.2786",
+    "pdf_local": "papers/pdf/0803.2786.pdf"
+  },
+  {
+    "arxiv_id": "0912.2157",
+    "version": "v2",
+    "title": "Topological insulators and superconductors: ten-fold way and dimensional hierarchy",
+    "abstract": "It has recently been shown that in every spatial dimension there exist precisely five distinct classes of topological insulators or superconductors. Within a given class, the different topological sectors can be distinguished, depending on the case, by a Z or a Z_2 topological invariant. This is an exhaustive classification. Here we construct representatives of topological insulators and superconductors for all five classes and in arbitrary spatial dimension d, in terms of Dirac Hamiltonians. Using these representatives we demonstrate how topological insulators (superconductors) in different dimensions and different classes can be related via dimensional reduction by compactifying one or more spatial dimensions (in Kaluza-Klein-like fashion). For Z-topological insulators (superconductors) this proceeds by descending by one dimension at a time into a different class. The Z_2-topological insulators (superconductors), on the other hand, are shown to be lower-dimensional descendants of parent Z-topological insulators in the same class, from which they inherit their topological properties. The 8-fold periodicity in dimension d that exists for topological insulators (superconductors) with Hamiltonians satisfying at least one reality condition (arising from time-reversal or charge-conjugation/particle-hole symmetries) is a reflection of the 8-fold periodicity of the spinor representations of the orthogonal groups SO(N) (a form of Bott periodicity). We derive a relation between the topological invariant that characterizes topological insulators/superconductors with chiral symmetry and the Chern-Simons invariant: it relates the invariant to the electric polarization (d=1), or to the magnetoelectric polarizability (d=3). Finally, we discuss topological field theories describing the space time theory of linear responses, and study how the presence of inversion symmetry modifies the classification.",
+    "authors": [
+      "Shinsei Ryu",
+      "Andreas Schnyder",
+      "Akira Furusaki",
+      "Andreas Ludwig"
+    ],
+    "published": "2009-12-11T06:38:12Z",
+    "updated": "2010-06-15T09:08:09Z",
+    "year": "2009",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.supr-con"
+    ],
+    "doi": "10.1088/1367-2630/12/6/065010",
+    "journal_ref": "New J. Phys. 12, 065010 (2010)",
+    "abs_url": "https://arxiv.org/abs/0912.2157",
+    "pdf_url": "https://arxiv.org/pdf/0912.2157",
+    "pillar": "topology",
+    "slug": "0912.2157",
+    "pdf_local": "papers/pdf/0912.2157.pdf"
+  },
+  {
+    "arxiv_id": "0901.2686",
+    "version": "v2",
+    "title": "Periodic table for topological insulators and superconductors",
+    "abstract": "Gapped phases of noninteracting fermions, with and without charge conservation and time-reversal symmetry, are classified using Bott periodicity. The symmetry and spatial dimension determines a general universality class, which corresponds to one of the 2 types of complex and 8 types of real Clifford algebras. The phases within a given class are further characterized by a topological invariant, an element of some Abelian group that can be 0, Z, or Z_2. The interface between two infinite phases with different topological numbers must carry some gapless mode. Topological properties of finite systems are described in terms of K-homology. This classification is robust with respect to disorder, provided electron states near the Fermi energy are absent or localized. In some cases (e.g., integer quantum Hall systems) the K-theoretic classification is stable to interactions, but a counterexample is also given.",
+    "authors": [
+      "Alexei Kitaev"
+    ],
+    "published": "2009-01-18T08:46:17Z",
+    "updated": "2009-01-20T07:33:13Z",
+    "year": "2009",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.supr-con",
+      "hep-th",
+      "math-ph"
+    ],
+    "doi": "10.1063/1.3149495",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/0901.2686",
+    "pdf_url": "https://arxiv.org/pdf/0901.2686",
+    "pillar": "topology",
+    "slug": "0901.2686",
+    "pdf_local": "papers/pdf/0901.2686.pdf"
+  },
+  {
+    "arxiv_id": "1505.03535",
+    "version": "v2",
+    "title": "Classification of topological quantum matter with symmetries",
+    "abstract": "Topological materials have become the focus of intense research in recent years, since they exhibit fundamentally new physical phenomena with potential applications for novel devices and quantum information technology. One of the hallmarks of topological materials is the existence of protected gapless surface states, which arise due to a nontrivial topology of the bulk wave functions. This review provides a pedagogical introduction into the field of topological quantum matter with an emphasis on classification schemes. We consider both fully gapped and gapless topological materials and their classification in terms of nonspatial symmetries, such as time-reversal, as well as spatial symmetries, such as reflection. Furthermore, we survey the classification of gapless modes localized on topological defects. The classification of these systems is discussed by use of homotopy groups, Clifford algebras, K-theory, and non-linear sigma models describing the Anderson (de-)localization at the surface or inside a defect of the material. Theoretical model systems and their topological invariants are reviewed together with recent experimental results in order to provide a unified and comprehensive perspective of the field. While the bulk of this article is concerned with the topological properties of noninteracting or mean-field Hamiltonians, we also provide a brief overview of recent results and open questions concerning the topological classifications of interacting systems.",
+    "authors": [
+      "Ching-Kai Chiu",
+      "Jeffrey C. Y. Teo",
+      "Andreas P. Schnyder",
+      "Shinsei Ryu"
+    ],
+    "published": "2015-05-13T20:01:39Z",
+    "updated": "2016-04-14T15:25:07Z",
+    "year": "2015",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el",
+      "cond-mat.supr-con"
+    ],
+    "doi": "10.1103/RevModPhys.88.035005",
+    "journal_ref": "Rev. Mod. Phys. 88, 035005 (2016)",
+    "abs_url": "https://arxiv.org/abs/1505.03535",
+    "pdf_url": "https://arxiv.org/pdf/1505.03535",
+    "pillar": "topology",
+    "slug": "1505.03535",
+    "pdf_local": "papers/pdf/1505.03535.pdf"
+  },
+  {
+    "arxiv_id": "1010.0936",
+    "version": "v2",
+    "title": "Electromagnetic and gravitational responses and anomalies in topological insulators and superconductors",
+    "abstract": "One of the defining properties of the conventional three-dimensional (\"$\\mathbb{Z}_2$-\", or \"spin-orbit\"-) topological insulator is its characteristic magnetoelectric effect, as described by axion electrodynamics. In this paper, we discuss an analogue of such a magnetoelectric effect in the thermal (or gravitational) and the magnetic dipole responses in all symmetry classes which admit topologically non-trivial insulators or superconductors to exist in three dimensions. In particular, for topological superconductors (or superfluids) with time-reversal symmetry which lack SU(2) spin rotation symmetry (e.g. due to spin-orbit interactions), such as the B phase of $^3$He, the thermal response is the only probe which can detect the non-trivial topological character through transport. We show that, for such topological superconductors, applying a temperature gradient produces a thermal- (or mass-) surface current perpendicular to the thermal gradient. Such charge, thermal, or magnetic dipole responses provide a definition of topological insulators and superconductors beyond the single-particle picture. Moreover we find, for a significant part of the 'ten-fold' list of topological insulators found in previous work in the absence of interactions, that in general dimensions the effective field theory describing the space-time responses is governed by a field theory anomaly. Since anomalies are known to be insensitive to whether the underlying fermions are interacting or not, this shows that the classification of these topological insulators is robust to adiabatic deformations by interparticle interactions in general dimensionality. In particular, this applies to symmetry classes DIII, CI, and AIII in three spatial dimensions, and to symmetry classes D and C in two spatial dimensions.",
+    "authors": [
+      "Shinsei Ryu",
+      "Joel E. Moore",
+      "Andreas W. W. Ludwig"
+    ],
+    "published": "2010-10-05T16:40:01Z",
+    "updated": "2012-06-12T21:53:42Z",
+    "year": "2010",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.supr-con"
+    ],
+    "doi": "10.1103/PhysRevB.85.045104",
+    "journal_ref": "Phys. Rev. B 85, 045104 (2012)",
+    "abs_url": "https://arxiv.org/abs/1010.0936",
+    "pdf_url": "https://arxiv.org/pdf/1010.0936",
+    "pillar": "bridge",
+    "slug": "1010.0936",
+    "pdf_local": "papers/pdf/1010.0936.pdf"
+  },
+  {
+    "arxiv_id": "hep-th/0510092",
+    "version": "v2",
+    "title": "Topological entanglement entropy",
+    "abstract": "We formulate a universal characterization of the many-particle quantum entanglement in the ground state of a topologically ordered two-dimensional medium with a mass gap. We consider a disk in the plane, with a smooth boundary of length L, large compared to the correlation length. In the ground state, by tracing out all degrees of freedom in the exterior of the disk, we obtain a marginal density operator ρfor the degrees of freedom in the interior. The von Neumann entropy S(ρ) of this density operator, a measure of the entanglement of the interior and exterior variables, has the form S(ρ)= αL -γ+ ..., where the ellipsis represents terms that vanish in the limit L\\to\\infty. The coefficient α, arising from short wavelength modes localized near the boundary, is nonuniversal and ultraviolet divergent, but -γis a universal additive constant characterizing a global feature of the entanglement in the ground state. Using topological quantum field theory methods, we derive a formula for γin terms of properties of the superselection sectors of the medium.",
+    "authors": [
+      "Alexei Kitaev",
+      "John Preskill"
+    ],
+    "published": "2005-10-11T20:00:25Z",
+    "updated": "2006-01-23T19:28:17Z",
+    "year": "2005",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PhysRevLett.96.110404",
+    "journal_ref": "Phys.Rev.Lett. 96 (2006) 110404",
+    "abs_url": "https://arxiv.org/abs/hep-th/0510092",
+    "pdf_url": "https://arxiv.org/pdf/hep-th/0510092",
+    "pillar": "bridge",
+    "slug": "hep-th_0510092",
+    "pdf_local": "papers/pdf/hep-th_0510092.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/0510613",
+    "version": "v2",
+    "title": "Detecting topological order in a ground state wave function",
+    "abstract": "A large class of topological orders can be understood and classified using the string-net condensation picture. These topological orders can be characterized by a set of data (N, d_i, F^{ijk}_{lmn}, δ_{ijk}). We describe a way to detect this kind of topological order using only the ground state wave function. The method involves computing a quantity called the ``topological entropy'' which directly measures the quantum dimension D = \\sum_i d^2_i.",
+    "authors": [
+      "Michael Levin",
+      "Xiao-Gang Wen"
+    ],
+    "published": "2005-10-23T19:26:35Z",
+    "updated": "2007-02-13T19:43:40Z",
+    "year": "2005",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevLett.96.110405",
+    "journal_ref": "Phys. Rev. Lett., 96, 110405 (2006)",
+    "abs_url": "https://arxiv.org/abs/cond-mat/0510613",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/0510613",
+    "pillar": "bridge",
+    "slug": "cond-mat_0510613",
+    "pdf_local": "papers/pdf/cond-mat_0510613.pdf"
+  },
+  {
+    "arxiv_id": "0805.0332",
+    "version": "v2",
+    "title": "Entanglement Spectrum as a Generalization of Entanglement Entropy: Identification of Topological Order in Non-Abelian Fractional Quantum Hall Effect States",
+    "abstract": "We study the \"entanglement spectrum\" (a presentation of the Schmidt decomposition analogous to a set of \"energy levels\") of a many-body state, and compare the Moore-Read model wavefunction for the $ν$ = 5/2 fractional quantum Hall state with a generic 5/2 state obtained by finite-size diagonalization of the second-Landau-level-projected Coulomb interactions. Their spectra share a common \"gapless\" structure, related to conformal field theory. In the model state, these are the \\textit{only} levels, while in the \"generic\" case, they are separated from the rest of the spectrum by a clear \"entanglement gap\", which appears to remain finite in the thermodynamic limit. We propose that the low-lying entanglement spectrum can be used as a \"fingerprint\" to identify topological order.",
+    "authors": [
+      "Hui Li",
+      "F. D. M. Haldane"
+    ],
+    "published": "2008-05-05T06:02:16Z",
+    "updated": "2008-07-04T00:26:14Z",
+    "year": "2008",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/PhysRevLett.101.010504",
+    "journal_ref": "Phys. Rev. Lett. 101, 010504 (2008)",
+    "abs_url": "https://arxiv.org/abs/0805.0332",
+    "pdf_url": "https://arxiv.org/pdf/0805.0332",
+    "pillar": "bridge",
+    "slug": "0805.0332",
+    "pdf_local": "papers/pdf/0805.0332.pdf"
+  },
+  {
+    "arxiv_id": "1103.5437",
+    "version": "v1",
+    "title": "General Relationship Between the Entanglement Spectrum and the Edge State Spectrum of Topological Quantum States",
+    "abstract": "We consider (2+1)-dimensional topological quantum states which possess edge states described by a chiral (1+1)-dimensional Conformal Field Theory (CFT), such as e.g. a general quantum Hall state. We demonstrate that for such states the reduced density matrix of a finite spatial region of the gapped topological state is a thermal density matrix of the chiral edge state CFT which would appear at the spatial boundary of that region. We obtain this result by applying a physical instantaneous cut to the gapped system, and by viewing the cutting process as a sudden \"quantum quench\" into a CFT, using the tools of boundary conformal field theory. We thus provide a demonstration of the observation made by Li and Haldane about the relationship between the entanglement spectrum and the spectrum of a physical edge state.",
+    "authors": [
+      "Xiao-Liang Qi",
+      "Hosho Katsura",
+      "Andreas W. W. Ludwig"
+    ],
+    "published": "2011-03-28T18:28:22Z",
+    "updated": "2011-03-28T18:28:22Z",
+    "year": "2011",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1103/PhysRevLett.108.196402",
+    "journal_ref": "Phys. Rev. Lett. 108, 196402 (2012)",
+    "abs_url": "https://arxiv.org/abs/1103.5437",
+    "pdf_url": "https://arxiv.org/pdf/1103.5437",
+    "pillar": "bridge",
+    "slug": "1103.5437",
+    "pdf_local": "papers/pdf/1103.5437.pdf"
+  },
+  {
+    "arxiv_id": "1511.05505",
+    "version": "v3",
+    "title": "Quantum phase transition between a topological and a trivial semimetal from holography",
+    "abstract": "We present a holographic model of a topological Weyl semimetal. A key ingredient is a time-reversal breaking parameter and a mass deformation. Upon varying the ratio of mass to time-reversal breaking parameter the model undergoes a quantum phase transition from a topologically nontrivial semimetal to a trivial one. The topological nontrivial semimetal is characterised by the presence of an anomalous Hall effect. The results can be interpreted in terms of the holographic renormalization group (RG) flow leading to restoration of time-reversal at the end point of the RG flow in the trivial phase.",
+    "authors": [
+      "Karl Landsteiner",
+      "Yan Liu",
+      "Ya-Wen Sun"
+    ],
+    "published": "2015-11-17T18:58:04Z",
+    "updated": "2016-04-05T17:05:44Z",
+    "year": "2015",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevLett.116.081602",
+    "journal_ref": "Phys. Rev. Lett. 116, 081602 (2016)",
+    "abs_url": "https://arxiv.org/abs/1511.05505",
+    "pdf_url": "https://arxiv.org/pdf/1511.05505",
+    "pillar": "bridge",
+    "slug": "1511.05505",
+    "pdf_local": "papers/pdf/1511.05505.pdf"
+  },
+  {
+    "arxiv_id": "1610.04413",
+    "version": "v4",
+    "title": "Notes on Anomaly Induced Transport",
+    "abstract": "Chiral anomalies give rise to dissipationless transport phenomena such as the chiral magnetic and vortical effects. In these notes I review the theory from a quantum field theoretic, hydrodynamic and holographic perspective. A physical interpretation of the otherwise somewhat obscure concepts of consistent and covariant anomalies will be given. Vanishing of the CME in strict equilibrium will be connected to the boundary conditions in momentum space imposed by the regularization. The role of the gravitational anomaly will be explained. That it contributes to transport in an unexpectedly low order in the derivative expansion can be easiest understood via holography. Anomalous transport is supposed to play also a key role in understanding the electronics of advanced materials, the Dirac- and Weyl (semi)metals. Anomaly related phenomena such as negative magnetoresistivity, anomalous Hall effect, thermal anomalous Hall effect and Fermi arcs can be understood via anomalous transport. Finally I briefly review a holographic model of Weyl semimetal which allows to infer a new phenomenon related to the gravitational anomaly: the presence of odd viscosity.",
+    "authors": [
+      "Karl Landsteiner"
+    ],
+    "published": "2016-10-14T11:35:04Z",
+    "updated": "2017-04-28T12:20:07Z",
+    "year": "2016",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.other"
+    ],
+    "doi": "10.5506/APhysPolB.47.2617",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1610.04413",
+    "pdf_url": "https://arxiv.org/pdf/1610.04413",
+    "pillar": "bridge",
+    "slug": "1610.04413",
+    "pdf_local": "papers/pdf/1610.04413.pdf"
+  },
+  {
+    "arxiv_id": "1001.0763",
+    "version": "v2",
+    "title": "Topological Insulators and Superconductors from D-branes",
+    "abstract": "Realization of topological insulators (TIs) and superconductors (TSCs), such as the quantum spin Hall effect and the Z_2 topological insulator, in terms of D-branes in string theory is proposed. We establish a one-to-one correspondence between the K-theory classification of TIs/TSCs and D-brane charges. The string theory realization of TIs and TSCs comes naturally with gauge interactions, and the Wess-Zumino term of the D-branes gives rise to a gauge field theory of topological nature. This sheds light on TIs and TSCs beyond non-interacting systems, and the underlying topological field theory description thereof. In particular, our string theory realization includes the honeycomb lattice Kitaev model in two spatial dimensions, and its higher-dimensional extensions.",
+    "authors": [
+      "Shinsei Ryu",
+      "Tadashi Takayanagi"
+    ],
+    "published": "2010-01-05T21:00:15Z",
+    "updated": "2010-08-08T19:58:29Z",
+    "year": "2010",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1016/j.physletb.2010.08.019",
+    "journal_ref": "Phys.Lett.B693:175-179,2010",
+    "abs_url": "https://arxiv.org/abs/1001.0763",
+    "pdf_url": "https://arxiv.org/pdf/1001.0763",
+    "pillar": "bridge",
+    "slug": "1001.0763",
+    "pdf_local": "papers/pdf/1001.0763.pdf"
+  },
+  {
+    "arxiv_id": "1011.0586",
+    "version": "v2",
+    "title": "Topological field theory and thermal responses of interacting topological superconductors",
+    "abstract": "We investigate the three-dimensional, time-reversal invariant topological superconductors with generic interaction by their response to external fields. The first description is a gravitational topological field theory, which gives a $Z_2$ classification of topological superconductors, and predicts a half-quantized thermal Hall effect on the surface. The second description introduces an s-wave proximity pairing field on the surface, and the associated topological defects give an integer $Z$ classification of the topological superconductors.",
+    "authors": [
+      "Zhong Wang",
+      "Xiao-Liang Qi",
+      "Shou-Cheng Zhang"
+    ],
+    "published": "2010-11-02T11:54:31Z",
+    "updated": "2011-07-28T15:19:10Z",
+    "year": "2010",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.supr-con",
+      "hep-th"
+    ],
+    "doi": "10.1103/PhysRevB.84.014527",
+    "journal_ref": "Phys. Rev. B 84, 014527 (2011)",
+    "abs_url": "https://arxiv.org/abs/1011.0586",
+    "pdf_url": "https://arxiv.org/pdf/1011.0586",
+    "pillar": "bridge",
+    "slug": "1011.0586",
+    "pdf_local": "papers/pdf/1011.0586.pdf"
+  },
+  {
+    "arxiv_id": "1510.07698",
+    "version": "v2",
+    "title": "Three Lectures On Topological Phases Of Matter",
+    "abstract": "These notes are based on lectures at the PSSCMP/PiTP summer school that was held at Princeton University and the Institute for Advanced Study in July, 2015. They are devoted largely to topological phases of matter that can be understood in terms of free fermions and band theory. They also contain an introduction to the fractional quantum Hall effect from the point of view of effective field theory.",
+    "authors": [
+      "Edward Witten"
+    ],
+    "published": "2015-10-26T21:42:40Z",
+    "updated": "2016-06-13T16:16:26Z",
+    "year": "2015",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el",
+      "hep-th"
+    ],
+    "doi": "10.1393/ncr/i2016-10125-3",
+    "journal_ref": "La Rivista del Nuovo Cimento, 39 (2016) 313-370",
+    "abs_url": "https://arxiv.org/abs/1510.07698",
+    "pdf_url": "https://arxiv.org/pdf/1510.07698",
+    "pillar": "bridge",
+    "slug": "1510.07698",
+    "pdf_local": "papers/pdf/1510.07698.pdf"
+  },
+  {
+    "arxiv_id": "1911.07978",
+    "version": "v1",
+    "title": "Holographic Topological Semimetals",
+    "abstract": "The holographic duality allows to construct and study models of strongly coupled quantum matter via dual gravitational theories. In general such models are characterized by the absence of quasiparticles, hydrodynamic behavior and Planckian dissipation times. One particular interesting class of quantum materials are ungapped topological semimetals which have many interesting properties from Hall transport to topologically protected edge states. We review the application of the holographic duality to this type of quantum matter including the construction of holographic Weyl semimetals, nodal line semimetals, quantum phase transition to trivial states (ungapped and gapped), the holographic dual of Fermi arcs and how new unexpected transport properties, such as Hall viscosities arise. The holographic models promise to lead to new insights into the properties of this type of quantum matter.",
+    "authors": [
+      "Karl Landsteiner",
+      "Yan Liu",
+      "Ya-Wen Sun"
+    ],
+    "published": "2019-11-18T22:01:18Z",
+    "updated": "2019-11-18T22:01:18Z",
+    "year": "2019",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.str-el"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1911.07978",
+    "pdf_url": "https://arxiv.org/pdf/1911.07978",
+    "pillar": "bridge",
+    "slug": "1911.07978",
+    "pdf_local": "papers/pdf/1911.07978.pdf"
+  }
+]

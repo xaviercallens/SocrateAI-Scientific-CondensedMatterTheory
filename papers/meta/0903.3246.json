@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "0903.3246",
+  "version": "v3",
+  "title": "Lectures on holographic methods for condensed matter physics",
+  "abstract": "These notes are loosely based on lectures given at the CERN Winter School on Supergravity, Strings and Gauge theories, February 2009 and at the IPM String School in Tehran, April 2009. I have focused on a few concrete topics and also on addressing questions that have arisen repeatedly. Background condensed matter physics material is included as motivation and easy reference for the high energy physics community. The discussion of holographic techniques progresses from equilibrium, to transport and to superconductivity.",
+  "authors": [
+    "Sean A. Hartnoll"
+  ],
+  "published": "2009-03-18T22:37:42Z",
+  "updated": "2010-01-17T12:26:06Z",
+  "year": "2009",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1088/0264-9381/26/22/224002",
+  "journal_ref": "Class.Quant.Grav.26:224002,2009",
+  "abs_url": "https://arxiv.org/abs/0903.3246",
+  "pdf_url": "https://arxiv.org/pdf/0903.3246",
+  "pillar": "adscmt",
+  "slug": "0903.3246",
+  "pdf_local": "papers/pdf/0903.3246.pdf"
+}

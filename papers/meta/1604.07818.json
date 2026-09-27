@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1604.07818",
+  "version": "v1",
+  "title": "Comments on the Sachdev-Ye-Kitaev model",
+  "abstract": "We study a quantum mechanical model proposed by Sachdev, Ye and Kitaev. The model consists of $N$ Majorana fermions with random interactions of a few fermions at a time. It it tractable in the large $N$ limit, where the classical variable is a bilocal fermion bilinear. The model becomes strongly interacting at low energies where it develops an emergent conformal symmetry. We study two and four point functions of the fundamental fermions. This provides the spectrum of physical excitations for the bilocal field. The emergent conformal symmetry is a reparametrization symmetry, which is spontaneously broken to $SL(2,R)$, leading to zero modes. These zero modes are lifted by a small residual explicit breaking, which produces an enhanced contribution to the four point function. This contribution displays a maximal Lyapunov exponent in the chaos region (out of time ordered correlator). We expect these features to be universal properties of large $N$ quantum mechanics systems with emergent reparametrization symmetry. This article is largely based on talks given by Kitaev \\cite{KitaevTalks}, which motivated us to work out the details of the ideas described there.",
+  "authors": [
+    "Juan Maldacena",
+    "Douglas Stanford"
+  ],
+  "published": "2016-04-26T19:59:47Z",
+  "updated": "2016-04-26T19:59:47Z",
+  "year": "2016",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1103/PhysRevD.94.106002",
+  "journal_ref": "Phys. Rev. D 94, 106002 (2016)",
+  "abs_url": "https://arxiv.org/abs/1604.07818",
+  "pdf_url": "https://arxiv.org/pdf/1604.07818",
+  "pillar": "adscmt",
+  "slug": "1604.07818",
+  "pdf_local": "papers/pdf/1604.07818.pdf"
+}

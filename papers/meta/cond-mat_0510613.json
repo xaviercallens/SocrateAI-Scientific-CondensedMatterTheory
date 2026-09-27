@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "cond-mat/0510613",
+  "version": "v2",
+  "title": "Detecting topological order in a ground state wave function",
+  "abstract": "A large class of topological orders can be understood and classified using the string-net condensation picture. These topological orders can be characterized by a set of data (N, d_i, F^{ijk}_{lmn}, δ_{ijk}). We describe a way to detect this kind of topological order using only the ground state wave function. The method involves computing a quantity called the ``topological entropy'' which directly measures the quantum dimension D = \\sum_i d^2_i.",
+  "authors": [
+    "Michael Levin",
+    "Xiao-Gang Wen"
+  ],
+  "published": "2005-10-23T19:26:35Z",
+  "updated": "2007-02-13T19:43:40Z",
+  "year": "2005",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1103/PhysRevLett.96.110405",
+  "journal_ref": "Phys. Rev. Lett., 96, 110405 (2006)",
+  "abs_url": "https://arxiv.org/abs/cond-mat/0510613",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/0510613",
+  "pillar": "bridge",
+  "slug": "cond-mat_0510613",
+  "pdf_local": "papers/pdf/cond-mat_0510613.pdf"
+}

@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1005.3035",
+  "version": "v2",
+  "title": "Building up spacetime with quantum entanglement",
+  "abstract": "In this essay based on 0907.2939, we argue that the emergence of classically connected spacetimes is intimately related to the quantum entanglement of degrees of freedom in a non-perturbative description of quantum gravity. Disentangling the degrees of freedom associated with two regions of spacetime results in these regions pulling apart and pinching off from each other in a way that can be quantified by standard measures of entanglement.",
+  "authors": [
+    "Mark Van Raamsdonk"
+  ],
+  "published": "2010-05-17T20:17:32Z",
+  "updated": "2025-07-07T17:31:58Z",
+  "year": "2010",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "gr-qc",
+    "quant-ph"
+  ],
+  "doi": "10.1007/s10714-010-1034-0",
+  "journal_ref": "Gen.Rel.Grav.42:2323-2329,2010; Int.J.Mod.Phys.D19:2429-2435,2010",
+  "abs_url": "https://arxiv.org/abs/1005.3035",
+  "pdf_url": "https://arxiv.org/pdf/1005.3035",
+  "pillar": "holography",
+  "slug": "1005.3035",
+  "pdf_local": "papers/pdf/1005.3035.pdf"
+}

@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "adscmt-rag": {
+      "command": "python3",
+      "args": ["${CLAUDE_PROJECT_DIR}/mcp_adscmt_rag.py"],
+      "env": {
+        "PYTHONPATH": "${CLAUDE_PROJECT_DIR}",
+        "CHROMA_PATH": "${HOME}/AutoevolveAI/data/chroma",
+        "ANSE_ROOT": "${HOME}/AutoevolveAI",
+        "ADSCMT_COLLECTION": "adscmt_literature",
+        "OLLAMA_HOST": "http://localhost:11434",
+        "ANSE_EMBEDDING_MODEL": "qwen3-embedding:0.6b"
+      }
+    },
+    "chroma-admin": {
+      "command": "uvx",
+      "args": [
+        "chroma-mcp",
+        "--client-type",
+        "persistent",
+        "--data-dir",
+        "${HOME}/AutoevolveAI/data/chroma"
+      ],
+      "env": {}
+    },
+    "leanmaster": {
+      "command": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-LeanMaster/tools/leanmaster_mcp.sh",
+      "args": [],
+      "env": {}
+    }
+  }
+}

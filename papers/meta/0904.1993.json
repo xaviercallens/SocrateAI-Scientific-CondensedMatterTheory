@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "0904.1993",
+  "version": "v2",
+  "title": "String Theory, Quantum Phase Transitions and the Emergent Fermi-Liquid",
+  "abstract": "A central problem in quantum condensed matter physics is the critical theory governing the zero temperature quantum phase transition between strongly renormalized Fermi-liquids as found in heavy fermion intermetallics and possibly high Tc superconductors. We present here results showing that the mathematics of string theory is capable of describing such fermionic quantum critical states. Using the Anti-de-Sitter/Conformal Field Theory (AdS/CFT) correspondence to relate fermionic quantum critical fields to a gravitational problem, we compute the spectral functions of fermions in the field theory. By increasing the fermion density away from the relativistic quantum critical point, a state emerges with all the features of the Fermi-liquid.",
+  "authors": [
+    "Mihailo Cubrovic",
+    "Jan Zaanen",
+    "Koenraad Schalm"
+  ],
+  "published": "2009-04-13T19:37:16Z",
+  "updated": "2009-12-24T14:33:17Z",
+  "year": "2009",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1126/science.1174962",
+  "journal_ref": "Science 325:439-444,2009",
+  "abs_url": "https://arxiv.org/abs/0904.1993",
+  "pdf_url": "https://arxiv.org/pdf/0904.1993",
+  "pillar": "adscmt",
+  "slug": "0904.1993",
+  "pdf_local": "papers/pdf/0904.1993.pdf"
+}
