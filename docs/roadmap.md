@@ -19,6 +19,53 @@ contre arXiv. `[EXTERNE]` = référence hors corpus. Tiers Elenchus
 
 ---
 
+## État au 2026-09-27 — ce qui est livré, ce qui vient ensuite
+
+### Livré
+
+| Livrable | Où | Tier |
+|---|---|---|
+| **v0.1** : PoC spectres d'intrication + Gudhi, erratum de flou de taille finie | release `v0.1`, `experiments/poc_entanglement_tda/` | X (corrigé) |
+| **Piste H, v1.0** : préprint *Logarithmic boundary depth and the conditioning of the discrete inverse conductance problem on hyperbolic lattices* | Zenodo [10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391), `experiments/track_h_hyperbolic_network/paper/main.pdf` | X/B/L/C, par affirmation (grand livre) |
+| Données et simulateur de la piste H | HF [dataset](https://huggingface.co/datasets/callensxavier/hyperbolic-resistor-networks), HF [simulateur](https://huggingface.co/callensxavier/hyperbolic-resistor-network-simulator) (code, sans poids) | — |
+| Benchmark RC dans rusty-SUNDIALS | [rusty-SUNDIALS#62](https://github.com/xaviercallens/rusty-SUNDIALS/pull/62), fusionné (4ce8abb) | — |
+| Grand livre Elenchus avec magasin de preuves adressé par contenu | `docs/elenchus/ledger.json`, `docs/elenchus/evidence/` | 19 affirmations |
+
+**Résultats de la piste H (v1.0), en une ligne chacun.**
+- **Conditionnement.** Il est polynomial sur $\{7,3\}$ ($\log_{10}\kappa=3{,}89$ à $N=847$, dans la bande préenregistrée) ; sur réseau plat, $\kappa$ n'est plus résolu en double précision dès $N\approx400$. Le mécanisme est la profondeur au bord : $O(\log N)$ contre $O(\sqrt N)$.
+- **Identifiabilité.** Elle est exacte sur les deux géométries (rangs certifiés sur $\mathbb F_p$) : la différence tient au conditionnement.
+- **Contrôles.** Contrôle à nombre de sondes égal : l'avantage persiste (métrique post hoc, déclarée comme telle). L'ordre est préservé pour la carte Neumann–Dirichlet.
+- **H2.** La prédiction préenregistrée est **réfutée** à taille finie. En revanche $\lambda_{\min}\downarrow\lambda_0>0$ par monotonie de domaine, donc $\tau\le C/\lambda_0$ pour tout $N$.
+- **Validation croisée.** Deux intégrateurs, SciPy et CVODE de rusty-SUNDIALS, s'accordent avec la solution exacte à $3\times10^{-8}$ près.
+
+**Évaluation honnête.** C'est une contribution soignée, modeste et reproductible, un bon socle de légitimité, mais pas un résultat majeur. Un relecteur objectera trois points :
+- le résultat est en partie prévisible une fois la profondeur $O(\log N)$ notée ;
+- le résultat spectral applique des théorèmes connus (Dodziuk, Mohar, Häggström–Jonasson–Lyons) ;
+- les preuves sont étroites : un seul pavage, tailles modérées, mesure linéarisée, aucune reconstruction effective, recherche de nouveauté ciblée et non systématique.
+
+Les prochaines étapes visent précisément ces trois objections.
+
+### Prochaines étapes, par priorité
+
+Chaque étape reprend la même discipline : préenregistrement commité *avant* le calcul, formes rivales énoncées, verdict au grand livre.
+
+| # | Étape | Pourquoi (objection visée) | Livrable | Critère d'arrêt / de réfutation |
+|---|---|---|---|---|
+| **H-1** | Fusionner la PR #2 et publier la release `v1.0` sur GitHub | clôt la version publiée | tag `v1.0`, PDF attaché | — |
+| **H-2** | **Loi d'échelle multi-pavages** : $\{8,3\}$, $\{5,4\}$, $\{p,q\}$ ; plat au-delà de $N\approx400$ en précision étendue (mpmath) ou exacte | « un seul pavage », « loi plate indéterminée » | `PREREGISTRATION_3.md`, puis tableau $\log\kappa$ contre $(N, \text{taux de croissance du bord})$ | l'exposant local de $\kappa$ n'est **pas** ordonné par le taux de croissance du bord ⇒ le mécanisme « profondeur » est insuffisant, on l'écrit |
+| **H-3** | **Reconstruction effective** : imagerie différentielle (localiser $\delta g$ sur quelques arêtes) avec bruit, hyperbolique contre plat | « mesure linéarisée seulement » | taux de localisation contre profondeur et bruit, seuils fixés d'avance | l'avantage hyperbolique disparaît en localisation ⇒ le résultat reste limité au conditionnement linéarisé |
+| **H-4** | **Mesure physique RC** : $\{7,3\}$, $L=2$ ($N=112$, 140 résistances, 35 condensateurs sur les nœuds intérieurs, 77 nœuds de bord pilotés), plus témoin carré $R=6$ (200 résistances, 69 condensateurs), ESP32 en domaine temporel | « pas de donnée » ; c'est le vrai saut de légitimité | prédictions déjà écrites : $\tau=2{,}75\,RC$ contre $4{,}55\,RC$, raideur $14{,}9$ contre $35{,}4$ ; contrôles K1/K2 sur le circuit | écart $>20\,\%$ sur $\tau$ après correction des tolérances ⇒ modèle de circuit à revoir avant toute conclusion |
+| **H-5** | **Avis d'un spécialiste** (problèmes inverses sur réseaux, p. ex. le groupe Borcea / Guevara Vasquez), puis arXiv (`math.NA` ou `math-ph`, parrainage nécessaire) et revue (*Inverse Problems*, *SIAM J. Appl. Math.*) | nouveauté non confirmée, pas de relecture | message de 5 lignes + lien DOI ; soumission | le spécialiste signale un antécédent ⇒ le citer et recentrer la contribution |
+| **H-6** | **Lean 4** : Proposition 1 (monotonie de domaine) en dimension finie, et compilation de `lean/HyperbolicLogDepth.lean` avec la porte LeanMaster | transformer un tier C en A | fichier sans `sorry`, empreinte d'axiomes | énoncé affaibli pour compiler ⇒ refus |
+| **H-7** | **rusty-SUNDIALS** : réparer la CI de `main` (4 jobs rouges avant #62), ajouter un argument de jacobien analytique au binding Python, benchmark à $N\sim10^3$–$10^4$ | synergie outillage ; coût du solveur en fonction de la géométrie | PR(s) rusty-SUNDIALS | — |
+| **H-8** | Hygiène du grand livre : 5 empreintes anciennes sans blob (`SSH-L-0001`, `SSH-C-0001`, `POC-X-0001/0002`, `H0-X-0001`) | la porte stricte doit passer sans exception | blobs régénérés ou affirmations requalifiées | — |
+
+**Ordre conseillé.** D'abord H-1, puis H-2 et H-3 en parallèle (numérique, quelques semaines). Ensuite H-4, l'expérience, qui peut démarrer dès maintenant côté achats. H-5 intervient quand H-2 ou H-3 a donné un résultat, pour arriver avec plus qu'un préprint. H-6 à H-8 se font au fil de l'eau.
+
+**Ce qui ne change pas.** Le programme principal (M1–M9 ci-dessous : SYK, bassin SSH, Lean Ryu–Hatsugai) reste la voie vers le groupe de Ryu. La piste H est un socle parallèle, pas un substitut : elle ne teste pas AdS/CMT et ne doit jamais être présentée ainsi.
+
+---
+
 ## 0. Stratégie de légitimité — ce qui compte vraiment
 
 Vous voulez utiliser ce socle pour acquérir une légitimité, puis pivoter vers
@@ -239,6 +286,10 @@ l'analyse est un script du dépôt, jamais un calcul à la main.
 | 6–9 | **M8** N3, N5 (GPU si libre), O1–O3 reproductions | figures reproduites vs publiées | — |
 | 9–12 | **M9** axes 5, 1b, 2 ; contact avec le groupe de Ryu après M6 | — | — |
 | 12 | **Pivot** vers votre programme propre, même discipline | — | — |
+| ✅ 0 | **MH** piste H v1.0 publiée (préprint + données + simulateur) | DOI 10.5281/zenodo.23000391 | fait le 2026-09-27 |
+| 1–2 | **MH2/MH3** loi multi-pavages + imagerie différentielle | `PREREGISTRATION_3.md` puis résultats | voir H-2, H-3 |
+| 2–4 | **MH4** mesure RC physique $\{7,3\}$ $L=2$ contre carré $R=6$ | $\tau$, raideur, K1/K2 mesurés | voir H-4 |
+| 3–5 | **MH5** avis spécialiste puis soumission revue / arXiv | manuscrit v2 | voir H-5 |
 
 ---
 
@@ -252,6 +303,13 @@ ce qui est faux tel quel, ce qui est réel et déjà publié (holographie
 discrète sur pavages hyperboliques, problèmes inverses sur réseaux), et le
 protocole de remplacement qui garde l'objectif — *la frontière détermine le
 volume* — sans les moyens qui ne peuvent pas marcher.
+
+**Statut (2026-09-27).** La partie numérique de ce protocole de remplacement
+est faite et publiée : préprint v1.0, DOI
+[10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391), code et
+données dans [`../experiments/track_h_hyperbolic_network/`](../experiments/track_h_hyperbolic_network/).
+Les étapes suivantes (H-2 à H-8) sont dans la section « État au 2026-09-27 »
+en tête de ce document.
 
 ## 7. Ce que ce programme ne prétend pas
 

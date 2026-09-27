@@ -9,6 +9,13 @@ Chern », Lean 4 prouvant un « isomorphisme volume–bord »), évalué étape 
 frontière détermine le volume, dans un système physique qu'on peut mesurer*
 — avec des moyens qui fonctionnent et une littérature qui existe.
 
+**Statut (2026-09-27).** Le volet numérique du protocole de remplacement
+(réseau de résistances hyperbolique, problème inverse frontière → volume)
+est publié en préprint v1.0, DOI
+[10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391). La
+mesure physique RC ($\{7,3\}$, $L=2$) est l'étape H-4 de
+[`roadmap.md`](roadmap.md), avec des prédictions déjà écrites.
+
 Toutes les références marquées `[CORPUS]` ont passé la porte d'identité
 (`corpus/fetch_papers.py`, 94/94). Tiers Elenchus `X<C<L<B<A` comme dans
 [`rigor_protocol.md`](rigor_protocol.md). Ce document complète
