@@ -12,7 +12,8 @@
   "deficiency": 23,
   "unmeasured_degree2_nodes": 23,
   "deficiency_equals_degree2": true,
-  "log10_kappa_identifiable": 2.695399727370996
+  "log10_kappa_identifiable": 2.695399727370996,
+  "float_gap_at_rank": 14585459083822.182
  },
  {
   "name": "{7,3} L=3, 76 probes",
@@ -27,7 +28,8 @@
   "deficiency": 93,
   "unmeasured_degree2_nodes": 93,
   "deficiency_equals_degree2": true,
-  "log10_kappa_identifiable": 2.9699227297327733
+  "log10_kappa_identifiable": 2.9699227297327733,
+  "float_gap_at_rank": 3179536490820.466
  },
  {
   "name": "square R=6, all 44 probes",
@@ -42,7 +44,8 @@
   "deficiency": 0,
   "unmeasured_degree2_nodes": 0,
   "deficiency_equals_degree2": true,
-  "log10_kappa_identifiable": 5.072443594703144
+  "log10_kappa_identifiable": 5.072443594703144,
+  "float_gap_at_rank": null
  },
  {
   "name": "square R=10, all 76 probes",
@@ -57,6 +60,7 @@
   "deficiency": 0,
   "unmeasured_degree2_nodes": 0,
   "deficiency_equals_degree2": true,
-  "log10_kappa_identifiable": 9.717820796894493
+  "log10_kappa_identifiable": 9.717820796894493,
+  "float_gap_at_rank": null
  }
 ]

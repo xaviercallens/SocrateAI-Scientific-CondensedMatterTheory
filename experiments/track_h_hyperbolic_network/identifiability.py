@@ -42,8 +42,11 @@ def restricted_kappa(n, edges, probes, deficiency):
     iu = np.triu_indices(m, k=1)
     J = np.stack([M[iu] for M in mats], axis=1)
     s = np.linalg.svd(J, compute_uv=False)  # descending
-    kept = s[: len(edges) - deficiency]
-    return math.log10(kept[0] / kept[-1]), float(kept[-1] / kept[0])
+    r = len(edges) - deficiency
+    kept = s[:r]
+    # float gap at the certified rank: sigma_r / sigma_{r+1} (inf if full rank)
+    gap = float(s[r - 1] / s[r]) if r < len(s) and s[r] > 0 else math.inf
+    return math.log10(kept[0] / kept[-1]), gap
 
 
 def main() -> int:
@@ -64,12 +67,13 @@ def main() -> int:
         agree = len(set(ranks.values())) == 1
         rank = list(ranks.values())[0]
         deficiency = E - rank
-        lk, _ = restricted_kappa(n, g["edges"], probes, deficiency) if agree else (None, None)
+        lk, gap = restricted_kappa(n, g["edges"], probes, deficiency) if agree else (None, None)
         row = {"name": name, "N": n, "E": E, "probes": int(len(probes)),
                "exact_ranks": {str(p): r for p, r in ranks.items()}, "primes_agree": agree,
                "deficiency": deficiency, "unmeasured_degree2_nodes": d2,
                "deficiency_equals_degree2": deficiency == d2,
-               "log10_kappa_identifiable": lk}
+               "log10_kappa_identifiable": lk,
+               "float_gap_at_rank": None if gap is None or math.isinf(gap) else gap}
         rows.append(row)
         print(f"  {name:28} N={n:4d} E={E:4d} rank={rank} (primes agree={agree}) "
               f"deficiency={deficiency} deg2={d2} -> log10k(identifiable)={lk:.2f}")

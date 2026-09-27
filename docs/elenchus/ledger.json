@@ -106,9 +106,9 @@
    "depends_on": [
     "H0-B-0001"
    ],
-   "evidence": "sha256:eb142dac9e8c8fbdf36b6d650c5830116099aea620a4aeaf8c26f9859b75503a",
+   "evidence": "sha256:926e7dc1d93e3f8fb44624d7bc900110bc6e437c301c908e9a5d523a6c22c232",
    "statement": "In the probe-matched control (PREREGISTRATION_2 part A), making unused {7,3} boundary nodes zero-current interior nodes creates structural non-identifiability: the exact GF(p) rank deficiency (two primes, agreeing) equals the number of unmeasured degree-2 nodes (L=2, 44 probes: 23 = 23; L=3, 76 probes: 93 = 93). Full-boundary square disks R=6, R=10 are exactly full rank.",
-   "notes": "experiments/track_h_hyperbolic_network/identifiability.py. The series-resistor mechanism (g1 g2/(g1+g2) is the only observable) explains the count; the equality is certified only at these two sizes.",
+   "notes": "experiments/track_h_hyperbolic_network/identifiability.py. The series-resistor mechanism (g1 g2/(g1+g2) is the only observable) explains the count; the equality is certified only at these two sizes. [evidence re-hashed: identifiability.json regenerated with an added field; previous digest sha256:eb142dac9e8c...]",
    "audit": null
   },
   {
@@ -118,9 +118,9 @@
    "depends_on": [
     "H0-B-0002"
    ],
-   "evidence": "sha256:eb142dac9e8c8fbdf36b6d650c5830116099aea620a4aeaf8c26f9859b75503a",
+   "evidence": "sha256:926e7dc1d93e3f8fb44624d7bc900110bc6e437c301c908e9a5d523a6c22c232",
    "statement": "DEVIATION FROM PREREGISTRATION_2 part A: the preregistered probe-matched kappa is SINGULAR by design (H0-B-0002), so the prediction as written is untestable. Corrected comparison, chosen after seeing the singularity: kappa restricted to the identifiable subspace (dropping exactly the certified deficiency). log10 kappa: {7,3} L=2/44 probes 2.70 vs square R=6 5.07; {7,3} L=3/76 probes 2.97 vs square R=10 9.72 (gap 6.75 decades). The advantage survives probe matching at these two sizes.",
-   "notes": "float64 SVD; post hoc metric; must be reported as a deviation everywhere it is cited.",
+   "notes": "float64 SVD; post hoc metric; must be reported as a deviation everywhere it is cited. [evidence re-hashed: identifiability.json regenerated with an added field; previous digest sha256:eb142dac9e8c...]",
    "audit": null
   },
   {
@@ -152,7 +152,7 @@
    ],
    "evidence": "sha256:f8caab0a3f260efe02b200121d8b998330fad34d4f8a1de937e365ef0b324f8f",
    "statement": "EXPLORATORY, post hoc (cannot rescue H2-X-0001): {7,3} lambda_min at L=2..6 = 0.3636, 0.2133, 0.1534, 0.1232, 0.1058; successive ratios 0.587, 0.719, 0.803, 0.859 -- the decrease is slowing, consistent with a positive limit or ~1/log N, and far slower than 1/N. At N~800: tau 6.52 vs 39.06 (flat), stiffness 36 vs 311.",
-   "notes": "experiments/track_h_hyperbolic_network/h2_explore.py (sparse eigsh). Five points cannot discriminate a positive limit from 1/log N.",
+   "notes": "experiments/track_h_hyperbolic_network/h2_explore.py (sparse eigsh). Five points cannot discriminate a positive limit from 1/log N. CORRECTION (appended, statement unchanged): '~1/log N' is NOT an open alternative. Every interior node of every tested truncation has full degree 3 (H2-B-0001), so lambda_min(L_ii) >= lambda_0({7,3}) > 0 by domain monotonicity (H2-C-0001); the sequence decreases toward lambda_0.",
    "audit": null
   },
   {
@@ -163,6 +163,39 @@
    "evidence": "sha256:287d1082fa4257cc18e547201b914709ace1f6aa10d1eb8d46b2093e1691e210",
    "statement": "RC integrator controls: K1 (expm known answer, max rel err < 1e-5) and K2 (integrated steady state equals the Schur-complement DtN column, < 1e-6) PASS with scipy BDF on {7,3} L=2 and square R=6. The rusty-SUNDIALS CVODE backend is NOT RUN (Python extension not built); no cross-code agreement is claimed.",
    "notes": "Re-run rc_network.py after `maturin develop` in ~/rusty-SUNDIALS/crates/rusty-sundials-py.",
+   "audit": null
+  },
+  {
+   "id": "H2-B-0001",
+   "tier": "B",
+   "kind": "exact_harness",
+   "depends_on": [],
+   "evidence": "sha256:fb864973d549bf7f37f0fa2eb2f8c83409678895472214958d00b7f8e9b88c1a",
+   "statement": "For the {7,3} truncations L=1..6 (N=35..5887), every interior node (not on the outer face) has degree exactly 3, and the interior node count at layer L equals N at layer L-1 (7, 35, 112, 315, 847, 2240).",
+   "notes": "experiments/track_h_hyperbolic_network/interior_degree.py; integer degree counts, no floating point.",
+   "audit": null
+  },
+  {
+   "id": "H2-L-0001",
+   "tier": "L",
+   "kind": "citation",
+   "depends_on": [],
+   "evidence": "sha256:da41fda569225e02b55bd35a78a14827f0d0e535a87f8f218d7bfc56bb5d939b",
+   "statement": "The bottom of the spectrum lambda_0 of the combinatorial Laplacian of an infinite graph of bounded degree is positive iff its edge-isoperimetric (Cheeger) constant is positive [Dodziuk, Trans. AMS 284 (1984) 787-794; Mohar, Linear Algebra Appl. 103 (1988) 119-131]; the {7,3} tiling graph has an explicit positive isoperimetric constant [Haggstrom, Jonasson & Lyons, Ann. Probab. 30 (2002) 443-473].",
+   "notes": "Cited, not re-derived. Upper bound lambda_0 <= 3 - 2 sqrt 2 follows from the 3-regular tree covering.",
+   "audit": null
+  },
+  {
+   "id": "H2-C-0001",
+   "tier": "C",
+   "kind": "argument",
+   "depends_on": [
+    "H2-B-0001",
+    "H2-L-0001"
+   ],
+   "statement": "For every tested {7,3} truncation, lambda_min(L_ii) is the Rayleigh-quotient minimum of the infinite {7,3} Laplacian over functions supported on the interior (by H2-B-0001), hence lambda_min(L_ii) >= lambda_0 > 0 and the RC relaxation time tau = C/lambda_min(L_ii) <= C/lambda_0 uniformly; since the interiors are nested and exhaust the tiling, lambda_min(L_ii) is non-increasing in L and converges to lambda_0. Flat disks have lambda_min -> 0.",
+   "evidence": "sha256:74d524ad397832ba788cbe89d176932452dceed98ab1191ea51dadffadb20573",
+   "notes": "The degree premise is checked only for L<=6; for general L it follows from the face-incidence boundary definition but that step is argued, not certified. Does NOT rescue the refuted finite-size prediction H2-X-0001.",
    "audit": null
   }
  ]
