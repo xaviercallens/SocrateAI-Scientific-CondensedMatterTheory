@@ -10,6 +10,7 @@ Creates (if absent) <namespace>/hyperbolic-resistor-networks (dataset) and
 Prints the URLs. Re-running uploads a new commit; nothing is deleted.
 """
 import argparse
+import os
 from pathlib import Path
 
 from huggingface_hub import HfApi
@@ -21,17 +22,21 @@ MODEL_NAME = "hyperbolic-resistor-network-simulator"
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--namespace", required=True, help="Hugging Face user or organisation")
+    ap.add_argument("--namespace", help="Hugging Face user or organisation (default: the authenticated user)")
     ap.add_argument("--private", action="store_true", help="create the repositories as private")
     a = ap.parse_args()
     manifest = (BUILD / "MANIFEST.json")
     if not manifest.exists():
         raise SystemExit("run release/export.py first")
-    api = HfApi()
-    print("authenticated as:", api.whoami()["name"])
+    # token: HUGGINGFACE_TOKEN or HF_TOKEN from the environment, else the `hf auth login` cache
+    token = os.environ.get("HUGGINGFACE_TOKEN") or os.environ.get("HF_TOKEN") or None
+    api = HfApi(token=token)
+    user = api.whoami()["name"]
+    print("authenticated as:", user)
+    ns = a.namespace or user
     for kind, name, folder in (("dataset", DATASET_NAME, BUILD / "hf_dataset"),
                                ("model", MODEL_NAME, BUILD / "hf_model")):
-        repo_id = f"{a.namespace}/{name}"
+        repo_id = f"{ns}/{name}"
         api.create_repo(repo_id, repo_type=kind, private=a.private, exist_ok=True)
         api.upload_folder(repo_id=repo_id, repo_type=kind, folder_path=str(folder),
                           commit_message="Release v1.0: data/code for the hyperbolic conditioning preprint")
