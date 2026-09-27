@@ -4,6 +4,7 @@
 #
 #   bash release/publish.sh hf        # Hugging Face upload
 #   bash release/publish.sh zenodo    # Zenodo DRAFT (never publishes)
+#   bash release/publish.sh publish <id>  # verify the draft, then PUBLISH it (irreversible)
 #   bash release/publish.sh check     # only check the token file
 #
 # TOKEN_FILE defaults to ~/.token_workflow_token.
@@ -42,6 +43,7 @@ cd "$TRACK"
 case "$STEP" in
   hf)     python3 release/hf_upload.py ;;
   zenodo) python3 release/zenodo_draft.py ;;
+  publish) python3 release/zenodo_publish.py "${2:?deposition id required}" ;;
   check)  echo "check only" ;;
   *)      echo "unknown step $STEP"; exit 2 ;;
 esac
