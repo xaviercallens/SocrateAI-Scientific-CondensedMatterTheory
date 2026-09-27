@@ -1,0 +1,23 @@
+{
+  "arxiv_id": "0909.2654",
+  "version": "v4",
+  "title": "Entanglement spectrum of topological insulators and superconductors",
+  "abstract": "We study two a priori unrelated constructions: the spectrum of edge modes in a band topological insulator or superconductor with a physical edge, and the ground state entanglement spectrum in an extended system where an edge is simulated by an entanglement bipartition. We prove an exact relation between the ground state entanglement spectrum of such a system and the spectrum edge modes of the corresponding spectrally flattened Hamiltonian. In particular, we show that degeneracies of the entanglement spectrum correspond to gapless edge modes.",
+  "authors": [
+    "Lukasz Fidkowski"
+  ],
+  "published": "2009-09-14T21:37:07Z",
+  "updated": "2010-02-06T03:44:12Z",
+  "year": "2009",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1103/PhysRevLett.104.130502",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/0909.2654",
+  "pdf_url": "https://arxiv.org/pdf/0909.2654",
+  "pillar": "poc",
+  "slug": "0909.2654",
+  "pdf_local": "papers/pdf/0909.2654.pdf"
+}

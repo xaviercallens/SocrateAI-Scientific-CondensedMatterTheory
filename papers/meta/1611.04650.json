@@ -1,0 +1,33 @@
+{
+  "arxiv_id": "1611.04650",
+  "version": "v3",
+  "title": "Black Holes and Random Matrices",
+  "abstract": "We argue that the late time behavior of horizon fluctuations in large anti-de Sitter (AdS) black holes is governed by the random matrix dynamics characteristic of quantum chaotic systems. Our main tool is the Sachdev-Ye-Kitaev (SYK) model, which we use as a simple model of a black hole. We use an analytically continued partition function $|Z(β+it)|^2$ as well as correlation functions as diagnostics. Using numerical techniques we establish random matrix behavior at late times. We determine the early time behavior exactly in a double scaling limit, giving us a plausible estimate for the crossover time to random matrix behavior. We use these ideas to formulate a conjecture about general large AdS black holes, like those dual to 4D super-Yang-Mills theory, giving a provisional estimate of the crossover time. We make some preliminary comments about challenges to understanding the late time dynamics from a bulk point of view.",
+  "authors": [
+    "Jordan S. Cotler",
+    "Guy Gur-Ari",
+    "Masanori Hanada",
+    "Joseph Polchinski",
+    "Phil Saad",
+    "Stephen H. Shenker",
+    "Douglas Stanford",
+    "Alexandre Streicher",
+    "Masaki Tezuka"
+  ],
+  "published": "2016-11-15T00:12:48Z",
+  "updated": "2018-08-28T05:57:23Z",
+  "year": "2016",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.stat-mech",
+    "quant-ph"
+  ],
+  "doi": "10.1007/JHEP05(2017)118",
+  "journal_ref": "JHEP 1705:118, 2017",
+  "abs_url": "https://arxiv.org/abs/1611.04650",
+  "pdf_url": "https://arxiv.org/pdf/1611.04650",
+  "pillar": "poc",
+  "slug": "1611.04650",
+  "pdf_local": "papers/pdf/1611.04650.pdf"
+}

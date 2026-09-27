@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "1602.06964",
+  "version": "v2",
+  "title": "Sachdev-Ye-Kitaev Model and Thermalization on the Boundary of Many-Body Localized Fermionic Symmetry Protected Topological States",
+  "abstract": "We consider the Sachdev-Ye-Kitaev (SYK) model as an effective theory arising at the zero-dimensional boundary of a many-body localized, Fermionic symmetry protected topological (SPT) phase in one spatial dimension. The Fermions at the boundary are always fully interacting. We find that the boundary is thermalized and investigate how its boundary anomaly, dictated by the bulk SPT order, is encoded in the quantum chaotic eigenspectrum of the SYK model. We show that depending on the SPT symmetry class, the boundary many-body level statistics cycle in a systematic manner through those of the three different Wigner-Dyson random matrix ensembles with a periodicity in the topological index that matches the interaction-reduced classification of the bulk SPT states. We consider all three symmetry classes BDI, AIII, and CII, whose SPT phases are classified in one spatial dimension by $\\mathbb{Z}$ in the absence of interactions. For symmetry class BDI, we derive the eight-fold periodicity of the Wigner-Dyson statistics by using Clifford algebras.",
+  "authors": [
+    "Yi-Zhuang You",
+    "Andreas W. W. Ludwig",
+    "Cenke Xu"
+  ],
+  "published": "2016-02-22T21:08:01Z",
+  "updated": "2016-11-13T00:31:51Z",
+  "year": "2016",
+  "primary_category": "cond-mat.str-el",
+  "categories": [
+    "cond-mat.str-el",
+    "cond-mat.dis-nn"
+  ],
+  "doi": "10.1103/PhysRevB.95.115150",
+  "journal_ref": "Phys. Rev. B 95, 115150 (2017)",
+  "abs_url": "https://arxiv.org/abs/1602.06964",
+  "pdf_url": "https://arxiv.org/pdf/1602.06964",
+  "pillar": "poc",
+  "slug": "1602.06964",
+  "pdf_local": "papers/pdf/1602.06964.pdf"
+}

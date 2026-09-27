@@ -29,7 +29,6 @@
       "args": [],
       "env": {}
     },
-    "_comment_anse": "Below: ANSE/AutoevolveAI's own MCP servers, copied verbatim from ~/AutoevolveAI/.mcp.json so this project's agents can reach ANSE's code-guard and subtask-workflow tools directly, without opening a second session there. Requires ~/AutoevolveAI/.venv to exist (its own setup, not this repo's).",
     "anse-python-code-guard": {
       "command": "${HOME}/AutoevolveAI/.venv/bin/python",
       "args": ["${HOME}/AutoevolveAI/mcp_guard_server.py"],
@@ -44,7 +43,6 @@
         "PYTHONPATH": "${HOME}/AutoevolveAI"
       }
     },
-    "_comment_sundials": "rusty-SUNDIALS has NO MCP server of its own (verified: its repo has no mcp_server.py or .mcp.json). mcp_rusty_sundials.py is a real, minimal server written for it here: a status check, an examples lister, and a generic `cargo run --example` runner that returns RAW, UNPARSED output (its exact CLI/output contract was never inspected, so nothing here fabricates a typed physics API for it). It needs a local checkout (none exists yet) and a Rust toolchain; each tool reports exactly what is missing rather than failing silently. See README.md 'MCP servers' section.",
     "rusty-sundials": {
       "command": "python3",
       "args": ["${CLAUDE_PROJECT_DIR}/mcp_rusty_sundials.py"],

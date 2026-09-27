@@ -1320,6 +1320,138 @@
     "pdf_local": "papers/pdf/1511.08145.pdf"
   },
   {
+    "arxiv_id": "0909.2654",
+    "version": "v4",
+    "title": "Entanglement spectrum of topological insulators and superconductors",
+    "abstract": "We study two a priori unrelated constructions: the spectrum of edge modes in a band topological insulator or superconductor with a physical edge, and the ground state entanglement spectrum in an extended system where an edge is simulated by an entanglement bipartition. We prove an exact relation between the ground state entanglement spectrum of such a system and the spectrum edge modes of the corresponding spectrally flattened Hamiltonian. In particular, we show that degeneracies of the entanglement spectrum correspond to gapless edge modes.",
+    "authors": [
+      "Lukasz Fidkowski"
+    ],
+    "published": "2009-09-14T21:37:07Z",
+    "updated": "2010-02-06T03:44:12Z",
+    "year": "2009",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevLett.104.130502",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/0909.2654",
+    "pdf_url": "https://arxiv.org/pdf/0909.2654",
+    "pillar": "poc",
+    "slug": "0909.2654",
+    "pdf_local": "papers/pdf/0909.2654.pdf"
+  },
+  {
+    "arxiv_id": "0910.1811",
+    "version": "v2",
+    "title": "Entanglement spectrum of a topological phase in one dimension",
+    "abstract": "We show that the Haldane phase of S=1 chains is characterized by a double degeneracy of the entanglement spectrum. The degeneracy is protected by a set of symmetries (either the dihedral group of $π$-rotations about two orthogonal axes, time-reversal symmetry, or bond centered inversion symmetry), and cannot be lifted unless either a phase boundary to another, \"topologically trivial\", phase is crossed, or the symmetry is broken. More generally, these results offer a scheme to classify gapped phases of one dimensional systems. Physically, the degeneracy of the entanglement spectrum can be observed by adiabatically weakening a bond to zero, which leaves the two disconnected halves of the system in a finitely entangled state.",
+    "authors": [
+      "Frank Pollmann",
+      "Erez Berg",
+      "Ari M. Turner",
+      "Masaki Oshikawa"
+    ],
+    "published": "2009-10-09T18:59:13Z",
+    "updated": "2010-04-22T17:39:46Z",
+    "year": "2009",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevB.81.064439",
+    "journal_ref": "Phys. Rev. B 81, 064439 (2010)",
+    "abs_url": "https://arxiv.org/abs/0910.1811",
+    "pdf_url": "https://arxiv.org/pdf/0910.1811",
+    "pillar": "poc",
+    "slug": "0910.1811",
+    "pdf_local": "papers/pdf/0910.1811.pdf"
+  },
+  {
+    "arxiv_id": "0904.2197",
+    "version": "v3",
+    "title": "The effects of interactions on the topological classification of free fermion systems",
+    "abstract": "We describe in detail a counterexample to the topological classification of free fermion systems. We deal with a one dimensional chain of Majorana fermions with an unusual T symmetry. The topological invariant for the free fermion classification is an integer, but with the introduction of interactions it becomes well defined only modulo 8. We illustrate this in the microscopic model of the Majorana chain by constructing an explicit path between two distinct free phases whose topological invariants are equal modulo 8, along which the system remains gapped. The path goes through a strongly interacting region. We also find the field theory interpretation of this phenomenon. There is a second order phase transition between the two phases in the free theory which can be avoided by going through the strongly interacting region. We show that this transition is in the 2D Ising universality class, where a first order phase transition line, terminating at a second order transition, can be avoided by going through the analogue of a high temperature paramagnetic phase. In fact, we construct the full phase diagram of the system as a function of the thermal operator (i.e. the mass term that tunes between the two phases in the free theory) and two quartic operators, obtaining a first order Peierls transition region, a second order transition region, and a region with no transition.",
+    "authors": [
+      "Lukasz Fidkowski",
+      "Alexei Kitaev"
+    ],
+    "published": "2009-04-14T20:20:26Z",
+    "updated": "2009-04-29T23:53:30Z",
+    "year": "2009",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1103/PhysRevB.81.134509",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/0904.2197",
+    "pdf_url": "https://arxiv.org/pdf/0904.2197",
+    "pillar": "poc",
+    "slug": "0904.2197",
+    "pdf_local": "papers/pdf/0904.2197.pdf"
+  },
+  {
+    "arxiv_id": "1602.06964",
+    "version": "v2",
+    "title": "Sachdev-Ye-Kitaev Model and Thermalization on the Boundary of Many-Body Localized Fermionic Symmetry Protected Topological States",
+    "abstract": "We consider the Sachdev-Ye-Kitaev (SYK) model as an effective theory arising at the zero-dimensional boundary of a many-body localized, Fermionic symmetry protected topological (SPT) phase in one spatial dimension. The Fermions at the boundary are always fully interacting. We find that the boundary is thermalized and investigate how its boundary anomaly, dictated by the bulk SPT order, is encoded in the quantum chaotic eigenspectrum of the SYK model. We show that depending on the SPT symmetry class, the boundary many-body level statistics cycle in a systematic manner through those of the three different Wigner-Dyson random matrix ensembles with a periodicity in the topological index that matches the interaction-reduced classification of the bulk SPT states. We consider all three symmetry classes BDI, AIII, and CII, whose SPT phases are classified in one spatial dimension by $\\mathbb{Z}$ in the absence of interactions. For symmetry class BDI, we derive the eight-fold periodicity of the Wigner-Dyson statistics by using Clifford algebras.",
+    "authors": [
+      "Yi-Zhuang You",
+      "Andreas W. W. Ludwig",
+      "Cenke Xu"
+    ],
+    "published": "2016-02-22T21:08:01Z",
+    "updated": "2016-11-13T00:31:51Z",
+    "year": "2016",
+    "primary_category": "cond-mat.str-el",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.dis-nn"
+    ],
+    "doi": "10.1103/PhysRevB.95.115150",
+    "journal_ref": "Phys. Rev. B 95, 115150 (2017)",
+    "abs_url": "https://arxiv.org/abs/1602.06964",
+    "pdf_url": "https://arxiv.org/pdf/1602.06964",
+    "pillar": "poc",
+    "slug": "1602.06964",
+    "pdf_local": "papers/pdf/1602.06964.pdf"
+  },
+  {
+    "arxiv_id": "1611.04650",
+    "version": "v3",
+    "title": "Black Holes and Random Matrices",
+    "abstract": "We argue that the late time behavior of horizon fluctuations in large anti-de Sitter (AdS) black holes is governed by the random matrix dynamics characteristic of quantum chaotic systems. Our main tool is the Sachdev-Ye-Kitaev (SYK) model, which we use as a simple model of a black hole. We use an analytically continued partition function $|Z(β+it)|^2$ as well as correlation functions as diagnostics. Using numerical techniques we establish random matrix behavior at late times. We determine the early time behavior exactly in a double scaling limit, giving us a plausible estimate for the crossover time to random matrix behavior. We use these ideas to formulate a conjecture about general large AdS black holes, like those dual to 4D super-Yang-Mills theory, giving a provisional estimate of the crossover time. We make some preliminary comments about challenges to understanding the late time dynamics from a bulk point of view.",
+    "authors": [
+      "Jordan S. Cotler",
+      "Guy Gur-Ari",
+      "Masanori Hanada",
+      "Joseph Polchinski",
+      "Phil Saad",
+      "Stephen H. Shenker",
+      "Douglas Stanford",
+      "Alexandre Streicher",
+      "Masaki Tezuka"
+    ],
+    "published": "2016-11-15T00:12:48Z",
+    "updated": "2018-08-28T05:57:23Z",
+    "year": "2016",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.stat-mech",
+      "quant-ph"
+    ],
+    "doi": "10.1007/JHEP05(2017)118",
+    "journal_ref": "JHEP 1705:118, 2017",
+    "abs_url": "https://arxiv.org/abs/1611.04650",
+    "pdf_url": "https://arxiv.org/pdf/1611.04650",
+    "pillar": "poc",
+    "slug": "1611.04650",
+    "pdf_local": "papers/pdf/1611.04650.pdf"
+  },
+  {
     "arxiv_id": "cond-mat/0112197",
     "version": "v3",
     "title": "Topological Origin of Zero-Energy Edge States in Particle-Hole Symmetric Systems",

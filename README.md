@@ -206,15 +206,22 @@ vérifiés par le noyau (réseaux, T-dualité, O(d,d), K3). Utile ici parce que 
 classification en dix classes repose sur la périodicité de Bott et la
 K-théorie, déjà partiellement formalisées de ce côté.
 
-### `anse-python-code-guard`, `anse-claude-subtask-workflow` — serveurs ANSE (fonctionnels, si `~/AutoevolveAI/.venv` existe)
+### `anse-python-code-guard`, `anse-claude-subtask-workflow` — serveurs ANSE (**non lancés depuis cette session**)
 
-Copiés **tels quels** depuis `~/AutoevolveAI/.mcp.json`, pour que les agents de
-ce dépôt atteignent directement le garde-fou de code et l'orchestrateur de
-sous-tâches d'ANSE, sans ouvrir une seconde session dans AutoevolveAI. Ils
-dépendent du `.venv` d'AutoevolveAI (setup propre à ce dépôt, pas au nôtre) ;
-si ce `.venv` n'existe pas encore, lancer l'installation côté AutoevolveAI
-d'abord. Le troisième serveur d'ANSE, `leanmaster`, fait doublon avec l'entrée
-`leanmaster` ci-dessus et n'est donc pas dupliqué.
+Copiés **tels quels** depuis `~/AutoevolveAI/.mcp.json` (chemins et arguments
+identiques), pour que les agents de ce dépôt atteignent directement le
+garde-fou de code et l'orchestrateur de sous-tâches d'ANSE, sans ouvrir une
+seconde session dans AutoevolveAI. **Non vérifiés en exécution ici** : le mode
+de permission de cette session refuse d'invoquer un binaire situé sous le
+répertoire d'un autre dépôt (même restriction que pour `git clone`), donc
+`${HOME}/AutoevolveAI/.venv/bin/python` n'a pas pu être lancé pour confirmer
+que ces deux serveurs démarrent réellement. Rien n'indique qu'ils
+échoueraient dans une session Claude Code normale (non sandboxée ainsi), mais
+cela reste à confirmer à la première utilisation. Ils dépendent du `.venv`
+d'AutoevolveAI (setup propre à ce dépôt, pas au nôtre) ; si ce `.venv` n'existe
+pas encore, lancer l'installation côté AutoevolveAI d'abord. Le troisième
+serveur d'ANSE, `leanmaster`, fait doublon avec l'entrée `leanmaster`
+ci-dessus et n'est donc pas dupliqué.
 
 ### `rusty-sundials` — **squelette honnête, pas encore fonctionnel**
 

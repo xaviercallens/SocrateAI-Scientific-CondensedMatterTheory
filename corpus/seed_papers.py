@@ -88,6 +88,20 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("1612.06180", "experiment", "Observation of superradiance in a vortex flow"),
     ("1511.08145", "experiment", "Observation of noise correlated by the Hawking effect in a water tank"),
 
+    # --- Pillar 7: entanglement-spectrum <-> bulk-boundary PoC -----------
+    # Added to check two premises before coding experiments/poc_entanglement_tda/:
+    # (a) free-fermion SSH entanglement spectrum mirrors the physical edge
+    #     spectrum (Fidkowski; Pollmann-Turner-Berg-Oshikawa);
+    # (b) SYK-type Majorana models have a mod-8 (Fidkowski-Kitaev) symmetry
+    #     classification, so SYK is NOT topology-free the way a chaotic model
+    #     is assumed to be -- if true, this changes the PoC's SYK role from
+    #     "negative control" to "second signal system".
+    ("0909.2654", "poc", "Entanglement spectrum of topological insulators and superconductors"),
+    ("0910.1811", "poc", "Entanglement spectrum of a topological phase in one dimension"),
+    ("0904.2197", "poc", "Effects of interactions on the topological classification of free fermion systems"),
+    ("1602.06964", "poc", "Sachdev-Ye-Kitaev Model and Thermalization on the Boundary of Many-Body Localized"),
+    ("1611.04650", "poc", "Black Holes and Random Matrices"),
+
     # --- Pillar 6: Shinsei Ryu -------------------------------------------
     # Selected from his full arXiv record (tools/arxiv_author.py ->
     # docs/assets/ryu_arxiv.json, 202 papers). Papers of his already in the
