@@ -15,7 +15,9 @@
  "related_identifiers": [
   {"identifier": "https://github.com/xaviercallens/SocrateAI-Scientific-CondensedMatterTheory", "relation": "isSupplementTo", "resource_type": "software"},
   {"identifier": "https://github.com/xaviercallens/rusty-SUNDIALS", "relation": "references", "resource_type": "software"},
-  {"identifier": "https://github.com/xaviercallens/rusty-SUNDIALS/pull/62", "relation": "isSupplementedBy", "resource_type": "software"}
+  {"identifier": "https://github.com/xaviercallens/rusty-SUNDIALS/pull/62", "relation": "isSupplementedBy", "resource_type": "software"},
+  {"identifier": "https://huggingface.co/datasets/callensxavier/hyperbolic-resistor-networks", "relation": "isSupplementedBy", "resource_type": "dataset"},
+  {"identifier": "https://huggingface.co/callensxavier/hyperbolic-resistor-network-simulator", "relation": "isSupplementedBy", "resource_type": "software"}
  ],
  "notes": "Code in code.zip is MIT-licensed; data and paper are CC BY 4.0. Prepared with AI assistance (Claude, Anthropic); the author reviewed all claims."
 }
