@@ -1,0 +1,22 @@
+[
+ {
+  "hyperbolic": "{7,3} L=2, 44 probes",
+  "r": 117,
+  "hyp_log10_kappa_identifiable": 2.695399727370996,
+  "square": "R=6",
+  "square_E": 200,
+  "square_log10_sigma1_over_sigma_r": 2.1414835622609645,
+  "square_full_log10_kappa": 5.072443594703144,
+  "flat_best_subspace_worse_than_hyperbolic": false
+ },
+ {
+  "hyperbolic": "{7,3} L=3, 76 probes",
+  "r": 306,
+  "hyp_log10_kappa_identifiable": 2.9699227297327733,
+  "square": "R=10",
+  "square_E": 592,
+  "square_log10_sigma1_over_sigma_r": 3.45123364716429,
+  "square_full_log10_kappa": 9.717820796894493,
+  "flat_best_subspace_worse_than_hyperbolic": true
+ }
+]
