@@ -19,6 +19,30 @@ contre arXiv. `[EXTERNE]` = référence hors corpus. Tiers Elenchus
 
 ---
 
+## État au 2026-09-28 — mise à jour
+
+**Depuis le 27 :** revue par les pairs reçue et traitée (v1.1 publiée, DOI 10.5281/zenodo.23002378) ; sept
+expériences préenregistrées de plus (prereg 5–11 : homologie persistante, détection contre bruit et tolérance,
+localisation, marge de bruit, tolérance en localisation, pavages multiples) ; brouillon v1.2 construit et relu, non
+publié ; grand livre à 30 affirmations, porte propre ; 36 prédictions étiquetées (dont 9 réfutées, conservées).
+
+**Ce qui a changé dans la compréhension.** (1) L'avantage à sondes égales et dimension égale est ≤ 0,5 décade
+(correction de v1.0). (2) À profondeur égale, $\log\kappa$ est presque universel dans la classe hyperbolique et
+concave en la profondeur ; il est linéaire pour le plat : « le mécanisme est l'échelle de la profondeur » n'est que la
+moitié de l'explication. (3) Pour la construction physique : un défaut à un nœud se localise parfaitement au budget
+de $3\times10^{-4}$ sur les deux géométries ; l'apport de l'hyperbolique est une **marge de bruit** (≥ 100×) ; la
+tolérance des composants jusqu'à 5 % est sans effet en mesure différentielle.
+
+**Organisation du travail (nouveau).** Le programme est désormais exécutable par un agent de faible capacité ou
+un flux automatisé : `docs/RUNBOOK.md` (la boucle en 8 étapes, règles absolues, règles d'escalade, niveaux),
+`docs/TASK_QUEUE.md` (file de tâches avec niveau requis et critère d'acceptation), et trois outils génériques :
+`tools/new_experiment.py` (échafaudage préenregistrement + script), `tools/ledger_add.py` (affirmation depuis un
+JSON, corrections en annexe seulement), `tools/experiment_gate.py` (23 vérifications mécaniques, dont « le
+préenregistrement est commité avant les données », lues dans l'historique git). Une exécution n'est réussie que si
+la porte imprime `ALL PASS`.
+
+**Bloqué côté humain :** fusion de la PR #2 et release v1.1 ; décision de publier v1.2 ; compilation Lean (H-6).
+
 ## État au 2026-09-27 — ce qui est livré, ce qui vient ensuite
 
 ### Livré

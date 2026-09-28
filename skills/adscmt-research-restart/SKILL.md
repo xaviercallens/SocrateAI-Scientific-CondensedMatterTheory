@@ -7,6 +7,11 @@ description: Resume the SocrateAI AdS/CMT + Track H (hyperbolic resistor network
 
 Install (once): `mkdir -p ~/.claude/skills && cp -r skills/adscmt-research-restart ~/.claude/skills/`
 
+## 0. If you are a small model or an automated workflow
+Follow `docs/RUNBOOK.md` literally (eight steps, absolute rules, escalation table) and take tasks only from
+`docs/TASK_QUEUE.md` at your tier. Success means `python3 tools/experiment_gate.py` prints `ALL PASS`. Claims go in
+through `tools/ledger_add.py claim.json`; new experiments start with `tools/new_experiment.py`.
+
 ## 1. Restart (always first)
 ```
 bash tools/restart.sh            # status: git, env, self-tests, ledger gate, Chroma counts, publications, next steps
