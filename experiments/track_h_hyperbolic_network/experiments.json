@@ -100,5 +100,19 @@
   "data": [
    "data/rc_benchmark_on_other_tilings.json"
   ]
+ },
+ "PREREGISTRATION_16.md": {
+  "title": "sensitivity versus depth across tilings",
+  "script": "exp16_sensitivity_versus_depth_across_tilings.py",
+  "data": [
+   "data/sensitivity_versus_depth_across_tilings.json"
+  ]
+ },
+ "PREREGISTRATION_17.md": {
+  "title": "localisation under correlated hardware noise",
+  "script": "exp17_localisation_under_correlated_hardware_n.py",
+  "data": [
+   "data/localisation_under_correlated_hardware_n.json"
+  ]
  }
 }
