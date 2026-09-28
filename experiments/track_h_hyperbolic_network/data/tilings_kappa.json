@@ -1,0 +1,33 @@
+{
+ "controls": [
+  {
+   "name": "{7,3} L=3 (control)",
+   "N": 315,
+   "E": 399,
+   "boundary": 203,
+   "d_max": 5,
+   "interior_degree_q": null,
+   "log10_kappa": 3.2721712304960993,
+   "lambda_min": 2.855338091192499e-07,
+   "lambda_max": 1.0,
+   "seconds": 0.4,
+   "v1_direct_svd": 3.2721712304928863,
+   "control_pass": true
+  },
+  {
+   "name": "square R=6 (control)",
+   "N": 113,
+   "E": 200,
+   "boundary": 44,
+   "d_max": 5,
+   "interior_degree_q": null,
+   "log10_kappa": 5.0724446955481115,
+   "lambda_min": 7.319460994447653e-11,
+   "lambda_max": 1.0218061019894598,
+   "seconds": 0.0,
+   "v1_direct_svd": 5.072443594703144,
+   "control_pass": false
+  }
+ ],
+ "rows": []
+}

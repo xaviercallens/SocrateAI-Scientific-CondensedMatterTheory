@@ -44,9 +44,11 @@ def record(name, g, q=None):
     deg_ok = None if q is None else bool(np.all(degrees(n, edges)[interior] == q))
     t0 = time.time()
     lk, lmin, lmax = log10_kappa_gram(g)
+    err = None if lk is None else float(0.5 * np.finfo(float).eps * (lmax / lmin) / math.log(10))
     row = {"name": name, "N": n, "E": len(edges), "boundary": int(len(bnd)),
            "d_max": int(depths(g, bnd).max()), "interior_degree_q": deg_ok,
-           "log10_kappa": lk, "lambda_min": lmin, "lambda_max": lmax, "seconds": round(time.time() - t0, 1)}
+           "log10_kappa": lk, "log10_kappa_error_bound": err, "lambda_min": lmin, "lambda_max": lmax,
+           "seconds": round(time.time() - t0, 1)}
     print(f"  {name:12} N={n:5d} E={len(edges):5d} m={len(bnd):5d} d_max={row['d_max']:2d} "
           f"deg_ok={deg_ok} log10k={'UNRESOLVED' if lk is None else format(lk, '.4f')} ({row['seconds']}s)", flush=True)
     return row
@@ -61,8 +63,13 @@ def main():
                          ("square R=6", build_square_disk(6), h0["square R=6"])):
         r = record(name + " (control)", g)
         r["v1_direct_svd"] = ref
-        r["control_pass"] = r["log10_kappa"] is not None and abs(r["log10_kappa"] - ref) < 1e-6
-        ctrl.append(r); print(f"     control vs direct SVD {ref:.4f}: {'pass' if r['control_pass'] else 'FAIL'}")
+        # Deviation 1 of PREREGISTRATION_11.md: Gram squares the condition number, so allow the float64 floor
+        tol = max(1e-6, 10 * np.finfo(float).eps * 10 ** (2 * ref))
+        r["control_tolerance"] = tol
+        r["control_pass"] = r["log10_kappa"] is not None and abs(r["log10_kappa"] - ref) < tol
+        ctrl.append(r)
+        print(f"     control vs direct SVD {ref:.6f}: |diff| = {abs(r['log10_kappa'] - ref):.1e}, tol {tol:.1e}: "
+              f"{'pass' if r['control_pass'] else 'FAIL'}")
     OUT.write_text(json.dumps({"controls": ctrl, "rows": rows}, indent=1))
     if not all(c["control_pass"] for c in ctrl):
         print("control failed: no tiling results reported"); return 1

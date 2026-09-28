@@ -18,6 +18,14 @@ boundary (same function as in v1.0).
 **Validity gates (a tiling's results are reported only if both pass):** (a) every interior node has degree q;
 (b) control: this method reproduces the v1.0 direct-SVD log₁₀κ of {7,3} L=3 (3.2722) and square R=6 (5.0724) to 1e-6.
 
+## Deviation 1 (2026-09-28, recorded before any tiling result was seen)
+The first run stopped at gate (b): square R=6 differed from the direct-SVD value by 1.1×10⁻⁶ (> 1e-6), while
+{7,3} L=3 agreed to 3×10⁻¹². Cause (`gram_control_diag.py`, `data/gram_control_diag.json`): forming G = JᵀJ squares the
+condition number, so float64 loses ≈ ε·κ(G) (here 3×10⁻⁶ at κ(G) = 10¹⁰·¹). The 1e-6 tolerance ignored that floor.
+**Amended gate (b):** the control must agree to max(1e-6, 10·ε·κ(G)), with κ(G) from the direct value; and every
+tiling value is reported with its error bound ε·κ(G)·(1/ln 10)/2 in log₁₀κ. No prediction, threshold or tiling
+list changed. The Gram method itself is unchanged.
+
 ## Predictions (fixed now)
 - **P1 (concavity in depth).** For {7,3} and {8,3}, the increments of log₁₀κ between consecutive layers L=1..4 are
   strictly decreasing (log κ is concave in L; v1.0's {7,3} increments are 1.08, 0.81, 0.62).

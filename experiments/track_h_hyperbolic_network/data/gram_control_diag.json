@@ -1,0 +1,42 @@
+[
+ {
+  "name": "square R=3",
+  "gram": 1.7284483652719937,
+  "direct_now": 1.7284483652720413,
+  "h0_json": 1.7284483652720413,
+  "gram_minus_direct": -4.75175454539567e-14,
+  "direct_now_minus_h0": 0.0,
+  "log10_kappa_G": 3.4568967305440825,
+  "eps_times_kappaG": 6.358240572753491e-13
+ },
+ {
+  "name": "{7,3} L=2",
+  "gram": 2.462663408217205,
+  "direct_now": 2.462663408217156,
+  "h0_json": 2.462663408217156,
+  "gram_minus_direct": 4.884981308350689e-14,
+  "direct_now_minus_h0": 0.0,
+  "log10_kappa_G": 4.925326816434312,
+  "eps_times_kappaG": 1.8696789646354115e-11
+ },
+ {
+  "name": "square R=6",
+  "gram": 5.0724446955481115,
+  "direct_now": 5.072443594703144,
+  "h0_json": 5.072443594703144,
+  "gram_minus_direct": 1.1008449671834342e-06,
+  "direct_now_minus_h0": 0.0,
+  "log10_kappa_G": 10.144887189406289,
+  "eps_times_kappaG": 3.09975532600273e-06
+ },
+ {
+  "name": "{7,3} L=3",
+  "gram": 3.2721712304960993,
+  "direct_now": 3.2721712304928863,
+  "h0_json": 3.2721712304928863,
+  "gram_minus_direct": 3.212985433265203e-12,
+  "direct_now_minus_h0": 0.0,
+  "log10_kappa_G": 6.5443424609857725,
+  "eps_times_kappaG": 7.776473322254159e-10
+ }
+]
