@@ -48,6 +48,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **What happened:** in H3-X-0003's notes and `TDA_RESULTS.md` I wrote that a ×2 defect would be "~100× weaker" than the tested ×100 one because "the signal is roughly linear in the conductance change". I had not computed it. A 30-second calculation showed the response saturates: ×2 gives 27–37 % of the ×100 signal. The error would have steered the next preregistration and the hardware plan toward a wrong worry.
 - **Rule:** a quantitative limitation that will steer decisions is computed before it is written; if it can't be, it is labelled a guess. Corrections are appended to the note and the results file (statement unchanged), and the correcting data goes in the ledger (H3-X-0004).
 
+**LL-A10: don't predict a decoder from a different statistic's SNR.**
+- **What happened:** for localisation I predicted the flat lattice would fail at deep nodes and low contrast, reasoning from the SNR of the *detection* statistic (a single norm, ~3× the noise floor). The matched-filter decoder localised perfectly in all 60 cells: it uses all m² correlated matrix entries, not one norm. Two of three predictions were refuted, and the result weakens the localisation motivation for a hyperbolic build.
+- **Rule:** predict a decoder's performance from a model of the decoder, or from a noise sweep that finds its failure boundary; a perfect score (60/60) is a ceiling, not a measurement, and always calls for the sweep (PREREGISTRATION_9).
+- **Evidence:** H3-X-0005, `LOCALIZATION_RESULTS.md`.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.

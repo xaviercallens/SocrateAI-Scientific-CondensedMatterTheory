@@ -243,6 +243,30 @@ def predictions():
                          "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
                          "energy": 0.0 if ok else 1.0,
                          "note": "Only the extreme x100 contrast tested; linear-response scaling of the null overestimated it by ~1.7x at 5%."})
+    # ---- PREREGISTRATION_8 (single-node defect localisation) ----
+    loc = D / "localize_defect.json"
+    if loc.exists():
+        res = {r["lattice"]: r["cells"] for r in json.loads(loc.read_text())["results"]}
+        top = lambda l, k: res[l][k]["top1"]
+        L1 = all(top(l, f"{d} x{f}") >= 0.9 for l in res for d in ("depth1", "mid") for f in ("10", "100"))
+        L2 = top("{7,3} L=3", "max x2") >= 0.8 and top("square R=10", "max x2") <= 0.5
+        L3 = (top("square R=10", "max x0.8") <= 0.2 and top("square R=10", "max x1.25") <= 0.2
+              and top("{7,3} L=3", "max x0.8") >= 0.5 and top("{7,3} L=3", "max x1.25") >= 0.5)
+        for pid, ok, ctx, pred, out in (
+            ("P8-L1-strong-contrast", L1, "Localisation top-1, contrast x10/x100, depth 1 and mid, four lattices, noise 3e-4.",
+             {"top1_min": 0.9}, {"min_top1": min(top(l, f"{d} x{f}") for l in res for d in ("depth1", "mid") for f in ("10", "100"))}),
+            ("P8-L2-deep-x2-geometry", L2, "Localisation top-1 at maximal depth, contrast x2: hyperbolic L=3 vs square R=10.",
+             {"hyperbolic_L3": ">= 0.8", "square_R10": "<= 0.5"},
+             {"hyperbolic_L3": top("{7,3} L=3", "max x2"), "square_R10": top("square R=10", "max x2")}),
+            ("P8-L3-deep-weak", L3, "Localisation top-1 at maximal depth, contrast x0.8 and x1.25.",
+             {"square_R10": "<= 0.2", "hyperbolic_L3": ">= 0.5"},
+             {"square_R10": [top("square R=10", "max x0.8"), top("square R=10", "max x1.25")],
+              "hyperbolic_L3": [top("{7,3} L=3", "max x0.8"), top("{7,3} L=3", "max x1.25")]}),
+        ):
+            recs.append({"id": pid, "source": ["PREREGISTRATION_8.md", "data/localize_defect.json"], "context": ctx,
+                         "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
+                         "energy": 0.0 if ok else 1.0,
+                         "note": "60/60 cells at top-1 = 1.00: the prediction that the flat lattice fails was wrong; oracle dictionary, ideal board, i.i.d. noise."})
     return recs
 
 

@@ -289,6 +289,18 @@
    "audit": null,
    "statement": "EXPLORATORY (not preregistered; computed to check a claim in H3-X-0003): noiseless relative change of the boundary resistance metric for a single-node conductance defect (all edges of the node scaled by f), deepest node. {7,3} L=3: f=0.8: 5.1e-03, 1.25: 4.9e-03, 2: 1.4e-02, 10: 3.3e-02, 100: 3.8e-02. Square R=10: 0.8: 4.9e-04, 1.25: 5.2e-04, 2: 1.7e-03, 10: 4.8e-03, 100: 6.1e-03. The response saturates for f >> 1 (x2 is 37% / 27% of x100), is roughly antisymmetric in log f near f = 1 (x0.8 and x1.25 are within 5% of each other), and is a factor ~7.5-10 larger on the hyperbolic lattice at the deepest node.",
    "notes": "experiments/track_h_hyperbolic_network/contrast_signal.py; four lattices, depths max and 1 in the data file."
+  },
+  {
+   "id": "H3-X-0005",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H3-X-0004"
+   ],
+   "evidence": "sha256:5321b6b18583a1ed33b5c4e5eeca109a6056ffe88e797e9feec33850856cabe6",
+   "audit": null,
+   "statement": "PREREGISTRATION_8 (single-node defect localisation from the difference of two NtD maps, i.i.d. noise 3e-4 on each, dictionary matched filter over all interior nodes x contrasts {0.1,0.5,0.8,1.25,2,5,10,100}, 20 trials per cell, 4 lattices x 3 depth classes x 5 true contrasts {0.8,1.25,2,10,100} = 60 cells). Result: top-1 node accuracy and contrast accuracy are 1.00 in every cell (True); mean hop error 0. L1 HELD (True). L2 REFUTED (False): square R=10 at maximal depth and x2 localises perfectly (predicted <= 0.5). L3 REFUTED (False): square R=10 at x0.8 and x1.25, maximal depth, localises perfectly (predicted <= 0.2). The hyperbolic lattice's larger boundary signal (H3-X-0004) gives NO localisation advantage at this noise level and these sizes with an oracle-dictionary decoder.",
+   "notes": "experiments/track_h_hyperbolic_network/localize_defect.py. LIMITS: ideal board only (no tolerance); known single-node model and a known finite contrast set (oracle dictionary); i.i.d. Gaussian noise; the maximal-depth class has one node on square R=6/R=10 (20 noise draws of one location); no ceiling/floor separation is possible from a 60/60 result. Hypothesis, NOT tested: the matched filter combines all m^2 correlated matrix entries, giving a processing gain of order m over the single norm statistic used for detection (H3-X-0002), so localisation is limited only at much larger noise; the failure boundary needs a noise sweep."
   }
  ]
 }
