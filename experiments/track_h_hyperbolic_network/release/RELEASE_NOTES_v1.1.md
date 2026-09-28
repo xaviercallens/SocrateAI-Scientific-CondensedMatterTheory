@@ -31,6 +31,11 @@ Preregistered and committed before each run (`PREREGISTRATION_5.md` to `PREREGIS
   measurement always works.
 - Single-node localisation is perfect at 3×10⁻⁴ on flat and hyperbolic lattices alike; the hyperbolic lattice's
   advantage is a noise margin (≥ 100× at N≈316), and component tolerance up to 5 % does not degrade localisation.
+- Across the {7,3}, {8,3}, {5,4}, {6,4} and {4,5} tilings (prereg 11, `TILINGS_RESULTS.md`, H0-X-0008): at equal
+  maximal depth the hyperbolic tilings agree within 0.56 decades although N varies ~15×, while the flat lattices are
+  ≥ 1.8 decades worse at equal depth (log κ is concave in depth for hyperbolic tilings, linear for flat). So the
+  paper's sentence "the mechanism is the scaling of depth with size" holds within the hyperbolic class only; a v1.2 should
+  qualify it. One preregistered prediction (polynomial-exponent bound for the q = 4, 5 tilings) was refuted.
 - **Corrections recorded in the open:** an earlier "×2 defects are ~100× weaker" note was wrong (the response
   saturates); two localisation predictions and one tolerance prediction were refuted (`LL.md`: LL-A8 to LL-A11).
 - Limits: single-node defects, known-contrast oracle decoder, i.i.d. noise, 20 trials per cell, tolerance ≤ 5 %.

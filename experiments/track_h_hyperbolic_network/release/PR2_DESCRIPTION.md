@@ -48,7 +48,8 @@ Each was preregistered and committed before it ran; refutations and corrections 
 - **Detection vs measurement noise, prereg 6; vs component tolerance, prereg 7:** a ×100 defect is detected at the 3×10⁻⁴ budget on all four lattices; against tolerance it survives 5 % on both hyperbolic lattices and 1 % on the flat R=10 (H3-X-0002/3).
 - **Correction:** a ×2 defect is *not* ~100× weaker than ×100 (the response saturates, 27–37 %); my earlier note was wrong and is corrected (H3-X-0004, LL-A9).
 - **Localisation, prereg 8–10:** single-node localisation is perfect at 3×10⁻⁴ on flat *and* hyperbolic lattices (two of my predictions refuted, LL-A10); the noise sweep shows the hyperbolic advantage is a noise margin (flat fails at 10⁻³–3×10⁻³, hyperbolic holds to ≥ 10⁻¹, ≥ 100× at N≈316); component tolerance up to 5 % does not degrade localisation (H3-X-0005..0007, LL-A11).
-- Ledger: 29 claims, gate clean; training labels: 31 predictions; lessons learned in `LL.md`; roadmap updated (`docs/roadmap.md`, rows H-3a/H-3b).
+- **Other tilings, prereg 11 (H0-X-0008):** at equal maximal depth the hyperbolic tilings ({7,3}, {8,3}, {5,4}, {6,4}, {4,5}) agree within 0.56 decades while N varies ~15×; flat lattices are ≥ 1.8 decades worse at equal depth. The paper's "mechanism is depth" sentence holds within the hyperbolic class only (to qualify in a v1.2). One exponent prediction refuted; a control tolerance was amended in the open before any tiling result (LL-A12).
+- Ledger: 30 claims, gate clean; training labels: 36 predictions; lessons learned in `LL.md`; roadmap updated (`docs/roadmap.md`, rows H-3a/H-3b).
 - Limits: single-node defects, oracle decoder (known contrast set), i.i.d. noise, 20 trials per cell, tolerance ≤ 5 %.
 
 ### Published
