@@ -43,6 +43,15 @@ la porte imprime `ALL PASS`.
 
 **Bloqué côté humain :** fusion de la PR #2 et release v1.1 ; décision de publier v1.2 ; compilation Lean (H-6).
 
+**H-4, phase 1 préparée (2026-09-28) : la semaine d'expérimentation cave/garage.** Guide jour par jour avec portes
+(`experiments/track_h_hyperbolic_network/lab/LAB_GUIDE_H4.md`), préenregistrement commité avant toute soudure
+(`PREREGISTRATION_13.md` : τ({7,3})/τ(carré) = 0,604 ± 0,03 ; τ/τ_cal = 2,750 ± 0,08 et 4,551 ± 0,14), nomenclature,
+tables de câblage dans l'ordre de soudure, schémas étiquetés, netlists SPICE, firmware ESP32 + ADS1115, script
+d'analyse (testé sur des enregistrements synthétiques). **Simulé avant exécution** (`lab/virtual_bench.py`) : la
+fenêtre d'ajustement 1–10 % du saut ramène le biais sous 0,3 % ; l'ADC interne de l'ESP32 (10 bits) est **exclu**
+(erreur +20 à +80 %) ; 12 bits suffisent, 16 recommandés ; 100 éch./s suffisent ; pièces à 1 % ⇒ τ vrai à 0,3 % du
+nominal. Phase 2 (carte NtD multiplexée, défauts) : préenregistrement ultérieur.
+
 ## État au 2026-09-27 — ce qui est livré, ce qui vient ensuite
 
 ### Livré

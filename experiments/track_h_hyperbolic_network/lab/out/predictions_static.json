@@ -1,0 +1,90 @@
+{
+ "R_nominal_ohm": 100000.0,
+ "C_nominal_F": 1e-06,
+ "RC_s": 0.09999999999999999,
+ "boards": {
+  "{7,3} L=2": {
+   "tau_factor": 2.7503123731328567,
+   "tau_s_nominal": 0.27503123731328566,
+   "static_pairs": [
+    {
+     "boundary_i": 35,
+     "boundary_j": 36,
+     "R_eff_ohm": 153005.88768836553
+    },
+    {
+     "boundary_i": 35,
+     "boundary_j": 73,
+     "R_eff_ohm": 398773.3228866102
+    },
+    {
+     "boundary_i": 70,
+     "boundary_j": 74,
+     "R_eff_ohm": 386685.4047718618
+    },
+    {
+     "boundary_i": 37,
+     "boundary_j": 107,
+     "R_eff_ohm": 374950.7706229922
+    },
+    {
+     "boundary_i": 97,
+     "boundary_j": 108,
+     "R_eff_ohm": 239094.46838824273
+    },
+    {
+     "boundary_i": 58,
+     "boundary_j": 101,
+     "R_eff_ohm": 441485.3448882872
+    }
+   ],
+   "probes": [
+    8,
+    7,
+    0
+   ]
+  },
+  "square R=6": {
+   "tau_factor": 4.550606026209483,
+   "tau_s_nominal": 0.4550606026209483,
+   "static_pairs": [
+    {
+     "boundary_i": 0,
+     "boundary_j": 1,
+     "R_eff_ohm": 242125.1693140636
+    },
+    {
+     "boundary_i": 0,
+     "boundary_j": 61,
+     "R_eff_ohm": 271447.2639349858
+    },
+    {
+     "boundary_i": 50,
+     "boundary_j": 61,
+     "R_eff_ohm": 293093.32556797325
+    },
+    {
+     "boundary_i": 1,
+     "boundary_j": 109,
+     "R_eff_ohm": 229713.28691271643
+    },
+    {
+     "boundary_i": 104,
+     "boundary_j": 110,
+     "R_eff_ohm": 129099.3822841183
+    },
+    {
+     "boundary_i": 18,
+     "boundary_j": 107,
+     "R_eff_ohm": 181519.0766444731
+    }
+   ],
+   "probes": [
+    10,
+    20,
+    31
+   ]
+  }
+ },
+ "tau_ratio_hyp_over_square": 0.6043837584032261
+}

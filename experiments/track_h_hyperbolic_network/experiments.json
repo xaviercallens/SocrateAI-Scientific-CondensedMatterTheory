@@ -73,6 +73,13 @@
    "data/tilings_kappa.json"
   ]
  },
+ "PREREGISTRATION_13.md": {
+  "title": "garage build phase 1: relaxation time of the physical {7,3} L=2 board",
+  "script": "lab/analyze_measurements.py",
+  "data": [
+   "lab/data/h4_step_response.json"
+  ]
+ },
  "PREREGISTRATION_12.md": {
   "title": "minimum detectable contrast",
   "script": "exp12_minimum_detectable_contrast.py",
