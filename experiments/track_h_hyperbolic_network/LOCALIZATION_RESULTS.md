@@ -68,3 +68,29 @@ neighbouring deep nodes, not raw amplitude, limits the flat lattice.
 **Honest limits.** Twenty trials and a half-decade grid; the deepest class is a single node on the two square
 lattices; oracle dictionary and known contrast set; ideal board (no tolerance); i.i.d. Gaussian noise. These limits
 apply to every number in this section.
+
+## Component tolerance (`PREREGISTRATION_10.md`, 079c835 before the run; ledger H3-X-0007)
+
+Each trial draws a fresh random board g = 1 + τ·U[−1, 1]; baseline and defect maps come from that same board, each
+with noise ε; the decoder still assumes the ideal model. τ ∈ {0.1 %, 1 %, 5 %}, ε ∈ {3×10⁻⁴, 3×10⁻³}, deepest
+class, ×1.25 and ×2, 20 trials per cell, four lattices (48 cells).
+
+**Result: 44 of 48 cells are exactly 1.00.** The four exceptions are square R=10 at ×1.25 and ε = 3×10⁻³, at
+**0.60 / 0.60 / 0.55** for τ = 0.1 % / 1 % / 5 % (the ideal-board value from the noise sweep was 0.50; the standard error
+at 20 trials is ≈ 0.11). Tolerance does not change them.
+
+| Prediction | Verdict |
+|---|---|
+| T1: τ = 0.1 %, ε = 3×10⁻⁴, ×2: top-1 ≥ 0.9 on all four lattices | **held** |
+| T2: τ = 5 %, ε = 3×10⁻⁴, ×2: square R=10 < 0.9 and {7,3} L=3 ≥ 0.9 | **refuted** (square R=10: 1.00) |
+| T3: hyperbolic never noticeably worse, and ahead by ≥ 0.3 somewhere | **held** (largest lead 0.45) |
+
+**Reading.** Component tolerance up to 5 % does not degrade single-node localisation on either geometry; the
+failures that exist are set by measurement noise alone. I had reused the result that tolerance breaks *model-based
+detection* (H3-X-0003, B3), but localisation here is *differential*: the tolerance is common to both maps of one
+board and cancels to first order in their difference (a probable reason, not tested; lesson LL-A11). For the
+physical build this removes the tolerance worry for localisation: cheap 5 % resistors are enough, provided the same
+board is measured before and after and the defect is one node.
+
+**Limits.** Tolerance only up to 5 %; noise only 3×10⁻⁴ and 3×10⁻³; 20 trials; oracle dictionary and known contrast
+set; single-node defects; i.i.d. noise; a board-adapted decoder was not tried.

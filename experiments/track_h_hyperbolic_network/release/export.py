@@ -132,6 +132,10 @@ def export_tables():
              "log10_kappa_logparam": "" if r["log10_kappa_log"] is None else r["log10_kappa_log"],
              "log10_kappa_raw": "" if r["log10_kappa_raw"] is None else r["log10_kappa_raw"]} for r in d["rows"]]),
         ("subspace_control.json", "subspace_control.csv", lambda rows: rows),
+        ("localize_tolerance.json", "localize_tolerance.csv", lambda d: [
+            {"lattice": r["lattice"], "N": r["N"], "tolerance": c["tau"], "noise_eps": c["eps"], "contrast": c["f"],
+             "nodes_in_class": r["nodes_in_class"], "top1": c["top1"]}
+            for r in d["results"] for c in r["cells"].values()]),
         ("localize_noise.json", "localize_noise.csv", lambda d: [
             {"lattice": r["lattice"], "N": r["N"], "contrast": cell, "nodes_in_class": r["nodes_in_class"],
              "eps": e, "top1": t, "eps_loc": c["eps_loc"]}
@@ -241,6 +245,8 @@ configs:
   data_files: localize_defect.csv
 - config_name: localize_noise
   data_files: localize_noise.csv
+- config_name: localize_tolerance
+  data_files: localize_tolerance.csv
 - config_name: spectral_gap
   data_files: spectral_gap.csv
 - config_name: integrator_controls
@@ -270,6 +276,7 @@ inverse conductance problem on hyperbolic lattices* (X. Callens, 2026), included
 | `tda_defect.csv` | (post-v1.1, not in the paper) persistent homology (Gudhi) of the boundary resistance metric with and without a bulk defect, vs a global-disorder null. The null was mis-sized; see `TDA_RESULTS.md` |
 | `tda_noise.csv` | (post-v1.1, not in the paper) defect detection vs measurement-noise level (eps_max), metric and H1 detectors |
 | `localize_defect.csv` | (post-v1.1, not in the paper) single-node defect localisation from two noisy NtD maps (oracle-dictionary matched filter); 60/60 cells perfect at noise 3e-4, so it is a ceiling, not a measurement of the failure boundary |
+| `localize_tolerance.csv` | (post-v1.1, not in the paper) localisation top-1 on random boards with component tolerance 0.1 %, 1 %, 5 % and an ideal-model decoder; tolerance has no effect in this differential setting |
 | `localize_noise.csv` | (post-v1.1, not in the paper) localisation top-1 vs noise level and eps_loc (largest noise with top-1 >= 0.9) at the deepest node, contrasts x1.25 and x2 |
 | `tolerance_null.csv` | (post-v1.1, not in the paper) defect detection vs component tolerance (0.1 %, 1 %, 5 %), model-based and differential regimes; only the extreme x100 contrast is tested |
 | `spectral_gap.csv` | Dirichlet spectral gap, RC relaxation time and stiffness; `exploratory=True` rows were not preregistered |

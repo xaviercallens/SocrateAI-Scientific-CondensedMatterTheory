@@ -291,6 +291,29 @@ def predictions():
                          "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
                          "energy": 0.0 if ok else 1.0,
                          "note": "Hyperbolic x2 never failed within the grid (>= 10x better than the matched-filter estimate)."})
+    # ---- PREREGISTRATION_10 (localisation with component tolerance) ----
+    lt = D / "localize_tolerance.json"
+    if lt.exists():
+        res = {r["lattice"]: r["cells"] for r in json.loads(lt.read_text())["results"]}
+        top = lambda l, tau, eps, f: res[l]["tau{} eps{} x{}".format(tau, eps, f)]["top1"]
+        T1 = all(top(l, "0.001", "0.0003", "2") >= 0.9 for l in res)
+        T2 = top("square R=10", "0.05", "0.0003", "2") < 0.9 and top("{7,3} L=3", "0.05", "0.0003", "2") >= 0.9
+        cells = [(t, e, f) for t in ("0.01", "0.05") for e in ("0.0003", "0.003") for f in ("1.25", "2")]
+        diffs = [top("{7,3} L=3", *c) - top("square R=10", *c) for c in cells]
+        T3 = all(d >= -0.1 for d in diffs) and any(d >= 0.3 for d in diffs)
+        for pid, ok, ctx, pred, out in (
+            ("P10-T1-small-tolerance", T1, "Localisation top-1, tolerance 0.1%, noise 3e-4, x2, four lattices.",
+             {"top1_min": 0.9}, {"min_top1": min(top(l, "0.001", "0.0003", "2") for l in res)}),
+            ("P10-T2-flat-breaks-at-5pct", T2, "Localisation, tolerance 5%, noise 3e-4, x2: square R=10 < 0.9, {7,3} L=3 >= 0.9.",
+             {"square_R10": "< 0.9", "hyperbolic_L3": ">= 0.9"},
+             {"square_R10": top("square R=10", "0.05", "0.0003", "2"), "hyperbolic_L3": top("{7,3} L=3", "0.05", "0.0003", "2")}),
+            ("P10-T3-ordering", T3, "Hyperbolic never noticeably worse and leads by >= 0.3 somewhere, tolerance 1% and 5%.",
+             {"min_diff": ">= -0.1", "max_diff": ">= 0.3"}, {"min_diff": round(min(diffs), 2), "max_diff": round(max(diffs), 2)}),
+        ):
+            recs.append({"id": pid, "source": ["PREREGISTRATION_10.md", "data/localize_tolerance.json"], "context": ctx,
+                         "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
+                         "energy": 0.0 if ok else 1.0,
+                         "note": "Tolerance up to 5% did not degrade localisation (differential regime); failures were noise-limited."})
     return recs
 
 

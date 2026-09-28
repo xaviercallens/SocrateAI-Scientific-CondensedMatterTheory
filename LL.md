@@ -53,6 +53,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** predict a decoder's performance from a model of the decoder, or from a noise sweep that finds its failure boundary; a perfect score (60/60) is a ceiling, not a measurement, and always calls for the sweep (PREREGISTRATION_9).
 - **Evidence:** H3-X-0005, `LOCALIZATION_RESULTS.md`.
 
+**LL-A11: don't carry a conclusion across measurement regimes.**
+- **What happened:** tolerance broke *model-based* detection of a defect at 5 % (compare with the ideal simulation), so I predicted it would also break *differential* localisation (compare a board with its own earlier measurement). It did not: localisation was unchanged up to 5 % tolerance. The tolerance is common to both maps of one board and cancels to first order in their difference; the model-based regime has no such cancellation.
+- **Rule:** before predicting how a perturbation affects a new task, ask whether the task measures a difference within the perturbed system or a comparison with an idealised model; the two regimes can give opposite answers. (Second time in a day I applied one experiment's result to a different statistic; see LL-A10.)
+- **Evidence:** H3-X-0007, `LOCALIZATION_RESULTS.md`.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.
