@@ -18,7 +18,7 @@ Every experiment is the same eight steps. Do not reorder, skip, or merge them.
 | 2 | Fill the preregistration | edit `PREREGISTRATION_<n>.md`: design, gates, **numeric** thresholds for every prediction, "Not claimed" | no `TODO` remains; every prediction has a number and a "refuted if" |
 | 3 | Fill the script | edit `exp<n>_<slug>.py`: `run()` writes `data/<slug>.json`; `score()` returns verdicts from the file alone | `python3 -c "import ast,sys;ast.parse(open('<script>').read())"` succeeds; no result computed yet |
 | 4 | **Commit before running** | `git add <prereg> <script> experiments.json && git commit -m "prereg <n>: <title>; script unrun"` then `git push` | `git log -1` shows the commit; the data file does not exist |
-| 5 | Run | `python3 <script>` (background if > 5 min; log to a file) | `data/<slug>.json` exists; the script printed `verdicts:` |
+| 5 | Run | `python3 <script> > $CLAUDE_JOB_DIR/tmp/<slug>.log 2>&1` in the background if > 5 min. **Log outside the worktree** (the job's `tmp/`): a background run redirected into the worktree was refused for both the low-tier agent and the orchestrator (2026-09-28) | `data/<slug>.json` exists; the log ends with `verdicts:` |
 | 6 | Record | write `claim.json` (Section 3), then `python3 tools/ledger_add.py claim.json` | it prints `added <id>` |
 | 7 | Gate | `python3 tools/experiment_gate.py` | `ALL PASS`. If `FAIL`: do **not** edit the ledger by hand; go to Section 5 |
 | 8 | Report and commit | append the results block (Section 4) to the results file named in the task; `git add -A experiments/track_h_hyperbolic_network docs training && git commit && git push` | pushed; the report contains the verdict of **every** prediction, including refuted ones |

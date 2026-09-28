@@ -86,5 +86,19 @@
   "data": [
    "data/minimum_detectable_contrast.json"
   ]
+ },
+ "PREREGISTRATION_14.md": {
+  "title": "exact rank certificates for other tilings",
+  "script": "exp14_exact_rank_certificates_for_other_tiling.py",
+  "data": [
+   "data/exact_rank_certificates_for_other_tiling.json"
+  ]
+ },
+ "PREREGISTRATION_15.md": {
+  "title": "rc benchmark on other tilings",
+  "script": "exp15_rc_benchmark_on_other_tilings.py",
+  "data": [
+   "data/rc_benchmark_on_other_tilings.json"
+  ]
  }
 }
