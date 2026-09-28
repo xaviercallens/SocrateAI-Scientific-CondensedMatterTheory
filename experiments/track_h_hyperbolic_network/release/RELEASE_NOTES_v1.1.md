@@ -36,6 +36,12 @@ Preregistered and committed before each run (`PREREGISTRATION_5.md` to `PREREGIS
   ≥ 1.8 decades worse at equal depth (log κ is concave in depth for hyperbolic tilings, linear for flat). So the
   paper's sentence "the mechanism is the scaling of depth with size" holds within the hyperbolic class only; a v1.2 should
   qualify it. One preregistered prediction (polynomial-exponent bound for the q = 4, 5 tilings) was refuted.
+- Later the same day, through a runbook-driven workflow in which a small model records and a larger one audits
+  (`docs/RUNBOOK.md`, `tools/experiment_gate.py`, `tools/audit_low_tier.py`): exact full-rank certificates for 11 more
+  instances across five tilings (Tier B), an RC benchmark on four more tilings cross-validated with rusty-SUNDIALS,
+  the minimum detectable single-node contrast, localisation under offset, drift and quantisation, and an exploratory
+  sensitivity-versus-depth profile (ledger H0-B-0003, H2-X-0005, H3-X-0008, H3-X-0009, H0-X-0009). The garage
+  build's first week is prepared and preregistered (`lab/LAB_GUIDE_H4.md`, `PREREGISTRATION_13.md`).
 - **Corrections recorded in the open:** an earlier "×2 defects are ~100× weaker" note was wrong (the response
   saturates); two localisation predictions and one tolerance prediction were refuted (`LL.md`: LL-A8 to LL-A11).
 - Limits: single-node defects, known-contrast oracle decoder, i.i.d. noise, 20 trials per cell, tolerance ≤ 5 %.
