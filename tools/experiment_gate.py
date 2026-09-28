@@ -77,6 +77,12 @@ def main():
     print("== 5 training labels")
     rc, out = sh([sys.executable, "tools/build_physics_verdicts.py"])
     check("build_physics_verdicts", rc == 0, out.strip().splitlines()[-1] if out.strip() else "")
+    labels = (ROOT / "training" / "physics_predictions.jsonl").read_text()
+    for prereg, e in man.items():
+        for df in e["data"]:
+            p = TRACK / df
+            if p.exists() and isinstance(json.loads(p.read_text()).get("verdicts"), dict):
+                check("training labels exist for " + prereg, ('"' + prereg + '"') in labels)
     print("== 6 self-tests")
     for cmd in ((sys.executable, str(TRACK / "hyperbolic_network.py"), "--self-test"),
                 (sys.executable, str(TRACK / "hyperbolic_exact.py"), "--self-test"),

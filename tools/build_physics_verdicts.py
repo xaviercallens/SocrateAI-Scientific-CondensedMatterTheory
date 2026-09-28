@@ -360,9 +360,60 @@ def predictions():
     return recs
 
 
+HANDCODED = {"PREREGISTRATION.md", "PREREGISTRATION_2.md", "PREREGISTRATION_3.md", "PREREGISTRATION_5.md",
+             "PREREGISTRATION_6.md", "PREREGISTRATION_7.md", "PREREGISTRATION_8.md", "PREREGISTRATION_9.md",
+             "PREREGISTRATION_10.md", "PREREGISTRATION_11.md"}
+
+
+def p12_p3_on_counts(d):
+    """PREREGISTRATION_12 P3 re-scored on integer trial counts (the stored float verdict was a scorer artefact;
+    see the notes of ledger H3-X-0008)."""
+    T = d["trials"]
+    ok = True
+    for r in d["results"]:
+        c = r["cells"]
+        for e in d["eps"]:
+            for a, b in ((0.9, 1.1), (0.8, 1.25)):
+                na = round(c["f%g eps%g" % (a, e)]["top1"] * T)
+                nb = round(c["f%g eps%g" % (b, e)]["top1"] * T)
+                ok &= abs(na - nb) <= round(0.2 * T)
+    return ok
+
+
+def generic_predictions():
+    """One label per boolean G/P verdict for every manifest entry not hand-coded above, read from the data file's
+    'verdicts' written by the experiment's own score(). Low-tier friendly: no per-experiment code needed."""
+    man = json.loads((TRACK / "experiments.json").read_text())
+    recs = []
+    for prereg, e in man.items():
+        if prereg in HANDCODED:
+            continue
+        for df in e["data"]:
+            p = TRACK / df
+            if not p.exists():
+                continue
+            d = json.loads(p.read_text())
+            ver = d.get("verdicts")
+            if not isinstance(ver, dict):
+                continue
+            for k, v in ver.items():
+                if not (isinstance(v, bool) and k[:1] in "GP"):
+                    continue
+                note = None
+                if prereg == "PREREGISTRATION_12.md" and k == "P3":
+                    stored = v
+                    v = p12_p3_on_counts(d)
+                    note = "scorer corrected post hoc on trial counts (stored float verdict %s); see ledger H3-X-0008 notes" % stored
+                recs.append({"id": prereg.replace(".md", "").replace("PREREGISTRATION", "P") + "-" + k,
+                             "source": [prereg, df], "context": e["title"], "prediction": {k: "as stated in " + prereg},
+                             "outcome": {k: v}, "verdict": "confirmed" if v else "refuted", "energy": 0.0 if v else 1.0,
+                             **({"note": note} if note else {})})
+    return recs
+
+
 def main():
     OUT.mkdir(exist_ok=True)
-    preds = predictions()
+    preds = predictions() + generic_predictions()
     (OUT / "physics_predictions.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in preds))
     ledger = json.loads((ROOT / "docs" / "elenchus" / "ledger.json").read_text())["claims"]
     rows = [{"id": c["id"], "tier": c["tier"], "kind": c["kind"], "statement": c["statement"],

@@ -21,7 +21,7 @@ Every experiment is the same eight steps. Do not reorder, skip, or merge them.
 | 5 | Run | `python3 <script> > $CLAUDE_JOB_DIR/tmp/<slug>.log 2>&1` in the background if > 5 min. **Log outside the worktree** (the job's `tmp/`): a background run redirected into the worktree was refused for both the low-tier agent and the orchestrator (2026-09-28) | `data/<slug>.json` exists; the log ends with `verdicts:` |
 | 6 | Record | write `claim.json` (Section 3), then `python3 tools/ledger_add.py claim.json` | it prints `added <id>` |
 | 7 | Gate | `python3 tools/experiment_gate.py` | `ALL PASS`. If `FAIL`: do **not** edit the ledger by hand; go to Section 5 |
-| 8 | Report and commit | append the results block (Section 4) to the results file named in the task; `git add -A experiments/track_h_hyperbolic_network docs training && git commit && git push` | pushed; the report contains the verdict of **every** prediction, including refuted ones |
+| 8 | Report, then **stop** | append the results block (Section 4) to the results file named in the task, copying the design/method paragraph **verbatim** from the preregistration; then stop. The orchestrator audits (`python3 tools/audit_low_tier.py <id> --base HEAD --results <results file>`), corrects, commits and pushes (see §5b: subagents were refused `git add` once on 2026-09-28; treat git as not available to you) | the report contains the verdict of **every** prediction, including refuted ones |
 
 Between step 4 and step 5 nothing may change in the preregistration. If something must change (a control fails,
 a tolerance was wrong), write a dated **"Deviation"** paragraph in the preregistration explaining what and why,

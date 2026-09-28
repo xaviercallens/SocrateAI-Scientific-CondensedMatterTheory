@@ -95,6 +95,46 @@ def main():
                           cwd=ROOT, capture_output=True, text=True).stdout.strip()
     if diff:
         fails.append("A5 paper files changed: " + diff.replace("\n", ", "))
+    # A6 results block: every number in lines ADDED to a results file since --base must occur in the data, except in
+    # lines copied verbatim from the preregistration (design, thresholds, limits). Pass --results <file>.
+    if "--results" in a:
+        rf = a[a.index("--results") + 1]
+        prereg_text = ""
+        pm = re.search(r"PREREGISTRATION_\d+", c["statement"])
+        if pm:
+            pf = ev.parent.parent / (pm.group(0) + ".md")
+            prereg_text = pf.read_text() if pf.exists() else ""
+        added = [l[1:] for l in subprocess.run(["git", "diff", base, "--", rf], cwd=ROOT, capture_output=True, text=True)
+                 .stdout.splitlines() if l.startswith("+") and not l.startswith("+++")]
+        # only the low-tier part: lines before the orchestrator's "*Recorded by a low-tier agent" marker
+        cut = next((i for i, l in enumerate(added) if l.strip().startswith("*Recorded by")), len(added))
+        added = added[:cut]
+        norm = lambda x: re.sub(r"\s+", " ", x)
+        prereg_norm = norm(prereg_text)
+        # A7: the first prose paragraph after the block title (the design/method statement) must be a verbatim copy
+        prose = [l.strip() for l in added if l.strip() and not l.strip().startswith(("#", "|", "*Recorded"))]
+        if prose:
+            first = norm(re.sub(r"^\*\*[^*]+\*\*\s*", "", prose[0]))
+            if first[:120] not in prereg_norm:
+                fails.append("A7 design/method line is not a verbatim copy of the preregistration: " + first[:90])
+        prereg_text = prereg_norm
+        for line in added:
+            s = line.strip()
+            if not s or s.startswith("*Recorded by") or s.startswith("**Scorer") or s.startswith("**Reading"):
+                continue
+            core = norm(re.sub(r"^\*\*[^*]+\*\*\s*", "", s))
+            if len(core) > 60 and core[:60] in prereg_text:
+                continue  # verbatim copy from the preregistration
+            if s.startswith("|") and ("Prediction" in s or "Threshold" in s or s.startswith("|---")):
+                continue
+            cells = s.split("|")
+            nums_line = s if not s.startswith("|") else "|".join(cells[:-2] if "HELD" in s or "held" in s or "REFUTED" in s or "refuted" in s else cells)
+            t2 = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[GP]\d\b|GF\([^)]*\)|\d+\^\d+(?:-\d+)?|10⁻\S+|[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+", " ", nums_line)
+            if s.startswith("|") and ("HELD" in s or "held" in s or "REFUTED" in s or "refuted" in s):
+                continue  # verdict rows carry thresholds copied from the preregistration
+            for tok in NUM.findall(t2):
+                if not found(tok, pool):
+                    fails.append("A6 results-block number not in data: %s  (line: %s)" % (tok, s[:90]))
     for f in fails:
         print("  FAIL " + f)
     print(("AUDIT PASS " if not fails else "AUDIT FAIL ") + cid + " (evidence " + str(ev.relative_to(ROOT)) + ")")
