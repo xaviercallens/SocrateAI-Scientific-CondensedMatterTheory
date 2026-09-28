@@ -276,7 +276,19 @@
    "evidence": "sha256:e763d29c8e19a5831f9fae9c4ea83a7d964be2bf409c55b8f8d02edac61e30a8",
    "audit": null,
    "statement": "PREREGISTRATION_7 (deep x100 defect vs component tolerance g=1+tau*U[-1,1], 20 boards per condition, detected iff min defect statistic > max null statistic). Model-based regime (compare with the ideal simulation): B1 tau=0.1% all four lattices detect (True); B2 tau=1% all four detect (True); B3 tau=5%: {7,3} L=2 and L=3 detect (margins 6.2x and 5.3x), square R=10 does not (defect min 6.3e-03 < null max 7.8e-03) (True). Differential regime (board vs its own 3e-4-noise baseline): A1 detected on all four lattices at every tau (True); worst margin 40x (square R=10, tau=1%). Quantitative miss: the linear-response scaling of the prereg-5 null overestimated the 5% null by ~1.7x (predicted p95 ~1.1e-2; observed max 6.5-7.8e-3), so square R=6, left unpredicted, detects.",
-   "notes": "experiments/track_h_hyperbolic_network/tolerance_null.py. LIMIT: only extreme contrasts are tested (x100 on all edges of one node: a near short circuit). Signal is roughly linear in the conductance change, so a x2 defect would be ~100x weaker, near or below the tolerance/noise floor on the deep nodes of these lattices; the minimum detectable contrast is untested and is the next preregistration."
+   "notes": "experiments/track_h_hyperbolic_network/tolerance_null.py. LIMIT: only extreme contrasts are tested (x100 on all edges of one node: a near short circuit). Signal is roughly linear in the conductance change, so a x2 defect would be ~100x weaker, near or below the tolerance/noise floor on the deep nodes of these lattices; the minimum detectable contrast is untested and is the next preregistration. CORRECTION (2026-09-28, appended; statement unchanged): the LIMIT sentence above claimed a x2 defect would be '~100x weaker' by linear scaling. That was an unchecked extrapolation and is WRONG: the signal saturates (H3-X-0004). At the deepest node the x2 signal is 37% ({7,3} L=3) and 27% (square R=10) of the x100 signal, and even x1.25 / x0.8 lie above the 3e-4 differential noise floor. The minimum detectable contrast is therefore far smaller than stated here."
+  },
+  {
+   "id": "H3-X-0004",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H3-X-0003"
+   ],
+   "evidence": "sha256:22518da2a558c5ec7ac9130e6fb42f5d0940710d1a8159057b0ed20adc8db3d7",
+   "audit": null,
+   "statement": "EXPLORATORY (not preregistered; computed to check a claim in H3-X-0003): noiseless relative change of the boundary resistance metric for a single-node conductance defect (all edges of the node scaled by f), deepest node. {7,3} L=3: f=0.8: 5.1e-03, 1.25: 4.9e-03, 2: 1.4e-02, 10: 3.3e-02, 100: 3.8e-02. Square R=10: 0.8: 4.9e-04, 1.25: 5.2e-04, 2: 1.7e-03, 10: 4.8e-03, 100: 6.1e-03. The response saturates for f >> 1 (x2 is 37% / 27% of x100), is roughly antisymmetric in log f near f = 1 (x0.8 and x1.25 are within 5% of each other), and is a factor ~7.5-10 larger on the hyperbolic lattice at the deepest node.",
+   "notes": "experiments/track_h_hyperbolic_network/contrast_signal.py; four lattices, depths max and 1 in the data file."
   }
  ]
 }

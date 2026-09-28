@@ -101,17 +101,25 @@ first run's null overestimated the 5 % null by ≈1.7×.
 the square lattice of comparable size loses the model-based detection at 5 %. The physical build does not need
 precision resistors for *this* defect size, and differential measurement is the robust protocol.
 
-**What this does not show.** Only an extreme contrast (×100 on all edges of one node) was tested. The signal is
-roughly linear in the conductance change, so a ×2 defect would be ~100× weaker, at or below the tolerance and noise
-floor on the deep nodes. The **minimum detectable contrast** is untested and decides whether a board can see realistic
-faults (a ×2–×10 component swap, a partial cut). It is the next preregistration, together with localisation.
+**What this does not show.** Only an extreme contrast (×100 on all edges of one node) was *preregistered and tested
+against the nulls*.
+
+> **Correction (same day).** This paragraph first said the signal is "roughly linear in the conductance change, so a
+> ×2 defect would be ~100× weaker, at or below the tolerance and noise floor". That was an unchecked extrapolation
+> and is **wrong**. The response saturates (exploratory calculation, ledger H3-X-0004, `data/contrast_signal.json`):
+> at the deepest node the ×2 signal is 1.4×10⁻² ({7,3} L=3) and 1.7×10⁻³ (square R=10), i.e. 37 % and 27 % of the
+> ×100 signal; ×1.25 and ×0.8 give ≈5×10⁻³ and ≈5×10⁻⁴. Compared with the noise floor of the differential regime
+> (≈1.5×10⁻⁴) these are detectable by roughly 30× (hyperbolic) and 3× (square) even at ±25 % contrast. In the
+> model-based regime at 1 % tolerance (null max ≈1.2–1.5×10⁻³) a ×2 defect is clearly detectable on {7,3} L=3 and
+> marginal on square R=10 (1.7×10⁻³). These comparisons are indicative: the nulls come from `tolerance_null.json`,
+> and the minimum detectable contrast has not been preregistered or measured against them.
 
 ## What follows (to be preregistered, not done)
 
-1. **Minimum detectable contrast:** ×1.1, ×1.5, ×2, ×5, ×10 and ×0.5, ×0.2, ×0.1 at depths 1, mid and maximal, in the
-   differential regime at 3×10⁻⁴ and in the model-based regime at 1 % tolerance.
-2. **Localisation** (roadmap H-3): from the difference of two boundary maps, identify the defect node among all
-   interior nodes, hyperbolic vs flat.
+1. **Localisation** (roadmap H-3): from the difference of two boundary maps, identify the defect node among all
+   interior nodes, hyperbolic vs flat, at contrasts from ×0.8 to ×100 (`PREREGISTRATION_8.md`).
+2. **Minimum detectable contrast** against the noise and tolerance nulls, now with the saturating response known
+   (see the correction above).
 
 Earlier plan, from the first run:
 
