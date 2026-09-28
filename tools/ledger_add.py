@@ -92,6 +92,26 @@ def correct(cid, text, ledger_path=LEDGER):
     print("  no such claim:", cid); return 1
 
 
+def fix_uncommitted_deps(cid, deps, ledger_path=LEDGER):
+    """Correct depends_on of a claim that has NEVER been committed (absent from the ledger at HEAD). Refuses for any
+    committed claim, so the committed ledger stays append-only. Records the correction in the claim's notes."""
+    import subprocess
+    head = subprocess.run(["git", "show", "HEAD:docs/elenchus/ledger.json"], cwd=ROOT, capture_output=True, text=True)
+    if head.returncode == 0 and cid in {x["id"] for x in json.loads(head.stdout)["claims"]}:
+        print("  refused: %s is committed; append a correction instead" % cid); return 1
+    d = load(ledger_path)
+    ids = {x["id"] for x in d["claims"]}
+    for dep in deps:
+        if dep not in ids:
+            print("  refused: unknown dependency " + dep); return 1
+    for x in d["claims"]:
+        if x["id"] == cid:
+            old = x["depends_on"]; x["depends_on"] = deps
+            x["notes"] = (x.get("notes") or "") + " [depends_on corrected before commit: %s -> %s]" % (old, deps)
+            save(d, ledger_path); print("  fixed depends_on of uncommitted", cid, old, "->", deps); return 0
+    print("  no such claim:", cid); return 1
+
+
 def self_test():
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
@@ -125,4 +145,6 @@ if __name__ == "__main__":
         sys.exit(self_test())
     if a[0] == "--correct":
         sys.exit(correct(a[1], a[2]))
+    if a[0] == "--fix-uncommitted-deps":
+        sys.exit(fix_uncommitted_deps(a[1], [x for x in a[2].split(",") if x]))
     sys.exit(add(a[0]))

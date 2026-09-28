@@ -1,0 +1,4 @@
+{"id": "H0-B-0003", "tier": "B", "kind": "exact_harness", "depends_on": ["H0-B-0001"],
+ "evidence_file": "experiments/track_h_hyperbolic_network/data/exact_rank_certificates_for_other_tiling.json",
+ "statement": "PREREGISTRATION_14 (exact full-column-rank certificates of the DtN sensitivity Jacobian over GF(2^31-1) and GF(998244353), random row-combination method). G1 HELD, G2 HELD. P1 HELD: 11 instances certified full rank for both primes: {7,3} L=3 (E=399), {8,3} L=2 (E=240), {8,3} L=3 (E=928), {5,4} L=3 (E=225), {5,4} L=4 (E=605), {5,4} L=5 (E=1600), {6,4} L=2 (E=150), {6,4} L=3 (E=576), {4,5} L=4 (E=296), {4,5} L=5 (E=692), {4,5} L=6 (E=1604). P2 HELD (no redraw needed).",
+ "notes": "experiments/track_h_hyperbolic_network/exp14_exact_rank_certificates_for_other_tiling.py; method unit-checked by test_exp14_method.py (positive and negative control). LIMITS: unit conductances, full boundary, E <= 1700. Executed by a low-tier agent."}

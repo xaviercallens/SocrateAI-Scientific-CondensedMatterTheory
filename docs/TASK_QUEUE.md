@@ -23,5 +23,17 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
 - **Q12 · human · H-5** — Send v1.1 (or v1.2) to one inverse-problems specialist (e.g. the Borcea / Guevara Vasquez group) with a five-line message and the DOI; ask specifically about prior work on conditioning versus boundary depth.
 - **Q13 · high · paper** — arXiv submission (math.NA / math-ph; endorsement needed) after Q12's answer.
 
+## Done on 2026-09-28 with the low-tier workflow (orchestrator ran, Haiku recorded, orchestrator audited)
+- **Q3** → H3-X-0008: at the 3×10⁻⁴ budget both geometries localise a ±10 % single-node change; at 3×10⁻³ the smallest
+  localisable contrast is 0.9/1.1 on {7,3} but 0.5/1.5 on square R=10. P2 refuted; P3's "refuted" was a float-comparison
+  scorer artefact (holds on trial counts; correction appended).
+- **Q6** → H0-B-0003 (Tier B): full column rank certified over two finite fields for 11 new instances ({7,3} L=3,
+  {8,3} L=2–3, {5,4} L=3–5, {6,4} L=2–3, {4,5} L=4–6, up to E = 1604) with a random row-combination certificate.
+- **Q7** → H2-X-0005: RC τ and stiffness on four more tilings, K1/K2 pass with SciPy **and** rusty-SUNDIALS CVODE;
+  {8,3} L=2: τ = 2.618 (board alternative with 5 % shorter relaxation than {7,3}); q = 4, 5 tilings: τ 0.50–0.91.
+
+## Next for the low-tier loop (preregistration to be written by the orchestrator first)
+- Q8 (correlated hardware noise), Q4 (two-node defects, greedy decoder), Q5 (sensitivity vs depth, exploratory).
+
 ## Retired (done since the roadmap of 2026-09-27)
 H-1 (v1.0 + v1.1 published), H-2 first pass (tilings, H0-X-0008), H-3a/H-3b (persistent homology, detection, localisation, noise margin, tolerance: H3-X-0001..0007), v1.2 draft.

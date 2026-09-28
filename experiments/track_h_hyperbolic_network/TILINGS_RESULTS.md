@@ -77,3 +77,31 @@ computed for these tilings; nothing here concerns holography.
 
 *Recorded by a low-tier agent (runbook steps 6–8); audited with `tools/audit_low_tier.py` (pass). One correction at
 review: the Design line said the eigenvalues were "of the DtN matrix"; they are of the interior block L_ii.*
+
+## Exact rank certificates for the other tilings (PREREGISTRATION_14.md, committed before the run; ledger H0-B-0003)
+
+**Method (random-combination certificate).** For each prime p ∈ {2³¹−1, 998244353}: compute the harmonic extension H mod p (`hyperbolic_exact.mat_inv_mod` on L_ii; product with the *signed* L_ib, entries in {−1, 0}, so no int64 overflow); with d_e = H[a] − H[b] on the boundary, form k random combinations of the rows of the Jacobian, row s having coefficient c_ij = u_si v_sj + u_sj v_si on pair (i < j), u, v uniform in GF(p) from `numpy.random.default_rng(14)`; entry (s, e) is (u_s·d_e)(v_s·d_e) − Σ_i u_si v_si d_e,i², so the Jacobian is never formed. Since this matrix is a row combination of J, its rank over GF(p) is ≤ rank_p(J) ≤ rank_ℚ(J) (L_ii invertible mod p); rank E therefore certifies full column rank. k = E + 20; if the rank is < E, redraw once with k = 2E (seed 15); if still < E, the instance is reported **not certified** (not evidence of a rank defect). Both primes must certify for a Tier-B claim. (A plain random *subset* of rows was tried first in a unit check outside this list and rejected before this preregistration was committed: a resistor between two boundary nodes affects exactly one row, so a subset misses it; {7,3} L=1 gave rank 17 of 42.) Data file: `data/exact_rank_certificates_for_other_tiling.json`.
+
+| Tiling | L | N | E | rank mod 2^31-1 | rank mod 998244353 | certified |
+|---|---|---|---|---|---|---|
+| {7,3} | 2 | 112 | 140 | 140 | 140 | yes (control) |
+| {7,3} | 3 | 315 | 399 | 399 | 399 | yes |
+| {8,3} | 2 | 200 | 240 | 240 | 240 | yes |
+| {8,3} | 3 | 768 | 928 | 928 | 928 | yes |
+| {5,4} | 3 | 165 | 225 | 225 | 225 | yes |
+| {5,4} | 4 | 440 | 605 | 605 | 605 | yes |
+| {5,4} | 5 | 1160 | 1600 | 1600 | 1600 | yes |
+| {6,4} | 2 | 120 | 150 | 150 | 150 | yes |
+| {6,4} | 3 | 456 | 576 | 576 | 576 | yes |
+| {4,5} | 4 | 188 | 296 | 296 | 296 | yes |
+| {4,5} | 5 | 436 | 692 | 692 | 692 | yes |
+| {4,5} | 6 | 1008 | 1604 | 1604 | 1604 | yes |
+
+| Prediction | Threshold | Verdict |
+|---|---|---|
+| G1 (method control): on {7,3} L=2 the subset method certifies rank 140 = E for both primes, matching the full-matrix result of H0-B-0001. | {7,3} L=2 certifies rank 140 = E for both primes | HELD |
+| G2: L_ii is invertible mod both primes for every instance. | All instances have invertible L_ii mod both primes | HELD |
+| P1: every listed instance is certified full rank for both primes. | All 11 instances certified full rank for both primes | HELD |
+| P2: no instance needs the 2E redraw. | No redraw with k = 2E required for any instance | HELD |
+
+**Limits:** Anything about probe-subsampled Jacobians of these tilings, about conditioning, or about instances with E > 1700. Nothing about holography.

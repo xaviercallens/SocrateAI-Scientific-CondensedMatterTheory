@@ -80,6 +80,24 @@ No interpretation beyond the verdict table unless the task says "interpret" (the
 | A new tiling, lattice family, decoder, or physical model is needed | high-tier model designs it; the loop above runs it |
 | Text for the paper (`make_v12.py` replacements) | high-tier model; a human reads the PDF before any release |
 
+## 5b. The division of labour that works in this environment (measured on 2026-09-28, cards Q3, Q6, Q7)
+
+| Step | Who | Why |
+|---|---|---|
+| 1–4 (scaffold, preregistration, script, commit) | high/mid tier (orchestrator) | design decisions; and subagents cannot run git |
+| 5 (run) | orchestrator, in the background, log in `$CLAUDE_JOB_DIR/tmp/` | long runs; logging into the worktree was refused |
+| 6–7 (claim file, `ledger_add.py`, gate) | **low tier (Haiku subagent)** | mechanical; it stops correctly on any FAIL |
+| 8a (results block) | **low tier** | copy tables and preregistration text verbatim |
+| audit | orchestrator: `python3 tools/audit_low_tier.py <id> --base HEAD` | numbers vs data, verdicts vs `score()`, append-only ledger, paper untouched |
+| 8b (reading, corrections, LL entry, commit, push) | orchestrator | interpretation; git |
+
+Subagent prompt rules that made it work: absolute paths, one command per call, no git, "copy technical sentences
+verbatim", exact claim JSON skeleton, and "if FAIL, stop and report". Three low-tier stops in three cards were all
+caused by the orchestrator's instructions or tools (gate order, a Tier-B claim depending on a Tier-X claim, a runbook
+logging path), not by the low-tier agent. Before handing a claim down, check its dependencies are of equal or higher
+tier. `tools/ledger_add.py --fix-uncommitted-deps <id> <deps>` repairs dependencies of a claim that was never committed
+(it refuses for committed claims).
+
 ## 6. Tiers (what each level of capability is trusted to do)
 
 - **Low (workflow / small model):** steps 0–8 for a task in `TASK_QUEUE.md` marked `tier: low`, where the

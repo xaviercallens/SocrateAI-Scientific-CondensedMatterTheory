@@ -64,7 +64,8 @@ def main():
     flat_numbers(data, pool)
     fails = []
     # A1 numbers (skip identifiers: preregistration numbers, lattice labels like L=3 / R=10 / {7,3}, ledger ids)
-    text = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[LR]=\d+(?:\.\d+)?|\b[GP]\d\b", " ", c["statement"])
+    text = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[LR]=\d+(?:\.\d+)?|\b[GP]\d\b"
+                  r"|GF\([^)]*\)|\d+\^\d+(?:-\d+)?", " ", c["statement"])  # identifiers, field names, powers
     for tok in NUM.findall(text):
         if not found(tok, pool):
             fails.append("A1 number not in data: " + tok)
