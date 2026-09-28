@@ -23,10 +23,6 @@
    },
    "slope_per_depth": -0.9103364942982378,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -0.91
-   },
    "family": "{7,3}",
    "param": "L=1"
   },
@@ -66,12 +62,6 @@
    },
    "slope_per_depth": -0.6267870574942931,
    "slope_per_depth_from_1": -0.4198447076786142,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.04,
-    "2": -1.67,
-    "3": -1.88
-   },
    "family": "{7,3}",
    "param": "L=2"
   },
@@ -125,14 +115,6 @@
    },
    "slope_per_depth": -0.4733319821521321,
    "slope_per_depth_from_1": -0.34922915001386734,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.05,
-    "2": -1.71,
-    "3": -2.01,
-    "4": -2.34,
-    "5": -2.48
-   },
    "family": "{7,3}",
    "param": "L=3"
   },
@@ -200,16 +182,6 @@
    },
    "slope_per_depth": -0.38956271778777235,
    "slope_per_depth_from_1": -0.30623791445694876,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.05,
-    "2": -1.71,
-    "3": -2.02,
-    "4": -2.38,
-    "5": -2.6,
-    "6": -2.85,
-    "7": -2.96
-   },
    "family": "{7,3}",
    "param": "L=4"
   },
@@ -235,10 +207,6 @@
    },
    "slope_per_depth": -0.9303878595106924,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -0.93
-   },
    "family": "{8,3}",
    "param": "L=1"
   },
@@ -278,12 +246,6 @@
    },
    "slope_per_depth": -0.633021998662839,
    "slope_per_depth_from_1": -0.43087142298382625,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.04,
-    "2": -1.67,
-    "3": -1.9
-   },
    "family": "{8,3}",
    "param": "L=2"
   },
@@ -337,14 +299,6 @@
    },
    "slope_per_depth": -0.49562429287022364,
    "slope_per_depth_from_1": -0.3806177638129249,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.04,
-    "2": -1.69,
-    "3": -2.0,
-    "4": -2.41,
-    "5": -2.59
-   },
    "family": "{8,3}",
    "param": "L=3"
   },
@@ -412,16 +366,6 @@
    },
    "slope_per_depth": -0.42299000309281565,
    "slope_per_depth_from_1": -0.347631522122518,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.04,
-    "2": -1.69,
-    "3": -2.01,
-    "4": -2.43,
-    "5": -2.69,
-    "6": -3.02,
-    "7": -3.18
-   },
    "family": "{8,3}",
    "param": "L=4"
   },
@@ -440,9 +384,6 @@
    },
    "slope_per_depth": null,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0
-   },
    "family": "{5,4}",
    "param": "L=1"
   },
@@ -468,10 +409,6 @@
    },
    "slope_per_depth": -0.9578673272297107,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -0.96
-   },
    "family": "{5,4}",
    "param": "L=2"
   },
@@ -504,11 +441,6 @@
    },
    "slope_per_depth": -0.82784789385275,
    "slope_per_depth_from_1": -0.5622532120657162,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.09,
-    "2": -1.66
-   },
    "family": "{5,4}",
    "param": "L=3"
   },
@@ -548,12 +480,6 @@
    },
    "slope_per_depth": -0.7161708257736503,
    "slope_per_depth_from_1": -0.5255114399550253,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.11,
-    "2": -1.79,
-    "3": -2.16
-   },
    "family": "{5,4}",
    "param": "L=4"
   },
@@ -600,13 +526,6 @@
    },
    "slope_per_depth": -0.6375518938436714,
    "slope_per_depth_from_1": -0.49428375195508434,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.11,
-    "2": -1.81,
-    "3": -2.29,
-    "4": -2.6
-   },
    "family": "{5,4}",
    "param": "L=5"
   },
@@ -625,9 +544,6 @@
    },
    "slope_per_depth": null,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0
-   },
    "family": "{6,4}",
    "param": "L=1"
   },
@@ -653,10 +569,6 @@
    },
    "slope_per_depth": -0.9770971631645176,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -0.98
-   },
    "family": "{6,4}",
    "param": "L=2"
   },
@@ -689,11 +601,6 @@
    },
    "slope_per_depth": -0.831993092442416,
    "slope_per_depth_from_1": -0.5732323749698566,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.09,
-    "2": -1.66
-   },
    "family": "{6,4}",
    "param": "L=3"
   },
@@ -733,12 +640,6 @@
    },
    "slope_per_depth": -0.7383563689392864,
    "slope_per_depth_from_1": -0.569099580686403,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.1,
-    "2": -1.77,
-    "3": -2.24
-   },
    "family": "{6,4}",
    "param": "L=4"
   },
@@ -757,9 +658,6 @@
    },
    "slope_per_depth": null,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0
-   },
    "family": "{4,5}",
    "param": "L=1"
   },
@@ -785,10 +683,6 @@
    },
    "slope_per_depth": -0.9218941940093845,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -0.92
-   },
    "family": "{4,5}",
    "param": "L=2"
   },
@@ -814,10 +708,6 @@
    },
    "slope_per_depth": -1.0715584662180027,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.07
-   },
    "family": "{4,5}",
    "param": "L=3"
   },
@@ -850,11 +740,6 @@
    },
    "slope_per_depth": -0.9152996647768518,
    "slope_per_depth_from_1": -0.6747406292665632,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.16,
-    "2": -1.83
-   },
    "family": "{4,5}",
    "param": "L=4"
   },
@@ -894,12 +779,6 @@
    },
    "slope_per_depth": -0.7540513600835353,
    "slope_per_depth_from_1": -0.5403097083725208,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.17,
-    "2": -1.95,
-    "3": -2.25
-   },
    "family": "{4,5}",
    "param": "L=5"
   },
@@ -939,12 +818,6 @@
    },
    "slope_per_depth": -0.8139410478555542,
    "slope_per_depth_from_1": -0.632696676526591,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.17,
-    "2": -1.99,
-    "3": -2.44
-   },
    "family": "{4,5}",
    "param": "L=6"
   },
@@ -970,10 +843,6 @@
    },
    "slope_per_depth": -1.0435537116867342,
    "slope_per_depth_from_1": null,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.04
-   },
    "family": "square",
    "param": "R=3"
   },
@@ -1020,13 +889,6 @@
    },
    "slope_per_depth": -0.6070376930044227,
    "slope_per_depth_from_1": -0.43361621438721204,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.19,
-    "2": -1.86,
-    "3": -2.26,
-    "4": -2.5
-   },
    "family": "square",
    "param": "R=6"
   },
@@ -1101,17 +963,6 @@
    },
    "slope_per_depth": -0.36781767009726457,
    "slope_per_depth_from_1": -0.2788583046016878,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.21,
-    "2": -1.92,
-    "3": -2.37,
-    "4": -2.7,
-    "5": -2.92,
-    "6": -3.09,
-    "7": -3.22,
-    "8": -3.29
-   },
    "family": "square",
    "param": "R=10"
   },
@@ -1144,11 +995,6 @@
    },
    "slope_per_depth": -0.8297605409917622,
    "slope_per_depth_from_1": -0.43356824087901247,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.23,
-    "2": -1.66
-   },
    "family": "triangular",
    "param": "R=3.225"
   },
@@ -1202,14 +1048,6 @@
    },
    "slope_per_depth": -0.5026749006175706,
    "slope_per_depth_from_1": -0.3301705984060091,
-   "profile_rel_depth0_2dp": {
-    "0": 0.0,
-    "1": -1.34,
-    "2": -1.99,
-    "3": -2.38,
-    "4": -2.59,
-    "5": -2.69
-   },
    "family": "triangular",
    "param": "R=6.45"
   }

@@ -32,8 +32,21 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
 - **Q7** → H2-X-0005: RC τ and stiffness on four more tilings, K1/K2 pass with SciPy **and** rusty-SUNDIALS CVODE;
   {8,3} L=2: τ = 2.618 (board alternative with 5 % shorter relaxation than {7,3}); q = 4, 5 tilings: τ 0.50–0.91.
 
+- **Q8** → H3-X-0009: at N≈112, f = 2, a common-mode offset up to 10 %, gain drift up to 1 % and a 10-bit ADC all leave
+  localisation intact on both boards (49/50 cells at 1.00, lowest 0.95). All three predictions refuted in the safe
+  direction: a ceiling; the failure boundary lies beyond the grid. Localisation needs less of the chain than τ does.
+- **Q5** → H0-X-0009 (exploratory): the per-edge sensitivity profile versus depth is nearly the same on hyperbolic and
+  flat lattices (all concave, −2.0 to −2.4 decades at depth 3), so amplitude decay does not explain concave-vs-linear
+  κ; the candidate is the collinearity of equal-depth edges (v1.0's "coherence"). One control statistic was mis-specified
+  and amended in the open (Deviation 1) before the rerun; no prediction was at stake.
+
 ## Next for the low-tier loop (preregistration to be written by the orchestrator first)
-- Q8 (correlated hardware noise), Q4 (two-node defects, greedy decoder), Q5 (sensitivity vs depth, exploratory).
+- **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
+- **Q5b** (mid): coherence versus depth across tilings — median |cos| between Jacobian columns of equal-depth edge
+  pairs (v1.0's `coherence_by_depth`, exhaustive rather than sampled), hyperbolic vs flat; hypothesis for a prereg:
+  the flat lattices' coherence at depth ≥ 3 exceeds the hyperbolic tilings' by a factor that grows with depth.
+- **Q8b** (low): extend prereg 17's grids until failure (offset to 1, drift to 10 %, 6 and 8 bits) and add f = 1.25,
+  to locate the boundary the ceiling hid.
 
 ## Retired (done since the roadmap of 2026-09-27)
 H-1 (v1.0 + v1.1 published), H-2 first pass (tilings, H0-X-0008), H-3a/H-3b (persistent homology, detection, localisation, noise margin, tolerance: H3-X-0001..0007), v1.2 draft.

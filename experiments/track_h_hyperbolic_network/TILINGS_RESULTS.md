@@ -105,3 +105,64 @@ review: the Design line said the eigenvalues were "of the DtN matrix"; they are 
 | P2: no instance needs the 2E redraw. | No redraw with k = 2E required for any instance | HELD |
 
 **Limits:** Anything about probe-subsampled Jacobians of these tilings, about conditioning, or about instances with E > 1700. Nothing about holography.
+
+## Sensitivity versus depth across tilings (PREREGISTRATION_16.md, EXPLORATORY, committed before the run; ledger H0-X-0009)
+
+For every instance of `tilings_kappa.py` ({7,3} L=1–4, {8,3} L=1–4, {5,4} L=1–5, {6,4} L=1–4, {4,5} L=1–6) and the
+flat disks square R ∈ {3, 6, 10} and triangular R ∈ {3.225, 6.45}: unit conductances, full boundary, harmonic extension
+H; per-edge sensitivity S_e = ‖∂Λ/∂g_e‖_F = ‖d_e‖², d_e = H[a] − H[b] restricted to the boundary (the Frobenius norm of
+the rank-one matrix d_e d_eᵀ). Edge depth = min(depth(a), depth(b)). Recorded per instance: mean and median of
+log₁₀ S_e per edge depth, the number of edges per depth, the least-squares slope of mean log₁₀ S_e against depth
+(the per-depth decay rate), and the same slope restricted to depths ≥ 1.
+Data file: `data/sensitivity_versus_depth_across_tilings.json`; figure `paper/fig_sensitivity_depth.pdf` (not in the
+paper).
+
+**Deviation 1 (2026-09-28, after the first run; no prediction exists in this exploratory card, so nothing was at
+  stake).** G1 as written cannot pass: `data/h0.json`'s statistic is the *median* per depth of the Jacobian column
+  2-norm ‖J[:,e]‖₂ = (½[(‖d_e‖²)² − Σ_i d_e,i⁴])^{1/2} (upper-triangular boundary pairs), normalised to depth 0, while
+  the profile above uses the *mean* of ‖d_e‖². Amended G1: the script also computes the h0 statistic exactly and
+  must reproduce h0 to 1e-6; the profile of ‖d_e‖² is reported alongside, unchanged. First-run values (G2 passed,
+  G1 failed) are kept in the git history of the data file.
+- G2: every instance's edge count per depth sums to E.
+
+| Instance | N | depth 0 | depth 1 | depth 2 | depth 3 | depth 4 | depth 5 | depth 6 | depth 7 | depth 8 | slope (all) | slope (d>=1) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| {7,3} L=1 | 35 | 0.00 | -0.91 |  |  |  |  |  |  |  | -0.910 | n/a |
+| {7,3} L=2 | 112 | 0.00 | -1.04 | -1.67 | -1.88 |  |  |  |  |  | -0.627 | -0.420 |
+| {7,3} L=3 | 315 | 0.00 | -1.05 | -1.71 | -2.01 | -2.34 | -2.48 |  |  |  | -0.473 | -0.349 |
+| {7,3} L=4 | 847 | 0.00 | -1.05 | -1.71 | -2.02 | -2.38 | -2.60 | -2.85 | -2.96 |  | -0.390 | -0.306 |
+| {8,3} L=1 | 48 | 0.00 | -0.93 |  |  |  |  |  |  |  | -0.930 | n/a |
+| {8,3} L=2 | 200 | 0.00 | -1.04 | -1.67 | -1.90 |  |  |  |  |  | -0.633 | -0.431 |
+| {8,3} L=3 | 768 | 0.00 | -1.04 | -1.69 | -2.00 | -2.41 | -2.59 |  |  |  | -0.496 | -0.381 |
+| {8,3} L=4 | 2888 | 0.00 | -1.04 | -1.69 | -2.01 | -2.43 | -2.69 | -3.02 | -3.18 |  | -0.423 | -0.348 |
+| {5,4} L=1 | 20 | 0.00 |  |  |  |  |  |  |  |  | n/a | n/a |
+| {5,4} L=2 | 60 | 0.00 | -0.96 |  |  |  |  |  |  |  | -0.958 | n/a |
+| {5,4} L=3 | 165 | 0.00 | -1.09 | -1.66 |  |  |  |  |  |  | -0.828 | -0.562 |
+| {5,4} L=4 | 440 | 0.00 | -1.11 | -1.79 | -2.16 |  |  |  |  |  | -0.716 | -0.526 |
+| {5,4} L=5 | 1160 | 0.00 | -1.11 | -1.81 | -2.29 | -2.60 |  |  |  |  | -0.638 | -0.494 |
+| {6,4} L=1 | 30 | 0.00 |  |  |  |  |  |  |  |  | n/a | n/a |
+| {6,4} L=2 | 120 | 0.00 | -0.98 |  |  |  |  |  |  |  | -0.977 | n/a |
+| {6,4} L=3 | 456 | 0.00 | -1.09 | -1.66 |  |  |  |  |  |  | -0.832 | -0.573 |
+| {6,4} L=4 | 1710 | 0.00 | -1.10 | -1.77 | -2.24 |  |  |  |  |  | -0.738 | -0.569 |
+| {4,5} L=1 | 12 | 0.00 |  |  |  |  |  |  |  |  | n/a | n/a |
+| {4,5} L=2 | 32 | 0.00 | -0.92 |  |  |  |  |  |  |  | -0.922 | n/a |
+| {4,5} L=3 | 80 | 0.00 | -1.07 |  |  |  |  |  |  |  | -1.072 | n/a |
+| {4,5} L=4 | 188 | 0.00 | -1.16 | -1.83 |  |  |  |  |  |  | -0.915 | -0.675 |
+| {4,5} L=5 | 436 | 0.00 | -1.17 | -1.95 | -2.25 |  |  |  |  |  | -0.754 | -0.540 |
+| {4,5} L=6 | 1008 | 0.00 | -1.17 | -1.99 | -2.44 |  |  |  |  |  | -0.814 | -0.633 |
+| square R=3 | 29 | 0.00 | -1.04 |  |  |  |  |  |  |  | -1.044 | n/a |
+| square R=6 | 113 | 0.00 | -1.19 | -1.86 | -2.26 | -2.50 |  |  |  |  | -0.607 | -0.434 |
+| square R=10 | 317 | 0.00 | -1.21 | -1.92 | -2.37 | -2.70 | -2.92 | -3.09 | -3.22 | -3.29 | -0.368 | -0.279 |
+| triangular R=3.225 | 37 | 0.00 | -1.23 | -1.66 |  |  |  |  |  |  | -0.830 | -0.434 |
+| triangular R=6.45 | 151 | 0.00 | -1.34 | -1.99 | -2.38 | -2.59 | -2.69 |  |  |  | -0.503 | -0.330 |
+
+| Gate | Threshold | Verdict |
+|---|---|---|
+| G1 (amended, Deviation 1) | the script reproduces h0's median column norm per depth to 1e-6 | held |
+| G2 | every instance's edge count per depth sums to E | held |
+
+**Limits:** Any mechanism. Exploratory: nothing here confirms or refutes anything; nothing about holography.
+
+*Recorded by the orchestrator from the data file (the low-tier recorder had not reported); audited with `tools/audit_low_tier.py`.*
+
+**Reading (exploratory).** The per-edge sensitivity profile is nearly the same on every lattice: all curves are concave in depth, and at depth 3 the hyperbolic tilings lie at −2.0 to −2.4 decades relative to depth 0 while the flat lattices lie at −2.4; the per-depth increments (about −1.1, −0.7, −0.4, −0.3, …) are alike. The amplitude decay of a single edge's boundary signal therefore does not explain why log κ is concave in depth on hyperbolic tilings and linear on flat ones (H0-X-0008). What differs between the geometries must be how many edges share a boundary signature and how collinear those signatures are, the *coherence* that version 1.0 sampled but did not analyse; that is task Q5b. Nothing here is a prediction or a claim.

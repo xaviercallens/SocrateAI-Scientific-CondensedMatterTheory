@@ -92,8 +92,9 @@ def main():
     except subprocess.CalledProcessError:
         fails.append("A4 cannot read ledger at " + base)
     # A5 paper untouched
-    diff = subprocess.run(["git", "diff", "--name-only", base, "--", "experiments/track_h_hyperbolic_network/paper/"],
-                          cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    published = ["experiments/track_h_hyperbolic_network/paper/" + f for f in ("main.tex", "main.pdf", "tables.tex", "refs.bib")]
+    diff = subprocess.run(["git", "diff", "--name-only", base, "--"] + published,
+                          cwd=ROOT, capture_output=True, text=True).stdout.strip()  # same scope as experiment_gate.py check 8
     if diff:
         fails.append("A5 paper files changed: " + diff.replace("\n", ", "))
     # A6 results block: every number in lines ADDED to a results file since --base must occur in the data, except in

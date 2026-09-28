@@ -48,8 +48,10 @@ def profile(g):
     slope = float(np.polyfit(ks, ys, 1)[0]) if len(ks) >= 2 else None
     m1 = ks >= 1
     slope1 = float(np.polyfit(ks[m1], ys[m1], 1)[0]) if m1.sum() >= 2 else None
+    y0 = rows["0"]["mean_log10"]
+    rel = {k: round(v["mean_log10"] - y0, 2) for k, v in rows.items()}   # the reported profile, stored as reported
     return {"N": n, "E": len(edges), "d_max_node": int(d.max()), "by_depth": rows, "slope_per_depth": slope,
-            "slope_per_depth_from_1": slope1}
+            "slope_per_depth_from_1": slope1, "profile_rel_depth0_2dp": rel}
 
 
 def run() -> dict:
