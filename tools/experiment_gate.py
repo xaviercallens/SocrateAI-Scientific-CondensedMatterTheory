@@ -81,7 +81,8 @@ def main():
     for prereg, e in man.items():
         for df in e["data"]:
             p = TRACK / df
-            if p.exists() and isinstance(json.loads(p.read_text()).get("verdicts"), dict):
+            dj = json.loads(p.read_text()) if p.exists() else None
+            if isinstance(dj, dict) and isinstance(dj.get("verdicts"), dict):
                 check("training labels exist for " + prereg, ('"' + prereg + '"') in labels)
     print("== 6 self-tests")
     for cmd in ((sys.executable, str(TRACK / "hyperbolic_network.py"), "--self-test"),
