@@ -45,7 +45,42 @@ Every unit configuration has exactly one H₁ class (the boundary loop).
   lattice; the direct metric detects it nowhere; ×0.01 is detected nowhere. The pipeline is sensitive to a
   near-boundary short circuit, and only on the hyperbolic geometry, which is an exploratory observation.
 
+## Follow-up run 2026-09-28: detection against measurement noise (`PREREGISTRATION_6.md`, ledger H3-X-0002)
+
+The corrected question: up to what measurement noise ε (relative, i.i.d. Gaussian on the Neumann-to-Dirichlet map)
+does a defect stay detectable? Detection = every one of 10 noisy defect realisations exceeds the maximum of a
+10-realisation noise null. Detection was monotone in ε in every cell.
+
+| Lattice | deep ×100: ε_max, metric | ε_max, H₁ | deep ×0.01 metric / H₁ | shallow ×100 metric / H₁ |
+|---|---|---|---|---|
+| {7,3} L=2 (N=112) | ≥ 10⁻¹ (grid top) | 3×10⁻² | ≥ 10⁻¹ / 3×10⁻² | ≥ 10⁻¹ / ≥ 10⁻¹ |
+| square R=6 (N=113) | 3×10⁻² | 3×10⁻² | 3×10⁻² / 10⁻² | ≥ 10⁻¹ / ≥ 10⁻¹ |
+| {7,3} L=3 (N=315) | ≥ 10⁻¹ (grid top) | 3×10⁻² | ≥ 10⁻¹ / 10⁻² | ≥ 10⁻¹ / ≥ 10⁻¹ |
+| square R=10 (N=317) | 10⁻² | 3×10⁻³ | 10⁻² / 3×10⁻³ | ≥ 10⁻¹ / ≥ 10⁻¹ |
+
+- **Q1 held:** at N≈316 a deep defect stays detectable up to at least 10× more noise on the hyperbolic lattice than on
+  the square (the hyperbolic value is censored at the grid ceiling, so this is a lower bound). At N≈112 the ratio
+  is ≥ 3.3. This is the depth mechanism of the paper seen from the detection side.
+- **Q2 held:** the H₁ (topological) detector tolerates at least 3.3× less noise than the plain metric on both
+  hyperbolic lattices. Topology adds sensitivity nowhere here; it is a coarser readout of the same information.
+  (Not preregistered, observed: on square R=6, H₁ matches the metric.)
+- **Q3 held:** all four lattices detect the deep ×100 defect at ε = 3×10⁻⁴, the paper's precision budget.
+
+**Limits, all of which matter for the physical build (roadmap H-4):**
+1. *Known baseline.* Detection is against the exact noiseless unit-conductance map. A real build has to measure its
+   own baseline, and component tolerance (0.1 %–5 % per resistor) is a **fixed** perturbation of it, a small-amplitude
+   version of the disorder null of the first run, not the white noise used here. This is the decisive next test.
+2. *Detection, not localisation.* The tests say a change happened, not where, nor that two different defects
+   differ. Localisation is roadmap H-3 and is untested.
+3. Ten realisations, a half-decade grid, and a censored hyperbolic ε_max make the ratios coarse.
+4. i.i.d. Gaussian noise is not hardware noise (correlated, drifting, quantised).
+
 ## What follows (to be preregistered, not done)
+
+**Tolerance-matched null (next):** baseline perturbed by component tolerance at 0.1 %, 1 % and 5 % (uniform, random
+per edge), detection of the deep ×100 defect against that null on all four lattices.
+
+Earlier plan, from the first run:
 
 A null with matched perturbation energy (e.g. the same total Σ|Δln g| spread over random edges, or a single random
 node with the same contrast), more seeds, and the L=4 / R=16 pair. Until then the honest summary is: topological

@@ -198,6 +198,29 @@ def predictions():
                                  "H1_detects_on": [l for l in res if det(l, "shallow x100", "bottleneck_H1")]},
                      "verdict": "confirmed" if (sh_metric_all and sh_topo) else "partial",
                      "energy": 0.0 if (sh_metric_all and sh_topo) else 0.5})
+    # ---- PREREGISTRATION_6 (defect detection vs measurement noise) ----
+    tn = D / "tda_noise.json"
+    if tn.exists():
+        d = json.loads(tn.read_text()); res = {r["lattice"]: r for r in d["results"]}
+        em = lambda l, k: res[l]["configs"]["deep x100"]["eps_max"][k]
+        q1 = em("{7,3} L=3", "metric") >= 3 * em("square R=10", "metric") > 0
+        q2 = all(em(l, "H1") <= em(l, "metric") / 3 for l in ("{7,3} L=2", "{7,3} L=3"))
+        i3 = d["eps"].index(3e-4)
+        q3 = all(res[l]["configs"]["deep x100"]["detected"]["metric"][i3] for l in res)
+        for pid, ok, ctx, pred, out in (
+            ("P6-Q1-geometry", q1, "Deep x100 defect, metric detector: noise level up to which it stays detected, N~316.",
+             {"eps_max_ratio_hyperbolic_over_square": ">= 3"},
+             {"hyperbolic": em("{7,3} L=3", "metric"), "square": em("square R=10", "metric"), "censored_at_grid_ceiling": True}),
+            ("P6-Q2-topology-less-sensitive", q2, "Deep x100 defect: H1 bottleneck eps_max vs metric eps_max, hyperbolic lattices.",
+             {"eps_max_H1_over_metric": "<= 1/3"},
+             {"L2": [em("{7,3} L=2", "H1"), em("{7,3} L=2", "metric")], "L3": [em("{7,3} L=3", "H1"), em("{7,3} L=3", "metric")]}),
+            ("P6-Q3-hardware-budget", q3, "Deep x100 defect detected by the metric at noise 3e-4 (the paper's precision budget) on all four lattices.",
+             {"detected_all": True}, {"detected_all": q3}),
+        ):
+            recs.append({"id": pid, "source": ["PREREGISTRATION_6.md", "data/tda_noise.json"], "context": ctx,
+                         "prediction": pred, "outcome": out,
+                         "verdict": "confirmed" if ok else "refuted", "energy": 0.0 if ok else 1.0,
+                         "note": "Baseline assumed known and noiseless; detection of change only, not localisation."})
     return recs
 
 

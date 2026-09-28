@@ -132,6 +132,13 @@ def export_tables():
              "log10_kappa_logparam": "" if r["log10_kappa_log"] is None else r["log10_kappa_log"],
              "log10_kappa_raw": "" if r["log10_kappa_raw"] is None else r["log10_kappa_raw"]} for r in d["rows"]]),
         ("subspace_control.json", "subspace_control.csv", lambda rows: rows),
+        ("tda_noise.json", "tda_noise.csv", lambda d: [
+            {"lattice": r["lattice"], "N": r["N"], "config": cfg, "node": c["node"], "depth": c["depth"],
+             "eps_max_metric": c["eps_max"]["metric"], "eps_max_H1": c["eps_max"]["H1"],
+             "detected_metric_by_eps": "".join("Y" if x else "." for x in c["detected"]["metric"]),
+             "detected_H1_by_eps": "".join("Y" if x else "." for x in c["detected"]["H1"]),
+             "eps_grid": " ".join(str(e) for e in d["eps"])}
+            for r in d["results"] for cfg, c in r["configs"].items()]),
         ("tda_defect.json", "tda_defect.csv", lambda d: [
             {"lattice": r["lattice"], "N": r["N"], "boundary_size": r["boundary"], "config": cfg,
              "node": s.get("node", ""), "depth": s.get("depth", ""), "bottleneck_H0": s["bottleneck_H0"],
@@ -209,6 +216,10 @@ configs:
   data_files: disorder.csv
 - config_name: subspace_control
   data_files: subspace_control.csv
+- config_name: tda_defect
+  data_files: tda_defect.csv
+- config_name: tda_noise
+  data_files: tda_noise.csv
 - config_name: spectral_gap
   data_files: spectral_gap.csv
 - config_name: integrator_controls
@@ -235,6 +246,8 @@ inverse conductance problem on hyperbolic lattices* (X. Callens, 2026), included
 | `conditioning_arb.csv` | (v1.1) log10 condition number in 512-bit ball arithmetic for the float64-singular flat lattices, with certified radii and the two unsaturated controls |
 | `disorder.csv` | (v1.1) log10 kappa (log-parametrised and raw Jacobian) under U[0.5,1.5] and log-uniform [0.1,10] conductances (5 seeds) and x100 / x0.01 defects |
 | `subspace_control.csv` | (v1.1) probe-matched dimensionality control: square lattice sigma_1/sigma_r vs hyperbolic identifiable-subspace kappa |
+| `tda_defect.csv` | (post-v1.1, not in the paper) persistent homology (Gudhi) of the boundary resistance metric with and without a bulk defect, vs a global-disorder null. The null was mis-sized; see `TDA_RESULTS.md` |
+| `tda_noise.csv` | (post-v1.1, not in the paper) defect detection vs measurement-noise level (eps_max), metric and H1 detectors |
 | `spectral_gap.csv` | Dirichlet spectral gap, RC relaxation time and stiffness; `exploratory=True` rows were not preregistered |
 | `interior_degree.json` | Integer check that interior nodes of the {{7,3}} truncations have degree 3, and that the interior of G_L is G_(L-1) (coordinates and edge sets) |
 | `integrator_controls.csv` | K1 (matrix-exponential known answer) and K2 (steady state = DtN column) controls per integrator; rows with `status` other than `run` were not executed |
