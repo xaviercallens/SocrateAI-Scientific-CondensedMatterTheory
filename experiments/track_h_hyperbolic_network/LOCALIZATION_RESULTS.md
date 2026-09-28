@@ -22,14 +22,19 @@ gives **no localisation advantage** at this noise level and these sizes: a flat 
 motivation for a hyperbolic build; the conditioning advantage of the paper is real, but at N≈100–300 and
 3×10⁻⁴ noise it is not the limiting factor for this task.
 
+> **Update (same day, after the noise sweep below): the sentence above is too strong.** "No localisation advantage"
+> holds only at the 3×10⁻⁴ noise budget, where both lattices are at the ceiling. At higher noise the flat lattice
+> fails and the hyperbolic one does not (next section). The advantage is a *noise margin*, not an accuracy gap at
+> the paper's budget.
+
 **Why my predictions failed (hypothesis, not tested).** I predicted decoder performance from the SNR of the
 *detection* statistic (a single norm, ≈3× the noise floor for the flat lattice). A matched filter combines all m²
 correlated entries of the m×m map, so its effective sensitivity is higher by a factor of order m (76 boundary probes
 on square R=10). The lesson is LL-A10.
 
 **Limits.**
-1. A 60/60 result cannot separate "solved" from "saturated": the failure boundary is unknown. A noise sweep is
-   preregistered next (`PREREGISTRATION_9.md`).
+1. A 60/60 result cannot separate "solved" from "saturated": the failure boundary was unknown. The noise sweep
+   (`PREREGISTRATION_9.md`, next section) measures it.
 2. **Oracle assumptions:** ideal board (no component tolerance, which was harmless for detection but untested
    for localisation), a known single-node defect model, and a known finite contrast set.
 3. The maximal-depth class has one node on both square lattices (20 noise draws of one location) and 7 on {7,3}.

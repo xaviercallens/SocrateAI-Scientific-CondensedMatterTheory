@@ -267,6 +267,30 @@ def predictions():
                          "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
                          "energy": 0.0 if ok else 1.0,
                          "note": "60/60 cells at top-1 = 1.00: the prediction that the flat lattice fails was wrong; oracle dictionary, ideal board, i.i.d. noise."})
+    # ---- PREREGISTRATION_9 (localisation noise sweep) ----
+    ln = D / "localize_noise.json"
+    if ln.exists():
+        d = json.loads(ln.read_text()); res = {r["lattice"]: r["cells"] for r in d["results"]}; eps = d["eps"]
+        top = lambda l, f, e: res[l][f]["top1"][eps.index(e)]
+        num = lambda x: 1.0 if isinstance(x, str) else x
+        S1 = top("square R=10", "x2", 1e-3) >= 0.9 and top("square R=10", "x2", 1e-1) <= 0.5
+        S2 = top("{7,3} L=3", "x2", 1e-2) >= 0.9
+        S3 = all(num(res["{7,3} L=3"][f]["eps_loc"]) >= 3 * num(res["square R=10"][f]["eps_loc"]) for f in ("x2", "x1.25"))
+        for pid, ok, ctx, pred, out in (
+            ("P9-S1-flat-fails", S1, "Localisation top-1 vs noise, square R=10, deepest node, x2.",
+             {"top1_at_1e-3": ">= 0.9", "top1_at_1e-1": "<= 0.5"},
+             {"top1_at_1e-3": top("square R=10", "x2", 1e-3), "top1_at_1e-1": top("square R=10", "x2", 1e-1),
+              "eps_loc": res["square R=10"]["x2"]["eps_loc"]}),
+            ("P9-S2-hyperbolic-holds", S2, "Localisation top-1 at noise 1e-2, {7,3} L=3, deepest node, x2.",
+             {"top1": ">= 0.9"}, {"top1": top("{7,3} L=3", "x2", 1e-2), "eps_loc": res["{7,3} L=3"]["x2"]["eps_loc"]}),
+            ("P9-S3-noise-margin-ratio", S3, "eps_loc(hyperbolic L=3) / eps_loc(square R=10) at x2 and x1.25.",
+             {"ratio": ">= 3"},
+             {f: [res["{7,3} L=3"][f]["eps_loc"], res["square R=10"][f]["eps_loc"]] for f in ("x2", "x1.25")}),
+        ):
+            recs.append({"id": pid, "source": ["PREREGISTRATION_9.md", "data/localize_noise.json"], "context": ctx,
+                         "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
+                         "energy": 0.0 if ok else 1.0,
+                         "note": "Hyperbolic x2 never failed within the grid (>= 10x better than the matched-filter estimate)."})
     return recs
 
 
