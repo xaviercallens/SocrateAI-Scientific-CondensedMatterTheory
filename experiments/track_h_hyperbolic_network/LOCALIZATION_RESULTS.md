@@ -39,3 +39,32 @@ on square R=10). The lesson is LL-A10.
    for localisation), a known single-node defect model, and a known finite contrast set.
 3. The maximal-depth class has one node on both square lattices (20 noise draws of one location) and 7 on {7,3}.
 4. i.i.d. Gaussian noise is not hardware noise; multi-node and extended defects are untested.
+
+## Noise sweep: where localisation fails (`PREREGISTRATION_9.md`, f10477f before the run; ledger H3-X-0006)
+
+Same decoder; deepest class; noise from 1e-3 to 3e-1; 20 trials per cell. **ε_loc** = largest grid noise that keeps
+top-1 ≥ 0.9.
+
+| ε_loc | {7,3} L=3 (N=315) | square R=10 (N=317) | {7,3} L=2 (N=112) | square R=6 (N=113) |
+|---|---|---|---|---|
+| ×2, deepest node | > 3×10⁻¹ (never fails) | 3×10⁻³ | 10⁻¹ | 10⁻² |
+| ×1.25, deepest node | 10⁻¹ | 10⁻³ | 3×10⁻² | 3×10⁻³ |
+
+Top-1 by ε (1e-3, 3e-3, 1e-2, 3e-2, 1e-1, 3e-1): square R=10 ×2: 1.00 1.00 0.70 0.00 0.00 0.00; {7,3} L=3 ×2:
+1.00 at every noise level up to 3e-1.
+
+- **S1 held:** the flat lattice fails at 3×10⁻³ (×2) and 10⁻³ (×1.25); the matched-filter estimate (4×10⁻³) was close.
+- **S2 held:** {7,3} L=3 at ×2 is perfect at 10⁻² and never fails within the grid, at least 10× better than my
+  estimate (3×10⁻²).
+- **S3 held:** at N≈316 the hyperbolic noise tolerance is ≥ 100× the flat lattice's at both contrasts, and ≈ 10× at
+  N≈112.
+
+**Reading.** At the paper's 3×10⁻⁴ precision budget both lattices localise a single-node defect perfectly, but the
+flat board has only 3–10× of headroom (ε_loc ÷ 3×10⁻⁴) and the hyperbolic board more than 300×. Real hardware noise
+is correlated and drifts, and any model mismatch adds error, so a 3–10× margin is thin and a 300× margin is not. The
+advantage is far larger than the 8–10× ratio of boundary signals, which suggests (untested) that separating
+neighbouring deep nodes, not raw amplitude, limits the flat lattice.
+
+**Honest limits.** Twenty trials and a half-decade grid; the deepest class is a single node on the two square
+lattices; oracle dictionary and known contrast set; ideal board (no tolerance); i.i.d. Gaussian noise. These limits
+apply to every number in this section.
