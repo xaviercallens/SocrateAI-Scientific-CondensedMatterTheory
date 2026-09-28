@@ -94,3 +94,65 @@ board is measured before and after and the defect is one node.
 
 **Limits.** Tolerance only up to 5 %; noise only 3×10⁻⁴ and 3×10⁻³; 20 trials; oracle dictionary and known contrast
 set; single-node defects; i.i.d. noise; a board-adapted decoder was not tried.
+
+## Minimum detectable contrast (PREREGISTRATION_12.md, committed before the run; ledger H3-X-0008)
+
+Same decoder and dictionary construction as `localize_noise.py` (ideal board, matched filter over all interior nodes, dictionary contrasts D = {0.1, 0.5, 0.8, 0.9, 1.1, 1.25, 1.5, 2, 5, 10, 100}, differential measurement with independent i.i.d. Gaussian noise ε on each map). Deepest class of each of the four lattices ({7,3} L=2, square R=6, {7,3} L=3, square R=10). True contrasts f ∈ {0.5, 0.8, 0.9, 1.1, 1.25, 1.5, 2}; noise ε ∈ {1e-4, 3e-4, 1e-3, 3e-3}; 20 trials per cell (node cycles through the class, fresh noise per trial, seeded). Metric: top-1 node accuracy. **f_min(ε)** = the smallest |log f| among tested contrasts on each side of 1 with top-1 ≥ 0.9 at that ε.
+
+| Lattice | f | eps=1e-4 | eps=3e-4 | eps=1e-3 | eps=3e-3 |
+|---|---|---|---|---|---|
+| {7,3} L=2 | 0.5 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=2 | 0.8 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=2 | 0.9 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=2 | 1.1 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=2 | 1.25 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=2 | 1.5 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=2 | 2.0 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=6 | 0.5 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=6 | 0.8 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=6 | 0.9 | 1.00 | 1.00 | 1.00 | 0.85 |
+| square R=6 | 1.1 | 1.00 | 1.00 | 1.00 | 0.90 |
+| square R=6 | 1.25 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=6 | 1.5 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=6 | 2.0 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=3 | 0.5 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=3 | 0.8 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=3 | 0.9 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=3 | 1.1 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=3 | 1.25 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=3 | 1.5 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=3 | 2.0 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=10 | 0.5 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=10 | 0.8 | 1.00 | 1.00 | 1.00 | 0.55 |
+| square R=10 | 0.9 | 1.00 | 1.00 | 0.70 | 0.10 |
+| square R=10 | 1.1 | 1.00 | 1.00 | 0.90 | 0.05 |
+| square R=10 | 1.25 | 1.00 | 1.00 | 1.00 | 0.60 |
+| square R=10 | 1.5 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=10 | 2.0 | 1.00 | 1.00 | 1.00 | 1.00 |
+
+| Prediction | Threshold | Verdict |
+|---|---|---|
+| G1 | every lattice top-1 ≥ 0.9 at ε=3e-4, f=2 | **held** |
+| G2 | dictionary contains every true contrast | **held** |
+| P1 | {7,3} L=3 top-1 ≥ 0.9 at f ∈ {0.9, 1.1}, ε=3e-4 | **held** |
+| P2 | square R=10 top-1 ≤ 0.5 at f ∈ {0.9, 1.1}, ε=3e-4 | **refuted** (both 1.00) |
+| P3 | abs(top-1(f=0.9) − top-1(f=1.1)) ≤ 0.2 and abs(top-1(f=0.8) − top-1(f=1.25)) ≤ 0.2 for every lattice, ε | **refuted** by `score()`; see the scorer correction below |
+| P4 | top-1({7,3} L=3) ≥ top-1(square R=10) − 0.1 for every f, ε | **held** |
+
+**Limits:** Anything with component tolerance (H3-X-0007 covered it for f ≥ 1.25 only), multi-node defects, contrasts outside D, non-Gaussian noise, or sizes beyond N ≈ 317. Nothing about holography.
+
+*Recorded by a low-tier agent (runbook steps 6–8); audited with `tools/audit_low_tier.py` (pass). The reading below is mid-tier.*
+
+**Scorer correction (P3).** The only cell that made `score()` return P3 = false is square R=10 at ε = 10⁻³: 0.70 at
+f = 0.9 against 0.90 at f = 1.1, i.e. 14 against 18 correct trials out of 20, a difference of exactly 4/20 = 0.2, which
+the preregistered rule (≤ 0.2) allows. The script compared floats and got 0.20000000000000007 > 0.2. Applied to the
+trial counts, the preregistered rule **holds** in every cell. The data file and the ledger statement keep the
+script's output (statements are never edited); the correction is appended to the notes of H3-X-0008 (lesson LL-D11).
+
+**Reading.** P2 is refuted, as the audit anticipated before the run: at the 3×10⁻⁴ budget the flat R=10 board localises
+a ±10 % single-node change perfectly, just like the hyperbolic one. The difference appears only above the budget: at
+3×10⁻³ the smallest contrast the flat R=10 board still localises (top-1 ≥ 0.9) is f = 0.5 or 1.5, against 0.9 or 1.1 for
+{7,3} L=3 and {7,3} L=2. This fits H3-X-0006: at ideal noise both geometries localise; the hyperbolic advantage is noise
+margin, now also measured in contrast (≈ 5× smaller detectable |log f| at 3×10⁻³). For the garage build, a ±10 %
+component fault at the deepest node is localisable on either board at the budget noise, and only the hyperbolic board
+keeps that resolution with ten times more noise.

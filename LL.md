@@ -131,6 +131,15 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **What happened:** all seven "typographical" points of the v1.0 review were artefacts of PDF text extraction (dropped math, a period, a brace). The LaTeX source was correct.
 - **Rule:** check every typographical remark against the source before "fixing" it, and say so in the response rather than silently ignoring it.
 
+**LL-D11: score counts, not float differences.**
+- **What happened:** PREREGISTRATION_12's P3 allowed a top-1 difference ≤ 0.2; the scorer compared 0.9 − 0.7 as floats (0.20000000000000007) and returned false for a difference of exactly 4 of 20 trials.
+- **Rule:** in `score()`, compare integer trial counts (or round to the trial resolution) against thresholds; add a tolerance of half a trial otherwise. Corrections of a scorer are appended to the claim's notes; the data file and statement stay as written.
+
+**LL-D12: what the low-tier workflow can and cannot do here (observed 2026-09-28).**
+- Subagents (Haiku) can run `python3` scripts, write files, run `tools/ledger_add.py` and `tools/experiment_gate.py`, and copy tables faithfully; they **cannot run git** in this environment, and a background run redirected into the worktree was refused. They stopped correctly at every failure instead of improvising.
+- Errors they made: one technical paraphrase ("eigenvalues of the DtN matrix" for L_ii). Errors *I* made that they surfaced: the gate archived evidence after checking it; the runbook told them to log inside the worktree; a scorer used float comparison.
+- **Rule:** low tier records, gates and reports; the orchestrator audits (`tools/audit_low_tier.py`), corrects wording, commits, and writes readings. Tell low-tier agents to copy technical sentences verbatim rather than summarise them.
+
 **LL-D8: permission boundaries are part of the design.**
 - **What happened:** the assistant session could not use tokens, touch sibling repositories, or read transcripts.
 - **Rule:** prepare a script, have the human run it, then verify the result anonymously (public API, no token). Never work around a denial.
