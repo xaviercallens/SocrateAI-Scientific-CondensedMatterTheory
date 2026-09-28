@@ -132,6 +132,12 @@ def export_tables():
              "log10_kappa_logparam": "" if r["log10_kappa_log"] is None else r["log10_kappa_log"],
              "log10_kappa_raw": "" if r["log10_kappa_raw"] is None else r["log10_kappa_raw"]} for r in d["rows"]]),
         ("subspace_control.json", "subspace_control.csv", lambda rows: rows),
+        ("tolerance_null.json", "tolerance_null.csv", lambda d: [
+            {"lattice": r["lattice"], "N": r["N"], "tolerance": tau, "defect_node": r["defect_node"],
+             "defect_depth": r["defect_depth"], "B_null_max": t["B_null_max"], "B_defect_min": t["B_defect_min"],
+             "B_detected": t["B_detected"], "A_null_max": t["A_null_max"], "A_defect_min": t["A_defect_min"],
+             "A_detected": t["A_detected"]}
+            for r in d["results"] for tau, t in r["tau"].items()]),
         ("tda_noise.json", "tda_noise.csv", lambda d: [
             {"lattice": r["lattice"], "N": r["N"], "config": cfg, "node": c["node"], "depth": c["depth"],
              "eps_max_metric": c["eps_max"]["metric"], "eps_max_H1": c["eps_max"]["H1"],
@@ -220,6 +226,8 @@ configs:
   data_files: tda_defect.csv
 - config_name: tda_noise
   data_files: tda_noise.csv
+- config_name: tolerance_null
+  data_files: tolerance_null.csv
 - config_name: spectral_gap
   data_files: spectral_gap.csv
 - config_name: integrator_controls
@@ -248,6 +256,7 @@ inverse conductance problem on hyperbolic lattices* (X. Callens, 2026), included
 | `subspace_control.csv` | (v1.1) probe-matched dimensionality control: square lattice sigma_1/sigma_r vs hyperbolic identifiable-subspace kappa |
 | `tda_defect.csv` | (post-v1.1, not in the paper) persistent homology (Gudhi) of the boundary resistance metric with and without a bulk defect, vs a global-disorder null. The null was mis-sized; see `TDA_RESULTS.md` |
 | `tda_noise.csv` | (post-v1.1, not in the paper) defect detection vs measurement-noise level (eps_max), metric and H1 detectors |
+| `tolerance_null.csv` | (post-v1.1, not in the paper) defect detection vs component tolerance (0.1 %, 1 %, 5 %), model-based and differential regimes; only the extreme x100 contrast is tested |
 | `spectral_gap.csv` | Dirichlet spectral gap, RC relaxation time and stiffness; `exploratory=True` rows were not preregistered |
 | `interior_degree.json` | Integer check that interior nodes of the {{7,3}} truncations have degree 3, and that the interior of G_L is G_(L-1) (coordinates and edge sets) |
 | `integrator_controls.csv` | K1 (matrix-exponential known answer) and K2 (steady state = DtN column) controls per integrator; rows with `status` other than `run` were not executed |

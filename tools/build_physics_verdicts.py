@@ -221,6 +221,28 @@ def predictions():
                          "prediction": pred, "outcome": out,
                          "verdict": "confirmed" if ok else "refuted", "energy": 0.0 if ok else 1.0,
                          "note": "Baseline assumed known and noiseless; detection of change only, not localisation."})
+    # ---- PREREGISTRATION_7 (defect detection vs component tolerance) ----
+    tol = D / "tolerance_null.json"
+    if tol.exists():
+        res = {r["lattice"]: r["tau"] for r in json.loads(tol.read_text())["results"]}
+        B = lambda l, t: res[l][t]["B_detected"]
+        A = lambda l, t: res[l][t]["A_detected"]
+        b3 = B("{7,3} L=2", "0.05") and B("{7,3} L=3", "0.05") and not B("square R=10", "0.05")
+        for pid, ok, ctx, pred, out in (
+            ("P7-B1-tol0.1pct", all(B(l, "0.001") for l in res), "Deep x100 defect vs ideal simulation, tolerance 0.1%.",
+             {"detected_all": True}, {l: B(l, "0.001") for l in res}),
+            ("P7-B2-tol1pct", all(B(l, "0.01") for l in res), "Same, tolerance 1%.",
+             {"detected_all": True}, {l: B(l, "0.01") for l in res}),
+            ("P7-B3-tol5pct", b3, "Same, tolerance 5%: hyperbolic detect, square R=10 does not.",
+             {"{7,3}": True, "square R=10": False}, {l: B(l, "0.05") for l in res}),
+            ("P7-A1-differential", all(A(l, t) for l in res for t in res[l]),
+             "Board vs its own 3e-4-noise baseline, every tolerance.", {"detected_all": True},
+             {l: [A(l, t) for t in res[l]] for l in res}),
+        ):
+            recs.append({"id": pid, "source": ["PREREGISTRATION_7.md", "data/tolerance_null.json"], "context": ctx,
+                         "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
+                         "energy": 0.0 if ok else 1.0,
+                         "note": "Only the extreme x100 contrast tested; linear-response scaling of the null overestimated it by ~1.7x at 5%."})
     return recs
 
 

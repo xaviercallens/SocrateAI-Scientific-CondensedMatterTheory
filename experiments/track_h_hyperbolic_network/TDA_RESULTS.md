@@ -75,10 +75,43 @@ does a defect stay detectable? Detection = every one of 10 noisy defect realisat
 3. Ten realisations, a half-decade grid, and a censored hyperbolic ε_max make the ratios coarse.
 4. i.i.d. Gaussian noise is not hardware noise (correlated, drifting, quantised).
 
+## Tolerance run 2026-09-28: component tolerance as the null (`PREREGISTRATION_7.md`, ledger H3-X-0003)
+
+Board conductances g = 1 + τ·U[−1, 1] per edge; deep ×100 defect on top; 20 boards per condition; *detected* iff the
+smallest defect statistic exceeds the largest null statistic (a strict criterion). Statistic = relative change of
+the boundary resistance metric.
+
+**Model-based regime (compare with the ideal simulation).** Null max / defect min:
+
+| Lattice | τ = 0.1 % | τ = 1 % | τ = 5 % |
+|---|---|---|---|
+| {7,3} L=2 | 1.7e-4 / 5.9e-2 ✔ | 1.7e-3 / 5.8e-2 ✔ | 8.8e-3 / 5.5e-2 ✔ |
+| square R=6 | 2.0e-4 / 2.0e-2 ✔ | 2.0e-3 / 1.9e-2 ✔ | 1.0e-2 / 1.8e-2 ✔ (marginal) |
+| {7,3} L=3 | 1.2e-4 / 3.8e-2 ✔ | 1.2e-3 / 3.8e-2 ✔ | 6.5e-3 / 3.5e-2 ✔ (5.3×) |
+| square R=10 | 1.5e-4 / 6.0e-3 ✔ | 1.5e-3 / 5.7e-3 ✔ (3.8×) | 7.8e-3 / 6.3e-3 ✘ |
+
+**Differential regime (board vs its own measurement, 3×10⁻⁴ noise).** Detected on all four lattices at every τ;
+worst margin 40× (square R=10). Tolerance cancels almost entirely when the same board is compared with itself.
+
+All four preregistered predictions held (B1, B2, B3, A1). One quantitative miss: the linear-response scaling of the
+first run's null overestimated the 5 % null by ≈1.7×.
+
+**What this shows.** A near-short-circuit at the deepest node of a 140-resistor {7,3} board is detectable at
+0.1 %, 1 % *and* 5 % tolerance even against the ideal model, and always when the board is compared with itself;
+the square lattice of comparable size loses the model-based detection at 5 %. The physical build does not need
+precision resistors for *this* defect size, and differential measurement is the robust protocol.
+
+**What this does not show.** Only an extreme contrast (×100 on all edges of one node) was tested. The signal is
+roughly linear in the conductance change, so a ×2 defect would be ~100× weaker, at or below the tolerance and noise
+floor on the deep nodes. The **minimum detectable contrast** is untested and decides whether a board can see realistic
+faults (a ×2–×10 component swap, a partial cut). It is the next preregistration, together with localisation.
+
 ## What follows (to be preregistered, not done)
 
-**Tolerance-matched null (next):** baseline perturbed by component tolerance at 0.1 %, 1 % and 5 % (uniform, random
-per edge), detection of the deep ×100 defect against that null on all four lattices.
+1. **Minimum detectable contrast:** ×1.1, ×1.5, ×2, ×5, ×10 and ×0.5, ×0.2, ×0.1 at depths 1, mid and maximal, in the
+   differential regime at 3×10⁻⁴ and in the model-based regime at 1 % tolerance.
+2. **Localisation** (roadmap H-3): from the difference of two boundary maps, identify the defect node among all
+   interior nodes, hyperbolic vs flat.
 
 Earlier plan, from the first run:
 

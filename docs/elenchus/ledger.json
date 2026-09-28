@@ -265,6 +265,18 @@
    "audit": null,
    "statement": "PREREGISTRATION_6 (defect detection against Gaussian measurement noise on the Neumann-to-Dirichlet map, 10 realisations, detection = all defect realisations exceed the max of the noise null; eps grid 1e-4..1e-1). Q1 HELD: deep x100 defect, metric detector, N~316: eps_max = 1e-01 (hyperbolic; top of the grid, so a lower bound) vs 1e-02 (square), ratio >= 10 (predicted >= 3); at N~112: 1e-01 vs 3e-02. Q2 HELD: H1 bottleneck eps_max = 3e-02 / 3e-02 on the hyperbolic lattices, at least 3.3x below the metric's, i.e. topology is less sensitive than the plain metric. Q3 HELD: the metric detects the deep x100 defect at eps = 3e-4 on all four lattices (True).",
    "notes": "experiments/track_h_hyperbolic_network/tda_noise.py. LIMITS: detection is against a KNOWN noiseless baseline and tests only that something changed, not where or what; the hyperbolic metric eps_max is censored at the grid ceiling; 10 realisations is crude; noise is i.i.d. Gaussian on P, not correlated hardware error; component tolerance acts as fixed baseline disorder, which this null does not include (next preregistration: tolerance-matched null)."
+  },
+  {
+   "id": "H3-X-0003",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H3-X-0002"
+   ],
+   "evidence": "sha256:e763d29c8e19a5831f9fae9c4ea83a7d964be2bf409c55b8f8d02edac61e30a8",
+   "audit": null,
+   "statement": "PREREGISTRATION_7 (deep x100 defect vs component tolerance g=1+tau*U[-1,1], 20 boards per condition, detected iff min defect statistic > max null statistic). Model-based regime (compare with the ideal simulation): B1 tau=0.1% all four lattices detect (True); B2 tau=1% all four detect (True); B3 tau=5%: {7,3} L=2 and L=3 detect (margins 6.2x and 5.3x), square R=10 does not (defect min 6.3e-03 < null max 7.8e-03) (True). Differential regime (board vs its own 3e-4-noise baseline): A1 detected on all four lattices at every tau (True); worst margin 40x (square R=10, tau=1%). Quantitative miss: the linear-response scaling of the prereg-5 null overestimated the 5% null by ~1.7x (predicted p95 ~1.1e-2; observed max 6.5-7.8e-3), so square R=6, left unpredicted, detects.",
+   "notes": "experiments/track_h_hyperbolic_network/tolerance_null.py. LIMIT: only extreme contrasts are tested (x100 on all edges of one node: a near short circuit). Signal is roughly linear in the conductance change, so a x2 defect would be ~100x weaker, near or below the tolerance/noise floor on the deep nodes of these lattices; the minimum detectable contrast is untested and is the next preregistration."
   }
  ]
 }
