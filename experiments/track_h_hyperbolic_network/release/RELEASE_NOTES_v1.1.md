@@ -22,6 +22,21 @@ review asked for was **preregistered before it was run** (`PREREGISTRATION_3.md`
   characteristic; three heptagons per vertex).
 - Seven "typographical" points in the review were artefacts of PDF text extraction; the source was correct.
 
+### Also in this release: follow-up experiments after the Zenodo v1.1 record (not in the paper)
+Preregistered and committed before each run (`PREREGISTRATION_5.md` to `PREREGISTRATION_10.md`); results in
+`experiments/track_h_hyperbolic_network/TDA_RESULTS.md` and `LOCALIZATION_RESULTS.md`; ledger H3-X-0001 to H3-X-0007.
+- A deep bulk defect has no persistent-homology signature on the boundary resistance metric.
+- Defects are detected against measurement noise at the 3×10⁻⁴ budget on all four lattices, and against component
+  tolerance up to 5 % on the hyperbolic lattices (1 % on the flat R=10); comparing a board with its own earlier
+  measurement always works.
+- Single-node localisation is perfect at 3×10⁻⁴ on flat and hyperbolic lattices alike; the hyperbolic lattice's
+  advantage is a noise margin (≥ 100× at N≈316), and component tolerance up to 5 % does not degrade localisation.
+- **Corrections recorded in the open:** an earlier "×2 defects are ~100× weaker" note was wrong (the response
+  saturates); two localisation predictions and one tolerance prediction were refuted (`LL.md`: LL-A8 to LL-A11).
+- Limits: single-node defects, known-contrast oracle decoder, i.i.d. noise, 20 trials per cell, tolerance ≤ 5 %.
+- Also new: `LL.md`, `tools/restart.sh`, the project skill, `corpus/ingest_generated.py`,
+  `tools/build_physics_verdicts.py` (`training/`), `tools/export_session_traces.py`.
+
 ### Records
 - Zenodo: **DOI 10.5281/zenodo.23002378** (v1.1), under concept DOI 10.5281/zenodo.23000390; v1.0 stays at 10.5281/zenodo.23000391.
 - Hugging Face dataset: three new tables (`conditioning_arb.csv`, `disorder.csv`, `subspace_control.csv`).

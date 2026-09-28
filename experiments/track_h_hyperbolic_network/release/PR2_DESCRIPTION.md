@@ -42,6 +42,15 @@ This update adds **Track H**: the conditioning of the discrete inverse conductan
 - Proposition 1's degree-three premise argued for general L; the seven "typos" in the review were PDF-extraction artefacts.
 - New Zenodo version under the concept DOI (v1.0 stays frozen); three new dataset tables.
 
+### Follow-up experiments after v1.1 (in the repository, **not** in the paper or the Zenodo v1.1 record)
+Each was preregistered and committed before it ran; refutations and corrections are kept.
+- **Boundary persistent homology (Gudhi), prereg 5:** a deep bulk defect leaves no topological signature (H3-X-0001).
+- **Detection vs measurement noise, prereg 6; vs component tolerance, prereg 7:** a ×100 defect is detected at the 3×10⁻⁴ budget on all four lattices; against tolerance it survives 5 % on both hyperbolic lattices and 1 % on the flat R=10 (H3-X-0002/3).
+- **Correction:** a ×2 defect is *not* ~100× weaker than ×100 (the response saturates, 27–37 %); my earlier note was wrong and is corrected (H3-X-0004, LL-A9).
+- **Localisation, prereg 8–10:** single-node localisation is perfect at 3×10⁻⁴ on flat *and* hyperbolic lattices (two of my predictions refuted, LL-A10); the noise sweep shows the hyperbolic advantage is a noise margin (flat fails at 10⁻³–3×10⁻³, hyperbolic holds to ≥ 10⁻¹, ≥ 100× at N≈316); component tolerance up to 5 % does not degrade localisation (H3-X-0005..0007, LL-A11).
+- Ledger: 29 claims, gate clean; training labels: 31 predictions; lessons learned in `LL.md`; roadmap updated (`docs/roadmap.md`, rows H-3a/H-3b).
+- Limits: single-node defects, oracle decoder (known contrast set), i.i.d. noise, 20 trials per cell, tolerance ≤ 5 %.
+
 ### Published
 - **Zenodo v1.1:** DOI [10.5281/zenodo.23002378](https://doi.org/10.5281/zenodo.23002378); v1.0: [10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391); concept DOI 10.5281/zenodo.23000390.
 - **Hugging Face:** the [dataset](https://huggingface.co/datasets/callensxavier/hyperbolic-resistor-networks) and the [simulator](https://huggingface.co/callensxavier/hyperbolic-resistor-network-simulator).
