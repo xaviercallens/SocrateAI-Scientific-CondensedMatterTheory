@@ -66,7 +66,8 @@ def main():
         # Deviation 1 of PREREGISTRATION_11.md: Gram squares the condition number, so allow the float64 floor
         tol = max(1e-6, 10 * np.finfo(float).eps * 10 ** (2 * ref))
         r["control_tolerance"] = tol
-        r["control_pass"] = r["log10_kappa"] is not None and abs(r["log10_kappa"] - ref) < tol
+        r["control_tolerance"] = float(tol)
+        r["control_pass"] = bool(r["log10_kappa"] is not None and abs(r["log10_kappa"] - ref) < tol)
         ctrl.append(r)
         print(f"     control vs direct SVD {ref:.6f}: |diff| = {abs(r['log10_kappa'] - ref):.1e}, tol {tol:.1e}: "
               f"{'pass' if r['control_pass'] else 'FAIL'}")
