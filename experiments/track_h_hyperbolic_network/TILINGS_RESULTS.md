@@ -52,3 +52,28 @@ Unit conductances and full boundary only (disorder and probe-subsampling were st
 five tilings, ≤ 6 layers, N ≤ 2888; the q = 4, 5 tilings reach d_max ≤ 4, so equal-d_max comparisons outside {7,3}/{8,3}
 stop at d_max ≤ 3; the concave-versus-linear contrast rests on few points per family; no exact rank certificates were
 computed for these tilings; nothing here concerns holography.
+
+## RC benchmark on other tilings (PREREGISTRATION_15.md, committed before the run; ledger H2-X-0005)
+
+**Design.** Unit conductances, C = 1 per interior node, boundary as in the paper; RC relaxation time τ = 1/λ_min and stiffness λ_max/λ_min from the eigenvalues of the interior Laplacian block L_ii; two-integrator controls K1 (matrix-exponential known answer, max-norm relative error < 1e-5) and K2 (steady state after 40τ, < 1e-6), rtol 1e-8, atol 1e-10, with SciPy BDF and rusty-SUNDIALS CVODE (BDF).
+
+| Network | N | d_max | tau | stiffness | K1 (scipy/rusty) | K2 (scipy/rusty) |
+|---|---|---|---|---|---|---|
+| {7,3} L=2 | 112 | 3 | 2.7503 | 14.94 | 7.3e-09 / 1.1e-08 | 4.2e-13 / 1.1e-12 |
+| {8,3} L=2 | 200 | 3 | 2.6180 | 14.71 | 6.1e-09 / 1.8e-08 | 2.2e-13 / 5.5e-13 |
+| {5,4} L=3 | 165 | 2 | 0.9118 | 5.90 | 5.9e-09 / 2.1e-08 | 1.0e-12 / 1.1e-11 |
+| {6,4} L=2 | 120 | 1 | 0.5000 | 3.00 | 7.9e-09 / 2.9e-08 | 4.9e-13 / 2.4e-12 |
+| {4,5} L=4 | 188 | 2 | 0.7120 | 6.12 | 7.0e-09 / 1.6e-08 | 4.5e-12 / 9.4e-13 |
+
+| Prediction | Threshold | Verdict |
+|---|---|---|
+| G1: {7,3} L=2 reproduces τ and stiffness to 1e-3 relative | τ = 2.7503 ± 2.75e-3, stiffness 14.94 ± 1.49e-2 | HELD |
+| G2: SciPy passes K1 and K2 on {7,3} L=2 | K1 and K2 both true | HELD |
+| P1: K1 and K2 pass on every network for every backend | All backends pass | HELD |
+| P2: τ ordering by depth; q=4,5 < 2.75, {8,3} ∈ [2.06, 3.44] | τ({5,4}) 0.9118, τ({6,4}) 0.5000, τ({4,5}) 0.7120 all < 2.75; τ({8,3}) 2.6180 ∈ [2.06, 3.44] | HELD |
+| P3: every stiffness < 35.4 | max stiffness 14.94 | HELD |
+
+**Limits:** Physical boards, larger sizes, other boundary conditions; nothing about holography.
+
+*Recorded by a low-tier agent (runbook steps 6–8); audited with `tools/audit_low_tier.py` (pass). One correction at
+review: the Design line said the eigenvalues were "of the DtN matrix"; they are of the interior block L_ii.*

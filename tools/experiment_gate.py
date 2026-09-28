@@ -60,6 +60,11 @@ def main():
             td = first_commit_time(str((TRACK / df).relative_to(ROOT)))
             ok = (tp is not None) and (td is None or tp <= td) and not todo
             check(prereg + " -> " + df, ok, "" if ok else ("prereg uncommitted" if tp is None else ("TODO left" if todo else "data committed first")))
+    # evidence store FIRST: a newly added claim's blob must be archived before the strict gate can verify it
+    print("== 4 evidence store")
+    rc, out = sh([sys.executable, str(TRACK / "tools_evidence_store.py")])
+    nr = out.strip().splitlines()[-1] if out.strip() else ""
+    check("evidence store: not-recovered == legacy", rc == 0 and set(eval(nr.split(":", 1)[1].strip())) == LEGACY if "not recovered" in nr else False, nr)
     print("== 2/3 ledger gate")
     if GATE is None:
         check("ledger gate available", False, "set ELENCHUS_GATE")
@@ -69,10 +74,6 @@ def main():
         rc, out = sh([sys.executable, str(GATE), "--evidence-dir", "docs/elenchus/evidence", "docs/elenchus/ledger.json"])
         flagged = {l.split()[2].rstrip(":") for l in out.splitlines() if "LEDGER_EVIDENCE" in l}
         check("strict gate: only legacy digests flagged", flagged <= LEGACY, "flagged: " + ", ".join(sorted(flagged - LEGACY)) if flagged - LEGACY else "")
-    print("== 4 evidence store")
-    rc, out = sh([sys.executable, str(TRACK / "tools_evidence_store.py")])
-    nr = out.strip().splitlines()[-1] if out.strip() else ""
-    check("evidence store: not-recovered == legacy", rc == 0 and set(eval(nr.split(":", 1)[1].strip())) == LEGACY if "not recovered" in nr else False, nr)
     print("== 5 training labels")
     rc, out = sh([sys.executable, "tools/build_physics_verdicts.py"])
     check("build_physics_verdicts", rc == 0, out.strip().splitlines()[-1] if out.strip() else "")
