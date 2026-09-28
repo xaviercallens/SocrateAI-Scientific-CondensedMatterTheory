@@ -39,6 +39,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** when two κ's are compared on subspaces of different dimension, also compare against the other side's best subspace of the same dimension. Any comparison of conditioning is a comparison of the same number of unknowns, or it is not a comparison.
 - **Evidence:** H0-X-0005; the correction is stated in the paper (v1.1 §3.3), not hidden.
 
+**LL-A8: match the null to the effect size.**
+- **What happened:** PREREGISTRATION_5 used a global 50 % conductance disorder as the null against a single-node defect. The defect's boundary signal was 6–9× larger on the hyperbolic lattice than on the square, exactly as predicted, but both sat below a null that perturbs 400+ edges at once; P2 was "refuted" by the design, not by the physics.
+- **Rule:** a null distribution must have the same perturbation budget as the effect it is compared with (same number of edges, or same Σ|Δln g|). Otherwise the test measures the null's size, not the effect's.
+- **Evidence:** H3-X-0001, `TDA_RESULTS.md`.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.

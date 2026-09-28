@@ -243,6 +243,16 @@
    "statement": "PREREGISTRATION_3 part A: flat-lattice kappa beyond float64, Arb ball arithmetic (512 bits), controls on unsaturated cases pass (square R=10 (control): |d log10 kappa| < 1e-6, triangular R=6.45 (control): |d log10 kappa| < 1e-6). Results: triangular R=10.75: log10 kappa = 15.99 (radius 3e-91); square R=16: log10 kappa = 16.54 (radius 7e-94); triangular R=17.2: log10 kappa = 26.95 (radius 3e-54). Preregistered extrapolations: square N=797: exp 16.42, power 13.87; triangular N=421: exp 15.63, power 12.5; triangular N=1069: exp 25.94, power 15.98. Verdict recorded in the paper's sec. 3.1 from the decision rule of PREREGISTRATION_3.A.",
    "notes": "experiments/track_h_hyperbolic_network/flat_scaling_mp.py; certified radii; lambda_max in float64.",
    "audit": null
+  },
+  {
+   "id": "H3-X-0001",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [],
+   "evidence": "sha256:f06cc5658882148d5a48b8fc484d73f142eac43697b9801de025221e7be4899d",
+   "audit": null,
+   "statement": "PREREGISTRATION_5 (boundary effective-resistance metric -> Vietoris-Rips H0/H1, Gudhi 3.13; null = U[0.5,1.5] disorder, 20 seeds, 95th percentile). P1 HELD: a deep defect (x100 / x0.01 on every edge of a maximal-depth node) gives no H0/H1 bottleneck signature above the null on any of 4 lattices (deep_detected_topologically=False). P2 REFUTED: the direct metric change ||dR||/||R|| does not detect the deep defect on the hyperbolic lattices either (hyperbolic=False, square=False); the hyperbolic signal is larger (0.038 vs 0.006 at N~316) but below the null. P3 PARTIAL: the shallow x100 defect is detected by H1 on both hyperbolic lattices (0.786 > 0.707; L=2: 0.752) and on neither square lattice; the direct metric detects it nowhere. The 'bulk defect = boundary topological invariant' hypothesis fails for deep defects at these sizes.",
+   "notes": "experiments/track_h_hyperbolic_network/tda_defect.py; unit DtN matrices taken from the published v1.1 dataset (asserted equal to recomputed). Design caveat, recorded for the follow-up: the null (global 50% disorder) is a much larger perturbation than one node's edges, so P2's threshold was not matched to the effect size; a null with matched perturbation energy is the next preregistration."
   }
  ]
 }

@@ -132,6 +132,14 @@ def export_tables():
              "log10_kappa_logparam": "" if r["log10_kappa_log"] is None else r["log10_kappa_log"],
              "log10_kappa_raw": "" if r["log10_kappa_raw"] is None else r["log10_kappa_raw"]} for r in d["rows"]]),
         ("subspace_control.json", "subspace_control.csv", lambda rows: rows),
+        ("tda_defect.json", "tda_defect.csv", lambda d: [
+            {"lattice": r["lattice"], "N": r["N"], "boundary_size": r["boundary"], "config": cfg,
+             "node": s.get("node", ""), "depth": s.get("depth", ""), "bottleneck_H0": s["bottleneck_H0"],
+             "bottleneck_H1": s["bottleneck_H1"], "rel_metric_change": s["rel_metric_change"],
+             "null_p95_H0": r["null_p95"]["bottleneck_H0"], "null_p95_H1": r["null_p95"]["bottleneck_H1"],
+             "null_p95_metric": r["null_p95"]["rel_metric_change"],
+             "detected_H1": s["detected"]["bottleneck_H1"], "detected_metric": s["detected"]["rel_metric_change"]}
+            for r in d["results"] for cfg, s in r["configs"].items()]),
     ):
         p = D / name
         if p.exists():

@@ -167,6 +167,37 @@ def predictions():
                 "verdict": "confirmed" if abs(k - p["exp_sqrtN"]) <= 2.0 else "refuted",
                 "energy": round(min(1.0, abs(k - p["exp_sqrtN"]) / 2.0), 3),
             })
+    # ---- PREREGISTRATION_5 (bulk defect vs boundary persistent homology) ----
+    tda = D / "tda_defect.json"
+    if tda.exists():
+        res = {r["lattice"]: r for r in json.loads(tda.read_text())["results"]}
+        def det(l, c, m): return res[l]["configs"][c]["detected"][m]
+        deep_topo = any(det(l, c, m) for l in res for c in ("deep x100", "deep x0.01") for m in ("bottleneck_H0", "bottleneck_H1"))
+        recs.append({"id": "P5-P1-deep-topological", "source": ["PREREGISTRATION_5.md", "data/tda_defect.json"],
+                     "context": "Deep bulk defect; H0/H1 bottleneck distance of boundary resistance-metric Rips diagrams vs unit; "
+                                "null = U[0.5,1.5] disorder p95.",
+                     "prediction": {"detected": False}, "outcome": {"detected_any_lattice": deep_topo},
+                     "verdict": "confirmed" if not deep_topo else "refuted", "energy": 1.0 if deep_topo else 0.0})
+        hyp = any(det(l, c, "rel_metric_change") for l in ("{7,3} L=3", "{7,3} L=2") for c in ("deep x100", "deep x0.01"))
+        sq = any(det(l, c, "rel_metric_change") for l in ("square R=10", "square R=6") for c in ("deep x100", "deep x0.01"))
+        ok = hyp and not sq
+        recs.append({"id": "P5-P2-deep-metric", "source": ["PREREGISTRATION_5.md", "data/tda_defect.json"],
+                     "context": "Deep bulk defect; direct detector ||dR||/||R|| vs disorder null p95.",
+                     "prediction": {"hyperbolic_detected": True, "square_detected": False},
+                     "outcome": {"hyperbolic_detected": hyp, "square_detected": sq,
+                                 "hyp_over_square_signal_ratio_N316": round(res["{7,3} L=3"]["configs"]["deep x100"]["rel_metric_change"]
+                                                                            / res["square R=10"]["configs"]["deep x100"]["rel_metric_change"], 1)},
+                     "verdict": "confirmed" if ok else "refuted", "energy": 0.0 if ok else 1.0,
+                     "note": "Null amplitude (global 50% disorder) exceeded the single-node effect; threshold not matched to effect size."})
+        sh_topo = any(det(l, "shallow x100", m) or det(l, "shallow x0.01", m) for l in res for m in ("bottleneck_H0", "bottleneck_H1"))
+        sh_metric_all = all(det(l, "shallow x100", "rel_metric_change") or det(l, "shallow x0.01", "rel_metric_change") for l in res)
+        recs.append({"id": "P5-P3-shallow-control", "source": ["PREREGISTRATION_5.md", "data/tda_defect.json"],
+                     "context": "Shallow (depth-1) defect as positive control.",
+                     "prediction": {"metric_detected_all_lattices": True, "topological_detected_somewhere": True},
+                     "outcome": {"metric_detected_all_lattices": sh_metric_all, "topological_detected_somewhere": sh_topo,
+                                 "H1_detects_on": [l for l in res if det(l, "shallow x100", "bottleneck_H1")]},
+                     "verdict": "confirmed" if (sh_metric_all and sh_topo) else "partial",
+                     "energy": 0.0 if (sh_metric_all and sh_topo) else 0.5})
     return recs
 
 
