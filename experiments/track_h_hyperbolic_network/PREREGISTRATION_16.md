@@ -18,6 +18,12 @@ paper).
 ## Validity gates
 - G1: for {7,3} L=1–4 the mean sensitivity per depth reproduces `data/h0.json` ("sensitivity_by_depth", normalised to
   depth 0 = 1) to 1e-6 relative at every depth.
+  **Deviation 1 (2026-09-28, after the first run; no prediction exists in this exploratory card, so nothing was at
+  stake).** G1 as written cannot pass: `data/h0.json`'s statistic is the *median* per depth of the Jacobian column
+  2-norm ‖J[:,e]‖₂ = (½[(‖d_e‖²)² − Σ_i d_e,i⁴])^{1/2} (upper-triangular boundary pairs), normalised to depth 0, while
+  the profile above uses the *mean* of ‖d_e‖². Amended G1: the script also computes the h0 statistic exactly and
+  must reproduce h0 to 1e-6; the profile of ‖d_e‖² is reported alongside, unchanged. First-run values (G2 passed,
+  G1 failed) are kept in the git history of the data file.
 - G2: every instance's edge count per depth sums to E.
 
 ## Not claimed

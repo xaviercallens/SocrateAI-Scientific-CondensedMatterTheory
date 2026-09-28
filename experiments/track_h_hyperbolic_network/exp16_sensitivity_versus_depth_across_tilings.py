@@ -35,13 +35,15 @@ def profile(g):
     bnd = boundary_nodes(g); d = depths(g, bnd)
     H, _ = harmonic_extension(n, edges, np.ones(len(edges)), bnd)
     ea = np.array([a for a, _ in edges]); eb = np.array([b for _, b in edges])
-    S = np.sum((H[ea] - H[eb]) ** 2, axis=1)                 # ||d_e||^2 per edge
+    D = H[ea] - H[eb]
+    S = np.sum(D ** 2, axis=1)                                # ||d_e||^2 per edge (profile statistic)
+    col = np.sqrt(0.5 * (S ** 2 - np.sum(D ** 4, axis=1)))    # ||J[:,e]||_2 over boundary pairs i<j (h0 statistic)
     ed = np.minimum(d[ea], d[eb])
     rows = {}
     for k in sorted(set(int(x) for x in ed)):
         s = S[ed == k]
         rows[str(k)] = {"n_edges": int(len(s)), "mean_log10": float(np.mean(np.log10(s))), "median_log10": float(np.median(np.log10(s))),
-                        "mean": float(np.mean(s))}
+                        "mean": float(np.mean(s)), "h0_median_colnorm": float(np.median(col[ed == k]))}
     ks = np.array([int(k) for k in rows]); ys = np.array([rows[str(k)]["mean_log10"] for k in ks])
     slope = float(np.polyfit(ks, ys, 1)[0]) if len(ks) >= 2 else None
     m1 = ks >= 1
@@ -67,10 +69,10 @@ def score(d: dict) -> dict:
     for r in d["rows"]:
         if r["family"] == "{7,3}":
             ref = h0["{7,3} " + r["param"]]["sensitivity_by_depth"]
-            m0 = r["by_depth"]["0"]["mean"]
+            m0 = r["by_depth"]["0"]["h0_median_colnorm"]     # Deviation 1: compare the h0 statistic itself
             for k, v in ref.items():
                 if k in r["by_depth"]:
-                    G1 &= abs(r["by_depth"][k]["mean"] / m0 - v) <= 1e-6 * max(1.0, abs(v))
+                    G1 &= abs(r["by_depth"][k]["h0_median_colnorm"] / m0 - v) <= 1e-6 * max(1.0, abs(v))
     G2 = all(sum(v["n_edges"] for v in r["by_depth"].values()) == r["E"] for r in d["rows"])
     return {"G1": G1, "G2": G2}
 
