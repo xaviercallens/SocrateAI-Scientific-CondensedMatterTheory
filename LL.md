@@ -58,6 +58,12 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** before predicting how a perturbation affects a new task, ask whether the task measures a difference within the perturbed system or a comparison with an idealised model; the two regimes can give opposite answers. (Second time in a day I applied one experiment's result to a different statistic; see LL-A10.)
 - **Evidence:** H3-X-0007, `LOCALIZATION_RESULTS.md`.
 
+**LL-A12: a control's tolerance must include the method's numerical floor.**
+- **What happened:** for the multi-tiling run I computed κ from the Gram matrix G = JᵀJ (cheap, no giant Jacobian) and preregistered a control tolerance of 1e-6 against the direct SVD. It passed on {7,3} (3e-12) and failed on square R=6 (1.1e-6), because forming G squares the condition number: float64 loses ≈ ε·κ(G) (here 3e-6 at κ(G) = 10¹⁰). The method was fine; the tolerance ignored the known floor.
+- **Rule:** derive a control's tolerance from the method's error model (here max(1e-6, 10·ε·κ(G))), and store an error bound with every value. When a control fails, diagnose before changing anything, then amend the preregistration in the open *before* looking at any result the control was guarding (Deviation 1 in `PREREGISTRATION_11.md`, committed as cc537c5).
+- **Also learned in the same run:** a threshold I set from intuition (local exponent ≤ 1.0 for the q = 4, 5 tilings) was too low and was refuted (1.19 and 1.06); state such thresholds with the argument they come from.
+- **Evidence:** `gram_control_diag.py`, H0-X-0008.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.

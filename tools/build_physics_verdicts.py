@@ -314,6 +314,49 @@ def predictions():
                          "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
                          "energy": 0.0 if ok else 1.0,
                          "note": "Tolerance up to 5% did not degrade localisation (differential regime); failures were noise-limited."})
+    # ---- PREREGISTRATION_11 (conditioning across tilings) ----
+    tk = D / "tilings_kappa.json"
+    if tk.exists():
+        import math as _m
+        d = json.loads(tk.read_text())
+        rows = [r for r in d["rows"] if r["log10_kappa"] is not None]
+        fam = {}
+        for r in rows:
+            fam.setdefault((r["p"], r["q"]), []).append(r)
+        for v in fam.values():
+            v.sort(key=lambda r: r["L"])
+        kk = lambda p, q, L: next(r["log10_kappa"] for r in fam[(p, q)] if r["L"] == L)
+        inc = lambda p, q: [kk(p, q, L + 1) - kk(p, q, L) for L in (1, 2, 3)]
+        P1 = all(all(x > y for x, y in zip(inc(p, q), inc(p, q)[1:])) for p, q in ((7, 3), (8, 3)))
+        P2 = all(kk(8, 3, L) < kk(7, 3, L) for L in (2, 3, 4))
+        spreads = {}
+        for dm in (1, 2, 3, 5):
+            vals = [r["log10_kappa"] for r in rows if r["d_max"] == dm]
+            if len({(r["p"], r["q"]) for r in rows if r["d_max"] == dm}) >= 2:
+                spreads[dm] = max(vals) - min(vals)
+        P3a = all(s <= 1.0 for s in spreads.values())
+        h0 = {r["name"]: r for r in json.loads((D / "h0.json").read_text())}
+        flat5 = [h0["square R=6"]["log10_kappa"], h0["triangular R=6.449999999999999"]["log10_kappa"]]
+        hyp5 = max(r["log10_kappa"] for r in rows if r["d_max"] == 5)
+        P3b = all(v - hyp5 >= 1.0 for v in flat5)
+        expo = {t: (v[-1]["log10_kappa"] - v[-2]["log10_kappa"]) / (_m.log10(v[-1]["N"]) - _m.log10(v[-2]["N"])) for t, v in fam.items()}
+        P4 = expo[(8, 3)] <= 1.5 and all(expo[t] <= 1.0 for t in ((5, 4), (6, 4), (4, 5)))
+        for pid, ok, ctx, pred, out in (
+            ("P11-P1-concave-in-L", P1, "log10 kappa increments between consecutive layers, (7,3) and (8,3).",
+             {"increments": "strictly decreasing"}, {"(7,3)": [round(x, 2) for x in inc(7, 3)], "(8,3)": [round(x, 2) for x in inc(8, 3)]}),
+            ("P11-P2-83-better-than-73", P2, "log10 kappa of (8,3) vs (7,3) at L=2,3,4.",
+             {"(8,3)": "< (7,3) at each L"}, {"L2": [round(kk(8, 3, 2), 2), round(kk(7, 3, 2), 2)], "L3": [round(kk(8, 3, 3), 2), round(kk(7, 3, 3), 2)], "L4": [round(kk(8, 3, 4), 2), round(kk(7, 3, 4), 2)]}),
+            ("P11-P3a-depth-universal-hyperbolic", P3a, "Spread of log10 kappa across hyperbolic tilings at equal d_max.",
+             {"spread": "<= 1.0 decade"}, {str(k): round(v, 2) for k, v in spreads.items()}),
+            ("P11-P3b-flat-worse-at-equal-depth", P3b, "Flat lattices vs hyperbolic maximum at d_max = 5.",
+             {"gap": ">= 1.0 decade"}, {"flat": [round(x, 2) for x in flat5], "hyperbolic_max": round(hyp5, 2)}),
+            ("P11-P4-polynomial-exponents", P4, "Local exponent d log kappa / d log N between the two largest sizes.",
+             {"(8,3)": "<= 1.5", "(5,4),(6,4),(4,5)": "<= 1.0"}, {str(t): round(v, 2) for t, v in expo.items()}),
+        ):
+            recs.append({"id": pid, "source": ["PREREGISTRATION_11.md", "data/tilings_kappa.json"], "context": ctx,
+                         "prediction": pred, "outcome": out, "verdict": "confirmed" if ok else "refuted",
+                         "energy": 0.0 if ok else 1.0,
+                         "note": "Within the hyperbolic class log kappa is nearly a function of d_max; across classes it is not."})
     return recs
 
 
