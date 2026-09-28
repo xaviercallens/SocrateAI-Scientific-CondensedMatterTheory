@@ -1,0 +1,72 @@
+{
+ "f": 2.0,
+ "eps_iid": 0.0003,
+ "trials": 20,
+ "boards": {
+  "{7,3} L=2": {
+   "cells": {
+    "none plain": 1.0,
+    "none mean_removed": 1.0,
+    "none gain_fitted": 1.0,
+    "offset0.0001 plain": 1.0,
+    "offset0.0001 mean_removed": 1.0,
+    "offset0.001 plain": 1.0,
+    "offset0.001 mean_removed": 1.0,
+    "offset0.01 plain": 1.0,
+    "offset0.01 mean_removed": 1.0,
+    "offset0.1 plain": 1.0,
+    "offset0.1 mean_removed": 1.0,
+    "drift0.0001 plain": 1.0,
+    "drift0.0001 gain_fitted": 1.0,
+    "drift0.0003 plain": 1.0,
+    "drift0.0003 gain_fitted": 1.0,
+    "drift0.001 plain": 1.0,
+    "drift0.001 gain_fitted": 1.0,
+    "drift0.003 plain": 1.0,
+    "drift0.003 gain_fitted": 1.0,
+    "drift0.01 plain": 1.0,
+    "drift0.01 gain_fitted": 1.0,
+    "bits10 plain": 1.0,
+    "bits12 plain": 1.0,
+    "bits14 plain": 1.0,
+    "bits16 plain": 1.0
+   }
+  },
+  "square R=6": {
+   "cells": {
+    "none plain": 1.0,
+    "none mean_removed": 1.0,
+    "none gain_fitted": 1.0,
+    "offset0.0001 plain": 1.0,
+    "offset0.0001 mean_removed": 1.0,
+    "offset0.001 plain": 1.0,
+    "offset0.001 mean_removed": 1.0,
+    "offset0.01 plain": 1.0,
+    "offset0.01 mean_removed": 1.0,
+    "offset0.1 plain": 1.0,
+    "offset0.1 mean_removed": 1.0,
+    "drift0.0001 plain": 1.0,
+    "drift0.0001 gain_fitted": 1.0,
+    "drift0.0003 plain": 1.0,
+    "drift0.0003 gain_fitted": 1.0,
+    "drift0.001 plain": 1.0,
+    "drift0.001 gain_fitted": 1.0,
+    "drift0.003 plain": 1.0,
+    "drift0.003 gain_fitted": 1.0,
+    "drift0.01 plain": 0.95,
+    "drift0.01 gain_fitted": 1.0,
+    "bits10 plain": 1.0,
+    "bits12 plain": 1.0,
+    "bits14 plain": 1.0,
+    "bits16 plain": 1.0
+   }
+  }
+ },
+ "verdicts": {
+  "G1": true,
+  "G2": true,
+  "P1": false,
+  "P2": false,
+  "P3": false
+ }
+}

@@ -156,3 +156,101 @@ a ±10 % single-node change perfectly, just like the hyperbolic one. The differe
 margin, now also measured in contrast (≈ 5× smaller detectable |log f| at 3×10⁻³). For the garage build, a ±10 %
 component fault at the deepest node is localisable on either board at the budget noise, and only the hyperbolic board
 keeps that resolution with ten times more noise.
+
+## Localisation under correlated hardware noise (PREREGISTRATION_17.md, committed before the run; ledger H3-X-0009)
+
+Decoder and dictionary as `localize_defect.py` (ideal board, matched filter over all interior nodes, contrasts
+{0.1, 0.5, 0.8, 1.25, 2, 5, 10, 100}), deepest class, true contrast f = 2, 20 trials per cell. Two maps P₁ (baseline)
+and P₂ (defect) of the same board, each with i.i.d. noise 3×10⁻⁴ (the budget) plus ONE of:
+- **Offset:** P_k + c_k·s·𝟙𝟙ᵀ, c_k ~ N(0, ε_o) independently per map, s = rms entry; ε_o ∈ {1e-4, 1e-3, 1e-2, 1e-1}.
+  Decoded twice: as is, and after **mean removal** (subtract the mean entry of ΔP and of every dictionary entry).
+- **Gain drift:** P₂ → (1 + δ)P₂, δ ~ N(0, ε_g); ε_g ∈ {1e-4, 3e-4, 1e-3, 3e-3, 1e-2}. Decoded twice: as is, and with a
+  **gain-fitted** decoder (for each dictionary entry, the best scalar gain on P₁ is fitted by least squares before the
+  residual is taken).
+- **Quantisation:** each entry of P_k rounded to a grid of step q·s, q = 2^(−bits), bits ∈ {10, 12, 14, 16}.
+Metric: top-1. Data file: `data/localisation_under_correlated_hardware_n.json`.
+
+### {7,3} L=2
+
+| Cell | top-1 |
+|---|---|
+| none plain | 1.00 |
+| none mean_removed | 1.00 |
+| none gain_fitted | 1.00 |
+| offset0.0001 plain | 1.00 |
+| offset0.0001 mean_removed | 1.00 |
+| offset0.001 plain | 1.00 |
+| offset0.001 mean_removed | 1.00 |
+| offset0.01 plain | 1.00 |
+| offset0.01 mean_removed | 1.00 |
+| offset0.1 plain | 1.00 |
+| offset0.1 mean_removed | 1.00 |
+| drift0.0001 plain | 1.00 |
+| drift0.0001 gain_fitted | 1.00 |
+| drift0.0003 plain | 1.00 |
+| drift0.0003 gain_fitted | 1.00 |
+| drift0.001 plain | 1.00 |
+| drift0.001 gain_fitted | 1.00 |
+| drift0.003 plain | 1.00 |
+| drift0.003 gain_fitted | 1.00 |
+| drift0.01 plain | 1.00 |
+| drift0.01 gain_fitted | 1.00 |
+| bits10 plain | 1.00 |
+| bits12 plain | 1.00 |
+| bits14 plain | 1.00 |
+| bits16 plain | 1.00 |
+
+### square R=6
+
+| Cell | top-1 |
+|---|---|
+| none plain | 1.00 |
+| none mean_removed | 1.00 |
+| none gain_fitted | 1.00 |
+| offset0.0001 plain | 1.00 |
+| offset0.0001 mean_removed | 1.00 |
+| offset0.001 plain | 1.00 |
+| offset0.001 mean_removed | 1.00 |
+| offset0.01 plain | 1.00 |
+| offset0.01 mean_removed | 1.00 |
+| offset0.1 plain | 1.00 |
+| offset0.1 mean_removed | 1.00 |
+| drift0.0001 plain | 1.00 |
+| drift0.0001 gain_fitted | 1.00 |
+| drift0.0003 plain | 1.00 |
+| drift0.0003 gain_fitted | 1.00 |
+| drift0.001 plain | 1.00 |
+| drift0.001 gain_fitted | 1.00 |
+| drift0.003 plain | 1.00 |
+| drift0.003 gain_fitted | 1.00 |
+| drift0.01 plain | 0.95 |
+| drift0.01 gain_fitted | 1.00 |
+| bits10 plain | 1.00 |
+| bits12 plain | 1.00 |
+| bits14 plain | 1.00 |
+| bits16 plain | 1.00 |
+
+| Prediction | Threshold | Verdict |
+|---|---|---|
+| G1 | with none of the three (i.i.d. 3×10⁻⁴ only) both boards give top-1 ≥ 0.9 | **held** |
+| G2 | mean removal and gain fitting change nothing in the G1 condition (top-1 ≥ 0.9 with them as well) | **held** |
+| P1 | 12 bits (q = 2.4×10⁻⁴, at the budget) leaves both boards at top-1 ≥ 0.9; 10 bits (q = 9.8×10⁻⁴) drops square R=6 below 0.9 while {7,3} L=2 stays ≥ 0.9 | **refuted** |
+| P2 | Without mean removal: square R=6 < 0.9 at ε_o = 1e-2 and ≥ 0.9 at 1e-3; {7,3} L=2 ≥ 0.9 at 1e-2 and < 0.9 at 1e-1. With mean removal both boards stay ≥ 0.9 at every ε_o up to 1e-1 | **refuted** |
+| P3 | Without gain fitting: at ε_g = 1e-3 square R=6 < 0.9 and {7,3} L=2 ≥ 0.9; at ε_g = 1e-2 both < 0.9. With gain fitting both boards stay ≥ 0.9 up to ε_g = 1e-2 | **refuted** |
+
+**Limits:** Localisation on real hardware; noise with time structure inside one map; multi-node defects; nothing about holography.
+
+*Recorded by a low-tier agent (runbook steps 6–8); audited with `tools/audit_low_tier.py` (pass). The reading below is mid-tier.*
+
+**Reading.** All three predictions are refuted in the safe direction: 49 of 50 cells are at 1.00 and the lowest, square
+R=6 under 1 % gain drift without correction, is 0.95. At N≈112 and contrast ×2, a common-mode offset of up to 10 % of
+the rms entry, a gain drift of up to 1 % between the two maps, and a 10-bit ADC all leave single-node localisation
+intact, on either board, with the plain decoder; the mean-removal and gain-fitting corrections were never needed. I
+predicted failures from the size of the perturbation relative to the defect signal (H3-X-0004); that reasoning ignores
+that the matched filter decides by *differences between candidate signatures*, which a rank-one offset or a common
+gain barely changes (hypothesis, untested). This is a ceiling result (LL-A10): the grid did not reach the failure
+boundary, so it bounds the hardware requirements from below without locating them. For the build (H-4 phase 2) the
+consequence is practical: for defect localisation the measurement chain of phase 1 (16-bit ADC) is more than enough,
+and even the excluded 10-bit ADC would do for this task; the 12-bit requirement of the virtual bench applies to the
+τ measurement, not to localisation. The other direction of the question, the smallest contrast the chain can localise
+under these perturbations, is untested.

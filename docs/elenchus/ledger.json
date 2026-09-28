@@ -373,6 +373,18 @@
    "audit": null,
    "statement": "PREREGISTRATION_14 (exact full-column-rank certificates of the DtN sensitivity Jacobian over GF(2^31-1) and GF(998244353), random row-combination method). G1 HELD, G2 HELD. P1 HELD: 11 instances certified full rank for both primes: {7,3} L=3 (E=399), {8,3} L=2 (E=240), {8,3} L=3 (E=928), {5,4} L=3 (E=225), {5,4} L=4 (E=605), {5,4} L=5 (E=1600), {6,4} L=2 (E=150), {6,4} L=3 (E=576), {4,5} L=4 (E=296), {4,5} L=5 (E=692), {4,5} L=6 (E=1604). P2 HELD (no redraw needed).",
    "notes": "experiments/track_h_hyperbolic_network/exp14_exact_rank_certificates_for_other_tiling.py; method unit-checked by test_exp14_method.py (positive and negative control). LIMITS: unit conductances, full boundary, E <= 1700. Executed by a low-tier agent. [evidence file: experiments/track_h_hyperbolic_network/data/exact_rank_certificates_for_other_tiling.json] [depends_on corrected before commit: ['H0-B-0001', 'H0-X-0008'] -> ['H0-B-0001']]"
+  },
+  {
+   "id": "H3-X-0009",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H3-X-0006"
+   ],
+   "evidence": "sha256:d10078271acd596122e0e9f69345cd8a708c359482d1ee73fa0fc8ec40e394ec",
+   "audit": null,
+   "statement": "PREREGISTRATION_17 (single-node localisation, f=2, deepest class, {7,3} L=2 and square R=6, under common-mode offset, gain drift and ADC quantisation, 20 trials per cell). G1 HELD, G2 HELD. P1 REFUTED (quantisation: top-1 at 10 bits {7,3} L=2 1.00, square R=6 1.00; at 12 bits 1.00, 1.00). P2 REFUTED (offset without mean removal: square R=6 at 1e-2 1.00, at 1e-3 1.00; {7,3} L=2 at 1e-2 1.00, at 1e-1 1.00). P3 REFUTED (drift without gain fitting: square R=6 at 1e-3 1.00, at 1e-2 1.00; {7,3} L=2 at 1e-3 1.00, at 1e-2 1.00). Lowest cell in the whole table: drift0.01 plain on square R=6 0.95.",
+   "notes": "experiments/track_h_hyperbolic_network/exp17_localisation_under_correlated_hardware_n.py. LIMITS: ideal board, oracle dictionary, f=2 only, N<=113, i.i.d. noise 3e-4 added in every cell, 20 trials. Executed by a low-tier agent; reading pending (mid tier). [evidence file: experiments/track_h_hyperbolic_network/data/localisation_under_correlated_hardware_n.json]"
   }
  ]
 }

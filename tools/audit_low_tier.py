@@ -29,7 +29,8 @@ def flat_numbers(x, out):
     if isinstance(x, (int, float)):
         out.append(float(x)); return
     if isinstance(x, str):
-        for m in NUM.findall(x):
+        # numbers inside labels too ("bits10", "offset0.01", "eps3e-4"): condition names are legitimate sources
+        for m in re.findall(r"\d+(?:\.\d+)?(?:[eE]-?\d+)?", x):
             out.append(float(m))
         return
     if isinstance(x, dict):
