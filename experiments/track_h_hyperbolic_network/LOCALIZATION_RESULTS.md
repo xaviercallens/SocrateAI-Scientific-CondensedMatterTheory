@@ -75,7 +75,7 @@ Each trial draws a fresh random board g = 1 + τ·U[−1, 1]; baseline and defec
 with noise ε; the decoder still assumes the ideal model. τ ∈ {0.1 %, 1 %, 5 %}, ε ∈ {3×10⁻⁴, 3×10⁻³}, deepest
 class, ×1.25 and ×2, 20 trials per cell, four lattices (48 cells).
 
-**Result: 44 of 48 cells are exactly 1.00.** The four exceptions are square R=10 at ×1.25 and ε = 3×10⁻³, at
+**Result: 45 of 48 cells are exactly 1.00.** The three exceptions are square R=10 at ×1.25 and ε = 3×10⁻³, at
 **0.60 / 0.60 / 0.55** for τ = 0.1 % / 1 % / 5 % (the ideal-board value from the noise sweep was 0.50; the standard error
 at 20 trials is ≈ 0.11). Tolerance does not change them.
 
