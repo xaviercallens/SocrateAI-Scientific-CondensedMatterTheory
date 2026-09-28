@@ -101,6 +101,48 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("0904.2197", "poc", "Effects of interactions on the topological classification of free fermion systems"),
     ("1602.06964", "poc", "Sachdev-Ye-Kitaev Model and Thermalization on the Boundary of Many-Body Localized"),
     ("1611.04650", "poc", "Black Holes and Random Matrices"),
+    # Peschel: the correlation-matrix method every free-fermion entanglement
+    # spectrum in experiments/poc_entanglement_tda/ relies on.
+    ("cond-mat/0212631", "poc", "Calculation of reduced density matrices from correlation functions"),
+
+    # --- Pillar 8: analogue platforms (for the experimental roadmap) --------
+    # Published realisations of SSH/topological band physics in classical
+    # waves. Each is a template for axis 1 (tank) and for what "confirmation
+    # by experiment" has looked like in this field.
+    ("1702.07583", "analogue", "Topological origin of equatorial waves"),
+    # arXiv title has quote marks around 'topological insulator'; fragment
+    # stops before them.
+    ("1503.06808", "analogue", "Observation of phononic helical edge states in a mechanical"),
+    ("1308.0554", "analogue", "Topological boundary modes in isostatic lattices"),
+    ("1411.7100", "analogue", "Topological Acoustics"),
+    ("1802.09649", "analogue", "Topological waves in fluids with odd viscosity"),
+
+    # --- Pillar 9: hyperbolic lattices and discrete holography -------------
+    # The salvageable core of the "garage analogue holography" proposal
+    # (docs/roadmap_holographie_analogique.md): boundary correlators on a
+    # hyperbolic tessellation, realised in circuits, as a discrete AdS.
+    ("1802.09549", "hyperbolic", "Hyperbolic Lattices in Circuit Quantum Electrodynamics"),
+    ("2008.05489", "hyperbolic", "Hyperbolic band theory"),
+    ("1910.12318", "hyperbolic", "Quantum simulation of hyperbolic space with circuit quantum electrodynamics"),
+    ("2105.01087", "hyperbolic", "Crystallography of hyperbolic lattices"),
+    ("2109.01148", "hyperbolic", "Simulating hyperbolic space on a circuit board"),
+    ("2203.07292", "hyperbolic", "Hyperbolic topological band insulators"),
+    ("2005.12726", "hyperbolic", "Holography on tessellations of hyperbolic space"),
+    ("2205.05693", "hyperbolic", "Towards explicit discrete holography"),
+    ("1912.07606", "hyperbolic", "Lattice setup for quantum field theory in AdS"),
+    ("2102.02619", "hyperbolic", "Holographic tensor network models and quantum error correction"),
+    # Discrete Calderon / EIT instability literature, motivating and
+    # contextualising H1 (experiments/track_h_hyperbolic_network): the flat-
+    # lattice instability-with-depth is an established phenomenon, cited
+    # rather than re-derived from scratch.
+    ("1107.0343", "hyperbolic", "Resistor network approaches to electrical impedance tomography"),
+    ("1104.4858", "hyperbolic", "Uniform stability estimates for the discrete Calderon problems"),
+    ("1105.1183", "hyperbolic", "Study of noise effects in electrical impedance tomography with resistor networks"),
+    ("2412.02315", "hyperbolic", "Topology Reconstruction of a Resistor Network with Limited Boundary Measurements"),
+    ("0909.1518", "hyperbolic", "Resistance boundaries of infinite networks"),
+    # cited in the Track H preprint (v1.0, doi:10.5281/zenodo.23000391)
+    ("2007.13574", "hyperbolic", "Phylogenetic networks as circuits with resistance distance"),
+    ("math/0008191", "hyperbolic", "Explicit isoperimetric constants and phase transitions in the random-cluster model"),
 
     # --- Pillar 6: Shinsei Ryu -------------------------------------------
     # Selected from his full arXiv record (tools/arxiv_author.py ->

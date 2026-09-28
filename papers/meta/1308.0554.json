@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1308.0554",
+  "version": "v2",
+  "title": "Topological Boundary Modes in Isostatic Lattices",
+  "abstract": "Frames, or lattices consisting of mass points connected by rigid bonds or central force springs, are important model constructs that have applications in such diverse fields as structural engineering, architecture, and materials science. The difference between the number of bonds and the number of degrees of freedom of these lattices determines the number of their zero-frequency \"floppy modes\". When these are balanced, the system is on the verge of mechanical instability and is termed isostatic. It has recently been shown that certain extended isostatic lattices exhibit floppy modes localized at their boundary. These boundary modes are insensitive to local perturbations, and appear to have a topological origin, reminiscent of the protected electronic boundary modes that occur in the quantum Hall effect and in topological insulators. In this paper we establish the connection between the topological mechanical modes and the topological band theory of electronic systems, and we predict the existence of new topological bulk mechanical phases with distinct boundary modes. We introduce model systems in one and two dimensions that exemplify this phenomenon.",
+  "authors": [
+    "C. L. Kane",
+    "T. C. Lubensky"
+  ],
+  "published": "2013-08-02T17:14:01Z",
+  "updated": "2013-11-12T15:16:20Z",
+  "year": "2013",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.soft"
+  ],
+  "doi": "10.1038/nphys2835",
+  "journal_ref": "Nature Physics 10, 39 (2014)",
+  "abs_url": "https://arxiv.org/abs/1308.0554",
+  "pdf_url": "https://arxiv.org/pdf/1308.0554",
+  "pillar": "analogue",
+  "slug": "1308.0554",
+  "pdf_local": "papers/pdf/1308.0554.pdf"
+}

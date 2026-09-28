@@ -1,0 +1,49 @@
+Numeric evidence for ledger claim POC-X-0001, VERSION 2 (Tier X: exploratory
+/numeric -- may steer, may never support a claim on its own).
+
+Supersedes docs/elenchus/evidence/poc_x_0001_ssh_ring.txt (kept in place, not
+deleted, per the "append the correction beside it" rule). Version 1 stated
+that the two zeta=1/2 entanglement levels show NO finite-size smearing and
+explained this as a quantised invariant that cannot smear. That was wrong.
+
+Source: experiments/poc_entanglement_tda/finite_size_scaling.py (32 checks,
+all pass), on top of ssh_ring_entanglement.py.
+Erratum text: experiments/poc_entanglement_tda/results.md, section ERRATUM.
+Figure: experiments/poc_entanglement_tda/figures/finite_size_scaling.png
+Raw data: experiments/poc_entanglement_tda/data/finite_size_scaling.json
+
+Corrected claim, on an SSH ring of L = 200 cells (h(z) = v + wz, w = 1,
+r = v/w in {0.5, 0.7, 0.8, 0.9}), subsystem of ell whole cells (both cut
+bonds w-type):
+
+ S1  The two levels closest to 1/2 are a chiral pair, z1 + z2 = 1, to 1e-15
+     for every (r, ell).  [pass, 4/4]
+ S2  At ell = L/2 exactly, |z - 1/2| < 3e-15: the two edge-like modes' hybrid-
+     isation is cancelled EXACTLY by the ring's reflection through the two cut
+     points combined with chiral symmetry. This is the geometry version 1
+     tested (at two ring sizes), which is why it saw no smearing.  [pass, 4/4]
+ S3  |z - 1/2| is symmetric under ell -> L - ell (tol 1e-6 rel + 1e-14 abs,
+     the floating-point noise floor).  [pass, 4/4]
+ S4  For ell < L/2, |z - 1/2| decays exponentially in ell with rate ln r:
+     fitted xi = 1.39 / 2.68 / 4.23 / 8.42 cells vs theory -1/ln r =
+     1.44 / 2.80 / 4.48 / 9.49 (within 15%); successive ratios all < 1 with
+     spread <= 0.014 (compensated flatness).  [pass, 8/8]
+
+So the preregistered sub-prediction (smearing of width ~xi that shrinks as
+the system grows) was correct; version 1's "refutation" was an artefact of
+testing only the symmetric cut.
+
+Design result for the tank (D1, open chain with one domain wall, 30 cells
+per side, both ends terminated on strong bonds, odd site count):
+ - the wall mode has energy exactly 0 (< 5e-16) by chiral symmetry;
+ - it peaks at the wall site, not at a chain end (asserted);
+ - its profile decays with xi = 1.44 / 2.80 / 4.48 / 9.49 cells (matches
+   theory to 3 digits);
+ - 99% of its weight lies within 3 / 6 / 10 / 21 cells per side.
+ A first version of this construction had the strong/weak labels backwards
+ (both ends weak -> end modes -> fitted xi < 0 with the correct magnitude);
+ the bond pattern is now asserted in code rather than trusted.
+
+How the version-1 error was found: an external reviewer (not this session)
+asked "what about ell != L/2?". Producer != verifier did the work; the
+result was the one wanted, which is when Elenchus says to be most suspicious.

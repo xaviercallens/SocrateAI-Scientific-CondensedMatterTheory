@@ -1,0 +1,4 @@
+{"id": "H3-X-0008", "tier": "X", "kind": "numeric", "depends_on": ["H3-X-0007"],
+ "evidence_file": "experiments/track_h_hyperbolic_network/data/minimum_detectable_contrast.json",
+ "statement": "PREREGISTRATION_12 (minimum detectable single-node contrast, deepest class, four lattices, 20 trials per cell). G1 HELD, G2 HELD. P1 HELD ({7,3} L=3 at eps 3e-4: top-1 1.00 at f=1.1, 1.00 at f=0.9). P2 REFUTED (square R=10 at eps 3e-4: top-1 1.00 at f=1.1, 1.00 at f=0.9). P3 REFUTED. P4 HELD.",
+ "notes": "experiments/track_h_hyperbolic_network/exp12_minimum_detectable_contrast.py. LIMITS: ideal board, oracle dictionary, i.i.d. noise, single-node defects, 20 trials. Executed by a low-tier agent; reading pending (mid tier)."}

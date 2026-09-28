@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "1802.09549",
+  "version": "v2",
+  "title": "Hyperbolic Lattices in Circuit Quantum Electrodynamics",
+  "abstract": "After close to two decades of research and development, superconducting circuits have emerged as a rich platform for both quantum computation and quantum simulation. Lattices of superconducting coplanar waveguide (CPW) resonators have been shown to produce artificial materials for microwave photons, where weak interactions can be introduced either via non-linear resonator materials or strong interactions via qubit-resonator coupling. Here, we highlight the previously-overlooked property that these lattice sites are deformable and allow the realization of tight-binding lattices which are unattainable, even in conventional solid-state systems. In particular, we show that networks of CPW resonators can create a new class of materials which constitute regular lattices in an effective hyperbolic space with constant negative curvature. We present numerical simulations of a series of hyperbolic analogs of the kagome lattice which show unusual densities of states with a spectrally-isolated degenerate flat band. We also present a proof-of-principle experimental realization of one of these lattices. This paper represents the first step towards on-chip quantum simulation of materials science and interacting particles in curved space.",
+  "authors": [
+    "Alicia J. Kollár",
+    "Mattias Fitzpatrick",
+    "Andrew A. Houck"
+  ],
+  "published": "2018-02-26T19:00:20Z",
+  "updated": "2019-01-29T19:00:03Z",
+  "year": "2018",
+  "primary_category": "quant-ph",
+  "categories": [
+    "quant-ph",
+    "cond-mat.mes-hall"
+  ],
+  "doi": "10.1038/s41586-019-1348-3",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1802.09549",
+  "pdf_url": "https://arxiv.org/pdf/1802.09549",
+  "pillar": "hyperbolic",
+  "slug": "1802.09549",
+  "pdf_local": "papers/pdf/1802.09549.pdf"
+}

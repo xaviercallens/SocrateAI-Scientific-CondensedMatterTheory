@@ -1,0 +1,56 @@
+[
+ {
+  "L": 1,
+  "N": 35,
+  "interior": 7,
+  "min_deg": 3,
+  "max_deg": 3,
+  "all_degree_3": true,
+  "interior_equals_previous_graph": null
+ },
+ {
+  "L": 2,
+  "N": 112,
+  "interior": 35,
+  "min_deg": 3,
+  "max_deg": 3,
+  "all_degree_3": true,
+  "interior_equals_previous_graph": true
+ },
+ {
+  "L": 3,
+  "N": 315,
+  "interior": 112,
+  "min_deg": 3,
+  "max_deg": 3,
+  "all_degree_3": true,
+  "interior_equals_previous_graph": true
+ },
+ {
+  "L": 4,
+  "N": 847,
+  "interior": 315,
+  "min_deg": 3,
+  "max_deg": 3,
+  "all_degree_3": true,
+  "interior_equals_previous_graph": true
+ },
+ {
+  "L": 5,
+  "N": 2240,
+  "interior": 847,
+  "min_deg": 3,
+  "max_deg": 3,
+  "all_degree_3": true,
+  "interior_equals_previous_graph": true
+ },
+ {
+  "L": 6,
+  "N": 5887,
+  "interior": 2240,
+  "min_deg": 3,
+  "max_deg": 3,
+  "all_degree_3": true,
+  "interior_equals_previous_graph": true
+ }
+]

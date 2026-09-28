@@ -1,0 +1,23 @@
+{
+  "arxiv_id": "cond-mat/0212631",
+  "version": "v1",
+  "title": "Calculation of reduced density matrices from correlation functions",
+  "abstract": "It is shown that for solvable fermionic and bosonic lattice systems, the reduced density matrices can be determined from the properties of the correlation functions. This provides the simplest way to these quantities which are used in the density-matrix renormalization group method.",
+  "authors": [
+    "Ingo Peschel"
+  ],
+  "published": "2002-12-30T11:28:23Z",
+  "updated": "2002-12-30T11:28:23Z",
+  "year": "2002",
+  "primary_category": "cond-mat",
+  "categories": [
+    "cond-mat"
+  ],
+  "doi": "10.1088/0305-4470/36/14/101",
+  "journal_ref": "J.Phys.A: Math.Gen. 36, L205 (2003)",
+  "abs_url": "https://arxiv.org/abs/cond-mat/0212631",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/0212631",
+  "pillar": "poc",
+  "slug": "cond-mat_0212631",
+  "pdf_local": "papers/pdf/cond-mat_0212631.pdf"
+}

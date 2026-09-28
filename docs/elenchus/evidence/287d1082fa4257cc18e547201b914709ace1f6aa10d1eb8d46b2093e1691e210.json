@@ -1,0 +1,125 @@
+{
+ "rusty_sundials_importable": false,
+ "controls": [
+  {
+   "graph": "{7,3} L=2",
+   "backend": "scipy",
+   "K1_rel_err": 7.317459613091464e-09,
+   "K1_pass": true,
+   "K2_rel_err": 4.2375822630740767e-13,
+   "K2_pass": true,
+   "seconds": 0.15
+  },
+  {
+   "graph": "square R=6",
+   "backend": "scipy",
+   "K1_rel_err": 1.406350766368866e-08,
+   "K1_pass": true,
+   "K2_rel_err": 4.060317299821109e-13,
+   "K2_pass": true,
+   "seconds": 0.2
+  },
+  {
+   "backend": "rusty",
+   "status": "NOT RUN (extension not importable)"
+  }
+ ],
+ "H2": [
+  {
+   "family": "{7,3}",
+   "N": 35,
+   "lambda_min": 0.9999999999999998,
+   "lambda_max": 4.801937735804838,
+   "stiffness": 4.801937735804839,
+   "tau": 1.0000000000000002
+  },
+  {
+   "family": "{7,3}",
+   "N": 112,
+   "lambda_min": 0.3635950627895074,
+   "lambda_max": 5.431567781762399,
+   "stiffness": 14.938508075690908,
+   "tau": 2.7503123731328567
+  },
+  {
+   "family": "{7,3}",
+   "N": 315,
+   "lambda_min": 0.21329816197551865,
+   "lambda_max": 5.509326764432493,
+   "stiffness": 25.829227562986816,
+   "tau": 4.6882729355857045
+  },
+  {
+   "family": "{7,3}",
+   "N": 847,
+   "lambda_min": 0.1533669131836023,
+   "lambda_max": 5.535667149239351,
+   "stiffness": 36.094272449836424,
+   "tau": 6.520311188651596
+  },
+  {
+   "family": "square",
+   "N": 29,
+   "lambda_min": 1.1715728752538097,
+   "lambda_max": 6.828427124746189,
+   "stiffness": 5.82842712474619,
+   "tau": 0.853553390593274
+  },
+  {
+   "family": "square",
+   "N": 113,
+   "lambda_min": 0.21975095058557942,
+   "lambda_max": 7.7802490494144205,
+   "stiffness": 35.40484820967586,
+   "tau": 4.550606026209483
+  },
+  {
+   "family": "square",
+   "N": 317,
+   "lambda_min": 0.06876660912650603,
+   "lambda_max": 7.931233390873506,
+   "stiffness": 115.33553117738967,
+   "tau": 14.541941397173687
+  },
+  {
+   "family": "square",
+   "N": 797,
+   "lambda_min": 0.02560389651459795,
+   "lambda_max": 7.974396103485361,
+   "stiffness": 311.452442363169,
+   "tau": 39.05655529539632
+  },
+  {
+   "family": "triangular",
+   "N": 37,
+   "lambda_min": 1.3258126675767,
+   "lambda_max": 8.374302887391218,
+   "stiffness": 6.316354559123078,
+   "tau": 0.7542543712663303
+  },
+  {
+   "family": "triangular",
+   "N": 151,
+   "lambda_min": 0.27033349976266474,
+   "lambda_max": 8.874649203174421,
+   "stiffness": 32.828521847887096,
+   "tau": 3.699134590710863
+  },
+  {
+   "family": "triangular",
+   "N": 475,
+   "lambda_min": 0.07677950838578076,
+   "lambda_max": 8.962268331165482,
+   "stiffness": 116.72734717360154,
+   "tau": 13.024308451878493
+  },
+  {
+   "family": "triangular",
+   "N": 1213,
+   "lambda_min": 0.02811955241400516,
+   "lambda_max": 8.98612366843036,
+   "stiffness": 319.56851717009374,
+   "tau": 35.56244371450032
+  }
+ ]
+}

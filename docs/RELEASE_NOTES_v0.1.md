@@ -36,3 +36,7 @@ First release: AdS/CMT ↔ topological matter research foundation — literature
 - Only paper **abstracts** are in Chroma; full text (~1500 chunks) is pending, throttled by GPU contention with another session's Lean prover on the shared T4.
 - `rusty-SUNDIALS` has no local checkout on this host; its MCP server is a real but limited scaffold until cloned.
 - The SYK N mod 8 pattern is empirical (Tier X): the symmetry operator behind it was not constructed here.
+
+## Erratum (2026-09-27, after release)
+
+The "First computational PoC" paragraph above says the SSH-ring mid-gap count shows no finite-size smearing and "jumps rather than crosses over." **That is wrong.** Every Part-A measurement used a subsystem of exactly ℓ = L/2 cells, a geometry where a reflection symmetry cancels the hybridisation of the two edge-like modes exactly. For ℓ ≠ L/2 the levels leave ½ by ~(v/w)^ℓ — ordinary exponential finite-size smearing, which was the *preregistered* prediction and is now confirmed (fitted ξ within 15% of 1/ln(w/v) at four values of r). The positive and negative controls stand; the "quantised invariant cannot smear" explanation is retracted. Full erratum: `experiments/poc_entanglement_tda/results.md`; test: `experiments/poc_entanglement_tda/finite_size_scaling.py` (32 checks). The released text is left as written; this note is appended beside it.
