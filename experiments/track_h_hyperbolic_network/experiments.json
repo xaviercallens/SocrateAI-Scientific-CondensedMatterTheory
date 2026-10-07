@@ -114,5 +114,12 @@
   "data": [
    "data/localisation_under_correlated_hardware_n.json"
   ]
+ },
+ "PREREGISTRATION_18.md": {
+  "title": "coherence versus depth across tilings",
+  "script": "exp18_coherence_versus_depth_across_tilings.py",
+  "data": [
+   "data/coherence_versus_depth_across_tilings.json"
+  ]
  }
 }
