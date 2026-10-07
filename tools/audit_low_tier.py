@@ -116,7 +116,8 @@ def main():
         # A7: the first prose paragraph after the block title (the design/method statement) must be a verbatim copy
         prose = [l.strip() for l in added if l.strip() and not l.strip().startswith(("#", "|", "*Recorded"))]
         if prose:
-            first = norm(re.sub(r"^\*\*[^*]+\*\*\s*", "", prose[0]))
+            # the runbook template (§4) prefixes the paragraph with "Design:"; strip that label before comparing
+            first = norm(re.sub(r"^(?:\*\*[^*]+\*\*\s*|Design:\s*)+", "", prose[0]))
             if first[:120] not in prereg_norm:
                 fails.append("A7 design/method line is not a verbatim copy of the preregistration: " + first[:90])
         prereg_text = prereg_norm
@@ -134,6 +135,10 @@ def main():
             t2 = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[GP]\d\b|GF\([^)]*\)|\d+\^\d+(?:-\d+)?|10⁻\S+|[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+", " ", nums_line)
             if s.startswith("|") and ("HELD" in s or "held" in s or "REFUTED" in s or "refuted" in s):
                 continue  # verdict rows carry thresholds copied from the preregistration
+            # the runbook template (§4) puts the pre-run commit hash in the block title: drop tokens that resolve to a commit
+            for h in set(re.findall(r"\b[0-9a-f]{7,40}\b", t2)):
+                if subprocess.run(["git", "cat-file", "-e", h + "^{commit}"], cwd=ROOT, capture_output=True).returncode == 0:
+                    t2 = t2.replace(h, " ")
             for tok in NUM.findall(t2):
                 if not found(tok, pool):
                     fails.append("A6 results-block number not in data: %s  (line: %s)" % (tok, s[:90]))

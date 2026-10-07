@@ -64,6 +64,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Also learned in the same run:** a threshold I set from intuition (local exponent ≤ 1.0 for the q = 4, 5 tilings) was too low and was refuted (1.19 and 1.06); state such thresholds with the argument they come from.
 - **Evidence:** `gram_control_diag.py`, H0-X-0008.
 
+**LL-A13: a median says nothing about the tail that sets the conditioning.**
+- **What happened:** preregistration 18 fixed three of its four predictions on the *median* |cos| between Jacobian columns of equal-depth edges. Most pairs are nearly orthogonal on every lattice (medians of 10⁻⁶ to 10⁻³ at depth ≤ 3), so the median is dominated by irrelevant far-apart pairs, ratios of medians are noise (the square/{7,3} ratio jumps 450 → 59 → 207 → 43 → 15 with depth), and a "spread across families" of such medians is a spread of near-zeros (2×10⁵). P1, P2 and P4 were refuted for that reason alone. The one prediction set on an aggregate quantity sensitive to the collinear tail, the participation-ratio fraction PR/n of the normalised Gram matrix, held with margin (hyperbolic ≥ 0.80 at depth 3 vs flat ≤ 0.39) and tells the story cleanly on every depth and every family.
+- **Rule:** when the hypothesis is about a tail (collinearity, worst case, smallest singular value), preregister a tail or spectrum statistic (participation ratio, p90, smallest eigenvalue of the normalised Gram), never a central one. Check the statistic against a small instance before fixing thresholds on it; the median on {7,3} L=2 was already 10⁻³ at depth 1.
+- **Evidence:** H0-X-0010, `TILINGS_RESULTS.md`, `data/coherence_versus_depth_across_tilings.json`.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.

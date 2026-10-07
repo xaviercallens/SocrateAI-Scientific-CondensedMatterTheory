@@ -40,11 +40,20 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   κ; the candidate is the collinearity of equal-depth edges (v1.0's "coherence"). One control statistic was mis-specified
   and amended in the open (Deviation 1) before the rerun; no prediction was at stake.
 
+## Done on 2026-10-07
+- **Q5b** → H0-X-0010 (prereg 18): exhaustive coherence between Jacobian columns of equal-depth edges. The effective
+  dimension fraction PR/n of the normalised Gram matrix separates the classes at every depth: hyperbolic 0.80–0.99 at
+  depth 3 and never below 0.79 at any depth, flat 0.39 (square R=10) and 0.23 (triangular R=6.45) at depth 3 falling to
+  0.14–0.20 at the deepest edges. P3 held (margin ≥ 2.07× against the 1.5× threshold). P1, P2, P4 were set on the
+  median |cos| and refuted: the median of a zero-inflated distribution is not a coherence statistic (LL-A13).
+
 ## Next for the low-tier loop (preregistration to be written by the orchestrator first)
+- **Q5c** (mid, H-2): *confirm the coherence mechanism at matched size.* H0-X-0010 compared depth classes of
+  different sizes (n = 6 to 152). Preregister on PR/n and on λ_min of the normalised Gram per depth with the larger
+  class randomly subsampled to the smaller n (20 draws), hyperbolic vs flat at depths 2–5; then relate it to κ: the
+  condition number of the Jacobian restricted to depth-≤d columns should grow with d like 1/√λ_min on flat lattices
+  and stay within a decade on hyperbolic ones. Thresholds from a dry run on {7,3} L=2 and square R=6 (LL-A13).
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
-- **Q5b** (mid): coherence versus depth across tilings — median |cos| between Jacobian columns of equal-depth edge
-  pairs (v1.0's `coherence_by_depth`, exhaustive rather than sampled), hyperbolic vs flat; hypothesis for a prereg:
-  the flat lattices' coherence at depth ≥ 3 exceeds the hyperbolic tilings' by a factor that grows with depth.
 - **Q8b** (low): extend prereg 17's grids until failure (offset to 1, drift to 10 %, 6 and 8 bits) and add f = 1.25,
   to locate the boundary the ceiling hid.
 
