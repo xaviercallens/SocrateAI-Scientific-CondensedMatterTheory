@@ -135,5 +135,12 @@
   "data": [
    "data/coherence_mechanism_prediction_test.json"
   ]
+ },
+ "PREREGISTRATION_21.md": {
+  "title": "flat growth rate over matched relative windows",
+  "script": "exp21_flat_growth_rate_over_matched_relative_w.py",
+  "data": [
+   "data/flat_growth_rate_over_matched_relative_w.json"
+  ]
  }
 }
