@@ -128,5 +128,12 @@
   "data": [
    "data/coherence_mechanism_at_matched_size.json"
   ]
+ },
+ "PREREGISTRATION_20.md": {
+  "title": "coherence mechanism prediction test",
+  "script": "exp20_coherence_mechanism_prediction_test.py",
+  "data": [
+   "data/coherence_mechanism_prediction_test.json"
+  ]
  }
 }
