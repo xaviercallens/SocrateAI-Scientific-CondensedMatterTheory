@@ -5,7 +5,7 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
 
 ## Now (blocked on the human)
 - **Q0 · human · release** — merge PR #2 and create GitHub release v1.1: `bash experiments/track_h_hyperbolic_network/release/merge_and_release.sh` from your own terminal. Acceptance: the script prints the merge commit and the `v1.1` release with `main.pdf` attached.
-- **Q1 · human · v1.2** — read `paper/main_v1_2.pdf`; decide: (a) publish as Zenodo v1.2 now, (b) wait for specialist feedback (H-5), (c) request changes. Nothing is published without this answer.
+- **Q1 · human · v1.2** — read `paper/main_v1_2.pdf` (17 pages, rebuilt 2026-10-07 with the coherence mechanism, Table 9, Fig. 4, the other-tiling rank certificates and integrator controls, minimum contrast and hardware noise; `release/RELEASE_NOTES_v1.2.md`); decide: (a) publish as Zenodo v1.2 now (`release/export.py --v12`, then `release/publish.sh newversion`, verify MD5 + metadata, then `publish` on explicit go-ahead), (b) wait for specialist feedback (H-5), (c) request changes. Nothing is published without this answer.
 - **Q2 · human · H-6** — compile `lean/HyperbolicLogDepth.lean` on a machine with Lean 4 + Mathlib (command in `lean/README.md`); report the axiom footprint. Blocked here: no toolchain.
 
 ## Next experiments (design fixed; low/mid execution)
@@ -19,7 +19,7 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
 - **Q10 · low · H-8** — Ledger hygiene: for the five legacy digests (SSH-L-0001, SSH-C-0001, POC-X-0001, POC-X-0002, H0-X-0001) either regenerate the evidence file from the named script and re-point with `tools_rehash_ledger.py` (note appended), or, if the script no longer exists, append a note "evidence not reproducible; claim retained as historical". Acceptance: `experiment_gate.py` strict check passes with an empty legacy set (edit `LEGACY` in the gate only after this).
 
 ## Later (needs a human decision first)
-- **Q11 · human · H-4, phase 1 (this week)** — Build and measure per `experiments/track_h_hyperbolic_network/lab/LAB_GUIDE_H4.md` and `PREREGISTRATION_13.md` (committed before any soldering). Day 1 is simulation only: `lab/bom_and_netlist.py`, `lab/virtual_bench.py`, `lab/analyze_measurements.py --demo` must all run. Parts: 342 × 100 kΩ 1 %, 106 × 1 µF film, quad rail-to-rail op-amp, ADS1115, ESP32 (`lab/out/BOM.md`). Acceptance: gates G1–G4 of the preregistration pass in order and `analyze_measurements.py` writes `lab/data/h4_step_response.json`; then RUNBOOK steps 6–8 with claim id `H4-X-0001` (any verdict). Predictions: τ ratio 0.604 ± 0.03; τ/τ_cal = 2.750 ± 0.08 and 4.551 ± 0.14.
+- **Q11 · human · H-4, phase 1 (this week)** — Build and measure per `lab/PROTOCOL_H4.md` (session checklists, gates in order, generated forms under `lab/forms/` from `python3 lab/make_forms.py`), with `lab/LAB_GUIDE_H4.md` for the reasons and `PREREGISTRATION_13.md` (committed before any soldering). Day 1 is simulation only: `lab/bom_and_netlist.py`, `lab/virtual_bench.py`, `lab/analyze_measurements.py --demo` must all run. Parts: 342 × 100 kΩ 1 %, 106 × 1 µF film, quad rail-to-rail op-amp, ADS1115, ESP32 (`lab/out/BOM.md`). Acceptance: gates G1–G4 of the preregistration pass in order and `analyze_measurements.py` writes `lab/data/h4_step_response.json`; then RUNBOOK steps 6–8 with claim id `H4-X-0001` (any verdict). Predictions: τ ratio 0.604 ± 0.03; τ/τ_cal = 2.750 ± 0.08 and 4.551 ± 0.14.
 - **Q12 · human · H-5** — Send v1.1 (or v1.2) to one inverse-problems specialist (e.g. the Borcea / Guevara Vasquez group) with a five-line message and the DOI; ask specifically about prior work on conditioning versus boundary depth.
 - **Q13 · high · paper** — arXiv submission (math.NA / math-ph; endorsement needed) after Q12's answer.
 
@@ -54,11 +54,16 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   Full κ reproduces H0-X-0008 and v1.0 (G1).
 
 ## Next for the low-tier loop (preregistration to be written by the orchestrator first)
-- **Q5d** (high, H-2): *derivation attempt.* With H0-X-0009 (amplitude alike), H0-X-0010 (coherence differs) and
-  H0-X-0011 (κ increment per depth ≈ 1 flat vs ≈ 0.3 hyperbolic) in hand, attempt a bound: on a flat disk the
-  boundary signatures of depth-d edges live near a subspace of dimension ~ boundary length / d (the harmonic
-  measure smooths over an angle ~ d/R), on a hyperbolic disk the boundary grows with the bulk so the subspace keeps
-  dimension ~ n_d. Output: a statement with a numeric prediction for the per-depth κ increment, then a card.
+- **Q5d** (high, H-2): *derivation attempt.* **Argument written** (`MECHANISM_NOTE.md`, Tier C: harmonic-measure
+  bumps of width ≈ d on a flat boundary of length ≈ 2πR give the depth-d class an effective rank ≈ R/d, so d·f_d is
+  constant and κ grows ≈ 1 decade per depth; on a hyperbolic disk the overlap number stays O(1)). **Test running:**
+  `PREREGISTRATION_20.md` (committed 9ad012e before the run) on instances the argument never saw. **Tested (H0-X-0012):**
+  P1 held (d·f_d constant within 1.26× on square R=16 over d = 2…12, 1.42× on triangular R=10.75), P2 held (hyperbolic
+  f_d ≥ 0.76 at L=5 / 0.80 at L=7), P3b held (hyperbolic rate does not grow with L), **P3a refuted** (flat rate is
+  R- and window-dependent: 1.26 at R=16 vs 0.98 at R=10; LL-A15). The overlap-number picture stands; the flat κ rate
+  is underived. Next card **Q5e** (mid): the rate over matched relative windows d/d_max ∈ [0.2, 0.6] on square R ∈
+  {6, 10, 16, 22} in Arb where float64 fails, and the per-class smallest eigenvalue of the normalised Gram against d;
+  prediction to be derived from the Poisson-kernel Fourier decay before the card is written.
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
 - **Q8b** (low): extend prereg 17's grids until failure (offset to 1, drift to 10 %, 6 and 8 bits) and add f = 1.25,
   to locate the boundary the ceiling hid.

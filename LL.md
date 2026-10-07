@@ -74,6 +74,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** when the hypothesis is that a set of columns is collectively rank-deficient, a random small subset underestimates the deficit; match sizes at the largest n the smaller class allows, compare at the deepest class or at depth relative to d_max, and never transfer a threshold between disks of different d_max at a fixed absolute depth. Record the full-class statistic alongside the matched one.
 - **Evidence:** H0-X-0011, `data/coherence_mechanism_at_matched_size.json`.
 
+**LL-A15: compare growth rates over matched relative windows, and separate a form prediction from a rate prediction.**
+- **What happened:** preregistration 20 predicted that the per-depth growth of the depth-restricted κ on flat disks is independent of R (|Δ̄(R=16) − Δ̄(R=10)| ≤ 0.2). It was refuted (1.26 vs 0.98; triangular 1.71): double precision limits R=16 to d ≤ 8 of 14 while R=10 was averaged over its full range, where the last increments shrink (1.02 → 0.55 near d_max); and the argument's "rate set by the lattice cutoff" step was unsupported anyway. The band-counting prediction in the same card (d·f_d constant) held on both instances.
+- **Rule:** when a quantity is averaged over depth, fix the window in relative depth d/d_max and in the usable precision range before predicting a number; and preregister the structural prediction (a scaling form) and the rate prediction as separate items, so a wrong constant does not take the form down with it (it did not here only because they were separate predictions).
+- **Evidence:** H0-X-0012, `MECHANISM_NOTE.md` (test outcome), `data/coherence_mechanism_prediction_test.json`.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.

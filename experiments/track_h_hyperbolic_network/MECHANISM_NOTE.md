@@ -59,3 +59,18 @@ below 0.75 at a larger L (the overlap number is not O(1)), or a flat growth rate
 ## Not claimed
 A theorem; the constant in the growth rate; the depth-1 dip of the degree-3 tilings; the behaviour of the q = 4, 5
 tilings beyond the layers computed; anything about holography or AdS/CFT.
+
+## Test outcome (2026-10-07, PREREGISTRATION_20, ledger H0-X-0012; appended after the run, nothing above edited)
+- **P1 held.** On square R=16, d·f_d lies between 1.02 and 1.28 for every depth 2 ≤ d ≤ 12 (ratio 1.26); on
+  triangular R=10.75 between 0.56 and 0.79 (ratio 1.42). The band argument (effective rank ∝ R/d) survives on
+  instances it had not seen, with a lattice-dependent constant (≈ 1.2 square, ≈ 0.7 triangular).
+- **P2 held.** f_d ≥ 0.76 ({7,3} L=5, d_max = 9) and ≥ 0.80 ({4,5} L=7) at every depth ≥ 2.
+- **P3b held.** Hyperbolic Δ̄ = 0.285 ({7,3} L=5, against 0.296 at L=4) and 0.418 ({4,5} L=7): no growth with L.
+- **P3a refuted.** Flat Δ̄ = 1.26 (square R=16, d* = 8 of 14) and 1.71 (triangular R=10.75, d* = 6 of 9), against
+  0.98 for square R=10 (d* = d_max = 8) and the predicted [0.7, 1.5] band. The growth rate is **not** set by the
+  lattice cutoff alone: it depends on R and on where in the disk the window sits (on R=10 the increments shrink as d
+  approaches d_max, 1.02 → 0.55; on R=16 the window d ≤ 8 never reaches that regime). The "smallest eigenvalue at
+  mode |m| ≈ πR" step of the argument is wrong or incomplete; the band-counting step (P1) is the part that holds.
+- **Status after the test:** the overlap-number picture (flat: ∝ d; hyperbolic: O(1)) is supported by P1, P2, P3b.
+  The quantitative rate of κ growth on flat disks remains underived. A better-posed rate prediction must compare
+  matched windows in d/d_max (lesson LL-A15).

@@ -233,3 +233,64 @@ H0-X-0010; anything about holography.
 **Reading (orchestrator).** Two of the three gaps left by H0-X-0010 are closed. First, the link to κ is now measured, not argued: the condition number of the Jacobian restricted to the columns of edges of depth ≤ d grows by 0.98 (square R=10) and 1.19 (triangular R=6.45) decades per depth beyond depth 1, against 0.28 to 0.44 on the five hyperbolic tilings, and the full-depth values reproduce H0-X-0008 and v1.0 to the stored error bounds (G1). The depth-0 → 1 jump is about one decade on every lattice and is not what separates the classes. Second, the coherence deficit is not an artefact of class size: with six matched columns per class, the flat disks fall to 0.35 (square, depth 8) and 0.46 (triangular, depth 5) while every hyperbolic tiling stays at or above 0.85 at its deepest class (P3). The matched curves decrease monotonically with depth on both flat disks and stay flat on the hyperbolic ones.
 
 P1 was refuted and the refutation is informative: at depth 3 the square's 76 columns together have an effective dimension fraction of 0.39, but six random columns among them give 0.94. The flat collinearity is a *collective* property of the whole depth class (its 76 columns span roughly 29 effective directions), which a small random subset does not see until the deepest classes. My threshold also came from square R=6, whose depth 3 is relatively deeper than square R=10's (LL-A14). What remains open is the derivation (card Q5d): why the boundary signatures of deep flat edges collapse onto a low-dimensional subspace while hyperbolic ones do not. Nothing here concerns holography.
+
+## Test of the coherence-mechanism argument on unseen instances (`PREREGISTRATION_20.md`, 9ad012e before the run; ledger H0-X-0012)
+
+Design: Instances: hyperbolic {7,3} L=5 (N=2240, E=2856) and {4,5} L=7 (N=2320, E=3696); flat square R=16 (N=797, E=1528)
+and triangular R=10.75 (N=421, E=1176), unit conductances, full boundary. Columns, edge depth and the closed-form
+Gram matrix as in preregistration 18. Per instance and depth class (n_d ≥ 2): the full-class effective dimension
+fraction f_d = PR_d/n_d. Per instance and d = 0 … d_max: log₁₀ κ_d of the Jacobian restricted to columns of depth ≤ d,
+from the explicit Jacobian when it has ≤ 2×10⁸ entries (the two flat instances), otherwise from the Gram matrix
+(κ_d = √κ(G_d); the two hyperbolic instances). On the flat instances only depths with log₁₀ κ_d ≤ 13 are usable in
+double precision; d* is the largest such depth and Δ̄ = (log₁₀ κ_{d*} − log₁₀ κ_1)/(d* − 1). On the hyperbolic
+instances Δ̄ uses d_max. Reference values read from `data/coherence_mechanism_at_matched_size.json` (H0-X-0011):
+Δ̄(square R=10) and Δ̄({7,3} L=4). Data file: `data/coherence_mechanism_prediction_test.json`; figure
+`data/fig_mechanism_test.pdf`.
+
+Data: `data/coherence_mechanism_prediction_test.json`.
+
+| Prediction | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 (closed form) | max abs difference to the explicit Jacobian on square R=6, every depth, at most 1e-10 | 1.78e-15 | PASS |
+| G2 (flat precision) | d* >= 4 on both flat instances | square R=16 d* = 8; triangular R=10.75 d* = 6 | PASS |
+| G3 (Gram floor) | 10 eps_mach kappa(G_dmax) <= 1e-5 on both hyperbolic instances (gram_floor) | {7,3} L=5 1.38e-6; {4,5} L=7 7.14e-9 | PASS |
+| P1 (flat: d f_d constant) | ratio max(d f_d)/min(d f_d) <= 1.5 over 2 <= d <= d_max - 2, each flat instance | square R=16 1.26; triangular R=10.75 1.42 | HELD |
+| P2 (hyperbolic: f_d O(1)) | f_d >= 0.75 at every depth d >= 2, each hyperbolic instance | minimum {7,3} L=5 0.760; minimum {4,5} L=7 0.803 | HELD |
+| P3a (flat growth rate) | delta-bar in [0.7, 1.5] on both flat instances; abs(delta-bar(square R=16) - delta-bar(square R=10)) <= 0.2 | delta-bar square R=16 1.26; triangular R=10.75 1.71; reference square R=10 0.981; difference 0.277 | REFUTED |
+| P3b (hyperbolic growth rate) | delta-bar <= 0.5 on both hyperbolic instances; delta-bar({7,3} L=5) <= delta-bar({7,3} L=4) + 0.05 | delta-bar {7,3} L=5 0.285; {4,5} L=7 0.418; reference {7,3} L=4 0.296 | HELD |
+
+| Instance | N | E | d_max | method | d* | log10 kappa_d (d = 0 … d*) | delta_bar |
+|---|---|---|---|---|---|---|---|
+| {7,3} L=5 | 2240 | 2856 | 9 | gram | 9 | 1.12, 2.12, 2.28, 3.10, 3.15, 3.81, 3.82, 4.27, 4.27, 4.40 | 0.285 |
+| {4,5} L=7 | 2320 | 3696 | 4 | gram | 4 | 1.01, 2.00, 2.64, 3.20, 3.25 | 0.418 |
+| square R=16 | 797 | 1528 | 14 | explicit_J | 8 | 2.02, 3.60, 4.85, 6.18, 7.41, 9.27, 10.2, 11.0, 12.4 | 1.26 |
+| triangular R=10.75 | 421 | 1176 | 9 | explicit_J | 6 | 2.30, 4.36, 6.53, 8.34, 10.2, 11.6, 12.9 | 1.71 |
+
+| Instance | depth | n_edges | f_d | d·f_d |
+|---|---|---|---|---|
+| square R=16 | 2 | 148 | 0.555 | 1.109 |
+| square R=16 | 3 | 140 | 0.380 | 1.141 |
+| square R=16 | 4 | 132 | 0.288 | 1.153 |
+| square R=16 | 5 | 124 | 0.232 | 1.158 |
+| square R=16 | 6 | 108 | 0.207 | 1.242 |
+| square R=16 | 7 | 100 | 0.180 | 1.259 |
+| square R=16 | 8 | 92 | 0.155 | 1.239 |
+| square R=16 | 9 | 76 | 0.142 | 1.276 |
+| square R=16 | 10 | 68 | 0.116 | 1.163 |
+| square R=16 | 11 | 60 | 0.0927 | 1.02 |
+| square R=16 | 12 | 44 | 0.0848 | 1.017 |
+| triangular R=10.75 | 2 | 171 | 0.279 | 0.557 |
+| triangular R=10.75 | 3 | 151 | 0.202 | 0.605 |
+| triangular R=10.75 | 4 | 126 | 0.165 | 0.662 |
+| triangular R=10.75 | 5 | 101 | 0.148 | 0.74 |
+| triangular R=10.75 | 6 | 81 | 0.132 | 0.791 |
+| triangular R=10.75 | 7 | 63 | 0.113 | 0.792 |
+
+Deviations: none.
+Limits: A proof; the value of the flat rate constant; depth 0 and 1; the degree-3 depth-1 dip; anything about holography.
+
+*Recorded by a low-tier agent (Haiku) from the data file; audited with `tools/audit_low_tier.py`. One correction appended to H0-X-0012: the statement's 0.277 is a difference of two stored values that my brief asked the recorder to compute (declared DERIVED in the notes); two audit false positives fixed in the tool (gate rows marked PASS now count as verdict rows).*
+
+**Reading (orchestrator).** The band-counting part of `MECHANISM_NOTE.md` survives contact with instances it never saw. On square R=16 the product d·f_d stays between 1.02 and 1.28 from depth 2 to depth 12, and on triangular R=10.75 between 0.56 and 0.79: the depth-d class of a flat disk spans an effective number of directions proportional to R/d, as the harmonic-measure band width predicts, with a lattice-dependent constant. On the hyperbolic side the fraction stays at or above 0.76 on {7,3} L=5 (nine depths) and 0.80 on {4,5} L=7, and the per-depth growth rate of the restricted κ does not increase with L (0.285 at L=5 against 0.296 at L=4): the overlap number stays O(1) as the argument says.
+
+The rate prediction failed. Over the depths double precision can resolve, the restricted κ grows by 1.26 decades per depth on square R=16 and 1.71 on triangular R=10.75, against 0.98 on square R=10 and the predicted band [0.7, 1.5]. Two things are wrong at once: the argument's "smallest eigenvalue set by the lattice cutoff" step has no support, and the preregistered comparison averaged over different relative windows (R=10 over its whole range, where the last increments shrink from 1.02 to 0.55 near d_max; R=16 only over d ≤ 8 of 14). Both are recorded as LL-A15. The structural claim and the rate claim were separate predictions, so the refutation of the second does not touch the first. What the programme now has: a measured mechanism (H0-X-0010, H0-X-0011), a counting argument that predicts its depth dependence on flat disks (this card), and an underived growth constant (card Q5e). Nothing here concerns holography.

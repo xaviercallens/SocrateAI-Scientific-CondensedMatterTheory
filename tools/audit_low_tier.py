@@ -67,7 +67,12 @@ def main():
     # A1 numbers (skip identifiers: preregistration numbers, lattice labels like L=3 / R=10 / {7,3}, ledger ids)
     text = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[LR]=\d+(?:\.\d+)?|\b[GP]\d\b"
                   r"|GF\([^)]*\)|\d+\^\d+(?:-\d+)?", " ", c["statement"])  # identifiers, field names, powers
+    # a number computed from data values (a difference, a ratio) is accepted only if the notes declare it explicitly
+    # as DERIVED(<number>) = <formula>, normally through a CORRECTION appended with ledger_add.py --correct
+    derived = set(re.findall(r"DERIVED\(([^)]+)\)", c.get("notes", "")))
     for tok in NUM.findall(text):
+        if tok in derived:
+            continue
         if not found(tok, pool):
             fails.append("A1 number not in data: " + tok)
     # A2 verdict words
@@ -133,8 +138,8 @@ def main():
             cells = s.split("|")
             nums_line = s if not s.startswith("|") else "|".join(cells[:-2] if "HELD" in s or "held" in s or "REFUTED" in s or "refuted" in s else cells)
             t2 = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[GP]\d\b|GF\([^)]*\)|\d+\^\d+(?:-\d+)?|10⁻\S+|[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+", " ", nums_line)
-            if s.startswith("|") and ("HELD" in s or "held" in s or "REFUTED" in s or "refuted" in s):
-                continue  # verdict rows carry thresholds copied from the preregistration
+            if s.startswith("|") and any(w in s for w in ("HELD", "held", "REFUTED", "refuted", "PASS", "pass", "FAIL", "fail")):
+                continue  # verdict rows (predictions and gates) carry thresholds copied from the preregistration
             # the runbook template (§4) puts the pre-run commit hash in the block title: drop tokens that resolve to a commit
             for h in set(re.findall(r"\b[0-9a-f]{7,40}\b", t2)):
                 if subprocess.run(["git", "cat-file", "-e", h + "^{commit}"], cwd=ROOT, capture_output=True).returncode == 0:
