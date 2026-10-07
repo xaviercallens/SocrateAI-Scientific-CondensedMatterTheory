@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1503.06808",
+  "version": "v1",
+  "title": "Observation of phononic helical edge states in a mechanical 'topological insulator'",
+  "abstract": "A topological insulator is characterized by a dichotomy between the interior and the edge of a finite system: While the bulk has a non-zero energy gap, the edges are forced to sustain excitations traversing these gaps. Originally proposed for electrons governed by quantum mechanics, it has remained an important open question if the same physics can be observed for systems obeying Newton's equations of motion. Here, we report on measurements that characterize the collective behavior of mechanical oscillators exhibiting the phenomenology of the quantum spin hall effect. The phononic edge modes are shown to be helical and we demonstrate their topological protection via the stability against imperfections. Our results open the door to the design of topological acoustic meta-materials that can capitalize on the stability of the surfaces phonons as reliable wave guides.",
+  "authors": [
+    "Roman Süsstrunk",
+    "Sebastian D. Huber"
+  ],
+  "published": "2015-03-23T20:01:57Z",
+  "updated": "2015-03-23T20:01:57Z",
+  "year": "2015",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "physics.class-ph"
+  ],
+  "doi": "10.1126/science.aab0239",
+  "journal_ref": "Science, 349, 47 (2015)",
+  "abs_url": "https://arxiv.org/abs/1503.06808",
+  "pdf_url": "https://arxiv.org/pdf/1503.06808",
+  "pillar": "analogue",
+  "slug": "1503.06808",
+  "pdf_local": "papers/pdf/1503.06808.pdf"
+}

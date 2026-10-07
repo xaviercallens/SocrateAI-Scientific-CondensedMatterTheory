@@ -1,0 +1,48 @@
+Numeric evidence for ledger claim H0-X-0002 (Tier X: exploratory/numeric --
+may steer, may never support a claim on its own). Supersedes H0-X-0001.
+
+Source: experiments/track_h_hyperbolic_network/hyperbolic_network.py
+(ERRATUM comment above main(), 2026-09-27) + RESULTS.md ERRATUM section.
+Data: experiments/track_h_hyperbolic_network/data/h0.json (regenerated).
+Figure: experiments/track_h_hyperbolic_network/figures/h0.png (regenerated,
+singular points now marked with an explicit "x", not plotted as a value).
+
+Bug retracted: H0-X-0001 reported log10(kappa) for the three largest flat-
+lattice cases (square N=797: 11.77; triangular N=1069: 11.71; triangular
+N=421: 12.10) as if they were measurements approaching float64's true
+precision floor (~1e15-16 relative). They were not: the reporting function
+computed kappa = s_max / s[rank-1], where rank was determined by a standard
+tolerance tol = s_max * max(J.shape) * eps, so s[rank-1] > tol by
+construction, giving kappa < 1/(max(J.shape) * eps) ALWAYS -- an artefact
+of that formula, unrelated to the true smallest singular value. Verified
+directly: log10(1/(max(J.shape)*eps)) matched each reported "saturated"
+value to 4 significant figures (square N=797: 11.771 vs 11.77; triangular
+N=1069: 11.710 vs 11.71; triangular N=421: 12.111 vs 12.10).
+
+Corrected: kappa is now computed as the RAW, untruncated ratio
+s_max/s_min. When s_min itself rounds to 0 or to float64 noise
+(s_min <= s_max*eps), the case is reported as "numerically singular", not
+as a number -- computing a ratio there would report a division artefact as
+data.
+
+Result after correction, points unaffected by the bug are UNCHANGED:
+- {7,3}, all L=1..4: log10(kappa) = 1.39 / 2.46 / 3.27 / 3.89, matching the
+  preregistered L=4 point exactly as before (depth 7, N 847, kappa in the
+  predicted 4.2+/-0.5 band at 3.89).
+- Flat lattices at N<=317: log10(kappa) = 1.73 / 5.07 / 9.72 (square),
+  3.42 / 8.67 (triangular N<=151), unchanged.
+- Flat lattices at N>=421: now correctly reported as NUMERICALLY SINGULAR
+  in float64 (s_min <= s_max*eps), not as a finite "saturated" value.
+
+Net effect on the hypothesis: the corrected result is STRONGER, not weaker.
+At matched N~315-320 the 6.4-decade gap (log10 kappa 3.27 vs 9.72) is
+unchanged. At N~800-850 the hyperbolic lattice remains measurable
+(log10 kappa 3.89) while the flat lattice's Jacobian is now correctly
+reported as beyond float64's ability to assign it any condition number at
+all -- a stronger separation than a finite decade count, not a weaker one.
+
+Separately, and NOT corrected by this fix: H0-X-0001 also reported a
+"structural rank deficiency" for large flat lattices (e.g. triangular
+N=1069: 1143/3071 unidentifiable edges), attributed to the same numerical
+rank tolerance. That claim is addressed, and RETRACTED, by a separate
+exact-arithmetic result -- see ledger entry H0-B-0001.

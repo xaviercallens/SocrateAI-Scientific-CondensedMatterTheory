@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "2007.13574",
+  "version": "v4",
+  "title": "Phylogenetic networks as circuits with resistance distance",
+  "abstract": "Phylogenetic networks are notoriously difficult to reconstruct. Here we suggest that it can be useful to view unknown genetic distance along edges in phylogenetic networks as analogous to unknown resistance in electric circuits. This resistance distance, well known in graph theory, turns out to have nice mathematical properties which allow the precise reconstruction of networks. Specifically we show that the resistance distance for a weighted 1-nested network is Kalmanson, and that the unique associated circular split network fully represents the splits of the original phylogenetic network (or circuit). In fact, this full representation corresponds to a face of the balanced minimal evolution polytope for level-1 networks. Thus the unweighted class of the original network can be reconstructed by either the greedy algorithm neighbor-net or by linear programming over a balanced minimal evolution polytope. We begin study of 2-nested networks with both minimum path and resistance distance, and include some counting results for 2-nested networks.",
+  "authors": [
+    "Stefan Forcey",
+    "Drew Scalzo"
+  ],
+  "published": "2020-07-23T23:41:08Z",
+  "updated": "2020-09-29T18:31:06Z",
+  "year": "2020",
+  "primary_category": "math.CO",
+  "categories": [
+    "math.CO",
+    "math.OC"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2007.13574",
+  "pdf_url": "https://arxiv.org/pdf/2007.13574",
+  "pillar": "hyperbolic",
+  "slug": "2007.13574",
+  "pdf_local": "papers/pdf/2007.13574.pdf"
+}

@@ -1,0 +1,39 @@
+{
+  "arxiv_id": "2109.01148",
+  "version": "v2",
+  "title": "Simulating hyperbolic space on a circuit board",
+  "abstract": "The Laplace operator encodes the behavior of physical systems at vastly different scales, describing heat flow, fluids, as well as electric, gravitational, and quantum fields. A key input for the Laplace equation is the curvature of space. Here we discuss and experimentally demonstrate that the spectral ordering of Laplacian eigenstates for hyperbolic (negatively curved) and flat two-dimensional spaces has a universally different structure. We use a lattice regularization of hyperbolic space in an electric-circuit network to measure the eigenstates of a \"hyperbolic drum\", and in a time-resolved experiment we verify signal propagation along the curved geodesics. Our experiments showcase both a versatile platform to emulate hyperbolic lattices in tabletop experiments, and a set of methods to verify the effective hyperbolic metric in this and other platforms. The presented techniques can be utilized to explore novel aspects of both classical and quantum dynamics in negatively curved spaces, and to realise the emerging models of topological hyperbolic matter.",
+  "authors": [
+    "Patrick M. Lenggenhager",
+    "Alexander Stegmaier",
+    "Lavi K. Upreti",
+    "Tobias Hofmann",
+    "Tobias Helbig",
+    "Achim Vollhardt",
+    "Martin Greiter",
+    "Ching Hua Lee",
+    "Stefan Imhof",
+    "Hauke Brand",
+    "Tobias Kießling",
+    "Igor Boettcher",
+    "Titus Neupert",
+    "Ronny Thomale",
+    "Tomáš Bzdušek"
+  ],
+  "published": "2021-09-02T18:00:03Z",
+  "updated": "2022-08-25T20:26:43Z",
+  "year": "2021",
+  "primary_category": "cond-mat.other",
+  "categories": [
+    "cond-mat.other",
+    "cond-mat.mes-hall",
+    "physics.app-ph"
+  ],
+  "doi": "10.1038/s41467-022-32042-4",
+  "journal_ref": "Nat. Commun. 13, 4373 (2022)",
+  "abs_url": "https://arxiv.org/abs/2109.01148",
+  "pdf_url": "https://arxiv.org/pdf/2109.01148",
+  "pillar": "hyperbolic",
+  "slug": "2109.01148",
+  "pdf_local": "papers/pdf/2109.01148.pdf"
+}

@@ -1,0 +1,21 @@
+{
+ "claim": "lambda_0 > 0 for the {7,3} tiling graph; lambda_0 <= 3 - 2 sqrt 2",
+ "kind": "citation",
+ "sources": [
+  {
+   "ref": "J. Dodziuk, Difference equations, isoperimetric inequality and transience of certain random walks, Trans. Amer. Math. Soc. 284 (1984) 787-794",
+   "used_for": "Cheeger-type bound: positive isoperimetric constant => positive bottom of spectrum"
+  },
+  {
+   "doi": "10.1016/0024-3795(88)90224-8",
+   "ref": "B. Mohar, Isoperimetric inequalities, growth, and the spectrum of graphs, Linear Algebra Appl. 103 (1988) 119-131",
+   "used_for": "same, combinatorial Laplacian of bounded-degree infinite graphs"
+  },
+  {
+   "arxiv": "math/0008191",
+   "ref": "O. Haggstrom, J. Jonasson, R. Lyons, Explicit isoperimetric constants and phase transitions in the random-cluster model, Ann. Probab. 30 (2002) 443-473",
+   "used_for": "explicit positive edge-isoperimetric constants of planar regular tilings with regular duals"
+  }
+ ],
+ "upper_bound": "the 3-regular tree covers the {7,3} graph; spectral radius of simple random walk is at least the tree's 2 sqrt 2 / 3, so lambda_0 = 3 (1 - rho) <= 3 - 2 sqrt 2"
+}

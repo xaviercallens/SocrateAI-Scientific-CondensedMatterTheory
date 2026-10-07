@@ -1,0 +1,15 @@
+{
+ "argument": [
+  "If every interior node has full degree 3, f^T L_ii f = sum over edges of the infinite graph of (f_a - f_b)^2 for f supported on the interior; so L_ii is the compression of the infinite Laplacian.",
+  "Rayleigh quotient: lambda_min(L_ii) = inf over interior-supported f >= inf over finitely supported f = lambda_0.",
+  "Nested interiors => lambda_min non-increasing in L; exhaustion (every finitely supported f is eventually interior-supported) => convergence to lambda_0.",
+  "lambda_0 > 0 by H2-L-0001; hence tau = C / lambda_min <= C / lambda_0 uniformly in N."
+ ],
+ "kind": "argument",
+ "premises": [
+  "H2-B-0001 (interior degree 3; interior of G_L equals G_{L-1}, L<=6)",
+  "H2-L-0001"
+ ],
+ "scope": "premise certified for L<=6 only; general L argued from the face-incidence boundary definition",
+ "written_in": "experiments/track_h_hyperbolic_network/paper/main.tex, Proposition 1"
+}

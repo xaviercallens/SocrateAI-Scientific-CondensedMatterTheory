@@ -1,0 +1,50 @@
+[
+ {
+  "name": "{7,3} L=2 full boundary",
+  "N": 112,
+  "E": 140,
+  "probes": 77,
+  "log10_kappa_DtN": 2.462663408217156,
+  "log10_kappa_NtD": 1.992275798547848
+ },
+ {
+  "name": "{7,3} L=2 subsampled to 44 probes",
+  "N": 112,
+  "E": 140,
+  "probes": 44,
+  "log10_kappa_DtN": null,
+  "log10_kappa_NtD": null
+ },
+ {
+  "name": "square R=6",
+  "N": 113,
+  "E": 200,
+  "probes": 44,
+  "log10_kappa_DtN": 5.072443594703144,
+  "log10_kappa_NtD": 5.4132361141377725
+ },
+ {
+  "name": "{7,3} L=3 full boundary",
+  "N": 315,
+  "E": 399,
+  "probes": 203,
+  "log10_kappa_DtN": 3.2721712304928863,
+  "log10_kappa_NtD": 2.4204362156515673
+ },
+ {
+  "name": "{7,3} L=3 subsampled to 76 probes",
+  "N": 315,
+  "E": 399,
+  "probes": 76,
+  "log10_kappa_DtN": null,
+  "log10_kappa_NtD": null
+ },
+ {
+  "name": "square R=10",
+  "N": 317,
+  "E": 592,
+  "probes": 76,
+  "log10_kappa_DtN": 9.717820796894493,
+  "log10_kappa_NtD": 10.083797701424464
+ }
+]

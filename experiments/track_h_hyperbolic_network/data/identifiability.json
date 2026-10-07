@@ -1,0 +1,66 @@
+[
+ {
+  "name": "{7,3} L=2, 44 probes",
+  "N": 112,
+  "E": 140,
+  "probes": 44,
+  "exact_ranks": {
+   "2147483647": 117,
+   "998244353": 117
+  },
+  "primes_agree": true,
+  "deficiency": 23,
+  "unmeasured_degree2_nodes": 23,
+  "deficiency_equals_degree2": true,
+  "log10_kappa_identifiable": 2.695399727370996,
+  "float_gap_at_rank": 14585459083822.182
+ },
+ {
+  "name": "{7,3} L=3, 76 probes",
+  "N": 315,
+  "E": 399,
+  "probes": 76,
+  "exact_ranks": {
+   "2147483647": 306,
+   "998244353": 306
+  },
+  "primes_agree": true,
+  "deficiency": 93,
+  "unmeasured_degree2_nodes": 93,
+  "deficiency_equals_degree2": true,
+  "log10_kappa_identifiable": 2.9699227297327733,
+  "float_gap_at_rank": 3179536490820.466
+ },
+ {
+  "name": "square R=6, all 44 probes",
+  "N": 113,
+  "E": 200,
+  "probes": 44,
+  "exact_ranks": {
+   "2147483647": 200,
+   "998244353": 200
+  },
+  "primes_agree": true,
+  "deficiency": 0,
+  "unmeasured_degree2_nodes": 0,
+  "deficiency_equals_degree2": true,
+  "log10_kappa_identifiable": 5.072443594703144,
+  "float_gap_at_rank": null
+ },
+ {
+  "name": "square R=10, all 76 probes",
+  "N": 317,
+  "E": 592,
+  "probes": 76,
+  "exact_ranks": {
+   "2147483647": 592,
+   "998244353": 592
+  },
+  "primes_agree": true,
+  "deficiency": 0,
+  "unmeasured_degree2_nodes": 0,
+  "deficiency_equals_degree2": true,
+  "log10_kappa_identifiable": 9.717820796894493,
+  "float_gap_at_rank": null
+ }
+]

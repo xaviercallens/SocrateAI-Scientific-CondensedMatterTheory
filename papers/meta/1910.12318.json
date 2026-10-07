@@ -1,0 +1,31 @@
+{
+  "arxiv_id": "1910.12318",
+  "version": "v2",
+  "title": "Quantum Simulation of Hyperbolic Space with Circuit Quantum Electrodynamics: From Graphs to Geometry",
+  "abstract": "We show how quantum many-body systems on hyperbolic lattices with nearest-neighbor hopping and local interactions can be mapped onto quantum field theories in continuous negatively curved space. The underlying lattices have recently been realized experimentally with superconducting resonators and therefore allow for a table-top quantum simulation of quantum physics in curved background. Our mapping provides a computational tool to determine observables of the discrete system even for large lattices, where exact diagonalization fails. As an application and proof of principle we quantitatively reproduce the ground state energy, spectral gap, and correlation functions of the noninteracting lattice system by means of analytic formulas on the Poincaré disk, and show how conformal symmetry emerges for large lattices. This sets the stage for studying interactions and disorder on hyperbolic graphs in the future. Importantly, our analysis reveals that even relatively small discrete hyperbolic lattices emulate the continuous geometry of negatively curved space, and thus can be used to experimentally resolve fundamental open problems at the interface of interacting many-body systems, quantum field theory in curved space, and quantum gravity.",
+  "authors": [
+    "Igor Boettcher",
+    "Przemyslaw Bienias",
+    "Ron Belyansky",
+    "Alicia J. Kollár",
+    "Alexey V. Gorshkov"
+  ],
+  "published": "2019-10-27T18:28:42Z",
+  "updated": "2020-09-11T16:18:05Z",
+  "year": "2019",
+  "primary_category": "quant-ph",
+  "categories": [
+    "quant-ph",
+    "cond-mat.mes-hall",
+    "gr-qc",
+    "hep-th",
+    "math-ph"
+  ],
+  "doi": "10.1103/PhysRevA.102.032208",
+  "journal_ref": "Phys. Rev. A 102, 032208 (2020)",
+  "abs_url": "https://arxiv.org/abs/1910.12318",
+  "pdf_url": "https://arxiv.org/pdf/1910.12318",
+  "pillar": "hyperbolic",
+  "slug": "1910.12318",
+  "pdf_local": "papers/pdf/1910.12318.pdf"
+}

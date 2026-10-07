@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "1411.7100",
+  "version": "v2",
+  "title": "Topological Acoustics",
+  "abstract": "The manipulation of acoustic wave propagation in fluids has numerous applications, including some in everyday life. Acoustic technologies frequently develop in tandem with optics, using shared concepts such as waveguiding and metamedia. It is thus noteworthy that an entirely novel class of electromagnetic waves, known as topological edge states, has recently been demonstrated. These are inspired by the electronic edge states occurring in topological insulators, and possess a striking and technologically promising property: the ability to travel in a single direction along a surface without backscattering, regardless of the existence of defects or disorder. Here, we develop an analogous theory of topological fluid acoustics, and propose a scheme for realizing topological edge states in an acoustic structure containing circulating fluids. The phenomenon of disorder-free one-way sound propagation, which does not occur in ordinary acoustic devices, may have novel applications for acoustic isolators, modulators, and transducers.",
+  "authors": [
+    "Zhaoju Yang",
+    "Fei Gao",
+    "Xihang Shi",
+    "Xiao Lin",
+    "Zhen Gao",
+    "Yidong Chong",
+    "Baile Zhang"
+  ],
+  "published": "2014-11-26T03:56:47Z",
+  "updated": "2015-03-21T01:51:27Z",
+  "year": "2014",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall"
+  ],
+  "doi": "10.1103/PhysRevLett.114.114301",
+  "journal_ref": "Phys. Rev. Lett. 114, 114301 (2015)",
+  "abs_url": "https://arxiv.org/abs/1411.7100",
+  "pdf_url": "https://arxiv.org/pdf/1411.7100",
+  "pillar": "analogue",
+  "slug": "1411.7100",
+  "pdf_local": "papers/pdf/1411.7100.pdf"
+}

@@ -1,0 +1,30 @@
+{
+  "arxiv_id": "2205.05693",
+  "version": "v2",
+  "title": "Towards Explicit Discrete Holography: Aperiodic Spin Chains from Hyperbolic Tilings",
+  "abstract": "We propose a new example of discrete holography that provides a new step towards establishing the AdS/CFT duality for discrete spaces. A class of boundary Hamiltonians is obtained in a natural way from regular tilings of the hyperbolic Poincaré disk, via an inflation rule that allows to construct the tiling using concentric layers of tiles. The models in this class are aperiodic spin chains, whose sequences of couplings are obtained from the bulk inflation rule. We explicitly choose the aperiodic XXZ spin chain with spin 1/2 degrees of freedom as an example. The properties of this model are studied by using strong disorder renormalization group techniques, which provide a tensor network construction for the ground state of this spin chain. This can be regarded as discrete bulk reconstruction. Moreover we compute the entanglement entropy in this setup in two different ways: a discretization of the Ryu-Takayanagi formula and a generalization of the standard computation for the boundary aperiodic Hamiltonian. For both approaches, a logarithmic growth of the entanglement entropy in the subsystem size is identified. The coefficients, i.e. the effective central charges, depend on the bulk discretization parameters in both cases, albeit in a different way.",
+  "authors": [
+    "Pablo Basteiro",
+    "Giuseppe Di Giulio",
+    "Johanna Erdmenger",
+    "Jonathan Karl",
+    "René Meyer",
+    "Zhuo-Yu Xian"
+  ],
+  "published": "2022-05-11T18:00:01Z",
+  "updated": "2022-08-26T15:31:53Z",
+  "year": "2022",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.dis-nn",
+    "cond-mat.stat-mech"
+  ],
+  "doi": "10.21468/SciPostPhys.13.5.103",
+  "journal_ref": "SciPost Phys. 13, 103 (2022)",
+  "abs_url": "https://arxiv.org/abs/2205.05693",
+  "pdf_url": "https://arxiv.org/pdf/2205.05693",
+  "pillar": "hyperbolic",
+  "slug": "2205.05693",
+  "pdf_local": "papers/pdf/2205.05693.pdf"
+}

@@ -1,0 +1,534 @@
+{
+ "eps": [
+  0.0001,
+  0.0003,
+  0.001,
+  0.003,
+  0.01,
+  0.03,
+  0.1
+ ],
+ "reps": 10,
+ "results": [
+  {
+   "lattice": "{7,3} L=2",
+   "N": 112,
+   "boundary": 77,
+   "eps": [
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1
+   ],
+   "configs": {
+    "deep x100": {
+     "node": 0,
+     "depth": 3,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       false
+      ]
+     },
+     "eps_max": {
+      "metric": 0.1,
+      "H1": 0.03
+     }
+    },
+    "deep x0.01": {
+     "node": 0,
+     "depth": 3,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       false
+      ]
+     },
+     "eps_max": {
+      "metric": 0.1,
+      "H1": 0.03
+     }
+    },
+    "shallow x100": {
+     "node": 8,
+     "depth": 1,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ]
+     },
+     "eps_max": {
+      "metric": 0.1,
+      "H1": 0.1
+     }
+    }
+   },
+   "null_threshold": {
+    "0.0001": {
+     "metric": 3.888961833604539e-05,
+     "H1": 0.0004016187855215847
+    },
+    "0.0003": {
+     "metric": 0.0001227428219255269,
+     "H1": 0.0012582662925719745
+    },
+    "0.001": {
+     "metric": 0.0003991704783624977,
+     "H1": 0.0033956218493440544
+    },
+    "0.003": {
+     "metric": 0.0011884282974032906,
+     "H1": 0.011317691755917236
+    },
+    "0.01": {
+     "metric": 0.003730396376670619,
+     "H1": 0.040860875384767015
+    },
+    "0.03": {
+     "metric": 0.011762141966961752,
+     "H1": 0.14575550694090222
+    },
+    "0.1": {
+     "metric": 0.040183481396015214,
+     "H1": 0.4348193889784744
+    }
+   }
+  },
+  {
+   "lattice": "square R=6",
+   "N": 113,
+   "boundary": 44,
+   "eps": [
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1
+   ],
+   "configs": {
+    "deep x100": {
+     "node": 56,
+     "depth": 5,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       false
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       false
+      ]
+     },
+     "eps_max": {
+      "metric": 0.03,
+      "H1": 0.03
+     }
+    },
+    "deep x0.01": {
+     "node": 56,
+     "depth": 5,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       false
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       false,
+       false
+      ]
+     },
+     "eps_max": {
+      "metric": 0.03,
+      "H1": 0.01
+     }
+    },
+    "shallow x100": {
+     "node": 10,
+     "depth": 1,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ]
+     },
+     "eps_max": {
+      "metric": 0.1,
+      "H1": 0.1
+     }
+    }
+   },
+   "null_threshold": {
+    "0.0001": {
+     "metric": 3.7824588829225744e-05,
+     "H1": 0.00019161123138955458
+    },
+    "0.0003": {
+     "metric": 0.00011852192986058443,
+     "H1": 0.0005125797933948073
+    },
+    "0.001": {
+     "metric": 0.0003922501260224642,
+     "H1": 0.0015203813368790398
+    },
+    "0.003": {
+     "metric": 0.0011244032531432192,
+     "H1": 0.006671380895969857
+    },
+    "0.01": {
+     "metric": 0.0039427946840581455,
+     "H1": 0.019932245170143022
+    },
+    "0.03": {
+     "metric": 0.01127113645709796,
+     "H1": 0.04489543987192446
+    },
+    "0.1": {
+     "metric": 0.04195156634156786,
+     "H1": 0.19442819876615858
+    }
+   }
+  },
+  {
+   "lattice": "{7,3} L=3",
+   "N": 315,
+   "boundary": 203,
+   "eps": [
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1
+   ],
+   "configs": {
+    "deep x100": {
+     "node": 0,
+     "depth": 5,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       false
+      ]
+     },
+     "eps_max": {
+      "metric": 0.1,
+      "H1": 0.03
+     }
+    },
+    "deep x0.01": {
+     "node": 0,
+     "depth": 5,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       false,
+       false
+      ]
+     },
+     "eps_max": {
+      "metric": 0.1,
+      "H1": 0.01
+     }
+    },
+    "shallow x100": {
+     "node": 37,
+     "depth": 1,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ]
+     },
+     "eps_max": {
+      "metric": 0.1,
+      "H1": 0.1
+     }
+    }
+   },
+   "null_threshold": {
+    "0.0001": {
+     "metric": 3.178778903492922e-05,
+     "H1": 0.0005381280272169774
+    },
+    "0.0003": {
+     "metric": 9.45420335247681e-05,
+     "H1": 0.001571127545074047
+    },
+    "0.001": {
+     "metric": 0.0003219497425990069,
+     "H1": 0.004578255087148486
+    },
+    "0.003": {
+     "metric": 0.0009341699844638091,
+     "H1": 0.01573668950627316
+    },
+    "0.01": {
+     "metric": 0.003157619943721871,
+     "H1": 0.052429594709008986
+    },
+    "0.03": {
+     "metric": 0.009495635637981769,
+     "H1": 0.1826992197251538
+    },
+    "0.1": {
+     "metric": 0.03126068648941447,
+     "H1": 0.48466739537287373
+    }
+   }
+  },
+  {
+   "lattice": "square R=10",
+   "N": 317,
+   "boundary": 76,
+   "eps": [
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1
+   ],
+   "configs": {
+    "deep x100": {
+     "node": 158,
+     "depth": 9,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       false,
+       false
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       false,
+       false,
+       false
+      ]
+     },
+     "eps_max": {
+      "metric": 0.01,
+      "H1": 0.003
+     }
+    },
+    "deep x0.01": {
+     "node": 158,
+     "depth": 9,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       false,
+       false
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       false,
+       false,
+       false
+      ]
+     },
+     "eps_max": {
+      "metric": 0.01,
+      "H1": 0.003
+     }
+    },
+    "shallow x100": {
+     "node": 13,
+     "depth": 1,
+     "detected": {
+      "metric": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ],
+      "H1": [
+       true,
+       true,
+       true,
+       true,
+       true,
+       true,
+       true
+      ]
+     },
+     "eps_max": {
+      "metric": 0.1,
+      "H1": 0.1
+     }
+    }
+   },
+   "null_threshold": {
+    "0.0001": {
+     "metric": 3.4659232960050516e-05,
+     "H1": 0.00017536888795788294
+    },
+    "0.0003": {
+     "metric": 0.00010285888144141073,
+     "H1": 0.0007685052554418093
+    },
+    "0.001": {
+     "metric": 0.0003438396006524946,
+     "H1": 0.0019286256664590162
+    },
+    "0.003": {
+     "metric": 0.0010284941570563421,
+     "H1": 0.006302055177045629
+    },
+    "0.01": {
+     "metric": 0.003395094654172206,
+     "H1": 0.01943453506699855
+    },
+    "0.03": {
+     "metric": 0.01080395837734328,
+     "H1": 0.06065544155691449
+    },
+    "0.1": {
+     "metric": 0.03379985286153132,
+     "H1": 0.20614025471351388
+    }
+   }
+  }
+ ]
+}

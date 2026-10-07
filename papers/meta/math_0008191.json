@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "math/0008191",
+  "version": "v2",
+  "title": "Explicit isoperimetric constants and phase transitions in the random-cluster model",
+  "abstract": "The random-cluster model is a dependent percolation model that has applications in the study of Ising and Potts models. In this paper, several new results are obtained for the random-cluster model on nonamenable graphs with cluster parameter $q\\geq 1$. Among these, the main ones are the absence of percolation for the free random-cluster measure at the critical value, and examples of planar regular graphs with regular dual where $\\pc^\\f (q) > \\pu^\\w (q)$ for $q$ large enough. The latter follows from considerations of isoperimetric constants, and we give the first nontrivial explicit calculations of such constants. Such considerations are also used to prove non-robust phase transition for the Potts model on nonamenable regular graphs.",
+  "authors": [
+    "Olle Haggstrom",
+    "Johan Jonasson",
+    "Russell Lyons"
+  ],
+  "published": "2000-08-24T22:18:34Z",
+  "updated": "2001-04-17T20:51:57Z",
+  "year": "2000",
+  "primary_category": "math.PR",
+  "categories": [
+    "math.PR",
+    "math-ph"
+  ],
+  "doi": "",
+  "journal_ref": "Ann. Probab. 30 (2002), 443--473",
+  "abs_url": "https://arxiv.org/abs/math/0008191",
+  "pdf_url": "https://arxiv.org/pdf/math/0008191",
+  "pillar": "hyperbolic",
+  "slug": "math_0008191",
+  "pdf_local": "papers/pdf/math_0008191.pdf"
+}

@@ -1,0 +1,153 @@
+{
+ "taus": [
+  0.001,
+  0.01,
+  0.05
+ ],
+ "boards_B": 20,
+ "boards_A": 10,
+ "eps_A": 0.0003,
+ "factor": 100.0,
+ "results": [
+  {
+   "lattice": "{7,3} L=2",
+   "N": 112,
+   "defect_node": 0,
+   "defect_depth": 3,
+   "tau": {
+    "0.001": {
+     "B_null_max": 0.00016920389174642048,
+     "B_defect_min": 0.058625679930874273,
+     "B_defect_median": 0.058684316725433464,
+     "B_detected": true,
+     "A_null_max": 0.00017189586329224767,
+     "A_defect_min": 0.05867481865827018,
+     "A_detected": true
+    },
+    "0.01": {
+     "B_null_max": 0.0017050558692097025,
+     "B_defect_min": 0.05800005962089759,
+     "B_defect_median": 0.0585857402610577,
+     "B_detected": true,
+     "A_null_max": 0.00017188382215232098,
+     "A_defect_min": 0.05841146628209195,
+     "A_detected": true
+    },
+    "0.05": {
+     "B_null_max": 0.008842514045458646,
+     "B_defect_min": 0.0550248740332814,
+     "B_defect_median": 0.057928954787075826,
+     "B_detected": true,
+     "A_null_max": 0.00017183348430314048,
+     "A_defect_min": 0.05722300592352855,
+     "A_detected": true
+    }
+   }
+  },
+  {
+   "lattice": "square R=6",
+   "N": 113,
+   "defect_node": 56,
+   "defect_depth": 5,
+   "tau": {
+    "0.001": {
+     "B_null_max": 0.00020313025838594699,
+     "B_defect_min": 0.019987311460724716,
+     "B_defect_median": 0.02007935206011157,
+     "B_detected": true,
+     "A_null_max": 0.00016982621434033564,
+     "A_defect_min": 0.0200617027030108,
+     "A_detected": true
+    },
+    "0.01": {
+     "B_null_max": 0.0020302228661705796,
+     "B_defect_min": 0.01926905897252009,
+     "B_defect_median": 0.02017814118475246,
+     "B_detected": true,
+     "A_null_max": 0.00016984546690453447,
+     "A_defect_min": 0.019984367215679606,
+     "A_detected": true
+    },
+    "0.05": {
+     "B_null_max": 0.010229069028095693,
+     "B_defect_min": 0.017613562274030454,
+     "B_defect_median": 0.021525449426791524,
+     "B_detected": true,
+     "A_null_max": 0.00016992802256021025,
+     "A_defect_min": 0.01963495407492898,
+     "A_detected": true
+    }
+   }
+  },
+  {
+   "lattice": "{7,3} L=3",
+   "N": 315,
+   "defect_node": 0,
+   "defect_depth": 5,
+   "tau": {
+    "0.001": {
+     "B_null_max": 0.00012313221877407104,
+     "B_defect_min": 0.038241834547175335,
+     "B_defect_median": 0.038315233005520415,
+     "B_detected": true,
+     "A_null_max": 0.00013157745774052698,
+     "A_defect_min": 0.038288898542772794,
+     "A_detected": true
+    },
+    "0.01": {
+     "B_null_max": 0.0012436086960568,
+     "B_defect_min": 0.03760342483239818,
+     "B_defect_median": 0.038334063287609244,
+     "B_detected": true,
+     "A_null_max": 0.00013156838164962088,
+     "A_defect_min": 0.038110838255954925,
+     "A_detected": true
+    },
+    "0.05": {
+     "B_null_max": 0.0065172160618295,
+     "B_defect_min": 0.03466300305735654,
+     "B_defect_median": 0.03817153949105643,
+     "B_detected": true,
+     "A_null_max": 0.0001315299796722754,
+     "A_defect_min": 0.037323585996024346,
+     "A_detected": true
+    }
+   }
+  },
+  {
+   "lattice": "square R=10",
+   "N": 317,
+   "defect_node": 158,
+   "defect_depth": 9,
+   "tau": {
+    "0.001": {
+     "B_null_max": 0.00015049669882484276,
+     "B_defect_min": 0.00602414198309696,
+     "B_defect_median": 0.006063247914684317,
+     "B_detected": true,
+     "A_null_max": 0.00015351102403336086,
+     "A_defect_min": 0.006043394189517355,
+     "A_detected": true
+    },
+    "0.01": {
+     "B_null_max": 0.0015160857245245676,
+     "B_defect_min": 0.005713529627494627,
+     "B_defect_median": 0.006148012042397233,
+     "B_detected": true,
+     "A_null_max": 0.00015349886317349404,
+     "A_defect_min": 0.006040316747225528,
+     "A_detected": true
+    },
+    "0.05": {
+     "B_null_max": 0.007843072118985559,
+     "B_defect_min": 0.006334276019918154,
+     "B_defect_median": 0.00836811358726705,
+     "B_detected": false,
+     "A_null_max": 0.0001534439598818292,
+     "A_defect_min": 0.006007363398490757,
+     "A_detected": true
+    }
+   }
+  }
+ ]
+}

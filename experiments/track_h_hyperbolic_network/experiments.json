@@ -1,0 +1,118 @@
+{
+ "PREREGISTRATION.md": {
+  "title": "H1 confirmatory L=4 point",
+  "script": "hyperbolic_network.py",
+  "data": [
+   "data/h0.json"
+  ]
+ },
+ "PREREGISTRATION_2.md": {
+  "title": "probe-matched, NtD, H2 RC",
+  "script": "probe_matched.py, identifiability.py, rc_network.py",
+  "data": [
+   "data/probe_matched.json",
+   "data/identifiability.json",
+   "data/rc_network.json"
+  ]
+ },
+ "PREREGISTRATION_3.md": {
+  "title": "peer-review revisions: Arb scaling, disorder, dimension control",
+  "script": "flat_scaling_mp.py, disorder.py, subspace_control.py",
+  "data": [
+   "data/flat_scaling_mp.json",
+   "data/disorder.json",
+   "data/subspace_control.json"
+  ]
+ },
+ "PREREGISTRATION_5.md": {
+  "title": "bulk defect vs boundary persistent homology",
+  "script": "tda_defect.py",
+  "data": [
+   "data/tda_defect.json"
+  ]
+ },
+ "PREREGISTRATION_6.md": {
+  "title": "defect detection vs measurement noise",
+  "script": "tda_noise.py",
+  "data": [
+   "data/tda_noise.json"
+  ]
+ },
+ "PREREGISTRATION_7.md": {
+  "title": "defect detection vs component tolerance",
+  "script": "tolerance_null.py",
+  "data": [
+   "data/tolerance_null.json"
+  ]
+ },
+ "PREREGISTRATION_8.md": {
+  "title": "single-node defect localisation",
+  "script": "localize_defect.py",
+  "data": [
+   "data/localize_defect.json"
+  ]
+ },
+ "PREREGISTRATION_9.md": {
+  "title": "localisation noise sweep",
+  "script": "localize_noise.py",
+  "data": [
+   "data/localize_noise.json"
+  ]
+ },
+ "PREREGISTRATION_10.md": {
+  "title": "localisation with component tolerance",
+  "script": "localize_tolerance.py",
+  "data": [
+   "data/localize_tolerance.json"
+  ]
+ },
+ "PREREGISTRATION_11.md": {
+  "title": "conditioning across (p,q) tilings",
+  "script": "tilings_kappa.py",
+  "data": [
+   "data/tilings_kappa.json"
+  ]
+ },
+ "PREREGISTRATION_13.md": {
+  "title": "garage build phase 1: relaxation time of the physical {7,3} L=2 board",
+  "script": "lab/analyze_measurements.py",
+  "data": [
+   "lab/data/h4_step_response.json"
+  ]
+ },
+ "PREREGISTRATION_12.md": {
+  "title": "minimum detectable contrast",
+  "script": "exp12_minimum_detectable_contrast.py",
+  "data": [
+   "data/minimum_detectable_contrast.json"
+  ]
+ },
+ "PREREGISTRATION_14.md": {
+  "title": "exact rank certificates for other tilings",
+  "script": "exp14_exact_rank_certificates_for_other_tiling.py",
+  "data": [
+   "data/exact_rank_certificates_for_other_tiling.json"
+  ]
+ },
+ "PREREGISTRATION_15.md": {
+  "title": "rc benchmark on other tilings",
+  "script": "exp15_rc_benchmark_on_other_tilings.py",
+  "data": [
+   "data/rc_benchmark_on_other_tilings.json"
+  ]
+ },
+ "PREREGISTRATION_16.md": {
+  "title": "sensitivity versus depth across tilings",
+  "script": "exp16_sensitivity_versus_depth_across_tilings.py",
+  "data": [
+   "data/sensitivity_versus_depth_across_tilings.json"
+  ]
+ },
+ "PREREGISTRATION_17.md": {
+  "title": "localisation under correlated hardware noise",
+  "script": "exp17_localisation_under_correlated_hardware_n.py",
+  "data": [
+   "data/localisation_under_correlated_hardware_n.json"
+  ]
+ }
+}

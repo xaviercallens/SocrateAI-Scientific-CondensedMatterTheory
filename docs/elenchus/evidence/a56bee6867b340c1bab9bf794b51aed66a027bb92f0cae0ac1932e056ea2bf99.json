@@ -1,0 +1,591 @@
+{
+ "rows": [
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "unit",
+   "seed": null,
+   "log10_kappa_log": 2.462663408217156,
+   "log10_kappa_raw": 2.462663408217156
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "U[0.5,1.5]",
+   "seed": 0,
+   "log10_kappa_log": 2.7944717056497814,
+   "log10_kappa_raw": 2.6945419427400483
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "U[0.5,1.5]",
+   "seed": 1,
+   "log10_kappa_log": 2.6796866427776553,
+   "log10_kappa_raw": 2.55293815655171
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "U[0.5,1.5]",
+   "seed": 2,
+   "log10_kappa_log": 2.6826685078521937,
+   "log10_kappa_raw": 2.558573593354132
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "U[0.5,1.5]",
+   "seed": 3,
+   "log10_kappa_log": 2.649720472114809,
+   "log10_kappa_raw": 2.4790304575433755
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "U[0.5,1.5]",
+   "seed": 4,
+   "log10_kappa_log": 2.553242859409693,
+   "log10_kappa_raw": 2.463749909093556
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "logU[0.1,10]",
+   "seed": 0,
+   "log10_kappa_log": 5.052652322159692,
+   "log10_kappa_raw": 4.399782949409665
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "logU[0.1,10]",
+   "seed": 1,
+   "log10_kappa_log": 4.343664654447047,
+   "log10_kappa_raw": 4.19046008029365
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "logU[0.1,10]",
+   "seed": 2,
+   "log10_kappa_log": 4.8038307219357055,
+   "log10_kappa_raw": 4.291309349604336
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "logU[0.1,10]",
+   "seed": 3,
+   "log10_kappa_log": 4.088434765850973,
+   "log10_kappa_raw": 3.8122443206004073
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "logU[0.1,10]",
+   "seed": 4,
+   "log10_kappa_log": 3.7728442549723034,
+   "log10_kappa_raw": 3.6744974605653846
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "defect x100",
+   "seed": null,
+   "defect_node": 0,
+   "defect_depth": 3,
+   "log10_kappa_log": 3.6735442388018034,
+   "log10_kappa_raw": 5.673462766781663
+  },
+  {
+   "graph": "{7,3} L=2",
+   "N": 112,
+   "regime": "defect x0.01",
+   "seed": null,
+   "defect_node": 0,
+   "defect_depth": 3,
+   "log10_kappa_log": 3.995573342070234,
+   "log10_kappa_raw": 3.933180632803818
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "unit",
+   "seed": null,
+   "log10_kappa_log": 5.072443594703144,
+   "log10_kappa_raw": 5.072443594703144
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "U[0.5,1.5]",
+   "seed": 0,
+   "log10_kappa_log": 5.112561529774751,
+   "log10_kappa_raw": 4.975616917268685
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "U[0.5,1.5]",
+   "seed": 1,
+   "log10_kappa_log": 5.436516829143329,
+   "log10_kappa_raw": 5.308891837496105
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "U[0.5,1.5]",
+   "seed": 2,
+   "log10_kappa_log": 5.362139923039375,
+   "log10_kappa_raw": 5.237248778686885
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "U[0.5,1.5]",
+   "seed": 3,
+   "log10_kappa_log": 5.259884004312309,
+   "log10_kappa_raw": 5.090937745204798
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "U[0.5,1.5]",
+   "seed": 4,
+   "log10_kappa_log": 5.05137098590971,
+   "log10_kappa_raw": 4.8864896688948365
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "logU[0.1,10]",
+   "seed": 0,
+   "log10_kappa_log": 7.535131288542363,
+   "log10_kappa_raw": 7.099374703513276
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "logU[0.1,10]",
+   "seed": 1,
+   "log10_kappa_log": 7.912214545735253,
+   "log10_kappa_raw": 7.664437100661586
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "logU[0.1,10]",
+   "seed": 2,
+   "log10_kappa_log": 8.138124883263913,
+   "log10_kappa_raw": 8.075722358964377
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "logU[0.1,10]",
+   "seed": 3,
+   "log10_kappa_log": 7.737119455021785,
+   "log10_kappa_raw": 7.479254376209071
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "logU[0.1,10]",
+   "seed": 4,
+   "log10_kappa_log": 7.950781699108725,
+   "log10_kappa_raw": 7.426958683161698
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "defect x100",
+   "seed": null,
+   "defect_node": 56,
+   "defect_depth": 5,
+   "log10_kappa_log": 6.6001823739444685,
+   "log10_kappa_raw": 8.465066621161405
+  },
+  {
+   "graph": "square R=6",
+   "N": 113,
+   "regime": "defect x0.01",
+   "seed": null,
+   "defect_node": 56,
+   "defect_depth": 5,
+   "log10_kappa_log": 6.650103292427965,
+   "log10_kappa_raw": 4.906927193810162
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "unit",
+   "seed": null,
+   "log10_kappa_log": 8.672449080228727,
+   "log10_kappa_raw": 8.672449080228727
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "U[0.5,1.5]",
+   "seed": 0,
+   "log10_kappa_log": 8.752340562297999,
+   "log10_kappa_raw": 8.647379650046187
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "U[0.5,1.5]",
+   "seed": 1,
+   "log10_kappa_log": 8.892446829448351,
+   "log10_kappa_raw": 8.73065643471477
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "U[0.5,1.5]",
+   "seed": 2,
+   "log10_kappa_log": 8.91158232598506,
+   "log10_kappa_raw": 8.74929591509192
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "U[0.5,1.5]",
+   "seed": 3,
+   "log10_kappa_log": 8.703779976909289,
+   "log10_kappa_raw": 8.555239437590163
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "U[0.5,1.5]",
+   "seed": 4,
+   "log10_kappa_log": 8.673981577112736,
+   "log10_kappa_raw": 8.489600318338347
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "logU[0.1,10]",
+   "seed": 0,
+   "log10_kappa_log": 13.091671862910161,
+   "log10_kappa_raw": 12.564315744689358
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "logU[0.1,10]",
+   "seed": 1,
+   "log10_kappa_log": 13.177153435200541,
+   "log10_kappa_raw": 12.618298354765711
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "logU[0.1,10]",
+   "seed": 2,
+   "log10_kappa_log": 13.791254815596364,
+   "log10_kappa_raw": 13.330328150259561
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "logU[0.1,10]",
+   "seed": 3,
+   "log10_kappa_log": 12.179955313332794,
+   "log10_kappa_raw": 11.556361748464271
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "logU[0.1,10]",
+   "seed": 4,
+   "log10_kappa_log": 12.897462510395728,
+   "log10_kappa_raw": 12.296325392486072
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "defect x100",
+   "seed": null,
+   "defect_node": 63,
+   "defect_depth": 5,
+   "log10_kappa_log": 10.386004725079074,
+   "log10_kappa_raw": 12.272461134243942
+  },
+  {
+   "graph": "triangular R=6.45",
+   "N": 151,
+   "regime": "defect x0.01",
+   "seed": null,
+   "defect_node": 63,
+   "defect_depth": 5,
+   "log10_kappa_log": 9.897085278963964,
+   "log10_kappa_raw": 8.206739673248931
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "unit",
+   "seed": null,
+   "log10_kappa_log": 3.2721712304928863,
+   "log10_kappa_raw": 3.2721712304928863
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "U[0.5,1.5]",
+   "seed": 0,
+   "log10_kappa_log": 3.58269033968672,
+   "log10_kappa_raw": 3.480462876905942
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "U[0.5,1.5]",
+   "seed": 1,
+   "log10_kappa_log": 3.5161545349845498,
+   "log10_kappa_raw": 3.3903999916557437
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "U[0.5,1.5]",
+   "seed": 2,
+   "log10_kappa_log": 3.5517646820282507,
+   "log10_kappa_raw": 3.4327150013159375
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "U[0.5,1.5]",
+   "seed": 3,
+   "log10_kappa_log": 3.4832032074436654,
+   "log10_kappa_raw": 3.332247087129056
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "U[0.5,1.5]",
+   "seed": 4,
+   "log10_kappa_log": 3.393910755033562,
+   "log10_kappa_raw": 3.3142474610299586
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "logU[0.1,10]",
+   "seed": 0,
+   "log10_kappa_log": 5.933486357466464,
+   "log10_kappa_raw": 5.276864346868057
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "logU[0.1,10]",
+   "seed": 1,
+   "log10_kappa_log": 5.19093231871895,
+   "log10_kappa_raw": 5.090121969441008
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "logU[0.1,10]",
+   "seed": 2,
+   "log10_kappa_log": 5.821503950562347,
+   "log10_kappa_raw": 5.2724834611872815
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "logU[0.1,10]",
+   "seed": 3,
+   "log10_kappa_log": 5.1307253061899925,
+   "log10_kappa_raw": 4.924151895162715
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "logU[0.1,10]",
+   "seed": 4,
+   "log10_kappa_log": 4.978140023711665,
+   "log10_kappa_raw": 4.832430208733597
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "defect x100",
+   "seed": null,
+   "defect_node": 0,
+   "defect_depth": 5,
+   "log10_kappa_log": 4.473321222963652,
+   "log10_kappa_raw": 6.473172398280385
+  },
+  {
+   "graph": "{7,3} L=3",
+   "N": 315,
+   "regime": "defect x0.01",
+   "seed": null,
+   "defect_node": 0,
+   "defect_depth": 5,
+   "log10_kappa_log": 4.801928269210271,
+   "log10_kappa_raw": 4.715125690989232
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "unit",
+   "seed": null,
+   "log10_kappa_log": 9.717820796894493,
+   "log10_kappa_raw": 9.717820796894493
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "U[0.5,1.5]",
+   "seed": 0,
+   "log10_kappa_log": 9.455209589164825,
+   "log10_kappa_raw": 9.328952598311572
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "U[0.5,1.5]",
+   "seed": 1,
+   "log10_kappa_log": 9.569060484404524,
+   "log10_kappa_raw": 9.452456927929383
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "U[0.5,1.5]",
+   "seed": 2,
+   "log10_kappa_log": 9.514656559008381,
+   "log10_kappa_raw": 9.352952531906448
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "U[0.5,1.5]",
+   "seed": 3,
+   "log10_kappa_log": 9.303660212028245,
+   "log10_kappa_raw": 9.163854088203422
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "U[0.5,1.5]",
+   "seed": 4,
+   "log10_kappa_log": 9.48347628838937,
+   "log10_kappa_raw": 9.290220383010508
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "logU[0.1,10]",
+   "seed": 0,
+   "log10_kappa_log": 13.82002889466733,
+   "log10_kappa_raw": 13.646860408323983
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "logU[0.1,10]",
+   "seed": 1,
+   "log10_kappa_log": 13.732033797138754,
+   "log10_kappa_raw": 13.468146749188817
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "logU[0.1,10]",
+   "seed": 2,
+   "log10_kappa_log": 13.134273421773965,
+   "log10_kappa_raw": 12.578537953644094
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "logU[0.1,10]",
+   "seed": 3,
+   "log10_kappa_log": 13.453239137267932,
+   "log10_kappa_raw": 13.312041352093097
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "logU[0.1,10]",
+   "seed": 4,
+   "log10_kappa_log": 13.260278688178552,
+   "log10_kappa_raw": 12.883455907122402
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "defect x100",
+   "seed": null,
+   "defect_node": 158,
+   "defect_depth": 9,
+   "log10_kappa_log": 10.842846147740769,
+   "log10_kappa_raw": 12.699663112229935
+  },
+  {
+   "graph": "square R=10",
+   "N": 317,
+   "regime": "defect x0.01",
+   "seed": null,
+   "defect_node": 158,
+   "defect_depth": 9,
+   "log10_kappa_log": 11.139157422481015,
+   "log10_kappa_raw": 9.438259820263987
+  }
+ ],
+ "summary_median_logparam": {
+  "unit": {
+   "{7,3} L=2": 2.462663408217156,
+   "square R=6": 5.072443594703144,
+   "triangular R=6.45": 8.672449080228727,
+   "{7,3} L=3": 3.2721712304928863,
+   "square R=10": 9.717820796894493,
+   "gap_N112": 2.609780186485988,
+   "gap_N316": 6.445649566401607
+  },
+  "U[0.5,1.5]": {
+   "{7,3} L=2": 2.6796866427776553,
+   "square R=6": 5.259884004312309,
+   "triangular R=6.45": 8.752340562297999,
+   "{7,3} L=3": 3.5161545349845498,
+   "square R=10": 9.48347628838937,
+   "gap_N112": 2.580197361534654,
+   "gap_N316": 5.967321753404821
+  },
+  "logU[0.1,10]": {
+   "{7,3} L=2": 4.343664654447047,
+   "square R=6": 7.912214545735253,
+   "triangular R=6.45": 13.091671862910161,
+   "{7,3} L=3": 5.19093231871895,
+   "square R=10": 13.453239137267932,
+   "gap_N112": 3.568549891288206,
+   "gap_N316": 8.262306818548982
+  },
+  "defect x100": {
+   "{7,3} L=2": 3.6735442388018034,
+   "square R=6": 6.6001823739444685,
+   "triangular R=6.45": 10.386004725079074,
+   "{7,3} L=3": 4.473321222963652,
+   "square R=10": 10.842846147740769,
+   "gap_N112": 2.926638135142665,
+   "gap_N316": 6.369524924777116
+  },
+  "defect x0.01": {
+   "{7,3} L=2": 3.995573342070234,
+   "square R=6": 6.650103292427965,
+   "triangular R=6.45": 9.897085278963964,
+   "{7,3} L=3": 4.801928269210271,
+   "square R=10": 11.139157422481015,
+   "gap_N112": 2.654529950357731,
+   "gap_N316": 6.337229153270743
+  }
+ }
+}

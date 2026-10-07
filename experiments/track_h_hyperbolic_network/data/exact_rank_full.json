@@ -1,0 +1,57 @@
+[
+ {
+  "case": "{7,3} L=1",
+  "N": 35,
+  "E": 42,
+  "ranks": {
+   "2147483647": 42,
+   "998244353": 42
+  },
+  "primes_agree": true,
+  "full_rank_certified": true
+ },
+ {
+  "case": "{7,3} L=2",
+  "N": 112,
+  "E": 140,
+  "ranks": {
+   "2147483647": 140,
+   "998244353": 140
+  },
+  "primes_agree": true,
+  "full_rank_certified": true
+ },
+ {
+  "case": "square N=113",
+  "N": 113,
+  "E": 200,
+  "ranks": {
+   "2147483647": 200,
+   "998244353": 200
+  },
+  "primes_agree": true,
+  "full_rank_certified": true
+ },
+ {
+  "case": "triangular N=187",
+  "N": 187,
+  "E": 502,
+  "ranks": {
+   "2147483647": 502,
+   "998244353": 502
+  },
+  "primes_agree": true,
+  "full_rank_certified": true
+ },
+ {
+  "case": "triangular N=475",
+  "N": 475,
+  "E": 1331,
+  "ranks": {
+   "2147483647": 1331,
+   "998244353": 1331
+  },
+  "primes_agree": true,
+  "full_rank_certified": true
+ }
+]

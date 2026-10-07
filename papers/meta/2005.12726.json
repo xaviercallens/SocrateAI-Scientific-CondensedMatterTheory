@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "2005.12726",
+  "version": "v2",
+  "title": "Holography on tessellations of hyperbolic space",
+  "abstract": "We compute boundary correlation functions for scalar fields on tessellations of two- and three-dimensional hyperbolic geometries. We present evidence that the continuum relation between the scalar bulk mass and the scaling dimension associated with boundary-to-boundary correlation functions survives the truncation of approximating the continuum hyperbolic space with a lattice.",
+  "authors": [
+    "Muhammad Asaduzzaman",
+    "Simon Catterall",
+    "Jay Hubisz",
+    "Roice Nelson",
+    "Judah Unmuth-Yockey"
+  ],
+  "published": "2020-05-26T13:53:54Z",
+  "updated": "2020-08-14T14:14:53Z",
+  "year": "2020",
+  "primary_category": "hep-lat",
+  "categories": [
+    "hep-lat",
+    "hep-th"
+  ],
+  "doi": "10.1103/PhysRevD.102.034511",
+  "journal_ref": "Phys. Rev. D 102, 034511 (2020)",
+  "abs_url": "https://arxiv.org/abs/2005.12726",
+  "pdf_url": "https://arxiv.org/pdf/2005.12726",
+  "pillar": "hyperbolic",
+  "slug": "2005.12726",
+  "pdf_local": "papers/pdf/2005.12726.pdf"
+}
