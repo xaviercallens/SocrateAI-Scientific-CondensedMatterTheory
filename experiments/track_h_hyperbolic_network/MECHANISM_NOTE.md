@@ -1,0 +1,61 @@
+# Mechanism note (Q5d): why equal-depth boundary signatures collapse on flat disks and not on hyperbolic ones
+
+**Status: Tier C (argument), written 2026-10-07 after H0-X-0009/0010/0011 and before any new computation.** It
+makes one quantitative prediction, tested by `PREREGISTRATION_20.md` on instances not used to write it. Nothing here
+is a result until that card has run. Nothing here concerns holography.
+
+## What has to be explained
+- Per-edge amplitude ‖d_e‖² decays with depth alike on all lattices (H0-X-0009).
+- The effective dimension fraction f_d = PR/n of the normalised Gram matrix of the Jacobian columns of depth-d edges
+  stays ≥ 0.79 on hyperbolic tilings and falls with depth on flat disks (H0-X-0010); the condition number of the
+  Jacobian restricted to depth ≤ d grows ≈ 1 decade per unit depth on flat disks, 0.3–0.4 on hyperbolic ones (H0-X-0011).
+
+## The argument
+The boundary signature of edge e = (a, b) is d_e = ω_a − ω_b restricted to the boundary, where ω_x is the row of the
+harmonic extension for node x: the **harmonic measure** of the boundary seen from x (the hitting distribution of a
+random walk from x). The Jacobian column of e is the upper triangle of d_e d_eᵀ.
+
+*Flat disk of radius R (square or triangular lattice).* For a node at depth d (graph distance d from the boundary,
+with d ≪ R) the harmonic measure is a bump on the boundary circle of angular width ≈ d/R, i.e. **≈ d boundary sites**,
+with Fourier coefficients ≈ (1 − d/R)^{|m|} ≈ e^{−|m| d/R}. The ≈ 2π(R − d) edges of depth d produce signatures that
+are, up to lattice details, rotations of one kernel of width ≈ d (the derivative of the bump along the edge). The Gram
+matrix of n rotated copies of one kernel on a circle of P ≈ 2πR sites is diagonalised by Fourier modes; its eigenvalues
+are |k̂(m)|², which are O(1) for |m| ≲ P/w ≈ R/d and decay exponentially beyond. So the class of n_d ≈ 2πR columns
+has **effective rank ≈ R/d** and
+  f_d ≈ (R/d)/(2πR) ∝ 1/d,   i.e. d · f_d ≈ constant.
+For the Jacobian columns (products d_e d_eᵀ) the kernel is squared, which halves its width and doubles the band,
+leaving the 1/d law. The smallest eigenvalue of the class is set by the highest Fourier mode the lattice resolves,
+|m| ≈ P/2 ≈ πR, with coefficient e^{−π d}: in decades, log₁₀ κ of the depth-≤d restriction grows by about
+π/ln 10 ≈ 1.4 per unit depth for the signature, and for the squared kernel the growth is of the same order. The
+measured rates are 0.98 (square) and 1.19 (triangular). The argument fixes the **form** (linear in d, O(1) decade per
+unit depth), not the constant.
+
+*Hyperbolic disk with L layers.* A node at depth d sits at hyperbolic distance ≈ d from the boundary, and its harmonic
+measure covers a boundary arc of ≈ e^{d/ℓ} … but the number of depth-d nodes is ≈ |∂| · e^{−d/ℓ} (the boundary has
+≈ |∂| sites and each deeper layer has a constant fraction fewer nodes, ℓ the layer-decay length). The **overlap
+number** (width × count / boundary length) is therefore ≈ 1 at every depth: the bumps of the depth-d nodes tile the
+boundary without piling up, their signatures stay nearly orthogonal, and f_d stays O(1) independent of d. On the flat
+disk the same overlap number is ≈ d · 2πR / 2πR = d, growing linearly. This is the whole difference: on a flat disk the
+boundary does not grow with the bulk, so the deeper edges share an ever-narrower band of boundary modes; on a
+hyperbolic disk it does.
+
+*Consequence for κ.* With the overlap number ≈ d, the flat class of depth d adds n_d columns but only ≈ R/d new
+directions; each unit of depth therefore adds a full exponential factor to the smallest singular value, and log κ is
+linear in d. On the hyperbolic tilings each depth adds new directions in proportion to its columns, and κ grows only
+through the amplitude decay, which H0-X-0009 shows is concave: hence the concave profile of H0-X-0008.
+
+## Numerical prediction (tested in PREREGISTRATION_20, on instances not used above)
+1. On a flat disk, d · f_d is constant within a factor 1.5 over 2 ≤ d ≤ d_max − 2 (full-class f_d; H0-X-0010's
+   square R=10 values give d·f_d = 1.16, 1.17, 1.28, 1.25, 1.02, 0.98 for d = 2…7, which prompted the argument and
+   are therefore **not** evidence for it).
+2. On a hyperbolic tiling, f_d ≥ 0.75 at every depth ≥ 2 of a larger instance than those used so far.
+3. The restricted-κ growth rate on flat disks is between 0.7 and 1.5 decades per unit depth and independent of R
+   (within ±0.2 between R = 10 and R = 16); on hyperbolic tilings it stays below 0.5 and does not increase with L.
+
+## What would refute the argument
+d · f_d drifting by more than a factor 1.5 across depths (the band argument is wrong), or a hyperbolic f_d falling
+below 0.75 at a larger L (the overlap number is not O(1)), or a flat growth rate that changes with R.
+
+## Not claimed
+A theorem; the constant in the growth rate; the depth-1 dip of the degree-3 tilings; the behaviour of the q = 4, 5
+tilings beyond the layers computed; anything about holography or AdS/CFT.

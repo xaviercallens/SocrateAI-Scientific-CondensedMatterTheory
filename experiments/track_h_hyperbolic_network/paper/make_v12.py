@@ -33,7 +33,11 @@ rep(r"Preprint, version 1.1 (revised after peer review; version 1.0: doi:10.5281
 rep(r"lattice and as $O(\sqrt N)$ on flat ones.",
     r"lattice and as $O(\sqrt N)$ on flat ones; across five hyperbolic tilings $\log\kappa$ is nearly a function of $d_{\max}$ "
     r"alone (spread at most $0.56$ decades at equal depth), whereas at equal depth flat lattices are at least $1.8$ decades "
-    r"worse, because the dependence on depth is concave for hyperbolic tilings and linear for flat ones.")
+    r"worse, because the dependence on depth is concave for hyperbolic tilings and linear for flat ones. The difference is "
+    r"not in how fast a single edge's boundary signal decays with depth, which is alike on all lattices, but in the "
+    r"collinearity of the signals of equal-depth edges: on flat lattices they collapse onto a low-dimensional subspace "
+    r"and the condition number grows by about a decade per unit of depth, on hyperbolic tilings they stay nearly "
+    r"independent and it grows by $0.3$--$0.4$.")
 rep(r"All data, code and a claim-by-claim",
     r"In simulation, a single-node defect is detected and localised at the $3\times10^{-4}$ precision budget on both "
     r"geometries, but the flat lattice fails at measurement noise $100\times$ below the hyperbolic one at $N\approx316$, and "
@@ -80,7 +84,7 @@ hyperbolic maximum ($3.27$) by at least $1.8$ decades (Fig.~\ref{fig:tilings}). 
 $\log_{10}\kappa$ per unit of depth falls from about $0.66$ ($d_{\max}$ from $1$ to $2$, $\{5,4\}$) to $0.57$ ($2\to3$) and, on
 $\{7,3\}$, to $0.40$ ($3\to5$) and $0.31$ ($5\to7$), whereas for the flat lattices it is roughly constant, $1.1$--$1.2$ per unit.
 The scaling of depth with size, discussed above, is thus true but only half of the explanation; the other half is the
-different dependence of $\kappa$ on depth. We have a derivation of neither dependence.
+different dependence of $\kappa$ on depth.
 
 \begin{figure}[t]
 \centering
@@ -89,6 +93,42 @@ different dependence of $\kappa$ on depth. We have a derivation of neither depen
 are concave in depth; the square and triangular lattices (open markers, double-precision values) are roughly linear and
 lie far above at equal depth.}
 \label{fig:tilings}
+\end{figure}
+
+\paragraph{Where the difference comes from.} Three further preregistered computations (preregistrations 16, 18 and 19)
+locate the difference. Write $d_e=H[a]-H[b]$ for the boundary signature of edge $e=(a,b)$, so that the Jacobian column
+of $e$ is the upper triangle of $d_ed_e^\top$, and assign to $e$ the depth $\min(\mathrm{depth}(a),\mathrm{depth}(b))$.
+(i) \emph{Amplitude is not the difference.} The mean of $\log_{10}\|d_e\|^2$ per edge depth, relative to depth $0$, falls
+by nearly the same amount on every lattice: at depth $3$ it is between $-2.0$ and $-2.4$ decades on the five hyperbolic
+tilings and $-2.4$ on both flat lattices, with the same concave profile (exploratory, no prediction). (ii) \emph{Coherence
+is.} For the columns of all edges of one depth, let $f_d=\mathrm{PR}_d/n_d$ be the participation ratio of the eigenvalues
+of their normalised Gram matrix divided by their number ($1$ for orthogonal columns, $1/n_d$ for collinear ones;
+inner products in closed form, $\langle J_e,J_f\rangle=\tfrac12[(d_e\!\cdot\! d_f)^2-\sum_i d_{e,i}^2d_{f,i}^2]$, checked
+against the explicit Jacobian to $2\times10^{-15}$). On the largest instance of each hyperbolic tiling $f_d$ stays between
+$0.79$ and $0.99$ at every depth; on square $R{=}10$ it falls from $0.71$ at depth $0$ to $0.39$ at depth $3$ and $0.14$ at
+depth $7$, on triangular $R{=}6.45$ from $0.52$ to $0.23$ and $0.20$. Deep flat edges share nearly the same boundary
+signature. (iii) \emph{This is what sets $\kappa$.} Restricting the Jacobian to the columns of depth $\le d$, the condition
+number grows by $0.98$ (square $R{=}10$) and $1.19$ (triangular $R{=}6.45$) decades per unit of depth beyond depth $1$,
+against $0.28$ to $0.44$ on the five hyperbolic tilings (Table~\ref{tab:coherence}); the full-depth values reproduce
+Table~\ref{tab:tilings} and version 1.0. The deficit is not an artefact of class size: with six randomly chosen columns
+per depth class (fifty draws), the flat lattices still fall to $0.35$ and $0.46$ at their deepest class while every
+hyperbolic tiling stays at or above $0.85$. The depth-$0\to1$ step is about one decade on every lattice and does not
+separate the classes.
+
+Of the eight predictions fixed for (ii) and (iii), four held and four were refuted; all four refutations were
+statistical errors on our side, recorded in the repository: three predictions were set on the median $|\cos|$ between
+column pairs, which is near zero on every lattice because most pairs are far apart, and one assumed that six random
+columns would show a deficit that only the whole class of $76$ columns shows. The result stands on the predictions set
+on $f_d$ and on the restricted condition number. What remains open is a derivation: why the boundary signatures of deep
+flat edges collapse onto a subspace of dimension far below their number while hyperbolic ones do not.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\linewidth]{fig_coherence_matched.pdf}
+\caption{Left: effective dimension fraction of six randomly chosen equal-depth Jacobian columns (median of fifty draws)
+against edge depth; hyperbolic tilings (filled markers, solid) stay near $1$, flat lattices (open markers, dashed) fall
+with depth. Right: $\log_{10}\kappa$ of the Jacobian restricted to the columns of depth $\le d$.}
+\label{fig:coherence}
 \end{figure}
 
 \subsection{Identifiability is exact; the difference is conditioning}"""
@@ -129,32 +169,63 @@ lattices; and everything is simulation. The advantage of the hyperbolic lattice 
 board cannot localise a defect at ideal noise. Why the flat lattice fails at noise $100\times$ lower, far more than the
 $8$--$10\times$ ratio of the boundary signals, is not explained.
 
+\emph{Minimum contrast and hardware-like noise.} Two later preregistered runs (preregistrations 12 and 17) bound the
+requirements of a board. At the $3\times10^{-4}$ budget both $\{7,3\}$ $L{=}3$ and square $R{=}10$ localise a $\pm10\%$
+change of one deepest node perfectly (our prediction that the flat lattice would fail was refuted); at ten times that
+noise the flat lattice still localises only $\times0.5$ and $\times1.5$ (top-1 accuracy $0.10$ and $0.05$ at $\times0.9$
+and $\times1.1$) while the hyperbolic lattice keeps $\times0.9$ and $\times1.1$. At $N\approx112$ and contrast $\times2$, a
+common-mode offset of up to $10\%$ of the rms entry, a gain drift of up to $1\%$ between the two maps, and quantisation
+to $10$ bits leave localisation intact on both lattices ($49$ of $50$ cells at $1.00$, the lowest $0.95$); our three
+predictions of failure were refuted in the safe direction, so this is a floor on the chain's requirements, not a
+measurement of where they lie.
+
 \subsection{RC dynamics and the Dirichlet spectral gap}"""
 rep(r"\subsection{RC dynamics and the Dirichlet spectral gap}", DEF)
+
+# ---- integrator controls on other tilings, exact rank on other tilings -----------------------------------------
+para(r"\subsection{Integrator controls}",
+     append=r" The same two controls were later run (preregistration 15) on $\{8,3\}$ $L{=}2$, $\{5,4\}$ $L{=}3$, "
+            r"$\{6,4\}$ $L{=}2$ and $\{4,5\}$ $L{=}4$ ($N=120$ to $200$) with both integrators: every K1 error is below "
+            r"$3\times10^{-8}$ and every K2 error below $1.1\times10^{-11}$. The relaxation times are $2.618$ ($\{8,3\}$), "
+            r"$0.912$ ($\{5,4\}$), $0.500$ ($\{6,4\}$) and $0.712$ ($\{4,5\}$) in units of $RC$, against $2.750$ for "
+            r"$\{7,3\}$ $L{=}2$, and the largest stiffness is $14.9$; the five preregistered predictions held.")
+para(r"\subsection{Exact rank certificates}",
+     append=r" For the other tilings (preregistration 14) the Jacobian is never formed: $k=E+20$ random linear combinations "
+            r"of its rows are built directly from the boundary signatures mod $p$, and rank $E$ of that matrix certifies "
+            r"full column rank. Eleven instances of $\{7,3\}$, $\{8,3\}$, $\{5,4\}$, $\{6,4\}$ and $\{4,5\}$ up to "
+            r"$N=1160$ and $E=1604$ are certified full rank for both primes (ledger H0-B-0003). A random \emph{subset} "
+            r"of rows does not work (a resistor between two boundary nodes affects one row) and was rejected before the "
+            r"preregistration was committed.")
 
 # ---- discussion, limitations, research directions --------------------------------------------------------
 rep(r"for the RC model a uniformly bounded relaxation time.",
     r"for the RC model a uniformly bounded relaxation time. Depth is the controlling variable within the hyperbolic class; "
     r"across geometries the dependence of $\kappa$ on depth differs (concave versus linear), so depth scaling explains the gap "
-    r"only together with that difference (Section~\ref{sec:tilings}).")
+    r"only together with that difference, which in turn is the collinearity of the boundary signatures of equal-depth "
+    r"edges, not their amplitude (Section~\ref{sec:tilings}).")
 rep(r"(v) Only $\{7,3\}$ is studied among hyperbolic tilings.",
     r"(v) Conditioning is computed for five hyperbolic tilings up to six layers and $N=2888$, with unit conductances and full "
-    r"boundary; disorder and probe subsampling are studied only on $\{7,3\}$ and the flat lattices, and exact rank "
-    r"certificates cover only $\{7,3\}$ and the flat lattices.")
+    r"boundary; disorder and probe subsampling are studied only on $\{7,3\}$ and the flat lattices; exact rank "
+    r"certificates cover the five tilings up to $E=1604$ and the flat lattices up to $N=475$. The coherence mechanism is "
+    r"measured, not derived, and the effective-dimension statistic was compared across depth classes of different sizes "
+    r"except in the matched-size control.")
 rep(r"(vii) The novelty search was targeted, not systematic.",
     r"(vii) The novelty search was targeted, not systematic.\newline "
     r"(viii) Detection and localisation are simulations of single-node defects with an oracle decoder, i.i.d.\ noise, "
-    r"tolerance up to $5\%$ and at most twenty trials per cell; multi-node defects, unknown contrasts, larger tolerance and "
-    r"hardware noise are untested.")
+    r"tolerance up to $5\%$ and at most twenty trials per cell; multi-node defects and unknown contrasts are untested, and the "
+    r"hardware-noise models (offset, gain drift, quantisation) were tested on one grid that never reached failure.")
 para(r"\paragraph{Difference imaging.}",
      new=r"\paragraph{Difference imaging.} Single-node localisation from the difference of two boundary maps is now tested in "
          r"simulation (Section~\ref{sec:defects}). Open are multi-node and extended defects, unknown contrasts, tolerance above "
          r"$5\%$, hardware noise, and an explanation of why the flat lattice fails at noise $100\times$ below the hyperbolic one.")
 para(r"\paragraph{Other tilings and a scaling law.}",
-     new=r"\paragraph{Other tilings and a scaling law.} Section~\ref{sec:tilings} covers five tilings. Open are a derivation of "
-         r"the concave (hyperbolic) and linear (flat) dependence of $\kappa$ on depth, disorder, probe subsampling and exact "
-         r"rank certificates on the other tilings, tilings with $q\ge6$, and a test of whether the exponents of the $q=4,5$ "
-         r"tilings keep falling at larger $N$.")
+     new=r"\paragraph{Other tilings and a scaling law.} Section~\ref{sec:tilings} covers five tilings and locates the "
+         r"concave-versus-linear difference in the coherence of equal-depth boundary signatures. Open are a derivation of "
+         r"that coherence (a plausible route: on a flat disk the harmonic measure seen from depth $d$ is smoothed over a "
+         r"boundary arc of length $\sim d$, so the signatures of the $\sim R$ edges at depth $d$ span $\sim R/d$ directions, "
+         r"whereas on a hyperbolic disk the boundary grows with the bulk and no such collapse occurs; this is a conjecture, "
+         r"not a result), disorder and probe subsampling on the other tilings, tilings with $q\ge6$, and a test of whether "
+         r"the exponents of the $q=4,5$ tilings keep falling at larger $N$.")
 para(r"\paragraph{Tabletop measurement.}",
      append=r" In simulation (Section~\ref{sec:defects}), a single-node fault is localised at this budget on either geometry, "
             r"and component tolerance up to $5\%$ does not matter for a same-board differential measurement; the benefit of "
@@ -170,7 +241,12 @@ a control tolerance was amended before any result was seen. (b) Defect detection
 measurement noise and component tolerance (Section~\ref{sec:defects}); two localisation predictions and one tolerance
 prediction were refuted. (c) The verification table below now also lists the claims of version 1.1 that it omitted.
 (d) Erratum: in version 1.1, Section~\ref{sec:cond}, a space is missing after ``27.1'' (a typesetting slip; no
-content is affected).
+content is affected). (e) The mechanism behind the concave-versus-linear dependence: per-edge amplitude is alike on all
+lattices, the coherence of equal-depth boundary signatures differs, and the depth-restricted condition number follows it
+(Section~\ref{sec:tilings}); four of eight predictions were refuted, all through statistic choices recorded as lessons.
+(f) Exact full-rank certificates and integrator controls on the other tilings; minimum detectable contrast and
+hardware-like noise in the localisation simulations. Of these later runs, a small model recorded the claims and a larger
+one audited them against the data, following a written runbook in the repository.
 
 \section*{Verification status}""")
 rep(r"Integrator controls K1/K2, SciPy and rusty-SUNDIALS CVODE & X & H2-X-0004 \\ \bottomrule",
@@ -185,7 +261,14 @@ Defect detection against component tolerance & X & H3-X-0003 \\
 Defect response saturates in the contrast & X & H3-X-0004 \\
 Localisation at the $3\times10^{-4}$ budget & X & H3-X-0005 \\
 Localisation noise margin & X & H3-X-0006 \\
-Localisation under component tolerance & X & H3-X-0007 \\ \bottomrule""")
+Localisation under component tolerance & X & H3-X-0007 \\
+Full rank certified on five tilings, eleven instances & B & H0-B-0003 \\
+Integrator controls on four more tilings & X & H2-X-0005 \\
+Minimum detectable contrast & X & H3-X-0008 \\
+Localisation under offset, drift and quantisation & X & H3-X-0009 \\
+Per-edge sensitivity versus depth (exploratory) & X & H0-X-0009 \\
+Coherence of equal-depth columns differs between classes & X & H0-X-0010 \\
+Depth-restricted $\kappa$ and matched-size coherence & X & H0-X-0011 \\ \bottomrule""")
 
 (HERE / "main_v1_2.tex").write_text("% GENERATED by paper/make_v12.py from paper/main.tex (version 1.1) -- do not edit\n" + t)
 print("wrote main_v1_2.tex")
