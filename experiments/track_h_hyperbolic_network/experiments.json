@@ -121,5 +121,12 @@
   "data": [
    "data/coherence_versus_depth_across_tilings.json"
   ]
+ },
+ "PREREGISTRATION_19.md": {
+  "title": "coherence mechanism at matched size",
+  "script": "exp19_coherence_mechanism_at_matched_size.py",
+  "data": [
+   "data/coherence_mechanism_at_matched_size.json"
+  ]
  }
 }
