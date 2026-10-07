@@ -46,13 +46,19 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   depth 3 and never below 0.79 at any depth, flat 0.39 (square R=10) and 0.23 (triangular R=6.45) at depth 3 falling to
   0.14–0.20 at the deepest edges. P3 held (margin ≥ 2.07× against the 1.5× threshold). P1, P2, P4 were set on the
   median |cos| and refuted: the median of a zero-inflated distribution is not a coherence statistic (LL-A13).
+- **Q5c** → H0-X-0011 (prereg 19): the mechanism survives size matching and is tied to κ. The condition number of
+  the Jacobian restricted to depth-≤d columns grows 0.98 (square R=10) and 1.19 (triangular R=6.45) decades per depth
+  beyond depth 1, against 0.28–0.44 on the five hyperbolic tilings (P2a, P2b held); at the deepest class with six
+  matched columns the flat disks are at 0.35 and 0.46 while every hyperbolic tiling is ≥ 0.85 (P3 held). P1 (flat
+  ≤ 0.80 at depth 3 with six columns) refuted: six random columns out of 76 do not see a collective deficit (LL-A14).
+  Full κ reproduces H0-X-0008 and v1.0 (G1).
 
 ## Next for the low-tier loop (preregistration to be written by the orchestrator first)
-- **Q5c** (mid, H-2): *confirm the coherence mechanism at matched size.* H0-X-0010 compared depth classes of
-  different sizes (n = 6 to 152). Preregister on PR/n and on λ_min of the normalised Gram per depth with the larger
-  class randomly subsampled to the smaller n (20 draws), hyperbolic vs flat at depths 2–5; then relate it to κ: the
-  condition number of the Jacobian restricted to depth-≤d columns should grow with d like 1/√λ_min on flat lattices
-  and stay within a decade on hyperbolic ones. Thresholds from a dry run on {7,3} L=2 and square R=6 (LL-A13).
+- **Q5d** (high, H-2): *derivation attempt.* With H0-X-0009 (amplitude alike), H0-X-0010 (coherence differs) and
+  H0-X-0011 (κ increment per depth ≈ 1 flat vs ≈ 0.3 hyperbolic) in hand, attempt a bound: on a flat disk the
+  boundary signatures of depth-d edges live near a subspace of dimension ~ boundary length / d (the harmonic
+  measure smooths over an angle ~ d/R), on a hyperbolic disk the boundary grows with the bulk so the subspace keeps
+  dimension ~ n_d. Output: a statement with a numeric prediction for the per-depth κ increment, then a card.
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
 - **Q8b** (low): extend prereg 17's grids until failure (offset to 1, drift to 10 %, 6 and 8 bits) and add f = 1.25,
   to locate the boundary the ceiling hid.

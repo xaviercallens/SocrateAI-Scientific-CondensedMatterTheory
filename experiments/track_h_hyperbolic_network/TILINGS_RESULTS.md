@@ -187,3 +187,49 @@ Limits: A derivation; the role of amplitude (H0-X-0009); probe-subsampled bounda
 **Reading (orchestrator; the refutations are mine, not the data's).** The one prediction set on a statistic that sees the collinear tail held with margin, and it answers the question H0-X-0009 left open. Per depth class, the normalised Gram matrix of the Jacobian columns of equal-depth edges has an effective dimension fraction PR/n that stays between 0.79 and 0.99 at every depth on every hyperbolic tiling (largest instances), while on the flat disks it falls monotonically with depth: square R=10 from 0.71 (depth 0) to 0.39 (depth 3) to 0.14 (depth 7); triangular R=6.45 from 0.52 to 0.23 (depth 3) to 0.20 (depth 4). The mean and 90th-percentile |cos| tell the same story (square p90 reaches 0.95 at depth 8, triangular 0.88 at depth 5; no hyperbolic class exceeds 0.30). So deep flat edges share nearly the same boundary signature, which is exactly what shrinks the smallest singular values and makes log κ linear in depth there, whereas hyperbolic equal-depth edges keep distinct signatures even though their amplitudes decay at the same rate (H0-X-0009). Within the hyperbolic class the fraction does not degrade with depth over the range reached, consistent with the concave (depth-driven) κ growth of H0-X-0008.
 
 P1, P2 and P4 were refuted because I preregistered them on the **median** |cos|, and the medians are near zero on every lattice (most pairs are far apart); ratios and spreads of such medians are noise. That is a statistic error on my side, recorded as LL-A13, not evidence for or against the mechanism. Two caveats remain before this is a confirmed mechanism: the depth classes compared have different sizes (n = 6 to 152), and the link from PR/n to κ is argued, not measured; both are the next card (Q5c in `docs/TASK_QUEUE.md`). The odd dip of {7,3} and {8,3} at depth 1 (PR/n ≈ 0.55–0.60) is not interpreted here.
+
+## Coherence mechanism at matched size (`PREREGISTRATION_19.md`, 4c1e286 before the run; ledger H0-X-0011)
+
+Design: Scored instances: the largest of each family, {7,3} L=4, {8,3} L=4, {5,4} L=5, {6,4} L=4, {4,5} L=6, square R=10,
+triangular R=6.45 (unit conductances, full boundary). Columns and depth classes as in preregistration 18.
+1. **Matched-size coherence.** For every depth class with n_d ≥ 6, draw 50 random subsets of n_match = 6 columns
+   (seed 0, NumPy default generator, draws in instance order) and record the median over draws of PR/6 of the
+   normalised Gram of the subset. n_match = 6 is the smallest depth-3 class among the scored instances ({6,4} L=4).
+2. **Restricted condition number.** κ_d = σ_max/σ_min of J restricted to the columns of edges of depth ≤ d, for
+   d = 0 … d_max. Computed from the explicit Jacobian when it has ≤ 2×10⁸ entries, otherwise from the closed-form Gram
+   matrix G = JᵀJ (κ_d = √κ(G_d)); the method is recorded per instance. Statistic: the mean per-depth increment
+   beyond depth 1, Δ̄ = (log₁₀ κ_{d_max} − log₁₀ κ_1)/(d_max − 1) (depth 0 → 1 is a ≈1-decade jump everywhere and is
+   not what distinguishes the classes). Also recorded: every log₁₀ κ_d, and λ_min of the normalised Gram per depth
+   (not scored).
+Data file: `data/coherence_mechanism_at_matched_size.json`; figure `data/fig_coherence_matched.pdf`.
+
+Data: `data/coherence_mechanism_at_matched_size.json`.
+
+| Prediction | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 (consistency with H0-X-0008 and v1.0) | every scored instance matched to a stored row; tolerance 1e-6 (tilings_kappa rows) or 1e-5 (h0 rows) on log10 kappa; all 7 must match | 7 of 7 instances matched | PASS |
+| G2 (depth-class sizes and draws) | every depth class used for P1/P3 has n_d >= 6; exactly 50 draws per such class | n_draws values across drawn classes: 50 | PASS |
+| P1 (coherence at matched size, depth 3) | median matched PR/n >= 0.85 for every hyperbolic instance and <= 0.80 for square R=10 and triangular R=6.45; refuted if any hyperbolic value < 0.85 or any flat value > 0.80 | {7,3} L=4 0.995; {8,3} L=4 1.000; {5,4} L=5 0.978; {6,4} L=4 0.985; {4,5} L=6 0.930; square R=10 0.938; triangular R=6.45 0.789 | REFUTED |
+| P2a (kappa growth per depth, absolute) | delta-bar >= 0.8 for square R=10 and triangular R=6.45; delta-bar <= 0.5 for {7,3} L=4 and {8,3} L=4; refuted if any of the four is on the wrong side | {7,3} L=4 0.296; {8,3} L=4 0.284; {5,4} L=5 0.379; {6,4} L=4 0.341; {4,5} L=6 0.436; square R=10 0.981; triangular R=6.45 1.19 | HELD |
+| P2b (kappa growth per depth, ordering) | every hyperbolic delta-bar below both flat values; refuted if any hyperbolic delta-bar >= either flat delta-bar | {7,3} L=4 0.296; {8,3} L=4 0.284; {5,4} L=5 0.379; {6,4} L=4 0.341; {4,5} L=6 0.436; square R=10 0.981; triangular R=6.45 1.19 | HELD |
+| P3 (deepest class with n_d >= 6) | median matched PR/n < 0.6 for square R=10 and triangular R=6.45, and >= 0.8 for every hyperbolic instance; refuted if any value is on the wrong side | {7,3} L=4 depth 7 0.847; {8,3} L=4 depth 7 0.955; {5,4} L=5 depth 3 0.978; {6,4} L=4 depth 3 0.985; {4,5} L=6 depth 3 0.930; square R=10 depth 8 0.354; triangular R=6.45 depth 5 0.458 | HELD |
+
+| Instance | method | log10 kappa_d for d = 0 … d_max | delta_bar |
+|---|---|---|---|
+| {7,3} L=4 | explicit_J | 1.12, 2.11, 2.27, 3.08, 3.11, 3.72, 3.72, 3.89 | 0.296 |
+| {8,3} L=4 | gram | 1.06, 1.98, 2.10, 2.85, 2.87, 3.48, 3.48, 3.69 | 0.284 |
+| {5,4} L=5 | gram | 0.900, 1.69, 2.29, 2.68, 2.82 | 0.379 |
+| {6,4} L=4 | gram | 0.901, 1.66, 2.19, 2.35 | 0.341 |
+| {4,5} L=6 | gram | 0.994, 2.00, 2.59, 2.87 | 0.436 |
+| square R=10 | explicit_J | 1.83, 2.85, 4.16, 5.78, 6.62, 7.41, 8.51, 9.17, 9.72 | 0.981 |
+| triangular R=6.45 | explicit_J | 2.21, 3.90, 5.79, 7.28, 8.39, 8.67 | 1.19 |
+
+Deviations: none.
+Limits: A derivation of Δ̄ from PR/n; the depth-0 → 1 jump; probe-subsampled boundaries; the {7,3}/{8,3} depth-1 dip of
+H0-X-0010; anything about holography.
+
+*Recorded by a low-tier agent (Haiku) from the data file; audited with `tools/audit_low_tier.py` (pass, no correction).*
+
+**Reading (orchestrator).** Two of the three gaps left by H0-X-0010 are closed. First, the link to κ is now measured, not argued: the condition number of the Jacobian restricted to the columns of edges of depth ≤ d grows by 0.98 (square R=10) and 1.19 (triangular R=6.45) decades per depth beyond depth 1, against 0.28 to 0.44 on the five hyperbolic tilings, and the full-depth values reproduce H0-X-0008 and v1.0 to the stored error bounds (G1). The depth-0 → 1 jump is about one decade on every lattice and is not what separates the classes. Second, the coherence deficit is not an artefact of class size: with six matched columns per class, the flat disks fall to 0.35 (square, depth 8) and 0.46 (triangular, depth 5) while every hyperbolic tiling stays at or above 0.85 at its deepest class (P3). The matched curves decrease monotonically with depth on both flat disks and stay flat on the hyperbolic ones.
+
+P1 was refuted and the refutation is informative: at depth 3 the square's 76 columns together have an effective dimension fraction of 0.39, but six random columns among them give 0.94. The flat collinearity is a *collective* property of the whole depth class (its 76 columns span roughly 29 effective directions), which a small random subset does not see until the deepest classes. My threshold also came from square R=6, whose depth 3 is relatively deeper than square R=10's (LL-A14). What remains open is the derivation (card Q5d): why the boundary signatures of deep flat edges collapse onto a low-dimensional subspace while hyperbolic ones do not. Nothing here concerns holography.

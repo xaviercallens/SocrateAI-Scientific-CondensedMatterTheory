@@ -69,6 +69,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** when the hypothesis is about a tail (collinearity, worst case, smallest singular value), preregister a tail or spectrum statistic (participation ratio, p90, smallest eigenvalue of the normalised Gram), never a central one. Check the statistic against a small instance before fixing thresholds on it; the median on {7,3} L=2 was already 10⁻³ at depth 1.
 - **Evidence:** H0-X-0010, `TILINGS_RESULTS.md`, `data/coherence_versus_depth_across_tilings.json`.
 
+**LL-A14: a collective deficiency is invisible to small random subsets; match size at the deepest class, not at a fixed depth.**
+- **What happened:** preregistration 19 matched class sizes by subsampling six columns per depth. On square R=10 at depth 3 the full class of 76 columns has an effective dimension fraction of 0.39, but six random columns from it give 0.94, so prediction P1 ("flat ≤ 0.80 at depth 3") was refuted while the same statistic at the deepest classes (P3) and the κ increments (P2a, P2b) held. The dry-run instance (square R=6, 0.71 at depth 3) has a smaller d_max, so its "depth 3" is relatively deeper than square R=10's.
+- **Rule:** when the hypothesis is that a set of columns is collectively rank-deficient, a random small subset underestimates the deficit; match sizes at the largest n the smaller class allows, compare at the deepest class or at depth relative to d_max, and never transfer a threshold between disks of different d_max at a fixed absolute depth. Record the full-class statistic alongside the matched one.
+- **Evidence:** H0-X-0011, `data/coherence_mechanism_at_matched_size.json`.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.

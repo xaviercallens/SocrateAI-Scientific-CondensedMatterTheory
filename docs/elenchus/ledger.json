@@ -410,6 +410,19 @@
    "audit": null,
    "statement": "PREREGISTRATION_18 (exhaustive pairwise |cos| of boundary-signature Jacobian columns per edge depth, with effective dimension fraction, on the PREREGISTRATION_16 tilings and flat square and triangular disks). G1 PASS, G2 PASS. P1 REFUTED (median |cos| at depths 3, 4, 5: square R=10 4.77e-3, 1.14e-2, 5.75e-2; triangular R=6.45 7.20e-2, 0.223, 0.222; hyperbolic maximum over tilings reaching each depth 6.94e-2, 9.93e-2, 3.80e-3). P2 REFUTED (median |cos| ratio square R=10 over {7,3} L=4 at depths 1 to 5: 450, 59.0, 207, 42.8, 15.1). P3 HELD (depth-3 effective dimension fraction: {7,3} 0.797, {8,3} 0.840, {5,4} 0.930, {6,4} 0.985, {4,5} 0.832; square R=10 0.386; triangular R=6.45 0.232). P4 REFUTED (depth-1 max/min spread of median |cos| across the seven families 2.10e5).",
    "notes": "experiments/track_h_hyperbolic_network/exp18_coherence_versus_depth_across_tilings.py. LIMITS: A derivation; the role of amplitude (H0-X-0009); probe-subsampled boundaries; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/coherence_versus_depth_across_tilings.json]"
+  },
+  {
+   "id": "H0-X-0011",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H0-X-0010",
+    "H0-X-0008"
+   ],
+   "evidence": "sha256:86094eda43c03a545bd3beebbb3323c9622f92c75fd1cc62a52a96809a43e4c1",
+   "audit": null,
+   "statement": "PREREGISTRATION_19 (coherence at matched size with n = 6 and 50 draws per depth class, and log10 kappa restricted to depth <= d, on the seven largest instances). G1 PASS, G2 PASS. P1 REFUTED (depth-3 matched PR/n: hyperbolic minimum 0.930 for {4,5} L=6; square R=10 0.938; triangular R=6.45 0.789). P2a HELD (delta-bar: square R=10 0.981 and triangular R=6.45 1.19, both at least 0.8; {7,3} L=4 0.296 and {8,3} L=4 0.284, both at most 0.5). P2b HELD (largest hyperbolic delta-bar 0.436 for {4,5} L=6, below smallest flat value 0.981). P3 HELD (deepest class with n_d >= 6: square R=10 0.354 at depth 8, triangular R=6.45 0.458 at depth 5; smallest hyperbolic 0.847 for {7,3} L=4 at depth 7).",
+   "notes": "experiments/track_h_hyperbolic_network/exp19_coherence_mechanism_at_matched_size.py. LIMITS: A derivation of delta-bar from PR/n; the depth-0 → 1 jump; probe-subsampled boundaries; the {7,3}/{8,3} depth-1 dip of H0-X-0010; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/coherence_mechanism_at_matched_size.json]"
   }
  ]
 }
