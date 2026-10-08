@@ -60,3 +60,16 @@ conductance problem on hyperbolic lattices* (v1.0). Zenodo. https://doi.org/10.5
 
 The record is frozen. Any correction is published as a new Zenodo version under the concept DOI,
 never by editing v1.0.
+
+## Strip-rate paper (2026-10-08, a separate record, not a version of the v1.x record)
+
+| Where | Identifier |
+|---|---|
+| Zenodo (paper.pdf, dataset.zip, code.zip) | DOI [10.5281/zenodo.23241463](https://doi.org/10.5281/zenodo.23241463), record https://zenodo.org/record/23241463, concept DOI 10.5281/zenodo.23241462 |
+
+Title: Exact exponential rates for the discrete Calderon problem on lattice strips, and what transient data do not change (8 pages). Built by
+`python3 release/note/export_note.py`; MD5 of paper.pdf 641ed2245ecf7bd8429b401937a73ef9, dataset.zip 6b95e408c16aa5c5bca59d1b83215fe7, code.zip
+e7ba2931e92cf259f268e41f5af59cee, verified against the draft by `release/note/zenodo_note.py publish` before publishing, and against the public record
+without a token. Published on the author's explicit instruction. Related identifiers: isSupplementTo 10.5281/zenodo.23228685, references concept DOI 10.5281/zenodo.23000390.
+Two empty drafts created by failed attempts of mine were deleted. The novelty of the exact statement is not established (see `docs/LITERATURE_REVIEW_INVERSE.md`); no specialist
+feedback was obtained before publishing, contrary to the earlier plan, because the author asked for publication.
