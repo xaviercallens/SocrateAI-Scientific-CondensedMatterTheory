@@ -100,6 +100,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** on any new geometry compute the rank of the Jacobian at the smallest depth first; a periodic and mirror-symmetric background is a suspect.
 - **Evidence:** H0-X-0014, post-hoc diagnostics of `PREREGISTRATION_23.md` Deviation 1.
 
+**LL-A20: when an exact prediction misses, look at the residual structure; and check the signs and phases of a node set, not only its moduli.**
+- **What happened:** for the diagonal-boundary strip I predicted the rate from the Green exponent of the *moduli* of the node values and missed by up to 24 % (P1 and P2 refuted). The decisive clue was in the printed data: the per-row increments alternated with period two (1.05, 1.08, 1.05, …). That pointed at sign structure; the node values turned out to be real after a common phase but of both signs, and the Green exponent of the signed interval matched all six measured rates to 0.85 %. The aligned strip has only positive nodes, so the omission never showed there.
+- **Rule:** (1) when an exact computation disagrees with a prediction, print the increments and look for structure (oscillation, drift) before refitting; (2) in any Vandermonde-type picture, compute the node values *as complex numbers* and test whether they are real after a common phase, and what signs they take; (3) a fix found after the data is a hypothesis: preregister it on a case it was not fitted to (preregistration 27).
+- **Evidence:** H0-X-0017, `data/diagonal_signed_nodes_diagnostic.json`.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.

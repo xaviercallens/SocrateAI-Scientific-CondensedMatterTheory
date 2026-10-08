@@ -96,6 +96,16 @@ Open: the node set of the disk (angular momentum m with amplitude ((R−d)/R)^m 
 Green-function exponent gives the disk's constant; whether the hyperbolic tilings' node structure explains their concave
 growth. Neither is claimed.
 
+## Orientation (2026-10-08, PREREGISTRATION_26, ledger H0-X-0017; post-hoc diagnostic marked)
+The boundary orientation matters. For a square-lattice boundary along the diagonal (periodic strip, graph depth = L1 distance,
+exact blocks verified against the explicit Jacobian to 0.001) the zigzag block loses 1.067 decades per row, against 1.653 for an
+aligned boundary. The moduli-based Green exponent (1.403) and the naive 1/√2 scaling (1.169) are both wrong. A post-hoc
+diagnostic finds that the node values are real after a common phase but of both signs, and the Green exponent of the signed
+interval matches all six measured block rates to 0.85 % (LL-A20). This is a hypothesis to be tested out of sample
+(preregistration 27: aligned strip with unequal conductances, positive real nodes, predictions fixed in advance). The disk's
+constant (1.1–1.2 on the square disk) lies between the diagonal and the aligned values; how orientations, curvature and the
+staircase boundary combine is not known.
+
 ## Follow-up (2026-10-07, PREREGISTRATION_21, ledger H0-X-0013, exploratory)
 Over windows fixed in relative depth (0.2 to 0.5 of d_max, extended to three depths on small disks), the rate is
 flat in R from R = 10 upward: square 1.23, 1.20, 1.08 decades per depth (R = 10, 16, 22; 0.95 at R = 6), triangular

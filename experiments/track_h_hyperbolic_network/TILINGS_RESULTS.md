@@ -448,3 +448,49 @@ Limits: Anything about the disk or hyperbolic geometry; triangular lattices; the
 *Recorded by a low-tier agent (Haiku); audited with `tools/audit_low_tier.py --block` (pass; relative errors restored from percentages to the stored fractions by the orchestrator). The reading is the orchestrator's.*
 
 **Reading (preregistration 25).** The potential-theory form (rival B) is right and my earlier closed form (rival A) is wrong. In 140-digit arithmetic on the exact semi-infinite blocks, the smallest singular value of the block at total momentum q loses conditioning at 0.956, 1.133, 1.295, 1.436, 1.554 and 1.679 decades per row for q = π/6 … π at W = 384, against the Green-function predictions 0.961, 1.138, 1.298, 1.435, 1.551 and 1.653 (differences 0.06 % to 1.6 %, five of six within 0.6 %); the minimum is in the zigzag block (P1, P2, P3 held, rival A's 1.833 does not fit), so the condition number of the semi-infinite square cylinder grows by about 1.65 decades per row. The gate held: the exact block, with the position-diagonal direction projected out, reproduces the explicit double-precision block at height 40 to 0.005 in every increment for d ≤ 5. P4 is refuted by a small margin: the zigzag rate at W = 768 is 1.653 (the Green value 1.653 to four digits), at W = 384 it is 1.679, 1.5 % apart against the 1 % threshold. The W = 384 increments creep up from 1.62 at depth 1 to 1.70 at depth 25: with 97 distinct nodes the discreteness of the node set adds conditioning as the depth grows, and the Green value is the large-width limit. P5 held: the height-14 increment at d = 5 → 6 is 1.97 against the exact 1.66, so the acceleration seen in preregistration 24 is a finite-height effect. What this gives: the exponential growth of the flat-lattice conditioning on a cylinder has an exact origin and an exact rate, set by the lattice dispersion relation through the spread of the products of mode decay factors. What it does not give: the disk (1.1–1.2 decades per depth on the square disk is below this cylinder value; the node set of a disk differs), the triangular lattice, the hyperbolic tilings, the horizontal-edge columns' exact rate, or a proof. The three cards together showed two ways of fooling oneself with a closed form fitted after the fact (LL-A17) and two design errors (LL-A18). Nothing here concerns holography.
+
+
+## A boundary along the lattice diagonal and the growth rate (`PREREGISTRATION_26.md`, ff7aef5 before the run; ledger H0-X-0017)
+Design: Exact blocks of the type-B edge columns in 140-digit arithmetic (mpmath), W = 384, depths 0…25; σ_min as in preregistration
+25 (inverse Gram and power iteration; here the Gram is Hermitian). **Rate** = (log₁₀σ_min(15) − log₁₀σ_min(25))/10. Six momenta
+(i = 4 × label); σ_min at depth 20 for all blocks i = 0…192; the zigzag block at W = 768. Width and window follow the amended
+design of preregistration 25 (97 and 193 distinct nodes at the zigzag momentum). Data file:
+`data/diagonal_boundary_orientation_and_the_gr.json`.
+Data: `data/diagonal_boundary_orientation_and_the_gr.json`.
+
+| Block label (W=96 index) | q | Green prediction | rival (aligned / sqrt 2) | measured rate (W=384) | relative error vs Green (fraction, as stored) |
+|---|---|---|---|---|---|
+| 8 | pi/6 | 0.849 | 0.961 / 0.679 | 0.838 | 0.0122 |
+| 16 | pi/3 | 0.938 | 1.14 / 0.805 | 0.917 | 0.0227 |
+| 24 | pi/2 | 1.04 | 1.30 / 0.918 | 0.985 | 0.0495 |
+| 32 | 2pi/3 | 1.14 | 1.44 / 1.01 | 1.04 | 0.0914 |
+| 40 | 5pi/6 | 1.26 | 1.55 / 1.10 | 1.07 | 0.1578 |
+| 48 | pi | 1.40 | 1.65 / 1.17 | 1.07 | 0.239 |
+
+| Quantity | value |
+|---|---|
+| zigzag rate at W=768 (rate_W768_zigzag) | 1.07 |
+| block with the smallest sigma_min at depth 20 (argmin_block_depth20) | 192 (zigzag block) |
+| aligned zigzag rate of preregistration 25 (aligned_green label 48) | 1.65 |
+
+| Prediction | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 | per-row increments of log10 sigma_min for d = 1 to 5 agree with the explicit H=40 block within 0.02 | explicit log10 sigma_min for d = 0 to 5: -0.638, -1.54, -2.74, -3.73, -4.86, -5.87; exact for d = 0 to 5: 0.503, -0.401, -1.60, -2.59, -3.72, -4.73 | PASS |
+| P1 | zigzag rate within 3 % of 1.4027 | zigzag rate 1.07 at W = 384; rival 1.17 does not fit (P1_rival_sqrt2_fits false) | REFUTED |
+| P2 | each of the six block rates within 5 % of the Green values | rates 0.838, 0.917, 0.985, 1.04, 1.07, 1.07 against 0.849, 0.938, 1.04, 1.14, 1.26, 1.40 | REFUTED |
+| P3 | at depth 20 the smallest sigma_min is the zigzag block (i = 192) | argmin block i = 192 | HELD |
+| P4 | diagonal zigzag rate differs from the aligned 1.6527 by at least 8 % | diagonal zigzag rate 1.07 against aligned 1.65 | HELD |
+
+Deviations: none.
+
+Limits: That any of this is the disk's constant (a disk also has curvature and a staircase boundary; if the diagonal rate comes out
+at 1.40 it is still above the disk's 1.1–1.2, so orientation alone would not explain the disk); the type-A columns (same
+nodes, different amplitudes: not computed); the triangular lattice; hyperbolic geometry; anything about holography.
+
+*Recorded by a low-tier agent (Haiku); audited with `tools/audit_low_tier.py --block` (pass). The reading is the orchestrator's; a post-hoc diagnostic (`exp26_diag_signed_nodes.py`, `data/diagonal_signed_nodes_diagnostic.json`) supports the second paragraph.*
+
+**Reading (preregistration 26).** *What the card shows.* The gate held to 0.001 in every increment (exact and explicit blocks agree), so the block formula for the diagonal strip, with its complex decay factors and complex amplitudes, is right and the machinery works on a second geometry. Boundary orientation changes the conditioning rate a great deal: the zigzag block loses 1.067 decades per row on the diagonal strip against 1.653 on the aligned one (35 % lower; P4 held), the zigzag block is again the dominant one at depth 20 (P3 held), and the rate is converged in the width (1.067 at W = 768 and at W = 384). Both preregistered forms for the rate are wrong: the Green exponent of the node moduli predicted 1.403 (24 % too high; P1 refuted) and the √2 rival 1.169 (8.7 % too high, outside its 5 % band). P2 is refuted too: the six measured rates are 0.838, 0.917, 0.985, 1.039, 1.065, 1.067, and the moduli-based prediction misses by 1.2 %, 2.3 %, 5.0 %, 9.1 %, 15.8 % and 23.9 %, growing with the momentum.
+
+*What the diagnostic found, after the fact.* My prediction used the moduli of the node values z_n = λ(k)λ(q−k). The diagnostic shows these are real after removing the common phase e^(−iq/2) (imaginary parts 10⁻¹⁶) but of **both signs**: the sign flips when q − k wraps around 2π, so the node set is the single interval [−M₋, M₊] through zero, not [z_min, z_max] of the moduli. The Green exponent of that signed interval reproduces all six measured rates to between 0.2 % and 0.85 % with no free parameters (0.846, 0.923, 0.991, 1.044, 1.072, 1.070), and the alternating signs also explain the period-two oscillation of the increments (about 1.05 and 1.08 at the zigzag block). This was computed after seeing the data, so it is a hypothesis with a good record, not a confirmation; preregistration 27 tests it out of sample on a geometry whose nodes are real, and I note its limit: for unequal conductances on the diagonal strip the nodes are genuinely complex (imaginary parts up to 0.16 against moduli up to 0.2), where an interval formula does not apply.
+
+*Relation to the disk.* The diagonal value 1.07 sits at the lower end of the square disk's measured 1.08–1.23 and the aligned value 1.65 above it, and a disk contains every orientation plus curvature and a staircase boundary; nothing here says how these combine, and no claim is made. Nothing here concerns holography.
