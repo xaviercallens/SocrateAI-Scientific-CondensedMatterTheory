@@ -70,8 +70,12 @@ def main():
     # a number computed from data values (a difference, a ratio) is accepted only if the notes declare it explicitly
     # as DERIVED(<number>) = <formula>, normally through a CORRECTION appended with ledger_add.py --correct
     derived = set(re.findall(r"DERIVED\(([^)]+)\)", c.get("notes", "")))
+    # numbers that appear in the claim's own preregistration (thresholds, intervals, reference values) are copied, not new
+    pm0 = re.search(r"PREREGISTRATION_\d+", c["statement"])
+    pre_file = ev.parent.parent / (pm0.group(0) + ".md") if pm0 else None
+    pre_nums = set(NUM.findall(pre_file.read_text())) if pre_file is not None and pre_file.exists() else set()
     for tok in NUM.findall(text):
-        if tok in derived:
+        if tok in derived or tok in pre_nums:
             continue
         if not found(tok, pool):
             fails.append("A1 number not in data: " + tok)
@@ -113,6 +117,16 @@ def main():
             prereg_text = pf.read_text() if pf.exists() else ""
         added = [l[1:] for l in subprocess.run(["git", "diff", base, "--", rf], cwd=ROOT, capture_output=True, text=True)
                  .stdout.splitlines() if l.startswith("+") and not l.startswith("+++")]
+        # several blocks can be added to the same results file before the next commit: --block "<text in the heading>"
+        # restricts the check to the lines of that block (from its "## " heading to the next "## " heading)
+        if "--block" in a:
+            key = a[a.index("--block") + 1]
+            start = next((i for i, l in enumerate(added) if l.startswith("## ") and key in l), None)
+            if start is None:
+                fails.append("A0 --block heading not found among the added lines: " + key)
+            else:
+                end = next((i for i in range(start + 1, len(added)) if added[i].startswith("## ")), len(added))
+                added = added[start:end]
         # only the low-tier part: lines before the orchestrator's "*Recorded by a low-tier agent" marker
         cut = next((i for i, l in enumerate(added) if l.strip().startswith("*Recorded by")), len(added))
         added = added[:cut]

@@ -323,3 +323,82 @@ Limits: Any mechanism for the rate; hyperbolic tilings (their rate does not grow
 *Recorded by a low-tier agent (Haiku) from the data file; audited with `tools/audit_low_tier.py` (three false positives fixed in the tool: the "Deviations:" label before a verbatim paragraph).*
 
 **Reading (orchestrator; exploratory card, both weak extrapolations refuted).** Measured over windows fixed in relative depth, the growth rate of the depth-restricted condition number is a lattice constant, not a function of R: on the square lattice 1.23, 1.20 and 1.08 decades per depth at R = 10, 16 and 22 (0.95 on the four-layer R = 6 disk), on the triangular lattice 1.69, 1.81 and 1.84 at R = 6.45, 10.75 and 17.2 (0.41 on the two-layer R = 3.225 disk, a single truncated increment). So the R-dependence that refuted P3a of H0-X-0012 was the window effect named in LL-A15, and the earlier picture is restored in a sharper form: on flat disks κ grows exponentially in depth at a rate set by the lattice (triangular about 1.5 times square), on hyperbolic tilings the rate is 0.3 to 0.4 and does not grow with L. Both extrapolations I preregistered were wrong: the rate saturates rather than increasing with R, and the triangular rate is below the square one only on the two-layer disk where the window is a single increment. Limitations: the windows on the small disks were extended (three instances) and on the large ones truncated by double precision (three instances), so the "matched" windows are matched only approximately; a ball-arithmetic run would remove the truncation. What the band-counting argument of `MECHANISM_NOTE.md` must now explain is the constant itself and its ratio between the two lattices (card Q5f). Nothing here concerns holography.
+
+## Exponential-sum picture of the flat growth rate on lattice cylinders (`PREREGISTRATION_23.md`, 892486c before the final run; ledger H0-X-0014)
+Design: Square and triangular cylinders, unit conductances: W ∈ {64, 96} with H = 18 (square) and H = 12 (triangular) rows below the boundary; boundary = row 0 (W nodes); unknowns = every edge (including the boundary row's own horizontal edges); edge depth = min of the endpoints' graph distance to row 0 (= row index). The triangular lattice has odd rows shifted by half a column (six neighbours per node). The explicit Jacobian of `hyperbolic_network.jacobian` is used (strictly upper-triangular data entries, W(W−1)/2 rows). For d = 0, 1, …: log₁₀ κ_d of the Jacobian restricted to columns of depth ≤ d (square: also restricted to vertical edges only), kept while log₁₀ κ_d ≤ 12.5 and the number of columns does not exceed the number of rows (d* = last kept depth). **Rate** = least-squares slope of log₁₀ κ_d against d over 3 ≤ d ≤ d*. Data file: `data/cylinder_exponential_sum_picture.json`. Data: `data/cylinder_exponential_sum_picture.json`.
+
+| Series | d* | rate (decades per row) |
+|---|---|---|
+| square W=64 full | 6 | 1.78 |
+| square W=64 vertical_only | 7 | 1.79 |
+| square W=96 full | 6 | 1.77 |
+| square W=96 vertical_only | 7 | 1.78 |
+| triangular W=64 full | none | none |
+| triangular W=96 full | none | none |
+
+| Series | log10 kappa_d for d = 0 ... d* |
+|---|---|
+| square W=64 full | 1.41, 3.07, 4.44, 6.09, 7.79, 9.57, 11.4 |
+| square W=64 vertical_only | 0.170, 1.78, 3.37, 4.99, 6.67, 8.42, 10.2, 12.2 |
+| square W=96 full | 1.41, 3.06, 4.46, 6.11, 7.81, 9.58, 11.4 |
+| square W=96 vertical_only | 0.171, 1.78, 3.38, 5.01, 6.69, 8.43, 10.2, 12.1 |
+
+| Prediction | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 | explicit Jacobian agrees with `jacobian_finite_diff` to 1e-5 of its largest entry on W = 8, H = 3 cylinders of each lattice | gate_fd square 1.73e-10, triangular 1.65e-10 | PASS |
+| G2 | log₁₀ κ_d(full) ≥ log₁₀ κ_d(vertical only) − 1e-6 at every kept depth (square) | square W=64 and W=96: holds at every kept depth | PASS |
+| G3 | d* ≥ 6 for every one of the six series | square d* = 6 and 7; triangular series empty (d* none) | FAIL |
+| P1 | square vertical-only rate in [0.63, 0.94] for both W | W=64 1.79; W=96 1.78 | REFUTED |
+| P2 | vertical-only rate at W=96 differs from W=64 by at most 0.10 | W=96 1.78; W=64 1.79 | HELD |
+| P3 | square full rate in [0.9, 1.5] for both W | W=64 1.78; W=96 1.77 | REFUTED |
+| P4 | triangular full rate in [1.3, 2.3] for both W and triangular/square full ratio ≥ 1.2 | triangular series empty (G3 failed) | void |
+
+Deviations: **Deviation 1 (2026-10-08, after the first run, which crashed in `score()` before writing the data file; no threshold or prediction below is changed).** The first run printed the square series and then failed on the triangular series, for which no depth was kept: the triangular cylinder's Jacobian restricted to depth 0 is exactly singular (smallest singular value at round-off level, next smallest 2×10⁻³), so log₁₀ κ₀ exceeds the floor and the series is empty. A post-hoc diagnostic (not part of the tests; scripts in the job directory) found one exact null vector: the sum over boundary nodes of the difference of the two diagonal edges' Jacobian columns vanishes, a consequence of translation invariance plus the mirror symmetry of the lattice about each interior node. A straight periodic triangular boundary row is therefore a non-generic geometry with an exact first-order degeneracy (the triangular disk has no such symmetry and is full rank). Consequences, fixed before the rerun: gate G3 fails for the triangular series, so **P4 is void** (not evaluable; recorded as neither held nor refuted); the scorer is made safe against empty series; the computation is deterministic, so the rerun reproduces the first run's printed square numbers, which were seen before this deviation was written (square rates 1.78 and 1.77–1.79, against the preregistered 0.784; P1 and P3 are therefore refuted and P2 holds, whatever the rerun is). Nothing else changes.
+
+Limits: A proof of the Vandermonde asymptotics for the discrete problem; anything about the disk beyond P3/P4; hyperbolic geometry; the effect of the closed far end (H is finite but the kept depths are far from it); anything about holography.
+
+## Momentum-resolved rates on the square cylinder (`PREREGISTRATION_24.md`, f61f9b0 before the run; ledger H0-X-0015)
+Design: Square cylinder, W ∈ {64, 96} columns (periodic), H = 14 rows below the boundary row, unit conductances, explicit Jacobian of `hyperbolic_network.jacobian`. Translation invariance makes the Jacobian block-diagonal in the lateral Fourier wave number i (q = 2πi/W): for each edge type (vertical, or horizontal including the boundary row's own edges) and each depth r the columns are Fourier-transformed over the lateral position, giving per i a (data rows × depths) complex matrix whose singular values are those of block i (the union over i is the spectrum of the unblocked matrix, gate G1). For every block and every d the smallest singular value of the matrix restricted to depths ≤ d is computed; a block is followed while its own log₁₀(σ_max/σ_min) ≤ 12.5. **Block rate** = least-squares slope of −log₁₀σ_min against d over 3 ≤ d ≤ d_last. **Global rate** = the same slope for the minimum over blocks, over 3 ≤ d ≤ 7. Data file: `data/momentum_resolved_rates_on_the_cylinder.json`.
+Data: `data/momentum_resolved_rates_on_the_cylinder.json`.
+
+| Block index i (W=96) | q | predicted rate | measured rate | relative error |
+|---|---|---|---|---|
+| 8 | π/6 | 1.02 | 0.996 | 0.0232 |
+| 16 | π/3 | 1.24 | 1.02 | 0.176 |
+| 24 | π/2 | 1.42 | 1.12 | 0.217 |
+| 32 | 2π/3 | 1.58 | 1.30 | 0.180 |
+| 40 | 5π/6 | 1.72 | 1.48 | 0.138 |
+| 48 | π | 1.83 | 1.85 | 0.0105 |
+
+| Run | global rate |
+|---|---|
+| v W=64 | 1.65 |
+| v W=96 | 1.67 |
+| h W=96 | 1.76 |
+
+| Depth | block with the smallest sigma_min, W=64 | W=96 |
+|---|---|---|
+| 0 | 32 | 48 |
+| 1 | 32 | 48 |
+| 2 | 32 | 48 |
+| 3 | 32 | 48 |
+| 4 | 32 | 48 |
+| 5 | 32 | 48 |
+| 6 | 32 | 48 |
+| 7 | 32 | 48 |
+| 8 | 32 | 29 |
+| 9 | 32 | 48 |
+| 10 | 32 | 29 |
+| 11 | 32 | 29 |
+
+| Prediction | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 | union of block singular values equals the unblocked vertical-edge spectrum to 1e-8 of the largest | union agreement 1.84e-15 | PASS |
+| G2 | vertical-edge global rates within 0.08 of 1.793 (W=64) and 1.783 (W=96) | global rates 1.65 (W=64), 1.67 (W=96) | FAIL |
+| P1 | block with the smallest sigma_min is i = W/2 at every depth 4 to 7, both W | W=64: i = 32 at depths 4 to 7; W=96: i = 48 at depths 4 to 7 | HELD |
+| P2 | block rates at i = 8, 16, 24, 32, 40, 48 within 15% of 1.02, 1.24, 1.42, 1.58, 1.72, 1.83 | block rates 0.996, 1.02, 1.12, 1.30, 1.48, 1.85 | REFUTED |
+| P3 | horizontal global rate (W=96) within 10% of 1.833 | global rate 1.76 | HELD |
+
+Deviations: none.
+
+Limits: That the picture explains the disk's rates (disks have curvature, diagonal directions and graph-distance depth; the disk values 1.1–1.2 are below this cylinder value 1.83, which is itself a finding to explain); the triangular lattice (its straight periodic boundary is exactly degenerate, `PREREGISTRATION_23.md`); hyperbolic geometry; a proof of the Vandermonde asymptotics; anything about holography.
