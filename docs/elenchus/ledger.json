@@ -487,6 +487,19 @@
    "audit": null,
    "statement": "PREREGISTRATION_24 (square cylinder, W in {64, 96} columns, unit conductances; block-diagonal lateral Fourier decomposition of the explicit Jacobian, block and global rates for the vertical and horizontal edge columns). G1 PASS (union of block singular values equals the unblocked vertical-edge spectrum to 1.84e-15). G2 FAIL (global rates 1.65 (v W=64) and 1.67 (v W=96) against the explicit-SVD values 1.793 and 1.783 required within 0.08). P1 HELD (the block with the smallest sigma_min is the zigzag block i = W/2, q = pi, at depths 4 to 7 on both widths: i = 32 for W=64, i = 48 for W=96). P2 REFUTED (block rates at i = 8, 16, 24, 32, 40, 48 measured 0.996, 1.02, 1.12, 1.30, 1.48, 1.85 against predicted 1.02, 1.24, 1.42, 1.58, 1.72, 1.83). P3 HELD (horizontal global rate 1.76 against predicted global rate 1.83).",
    "notes": "experiments/track_h_hyperbolic_network/exp24_momentum_resolved_rates_on_the_cylinder.py. LIMITS: That the picture explains the disk's rates (disks have curvature, diagonal directions and graph-distance depth; the disk values 1.1-1.2 are below this cylinder value 1.83, which is itself a finding to explain); the triangular lattice (its straight periodic boundary is exactly degenerate, PREREGISTRATION_23.md); hyperbolic geometry; a proof of the Vandermonde asymptotics; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/momentum_resolved_rates_on_the_cylinder.json]"
+  },
+  {
+   "id": "H0-X-0016",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H0-X-0015",
+    "H0-X-0014"
+   ],
+   "evidence": "sha256:8e95bf833ac3840f7dc4fb2142812d804d3a153e88f55316765f030d557cc0df",
+   "audit": null,
+   "statement": "PREREGISTRATION_25 (exact semi-infinite momentum blocks at W=384 in 140-digit arithmetic, rates from depths 15 to 25, rival closed forms A and B, P1-P5). G1 PASS (per-row increments of log10 sigma_min for d=1 to 5 of the exact zigzag block agree with the explicit H=40 double-precision block within 0.02; explicit values d=0 to 5: -0.958, -2.58, -4.17, -5.76, -7.38, -9.02; exact values d=0 to 5: 0.183, -1.43, -3.02, -4.62, -6.23, -7.86). P1 HELD (zigzag block rate 1.68 at W=384 against the Green value 1.65, within the 3% threshold; rival A closed form 1.83 does not fit, P1_rival_old_formula_fits false). P2 HELD (block rates for q = pi/6, pi/3, pi/2, 2pi/3, 5pi/6, pi: 0.956, 1.13, 1.30, 1.44, 1.55, 1.68 against Green values 0.961, 1.14, 1.30, 1.44, 1.55, 1.65). P3 HELD (block with the smallest sigma_min at depth 20 is block i=192 at W=384, the zigzag block). P4 REFUTED (zigzag rate at W=768 is 1.65 against 1.68 at W=384; threshold 1%). P5 HELD (H=14 double-precision zigzag increment from d=5 to 6 is 1.97 against the exact increment 1.66; threshold 0.15).",
+   "notes": "experiments/track_h_hyperbolic_network/exp25_exact_semi_infinite_blocks_asymptotic_ra.py. Deviation 1 recorded in the preregistration before the final run. LIMITS: Anything about the disk or hyperbolic geometry; triangular lattices; the closed-height cylinder beyond P5; a proof (this is a computation on a closed-form block, plus a standard potential-theory estimate); anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/exact_semi_infinite_blocks_asymptotic_ra.json]"
   }
  ]
 }

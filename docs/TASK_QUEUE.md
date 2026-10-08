@@ -68,9 +68,23 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   the two-layer triangular disk is below the square). Next **Q5f** (mid): Fourier coefficients of the lattice harmonic
   measure per depth on each disk; prediction to derive: the rate equals the decay constant of the highest resolvable
   boundary mode, and the triangular/square ratio ≈ 1.5 follows from the two lattices' boundary spacing.
+- **Q5i** (high, H-2): *from the cylinder to the disk.* Derive the node set of a flat disk (angular momentum m, amplitude
+  ((R−d)/R)^|m| on the continuum, lattice corrections near the cutoff) and apply the same Green-function exponent; prediction to
+  state before computing: the disk's constant (square 1.1–1.2, triangular 1.7–1.8, H0-X-0013) as a function of the node
+  interval, to be tested in high precision on the block structure of the disk (rotation by the lattice's symmetry group only).
+- **Q14** (mid, paper): a v1.3 section on the cylinder result (exact block structure, Green-function rate, the failed
+  closed forms as a methods note), only after Q5i says whether the disk follows; v1.2 stays as published.
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
 
-## Done on 2026-10-08
+## Done on 2026-10-08 (research)
+- **Q5f, Q5g, Q5h** → H0-X-0014 (prereg 23), H0-X-0015 (prereg 24), H0-X-0016 (prereg 25): the flat growth constant is exact where
+  the problem separates. On the square cylinder the vertical-edge Jacobian is block-diagonal in total momentum; each block's
+  smallest singular value decays at the Green-function exponent of the interval of its node values; verified in 140-digit
+  arithmetic for six momenta (0.06–1.6 %), zigzag block dominant, global rate 1.65 decades per row. Four of the eleven
+  evaluable predictions across the three cards were refuted (the preregistered 0.784 and the full-rate interval of card 23;
+  the momentum table of card 24, which was my post-hoc closed form; a 1 % width-convergence threshold of card 25 missed at
+  1.5 %), one was void, and design errors are recorded as LL-A17 to LL-A19. The triangular straight periodic boundary is
+  exactly singular. Not explained: the disk (1.1–1.2 square), which is below the cylinder value.
 - **Q8b** → H3-X-0010 (prereg 22): the ceiling of H3-X-0009 is resolved by derivation. Offsets of the form u1ᵀ + 1wᵀ are
   exactly invisible (every signature has zero row and column sums; 0 differences in every cell up to 100× rms);
   scalar gain drift between the two maps has a predicted curve (noiseless decode integrated over the drift law) that

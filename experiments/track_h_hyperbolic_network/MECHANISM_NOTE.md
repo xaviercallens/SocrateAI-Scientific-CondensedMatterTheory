@@ -75,6 +75,27 @@ tilings beyond the layers computed; anything about holography or AdS/CFT.
   The quantitative rate of κ growth on flat disks remains underived. A better-posed rate prediction must compare
   matched windows in d/d_max (lesson LL-A15).
 
+## Cylinder result (2026-10-08, PREREGISTRATIONS 23–25, ledger H0-X-0014 to H0-X-0016): the rate is exact where the problem separates
+On a square lattice cylinder (periodic in one direction, measurement on one end) the Jacobian is block-diagonal in total
+momentum q, and for the vertical edges each block is a Vandermonde-type matrix [a_n z_n^r] whose nodes are
+z_n = z₁(k_n)z₁(q−k_n), z₁(k) = e^(−acosh(2−cos k)) (the per-row decay of a boundary mode), with the position-diagonal
+direction projected out (the data are the strictly upper-triangular entries). The smallest singular value of block q decays
+with depth at the rate **G(q) = max over |ζ| = 1 of the Green function of ℂ∖[z_min, z_max], in decades per row**. Verified in
+140-digit arithmetic on the semi-infinite problem (W = 384; momenta π/6 … π): predicted 0.9605, 1.1381, 1.2984, 1.4352,
+1.5508, 1.6527; computed 0.9555, 1.1326, 1.2952, 1.4360, 1.5540, 1.6786 (zigzag rate 1.6529 at W = 768); the minimum is in the
+zigzag block q = π, so the cylinder's condition number grows by **1.65 decades per row**. The finite-height double-precision
+data of the same blocks do not converge to this (increments still rising at 1.97 at d = 5 → 6 at height 14), and a closed
+form I derived after seeing the first data (1.833) was wrong (LL-A17).
+What this does and does not say. It explains the exponential-in-depth growth and a lattice constant on the cylinder: the
+rate is set by the spread of the products of mode decay factors, i.e. by the lattice dispersion relation. It does **not**
+explain the disk (1.1–1.2 decades per depth on the square disk, 1.7–1.8 on the triangular one: the square disk is below
+the cylinder's 1.65): the disk has curvature, diagonal directions and graph-distance depth, and the triangular straight
+periodic cylinder is exactly singular so it cannot even be compared (LL-A19). The structural statement of this note
+(collective collapse of equal-depth signatures, f_d ∝ 1/d on flat disks, O(1) on hyperbolic tilings) is unaffected.
+Open: the node set of the disk (angular momentum m with amplitude ((R−d)/R)^m instead of e^(−κ d)) and whether the same
+Green-function exponent gives the disk's constant; whether the hyperbolic tilings' node structure explains their concave
+growth. Neither is claimed.
+
 ## Follow-up (2026-10-07, PREREGISTRATION_21, ledger H0-X-0013, exploratory)
 Over windows fixed in relative depth (0.2 to 0.5 of d_max, extended to three depths on small disks), the rate is
 flat in R from R = 10 upward: square 1.23, 1.20, 1.08 decades per depth (R = 10, 16, 22; 0.95 at R = 6), triangular
