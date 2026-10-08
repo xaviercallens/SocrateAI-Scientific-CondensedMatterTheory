@@ -18,8 +18,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "data" / "exact_semi_infinite_blocks_asymptotic_ra.json"
 CARD24 = HERE / "data" / "momentum_resolved_rates_on_the_cylinder.json"
-DPS, DMAX, D_LO, D_HI = 140, 30, 20, 30
-SIX = [(8, "pi/6"), (16, "pi/3"), (24, "pi/2"), (32, "2pi/3"), (40, "5pi/6"), (48, "pi")]
+DPS, DMAX, D_LO, D_HI = 140, 25, 15, 25            # Deviation 1: window 15..25 (was 20..30), main width 384 (was 96)
+W0, W1, W2, DEPTH_ALL = 96, 384, 768, 20
+SIX = [(8, "pi/6"), (16, "pi/3"), (24, "pi/2"), (32, "2pi/3"), (40, "5pi/6"), (48, "pi")]   # labels = indices at W = 96; scaled by W1/W0
 # preregistered: potential-theory (Green function) value G(q) of the interval [zmin, zmax] of the block's nodes, evaluated
 # before the run by the prediction function in this file (green_rate); and the rival closed form of PREREGISTRATION_24
 PREREG_GREEN = {"8": 0.9605, "16": 1.1381, "24": 1.2984, "32": 1.4352, "40": 1.5508, "48": 1.6527}
@@ -84,57 +85,57 @@ def explicit_block_increments(W=96, H=40, dd=5):
 
 def run() -> dict:
     mp.mp.dps = DPS
-    out = {"dps": DPS, "dmax": DMAX, "window": [D_LO, D_HI], "W96": {}, "W192_pi": {}}
-    # G1: exact block against the explicit double-precision block at a large height, d <= 5
-    exact_pi = []
-    V = block(96, 48, DMAX)
-    sig = {d: log10_sigma_min(V, d) for d in range(0, DMAX + 1)}
+    out = {"dps": DPS, "dmax": DMAX, "window": [D_LO, D_HI], "widths": [W0, W1, W2], "W96": {}, "W384": {}, "W768_pi": {}}
+    # G1 and P5 (W = 96, depths <= 6): exact block against the explicit double-precision block at a large height
+    V0 = block(W0, W0 // 2, 6)
+    sig0 = {d: log10_sigma_min(V0, d) for d in range(0, 7)}
     expl = explicit_block_increments()
-    out["G1"] = {"explicit_H40_log10_sigma_min": expl, "exact_log10_sigma_min_d0_5": [sig[d] for d in range(6)]}
-    print("  G1 increments exact   :", [round(sig[d] - sig[d + 1], 3) for d in range(5)])
+    out["G1"] = {"explicit_H40_log10_sigma_min": expl, "exact_log10_sigma_min_d0_5": [sig0[d] for d in range(6)]}
+    out["W96"]["48"] = {"log10_sigma_min": [sig0[d] for d in range(7)]}
+    print("  G1 increments exact   :", [round(sig0[d] - sig0[d + 1], 3) for d in range(5)])
     print("  G1 increments explicit:", [round(expl[d] - expl[d + 1], 3) for d in range(5)], flush=True)
-    out["W96"]["48"] = {"log10_sigma_min": [sig[d] for d in range(DMAX + 1)], "rate": (sig[D_LO] - sig[D_HI]) / (D_HI - D_LO)}
-    print("  pi block (W=96): increments d=1..30:", [round(sig[d - 1] - sig[d], 3) for d in range(1, DMAX + 1)], flush=True)
-    for i, _ in SIX[:-1]:
-        Vi = block(96, i, DMAX)
-        s = {d: log10_sigma_min(Vi, d) for d in range(D_LO, D_HI + 1)}
-        out["W96"][str(i)] = {"log10_sigma_min": {str(d): s[d] for d in s}, "rate": (s[D_LO] - s[D_HI]) / (D_HI - D_LO)}
-        print("  block i=%d rate %.4f" % (i, out["W96"][str(i)]["rate"]), flush=True)
-    # P3: which block has the smallest sigma_min at depth D_LO, all i = 0..48
+    # main: W = 384, the six momenta (indices scaled by W1 / W0), rates over depths D_LO..D_HI
+    for i0, _ in SIX:
+        i = i0 * W1 // W0
+        Vi = block(W1, i, DMAX)
+        s = {d: log10_sigma_min(Vi, d) for d in range(0, DMAX + 1)}
+        out["W384"][str(i0)] = {"i": i, "log10_sigma_min": [s[d] for d in range(DMAX + 1)], "rate": (s[D_LO] - s[D_HI]) / (D_HI - D_LO)}
+        print("  W=%d block i=%d (q label index %d): rate %.4f ; increments d=1..%d: %s" % (W1, i, i0, out["W384"][str(i0)]["rate"], DMAX,
+              [round(s[d - 1] - s[d], 3) for d in range(1, DMAX + 1)]), flush=True)
+    # P3: which block has the smallest sigma_min at depth DEPTH_ALL, all i = 0..W1/2
     at20 = {}
-    for i in range(0, 49):
-        Vi = block(96, i, D_LO) if str(i) not in ("48",) else V
-        at20[i] = log10_sigma_min(Vi, D_LO)
+    for i in range(0, W1 // 2 + 1):
+        at20[i] = log10_sigma_min(block(W1, i, DEPTH_ALL), DEPTH_ALL)
     out["sigma_min_at_depth20_all_blocks"] = {str(i): v for i, v in at20.items()}
     out["argmin_block_depth20"] = int(min(at20, key=at20.get))
-    print("  smallest sigma_min at depth 20 is block", out["argmin_block_depth20"], flush=True)
-    # P4: W = 192, pi block
-    V2 = block(192, 96, DMAX)
+    print("  smallest sigma_min at depth %d is block %d (zigzag is %d)" % (DEPTH_ALL, out["argmin_block_depth20"], W1 // 2), flush=True)
+    # P4: W = 768, zigzag block
+    V2 = block(W2, W2 // 2, DMAX)
     s2 = {d: log10_sigma_min(V2, d) for d in range(D_LO, D_HI + 1)}
-    out["W192_pi"] = {"log10_sigma_min": {str(d): s2[d] for d in s2}, "rate": (s2[D_LO] - s2[D_HI]) / (D_HI - D_LO)}
-    print("  W=192 pi block rate %.4f" % out["W192_pi"]["rate"], flush=True)
+    out["W768_pi"] = {"log10_sigma_min": {str(d): s2[d] for d in s2}, "rate": (s2[D_LO] - s2[D_HI]) / (D_HI - D_LO)}
+    print("  W=%d pi block rate %.4f" % (W2, out["W768_pi"]["rate"]), flush=True)
     return out
 
 
 def score(d: dict) -> dict:
     ex, gi = d["G1"]["exact_log10_sigma_min_d0_5"], d["G1"]["explicit_H40_log10_sigma_min"]
     G1 = all(abs((ex[k] - ex[k + 1]) - (gi[k] - gi[k + 1])) <= 0.02 for k in range(5))
-    r = {k: d["W96"][k]["rate"] for k in d["W96"]}
+    r = {k: d["W384"][k]["rate"] for k in d["W384"]}
     pi = r["48"]
     P1 = abs(pi - PREREG_GREEN["48"]) / PREREG_GREEN["48"] <= 0.03
     rival_old = abs(pi - RIVAL_OLD["48"]) / RIVAL_OLD["48"] <= 0.02
     rel = {k: abs(r[k] - PREREG_GREEN[k]) / PREREG_GREEN[k] for k in PREREG_GREEN}
     P2 = all(v <= 0.05 for v in rel.values())
-    P3 = d["argmin_block_depth20"] == 48
-    P4 = abs(d["W192_pi"]["rate"] - pi) / pi <= 0.01
+    P3 = d["argmin_block_depth20"] == W1 // 2
+    P4 = abs(d["W768_pi"]["rate"] - pi) / pi <= 0.01
     # P5: finite height explains card 24's acceleration: H = 14 increment d=5->6 minus the exact increment at 5->6 >= 0.15
     c24 = json.loads(CARD24.read_text())["runs"]["v W=96"]["blocks"]["48"]
     l24 = c24["log10_sigma_min"]; inc_h14 = l24[5] - l24[6]
-    inc_exact = d["W96"]["48"]["log10_sigma_min"][5] - d["W96"]["48"]["log10_sigma_min"][6]
+    inc_exact = d["W96"]["48"]["log10_sigma_min"][5] - d["W96"]["48"]["log10_sigma_min"][6]   # W = 96, as in preregistration 24
     P5 = (inc_h14 - inc_exact) >= 0.15
     return {"G1": bool(G1), "P1": bool(P1), "P1_rival_old_formula_fits": bool(rival_old), "P2": bool(P2), "P3": bool(P3), "P4": bool(P4), "P5": bool(P5),
-            "rates_W96": {k: round(v, 4) for k, v in r.items()}, "predicted_green": PREREG_GREEN, "rival_old": RIVAL_OLD,
-            "relative_error_vs_green": {k: round(v, 4) for k, v in rel.items()}, "rate_W192_pi": round(d["W192_pi"]["rate"], 4),
+            "rates_W384": {k: round(v, 4) for k, v in r.items()}, "predicted_green": PREREG_GREEN, "rival_old": RIVAL_OLD,
+            "relative_error_vs_green": {k: round(v, 4) for k, v in rel.items()}, "rate_W768_pi": round(d["W768_pi"]["rate"], 4),
             "argmin_block_depth20": d["argmin_block_depth20"], "increment_H14_5to6": round(inc_h14, 4), "increment_exact_5to6": round(inc_exact, 4)}
 
 

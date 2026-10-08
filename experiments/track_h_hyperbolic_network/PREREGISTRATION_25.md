@@ -31,6 +31,19 @@ Exact blocks as above (mpmath, 140 digits), W = 96, depths 0…30. σ_min of the
 momenta (i = 8, 16, 24, 32, 40, 48); σ_min at depth 20 for all blocks i = 0…48; and the zigzag block at W = 192. Data file:
 `data/exact_semi_infinite_blocks_asymptotic_ra.json`.
 
+**Deviation 1 (2026-10-08, after the first run, which crashed before any verdict existed; thresholds unchanged).** The
+first run stopped with a numerically singular Gram matrix at depth 24, at 140 and at 400 digits, so not a precision effect.
+At W = 96 the zigzag block has only 25 distinct nodes (z_n is invariant under k → −k and k → π − k, so the 96 mode indices
+collapse to 25 values), and with the diagonal direction projected out the block has rank at most 24: depth 24 and
+beyond are rank-deficient, and the window 20 to 30 of the Design was impossible by construction. (This is also a physical
+statement: a boundary of W sites carries finitely many data per momentum, so the restricted Jacobian loses rank at a depth set
+by W.) Amended design, fixed before the rerun: the six momenta, the depth-20 comparison over all blocks, and the rates use
+**W = 384** (97 distinct nodes at the zigzag momentum; block indices i = 32, 64, 96, 128, 160, 192, the same momenta as
+i = 8, …, 48 at W = 96), with the **rate window 15 to 25**, i.e. (log₁₀σ_min(15) − log₁₀σ_min(25))/10; P4 compares the zigzag
+rate at **W = 768** with the one at W = 384; G1 and P5 stay at W = 96 (they use depths ≤ 6). P3 now asks for block
+i = 192 at W = 384. All thresholds (3 %, 5 %, 1 %, 0.02, 0.15) and the Green values are unchanged; the Green values for W = 384
+evaluate to the same four digits as for W = 96 (checked by the prediction function only).
+
 ## Validity gate
 - G1: the exact zigzag block's per-row increments of log₁₀σ_min for d = 1…5 agree with the explicit double-precision
   block of the Jacobian of a W = 96, H = 40 cylinder (the script recomputes it) within 0.02 each.
