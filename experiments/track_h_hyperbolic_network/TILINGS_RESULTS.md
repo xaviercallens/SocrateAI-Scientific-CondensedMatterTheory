@@ -630,3 +630,44 @@ at the preregistered resolution (P2 refuted by 2.5 %, within what two points can
 sampling the transient is worth about one decade of conditioning on a square board and does not change the conclusion that deep edges are exponentially harder to see.
 The time-to-frequency link that licenses reading transients as Λ(s) failed its preregistered gate for a reason that was my window design, and passes only in its post hoc form.
 Limits: double precision, noise-free, real s only, one disk size, κ of a stacked matrix as the figure of merit.
+
+## Persistent homology of the Jacobian column cloud (preregistration 30, task Q16)
+
+Recorded by the orchestrator directly (not through the low-tier loop, not in the Elenchus ledger). Data: `data/jacobian_column_cloud_homology.json` (rerun), `..._firstrun.json`, `..._posthoc.json`.
+GUDHI 3.13 Vietoris–Rips, H₀ death times of the sine-distance cloud of Jacobian columns per depth layer; square disk radius 16 (layers 2 to 9) and {7,3} with 5 layers (layers 1 to 4).
+
+| Item | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 control | random cloud slope of log10 median death against layer within ±0.02 | 4.8e-6 | PASS |
+| G2 known answer | duplicated columns give median death ≤ 1e-12 | 0.979 (first run), 2.1e-8 (rerun) | **FAILED as written** twice |
+| G3 | clipped fraction below 1 % | true | PASS |
+| P1 | Spearman of log10 median death against layer ≤ −0.9 (square) | −1.0 | HELD |
+| P2 | hyperbolic slope smaller in magnitude than square | +0.016 against −0.078 | HELD |
+| P3 | Pearson with log10 σ_min(J≤k) ≥ 0.9 (square) | 0.994 | HELD |
+| P4 | square slope in [−1.5, −0.3] per layer | −0.078 | **REFUTED** |
+
+Deviations: Deviation 1 (GUDHI drops zero-persistence pairs by default; the rerun reads all pairs and checks the death times against the minimum spanning tree, which matched on every layer; the data are unchanged by the fix).
+G2 failed a second time for a second design error of mine: the sine distance sqrt(1−c²) has a rounding floor near 1.5e-8 for identical columns, so 1e-12 was unattainable; at 2.1e-8 the known-answer test is met in substance, and that reading is post hoc.
+
+Post hoc, labelled: median death times 0.876, 0.746, 0.551, 0.453, 0.377, 0.324, 0.287, 0.258 for layers 2 to 9. The product k·m_k is 2.2 to 2.3 for layers 3 to 9 (log-log slope −0.96, root-mean-square residual 0.008 against 0.061 for an exponential fit).
+
+**Reading (preregistration 30).** The topology of the column cloud sees the depth, but not as the exponential that the singular values show. Nearest-neighbour angles between columns of the same layer shrink like one over the depth, a power law, while σ_min of the restricted Jacobian falls about 1.2 decades per layer; the two are strongly correlated across layers
+(Pearson 0.994 of log m_k with log σ_min) only because both are monotone in k. So single-linkage H₀ is a faithful but weak proxy: it detects that deep columns crowd together, and it cannot give the rate. The ill-conditioning lives in the linear dependence among many columns, not in the nearest pair. On the {7,3} tiling the proxy shows no collapse at all (median deaths 0.87 to 1.00 over layers 1 to 4, slope +0.016), which agrees with the polynomial growth of κ there, over only four layers. My exponential band in P4 was set without a pilot and was wrong in kind.
+Limits: double precision, one square disk, four hyperbolic layers, H₀ only (H₁ was computed for diagnostics and not scored), no noise.
+
+## CVODE check of the garage virtual bench (preregistration 31, task Q17)
+
+Recorded by the orchestrator directly; data `data/cvode_check_of_the_garage_virtual_bench.json`. rusty-SUNDIALS CVODE (BDF) against the bench's exact modal solution, same perturbed boards.
+
+| Item | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 | CVODE and modal waveforms within 1e-7 of V0 (relaxed from 1e-8, Deviation 2), square R=4, zero tolerance | 5.3e-8 | PASS |
+| P1 | max waveform difference ≤ 1e-6 of V0, 12 draws at 5 % / 10 % | {7,3}: 5.1e-8 to 6.1e-8; square: 1.7e-6 to 1.8e-6 | **REFUTED** (square draws only) |
+| P2 | fitted τ differs by ≤ 1e-4 relative | max 3.1e-5 | HELD |
+| P3 | τ ratio in 0.604 ± 0.03 for every one of 12 draws, spread ≤ 2 % | mean 0.605, range 0.600 to 0.608, spread 1.3 % | HELD |
+
+Deviations: three, all before any scored comparison: time scaled by τ_nominal (Deviation 1); the CVODE binding aborts at the first step when the absolute tolerance is below 1e-10 and G1 relaxed to 1e-7 (Deviation 2, with the debug figure 1.1e-8 disclosed);
+a tolerance ladder per draw because the stiffer square board aborts at 1e-10 (Deviation 3). The {7,3} draws ran at (1e-10, 1e-10) and the square draws at (1e-8, 1e-8).
+
+**Reading (preregistration 31).** The bench's modal solution and an independent stiff integrator agree on the waveforms and on the fitted time constants, and the predicted ratio 0.604 survives the 1 % component spread with a scatter of about 1 %; nothing in the lab chain is contradicted. P1 failed only on the square board, where the integrator had to be run at a looser tolerance (1e-8); the difference of 1.7e-6 of V0 is the order of the integrator's own error at that setting, not evidence of a bench error, and the fitted τ agree to 3e-5 anyway. This is a check of the model code, not of the hardware.
+Limits: the same model on both sides (source resistance, probe loading, leakage and parasitics are not in either), 12 ratio draws, tolerance uniform, binding limits on tolerances.
