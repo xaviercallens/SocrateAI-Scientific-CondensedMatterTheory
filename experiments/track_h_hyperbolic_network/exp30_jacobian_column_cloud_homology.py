@@ -9,7 +9,11 @@ from pathlib import Path
 
 import gudhi
 import numpy as np
+from scipy.sparse import csr_matrix
+from scipy.sparse.csgraph import minimum_spanning_tree
 from scipy.stats import pearsonr, spearmanr
+
+MST_CHECKS = []
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from exp29_laplace_resolved_jacobian_conditioning import edge_depth, jac_s  # noqa: E402
@@ -44,8 +48,13 @@ def sine_distance(G):
 def h0_deaths(dist):
     rc = gudhi.RipsComplex(distance_matrix=dist, max_edge_length=2.0)
     st = rc.create_simplex_tree(max_dimension=1)
-    st.compute_persistence()
-    return np.array([d for (dim, (b, d)) in st.persistence() if dim == 0 and np.isfinite(d)])
+    st.compute_persistence(min_persistence=-1.0)   # Deviation 1: keep zero-persistence pairs
+    dg = np.array([d for (dim, (b, d)) in st.persistence(min_persistence=-1.0) if dim == 0 and np.isfinite(d)])
+    n = dist.shape[0]
+    w = np.sort(minimum_spanning_tree(csr_matrix(np.where(dist > 0, dist, 1e-300))).data)
+    w = np.where(w <= 1e-299, 0.0, w)
+    MST_CHECKS.append(bool(len(dg) == n - 1 and np.allclose(np.sort(dg), w, atol=1e-12)))
+    return dg
 
 
 def h1_total(dist):
@@ -134,6 +143,8 @@ def main():
     fh = fit(sth, HYP_LAYERS)
     res["hyperbolic_73_L5"] = {"N": len(h["nodes"]), "E": len(h["edges"]), "m": int(len(boundary_nodes(h))), "d_max": int(deph.max()),
                                "layers": sth, "fit": fh, "clipped_fraction": clipped_h}
+    res["mst_check_all_layers_equal_gudhi"] = bool(all(MST_CHECKS))
+    res["mst_checks_n"] = len(MST_CHECKS)
     res["G3_clipped_below_1pct"] = bool(max(clipped, clipped_h) < 0.01)
 
     # --- verdicts
@@ -143,7 +154,7 @@ def main():
     res["P3"] = {"pearson": p3, "pass": bool(p3 is not None and p3 >= 0.9)}
     res["P4"] = {"slope": f["slope"], "pass": bool(f["slope"] is not None and -1.5 <= f["slope"] <= -0.3)}
     OUT.write_text(json.dumps(res, indent=2, default=float), encoding="utf-8")
-    for k in ("G1", "G2", "G3_clipped_below_1pct", "P1", "P2", "P3", "P4"):
+    for k in ("G1", "G2", "mst_check_all_layers_equal_gudhi", "G3_clipped_below_1pct", "P1", "P2", "P3", "P4"):
         print(k, res[k])
     print("square", {k: (None if v["median_death"] is None else round(v["median_death"], 6)) for k, v in st.items()}, f["slope"])
     print("hyper ", {k: (None if v["median_death"] is None else round(v["median_death"], 6)) for k, v in sth.items()}, fh["slope"])

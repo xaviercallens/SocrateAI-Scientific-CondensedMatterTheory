@@ -40,3 +40,11 @@ the proxy and the singular values decouple. P4 refuted: the collapse is real but
 
 ## Not claimed
 That persistent homology gives a stable estimate of κ; that H₁ means anything here; that the result transfers to noisy data; a topological invariant of the inverse problem; anything about holography.
+
+## Deviation 1 (2026-10-08, written after the first run and before the rerun)
+First run, recorded in `data/jacobian_column_cloud_homology_firstrun.json`: G1 passed (control slope 4.8e-6); **G2 failed as written** (max median death 0.979 against a limit of 1e-12); G3 passed;
+P1 held (Spearman -1.0); P2 held (hyperbolic slope +0.016 against the square's -0.078); P3 held (Pearson 0.994); **P4 refuted** (square slope -0.078 per layer against a band of -1.5 to -0.3).
+Cause of the G2 failure, found by the post hoc diagnostic `exp30_diag_g2.py`: my script read the H0 pairs with GUDHI's default `min_persistence = 0`, which drops pairs of zero persistence, so the zero-length merges of exactly
+duplicated columns never appeared. This is an implementation error of mine, not a property of the data; it could also bias a median upward whenever exact zero distances occur, so the main numbers must be recomputed.
+Rerun (labelled): (a) read all pairs with `min_persistence = -1`; (b) add an independent computation of the H0 death times as the edge weights of the minimum spanning tree of the distance matrix (scipy), which must equal the GUDHI death times as multisets
+within 1e-12, and the number of finite deaths must equal n - 1 for every layer. The thresholds of P1-P4, G1-G3 are unchanged. P4 stays refuted whatever the rerun gives if the slope stays outside the band; the band was set without any pilot and was wrong.
