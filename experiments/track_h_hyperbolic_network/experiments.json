@@ -177,5 +177,12 @@
   "data": [
    "data/diagonal_boundary_orientation_and_the_gr.json"
   ]
+ },
+ "PREREGISTRATION_27.md": {
+  "title": "aligned strip with unequal conductances",
+  "script": "exp27_aligned_strip_with_unequal_conductances.py",
+  "data": [
+   "data/aligned_strip_with_unequal_conductances.json"
+  ]
  }
 }
