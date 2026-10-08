@@ -69,8 +69,15 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   measure per depth on each disk; prediction to derive: the rate equals the decay constant of the highest resolvable
   boundary mode, and the triangular/square ratio ≈ 1.5 follows from the two lattices' boundary spacing.
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
-- **Q8b** (low): extend prereg 17's grids until failure (offset to 1, drift to 10 %, 6 and 8 bits) and add f = 1.25,
-  to locate the boundary the ceiling hid.
+
+## Done on 2026-10-08
+- **Q8b** → H3-X-0010 (prereg 22): the ceiling of H3-X-0009 is resolved by derivation. Offsets of the form u1ᵀ + 1wᵀ are
+  exactly invisible (every signature has zero row and column sums; 0 differences in every cell up to 100× rms);
+  scalar gain drift between the two maps has a predicted curve (noiseless decode integrated over the drift law) that
+  matched all 28 cells (largest deviation 0.128), plain decoder fails at 3–10 %, gain-fitted decoder is unaffected to
+  30 %; quantisation is harmless on the {7,3} board down to 1 bit relative to rms and needs about 8 bits at full scale
+  on the square board; per-channel gain mismatch between the two maps (exploratory) breaks localisation at ≈ 0.3 %
+  (square) and ≈ 1 % ({7,3}). All five predictions held; lessons LL-A16; requirements in `lab/LAB_GUIDE_H4.md` §6b.
 
 ## Retired (done since the roadmap of 2026-09-27)
 H-1 (v1.0 + v1.1 published), H-2 first pass (tilings, H0-X-0008), H-3a/H-3b (persistent homology, detection, localisation, noise margin, tolerance: H3-X-0001..0007), v1.2 draft.

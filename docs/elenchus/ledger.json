@@ -448,6 +448,19 @@
    "audit": null,
    "statement": "PREREGISTRATION_21 (EXPLORATORY; flat growth rate of log10 kappa per depth over matched relative depth windows, square R=6..22 and triangular R=3.225..17.2). G1 PASS (amended, Deviation 1), G2 PASS. P1 REFUTED (square 0.948, 1.23, 1.20, 1.08; triangular 0.410, 1.69, 1.81, 1.84). P2 REFUTED (reversed pair: square R=6 0.948 versus triangular R=3.225 0.410).",
    "notes": "experiments/track_h_hyperbolic_network/exp21_flat_growth_rate_over_matched_relative_w.py. Deviation 1 recorded in the preregistration before the rerun. LIMITS: Any mechanism for the rate; hyperbolic tilings (their rate does not grow with L, H0-X-0012); depths beyond d*; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/flat_growth_rate_over_matched_relative_w.json]"
+  },
+  {
+   "id": "H3-X-0010",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H3-X-0009",
+    "H3-X-0006"
+   ],
+   "evidence": "sha256:957a43fc2dc593acc7afb9254a3ca45fa5ff626ddda390725b96e1d0ff73e0ce",
+   "audit": null,
+   "statement": "PREREGISTRATION_22 (hardware-like perturbations driven to failure: offsets, scalar drift, quantisation and per-channel gain on {7,3} L=2 and square R=6, f in {2, 1.25}, 40 trials per cell). G1 PASS, G2 PASS, G3 PASS, G4 PASS. P1 HELD (0 offset cells with a difference). P2 HELD (max_abs_drift_deviation 0.128). P3 HELD (gain-fitted top-1 at sigma 0.3, f=2: 1.00 on {7,3} L=2, 1.00 on square R=6). P4 HELD. P5 HELD (lowest top-1: 0.875 over bits 1-3 for square R=6 f=2; 0.175 over bits 1-4 for square R=6 f=1.25).",
+   "notes": "experiments/track_h_hyperbolic_network/exp22_hardware_noise_failure_boundaries.py. LIMITS: Hardware (everything here is simulation); correlations inside one map; multi-node defects; contrasts outside {1.25, 2}; boards larger than N ≈ 113; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/hardware_noise_failure_boundaries.json]"
   }
  ]
 }

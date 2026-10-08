@@ -96,6 +96,18 @@ If a day slips, the gates do not move: a board that fails G2 is not measured.
 | records drift over minutes | thermal (unlikely at 1 %) or incomplete discharge between records | wait ≥ 8 s at 0 V; hold temperature |
 | ratio fine, absolute τ off | calibration cell parts not from the same batch, or ADC gain | remeasure the cell's R and C |
 
+## 6b. What the simulations ask of the phase-2 chain (H3-X-0010, `PREREGISTRATION_22.md`; simulation, not hardware)
+- **Offsets (ADC offset per channel, per-injection offset): irrelevant.** Any offset constant along a row or a column of
+  the measured map is exactly orthogonal to every defect signature (current conservation); it cannot change the decision.
+- **Gain between the baseline and the defect measurement: the requirement that matters.** Take both maps through the
+  *same* chain in one session. Independent channel-to-channel gain differences between the two maps break
+  localisation at about 0.3 % (square board) and 1 % ({7,3} board); a single common gain drift is tolerated up to about
+  1 % with the plain decoder and removed entirely by a gain-fitted decoder.
+- **ADC resolution for localisation:** a converter spanning the largest entry needs about 8 bits on the square board and
+  much less on the {7,3} board; the ADS1115 (16 bit) is far above it. (The 12-bit minimum of §2 is for the time
+  constant, not for localisation.) Ideal rounding only: real converters add nonlinearity.
+- Not tested: joint worst cases with component tolerance, multi-node defects, hardware.
+
 ## 7. Phase 2 (not this week; its own preregistration)
 The static Neumann-to-Dirichlet map (a 77-channel multiplexed injection, 5 × CD74HC4067), the defect experiments
 (single-node ×2 contrast, differential measurement: the simulations say 5 % parts are enough and localisation holds

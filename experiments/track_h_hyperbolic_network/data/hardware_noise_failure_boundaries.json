@@ -1,0 +1,580 @@
+{
+ "eps_iid": 0.0003,
+ "trials": 40,
+ "seed": 22,
+ "grids": {
+  "offsets": [
+   1.0,
+   10.0,
+   100.0
+  ],
+  "drifts": [
+   0.001,
+   0.003,
+   0.01,
+   0.03,
+   0.1,
+   0.3,
+   1.0
+  ],
+  "bits": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10
+  ],
+  "channel_gains": [
+   0.001,
+   0.003,
+   0.01,
+   0.03,
+   0.1,
+   0.3
+  ]
+ },
+ "boards": {
+  "{7,3} L=2": {
+   "s_rms": 0.4760557032794974,
+   "boundary": 77,
+   "zero_sum": {
+    "max_abs_row_sum_rel": 2.583573331199529e-12,
+    "max_abs_col_sum_rel": 7.243011449270171e-13
+   },
+   "f": {
+    "2": {
+     "cells": {
+      "baseline": {
+       "top1": 1.0
+      },
+      "offset_row_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_row_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_row_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "drift_0.001": {
+       "top1": 1.0
+      },
+      "drift_0.003": {
+       "top1": 1.0
+      },
+      "drift_0.01": {
+       "top1": 1.0
+      },
+      "drift_0.03": {
+       "top1": 0.975
+      },
+      "drift_0.1": {
+       "top1": 0.65
+      },
+      "drift_0.3": {
+       "top1": 0.6
+      },
+      "drift_1": {
+       "top1": 0.25
+      },
+      "drift_gainfit_0.1": {
+       "top1": 1.0
+      },
+      "drift_gainfit_0.3": {
+       "top1": 1.0
+      },
+      "bits_1": {
+       "top1": 1.0
+      },
+      "bits_2": {
+       "top1": 1.0
+      },
+      "bits_3": {
+       "top1": 1.0
+      },
+      "bits_4": {
+       "top1": 1.0
+      },
+      "bits_5": {
+       "top1": 1.0
+      },
+      "bits_6": {
+       "top1": 1.0
+      },
+      "bits_7": {
+       "top1": 1.0
+      },
+      "bits_8": {
+       "top1": 1.0
+      },
+      "bits_10": {
+       "top1": 1.0
+      },
+      "channel_gain_0.001": {
+       "top1": 1.0
+      },
+      "channel_gain_0.003": {
+       "top1": 1.0
+      },
+      "channel_gain_0.01": {
+       "top1": 1.0
+      },
+      "channel_gain_0.03": {
+       "top1": 1.0
+      },
+      "channel_gain_0.1": {
+       "top1": 0.725
+      },
+      "channel_gain_0.3": {
+       "top1": 0.05
+      }
+     },
+     "predicted_drift": {
+      "0.001": 1.0000000000000002,
+      "0.003": 1.0000000000000002,
+      "0.01": 0.9999989519966997,
+      "0.03": 0.9430896044022363,
+      "0.1": 0.6821609475772259,
+      "0.3": 0.5626386788928275,
+      "1": 0.3595730848324931
+     },
+     "noiseless_ok": true
+    },
+    "1.25": {
+     "cells": {
+      "baseline": {
+       "top1": 1.0
+      },
+      "offset_row_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_row_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_row_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "drift_0.001": {
+       "top1": 1.0
+      },
+      "drift_0.003": {
+       "top1": 1.0
+      },
+      "drift_0.01": {
+       "top1": 0.925
+      },
+      "drift_0.03": {
+       "top1": 0.55
+      },
+      "drift_0.1": {
+       "top1": 0.625
+      },
+      "drift_0.3": {
+       "top1": 0.5
+      },
+      "drift_1": {
+       "top1": 0.325
+      },
+      "bits_1": {
+       "top1": 1.0
+      },
+      "bits_2": {
+       "top1": 1.0
+      },
+      "bits_3": {
+       "top1": 1.0
+      },
+      "bits_4": {
+       "top1": 1.0
+      },
+      "bits_5": {
+       "top1": 1.0
+      },
+      "bits_6": {
+       "top1": 1.0
+      },
+      "bits_7": {
+       "top1": 1.0
+      },
+      "bits_8": {
+       "top1": 1.0
+      },
+      "bits_10": {
+       "top1": 1.0
+      },
+      "channel_gain_0.001": {
+       "top1": 1.0
+      },
+      "channel_gain_0.003": {
+       "top1": 1.0
+      },
+      "channel_gain_0.01": {
+       "top1": 1.0
+      },
+      "channel_gain_0.03": {
+       "top1": 0.8
+      },
+      "channel_gain_0.1": {
+       "top1": 0.05
+      },
+      "channel_gain_0.3": {
+       "top1": 0.0
+      }
+     },
+     "predicted_drift": {
+      "0.001": 1.0000000000000002,
+      "0.003": 0.9999981166697507,
+      "0.01": 0.9171647665840987,
+      "0.03": 0.6776904169772092,
+      "0.1": 0.5551761614320344,
+      "0.3": 0.5180160935644488,
+      "1": 0.34661386037080266
+     },
+     "noiseless_ok": true
+    }
+   }
+  },
+  "square R=6": {
+   "s_rms": 0.25760762795834147,
+   "boundary": 44,
+   "zero_sum": {
+    "max_abs_row_sum_rel": 4.244091527589941e-12,
+    "max_abs_col_sum_rel": 2.3590964051896477e-13
+   },
+   "f": {
+    "2": {
+     "cells": {
+      "baseline": {
+       "top1": 1.0
+      },
+      "offset_row_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_row_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_row_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "drift_0.001": {
+       "top1": 1.0
+      },
+      "drift_0.003": {
+       "top1": 1.0
+      },
+      "drift_0.01": {
+       "top1": 0.975
+      },
+      "drift_0.03": {
+       "top1": 0.7
+      },
+      "drift_0.1": {
+       "top1": 0.5
+      },
+      "drift_0.3": {
+       "top1": 0.175
+      },
+      "drift_1": {
+       "top1": 0.05
+      },
+      "drift_gainfit_0.1": {
+       "top1": 1.0
+      },
+      "drift_gainfit_0.3": {
+       "top1": 1.0
+      },
+      "bits_1": {
+       "top1": 1.0
+      },
+      "bits_2": {
+       "top1": 0.875
+      },
+      "bits_3": {
+       "top1": 1.0
+      },
+      "bits_4": {
+       "top1": 1.0
+      },
+      "bits_5": {
+       "top1": 1.0
+      },
+      "bits_6": {
+       "top1": 1.0
+      },
+      "bits_7": {
+       "top1": 1.0
+      },
+      "bits_8": {
+       "top1": 1.0
+      },
+      "bits_10": {
+       "top1": 1.0
+      },
+      "channel_gain_0.001": {
+       "top1": 1.0
+      },
+      "channel_gain_0.003": {
+       "top1": 1.0
+      },
+      "channel_gain_0.01": {
+       "top1": 0.65
+      },
+      "channel_gain_0.03": {
+       "top1": 0.075
+      },
+      "channel_gain_0.1": {
+       "top1": 0.0
+      },
+      "channel_gain_0.3": {
+       "top1": 0.0
+      }
+     },
+     "predicted_drift": {
+      "0.001": 1.0000000000000002,
+      "0.003": 0.9999998322714418,
+      "0.01": 0.9398148824216179,
+      "0.03": 0.8050257482026582,
+      "0.1": 0.5561370689383467,
+      "0.3": 0.22091281768287677,
+      "1": 0.06866324176892281
+     },
+     "noiseless_ok": true
+    },
+    "1.25": {
+     "cells": {
+      "baseline": {
+       "top1": 1.0
+      },
+      "offset_row_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_row_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_row_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_col_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_1": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_10": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "offset_both_100": {
+       "top1": 1.0,
+       "differs_from_baseline": 0
+      },
+      "drift_0.001": {
+       "top1": 1.0
+      },
+      "drift_0.003": {
+       "top1": 1.0
+      },
+      "drift_0.01": {
+       "top1": 0.9
+      },
+      "drift_0.03": {
+       "top1": 0.95
+      },
+      "drift_0.1": {
+       "top1": 0.525
+      },
+      "drift_0.3": {
+       "top1": 0.275
+      },
+      "drift_1": {
+       "top1": 0.075
+      },
+      "bits_1": {
+       "top1": 1.0
+      },
+      "bits_2": {
+       "top1": 0.175
+      },
+      "bits_3": {
+       "top1": 0.6
+      },
+      "bits_4": {
+       "top1": 0.975
+      },
+      "bits_5": {
+       "top1": 1.0
+      },
+      "bits_6": {
+       "top1": 1.0
+      },
+      "bits_7": {
+       "top1": 1.0
+      },
+      "bits_8": {
+       "top1": 1.0
+      },
+      "bits_10": {
+       "top1": 1.0
+      },
+      "channel_gain_0.001": {
+       "top1": 1.0
+      },
+      "channel_gain_0.003": {
+       "top1": 0.575
+      },
+      "channel_gain_0.01": {
+       "top1": 0.025
+      },
+      "channel_gain_0.03": {
+       "top1": 0.0
+      },
+      "channel_gain_0.1": {
+       "top1": 0.0
+      },
+      "channel_gain_0.3": {
+       "top1": 0.0
+      }
+     },
+     "predicted_drift": {
+      "0.001": 1.0000000000000002,
+      "0.003": 0.9995619614007207,
+      "0.01": 0.9246431541958032,
+      "0.03": 0.9316439373494165,
+      "0.1": 0.6100987015961009,
+      "0.3": 0.2389565995472774,
+      "1": 0.07265836393759315
+     },
+     "noiseless_ok": true
+    }
+   }
+  }
+ },
+ "verdicts": {
+  "G1": true,
+  "G2": true,
+  "G3": true,
+  "G4": true,
+  "P1": true,
+  "P2": true,
+  "P3": true,
+  "P4": true,
+  "P5": true,
+  "max_abs_drift_deviation": 0.1277,
+  "drift_first_fail": {
+   "{7,3} L=2|2": 0.1,
+   "{7,3} L=2|1.25": 0.03,
+   "square R=6|2": 0.03,
+   "square R=6|1.25": 0.1
+  },
+  "bits_first_fail_descending": {
+   "{7,3} L=2|2": null,
+   "{7,3} L=2|1.25": null,
+   "square R=6|2": 2,
+   "square R=6|1.25": 3
+  },
+  "channel_gain_first_fail": {
+   "{7,3} L=2|2": 0.1,
+   "{7,3} L=2|1.25": 0.03,
+   "square R=6|2": 0.01,
+   "square R=6|1.25": 0.003
+  }
+ }
+}

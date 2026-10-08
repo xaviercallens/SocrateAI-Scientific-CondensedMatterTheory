@@ -1,0 +1,311 @@
+{
+ "post_hoc": true,
+ "boards": {
+  "{7,3} L=2": {
+   "s_rms": 0.4760557032794974,
+   "max_abs_P0": 2.0339821530562303,
+   "fraction_entries_below_s_over_2": 0.33293978748524206,
+   "full_scale_bits_minus_rms_bits": 3.0951047222137213,
+   "bits": {
+    "1": {
+     "step": 0.2380278516397487,
+     "per_node": [
+      {
+       "nonzero_entries": 814,
+       "norm_x": 6.791097712386018,
+       "norm_true_signature": 1.7120607029414925,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 814,
+       "norm_x": 6.791097712386018,
+       "norm_true_signature": 1.7120607029414692,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 814,
+       "norm_x": 6.791097712386018,
+       "norm_true_signature": 1.7120607029414847,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 814,
+       "norm_x": 6.791097712386018,
+       "norm_true_signature": 1.7120607029414625,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 814,
+       "norm_x": 6.791097712386018,
+       "norm_true_signature": 1.7120607029415709,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 814,
+       "norm_x": 6.7910977123860174,
+       "norm_true_signature": 1.7120607029415358,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 814,
+       "norm_x": 6.791097712386018,
+       "norm_true_signature": 1.712060702941431,
+       "decode_correct": true
+      }
+     ]
+    },
+    "2": {
+     "step": 0.11901392581987436,
+     "per_node": [
+      {
+       "nonzero_entries": 662,
+       "norm_x": 3.062152221045968,
+       "norm_true_signature": 1.7120607029414925,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 662,
+       "norm_x": 3.062152221045968,
+       "norm_true_signature": 1.7120607029414692,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 662,
+       "norm_x": 3.062152221045968,
+       "norm_true_signature": 1.7120607029414847,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 662,
+       "norm_x": 3.062152221045968,
+       "norm_true_signature": 1.7120607029414625,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 662,
+       "norm_x": 3.062152221045968,
+       "norm_true_signature": 1.7120607029415709,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 662,
+       "norm_x": 3.062152221045968,
+       "norm_true_signature": 1.7120607029415358,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 662,
+       "norm_x": 3.0621522210459684,
+       "norm_true_signature": 1.712060702941431,
+       "decode_correct": true
+      }
+     ]
+    },
+    "3": {
+     "step": 0.05950696290993718,
+     "per_node": [
+      {
+       "nonzero_entries": 2014,
+       "norm_x": 2.6982323237772006,
+       "norm_true_signature": 1.7120607029414925,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 2014,
+       "norm_x": 2.6982323237772006,
+       "norm_true_signature": 1.7120607029414692,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 2014,
+       "norm_x": 2.6982323237772006,
+       "norm_true_signature": 1.7120607029414847,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 2014,
+       "norm_x": 2.6982323237772006,
+       "norm_true_signature": 1.7120607029414625,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 2014,
+       "norm_x": 2.6982323237772006,
+       "norm_true_signature": 1.7120607029415709,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 2014,
+       "norm_x": 2.6982323237772006,
+       "norm_true_signature": 1.7120607029415358,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 2014,
+       "norm_x": 2.6982323237772006,
+       "norm_true_signature": 1.712060702941431,
+       "decode_correct": true
+      }
+     ]
+    },
+    "4": {
+     "step": 0.02975348145496859,
+     "per_node": [
+      {
+       "nonzero_entries": 3452,
+       "norm_x": 1.9309986541702087,
+       "norm_true_signature": 1.7120607029414925,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 3452,
+       "norm_x": 1.930998654170208,
+       "norm_true_signature": 1.7120607029414692,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 3452,
+       "norm_x": 1.9309986541702084,
+       "norm_true_signature": 1.7120607029414847,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 3452,
+       "norm_x": 1.9309986541702082,
+       "norm_true_signature": 1.7120607029414625,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 3452,
+       "norm_x": 1.9309986541702084,
+       "norm_true_signature": 1.7120607029415709,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 3452,
+       "norm_x": 1.930998654170209,
+       "norm_true_signature": 1.7120607029415358,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 3452,
+       "norm_x": 1.9309986541702093,
+       "norm_true_signature": 1.712060702941431,
+       "decode_correct": true
+      }
+     ]
+    },
+    "6": {
+     "step": 0.007438370363742147,
+     "per_node": [
+      {
+       "nonzero_entries": 5381,
+       "norm_x": 1.7344167981157916,
+       "norm_true_signature": 1.7120607029414925,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 5381,
+       "norm_x": 1.7344167981157925,
+       "norm_true_signature": 1.7120607029414692,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 5381,
+       "norm_x": 1.734416798115792,
+       "norm_true_signature": 1.7120607029414847,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 5381,
+       "norm_x": 1.7344167981157914,
+       "norm_true_signature": 1.7120607029414625,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 5381,
+       "norm_x": 1.7344167981157912,
+       "norm_true_signature": 1.7120607029415709,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 5381,
+       "norm_x": 1.734416798115791,
+       "norm_true_signature": 1.7120607029415358,
+       "decode_correct": true
+      },
+      {
+       "nonzero_entries": 5381,
+       "norm_x": 1.7344167981157914,
+       "norm_true_signature": 1.712060702941431,
+       "decode_correct": true
+      }
+     ]
+    }
+   }
+  },
+  "square R=6": {
+   "s_rms": 0.25760762795834147,
+   "max_abs_P0": 1.7193785474928163,
+   "fraction_entries_below_s_over_2": 0.34710743801652894,
+   "full_scale_bits_minus_rms_bits": 3.7386399926743756,
+   "bits": {
+    "1": {
+     "step": 0.12880381397917073,
+     "per_node": [
+      {
+       "nonzero_entries": 80,
+       "norm_x": 1.1520563352746538,
+       "norm_true_signature": 0.14253184628289353,
+       "decode_correct": true
+      }
+     ]
+    },
+    "2": {
+     "step": 0.06440190698958537,
+     "per_node": [
+      {
+       "nonzero_entries": 64,
+       "norm_x": 0.5152152559166829,
+       "norm_true_signature": 0.14253184628289353,
+       "decode_correct": true
+      }
+     ]
+    },
+    "3": {
+     "step": 0.03220095349479268,
+     "per_node": [
+      {
+       "nonzero_entries": 164,
+       "norm_x": 0.41237341158191004,
+       "norm_true_signature": 0.14253184628289353,
+       "decode_correct": true
+      }
+     ]
+    },
+    "4": {
+     "step": 0.01610047674739634,
+     "per_node": [
+      {
+       "nonzero_entries": 324,
+       "norm_x": 0.2898085814531341,
+       "norm_true_signature": 0.14253184628289353,
+       "decode_correct": true
+      }
+     ]
+    },
+    "6": {
+     "step": 0.004025119186849085,
+     "per_node": [
+      {
+       "nonzero_entries": 1368,
+       "norm_x": 0.1552673748373781,
+       "norm_true_signature": 0.14253184628289353,
+       "decode_correct": true
+      }
+     ]
+    }
+   }
+  }
+ }
+}

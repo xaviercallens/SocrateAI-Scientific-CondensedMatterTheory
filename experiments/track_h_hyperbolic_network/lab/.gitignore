@@ -1,2 +1,6 @@
 # demo outputs of analyze_measurements.py --demo are synthetic; real measurements are committed under data/
 data/demo_*
+# LaTeX build leftovers of LAB_WEEK_SHEET (the .tex and .pdf are committed)
+*.aux
+*.log
+*.out

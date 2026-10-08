@@ -254,3 +254,115 @@ consequence is practical: for defect localisation the measurement chain of phase
 and even the excluded 10-bit ADC would do for this task; the 12-bit requirement of the virtual bench applies to the
 τ measurement, not to localisation. The other direction of the question, the smallest contrast the chain can localise
 under these perturbations, is untested.
+
+## Hardware-like perturbations driven to failure (`PREREGISTRATION_22.md`, c044fd8 before the run; ledger H3-X-0010)
+Design: Boards: {7,3} L=2 and square R=6 (the two boards of the garage build); contrasts f ∈ {2, 1.25}; deepest depth class
+(7 equivalent nodes on {7,3}, 1 node on the square); i.i.d. noise 3×10⁻⁴ (the budget) on each map as in H3-X-0009;
+**40 trials per cell**, noise draws common to all cells of a (board, contrast), so that decisions can be compared
+trial by trial; decoder, dictionary and node list from `exp17_localisation_under_correlated_hardware_n.py` (matched
+filter over all interior nodes, contrasts {0.1, 0.5, 0.8, 1.25, 2, 5, 10, 100}). Perturbation families:
+- **Offsets** u1ᵀ, 1wᵀ and u1ᵀ + 1wᵀ with entries N(0, (k·s)²), independent per map, k ∈ {1, 10, 100}, plain decoder.
+- **Scalar drift** σ ∈ {10⁻³, 3×10⁻³, 10⁻², 3×10⁻², 10⁻¹, 3×10⁻¹, 1}: second map scaled by (1 + δ), δ ~ N(0, σ²),
+  plain decoder; and the gain-fitted decoder at σ ∈ {0.1, 0.3} for f = 2.
+- **Quantisation** to 1, 2, 3, 4, 5, 6, 7, 8, 10 bits (step 2^(−bits)·s), plain decoder.
+- **Per-channel gain mismatch (exploratory, no prediction):** row gains (1 + g_i), g_i ~ N(0, σ_g²) independent per
+  channel and per map, σ_g ∈ {10⁻³, 3×10⁻³, 10⁻², 3×10⁻², 10⁻¹, 3×10⁻¹}, plain decoder. This is what channel-to-channel
+  gain differences between two measurements would look like; it is not invisible (a diagonal scaling of P).
+Data file: `data/hardware_noise_failure_boundaries.json`.
+Data: `data/hardware_noise_failure_boundaries.json`.
+
+**(a) Offsets** (`differs_from_baseline`, trials whose decoded node differs from the unperturbed decode)
+
+| Board | f | structure | scale 1 | scale 10 | scale 100 |
+|---|---|---|---|---|---|
+| {7,3} L=2 | 2 | row | 0 | 0 | 0 |
+| {7,3} L=2 | 2 | col | 0 | 0 | 0 |
+| {7,3} L=2 | 2 | both | 0 | 0 | 0 |
+| {7,3} L=2 | 1.25 | row | 0 | 0 | 0 |
+| {7,3} L=2 | 1.25 | col | 0 | 0 | 0 |
+| {7,3} L=2 | 1.25 | both | 0 | 0 | 0 |
+| square R=6 | 2 | row | 0 | 0 | 0 |
+| square R=6 | 2 | col | 0 | 0 | 0 |
+| square R=6 | 2 | both | 0 | 0 | 0 |
+| square R=6 | 1.25 | row | 0 | 0 | 0 |
+| square R=6 | 1.25 | col | 0 | 0 | 0 |
+| square R=6 | 1.25 | both | 0 | 0 | 0 |
+
+**(b) Scalar drift** (top-1, measured and preregistered/predicted, by σ)
+
+| Board | f | quantity | σ 0.001 | σ 0.003 | σ 0.01 | σ 0.03 | σ 0.1 | σ 0.3 | σ 1 |
+|---|---|---|---|---|---|---|---|---|---|
+| {7,3} L=2 | 2 | measured | 1.00 | 1.00 | 1.00 | 0.975 | 0.650 | 0.600 | 0.250 |
+| {7,3} L=2 | 2 | predicted | 1.00 | 1.00 | 1.00 | 0.943 | 0.682 | 0.563 | 0.360 |
+| {7,3} L=2 | 1.25 | measured | 1.00 | 1.00 | 0.925 | 0.550 | 0.625 | 0.500 | 0.325 |
+| {7,3} L=2 | 1.25 | predicted | 1.00 | 1.00 | 0.917 | 0.678 | 0.555 | 0.518 | 0.347 |
+| square R=6 | 2 | measured | 1.00 | 1.00 | 0.975 | 0.700 | 0.500 | 0.175 | 0.0500 |
+| square R=6 | 2 | predicted | 1.00 | 1.00 | 0.940 | 0.805 | 0.556 | 0.221 | 0.0687 |
+| square R=6 | 1.25 | measured | 1.00 | 1.00 | 0.900 | 0.950 | 0.525 | 0.275 | 0.0750 |
+| square R=6 | 1.25 | predicted | 1.00 | 1.00 | 0.925 | 0.932 | 0.610 | 0.239 | 0.0727 |
+
+Gain-fitted decoder (f = 2 only):
+
+| Board | f | gain-fitted top-1 σ 0.1 | σ 0.3 |
+|---|---|---|---|
+| {7,3} L=2 | 2 | 1.00 | 1.00 |
+| square R=6 | 2 | 1.00 | 1.00 |
+
+**(c) Quantisation** (top-1 by bit count)
+
+| Board | f | bits 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| {7,3} L=2 | 2 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| {7,3} L=2 | 1.25 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=6 | 2 | 1.00 | 0.875 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| square R=6 | 1.25 | 1.00 | 0.175 | 0.600 | 0.975 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+
+**(d) Per-channel gain mismatch (EXPLORATORY, no prediction)** (top-1 by σ_g)
+
+| Board | f | sigma_g=0.001 | 0.003 | 0.01 | 0.03 | 0.1 | 0.3 |
+|---|---|---|---|---|---|---|---|
+| {7,3} L=2 | 2 | 1.00 | 1.00 | 1.00 | 1.00 | 0.725 | 0.0500 |
+| {7,3} L=2 | 1.25 | 1.00 | 1.00 | 1.00 | 0.800 | 0.0500 | 0.00 |
+| square R=6 | 2 | 1.00 | 1.00 | 0.650 | 0.0750 | 0.00 | 0.00 |
+| square R=6 | 1.25 | 1.00 | 0.575 | 0.0250 | 0.00 | 0.00 | 0.00 |
+
+**(e) First failure** (first grid value with top-1 < 0.9)
+
+| Board | f | first drift sigma with top-1<0.9 | first bit count (descending from 10) with top-1<0.9 | first per-channel sigma_g with top-1<0.9 |
+|---|---|---|---|---|
+| {7,3} L=2 | 2 | 0.1 | none | 0.1 |
+| {7,3} L=2 | 1.25 | 0.03 | none | 0.03 |
+| square R=6 | 2 | 0.03 | 2 | 0.01 |
+| square R=6 | 1.25 | 0.1 | 3 | 0.003 |
+
+**Verdicts**
+
+| Prediction | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 | top-1 ≥ 0.9 with i.i.d. noise only, all four (board, contrast) cells | baseline top-1 1.00 in all four cells | PASS |
+| G2 | largest absolute row sum and column sum ≤ 10⁻⁹ of the largest entry, both boards | {7,3} L=2: row 2.58e-12, col 7.24e-13; square R=6: row 4.24e-12, col 2.36e-13 | PASS |
+| G3 | noiseless decode returns the true node for every node, both contrasts, both boards | noiseless_ok true in all four cells | PASS |
+| G4 | recomputed drift predictions agree with the preregistered table to 2×10⁻³ | agreement verdict true (the recomputed deviation itself is not in the data file) | PASS |
+| P1 | 0 trials whose decoded node differs from the unperturbed decode, every offset structure, scale, board and contrast | differs_from_baseline 0 in every offset cell | held |
+| P2 | every (board, contrast, σ) cell within 3·√(p(1 − p)/40) + 0.05 of the predicted p | max_abs_drift_deviation 0.128 | held |
+| P3 | gain-fitted top-1 ≥ 0.9 at σ = 0.3, f = 2, both boards | {7,3} L=2: 1.00; square R=6: 1.00 | held |
+| P4 | top-1 ≥ 0.9 at every bit count above b_hi and ≥ 0.8 at b_hi ({7,3} L=2 f=2 b_hi 2; square R=6 f=2 b_hi 5; {7,3} L=2 f=1.25 b_hi 4; square R=6 f=1.25 b_hi 7) | {7,3} L=2 f=2: all bit counts 1.00; square R=6 f=2 bits 5–10: all 1.00; {7,3} L=2 f=1.25 bits 4–10: all 1.00; square R=6 f=1.25 bits 7–10: all 1.00 | held |
+| P5 | square R=6 top-1 < 0.9 at some bit count in {1, 2, 3} for f = 2 and in {1, 2, 3, 4} for f = 1.25 | square R=6 f=2: lowest top-1 0.875 (bits 1–3); square R=6 f=1.25: lowest top-1 0.175 (bits 1–4) | held |
+
+Deviations: none.
+
+Limits: Hardware (everything here is simulation); correlations inside one map; multi-node defects; contrasts outside {1.25, 2}; boards larger than N ≈ 113; anything about holography.
+
+*Recorded by a low-tier agent (Haiku) from the data file; audited with `tools/audit_low_tier.py` (pass, no correction). The reading below is the orchestrator's. A post-hoc diagnostic (`exp22_diag_quantisation.py`, `data/quantisation_diagnostic.json`, not part of the preregistered tests) supports the quantisation paragraph.*
+
+**Reading.** This is the first card of the series in which every preregistered prediction held, and the reason is that the predictions were derived from the decoder's geometry instead of guessed from perturbation sizes (LL-A16). Four findings, one qualifier each.
+
+*Offsets cannot matter.* Every dictionary signature has zero row and column sums to 10⁻¹¹ of its largest entry (current conservation), so offsets of the form u1ᵀ, 1wᵀ or both are orthogonal to every candidate, and the decoded node was identical to the unperturbed one in every offset cell, up to 100 times the rms entry. The three refuted predictions of H3-X-0009 were therefore not luck in the safe direction; they were wrong for a reason I could have derived. Per-channel and per-injection offsets are the physically relevant ones, and they are invisible. Qualifier: only offsets that vary in both indices matter, and those are noise.
+
+*Gain drift between the two maps is the real hazard of this family, and it is computable.* The plain decoder keeps top-1 ≥ 0.9 up to 1 % drift in all four cells (0.900 on square R=6 at f = 1.25, exactly at the threshold) and fails by 3–10 %; the gain-fitted decoder is unaffected up to 30 %. The curves predicted by integrating the noiseless decode over the drift law agree with the simulated ones within the preregistered tolerance in all 28 cells (largest deviation 0.128). Qualifier: the tolerance (three binomial standard errors plus 0.05) is generous, and two of the 28 cells were known to agree before the prediction was computed.
+
+*Quantisation is nearly harmless on the hyperbolic board and cheap to avoid on the square.* The hyperbolic board localises at every tested bit count down to 1 bit relative to the rms entry, at both contrasts. The square board fails only at 2 bits (f = 2: 0.875, which is 35 of 40 trials, one short of the threshold, so a marginal failure) and at 2 and 3 bits (f = 1.25: 0.175 and 0.600; 0.975 at 4 bits). The failures begin one bit later than the white-noise equivalence predicted (it said at 3 bits or fewer for f = 2 and 4 bits or fewer for f = 1.25), consistent with undithered rounding being gentler than white noise. The curve is not monotone: the square board is perfect at 1 bit and poor at 2. The post-hoc diagnostic explains why: at 1 bit the quantised difference is a sparse deterministic fingerprint of the defect node (814 flipped entries on {7,3}, 80 on the square, norm several times the true signature), which an ideal undithered quantiser with aligned grids preserves, and noiselessly the decode is correct at every tested bit count on both boards, so the failures at 2 to 3 bits are the 3×10⁻⁴ noise flipping the roundings. For a converter spanning ±max|P| the step relative to the rms entry is 2^(3.10−N) on {7,3} and 2^(3.74−N) on the square (diagnostic data), so the square board needs about N ≥ 8 bits with margin and the hyperbolic board far less; the phase-1 chain (16 bits) is more than enough. Qualifier: ideal rounding only, no converter nonlinearity, no dither, both maps on the same grid.
+
+*Per-channel gain mismatch is the requirement worth writing down (exploratory).* Independent row gains on the two maps break localisation first at σ_g = 0.003 (square, f = 1.25), 0.01 (square, f = 2), 0.03 ({7,3}, f = 1.25) and 0.1 ({7,3}, f = 2). For the phase-2 chain (a 77-channel multiplexed map), the channel-to-channel gains of the baseline and defect measurements must therefore repeat to about 0.3 % on the square board and about 1 % on the hyperbolic one; taking both maps through the same chain in one session makes that easy, and a changing amplifier between the two would not.
+
+Limits of the whole card: simulation with an ideal dictionary at N ≈ 112, two boards, 40 trials per cell (standard error up to 0.08), one i.i.d. noise level, single-node defects, contrasts 1.25 and 2, and no joint worst case of component tolerance with these perturbations. Nothing here concerns holography.
