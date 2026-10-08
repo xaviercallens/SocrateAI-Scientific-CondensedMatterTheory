@@ -163,5 +163,12 @@
   "data": [
    "data/momentum_resolved_rates_on_the_cylinder.json"
   ]
+ },
+ "PREREGISTRATION_25.md": {
+  "title": "exact semi infinite blocks asymptotic rates",
+  "script": "exp25_exact_semi_infinite_blocks_asymptotic_ra.py",
+  "data": [
+   "data/exact_semi_infinite_blocks_asymptotic_ra.json"
+  ]
  }
 }
