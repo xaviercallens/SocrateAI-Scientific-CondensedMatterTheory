@@ -671,3 +671,33 @@ a tolerance ladder per draw because the stiffer square board aborts at 1e-10 (De
 
 **Reading (preregistration 31).** The bench's modal solution and an independent stiff integrator agree on the waveforms and on the fitted time constants, and the predicted ratio 0.604 survives the 1 % component spread with a scatter of about 1 %; nothing in the lab chain is contradicted. P1 failed only on the square board, where the integrator had to be run at a looser tolerance (1e-8); the difference of 1.7e-6 of V0 is the order of the integrator's own error at that setting, not evidence of a bench error, and the fitted τ agree to 3e-5 anyway. This is a check of the model code, not of the hardware.
 Limits: the same model on both sides (source resistance, probe loading, leakage and parasitics are not in either), 12 ratio draws, tolerance uniform, binding limits on tolerances.
+
+## Depth-ordered residuals of the Jacobian columns (preregistration 32, task Q16 next step)
+
+Recorded by the orchestrator directly (not through the low-tier loop, not in the Elenchus ledger). Data: `data/depth_ordered_residuals_of_jacobian_columns.json`. Square disk radius 16, Householder QR, scored layers 2 to 7 (sigma_min above 1e-12);
+{7,3} with 5 layers by the Gram/Cholesky route (Deviation 1), layers 1 to 4. A disclosed pilot at radius 10 informed the bands. Slopes are in decades per layer.
+
+| Item | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 exact chain sigma_min <= leave-one-out <= ordered <= shallower | slack 1e-9 | holds on all six layers | PASS |
+| G2 QR reconstruction | <= 1e-12 | 3.4e-16 | PASS |
+| G3 leave-one-out from R^-1 equals 1/sqrt(diag(G^-1)) | <= 1e-8 | 1.6e-14 | PASS |
+| G4 (added in Deviation 1) Gram route equals Householder | <= 1e-6 | 2.0e-8 | PASS |
+| P1 ordered-residual slope within 0.85 to 1.15 of the sigma_min slope | | -1.243 against -1.272, ratio 0.977 | HELD |
+| P2 gap log10 rho - log10 sigma_min in [0, 1.5] | | 0.61 to 1.39 | HELD |
+| P3 gap log10 s - log10 rho in [0, 1.5] on every layer, mean >= 0.5 | | 0.62, 0.93, 1.29, 1.81, 1.41, 1.33; mean 1.23 | **REFUTED** (layer 5 exceeds 1.5) |
+| P4 median relative shallower residual: slope in [-1.2, -0.4], Pearson <= -0.98 | | -0.656, -0.9992 | HELD |
+| P5 {7,3}: smaller |slope|, gap in [0, 1.5] | | -0.401 against -1.243; gaps 0.09 to 0.37 | HELD |
+| P6 residual slope >= 5 x the nearest-neighbour cloud slope | | 0.656 against 0.090, ratio 7.3 | HELD |
+
+Other slopes on the square disk (decades per layer): leave-one-out minimum -1.263, minimum shallower-span residual -1.085.
+
+Deviations: Deviation 1 (two launches were killed for memory because the explicit Jacobian on {7,3} with 5 layers needs tens of gigabytes, my design error; the hyperbolic part uses the Gram/Cholesky route, valid because log10 kappa there is about 4).
+The pilot at radius 10 had shown shallower-span gaps up to 1.2 decades; at radius 16 the gap reaches 1.8, so the pilot-informed bound 1.5 was too tight.
+
+**Reading (preregistration 32).** This confirms the reading of preregistration 30 and sharpens it. The distance of a deep column to the span of the columns that precede it carries sigma_min's exponential rate almost exactly (the depth-ordered minimum falls 1.243 decades per layer against 1.272 for sigma_min,
+within 2.3 %), and it is a certified upper bound (G1; the bound of sigma_min by a column residual is machine-checked in `lean/dtn_offsets/GramSchmidtBound.lean`, the leave-one-out chain is standard linear algebra and was checked numerically).
+The typical column, not only the worst, also collapses exponentially (median relative distance to the shallower span, 0.656 decades per layer, correlation -0.999), seven times faster than the nearest-neighbour topology that preregistration 30 measured. So ill-conditioning here is a property of the whole earlier span:
+each deep column lies in an exponentially thin cone around the span of the shallower ones, and it is invisible to nearest-neighbour persistent homology. Dependence within the layer itself costs a further 0.6 to 1.8 decades at each layer (a level, not a rate), more than the pilot suggested. On the {7,3} tiling the worst column falls 0.40 decades per layer over four layers, a third of the square's rate,
+and the median relative residual of layers 1 to 4 is 0.89, 0.54, 0.55 and 0.35, so most hyperbolic columns remain well separated while the worst ones decay; four layers cannot distinguish a polynomial from a slow exponential.
+Limits: double precision, direct current, one square disk, four hyperbolic layers, no noise; the certificate bounds sigma_min from above and says nothing about stability under noise.
