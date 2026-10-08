@@ -170,5 +170,12 @@
   "data": [
    "data/exact_semi_infinite_blocks_asymptotic_ra.json"
   ]
+ },
+ "PREREGISTRATION_26.md": {
+  "title": "diagonal boundary orientation and the growth rate",
+  "script": "exp26_diagonal_boundary_orientation_and_the_gr.py",
+  "data": [
+   "data/diagonal_boundary_orientation_and_the_gr.json"
+  ]
  }
 }
