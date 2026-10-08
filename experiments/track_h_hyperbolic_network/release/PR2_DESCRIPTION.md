@@ -59,7 +59,7 @@ Each was preregistered and committed before it ran; refutations and corrections 
 - Limits: single-node defects, oracle decoder (known contrast set), i.i.d. noise, 20 trials per cell, tolerance ≤ 5 %.
 
 ### Published
-- **Zenodo v1.1:** DOI [10.5281/zenodo.23002378](https://doi.org/10.5281/zenodo.23002378); v1.0: [10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391); concept DOI 10.5281/zenodo.23000390.
+- **Zenodo v1.2 (2026-10-08):** DOI [10.5281/zenodo.23228685](https://doi.org/10.5281/zenodo.23228685) (18 pages: mechanism of the depth dependence, defects and localisation, other tilings; built from ccfc30d, MD5-verified). v1.1: [10.5281/zenodo.23002378](https://doi.org/10.5281/zenodo.23002378); v1.0: [10.5281/zenodo.23000391](https://doi.org/10.5281/zenodo.23000391); concept DOI 10.5281/zenodo.23000390.
 - **Hugging Face:** the [dataset](https://huggingface.co/datasets/callensxavier/hyperbolic-resistor-networks) and the [simulator](https://huggingface.co/callensxavier/hyperbolic-resistor-network-simulator).
 - See `release/PUBLISHED.md`.
 

@@ -5,7 +5,7 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
 
 ## Now (blocked on the human)
 - **Q0 · human · release** — merge PR #2 and create GitHub release v1.1: `bash experiments/track_h_hyperbolic_network/release/merge_and_release.sh` from your own terminal. Acceptance: the script prints the merge commit and the `v1.1` release with `main.pdf` attached.
-- **Q1 · human · v1.2** — read `paper/main_v1_2.pdf` (17 pages, rebuilt 2026-10-07 with the coherence mechanism, Table 9, Fig. 4, the other-tiling rank certificates and integrator controls, minimum contrast and hardware noise; `release/RELEASE_NOTES_v1.2.md`); decide: (a) publish as Zenodo v1.2 now (`release/export.py --v12`, then `release/publish.sh newversion`, verify MD5 + metadata, then `publish` on explicit go-ahead), (b) wait for specialist feedback (H-5), (c) request changes. Nothing is published without this answer.
+- **Q1 · done 2026-10-08** — v1.2 published on the user's instruction: DOI 10.5281/zenodo.23228685 (18 pages, built from ccfc30d, MD5-verified); Hugging Face dataset and simulator updated in place (`release/PUBLISHED.md`).
 - **Q2 · human · H-6** — compile `lean/HyperbolicLogDepth.lean` on a machine with Lean 4 + Mathlib (command in `lean/README.md`); report the axiom footprint. Blocked here: no toolchain.
 
 ## Next experiments (design fixed; low/mid execution)

@@ -1,4 +1,4 @@
-## v1.2 (draft, prepared 2026-10-07; not yet published)
+## v1.2 (published 2026-10-08: DOI [10.5281/zenodo.23228685](https://doi.org/10.5281/zenodo.23228685), concept DOI 10.5281/zenodo.23000390)
 
 Second revision of the Track H preprint *Logarithmic boundary depth and the conditioning of the discrete inverse
 conductance problem on hyperbolic lattices*. The v1.1 source and PDF are untouched; `paper/main_v1_2.tex` is
@@ -31,12 +31,13 @@ is read from a recorded, preregistered result. All computations were **preregist
 - Part of the later runs were recorded by a small model and audited by a larger one under `docs/RUNBOOK.md`; the
   paper says so.
 
-### Records to create when publishing
-- Zenodo: new version under concept DOI 10.5281/zenodo.23000390 (`release/publish.sh newversion`, then verify the
-  draft's MD5 checksums and metadata, then `release/publish.sh publish` on explicit go-ahead).
-- Hugging Face dataset: new tables `coherence_depth.csv`, `coherence_matched.csv`, `exact_rank_tilings.csv`,
-  `rc_benchmark_tilings.csv`, `minimum_contrast.csv`, `hardware_noise.csv` (`release/export.py`).
-- Ledger: H0-X-0009, H0-X-0010, H0-X-0011, H0-B-0003, H2-X-0005, H3-X-0008, H3-X-0009 added since v1.1.
+### Records
+- Zenodo: new version 1.2 under concept DOI 10.5281/zenodo.23000390, built from commit ccfc30d, MD5-verified before
+  publishing and checked anonymously after (`release/PUBLISHED.md`).
+- Hugging Face dataset, updated in place: new tables `coherence_depth.csv`, `coherence_matched.csv`,
+  `coherence_mechanism_test.csv`, `flat_rate_windows.csv`, `exact_rank_tilings.csv`, `rc_benchmark_tilings.csv`,
+  `minimum_contrast.csv`, `hardware_noise.csv`; simulator repository updated in place.
+- Ledger since v1.1: H0-X-0009 to H0-X-0013, H0-B-0003, H2-X-0005, H3-X-0008, H3-X-0009.
 
 ### Not in this version
 The garage measurement (prereg 13, not yet run), a derivation of the coherence mechanism (card Q5d), two-node defects (Q4).
