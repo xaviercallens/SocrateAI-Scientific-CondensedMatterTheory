@@ -50,3 +50,12 @@ G1 failed: the time-to-frequency link does not hold for the integrator as config
 ## Not claimed
 That any of this applies to noisy data (this is conditioning in double precision, not recoverability with noise); complex s (real s only); the strip rate
 with s > 0 (no closed form here); that κ of a stacked matrix is the right figure of merit; holography; any statement about the hardware beyond conditioning of the model.
+
+## Deviation 1 (2026-10-08, written after G1 of the first run failed and before any rerun)
+G1 as written **failed**: the Laplace transform of the CVODE current differs from Λ(s)e_j/s by 1.6e-3 at s = 0.1 (gate 1e-5), and by 3.9e-9 and 3.8e-10 at
+s = 0.3 and 1. This is a design error of mine, not an integrator failure: with the step held, the boundary current tends to the steady value Λ(0)e_j, not to zero,
+so truncating the transform at T = 40/λ_min leaves a tail I(T)e^{−sT}/s that is 1.6e-3 of the integral at s = 0.1 (e^{−sT} with sT = 6.45). The window T was set
+from the interior relaxation time only. Variant **G1′**, labelled post hoc: add the tail from the integrator's own final current, I(T)e^{−sT}/s, to the Simpson
+sum, tolerance unchanged at 1e-5, same three s. G1 as written stays recorded as failed. The stacked-Jacobian predictions P1–P4 do not use the integrator;
+they are reported with the G1 status stated beside them, and the statement that the time-to-frequency link holds rests on G1′ only, which is post hoc.
+Script for G1′: `exp29_diag_g1_tail.py`, data `data/laplace_link_tail_corrected.json`.
