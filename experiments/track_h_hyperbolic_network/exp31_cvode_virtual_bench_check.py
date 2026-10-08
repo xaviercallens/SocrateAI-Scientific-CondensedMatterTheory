@@ -52,31 +52,40 @@ def draw_board(g, rng, tol_R, tol_C):
     return {"Lii": Lii, "Lib": Lib, "Cv": Cv, "tau_nom": tau_nom, "t": t, "pidx": pidx, "Vmodal": Vmodal, "n_int": len(interior), "nb": len(bnd)}
 
 
-def cvode_waveform(b):
+LADDER = ((1e-10, 1e-10), (1e-8, 1e-8), (1e-6, 1e-6))
+
+
+def cvode_waveform(b, return_tol=False):
     drive = b["Lib"] @ np.full(b["nb"], vb.V0)
     Cinv = 1.0 / b["Cv"]
     Lii = b["Lii"]
-
     tau0 = b["tau_nom"]
 
     def rhs(_s, y):   # Deviation 1: time in units of the nominal time constant
         return list(-tau0 * Cinv * (Lii @ np.array(y) + drive))
 
-    solver = CvodeSolver(method="bdf", rtol=1e-10, atol=1e-10, max_steps=200000)
-    y, tc, out = [0.0] * b["n_int"], 0.0, [np.zeros(b["n_int"])]
-    for tk in b["t"][1:]:
-        tc, y = solver.solve(rhs, tc, y, float(tk) / tau0)
-        out.append(np.array(y))
-    return np.array(out)[:, b["pidx"]].T
+    last = None
+    for rtol, atol in LADDER:   # Deviation 3: first rung that does not abort
+        try:
+            solver = CvodeSolver(method="bdf", rtol=rtol, atol=atol, max_steps=200000)
+            y, tc, out = [0.0] * b["n_int"], 0.0, [np.zeros(b["n_int"])]
+            for tk in b["t"][1:]:
+                tc, y = solver.solve(rhs, tc, y, float(tk) / tau0)
+                out.append(np.array(y))
+            wf = np.array(out)[:, b["pidx"]].T
+            return (wf, (rtol, atol)) if return_tol else wf
+        except RuntimeError as ex:
+            last = ex
+    raise last
 
 
 def run_pair(g, seed, tol_R, tol_C):
     b = draw_board(g, np.random.default_rng(seed), tol_R, tol_C)
-    Vc = cvode_waveform(b)
+    Vc, tol_used = cvode_waveform(b, True)
     wave = float(np.abs(Vc - b["Vmodal"]).max() / vb.V0)
     tc, _ = vb.fit_tau(b["t"], Vc)
     tm, _ = vb.fit_tau(b["t"], b["Vmodal"])
-    return wave, tc, tm
+    return wave, tc, tm, tol_used
 
 
 def main():
@@ -95,8 +104,8 @@ def main():
     wave_rows = []
     for name, g in boards:
         for i in range(6):
-            w, tc, tm = run_pair(g, SEED_WAVE + i, 0.05, 0.10)
-            wave_rows.append({"board": name, "seed": SEED_WAVE + i, "max_rel_waveform_diff": w, "tau_cvode": tc, "tau_modal": tm,
+            w, tc, tm, tu = run_pair(g, SEED_WAVE + i, 0.05, 0.10)
+            wave_rows.append({"board": name, "seed": SEED_WAVE + i, "max_rel_waveform_diff": w, "tau_cvode": tc, "tau_modal": tm, "tolerances_used": list(tu),
                               "tau_rel_diff": abs(tc - tm) / tm})
         print(name, "waveform draws done", flush=True)
     res["waveform_draws"] = wave_rows

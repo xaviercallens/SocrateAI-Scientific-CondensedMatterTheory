@@ -42,3 +42,9 @@ The scaling of Deviation 1 did not cure the abort. A probe on the G1 board (squa
 3.7e-8 V at (1e-12, 1e-10), 3.9e-7 V at (1e-8, 1e-10); the error is set by atol, not rtol. Changes, made now: (a) the integrator tolerances are rtol 1e-10, atol 1e-10 (instead of 1e-10, 1e-12);
 (b) the G1 threshold is relaxed from 1e-8 to 1e-7 of V0, because the probe showed that 1e-8 is not attainable with atol >= 1e-10 (I knew the 1.1e-8 figure when setting 1e-7; this relaxation is post hoc in that sense). P1, P2 and P3 are unchanged
 (P1 limit 1e-6 of V0, P2 limit 1e-4 on tau, P3 as written).
+
+## Deviation 3 (2026-10-08, written after the second launch: G1 passed at 5.3e-8 of V0, then CVODE aborted on a scored board before any comparison)
+A probe on draws of the scored boards (seed 3100, 5 % / 10 %) showed that the binding integrates the {7,3} L=2 board (35 interior nodes) at (rtol, atol) = (1e-10, 1e-10) with a global error of 1.1e-8 of V0, but aborts at the first step on the
+square R=6 board (69 interior nodes, largest scaled rate 35) at that setting, and succeeds there at (1e-8, 1e-8) with error 1.1e-7 of V0 and at (1e-6, 1e-6) with 5.9e-7 of V0. Change, made now, before any scored comparison: each draw
+is integrated with the first of the ladder (1e-10, 1e-10), (1e-8, 1e-8), (1e-6, 1e-6) that does not abort; the tolerance pair used is stored with the draw. The thresholds of P1, P2, P3 are unchanged (P1 1e-6 of V0 is met by the first two rungs
+in the probe and not guaranteed by the third; a draw that needs the third rung and exceeds P1 counts as P1 refuted).
