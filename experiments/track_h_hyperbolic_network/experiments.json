@@ -156,5 +156,12 @@
   "data": [
    "data/cylinder_exponential_sum_picture.json"
   ]
+ },
+ "PREREGISTRATION_24.md": {
+  "title": "momentum resolved rates on the cylinder",
+  "script": "exp24_momentum_resolved_rates_on_the_cylinder.py",
+  "data": [
+   "data/momentum_resolved_rates_on_the_cylinder.json"
+  ]
  }
 }
