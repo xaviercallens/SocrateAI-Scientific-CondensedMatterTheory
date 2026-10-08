@@ -16,6 +16,10 @@ is read from a recorded, preregistered result. All computations were **preregist
   flat disks; the condition number of the Jacobian restricted to depth ≤ d grows by 0.98–1.19 decades per depth on
   flat lattices against 0.28–0.44 on hyperbolic ones, and the deficit survives size matching. Four of eight predictions
   were refuted, all statistic choices on our side (LL-A13, LL-A14 in `LL.md`); the result rests on the ones that held.
+  A harmonic-measure band-counting argument (`MECHANISM_NOTE.md`, Tier C) predicts the flat collapse: on instances it
+  had not seen, depth × effective dimension fraction is constant within 1.26× (square R=16) and 1.42× (triangular);
+  its growth-rate prediction was refuted, and a follow-up over windows fixed in relative depth shows the rate is a
+  lattice constant (≈ 1.1–1.2 decades per depth square, 1.7–1.8 triangular), still underived (H0-X-0012, H0-X-0013).
 - **Defect detection and localisation in simulation (§3.7).** Persistent homology sees nothing; the resistance metric
   detects a deep defect at the 3×10⁻⁴ budget; single-node localisation is perfect at the budget on flat and hyperbolic
   lattices alike, the hyperbolic advantage being a ≥ 100× noise margin at N ≈ 316; tolerance ≤ 5 % is harmless; a ±10 %

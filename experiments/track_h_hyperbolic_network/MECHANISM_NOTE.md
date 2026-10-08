@@ -74,3 +74,15 @@ tilings beyond the layers computed; anything about holography or AdS/CFT.
 - **Status after the test:** the overlap-number picture (flat: ∝ d; hyperbolic: O(1)) is supported by P1, P2, P3b.
   The quantitative rate of κ growth on flat disks remains underived. A better-posed rate prediction must compare
   matched windows in d/d_max (lesson LL-A15).
+
+## Follow-up (2026-10-07, PREREGISTRATION_21, ledger H0-X-0013, exploratory)
+Over windows fixed in relative depth (0.2 to 0.5 of d_max, extended to three depths on small disks), the rate is
+flat in R from R = 10 upward: square 1.23, 1.20, 1.08 decades per depth (R = 10, 16, 22; 0.95 at R = 6), triangular
+1.69, 1.81, 1.84 (R = 6.45, 10.75, 17.2; 0.41 on the two-layer R = 3.225 disk). So the R-dependence that refuted P3a
+above was the window effect of LL-A15, and the rate is a **lattice constant**: about 1.1–1.2 on the square lattice,
+1.7–1.8 on the triangular one. Both weak extrapolations of this card (rate increasing in R; triangular above square at
+every size) were refuted, the first because the rate saturates, the second only on the two-layer disk. What the
+argument above must now produce is this constant and its ratio (≈ 1.5) between the two lattices; the harmonic-measure
+band argument fixes the form (1/d) but says nothing yet about the constant. Candidate next step (card Q5f): compute
+the Fourier coefficients of the lattice harmonic measure on each disk and test whether the rate equals the decay
+constant of the highest resolvable mode.

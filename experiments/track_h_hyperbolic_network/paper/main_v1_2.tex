@@ -24,7 +24,7 @@ extrapolation $15.98$; the local exponent rises again, from $16.4$ to $27.1$.}
 \author{Xavier Callens\\[2pt]
 \small SocrateAI Lab, Cagnes-sur-Mer, France\\
 \small \texttt{callensxavier@gmail.com}}
-\date{September 2026 \\ \small Preprint, version 1.2 (draft; version 1.1: doi:10.5281/zenodo.23002378, version 1.0: doi:10.5281/zenodo.23000391)}
+\date{September 2026 \\ \small Preprint, version 1.2 (version 1.1: doi:10.5281/zenodo.23002378, version 1.0: doi:10.5281/zenodo.23000391)}
 
 \begin{document}
 \maketitle
@@ -293,8 +293,12 @@ directions and $d\,f_d$ should be constant, while on a hyperbolic disk the numbe
 their bumps widen and $f_d$ stays $O(1)$. On instances the argument had not seen, $d\,f_d$ is constant within a factor
 $1.26$ on square $R{=}16$ over $2\le d\le12$ and $1.42$ on triangular $R{=}10.75$, and $f_d\ge0.76$ on $\{7,3\}$
 $L{=}5$ and $\{4,5\}$ $L{=}7$ at every depth; but the same argument's prediction of an $R$-independent growth rate of
-the restricted condition number was refuted ($1.26$ decades per depth at $R{=}16$ against $0.98$ at $R{=}10$). The
-band-counting picture therefore stands and the rate of growth of $\kappa$ on flat disks remains underived.
+the restricted condition number was refuted ($1.26$ decades per depth at $R{=}16$ against $0.98$ at $R{=}10$). That
+comparison, however, averaged over different fractions of the disk; over windows fixed in relative depth ($0.2$ to
+$0.5$ of $d_{\max}$, exploratory preregistration 21) the rate is flat in $R$ from $R=10$ upward, $1.08$--$1.23$ decades
+per depth on the square lattice and $1.69$--$1.84$ on the triangular one: a lattice constant, which the band-counting
+picture does not yet predict. The picture therefore stands for the form of the collapse, and the constant remains
+underived.
 
 \begin{figure}[t]
 \centering
@@ -531,7 +535,7 @@ Proposition~1 is now argued for general $L$ (Section~\ref{sec:h2}). Version 1.0 
 DOI; the ledger records the correction against the original claim without altering it.
 
 \section*{Changes from version 1.1}
-Version 1.2 (draft) adds the following, all preregistered before it was run; nothing in versions 1.0 or 1.1 is altered.
+Version 1.2 adds the following, all preregistered before it was run; nothing in versions 1.0 or 1.1 is altered.
 (a) Conditioning across five hyperbolic tilings and a \emph{qualification} of the mechanism statement of version 1.1:
 depth scaling is only half of the explanation (Section~\ref{sec:tilings}). One prediction of that analysis was refuted, and
 a control tolerance was amended before any result was seen. (b) Defect detection and localisation in simulation, against
@@ -584,7 +588,8 @@ Localisation under offset, drift and quantisation & X & H3-X-0009 \\
 Per-edge sensitivity versus depth (exploratory) & X & H0-X-0009 \\
 Coherence of equal-depth columns differs between classes & X & H0-X-0010 \\
 Depth-restricted $\kappa$ and matched-size coherence & X & H0-X-0011 \\
-Band-counting argument on unseen instances (form held, rate refuted) & X & H0-X-0012 \\ \bottomrule
+Band-counting argument on unseen instances (form held, rate refuted) & X & H0-X-0012 \\
+Flat growth rate over matched relative windows (exploratory) & X & H0-X-0013 \\ \bottomrule
 \end{tabular}
 \end{center}
 

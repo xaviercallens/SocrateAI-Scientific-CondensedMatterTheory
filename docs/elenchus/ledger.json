@@ -436,6 +436,18 @@
    "audit": null,
    "statement": "PREREGISTRATION_20 (coherence-mechanism argument tested on unseen instances {7,3} L=5, {4,5} L=7, square R=16, triangular R=10.75; flat d*f_d ratio, hyperbolic min f_d, flat and hyperbolic delta-bar). G1 PASS, G2 PASS, G3 PASS. P1 HELD (max/min d*f_d: square R=16 1.26; triangular R=10.75 1.42). P2 HELD (minimum f_d at depth >= 2: {7,3} L=5 0.760; {4,5} L=7 0.803). P3a REFUTED (delta-bar: square R=16 1.26; triangular R=10.75 1.71; reference square R=10 0.981; |difference| 0.277 against threshold 0.2). P3b HELD (delta-bar: {7,3} L=5 0.285; {4,5} L=7 0.418; reference {7,3} L=4 0.296).",
    "notes": "experiments/track_h_hyperbolic_network/exp20_coherence_mechanism_prediction_test.py; tests MECHANISM_NOTE.md (Tier C). LIMITS: A proof; the value of the flat rate constant; depth 0 and 1; the degree-3 depth-1 dip; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/coherence_mechanism_prediction_test.json] CORRECTION (2026-10-07): the statement's P3a number 0.277 is not stored in the evidence file; it is DERIVED(0.277) = |delta_bar(square R=16) 1.259 - delta_bar_square_R10 0.981| from the data file's values, computed by the recorder because the orchestrator's brief asked for the difference (orchestrator error, LL-D12 pattern). The verdict P3a REFUTED is the data file's own boolean."
+  },
+  {
+   "id": "H0-X-0013",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H0-X-0012"
+   ],
+   "evidence": "sha256:885dfc82d56dd0cb5777042ba8be3bc27335ae13cd56b8cf7d407a6fe51c3560",
+   "audit": null,
+   "statement": "PREREGISTRATION_21 (EXPLORATORY; flat growth rate of log10 kappa per depth over matched relative depth windows, square R=6..22 and triangular R=3.225..17.2). G1 PASS (amended, Deviation 1), G2 PASS. P1 REFUTED (square 0.948, 1.23, 1.20, 1.08; triangular 0.410, 1.69, 1.81, 1.84). P2 REFUTED (reversed pair: square R=6 0.948 versus triangular R=3.225 0.410).",
+   "notes": "experiments/track_h_hyperbolic_network/exp21_flat_growth_rate_over_matched_relative_w.py. Deviation 1 recorded in the preregistration before the rerun. LIMITS: Any mechanism for the rate; hyperbolic tilings (their rate does not grow with L, H0-X-0012); depths beyond d*; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/flat_growth_rate_over_matched_relative_w.json]"
   }
  ]
 }

@@ -25,7 +25,8 @@ def main() -> int:
     assets = [sys.executable, "make_assets.py"] + ([] if STEM == "main" else ["--v12"])
     if run(assets).returncode:
         return 1
-    if STEM == "main_v1_2" and run([sys.executable, "make_v12.py"]).returncode:
+    # `python3 paper/build.py main_v1_2 --final` drops the "draft" labels (for the published v1.2 record)
+    if STEM == "main_v1_2" and run([sys.executable, "make_v12.py"] + (["--final"] if "--final" in sys.argv else [])).returncode:
         return 1
     run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", STEM + ".tex"])
     b = run(["bibtex", STEM])

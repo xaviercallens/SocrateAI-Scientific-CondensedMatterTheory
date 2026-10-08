@@ -130,7 +130,8 @@ def main():
             s = line.strip()
             if not s or s.startswith("*Recorded by") or s.startswith("**Scorer") or s.startswith("**Reading"):
                 continue
-            core = norm(re.sub(r"^\*\*[^*]+\*\*\s*", "", s))
+            # strip the runbook §4 labels ("Design:", "Deviations:", "Limits:") and a bold lead before the verbatim test
+            core = norm(re.sub(r"^(?:(?:Design|Deviations|Limits):\s*|\*\*[^*]+\*\*\s*)+", "", s))
             if len(core) > 60 and core[:60] in prereg_text:
                 continue  # verbatim copy from the preregistration
             if s.startswith("|") and ("Prediction" in s or "Threshold" in s or s.startswith("|---")):

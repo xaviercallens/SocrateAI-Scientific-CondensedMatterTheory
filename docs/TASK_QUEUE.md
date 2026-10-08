@@ -61,9 +61,13 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   P1 held (d·f_d constant within 1.26× on square R=16 over d = 2…12, 1.42× on triangular R=10.75), P2 held (hyperbolic
   f_d ≥ 0.76 at L=5 / 0.80 at L=7), P3b held (hyperbolic rate does not grow with L), **P3a refuted** (flat rate is
   R- and window-dependent: 1.26 at R=16 vs 0.98 at R=10; LL-A15). The overlap-number picture stands; the flat κ rate
-  is underived. Next card **Q5e** (mid): the rate over matched relative windows d/d_max ∈ [0.2, 0.6] on square R ∈
-  {6, 10, 16, 22} in Arb where float64 fails, and the per-class smallest eigenvalue of the normalised Gram against d;
-  prediction to be derived from the Poisson-kernel Fourier decay before the card is written.
+  is underived.
+- **Q5e** → H0-X-0013 (prereg 21, exploratory, Deviation 1 before the rerun): over windows fixed in relative depth the
+  flat rate is a lattice constant for R ≥ 10 (square 1.08–1.23, triangular 1.69–1.84 decades per depth), so the
+  R-dependence of H0-X-0012 was the window effect (LL-A15); both weak extrapolations refuted (the rate saturates;
+  the two-layer triangular disk is below the square). Next **Q5f** (mid): Fourier coefficients of the lattice harmonic
+  measure per depth on each disk; prediction to derive: the rate equals the decay constant of the highest resolvable
+  boundary mode, and the triangular/square ratio ≈ 1.5 follows from the two lattices' boundary spacing.
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
 - **Q8b** (low): extend prereg 17's grids until failure (offset to 1, drift to 10 %, 6 and 8 bits) and add f = 1.25,
   to locate the boundary the ceiling hid.
