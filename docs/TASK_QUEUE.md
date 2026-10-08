@@ -68,19 +68,27 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   the two-layer triangular disk is below the square). Next **Q5f** (mid): Fourier coefficients of the lattice harmonic
   measure per depth on each disk; prediction to derive: the rate equals the decay constant of the highest resolvable
   boundary mode, and the triangular/square ratio ≈ 1.5 follows from the two lattices' boundary spacing.
-- **Q5i** (high, H-2): *from the cylinder to the disk.* Steps done: orientation (diagonal strip, H0-X-0017) and an out-of-sample
-  test of the node picture (H0-X-0018). **Remaining:** curvature. The cleanest exactly separable curved geometry is a polar-grid
-  disk (W angular sites, rotation-invariant, conductances from the continuum Laplacian): the harmonic extension of angular mode m
-  satisfies a three-term radial recurrence (solve in high precision), and the Jacobian blocks are indexed by total angular momentum.
-  Prediction to state before computing: how the rate depends on d/R (the cylinder is the R → ∞ limit). This is a different network
-  from the square-lattice disk, so it isolates curvature and does not by itself explain the 1.1–1.2 of the square disk. Also open:
-  potential theory for complex node sets (unequal-conductance diagonal strip), and the triangular lattice with a generic boundary.
+- **Q5i** (high, H-2): *from the cylinder to the disk.* Steps done: orientation (diagonal strip, H0-X-0017), an out-of-sample test of the
+  node picture (H0-X-0018) and curvature (polar-grid disk, H0-X-0019: curvature **raises** the rate by a few percent over the first quarter
+  radius, so it does not explain the square disk's lower constant). **Remaining:** orientation mixtures and boundary roughness, the two
+  candidates left for the square disk's 1.1–1.2 (between the diagonal 1.07 and aligned 1.65). **Q5k (high):** a strip along a general lattice
+  direction, e.g. (2,1): the periodic unit has several nodes per row, so the blocks are banded and the harmonic extension needs a transfer
+  matrix per momentum (mpmath); prediction to state before computing: the zigzag-block rate from the Green exponent of the signed node set of
+  that geometry, tested with the same exact machinery and an explicit-Jacobian gate. Also open: potential theory for complex node sets
+  (unequal-conductance diagonal strip) and the triangular lattice with a generic boundary.
 - **Q14** (mid, paper): **draft built 2026-10-08, not published:** `paper/note_cylinder.tex`/`.pdf` (6 pages, generated tables and figures
   from the stored data by `paper/make_note_cylinder.py`): a self-contained computational note on the exact block structure and the
   Green-function rate on lattice strips, with the post-hoc signed-node step labelled and a register of every failure. Recommendation: a
   separate short record (Zenodo, later arXiv math.NA) rather than a v1.3 section, after specialist feedback (Q12) and ideally after the
   disk question (Q5i). v1.2 stays as published. Human decision: publish now, wait, or fold into v1.3.
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
+
+## Done on 2026-10-08 (research, latest)
+- **Q5i curvature** → H0-X-0019 (prereg 28): on a polar-grid disk (exact blocks, gate to four decimals) smooth curvature **raises** the per-row loss
+  with depth (R = 48: 1.605 at level 3 to 1.801 at level 24; R = 96 to 1.675), growth 0.71–0.77 of the local-strip prediction (band set from pilots),
+  scaling with l/R to 13 %, flat limit recovered (1.609 vs 1.611). Curvature therefore cannot explain the square disk's lower constant; orientation
+  mixture and roughness remain (card Q5k). Ledger 46 claims, gate 57 checks. Decision recorded: the cylinder note waits for specialist feedback
+  (`docs/SPECIALIST_OUTREACH.md`, `release/NOTE_PUBLICATION_PLAN.md`; nothing sent or published).
 
 ## Done on 2026-10-08 (research, later)
 - **Q5i step 1, Q5j** → H0-X-0017 (prereg 26), H0-X-0018 (prereg 27): boundary orientation changes the exact rate (diagonal zigzag

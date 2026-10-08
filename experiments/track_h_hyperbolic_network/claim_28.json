@@ -1,0 +1,12 @@
+{
+ "id": "H0-X-0019",
+ "tier": "X",
+ "kind": "numeric",
+ "depends_on": [
+  "H0-X-0018",
+  "H0-X-0016"
+ ],
+ "evidence_file": "experiments/track_h_hyperbolic_network/data/curvature_on_a_polar_grid_disk.json",
+ "statement": "PREREGISTRATION_28 (polar-grid disk, exact zigzag blocks at R=48 (W=304) and R=96 (W=608), growth against the local-strip (WKB) prediction). G1 PASS, G2 PASS (inner-end ratio I(12)/I(3) 1.04 at H=46 and 1.04 at H=44). P1 HELD (exact/WKB ratios 0.761, 0.713 and 0.77 within the band [0.55, 0.9]). P2 HELD (growth 0.0361 at R=48, l=12 and 0.0407 at R=96, l=24). P3 HELD (level-3 increment 1.61 at R=96 and 1.61 for the aligned unit-conductance strip). P4 HELD (measured growth 0.0361, 0.123 and 0.0407 in the three cells, all above 0.01).",
+ "notes": "experiments/track_h_hyperbolic_network/exp28_curvature_on_a_polar_grid_disk.py. Pilots at R=24 and R=32 disclosed in the preregistration and excluded. LIMITS: That this explains the square disk's constant: the polar network has no boundary roughness and no orientation dependence; the effect of curvature is small here (a few percent over the first quarter radius) and has the sign opposite to what the disk's low rate would need; the triangular lattice; hyperbolic geometry; a proof; anything about holography."
+}

@@ -113,6 +113,17 @@ tolerances were too tight for the faster decay at λ = 16 (discrete-node drift),
 λ = 0.05 because its height was too small (LL-A18); the post-hoc check shows exact = explicit at height 160. For complex
 node sets (diagonal strip with unequal conductances) the interval formula does not apply.
 
+## Curvature (2026-10-08, PREREGISTRATION_28, ledger H0-X-0019; pilots at R = 24 and 32 disclosed there)
+On a polar-grid disk (square cells at the boundary, conductances from the continuum Laplacian; exact zigzag blocks verified against the
+explicit Jacobian to four decimals) the per-row loss of σ_min **rises** with depth: at R = 48 from 1.605 at level 3 to 1.801 at level 24,
+at R = 96 only to 1.675, and the level-3 value at R = 96 equals the aligned strip's (1.609 against 1.611). A local-strip argument
+(lateral-to-vertical ratio λ_l = R²/(r_l r_{l+1/2}) and the aligned-strip rate G(λ)) predicts the sign and shape; the exact growth is 0.71
+to 0.77 of the prediction (a band set from pilots, so a replication of a pilot regularity), and it scales with l/R to 13 %. So smooth curvature
+of this type raises the rate by a few percent over the first quarter radius and cannot be why the square disk's constant (1.1–1.2) is below the
+aligned strip's 1.65. The remaining candidates are the orientation dependence of the staircase boundary (the diagonal strip gives 1.07, the
+aligned one 1.65, and the disk lies between) and boundary roughness; neither is tested here. An early pilot mistook the closed inner end of the
+grid for curvature (LL-A18 again).
+
 ## Follow-up (2026-10-07, PREREGISTRATION_21, ledger H0-X-0013, exploratory)
 Over windows fixed in relative depth (0.2 to 0.5 of d_max, extended to three depths on small disks), the rate is
 flat in R from R = 10 upward: square 1.23, 1.20, 1.08 decades per depth (R = 10, 16, 22; 0.95 at R = 6), triangular

@@ -562,3 +562,41 @@ geometry; a proof; anything about holography.
 
 *Where this leaves the picture.* On the square lattice with a real node set, the exponent of the semi-infinite problem is the Green exponent of the interval of node values: checked (parameter-free, 140 to 220 digits) for the aligned strip at λ = 0.05, 1 and 16 and, after the signed-node correction found post hoc, for the diagonal strip. It does not extend to complex node sets (the diagonal strip with unequal conductances), and it says nothing yet about curvature, so the disk's constant remains unexplained. Nothing here concerns holography.
 
+
+## Curvature on a polar-grid disk (`PREREGISTRATION_28.md`, 410293c before the run; ledger H0-X-0019)
+
+Design: Exact zigzag blocks (mpmath, 140 digits, σ_min as in preregistration 25): R = 48 with W = 304, H = 46 (inner radius 2.4) and R = 96 with W = 608,
+H = 94 (inner radius 2.8), levels 0…24; and R = 48 with H = 44 as the inner-end check. Increments I(l) = log₁₀σ_min(l−1) − log₁₀σ_min(l); growth
+g(R, l) = I(l)/I(3) − 1. Data file: `data/curvature_on_a_polar_grid_disk.json`.
+
+Data: `data/curvature_on_a_polar_grid_disk.json`.
+
+| R | level l | WKB growth | measured growth | exact / WKB |
+|---|---|---|---|---|
+| 48 | 12 | 0.0474 | 0.0361 | 0.7608 |
+| 48 | 24 | 0.172 | 0.1226 | 0.7127 |
+| 96 | 24 | 0.0529 | 0.0407 | 0.77 |
+
+| R | log10 sigma_min at levels 2, 3, 5, 11, 12, 17, 18, 23, 24 |
+|---|---|
+| 48 | level 2: -2.7755894154204874; level 3: -4.380086804851173; level 5: -7.6052046275232295; level 11: -17.42664160557026; level 12: -19.089001574876082; level 17: -27.526232777258674; level 18: -29.242953159203616; level 23: -38.01905369389004; level 24: -39.82024515749613 |
+| 96 | level 2: -2.636856691930412; level 3: -4.246305296219602; level 5: -7.482033114001802; level 11: -17.270455900758538; level 12: -18.911718278508904; level 17: -27.159436243110186; level 18: -28.817006509035323; level 23: -37.146751946907216; level 24: -38.82176071568536 |
+
+| Prediction | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 | per-row increments for d = 1 to 5 of the exact zigzag block agree with the explicit double-precision block within 0.005 (R = 10, W = 64, H = 8) | G1 boolean true; exact and explicit log10 sigma_min lists stored under G1 in the data file | PASS |
+| G2 | I(12)/I(3) at R = 48 changes by at most 2 % when H goes from 46 to 44 | I(12)/I(3) = 1.0361 (H = 46) and 1.0378 (H = 44) | PASS |
+| P1 | exact/WKB ratio in [0.55, 0.9] for (R, l) = (48, 12), (48, 24), (96, 24) | 0.7608, 0.7127, 0.77 | HELD |
+| P2 | growth at (48, 12) and (96, 24) agree within 20 % | 0.0361 and 0.0407 | HELD |
+| P3 | level-3 increment at R = 96 within 2 % of the aligned unit-conductance strip (1.611) | 1.6094 at R = 96; 1.6108 for the aligned strip | HELD |
+| P4 | measured growth above 0.01 in all three cells | 0.0361, 0.1226, 0.0407 | HELD |
+
+Deviations: none.
+
+Limits: That this explains the square disk's constant: the polar network has no boundary roughness and no orientation dependence; the effect of curvature is small here (a few percent over the first quarter radius) and has the sign opposite to what the disk's low rate would need; the triangular lattice; hyperbolic geometry; a proof; anything about holography.
+
+*Recorded by a low-tier agent (Haiku); audited with `tools/audit_low_tier.py --block` (pass after the tool learned that "level N" is an index label, not a result). The reading is the orchestrator's.*
+
+**Reading (preregistration 28).** Everything preregistered held, and the result is modest in size but clear in sign. *The effect.* On a polar-grid disk (square cells at the boundary, conductances from the continuum Laplacian, exact blocks verified against the explicit Jacobian to four decimals) the per-row loss of σ_min of the zigzag block rises with depth: at R = 48 from 1.605 at level 3 to 1.662 at level 12 and 1.801 at level 24, at R = 96 from 1.609 to 1.641 and 1.675. The level-3 value at R = 96 equals the aligned strip's (1.609 against 1.611), so the flat limit is recovered, and at the same l/R = 0.25 the two radii agree within 13 % (growth 0.036 and 0.041). The local-strip argument gets the sign and shape right and overestimates the size: the exact growth is 0.71, 0.76 and 0.77 of its prediction in the three scored cells. That band was set from pilots at R = 24 and 32 (0.68 to 0.75), so this is a replication of a pilot regularity at new radii, not an independent discovery. The inner end of the grid is not driving it (the level-12 to level-3 ratio changes by 0.16 % between heights 46 and 44), which an early pilot had mistaken for curvature (LL-A18).
+
+*What it means for the disk.* Smooth curvature of this type **raises** the per-row loss, by about 4 % over the first quarter radius at R = 96 and about 12 % over half a radius at R = 48. The square disk's constant (1.1 to 1.2) is *below* the aligned strip's 1.65, so curvature cannot be what lowers it. The diagonal strip's 1.07 shows that boundary orientation can; the square disk lies between the diagonal and aligned values, which points to the orientation mixture of its staircase boundary (and possibly its roughness) as the remaining candidates, neither of which is tested here (card Q5k). The polar grid has neither, so it says nothing about them. Nothing here concerns holography.

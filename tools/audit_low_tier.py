@@ -152,7 +152,8 @@ def main():
                 continue
             cells = s.split("|")
             nums_line = s if not s.startswith("|") else "|".join(cells[:-2] if "HELD" in s or "held" in s or "REFUTED" in s or "refuted" in s else cells)
-            t2 = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[GP]\d\b|GF\([^)]*\)|\d+\^\d+(?:-\d+)?|10⁻\S+|[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+", " ", nums_line)
+            # index labels ("level 12:", "depth 7") are identifiers, not results
+            t2 = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[GP]\d\b|GF\([^)]*\)|\d+\^\d+(?:-\d+)?|10⁻\S+|[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+|\b(?:level|depth|block|row)s?\s+\d+(?:\s*,\s*\d+)*", " ", nums_line)
             if s.startswith("|") and any(w in s for w in ("HELD", "held", "REFUTED", "refuted", "PASS", "pass", "FAIL", "fail")):
                 continue  # verdict rows (predictions and gates) carry thresholds copied from the preregistration
             # the runbook template (§4) puts the pre-run commit hash in the block title: drop tokens that resolve to a commit

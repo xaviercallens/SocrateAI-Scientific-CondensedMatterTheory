@@ -525,6 +525,19 @@
    "audit": null,
    "statement": "PREREGISTRATION_27 (aligned strip with lateral conductance lambda in {0.05, 16} and vertical conductance 1, exact 220-digit blocks at W=384, window depths 15-25, Green-function predictions fixed before the run). G1 FAIL (the exact and explicit increments agree for lambda 16 and separate with depth for lambda 0.05). P1 HELD (zigzag rate at W=768: 1.76 for lambda 0.05 against Green 1.76; 2.50 for lambda 16 against Green 2.45). P2 REFUTED (lambda 16, zigzag block i=192 at W=384: rate 2.65 against Green 2.45, relative error 0.0801 against the 6 % band). P3 HELD (block with the smallest sigma_min at depth 20 is i=192 for both lambda). P4 REFUTED (zigzag rate at W=384 and W=768: lambda 16 2.65 and 2.50; lambda 0.05 1.78 and 1.76). P5 HELD (zigzag rates at W=768: 1.76 and 2.50, against the null 1.65).",
    "notes": "experiments/track_h_hyperbolic_network/exp27_aligned_strip_with_unequal_conductances.py. G1 failed as preregistered; see the reading in TILINGS_RESULTS.md. LIMITS: The diagonal strip with unequal conductances (complex nodes); the horizontal-edge columns; the disk or curvature; hyperbolic geometry; a proof; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/aligned_strip_with_unequal_conductances.json]"
+  },
+  {
+   "id": "H0-X-0019",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H0-X-0018",
+    "H0-X-0016"
+   ],
+   "evidence": "sha256:0236f6deb73deac09da9984eefcadf070bba7f533276ad90cbee169c06f9a010",
+   "audit": null,
+   "statement": "PREREGISTRATION_28 (polar-grid disk, exact zigzag blocks at R=48 (W=304) and R=96 (W=608), growth against the local-strip (WKB) prediction). G1 PASS, G2 PASS (inner-end ratio I(12)/I(3) 1.04 at H=46 and 1.04 at H=44). P1 HELD (exact/WKB ratios 0.761, 0.713 and 0.77 within the band [0.55, 0.9]). P2 HELD (growth 0.0361 at R=48, l=12 and 0.0407 at R=96, l=24). P3 HELD (level-3 increment 1.61 at R=96 and 1.61 for the aligned unit-conductance strip). P4 HELD (measured growth 0.0361, 0.123 and 0.0407 in the three cells, all above 0.01).",
+   "notes": "experiments/track_h_hyperbolic_network/exp28_curvature_on_a_polar_grid_disk.py. Pilots at R=24 and R=32 disclosed in the preregistration and excluded. LIMITS: That this explains the square disk's constant: the polar network has no boundary roughness and no orientation dependence; the effect of curvature is small here (a few percent over the first quarter radius) and has the sign opposite to what the disk's low rate would need; the triangular lattice; hyperbolic geometry; a proof; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/curvature_on_a_polar_grid_disk.json]"
   }
  ]
 }
