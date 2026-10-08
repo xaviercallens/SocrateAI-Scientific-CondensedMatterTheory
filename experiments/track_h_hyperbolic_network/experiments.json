@@ -184,5 +184,12 @@
   "data": [
    "data/aligned_strip_with_unequal_conductances.json"
   ]
+ },
+ "PREREGISTRATION_28.md": {
+  "title": "curvature on a polar grid disk",
+  "script": "exp28_curvature_on_a_polar_grid_disk.py",
+  "data": [
+   "data/curvature_on_a_polar_grid_disk.json"
+  ]
  }
 }
