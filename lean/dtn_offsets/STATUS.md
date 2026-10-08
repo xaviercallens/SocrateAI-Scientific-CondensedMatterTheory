@@ -34,3 +34,19 @@ Pitfall met on the way: `axiom_audit.py DtNOffsets` (a library name) audited 0 t
 
 The first `lake build` rebuilt the shared Mathlib and dependency packages under the LeanMaster data directory (about 14 minutes, thousands of oleans rewritten).
 The sources are unchanged, so the content should be identical, but a LeanMaster session that runs concurrently may have been slowed.
+
+
+## Second module `GramSchmidtBound.lean` (2026-10-08)
+
+| Declaration | Statement in words |
+|---|---|
+| `DtN2.dtn_transpose` | For any symmetric matrix `L` (in particular a symmetric Laplacian) the Schur complement onto the first block is symmetric. |
+| `DtN2.dtn_vecMul_one` | For symmetric `L` with zero row sums and an invertible interior block, the column sums of the Schur complement vanish (this provides the column-sum hypothesis of `col_offset_orthogonal` for `M = DtN2.dtn L`). |
+| `le_residual` | Any `σ` with `σ‖x‖ ≤ ‖∑ xᵢ • aᵢ‖` for all Euclidean coefficient vectors `x` is at most every residual `‖aⱼ − ∑ yᵢ • aᵢ‖` with `yⱼ = 0`. |
+
+Not formalised: that such a `σ` is a lower bound for the smallest singular value of the matrix with columns `aᵢ`; the passage from these residuals to the distance to the span; the leave-one-out identity; the nesting of spans.
+`DtN2.dtn` duplicates `DtN.dtn` (same definition, different constant).
+
+Gates for both modules together, exit codes read from the tools: build `lake build DtNOffsets` exit 0 with no warnings (8765 jobs); `sorry_grep.py` on both files exit 0; `axiom_audit.py` on both files exit 0, 7 theorems, each depending only on propext, Classical.choice, Quot.sound;
+`statement_lock.py --update` locked 9 declarations, then `--check` exit 0. Separate read-only audit of the wording by another agent: statements correct, three docstring overstatements and one miscount, all fixed (comments only) and the gates rerun after the fix.
+Two compile errors on the first attempt (a rewrite in the wrong direction for the inverse of a transpose; a renamed Mathlib constant) were repaired before any statement was locked.

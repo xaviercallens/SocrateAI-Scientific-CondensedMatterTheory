@@ -3,16 +3,16 @@ import Mathlib
 /-!
 # Symmetry of the DtN matrix, and a residual bound on the smallest singular value
 
-Two elementary facts used by the Track H programme. Both are finite-dimensional linear algebra; neither concerns a particular network,
+Three elementary facts used by the Track H programme. Both are finite-dimensional linear algebra; neither concerns a particular network,
 conditioning of any particular Jacobian, or holography.
 
-* `DtN2.dtn_transpose` : the Schur complement of a symmetric matrix onto a block is symmetric; hence the DtN matrix of a symmetric Laplacian is symmetric.
+* `DtN2.dtn_transpose` : for any symmetric `L` (in particular a symmetric Laplacian), the Schur complement onto the first block is symmetric.
 * `DtN2.dtn_vecMul_one` : for a symmetric `L` with zero row sums and an invertible interior block, the column sums of the DtN matrix vanish too.
-  This discharges the column-sum hypothesis of `col_offset_orthogonal` in `DtNOffsets`.
-* `le_residual` : if `σ ‖x‖ ≤ ‖∑ xᵢ • aᵢ‖` for all `x` in Euclidean space (the defining property of a lower bound `σ` on the smallest singular value of the
-  matrix with columns `aᵢ`), then `σ ≤ ‖aⱼ - ∑ yᵢ • aᵢ‖` for every `j` and every `y` with `yⱼ = 0`: the smallest singular value is at most the distance of
-  any column to the span of the other columns. The link between the hypothesis and the smallest singular value of the matrix is a standard fact that is
-  not formalised here (the hypothesis is stated directly).
+  This provides the column-sum hypothesis of `col_offset_orthogonal` in `DtNOffsets` for `M = DtN2.dtn L` with `L` symmetric, zero row sums and invertible interior block;
+  nothing in `DtNOffsets` is imported or changed.
+* `le_residual` : any `σ` with `σ ‖x‖ ≤ ‖∑ xᵢ • aᵢ‖` for all `x` in Euclidean space is at most every residual `‖aⱼ - ∑ yᵢ • aᵢ‖` with `yⱼ = 0`.
+  Not formalised: that such a `σ` is a lower bound for the smallest singular value of the matrix with columns `aᵢ`, and the passage from these residuals to the distance
+  of a column to the span of the others (an infimum). The hypothesis is stated directly.
 -/
 
 open Matrix
@@ -25,6 +25,7 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq
 noncomputable def dtn (L : Matrix (ι ⊕ κ) (ι ⊕ κ) ℝ) : Matrix ι ι ℝ :=
   L.toBlocks₁₁ - L.toBlocks₁₂ * (L.toBlocks₂₂)⁻¹ * L.toBlocks₂₁
 
+omit [Fintype ι] [DecidableEq ι] in
 theorem dtn_transpose (L : Matrix (ι ⊕ κ) (ι ⊕ κ) ℝ) (hL : Lᵀ = L) : (dtn L)ᵀ = dtn L := by
   have h11 : L.toBlocks₁₁ᵀ = L.toBlocks₁₁ := by
     ext i j
@@ -41,7 +42,7 @@ theorem dtn_transpose (L : Matrix (ι ⊕ κ) (ι ⊕ κ) ℝ) (hL : Lᵀ = L) :
   have h21 : L.toBlocks₂₁ᵀ = L.toBlocks₁₂ := by
     rw [← h12, Matrix.transpose_transpose]
   unfold dtn
-  rw [Matrix.transpose_sub, Matrix.transpose_mul, Matrix.transpose_mul, h21, ← Matrix.transpose_nonsing_inv, h22, h11, h12]
+  rw [Matrix.transpose_sub, Matrix.transpose_mul, Matrix.transpose_mul, h21, Matrix.transpose_nonsing_inv, h22, h11, h12]
   simp [Matrix.mul_assoc]
 
 omit [DecidableEq ι] in
@@ -88,7 +89,7 @@ theorem le_residual (a : ι → E) (σ : ℝ)
     σ ≤ ‖a j - ∑ i, y i • a i‖ := by
   set x : EuclideanSpace ℝ ι := WithLp.toLp 2 (fun i => (if i = j then (1 : ℝ) else 0) - y i) with hx
   have hsum : ∑ i, x i • a i = a j - ∑ i, y i • a i := by
-    simp only [hx, WithLp.toLp_apply, sub_smul, Finset.sum_sub_distrib, ite_smul, zero_smul, Finset.sum_ite_eq', Finset.mem_univ, if_true, one_smul]
+    simp [hx, sub_smul, Finset.sum_sub_distrib, ite_smul]
   have hcoord : (1 : ℝ) ≤ ‖x‖ := by
     have h := PiLp.norm_apply_le x j
     have hxj : x j = 1 := by simp [hx, hy]
@@ -97,9 +98,9 @@ theorem le_residual (a : ι → E) (σ : ℝ)
   rw [hsum] at key
   by_cases hs : σ ≤ 0
   · exact le_trans hs (norm_nonneg _)
-  · push_neg at hs
+  · have hs' : 0 < σ := not_le.mp hs
     calc σ = σ * 1 := by ring
-      _ ≤ σ * ‖x‖ := mul_le_mul_of_nonneg_left hcoord hs.le
+      _ ≤ σ * ‖x‖ := mul_le_mul_of_nonneg_left hcoord hs'.le
       _ ≤ _ := key
 
 end Residual
