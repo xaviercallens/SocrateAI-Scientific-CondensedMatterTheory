@@ -149,5 +149,12 @@
   "data": [
    "data/hardware_noise_failure_boundaries.json"
   ]
+ },
+ "PREREGISTRATION_23.md": {
+  "title": "cylinder exponential sum picture",
+  "script": "exp23_cylinder_exponential_sum_picture.py",
+  "data": [
+   "data/cylinder_exponential_sum_picture.json"
+  ]
  }
 }
