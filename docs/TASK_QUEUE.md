@@ -75,8 +75,11 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   Prediction to state before computing: how the rate depends on d/R (the cylinder is the R → ∞ limit). This is a different network
   from the square-lattice disk, so it isolates curvature and does not by itself explain the 1.1–1.2 of the square disk. Also open:
   potential theory for complex node sets (unequal-conductance diagonal strip), and the triangular lattice with a generic boundary.
-- **Q14** (mid, paper): a v1.3 section on the cylinder result (exact block structure, Green-function rate, the failed
-  closed forms as a methods note), only after Q5i says whether the disk follows; v1.2 stays as published.
+- **Q14** (mid, paper): **draft built 2026-10-08, not published:** `paper/note_cylinder.tex`/`.pdf` (6 pages, generated tables and figures
+  from the stored data by `paper/make_note_cylinder.py`): a self-contained computational note on the exact block structure and the
+  Green-function rate on lattice strips, with the post-hoc signed-node step labelled and a register of every failure. Recommendation: a
+  separate short record (Zenodo, later arXiv math.NA) rather than a v1.3 section, after specialist feedback (Q12) and ideally after the
+  disk question (Q5i). v1.2 stays as published. Human decision: publish now, wait, or fold into v1.3.
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
 
 ## Done on 2026-10-08 (research, later)
