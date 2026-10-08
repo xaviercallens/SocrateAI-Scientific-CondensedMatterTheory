@@ -30,3 +30,8 @@ spread of the ratio is larger than the preregistered band and the garage should 
 
 ## Not claimed
 That the physical board matches the model (probe loading, leakage, parasitic capacitance and ground resistance are not modelled); anything about the hardware measurement itself; a test of the bench's noise model.
+
+## Deviation 1 (2026-10-08, written after the first launch failed and before any waveform existed)
+The first launch aborted at gate G1 with "too many error test failures at one step" from CVODE (no waveform was produced and no number was compared). Cause: the system was integrated in seconds with
+rates of order 1e6 S/F times 1e-5 S, a badly scaled problem for relative tolerance 1e-10 with finite-difference Jacobians. Remedy: the same ODE in time scaled by the nominal time constant,
+s = t / tau_nom, so that dV/ds = -tau_nom C^-1 (L_ii V + L_ib V_b); the output times are the same physical times. This is a change of units, not of method, model, tolerance or grid.

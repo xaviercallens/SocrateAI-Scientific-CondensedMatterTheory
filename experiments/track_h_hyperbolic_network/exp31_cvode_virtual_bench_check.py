@@ -49,7 +49,7 @@ def draw_board(g, rng, tol_R, tol_C):
     Vinf = np.linalg.solve(Lii, -(Lib @ np.full(len(bnd), vb.V0)))
     coef = U.T @ (np.diag(Cv) @ (0 - Vinf))
     Vmodal = Vinf[pidx][:, None] + (U[pidx] * coef) @ np.exp(-np.outer(lam, t))
-    return {"Lii": Lii, "Lib": Lib, "Cv": Cv, "t": t, "pidx": pidx, "Vmodal": Vmodal, "n_int": len(interior), "nb": len(bnd)}
+    return {"Lii": Lii, "Lib": Lib, "Cv": Cv, "tau_nom": tau_nom, "t": t, "pidx": pidx, "Vmodal": Vmodal, "n_int": len(interior), "nb": len(bnd)}
 
 
 def cvode_waveform(b):
@@ -57,13 +57,15 @@ def cvode_waveform(b):
     Cinv = 1.0 / b["Cv"]
     Lii = b["Lii"]
 
-    def rhs(_t, y):
-        return list(-Cinv * (Lii @ np.array(y) + drive))
+    tau0 = b["tau_nom"]
+
+    def rhs(_s, y):   # Deviation 1: time in units of the nominal time constant
+        return list(-tau0 * Cinv * (Lii @ np.array(y) + drive))
 
     solver = CvodeSolver(method="bdf", rtol=1e-10, atol=1e-12, max_steps=200000)
     y, tc, out = [0.0] * b["n_int"], 0.0, [np.zeros(b["n_int"])]
     for tk in b["t"][1:]:
-        tc, y = solver.solve(rhs, tc, y, float(tk))
+        tc, y = solver.solve(rhs, tc, y, float(tk) / tau0)
         out.append(np.array(y))
     return np.array(out)[:, b["pidx"]].T
 
