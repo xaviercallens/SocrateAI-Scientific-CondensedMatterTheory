@@ -114,5 +114,10 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   on the square board; per-channel gain mismatch between the two maps (exploratory) breaks localisation at ≈ 0.3 %
   (square) and ≈ 1 % ({7,3}). All five predictions held; lessons LL-A16; requirements in `lab/LAB_GUIDE_H4.md` §6b.
 
+- **Q15** done (prereg 29): Laplace-resolved Jacobian; transient data lower kappa by about one decade, rate unchanged; recorded in the published strip-rate paper (Zenodo 10.5281/zenodo.23241463).
+- **Q16** done (prereg 30): GUDHI H0 of the Jacobian column cloud per depth layer falls as a power law (~2.3/k) on the square disk, flat on {7,3}; tracks sigma_min monotonically but not its exponential rate; P4 and G2 failed as written. Next: H1 and a principal-angle filtration (angle to the span of shallower columns), which is where the linear dependence lives; more hyperbolic layers.
+- **Q17** done (prereg 31): CVODE agrees with the garage virtual bench (tau to 3e-5, ratio 0.605); P1 narrowly refuted on the square board (integrator tolerance). Draft paper 2 (`paper/paper2.tex`, 5 pages) holds Q16 and Q17; not published, awaiting a go-ahead.
+- **Q5k** still open: strip along a general lattice direction.
+
 ## Retired (done since the roadmap of 2026-09-27)
 H-1 (v1.0 + v1.1 published), H-2 first pass (tilings, H0-X-0008), H-3a/H-3b (persistent homology, detection, localisation, noise margin, tolerance: H3-X-0001..0007), v1.2 draft.
