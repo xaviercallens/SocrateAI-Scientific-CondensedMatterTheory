@@ -1,4 +1,4 @@
-# dtn_offsets: machine-checked linear-algebra facts behind the offset-invisibility result
+# dtn_offsets: machine-checked linear-algebra facts related to the offset-invisibility result
 
 Date: 2026-10-08. Toolchain Lean v4.34.0-rc2, Mathlib v4.34.0-rc2, reused from LeanMaster (recipe A of its `docs/USING_LEANMASTER.md`).
 
@@ -14,7 +14,7 @@ Date: 2026-10-08. Toolchain Lean v4.34.0-rc2, Mathlib v4.34.0-rc2, reused from L
 ## What is not proved, and what this does not show
 
 - Nothing here concerns hyperbolic geometry, Jacobian conditioning, the strip rate, or holography.
-- The connection to the garage measurement (the signatures are columns of the Jacobian, which are of the form d dᵀ built from the DtN map) is the Tier C step that
+- The connection to the garage measurement (unchecked assertion: the signatures are columns of the Jacobian, which are of the form d dᵀ built from the DtN map) is the Tier C step that
   identifies these lemmas with the hardware statement. It is not formalised.
 - The Jacobian-column zero-row-sum property is assumed as a hypothesis (`M *ᵥ 1 = 0`), not derived from the network model.
 
@@ -26,7 +26,7 @@ Date: 2026-10-08. Toolchain Lean v4.34.0-rc2, Mathlib v4.34.0-rc2, reused from L
 | G2 sorry | `sorry_grep.py DtNOffsets.lean` | exit 0, clean |
 | G3 axioms | `axiom_audit.py DtNOffsets.lean` with `LEAN_PROJECT_ROOT` set | exit 0, 4 theorems, each depends only on propext, Classical.choice, Quot.sound |
 | G4 statements | `statement_lock.py --update` then `--check` | locked 5 declarations, check exit 0 |
-| G5 producer is not verifier | not run | the same session wrote and checked these; an independent audit is still owed |
+| G5 producer is not verifier | read-only audit by a separate agent, files read, gates not re-run | verdict: statements correct; docstring wording overstated in three places and the title; fixed in this revision (comments only, statement lock unchanged) |
 
 Pitfall met on the way: `axiom_audit.py DtNOffsets` (a library name) audited 0 theorems and exited 0 (an empty report). Passing the module file `DtNOffsets.lean` audited 4.
 

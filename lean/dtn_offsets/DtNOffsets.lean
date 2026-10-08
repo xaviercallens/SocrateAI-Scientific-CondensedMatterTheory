@@ -1,7 +1,7 @@
 import Mathlib
 
 /-!
-# The DtN matrix kills constants, and offsets constant along a row or column are invisible
+# The DtN matrix kills constants, and row or column offsets are Frobenius-orthogonal to zero-sum matrices
 
 Elementary facts behind the offset-invisibility result of PREREGISTRATION_22 / H3-X-0010 of the Track H programme.
 They are *finite-dimensional linear algebra*; nothing here concerns the physics of any particular network, the
@@ -30,7 +30,7 @@ noncomputable def dtn (L : Matrix (ι ⊕ κ) (ι ⊕ κ) ℝ) : Matrix ι ι �
   L.toBlocks₁₁ - L.toBlocks₁₂ * (L.toBlocks₂₂)⁻¹ * L.toBlocks₂₁
 
 omit [DecidableEq ι] in
-/-- If the Laplacian kills the all-ones vector and the interior block is invertible, so does the DtN matrix. -/
+/-- For any matrix `L` with zero row sums and invertible interior block (no symmetry, sign or connectivity is used), the Schur complement has zero row sums. -/
 theorem dtn_mulVec_one (L : Matrix (ι ⊕ κ) (ι ⊕ κ) ℝ)
     (hL : L *ᵥ (fun _ => (1 : ℝ)) = 0) (hU : IsUnit L.toBlocks₂₂.det) :
     dtn L *ᵥ (fun _ => (1 : ℝ)) = 0 := by
@@ -59,7 +59,7 @@ section Offsets
 
 variable {ι : Type*} [Fintype ι]
 
-/-- A perturbation `M` of the DtN matrix has zero row sums; an offset `u 1ᵀ` is Frobenius-orthogonal to it. -/
+/-- For any `M` with zero row sums (for instance the DtN matrix, by `dtn_mulVec_one`; `M` is arbitrary here), an offset `u 1ᵀ` is Frobenius-orthogonal to it. -/
 theorem row_offset_orthogonal (M : Matrix ι ι ℝ) (hM : M *ᵥ (fun _ => (1 : ℝ)) = 0) (u : ι → ℝ) :
     ∑ i, ∑ j, u i * M i j = 0 := by
   have h : ∀ i, ∑ j, M i j = 0 := by
@@ -71,7 +71,7 @@ theorem row_offset_orthogonal (M : Matrix ι ι ℝ) (hM : M *ᵥ (fun _ => (1 :
         rw [Finset.mul_sum]
     _ = 0 := by simp [h]
 
-/-- Dual statement for offsets `1 wᵀ`, when the column sums vanish (for a symmetric `M`, the same hypothesis). -/
+/-- Dual statement for offsets `1 wᵀ`, given zero column sums as a hypothesis. That the DtN matrix has zero column sums needs its symmetry, which is not proved here. -/
 theorem col_offset_orthogonal (M : Matrix ι ι ℝ) (hM : (fun _ => (1 : ℝ)) ᵥ* M = 0) (w : ι → ℝ) :
     ∑ i, ∑ j, M i j * w j = 0 := by
   have h : ∀ j, ∑ i, M i j = 0 := by
@@ -91,7 +91,7 @@ section Decision
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 /-- If an additive disturbance `O` is orthogonal to two candidate signatures, the comparison of their squared
-distances to the data does not depend on `O`: the matched-filter decision between the two candidates is unchanged. -/
+distances to the data does not depend on `O`, so the sign of that difference, and any decision based on it, is unchanged. The theorem proves only the equality. -/
 theorem decision_invariant (x O d₁ d₂ : E) (h₁ : inner ℝ O d₁ = 0) (h₂ : inner ℝ O d₂ = 0) :
     ‖x + O - d₁‖ ^ 2 - ‖x + O - d₂‖ ^ 2 = ‖x - d₁‖ ^ 2 - ‖x - d₂‖ ^ 2 := by
   rw [norm_sub_sq_real (x + O) d₁, norm_sub_sq_real (x + O) d₂, norm_sub_sq_real x d₁, norm_sub_sq_real x d₂,
