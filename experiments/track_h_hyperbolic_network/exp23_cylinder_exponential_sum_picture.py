@@ -94,7 +94,7 @@ def run() -> dict:
 
 def score(d: dict) -> dict:
     R = {(r["kind"], r["W"]): r for r in d["runs"]}
-    rt = lambda kind, W, lab="full": R[(kind, W)]["series"][lab]["rate"]
+    rt = lambda kind, W, lab="full": R[(kind, W)]["series"].get(lab, {}).get("rate")
     G1 = all(v <= 1e-5 for v in d["gate_fd"].values())
     G2 = True
     for W in (64, 96):
@@ -102,12 +102,16 @@ def score(d: dict) -> dict:
         for dd, lk in zip(vert["d"], vert["log10_kappa"]):
             if dd in full["d"] and full["log10_kappa"][full["d"].index(dd)] < lk - 1e-6:
                 G2 = False
-    G3 = all(R[k]["series"]["full"]["d_star"] is not None and R[k]["series"]["full"]["d_star"] >= 6 for k in R)
+    ok = lambda k: R[k]["series"]["full"]["d_star"] is not None and R[k]["series"]["full"]["d_star"] >= 6
+    G3 = all(ok(k) for k in R)
+    G3_square = all(ok(k) for k in R if k[0] == "square"); G3_tri = all(ok(k) for k in R if k[0] == "triangular")
     P1 = all(0.63 <= rt("square", W, "vertical_only") <= 0.94 for W in (64, 96))
     P2 = abs(rt("square", 96, "vertical_only") - rt("square", 64, "vertical_only")) <= 0.10
     P3 = all(0.9 <= rt("square", W) <= 1.5 for W in (64, 96))
-    P4 = all(1.3 <= rt("triangular", W) <= 2.3 for W in (64, 96)) and all(rt("triangular", W) / rt("square", W) >= 1.2 for W in (64, 96))
-    return {"G1": bool(G1), "G2": bool(G2), "G3": bool(G3), "P1": bool(P1), "P2": bool(P2), "P3": bool(P3), "P4": bool(P4),
+    # Deviation 1: the triangular half is void when its series is empty (exact singularity at depth 0); P4 is then None
+    P4 = (all(1.3 <= rt("triangular", W) <= 2.3 for W in (64, 96)) and all(rt("triangular", W) / rt("square", W) >= 1.2 for W in (64, 96))) if G3_tri else None
+    return {"G1": bool(G1), "G2": bool(G2), "G3": bool(G3), "G3_square": bool(G3_square), "G3_triangular": bool(G3_tri),
+            "P1": bool(P1), "P2": bool(P2), "P3": bool(P3), "P4": (None if P4 is None else bool(P4)),
             "rates": {"%s W=%d %s" % (k[0], k[1], lab): R[k]["series"][lab]["rate"] for k in R for lab in R[k]["series"]},
             "d_star": {"%s W=%d %s" % (k[0], k[1], lab): R[k]["series"][lab]["d_star"] for k in R for lab in R[k]["series"]},
             "predicted_vertical_square": PRED_VERT_SQUARE}

@@ -33,6 +33,20 @@ columns of depth ≤ d (square: also restricted to vertical edges only), kept wh
 columns does not exceed the number of rows (d* = last kept depth). **Rate** = least-squares slope of log₁₀ κ_d against d
 over 3 ≤ d ≤ d*. Data file: `data/cylinder_exponential_sum_picture.json`.
 
+**Deviation 1 (2026-10-08, after the first run, which crashed in `score()` before writing the data file; no threshold or
+prediction below is changed).** The first run printed the square series and then failed on the triangular series, for
+which no depth was kept: the triangular cylinder's Jacobian restricted to depth 0 is exactly singular (smallest singular
+value at round-off level, next smallest 2×10⁻³), so log₁₀ κ₀ exceeds the floor and the series is empty. A post-hoc
+diagnostic (not part of the tests; scripts in the job directory) found one exact null vector: the sum over boundary nodes
+of the difference of the two diagonal edges' Jacobian columns vanishes, a consequence of translation invariance plus the
+mirror symmetry of the lattice about each interior node. A straight periodic triangular boundary row is therefore a
+non-generic geometry with an exact first-order degeneracy (the triangular disk has no such symmetry and is full rank).
+Consequences, fixed before the rerun: gate G3 fails for the triangular series, so **P4 is void** (not evaluable; recorded
+as neither held nor refuted); the scorer is made safe against empty series; the computation is deterministic, so the
+rerun reproduces the first run's printed square numbers, which were seen before this deviation was written
+(square rates 1.78 and 1.77–1.79, against the preregistered 0.784; P1 and P3 are therefore refuted and P2 holds,
+whatever the rerun is). Nothing else changes.
+
 ## Validity gates
 - G1: on a tiny cylinder (W = 8, H = 3) of each lattice, the explicit Jacobian agrees with `jacobian_finite_diff`
   to 10⁻⁵ of its largest entry (the library functions are valid on these graphs).
