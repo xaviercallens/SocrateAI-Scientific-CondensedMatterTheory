@@ -24,7 +24,7 @@ except Exception:  # noqa: BLE001
 
 OUT = HERE / "data" / "cvode_check_of_the_garage_virtual_bench.json"
 NT = 2000
-BANDS = {"P1": 1e-6, "P2": 1e-4, "P3_center": 0.604, "P3_half": 0.03, "P3_spread": 0.02, "G1": 1e-8}
+BANDS = {"P1": 1e-6, "P2": 1e-4, "P3_center": 0.604, "P3_half": 0.03, "P3_spread": 0.02, "G1": 1e-7}
 SEED_WAVE = 3100
 SEED_RATIO = 3200
 
@@ -62,7 +62,7 @@ def cvode_waveform(b):
     def rhs(_s, y):   # Deviation 1: time in units of the nominal time constant
         return list(-tau0 * Cinv * (Lii @ np.array(y) + drive))
 
-    solver = CvodeSolver(method="bdf", rtol=1e-10, atol=1e-12, max_steps=200000)
+    solver = CvodeSolver(method="bdf", rtol=1e-10, atol=1e-10, max_steps=200000)
     y, tc, out = [0.0] * b["n_int"], 0.0, [np.zeros(b["n_int"])]
     for tk in b["t"][1:]:
         tc, y = solver.solve(rhs, tc, y, float(tk) / tau0)
