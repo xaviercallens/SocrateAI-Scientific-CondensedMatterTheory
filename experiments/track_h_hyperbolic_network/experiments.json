@@ -142,5 +142,12 @@
   "data": [
    "data/flat_growth_rate_over_matched_relative_w.json"
   ]
+ },
+ "PREREGISTRATION_22.md": {
+  "title": "hardware noise failure boundaries",
+  "script": "exp22_hardware_noise_failure_boundaries.py",
+  "data": [
+   "data/hardware_noise_failure_boundaries.json"
+  ]
  }
 }
