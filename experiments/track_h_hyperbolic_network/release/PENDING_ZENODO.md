@@ -21,5 +21,7 @@ MD5 of the uploaded files (local copies; `zenodo_publish.py` re-verifies against
 | code.zip | b32781f3a56f93081c1c1f138918eabc | 536221 |
 
 Publish command (irreversible): `bash release/publish.sh publish 23228685`, then `bash release/publish.sh hf`.
-Preconditions: HEAD equals the commit above; the three local MD5s match this table. If either fails, do not publish.
+Preconditions: `git diff --stat ccfc30d HEAD` touches nothing outside `release/PENDING_ZENODO.md`, `docs/`, `LL.md`
+and `*.md` result files (i.e. nothing that enters the bundle: no `data/`, `paper/`, scripts or `release/export.py`);
+and the three local MD5s match this table. If either fails, do not publish; rebuild and re-draft instead.
 After publishing: add the Version 1.2 block to `PUBLISHED.md`, put the DOI in `RELEASE_NOTES_v1.2.md`, delete this file.
