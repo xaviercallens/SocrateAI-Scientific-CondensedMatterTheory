@@ -600,3 +600,33 @@ Limits: That this explains the square disk's constant: the polar network has no 
 **Reading (preregistration 28).** Everything preregistered held, and the result is modest in size but clear in sign. *The effect.* On a polar-grid disk (square cells at the boundary, conductances from the continuum Laplacian, exact blocks verified against the explicit Jacobian to four decimals) the per-row loss of σ_min of the zigzag block rises with depth: at R = 48 from 1.605 at level 3 to 1.662 at level 12 and 1.801 at level 24, at R = 96 from 1.609 to 1.641 and 1.675. The level-3 value at R = 96 equals the aligned strip's (1.609 against 1.611), so the flat limit is recovered, and at the same l/R = 0.25 the two radii agree within 13 % (growth 0.036 and 0.041). The local-strip argument gets the sign and shape right and overestimates the size: the exact growth is 0.71, 0.76 and 0.77 of its prediction in the three scored cells. That band was set from pilots at R = 24 and 32 (0.68 to 0.75), so this is a replication of a pilot regularity at new radii, not an independent discovery. The inner end of the grid is not driving it (the level-12 to level-3 ratio changes by 0.16 % between heights 46 and 44), which an early pilot had mistaken for curvature (LL-A18).
 
 *What it means for the disk.* Smooth curvature of this type **raises** the per-row loss, by about 4 % over the first quarter radius at R = 96 and about 12 % over half a radius at R = 48. The square disk's constant (1.1 to 1.2) is *below* the aligned strip's 1.65, so curvature cannot be what lowers it. The diagonal strip's 1.07 shows that boundary orientation can; the square disk lies between the diagonal and aligned values, which points to the orientation mixture of its staircase boundary (and possibly its roughness) as the remaining candidates, neither of which is tested here (card Q5k). The polar grid has neither, so it says nothing about them. Nothing here concerns holography.
+
+## Laplace-resolved Jacobian conditioning (preregistration 29, task Q15)
+
+Recorded by the orchestrator directly (not through the low-tier loop and not entered in the Elenchus ledger). Data: `data/laplace_resolved_jacobian_conditioning.json`,
+post hoc `data/laplace_wide_window_posthoc.json`, `data/laplace_link_tail_corrected.json`. Square disk R = 16 (797 nodes, 1528 edges, 124 boundary nodes), double precision.
+
+| Item | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 (CVODE link, as written) | Laplace transform of the CVODE boundary current equals Λ(s)e_j/s within 1e-5, s = 0.1, 0.3, 1 | 1.6e-3, 3.9e-9, 3.8e-10 | **FAILED** (truncated tail, my design error; Deviation 1) |
+| G1′ (post hoc, tail added) | same, 1e-5 | 3.7e-14, 3.0e-12, 3.8e-10 | PASS (post hoc) |
+| G2 | σ_min(S5) ≥ σ_min(S1) for every d | true | PASS |
+| G3 | S1 slope in [0.9, 1.3] | 1.2265 (window d = 3, 4 only) | PASS |
+| P1 | S5 slope ≥ 0.5 × S1 slope | ratio 1.025 | HELD |
+| P2 | S5 slope ≤ 1.0 × S1 slope | ratio 1.025 | **REFUTED** (narrowly) |
+| P3 | \|σ(S5) − σ(S2)\| < 0.15 | 0.0037 | HELD |
+| P4 | {7,3}, 4 layers: log10 κ(S5) within 1.0 of log10 κ(S1) at the deepest depth | 4.148 against 3.890, difference 0.258 | HELD |
+
+Deviations: Deviation 1 (G1 tail), see the preregistration. Beyond it, the window rule (use d only while log10 κ(S1) ≤ 9) left **two** points, d = 3 and 4, so the
+preregistered slopes are two-point slopes and carry little weight.
+
+Post hoc, labelled as such: slopes over d = 3…9 (S1 values above 9 decades are near the double-precision floor and irregular): S1 1.175, S2 1.123, S5 1.155 decades per
+depth step, ratio S5/S1 0.982. The offset log10 κ(S1) − log10 κ(S5) lies between 0.94 and 1.56 for d = 3…9.
+
+**Reading (preregistration 29).** Transient data, represented by real Laplace variables up to s = 3, lower the condition number by about one decade at every depth
+but leave the exponential rate unchanged: the slopes agree within 2 to 5 % over d = 3…9 and within 2.5 % in the two-point preregistered window, and the hyperbolic
+board's condition number changes by a quarter of a decade. The monotonicity of σ_min was exact (G2). So the prediction of a modest gain in rate was wrong in its direction
+at the preregistered resolution (P2 refuted by 2.5 %, within what two points can resolve) and right in spirit: a constant gain, no change in the exponent. For the garage,
+sampling the transient is worth about one decade of conditioning on a square board and does not change the conclusion that deep edges are exponentially harder to see.
+The time-to-frequency link that licenses reading transients as Λ(s) failed its preregistered gate for a reason that was my window design, and passes only in its post hoc form.
+Limits: double precision, noise-free, real s only, one disk size, κ of a stacked matrix as the figure of merit.
