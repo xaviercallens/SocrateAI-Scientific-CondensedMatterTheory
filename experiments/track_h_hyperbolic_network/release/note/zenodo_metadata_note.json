@@ -1,0 +1,22 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "title": "Exact exponential rates for the discrete Calderon problem on lattice strips, and what transient data do not change",
+ "creators": [
+  {"name": "Callens, Xavier", "affiliation": "SocrateAI Lab"}
+ ],
+ "description": "<p>Exponential ill-conditioning of the inverse conductivity problem and of its discrete network versions is classical. This preprint adds a sharp exponent on a solvable family: a lattice strip periodic along the measured boundary. Translation invariance makes the Jacobian of the Dirichlet-to-Neumann map exactly block-diagonal in the total momentum along the boundary; each block is Vandermonde-type, and the smallest singular value of block q decays with depth at the exponent of the Green function of the complement of the node set on the unit circle (a Bernstein-Walsh argument, a sketch and not a proof). The rate is checked in 140- to 220-digit arithmetic on four geometries, including values fixed before the computation (aligned square strip 1.653 decades per row at the zigzag momentum; boundary along the lattice diagonal 1.067; lateral-to-vertical conductance ratios 0.05 and 16: measured 1.762 and 2.498 against predicted 1.765 and 2.451).</p><p>A preregistered experiment with the CVODE integrator of rusty-SUNDIALS asks whether transient data, represented by real Laplace variables, change the depth growth of the condition number: they lower it by about one decade and leave the exponential rate unchanged (post hoc slope ratio 0.98); one prediction was refuted narrowly, and the time-to-frequency gate failed as written because of a design error of mine and passes only in a post hoc form. Four elementary linear-algebra facts behind the invisibility of constant offsets are machine-checked in Lean 4. A literature review (inverse conductivity, Vandermonde and Hankel conditioning, hyperbolic circuits) positions the work; closely related rigorous results exist for real nodes and Hankel matrices, and the novelty of the exact statement is not established. A register of every failed gate and refuted prediction is included. Nothing here concerns holography.</p><p>Companion to doi:10.5281/zenodo.23228685.</p>",
+ "access_right": "open",
+ "license": "cc-by-4.0",
+ "keywords": ["inverse problems", "discrete Calderon problem", "resistor networks", "condition number", "Vandermonde matrices", "potential theory", "preregistration", "Lean 4"],
+ "language": "eng",
+ "version": "1.0",
+ "prereserve_doi": true,
+ "related_identifiers": [
+  {"identifier": "10.5281/zenodo.23228685", "relation": "isSupplementTo", "scheme": "doi", "resource_type": "publication-preprint"},
+  {"identifier": "10.5281/zenodo.23000390", "relation": "references", "scheme": "doi", "resource_type": "publication-preprint"},
+  {"identifier": "https://github.com/xaviercallens/SocrateAI-Scientific-CondensedMatterTheory", "relation": "isSupplementedBy", "resource_type": "software"},
+  {"identifier": "https://github.com/xaviercallens/rusty-SUNDIALS", "relation": "references", "resource_type": "software"}
+ ],
+ "notes": "Code in code.zip is MIT-licensed; data and paper are CC BY 4.0. Prepared with AI assistance (Claude, Anthropic); the author reviewed all claims."
+}

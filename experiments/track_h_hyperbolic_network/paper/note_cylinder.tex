@@ -13,11 +13,11 @@
 \newcommand{\R}{\mathbb{R}}
 \DeclareMathOperator{\sgn}{sgn}
 
-\title{Exact exponential rates for the discrete Calder\'on problem on lattice strips:\\ a computational note}
+\title{Exact exponential rates for the discrete Calder\'on problem on lattice strips:\\ and what transient data do not change}
 \author{Xavier Callens\\[2pt]
 \small SocrateAI Lab, Cagnes-sur-Mer, France\\
 \small \texttt{callensxavier@gmail.com}}
-\date{October 2026 \\ \small Draft, not submitted. Companion to the preprint doi:10.5281/zenodo.23228685}
+\date{October 2026 \\ \small Preprint, not peer reviewed. Companion to the preprint doi:10.5281/zenodo.23228685}
 
 \begin{document}
 \maketitle
@@ -35,7 +35,7 @@ rate is attained at the zigzag momentum $q=\pi$. We check this in 140- to 220-di
 with unit conductances the zigzag rate is $1.653$ decades per row, for a boundary along the lattice diagonal it is $1.067$,
 and for lateral-to-vertical conductance ratios $0.05$ and $16$ it is $1.762$ and $2.498$ (predicted $1.765$ and $2.451$,
 fixed before the computation), non-monotone in the ratio; at converged width all momenta agree with the prediction to within
-$2\,\%$. The note records its failures: two closed forms of mine were wrong (one preregistered), the diagonal case needed a
+$2\,\%$. A further preregistered experiment asks whether transient data, represented by real Laplace variables, change the depth growth of the condition number on a square disk: they lower it by about one decade and leave the exponential rate unchanged (post hoc slope ratio $0.98$). Four elementary linear-algebra facts behind the offset-invisibility of the measurement are machine-checked in Lean 4. The note records its failures: two closed forms of mine were wrong (one preregistered), the diagonal case needed a
 sign correction that was found after the data, and three design errors (finite reference height, depth windows, tolerances)
 are kept in a register. The exponent is an asymptotic statement for many nodes, argued by a Bernstein--Walsh sketch, not proved. Closely related rigorous
 results exist for real nodes and for Hankel matrices, and we have not established that the exact statement is new. The disk,
@@ -175,6 +175,34 @@ previous section is the independent test of the underlying picture. For unequal 
 strip the nodes are genuinely complex (imaginary parts up to $0.16$ against moduli up to $0.2$), and the interval formula does
 not apply.
 
+
+\section{Transient data}\label{sec:laplace}
+The hardware that motivates the companion preprint is read with a scope, so its data are transients and not only the direct-current response matrix.
+For a step response of the resistor--capacitor network (unit conductances, unit capacitance from each interior node to ground) the Laplace transform of
+the boundary current gives the response matrix $\Lambda(s)=L_{bb}-L_{bi}(L_{ii}+sI)^{-1}L_{ib}$ at real $s$, and the same envelope argument as at $s=0$ gives
+$\partial\Lambda(s)/\partial g_e=d_e(s)d_e(s)^{\top}$ with $d_e(s)$ the difference of the rows of $-(L_{ii}+sI)^{-1}L_{ib}$ at the endpoints of $e$. Stacking the Jacobians
+over a set $S$ of Laplace variables gives $J_d(S)$; since $J_d(S)^{\top}J_d(S)\ge J_d(0)^{\top}J_d(0)$, the smallest singular value can only rise
+(an exact consequence, gate G2, which held). Whether the condition number's exponential growth with depth is slowed is not implied, and preregistration 29 asked it before the run.
+
+The link between time and frequency was checked with the CVODE integrator of rusty-SUNDIALS (BDF, relative tolerance $10^{-10}$): the Laplace transform of the integrated boundary current
+must equal $\Lambda(s)e_j/s$ to $10^{-5}$. As written this gate \emph{failed} at $s=0.1$ (relative error $1.6\times10^{-3}$): the held step leaves a nonzero steady current, and my
+integration window ended where $e^{-sT}/s$ was still $10^{-3}$ of the integral. A tail term from the integrator's own final current repairs it (errors between $10^{-14}$ and $4\times10^{-10}$ at $s=0.1,0.3,1$),
+but this variant was declared after the failure and is post hoc.
+
+\paragraph{Result.} On the square disk of radius 16 the stacked condition number is lower by about one decade at every depth with five Laplace variables
+(Table~\ref{tab:laplace}), while the growth rate is unchanged. The preregistered prediction that the five-variable slope would not exceed the direct-current slope was
+\emph{refuted}, narrowly: the preregistered window, restricted by a double-precision floor to $d=3,4$, gave a ratio of $1.025$ from two points. Over $d=3,\dots,9$ (post hoc) the slopes
+are $1.175$, $1.123$ and $1.155$ decades per step for one, two and five variables. On the $\{7,3\}$ tiling with four layers the condition number changes by a quarter of a decade.
+For the board this means that sampling the transient is worth about one decade of conditioning and does not alter the conclusion that deep edges are exponentially harder to see.
+Limits: double precision, noise-free, real $s$ only, one disk size, and the condition number of a stacked matrix as the figure of merit.
+
+\section{Machine-checked linear algebra}\label{sec:lean}
+Four elementary facts behind the invisibility of constant offsets are formalised in Lean 4 against Mathlib (files in the repository under \texttt{lean/dtn\_offsets}): a matrix with zero row sums and an invertible
+interior block has a Schur complement with zero row sums; a matrix with zero row sums is Frobenius-orthogonal to any offset constant along rows, and dually for columns given zero column sums;
+and an additive disturbance orthogonal to two candidate signatures leaves the difference of their squared distances to the data unchanged. The build, the search for \texttt{sorry}, the axiom audit
+(each theorem depends only on \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}) and a statement lock pass, and a separate agent audited the wording, which led to three docstring corrections.
+These lemmas are elementary; they say nothing about conditioning, geometry or holography, and the identification of the Jacobian columns with the objects in them is not formalised.
+
 \section{What failed}\label{sec:failures}
 Every preregistered gate and prediction is kept (Table~\ref{tab:register}); four of the eleven evaluable predictions of the first three
 cards were refuted and one was void, and later cards added more. The errors, all mine, in order:
@@ -185,7 +213,7 @@ end at the level of tenths of a decade, and the per-row increments were still ri
 failed at weak lateral coupling, where the explicit increments converge to the exact ones only at height $160$; (iv) a depth window
 of $20$--$30$ at $W=96$ is impossible because the block has $25$ distinct nodes; (v) width-convergence tolerances were too tight for
 fast decay; (vi) the straight periodic triangular boundary row has an exact null vector of the Jacobian at depth $0$ (translation
-invariance plus mirror symmetry), so no triangular value could be obtained on that geometry. These are recorded as lessons
+invariance plus mirror symmetry), so no triangular value could be obtained on that geometry. (vii) in the transient experiment, the integration window of the time-to-frequency gate ignored the steady current (Section~\ref{sec:laplace}), and the double-precision floor shrank the preregistered depth window to two points. These are recorded as lessons
 in the repository's lesson file.
 
 \section{Limits and open questions}
@@ -196,13 +224,13 @@ and nothing here says how they combine. The hyperbolic tilings, whose boundary g
 triangular lattices with a generic boundary or complex node sets. The finite-height double-precision rates of earlier work
 should not be read as rates of the semi-infinite problem. The Green-function exponent describes the regime where the number
 of distinct nodes exceeds the depth (here 25 to 193 nodes against depths up to 25 rows); for a square system with about as many nodes as the degree the
-exponent is a discrete nodal quantity instead. The note does not concern holography, AdS/CFT or any physical
+exponent is a discrete nodal quantity instead. A separate preregistered run (preregistration 28, in the repository, not tabulated here) found on a polar-grid disk that curvature of this kind \emph{raises} the per-row loss with depth, so curvature does not explain the square disk's lower constant; boundary roughness and orientation mixture remain. The note does not concern holography, AdS/CFT or any physical
 analogue.
 
 \section*{Reproducibility}
-Scripts \texttt{exp23}--\texttt{exp27} and their preregistrations \texttt{PREREGISTRATION\_23}--\texttt{27}, the data files under
-\texttt{data/}, the ledger claims H0-X-0014 to H0-X-0018 with evidence digests, and the post-hoc diagnostics (labelled as such) are in
-the repository of the companion preprint (Zenodo concept DOI 10.5281/zenodo.23000390). Every table and figure of this note is generated
+Scripts \texttt{exp23}--\texttt{exp27}, \texttt{exp29} and their preregistrations \texttt{PREREGISTRATION\_23}--\texttt{27}, \texttt{29}, the data files under
+\texttt{data/}, the ledger claims H0-X-0014 to H0-X-0018 with evidence digests (preregistration 29 is recorded in the results file but not entered in the ledger), and the post-hoc diagnostics (labelled as such) are in
+the repository of the companion preprint (Zenodo concept DOI 10.5281/zenodo.23000390). The Lean files are in \texttt{lean/dtn\_offsets}. Every table and figure of this note is generated
 from those data files by \texttt{paper/make\_note\_cylinder.py}.
 
 \section*{Use of AI tools}
