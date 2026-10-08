@@ -42,3 +42,12 @@ P6 refuted: the nearest-neighbour topology is not much weaker than the dependenc
 
 ## Not claimed
 That the residual is a topological invariant; that the result holds with noise; any statement beyond double precision and these two geometries; that the H₀ comparison of the residual and original clouds (reported unscored) means anything; anything about holography.
+
+## Deviation 1 (2026-10-08, written after two launches were killed for memory and before any residual number existed)
+Both launches (the first while a Lean build was running, the second alone with about 22 GB available) were killed by the system (exit status 137) after gate G3 passed (1.6e-14) and before any layer table was printed; no data file exists.
+Cause, my design error: the preregistration asked for Householder QR of the explicit Jacobian on the {7,3} tiling with 5 layers, but `build_hyperbolic(7, 3, 5)` is a network of several thousand nodes whose boundary has on the order of a thousand nodes, so the explicit Jacobian has
+about a million rows and tens of gigabytes. (Preregistration 30 used the Gram matrix on this tiling for that reason, and I did not carry the lesson over.)
+Change, made now: on {7,3} (and only there) the quantities are computed from the column Gram matrix G = JᵀJ (entries ½[(d_e·d_f)² − Σ d_e,i² d_f,i²], E×E) by Cholesky: with G_sorted = RᵀR (columns sorted by depth), ρ_j = R_jj, the leave-one-out residuals come from R⁻¹ as before,
+σ_min(J_{≤k}) = sqrt(λ_min of the leading block of G), and the distance to the span of strictly shallower layers is the square root of the Schur complement G_ee − G_e,prev G_prev⁻¹ G_prev,e. This squares the condition number, so it is valid only while κ(J)² is well below 1/eps; on {7,3} log10 κ is about 4 (preregistration 29), far inside that.
+The square disk keeps Householder QR as preregistered. New gate G4 (added now): on the radius-6 square disk the Gram/Cholesky route reproduces ρ_k, σ_min and the median relative shallower residual of the Householder route within 1e-6 relative for layers 1 to 3.
+The floor rule is applied on {7,3} as preregistered (σ_min ≥ 1e-12 is trivially met). Predictions P1 to P6 and gates G1 to G3 are unchanged.

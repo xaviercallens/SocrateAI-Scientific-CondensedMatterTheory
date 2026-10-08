@@ -49,6 +49,50 @@ def layer_table(g, layers=None):
     return out, recon, float(np.linalg.norm(J, 2))
 
 
+def layer_table_gram(g):
+    """Deviation 1: Gram/Cholesky route (used on {7,3} only)."""
+    from scipy.linalg import cho_solve, cholesky, solve_triangular
+    G = gram_columns(g)
+    dep = edge_depth(g)
+    order = np.argsort(dep, kind="stable")
+    Gs, ds = G[np.ix_(order, order)], dep[order]
+    Gs = 0.5 * (Gs + Gs.T)
+    Rm = cholesky(Gs, lower=False)
+    rjj = np.diag(Rm)
+    out = {}
+    for k in range(1, int(dep.max()) + 1):
+        cols = np.where(ds <= k)[0]
+        lay = np.where(ds == k)[0]
+        if len(lay) < 2:
+            continue
+        sig = float(np.sqrt(np.linalg.eigvalsh(Gs[np.ix_(cols, cols)])[0]))
+        Rk = cholesky(Gs[np.ix_(cols, cols)], lower=False)
+        loo = 1.0 / np.linalg.norm(solve_triangular(Rk, np.eye(len(cols)), lower=False), axis=1)
+        prev = np.where(ds < k)[0]
+        if len(prev):
+            Rp = cholesky(Gs[np.ix_(prev, prev)], lower=False)
+            B = Gs[np.ix_(prev, lay)]
+            s2 = np.diag(Gs)[lay] - np.sum(B * cho_solve((Rp, False), B), axis=0)
+            s_e = np.sqrt(np.clip(s2, 0, None))
+        else:
+            s_e = np.sqrt(np.diag(Gs)[lay])
+        out[k] = {"n_layer": int(len(lay)), "sigma_min": sig, "rho": float(rjj[lay].min()), "loo_min": float(loo.min()),
+                  "s_min": float(s_e.min()), "median_rel_s": float(np.median(s_e / np.sqrt(np.diag(Gs)[lay])))}
+    return out
+
+
+def gram_columns(g):
+    from hyperbolic_network import boundary_nodes, harmonic_extension
+    n, edges = len(g["nodes"]), g["edges"]
+    bnd = boundary_nodes(g)
+    H, _ = harmonic_extension(n, edges, np.ones(len(edges)), bnd)
+    ea = np.array([a for a, _ in edges]); eb = np.array([b for _, b in edges])
+    D = H[ea] - H[eb]
+    M1 = D @ D.T
+    M2 = (D ** 2) @ (D ** 2).T
+    return 0.5 * (M1 ** 2 - M2)
+
+
 def slope(ks, ys):
     return float(np.polyfit(ks, ys, 1)[0])
 
@@ -69,6 +113,16 @@ def main():
     err = float(np.max(np.abs(loo - loo_ref) / loo_ref))
     res["G3"] = {"max_rel_err": err, "pass": bool(err <= 1e-8)}
     print("G3", res["G3"], flush=True)
+
+    g6 = build_square_disk(6)
+    t_h, _, _ = layer_table(g6)
+    t_g = layer_table_gram(g6)
+    errs = []
+    for k in (1, 2, 3):
+        for key in ("rho", "sigma_min", "median_rel_s"):
+            errs.append(abs(t_g[k][key] - t_h[k][key]) / t_h[k][key])
+    res["G4"] = {"max_rel_err": float(max(errs)), "pass": bool(max(errs) <= 1e-6)}
+    print("G4", res["G4"], flush=True)
 
     gsq = build_square_disk(16)
     tab, recon, jn = layer_table(gsq)
@@ -96,7 +150,8 @@ def main():
     res["P4"] = {"slope": sl["median_rel_s"], "pearson": pear, "pass": bool(-1.2 <= sl["median_rel_s"] <= -0.4 and pear <= -0.98)}
 
     h = build_hyperbolic(7, 3, 5)
-    th, reconh, _ = layer_table(h)
+    th = layer_table_gram(h)
+    reconh = None
     hk = [k for k in (1, 2, 3, 4) if k in th and th[k]["sigma_min"] >= FLOOR]
     slh = slope(hk, [np.log10(th[k]["rho"]) for k in hk]) if len(hk) >= 3 else None
     gaph = [np.log10(th[k]["rho"]) - np.log10(th[k]["sigma_min"]) for k in hk]
@@ -113,7 +168,7 @@ def main():
                  "pass": bool(m_slope and abs(sl["median_rel_s"]) >= 5 * abs(m_slope))}
     OUT.write_text(json.dumps(res, indent=2, default=float), encoding="utf-8")
     print("window", w, "slopes", {k: round(v, 4) for k, v in sl.items()})
-    for key in ("G1", "G2", "G3", "P1", "P2", "P3", "P4", "P5", "P6"):
+    for key in ("G1", "G2", "G3", "G4", "P1", "P2", "P3", "P4", "P5", "P6"):
         print(key, {a: (round(b, 4) if isinstance(b, float) else b) for a, b in res[key].items() if a not in ("chain_per_layer",)})
     print("hyper layers", hk, "slope rho", slh)
     return 0
