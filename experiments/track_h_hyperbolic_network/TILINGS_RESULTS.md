@@ -494,3 +494,71 @@ nodes, different amplitudes: not computed); the triangular lattice; hyperbolic g
 *What the diagnostic found, after the fact.* My prediction used the moduli of the node values z_n = λ(k)λ(q−k). The diagnostic shows these are real after removing the common phase e^(−iq/2) (imaginary parts 10⁻¹⁶) but of **both signs**: the sign flips when q − k wraps around 2π, so the node set is the single interval [−M₋, M₊] through zero, not [z_min, z_max] of the moduli. The Green exponent of that signed interval reproduces all six measured rates to between 0.2 % and 0.85 % with no free parameters (0.846, 0.923, 0.991, 1.044, 1.072, 1.070), and the alternating signs also explain the period-two oscillation of the increments (about 1.05 and 1.08 at the zigzag block). This was computed after seeing the data, so it is a hypothesis with a good record, not a confirmation; preregistration 27 tests it out of sample on a geometry whose nodes are real, and I note its limit: for unequal conductances on the diagonal strip the nodes are genuinely complex (imaginary parts up to 0.16 against moduli up to 0.2), where an interval formula does not apply.
 
 *Relation to the disk.* The diagonal value 1.07 sits at the lower end of the square disk's measured 1.08–1.23 and the aligned value 1.65 above it, and a disk contains every orientation plus curvature and a staircase boundary; nothing here says how these combine, and no claim is made. Nothing here concerns holography.
+
+## The aligned strip with unequal conductances: an out-of-sample test (`PREREGISTRATION_27.md`, b8b7787 before the run; ledger H0-X-0018)
+
+Design: Exact blocks (mpmath, **220 digits** because the λ = 16 rates are near 2.5 decades per row), vertical-edge columns, W = 384,
+depths 0…25; σ_min by inverse Gram and power iteration as in preregistration 25; rate = (log₁₀σ_min(15) − log₁₀σ_min(25))/10; six
+momenta; σ_min at depth 20 for every block i = 0…192; the zigzag block at W = 768. Both λ in one run. Data file:
+`data/aligned_strip_with_unequal_conductances.json`.
+
+**Disclosure.** Before this card was committed I ran the block code once at λ = 16, W = 96 for depths up to 4 as an infrastructure
+check; the per-row increments were 2.41, 2.40, 2.46 and 2.54, consistent in size with the prediction of 2.45 but outside the
+test window (depths 15 to 25) and at a width where the window is impossible. No other λ = 0.05 or λ = 16 block was computed.
+
+Data: `data/aligned_strip_with_unequal_conductances.json`.
+
+Lambda = 0.05:
+
+| Block label (W=96 index) | q | Green prediction | measured rate (W=384) | relative error vs Green (fraction, as stored) |
+|---|---|---|---|---|
+| 8 | pi/6 | 1.1406 | 1.135 | 0.0049 |
+| 16 | pi/3 | 1.2331 | 1.2266 | 0.0053 |
+| 24 | pi/2 | 1.3393 | 1.3338 | 0.0041 |
+| 32 | 2pi/3 | 1.4606 | 1.4572 | 0.0023 |
+| 40 | 5pi/6 | 1.6005 | 1.5987 | 0.0011 |
+| 48 | pi | 1.7649 | 1.7773 | 0.007 |
+
+Lambda = 16:
+
+| Block label (W=96 index) | q | Green prediction | measured rate (W=384) | relative error vs Green (fraction, as stored) |
+|---|---|---|---|---|
+| 8 | pi/6 | 1.4232 | 1.4397 | 0.0116 |
+| 16 | pi/3 | 1.87 | 1.8998 | 0.0159 |
+| 24 | pi/2 | 2.1442 | 2.1859 | 0.0195 |
+| 32 | 2pi/3 | 2.314 | 2.3657 | 0.0223 |
+| 40 | 5pi/6 | 2.4112 | 2.4601 | 0.0203 |
+| 48 | pi | 2.4505 | 2.6468 | 0.0801 |
+
+| lambda | zigzag rate W=768 | Green prediction | block with the smallest sigma_min at depth 20 |
+|---|---|---|---|
+| 0.05 | 1.7622 | 1.7649 | 192 |
+| 16 | 2.4975 | 2.4505 | 192 |
+
+| lambda | exact log10 sigma_min, d = 0 to 5 | explicit log10 sigma_min, d = 0 to 5 (height 40) |
+|---|---|---|
+| 0.05 | -0.6617097825223154, -2.3123463463979648, -3.994633942238767, -5.701747664537529, -7.423713500675507, -9.162214783949379 | -1.795590577758952, -3.429504719837672, -5.137406094197353, -6.949889908522371, -8.870714955651156, -10.912712452035965 |
+| 16 | 0.3311104830295538, -2.0816586685569134, -4.486480375301076, -6.948771640398562, -9.489254092151487, -12.106923833496902 | -0.8105401312489623, -3.223309282826508, -5.62813099043092, -8.09042225745055, -10.630904712714106, -13.24857449141602 |
+
+| Prediction | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 | per-row increments of log10 sigma_min for d = 1 to 5 within 0.02 of the explicit height-40 block, for each lambda | G1 boolean false; stored lists in the table above | FAIL |
+| P1 | zigzag W=768 rate within 3 % of 1.7649 (lambda 0.05) and 2.4505 (lambda 16) | 1.7622 (lambda 0.05); 2.4975 (lambda 16) | HELD |
+| P2 | each of the six block rates at W=384 within 6 % of the Green values, for both lambda | lambda 16 block 48: rate 2.6468 against 2.4505, relative error 0.0801; other cells in the tables above | REFUTED |
+| P3 | block with the smallest sigma_min at depth 20 is the zigzag block i = 192, for both lambda | argmin block 192 (lambda 0.05); 192 (lambda 16) | HELD |
+| P4 | zigzag W=768 rate within 3 % of the W=384 rate, for both lambda | lambda 0.05: W=384 1.7773, W=768 1.7622; lambda 16: W=384 2.6468, W=768 2.4975 | REFUTED |
+| P5 | zigzag W=768 rate exceeds 1.6527 by at least 4 %, for both lambda | 1.7622 (lambda 0.05) and 2.4975 (lambda 16), against the null 1.6527 | HELD |
+
+Deviations: none.
+
+Limits: The diagonal strip with unequal conductances (complex nodes); the horizontal-edge columns; the disk or curvature; hyperbolic
+geometry; a proof; anything about holography.
+
+*Recorded by a low-tier agent (Haiku); audited with `tools/audit_low_tier.py --block` (pass). The reading is the orchestrator's; a post-hoc diagnostic (`exp27_diag_height.py`, `data/aligned_strip_height_diagnostic.json`) supports its second paragraph.*
+
+**Reading (preregistration 27).** *What the out-of-sample test shows.* The node picture, applied unchanged to a family it was not adjusted to, predicts the non-monotone dependence on the lateral conductance: the converged zigzag rate is 1.762 at λ = 0.05 (prediction 1.765, −0.15 %), 1.653 at λ = 1 (preregistration 25) and 2.498 at λ = 16 (prediction 2.451, +1.9 %). The λ-independent null is refuted by +6.6 % and +51 % (P5 held), the zigzag block is again the dominant one at depth 20 for both λ (P3 held), and P1 held. For λ = 0.05 all six momenta agree with the Green exponent to between 0.1 % and 0.7 % at W = 384. For λ = 16 the five non-zigzag momenta agree to between 1.2 % and 2.2 % (all on the high side).
+
+*What was refuted, and why.* P2 and P4 fail for λ = 16 only, and by one block: the zigzag rate at W = 384 is 2.647 against the prediction 2.451 (+8.0 %, band 6 %), and 6.0 % above the converged W = 768 value (band 3 %). The W = 384 zigzag increments rise steadily from 2.43 at depth 1 to 2.73 at depth 25, which is the discrete-node effect of preregistration 25 (97 distinct nodes) growing with the rate; I had anticipated a drift of the size seen at λ = 1 (1.5 %) and set the bands accordingly, and the drift is proportionally larger at 2.5 decades per row. Both refutations are errors in my tolerance choices; the converged exponent is what the picture predicts. *The gate.* G1 failed as preregistered (for λ = 0.05; it passed for λ = 16, identical increments to three decimals). My preregistered rule says that a failed gate means nothing else is read. The post-hoc diagnostic shows the cause is the explicit reference, not the block formula: at W = 48 the explicit increments approach the exact ones as the reference height grows (gaps of 0.95, 0.23, 0.02 and 0.000 decades in the fifth increment at heights 20, 40, 80 and 160), so a height of 40 is not semi-infinite when the lateral coupling is weak (LL-A18). The verdicts above are recorded as computed; the λ = 16 half stands on a passed gate, and the λ = 0.05 half on the post-hoc validation at height 160, which I count as weaker evidence than a preregistered gate.
+
+*Where this leaves the picture.* On the square lattice with a real node set, the exponent of the semi-infinite problem is the Green exponent of the interval of node values: checked (parameter-free, 140 to 220 digits) for the aligned strip at λ = 0.05, 1 and 16 and, after the signed-node correction found post hoc, for the diagonal strip. It does not extend to complex node sets (the diagonal strip with unequal conductances), and it says nothing yet about curvature, so the disk's constant remains unexplained. Nothing here concerns holography.
+

@@ -68,13 +68,23 @@ A card marked `low` has its design fixed here; the agent only fills sizes/seeds 
   the two-layer triangular disk is below the square). Next **Q5f** (mid): Fourier coefficients of the lattice harmonic
   measure per depth on each disk; prediction to derive: the rate equals the decay constant of the highest resolvable
   boundary mode, and the triangular/square ratio ≈ 1.5 follows from the two lattices' boundary spacing.
-- **Q5i** (high, H-2): *from the cylinder to the disk.* Derive the node set of a flat disk (angular momentum m, amplitude
-  ((R−d)/R)^|m| on the continuum, lattice corrections near the cutoff) and apply the same Green-function exponent; prediction to
-  state before computing: the disk's constant (square 1.1–1.2, triangular 1.7–1.8, H0-X-0013) as a function of the node
-  interval, to be tested in high precision on the block structure of the disk (rotation by the lattice's symmetry group only).
+- **Q5i** (high, H-2): *from the cylinder to the disk.* Steps done: orientation (diagonal strip, H0-X-0017) and an out-of-sample
+  test of the node picture (H0-X-0018). **Remaining:** curvature. The cleanest exactly separable curved geometry is a polar-grid
+  disk (W angular sites, rotation-invariant, conductances from the continuum Laplacian): the harmonic extension of angular mode m
+  satisfies a three-term radial recurrence (solve in high precision), and the Jacobian blocks are indexed by total angular momentum.
+  Prediction to state before computing: how the rate depends on d/R (the cylinder is the R → ∞ limit). This is a different network
+  from the square-lattice disk, so it isolates curvature and does not by itself explain the 1.1–1.2 of the square disk. Also open:
+  potential theory for complex node sets (unequal-conductance diagonal strip), and the triangular lattice with a generic boundary.
 - **Q14** (mid, paper): a v1.3 section on the cylinder result (exact block structure, Green-function rate, the failed
   closed forms as a methods note), only after Q5i says whether the disk follows; v1.2 stays as published.
 - **Q4** (two-node defects, greedy two-step matched filter; escalate if the ideal-noise control fails).
+
+## Done on 2026-10-08 (research, later)
+- **Q5i step 1, Q5j** → H0-X-0017 (prereg 26), H0-X-0018 (prereg 27): boundary orientation changes the exact rate (diagonal zigzag
+  1.067 vs aligned 1.653; moduli-based Green and 1/√2 forms both wrong); a signed-node correction found post hoc matches all six
+  diagonal block rates to 0.85 %; applied out of sample to the aligned strip with lateral conductance 0.05 and 16 the Green exponent
+  predicts the converged zigzag rate to 0.15 % and 1.9 % (the λ-independent null refuted). Failures: moduli forms (card 26), two
+  too-tight width tolerances and an undersized reference height (card 27). LL-A20; ledger 45 claims, gate 55 checks.
 
 ## Done on 2026-10-08 (research)
 - **Q5f, Q5g, Q5h** → H0-X-0014 (prereg 23), H0-X-0015 (prereg 24), H0-X-0016 (prereg 25): the flat growth constant is exact where

@@ -105,6 +105,13 @@ interval matches all six measured block rates to 0.85 % (LL-A20). This is a hypo
 (preregistration 27: aligned strip with unequal conductances, positive real nodes, predictions fixed in advance). The disk's
 constant (1.1–1.2 on the square disk) lies between the diagonal and the aligned values; how orientations, curvature and the
 staircase boundary combine is not known.
+**Out-of-sample test (PREREGISTRATION_27, H0-X-0018):** applied unchanged to the aligned strip with lateral conductance λ
+(positive real nodes, new dispersion relation), the Green exponent predicts the converged zigzag rate at λ = 0.05 and 16 to
+0.15 % and 1.9 % (1.762 and 2.498 against 1.765 and 2.451) and the six momenta of λ = 0.05 to 0.1–0.7 %; the zigzag rate is
+non-monotone in λ (1.765, 1.653, 2.451 at λ = 0.05, 1, 16), and the λ-independent null is refuted. Two preregistered width
+tolerances were too tight for the faster decay at λ = 16 (discrete-node drift), and the explicit reference gate failed at
+λ = 0.05 because its height was too small (LL-A18); the post-hoc check shows exact = explicit at height 160. For complex
+node sets (diagonal strip with unequal conductances) the interval formula does not apply.
 
 ## Follow-up (2026-10-07, PREREGISTRATION_21, ledger H0-X-0013, exploratory)
 Over windows fixed in relative depth (0.2 to 0.5 of d_max, extended to three depths on small disks), the rate is

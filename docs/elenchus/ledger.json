@@ -512,6 +512,19 @@
    "audit": null,
    "statement": "PREREGISTRATION_26 (exact semi-infinite blocks of a boundary along the lattice diagonal, 140-digit arithmetic, W = 384, rate over depths 15 to 25, six momenta). G1 PASS (explicit H=40 and exact log10 sigma_min agree for d = 0 to 5 within the preregistered 0.02 per row). P1 REFUTED (zigzag rate 1.07 at W = 384 against the Green prediction 1.40; the rival 1.17 does not fit either). P2 REFUTED (measured 0.838, 0.917, 0.985, 1.04, 1.07, 1.07 against predicted 0.849, 0.938, 1.04, 1.14, 1.26, 1.40 for q = pi/6, pi/3, pi/2, 2pi/3, 5pi/6, pi). P3 HELD (the block with the smallest sigma_min at depth 20 is i = 192, the zigzag block). P4 HELD (diagonal zigzag rate 1.07 against the aligned value 1.65 of preregistration 25).",
    "notes": "experiments/track_h_hyperbolic_network/exp26_diagonal_boundary_orientation_and_the_gr.py. LIMITS: That any of this is the disk's constant (a disk also has curvature and a staircase boundary; if the diagonal rate comes out at 1.40 it is still above the disk's 1.1-1.2, so orientation alone would not explain the disk); the type-A columns (same nodes, different amplitudes: not computed); the triangular lattice; hyperbolic geometry; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/diagonal_boundary_orientation_and_the_gr.json]"
+  },
+  {
+   "id": "H0-X-0018",
+   "tier": "X",
+   "kind": "numeric",
+   "depends_on": [
+    "H0-X-0017",
+    "H0-X-0016"
+   ],
+   "evidence": "sha256:97ae4f75a36b934b497f437571fd74c236c1f0c5b97ce5f0db1bb5d6cc74075d",
+   "audit": null,
+   "statement": "PREREGISTRATION_27 (aligned strip with lateral conductance lambda in {0.05, 16} and vertical conductance 1, exact 220-digit blocks at W=384, window depths 15-25, Green-function predictions fixed before the run). G1 FAIL (the exact and explicit increments agree for lambda 16 and separate with depth for lambda 0.05). P1 HELD (zigzag rate at W=768: 1.76 for lambda 0.05 against Green 1.76; 2.50 for lambda 16 against Green 2.45). P2 REFUTED (lambda 16, zigzag block i=192 at W=384: rate 2.65 against Green 2.45, relative error 0.0801 against the 6 % band). P3 HELD (block with the smallest sigma_min at depth 20 is i=192 for both lambda). P4 REFUTED (zigzag rate at W=384 and W=768: lambda 16 2.65 and 2.50; lambda 0.05 1.78 and 1.76). P5 HELD (zigzag rates at W=768: 1.76 and 2.50, against the null 1.65).",
+   "notes": "experiments/track_h_hyperbolic_network/exp27_aligned_strip_with_unequal_conductances.py. G1 failed as preregistered; see the reading in TILINGS_RESULTS.md. LIMITS: The diagonal strip with unequal conductances (complex nodes); the horizontal-edge columns; the disk or curvature; hyperbolic geometry; a proof; anything about holography. [evidence file: experiments/track_h_hyperbolic_network/data/aligned_strip_with_unequal_conductances.json]"
   }
  ]
 }
