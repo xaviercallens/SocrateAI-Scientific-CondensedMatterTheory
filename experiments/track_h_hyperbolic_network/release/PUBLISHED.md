@@ -84,3 +84,13 @@ Title: A topological proxy for the ill-conditioning of the discrete inverse cond
 `python3 release/paper2/export_paper2.py`; MD5 of paper.pdf 47f248657928e621def124cbbddf729b, dataset.zip 3f470a233102cfa352b5b7e6b750c501, code.zip fe2cc70f3f31ca508cc1978450257e72, verified against the draft by
 `release/paper2/zenodo_paper2.py publish` before publishing and against the public record without a token. Published on the author's instruction ("Publish the 2 papers"): read as the strip-rate paper (already published, 10.5281/zenodo.23241463, not republished) and this one.
 Related identifiers: isSupplementTo 10.5281/zenodo.23241463 and 10.5281/zenodo.23228685.
+
+## Paper 3 (2026-10-08, a separate record)
+
+| Where | Identifier |
+|---|---|
+| Zenodo (paper.pdf, dataset.zip, code.zip) | DOI [10.5281/zenodo.23248393](https://doi.org/10.5281/zenodo.23248393), record https://zenodo.org/record/23248393, concept DOI 10.5281/zenodo.23248392 |
+
+Title: Ill-conditioning of the discrete inverse conductance problem as exponential dependence on the earlier span: a column-residual certificate, partly machine-checked, and its measurement (5 pages). Built by
+`python3 release/paper3/export_paper3.py`; MD5 of paper.pdf 0dc928d7bfcd7a619f03de59eefe209f, dataset.zip 4654c20d9f2c729f75fd09041649ca9e, code.zip 67db9a1111d801cea8b0c0b1d4466945, verified against the draft by
+`release/paper3/zenodo_paper3.py publish` before publishing and against the public record without a token. Published on the author's instruction ("publish, merge and prepare ..."). Related identifiers: isSupplementTo 10.5281/zenodo.23244556, 23241463 and 23228685.

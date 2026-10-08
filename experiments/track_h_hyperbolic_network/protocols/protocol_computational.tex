@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\setlist{nosep}
+
+\title{Protocol for preregistered computational experiments, formal checking and publication\\ in the Track H programme}
+\author{Xavier Callens\\[2pt]
+\small SocrateAI Lab, Cagnes-sur-Mer, France}
+\date{Protocol version 1.0, October 2026\\ \small Derived from thirty-one preregistered cards and the errors recorded in them}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}\noindent
+This protocol fixes how a computational experiment of the programme is designed, run, recorded and published, how a Lean statement is checked, and how a record on Zenodo is created. Its rules are not abstract: each one answers a failure that occurred and was recorded, a gate that went red for the wrong reason, a band chosen without a pilot, an integrator that aborted, a job killed for memory.
+The protocol does not guarantee that results are correct. It makes the errors visible, dated and attributable, and prevents the commonest ways of fooling oneself.
+\end{abstract}
+
+\section{Principles}
+\begin{enumerate}
+\item \textbf{Commit before you run.} The preregistration, with its predictions and thresholds, is committed before the data file exists; the script is committed unrun; the data come last. A repository gate checks the order.
+\item \textbf{Every refutation and every failed gate stays in the record} with the same prominence as a confirmation. Nothing is edited after the fact; corrections are appended as dated paragraphs.
+\item \textbf{Numbers in prose are copied from stored data}, by a generator where possible, never typed from memory.
+\item \textbf{A published artefact is never edited.} A correction is a new dated record or a new version beside it.
+\item \textbf{State what is not claimed}, including that nothing concerns holography.
+\end{enumerate}
+
+\section{The card}
+Each experiment is a numbered preregistration (a markdown file in the repository) with the following parts, in this order.
+\begin{enumerate}
+\item \emph{Why}: the open question and the earlier result that raised it.
+\item \emph{Objects}: the exact definitions, so that the script can be written from the card alone.
+\item \emph{Exact facts}: what follows by algebra and is therefore a check, not a prediction. A statement that is a theorem does not belong among the predictions; it becomes a gate. (The distance of a column to the span of the others bounds the smallest singular value; that is a gate, not a prediction.)
+\item \emph{No run before this commit}: a sentence saying which quantities have never been computed.
+\item \emph{Pilots}: any pilot is disclosed, run on a smaller instance, and excluded from scoring.
+\item \emph{Design}: instances, window rule, floors, seeds.
+\item \emph{Validity gates}: a control that must show no effect, a known-answer test, and an exact-identity check. A failed gate means nothing below it is read.
+\item \emph{Predictions}: numbered, each with a threshold or band fixed now.
+\item \emph{What a refutation would mean}, written before the run.
+\item \emph{Not claimed}.
+\end{enumerate}
+
+\subsection*{Choosing bands}
+A band with no pilot behind it has failed repeatedly in this programme: an exponential band for a quantity that turned out to be a power law, a gap bound taken from a smaller pilot disk that was too tight at the larger one. Rules: use a disclosed pilot on a smaller instance and widen the pilot's range;
+or state ordering and sign claims (``the slope on the hyperbolic tiling is smaller in magnitude than on the square disk'') instead of numerical bands; set the window rule (which layers are scored) before the run, with a floor that tells apart a real value from rounding noise and a minimum number of points (five).
+
+\subsection*{Gates}
+\begin{itemize}
+\item A \emph{control} (a random cloud with the same sizes, a zero-tolerance board, a duplicated-column cloud) shows the statistic does not respond to nothing.
+\item A \emph{known-answer} test has an expected value that the implementation can actually reach; its threshold must respect the numerical floor of the formula it uses (a sine distance computed as $\sqrt{1-c^2}$ cannot return less than about $1.5\times10^{-8}$ for identical vectors, so a limit of $10^{-12}$ is unattainable).
+\item An \emph{exact identity} (a chain of inequalities, a factorisation reconstruction) holds to rounding.
+\end{itemize}
+
+\section{Deviations}
+When something fails before or during the run, write a dated paragraph \emph{Deviation $n$} in the card, state the cause, the change, and what is unchanged, and commit it before the rerun. Disclose any figure you already know when you change a threshold (a relaxed threshold set after a debugging probe is post hoc and is labelled so).
+Keep the first-run data file under a different name. If the cause is a design error of the author, say so in the card and in the results.
+
+\section{Numerical practice}
+\begin{center}\small\begin{tabular}{p{4.0cm}p{9.8cm}}\toprule
+Situation & Rule \\ \midrule
+Exponentially small quantities & Use exact or high-precision arithmetic (140 to 220 decimal digits) for rates. In double precision, fix a floor (a smallest singular value of $10^{-12}$ with $\|J\|\approx1$) and score only above it; singular values below the floor are noise. \\
+Conditioning from the Gram matrix & It squares the condition number. Use Householder QR of the explicit matrix when the condition number exceeds about $10^{8}$; the Gram route is valid only well inside $1/\sqrt{\epsilon}$. \\
+Memory & Estimate before launching: a Jacobian with $m(m-1)/2$ rows for $m$ boundary nodes has about a million rows at $m\approx1500$. If a job is killed for memory, do not relaunch the same job; record a deviation and change the route (the Gram route for hyperbolic tilings, a smaller instance). One heavy job at a time. \\
+Persistent homology (GUDHI) & Read all pairs, including zero persistence (\texttt{min\_persistence=-1}); by default zero-length pairs are dropped. Cross-check $H_0$ death times against the edge weights of the minimum spanning tree. \\
+Stiff integration (CVODE through rusty-SUNDIALS) & Scale time so that rates are of order one; keep the absolute tolerance at least $10^{-10}$ (the binding aborts at the first step below it); on stiffer systems use a recorded ladder of tolerances and store the rung used per run. The global error is set by the absolute tolerance, so set thresholds on waveforms accordingly. \\
+Time-to-frequency checks & A held step leaves a steady current; add the tail $I(T)e^{-sT}/s$ or integrate far longer than $\ln(1/\text{tol})/s$. \\
+Separating a depth effect from the finite size of the object & Compare to a reference taller than the weakest decay needs (a reference height of 160 rows at weak lateral coupling), and check the inner end of the object. \\
+Windows & Fix the depth window before the run and check that enough distinct nodes exist in it. \\ \bottomrule
+\end{tabular}\end{center}
+
+\section{Recording}
+After the run, write a results block (a table of gates and predictions with the preregistered threshold, the measured value and the verdict; the deviations; a reading; the limits). Numbers are copied from the data file. A reading says what held, what was refuted, and what the refutation implies; it does not hide a refuted prediction behind a summary.
+Post hoc descriptions (a power law fitted after the data) are labelled post hoc and produced by a script from the stored data. Claims entered in the ledger carry content-addressed evidence; runs recorded outside the ledger say so in the results and in the paper.
+The repository gate must print all checks passed before a commit that adds a result.
+
+\section{Formal checking in Lean 4}
+\begin{enumerate}
+\item Search the library before writing (names for transposes, inverses, norms change between versions); expect to repair one or two compile errors, and do so before locking any statement.
+\item State norms honestly: the Euclidean norm on coefficient vectors, not the supremum norm that a plain function type carries.
+\item Run five gates and read each tool's own exit code, never a piped one: the build of the \emph{library target}; the search for \texttt{sorry}; the axiom audit, which must be given the module \emph{file} names (given a library name it audited zero theorems and exited successfully); the statement lock (update only after reviewing the new statements, then check); and an independent read-only audit of the wording by a separate agent.
+\item Say precisely what is proved. Never write ``zero axioms'' or ``fully verified''; the correct statement is that a declaration depends only on the three standard axioms. A docstring must not claim more than the statement (a lemma about any $\sigma$ with a stated property is not a lemma about the smallest singular value until that identification is itself proved).
+\item Do not rebuild shared dependencies unnecessarily: a first build of a downstream project may rewrite the shared package directory for a long time and slow other sessions; if the log shows the dependency being rebuilt again, stop and note it.
+\end{enumerate}
+
+\section{Publication}
+\begin{enumerate}
+\item A different work gets a new Zenodo record; a revision of the same work gets a new version of its record. Never edit the files of a published version.
+\item Build the bundle (paper, data archive, code archive) from the committed state with the export script; create a \emph{draft}; verify the three checksums and the metadata (title, licence, related identifiers) against the local build; publish only on the author's explicit instruction; then verify the public record without a token. Archives carry timestamps, so draft and publish from the same build.
+\item The paper states its status (preprint, not peer reviewed), its limits, its refutations, and that the novelty of an exact statement is not established when the literature search was limited.
+\item Tokens are read from the token file by the script and never printed.
+\item Merging code to the main branch and any outward message (emails, outreach) are done by the author, not by the assisting model.
+\end{enumerate}
+
+\section{Register of failures and the rule each produced}
+\begin{center}\small\begin{tabular}{p{6.4cm}p{7.4cm}}\toprule
+Failure (recorded) & Rule \\ \midrule
+A closed form fitted after seeing the number (twice wrong) & Predictions are fixed before the run; post hoc forms are labelled and tested out of sample on a new geometry. \\
+Finite-height references contaminated by the closed end & Check the inner end and the reference height against the weakest decay. \\
+Depth window impossible because only 25 distinct nodes exist & Check the number of distinct nodes before fixing a window. \\
+Tolerances too tight for fast decay & Set tolerances from a pilot or use ordering claims. \\
+A known-answer limit below the formula's rounding floor (twice) & Check that the gate can pass in principle. \\
+GUDHI default dropping zero-persistence pairs & Read all pairs; cross-check with a spanning tree. \\
+Time-to-frequency window ignoring the steady current & Add the tail or lengthen the window. \\
+Integrator abort below an absolute tolerance of $10^{-10}$; stiff board aborting at the tightest setting & Time scaling, a recorded ladder, and thresholds set from the achievable error. \\
+Jobs killed for memory (explicit Jacobian too large) & Estimate memory before launching; one heavy job at a time; change route by a deviation. \\
+Band from a smaller pilot too tight at the larger instance & Widen pilot ranges or use ordering claims. \\
+Axiom audit on a library name auditing nothing & Pass module file names; an empty report is not a clean bill. \\
+Docstrings claiming more than the lemma & Independent wording audit; say what is not proved. \\ \bottomrule
+\end{tabular}\end{center}
+
+\section*{Use of AI tools}
+This protocol was drafted with the assistance of Claude (Anthropic) from the repository's preregistrations, results and lessons; the author directed the work and takes responsibility for the content.
+
+\end{document}
