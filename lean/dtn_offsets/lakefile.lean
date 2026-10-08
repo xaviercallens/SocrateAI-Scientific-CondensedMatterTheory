@@ -16,4 +16,4 @@ require «SocrateAI-Scientific-Agora-LeanMaster» from
 
 @[default_target]
 lean_lib «DtNOffsets» where
-  roots := #[`DtNOffsets]
+  roots := #[`DtNOffsets, `GramSchmidtBound]
