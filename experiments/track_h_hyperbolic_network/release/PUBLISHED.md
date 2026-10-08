@@ -73,3 +73,14 @@ e7ba2931e92cf259f268e41f5af59cee, verified against the draft by `release/note/ze
 without a token. Published on the author's explicit instruction. Related identifiers: isSupplementTo 10.5281/zenodo.23228685, references concept DOI 10.5281/zenodo.23000390.
 Two empty drafts created by failed attempts of mine were deleted. The novelty of the exact statement is not established (see `docs/LITERATURE_REVIEW_INVERSE.md`); no specialist
 feedback was obtained before publishing, contrary to the earlier plan, because the author asked for publication.
+
+## Paper 2 (2026-10-08, a separate record)
+
+| Where | Identifier |
+|---|---|
+| Zenodo (paper.pdf, dataset.zip, code.zip) | DOI [10.5281/zenodo.23244556](https://doi.org/10.5281/zenodo.23244556), record https://zenodo.org/record/23244556, concept DOI 10.5281/zenodo.23244555 |
+
+Title: A topological proxy for the ill-conditioning of the discrete inverse conductance problem, and an independent integrator check of a resistor-capacitor bench (5 pages). Built by
+`python3 release/paper2/export_paper2.py`; MD5 of paper.pdf 47f248657928e621def124cbbddf729b, dataset.zip 3f470a233102cfa352b5b7e6b750c501, code.zip fe2cc70f3f31ca508cc1978450257e72, verified against the draft by
+`release/paper2/zenodo_paper2.py publish` before publishing and against the public record without a token. Published on the author's instruction ("Publish the 2 papers"): read as the strip-rate paper (already published, 10.5281/zenodo.23241463, not republished) and this one.
+Related identifiers: isSupplementTo 10.5281/zenodo.23241463 and 10.5281/zenodo.23228685.

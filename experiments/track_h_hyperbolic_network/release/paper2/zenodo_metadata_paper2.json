@@ -1,0 +1,52 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "title": "A topological proxy for the ill-conditioning of the discrete inverse conductance problem, and an independent integrator check of a resistor-capacitor bench",
+ "creators": [
+  {
+   "name": "Callens, Xavier",
+   "affiliation": "SocrateAI Lab"
+  }
+ ],
+ "description": "<p>The Jacobian of the Dirichlet-to-Neumann map of a resistor network with respect to its edge conductances has one column per edge; the exponential growth of its condition number with the depth of the unknowns is the central finding of the companion preprints. This preprint asks what persistent homology (GUDHI, Vietoris-Rips, H0) sees in the cloud of these columns, layer by layer in depth. On a square disk the median H0 death time of a layer falls with depth like one over the depth (a power law, found after the data) while the smallest singular value falls exponentially; the two are correlated across layers because both are monotone, but the proxy does not give the rate. On the {7,3} hyperbolic tiling the proxy shows no collapse over the four layers available. The preregistered exponential size of the effect was wrong, and two known-answer gates failed as written through design errors of the author, which are kept.</p><p>A second preregistered experiment integrates the proposed garage resistor-capacitor boards with the CVODE integrator of rusty-SUNDIALS and compares them with the exact modal solution used by the lab's virtual bench: fitted time constants agree to 3e-5, the predicted hyperbolic-to-square time-constant ratio 0.604 +/- 0.03 survives a 1 % component spread (mean 0.605), and the waveform prediction was refuted narrowly on the square board where the integrator ran at looser tolerances. This checks the model code, not the hardware. All deviations, failed gates and refuted predictions are listed. Nothing here concerns holography.</p><p>Companions: doi:10.5281/zenodo.23228685 and doi:10.5281/zenodo.23241463.</p>",
+ "access_right": "open",
+ "license": "cc-by-4.0",
+ "keywords": [
+  "inverse problems",
+  "persistent homology",
+  "GUDHI",
+  "resistor networks",
+  "condition number",
+  "hyperbolic lattices",
+  "SUNDIALS",
+  "preregistration"
+ ],
+ "language": "eng",
+ "version": "1.0",
+ "prereserve_doi": true,
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23241463",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "10.5281/zenodo.23228685",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "https://github.com/xaviercallens/SocrateAI-Scientific-CondensedMatterTheory",
+   "relation": "isSupplementedBy",
+   "resource_type": "software"
+  },
+  {
+   "identifier": "https://github.com/xaviercallens/rusty-SUNDIALS",
+   "relation": "references",
+   "resource_type": "software"
+  }
+ ],
+ "notes": "Code in code.zip is MIT-licensed; data and paper are CC BY 4.0. Prepared with AI assistance (Claude, Anthropic); the author reviewed all claims."
+}
