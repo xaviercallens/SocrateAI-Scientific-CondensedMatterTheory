@@ -1,0 +1,37 @@
+{
+  "arxiv_id": "2205.05106",
+  "version": "v3",
+  "title": "Hyperbolic Matter in Electrical Circuits with Tunable Complex Phases",
+  "abstract": "Curved spaces play a fundamental role in many areas of modern physics, from cosmological length scales to subatomic structures related to quantum information and quantum gravity. In tabletop experiments, negatively curved spaces can be simulated with hyperbolic lattices. Here we introduce and experimentally realize hyperbolic matter as a paradigm for topological states through topolectrical circuit networks relying on a complex-phase circuit element. The experiment is based on hyperbolic band theory that we confirm here in an unprecedented numerical survey of finite hyperbolic lattices. We implement hyperbolic graphene as an example of topologically nontrivial hyperbolic matter. Our work sets the stage to realize more complex forms of hyperbolic matter to challenge our established theories of physics in curved space, while the tunable complex-phase element developed here can be a key ingredient for future experimental simulation of various Hamiltonians with topological ground states.",
+  "authors": [
+    "Anffany Chen",
+    "Hauke Brand",
+    "Tobias Helbig",
+    "Tobias Hofmann",
+    "Stefan Imhof",
+    "Alexander Fritzsche",
+    "Tobias Kießling",
+    "Alexander Stegmaier",
+    "Lavi K. Upreti",
+    "Titus Neupert",
+    "Tomáš Bzdušek",
+    "Martin Greiter",
+    "Ronny Thomale",
+    "Igor Boettcher"
+  ],
+  "published": "2022-05-10T18:08:37Z",
+  "updated": "2023-02-23T21:40:14Z",
+  "year": "2022",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.str-el"
+  ],
+  "doi": "10.1038/s41467-023-36359-6",
+  "journal_ref": "Nat. Commun. 14, 622 (2023)",
+  "abs_url": "https://arxiv.org/abs/2205.05106",
+  "pdf_url": "https://arxiv.org/pdf/2205.05106",
+  "pillar": "hyperbolic",
+  "slug": "2205.05106",
+  "pdf_local": "papers/pdf/2205.05106.pdf"
+}

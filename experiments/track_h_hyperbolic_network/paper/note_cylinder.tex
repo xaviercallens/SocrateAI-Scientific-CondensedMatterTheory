@@ -23,9 +23,10 @@
 \maketitle
 
 \begin{abstract}
-The preprint cited above found empirically that the condition number of the Jacobian of the Dirichlet-to-Neumann (DtN)
-map of a resistor network with respect to its edge conductances grows exponentially with the depth of the unknowns on flat
-lattice disks and polynomially on hyperbolic tilings. Here we determine the exponential rate exactly on a solvable family:
+Exponential ill-conditioning of the inverse conductivity problem, and of its discrete network versions, is classical. The
+preprint cited above measured the condition number of the Jacobian of the Dirichlet-to-Neumann (DtN) map of a resistor network
+with respect to its edge conductances, and found exponential growth with the depth of the unknowns on flat lattice disks and
+polynomial growth on hyperbolic tilings. Here we only add a sharp exponent on a solvable family:
 a lattice strip, periodic along a boundary row that carries the measurements. Translation invariance makes the Jacobian
 exactly block-diagonal in the total momentum along the boundary; each block is a Vandermonde-type matrix whose nodes are the
 products of the per-row decay factors of two boundary modes. The smallest singular value of block $q$ then decays with depth
@@ -36,13 +37,26 @@ and for lateral-to-vertical conductance ratios $0.05$ and $16$ it is $1.762$ and
 fixed before the computation), non-monotone in the ratio; at converged width all momenta agree with the prediction to within
 $2\,\%$. The note records its failures: two closed forms of mine were wrong (one preregistered), the diagonal case needed a
 sign correction that was found after the data, and three design errors (finite reference height, depth windows, tolerances)
-are kept in a register. The disk, curvature, and complex node sets are open. Nothing here concerns holography.
+are kept in a register. The exponent is an asymptotic statement for many nodes, argued by a Bernstein--Walsh sketch, not proved. Closely related rigorous
+results exist for real nodes and for Hankel matrices, and we have not established that the exact statement is new. The disk,
+curvature, and complex node sets are open. Nothing here concerns holography.
 \end{abstract}
 
 \section{Setting}
 A resistor network has nodes, edges $e$ with conductances $g_e>0$, and a set of $m$ boundary nodes where voltages are imposed
 and currents measured; recovering the conductances from these data is the discrete Calder\'on problem~\cite{Calderon,CurtisMorrow}.
-The empirical background is the companion preprint~\cite{Preprint}. The DtN map $\Lambda(g)\in\R^{m\times m}$ is the Schur complement of the weighted graph Laplacian onto
+The empirical background is the companion preprint~\cite{Preprint}.
+\emph{Related work.} Exponential instability of the continuous problem is established~\cite{DiCristoRondi}, and for discrete network
+recovery the conditioning is known to degrade exponentially with the number of boundary nodes or layers~\cite{BorceaReview,BorceaNoise};
+for layered networks the problem reduces to Fourier blocks and a Vandermonde-type inversion~\cite{BorceaReview}, and a numerical study
+of exponential growth with slice index on lattices states the rigorous analysis as open~\cite{DengJin}. Exponential lower bounds for Vandermonde
+matrices with real nodes go back to Gautschi~\cite{Gautschi62,Gautschi75}; sharp real-node rates are due to Beckermann (Numer.\ Math.\ 85, 2000),
+and a lower bound for complex nodes through the nodal polynomial on the unit circle to Pan~\cite{Pan}. The smallest eigenvalue of Hankel
+matrices decays exponentially for compactly supported measures~\cite{BergSzwarc}, with sharp rates going back to Szeg\H{o} (1936) and
+Widom and Wilf (1966), which we have not read. The Green-function duality we use is the one that governs stable analytic extrapolation~\cite{DemanetTownsend}.
+We have found no source that states the rate as the maximum over the unit circle of the Green function of the complement of a complex node set,
+but our search was limited. Hyperbolic lattices have been built as circuits~\cite{Lenggenhager}; we are not aware of work on the
+conditioning of the inverse conductance problem on them. The DtN map $\Lambda(g)\in\R^{m\times m}$ is the Schur complement of the weighted graph Laplacian onto
 the boundary. By the envelope theorem the derivative of $\Lambda$ with respect to the conductance of edge $e=(a,b)$ is
 $\partial\Lambda/\partial g_e=d_e d_e^{\top}$, where $d_e=H_a-H_b\in\R^m$ is the difference of the rows of the harmonic extension
 $H$ (boundary data $\mapsto$ node potentials) at the endpoints of $e$. Collecting the strictly upper-triangular entries of
@@ -180,7 +194,9 @@ sketch, not a proof of the rate. The square disk measured in the companion work 
 step, below the aligned strip's $1.65$; a disk combines all boundary orientations with curvature and a staircase boundary,
 and nothing here says how they combine. The hyperbolic tilings, whose boundary grows with depth, are not covered, nor are
 triangular lattices with a generic boundary or complex node sets. The finite-height double-precision rates of earlier work
-should not be read as rates of the semi-infinite problem. The note does not concern holography, AdS/CFT or any physical
+should not be read as rates of the semi-infinite problem. The Green-function exponent describes the regime where the number
+of distinct nodes exceeds the depth (here 25 to 193 nodes against depths up to 25 rows); for a square system with about as many nodes as the degree the
+exponent is a discrete nodal quantity instead. The note does not concern holography, AdS/CFT or any physical
 analogue.
 
 \section*{Reproducibility}
@@ -194,7 +210,7 @@ Code, numerical experiments and drafting were carried out with the assistance of
 preregistered runs were recorded by a smaller model and audited against the data files by a larger one, following a written
 runbook in the repository. The author directed the work and takes responsibility for the content.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \bibitem{Calderon} A.~P. Calder\'on, On an inverse boundary value problem, in \emph{Seminar on Numerical Analysis and its
 Applications to Continuum Physics}, Soc.\ Brasil.\ Mat., 1980, pp.~65--73.
 \bibitem{CurtisMorrow} E.~B. Curtis and J.~A. Morrow, \emph{Inverse Problems for Electrical Networks}, World Scientific, 2000.
@@ -202,6 +218,16 @@ Applications to Continuum Physics}, Soc.\ Brasil.\ Mat., 1980, pp.~65--73.
 \bibitem{SaffTotik} E.~B. Saff and V.~Totik, \emph{Logarithmic Potentials with External Fields}, Springer, 1997.
 \bibitem{Gautschi62} W.~Gautschi, On inverses of Vandermonde and confluent Vandermonde matrices, \emph{Numer.\ Math.} 4 (1962) 117--123.
 \bibitem{Gautschi75} W.~Gautschi, Norm estimates for inverses of Vandermonde matrices, \emph{Numer.\ Math.} 23 (1975) 337--347.
+\bibitem{DiCristoRondi} M.~Di Cristo and L.~Rondi, Examples of exponential instability for elliptic inverse problems, arXiv:math/0303126 (2003).
+\bibitem{BorceaReview} L.~Borcea, V.~Druskin, F.~Guevara Vasquez and A.~V.~Mamonov, Resistor network approaches to electrical impedance tomography,
+in \emph{Inside Out II}, MSRI Publications 60 (2012); arXiv:1107.0343.
+\bibitem{BorceaNoise} L.~Borcea, F.~Guevara Vasquez and A.~V.~Mamonov, Study of noise effects in electrical impedance tomography with resistor networks,
+\emph{Inverse Probl.\ Imaging} 7 (2013) 417--443; arXiv:1105.1183.
+\bibitem{DengJin} M.~Deng and B.~Jin, On the uniqueness of the discrete Calder\'on problem on multi-dimensional lattices, arXiv:2509.18203 (2025).
+\bibitem{Pan} V.~Y.~Pan, How bad are Vandermonde matrices?, \emph{SIAM J. Matrix Anal. Appl.} 37 (2016) 676--694; arXiv:1504.02118.
+\bibitem{BergSzwarc} C.~Berg and R.~Szwarc, The smallest eigenvalue of Hankel matrices, \emph{Constr.\ Approx.} 34 (2011) 107--133.
+\bibitem{DemanetTownsend} L.~Demanet and A.~Townsend, Stable extrapolation of analytic functions, arXiv:1605.09601 (2016).
+\bibitem{Lenggenhager} P.~M.~Lenggenhager et al., Simulating hyperbolic space on a circuit board, \emph{Nat.\ Commun.} 13 (2022) 4373.
 \bibitem{Preprint} X.~Callens, Logarithmic boundary depth and the conditioning of the discrete inverse conductance problem on hyperbolic
 lattices (version 1.2), Zenodo, doi:10.5281/zenodo.23228685.
 \end{thebibliography}

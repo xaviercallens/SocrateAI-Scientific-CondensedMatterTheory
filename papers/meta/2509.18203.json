@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "2509.18203",
+  "version": "v2",
+  "title": "On the uniqueness of the discrete Calderon problem on multi-dimensional lattices",
+  "abstract": "In this work, we investigate the discrete Calderón problem on grid graphs of dimension three or higher, formed by hypercubic structures. The discrete Calderón problem is concerned with determining whether the discrete Dirichlet-to-Neumann (DtN) operator, which links boundary potentials to boundary current responses, can uniquely identify the conductivity values on the graph edges. We provide an affirmative answer to the question, thereby extending the classical uniqueness result of Curtis and Morrow for two-dimensional square lattices. The proof employs a novel slicing technique that decomposes the problem into lower-dimensional components. Additionally, we support the theoretical finding with numerical experiments that illustrate the effectiveness of the approach.",
+  "authors": [
+    "Maolin Deng",
+    "Bangti Jin"
+  ],
+  "published": "2025-09-20T14:12:12Z",
+  "updated": "2026-03-05T22:59:31Z",
+  "year": "2025",
+  "primary_category": "math-ph",
+  "categories": [
+    "math-ph",
+    "math.NA"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2509.18203",
+  "pdf_url": "https://arxiv.org/pdf/2509.18203",
+  "pillar": "inverse",
+  "slug": "2509.18203",
+  "pdf_local": "papers/pdf/2509.18203.pdf"
+}

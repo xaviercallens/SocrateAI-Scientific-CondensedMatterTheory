@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "math/0303126",
+  "version": "v1",
+  "title": "Examples of exponential instability for elliptic inverse problems",
+  "abstract": "Following a recent paper by N. Mandache (Inverse Problems 17 (2001), pp. 1435-1444), we establish a general procedure for determining the instability character of inverse problems. We apply this procedure to many elliptic inverse problems concerning the determination of defects of various types by different kinds of boundary measurements and we show that these problems are exponentially ill-posed.",
+  "authors": [
+    "Michele Di Cristo",
+    "Luca Rondi"
+  ],
+  "published": "2003-03-11T16:23:11Z",
+  "updated": "2003-03-11T16:23:11Z",
+  "year": "2003",
+  "primary_category": "math.AP",
+  "categories": [
+    "math.AP"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/math/0303126",
+  "pdf_url": "https://arxiv.org/pdf/math/0303126",
+  "pillar": "inverse",
+  "slug": "math_0303126",
+  "pdf_local": "papers/pdf/math_0303126.pdf"
+}

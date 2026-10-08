@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "2312.11721",
+  "version": "v1",
+  "title": "Stable recovery of piecewise constant conductance on spider networks",
+  "abstract": "We address the discrete inverse conductance problem for well-connected spider networks; that is, to recover the conductance function on a well-connected spider network from the Dirichlet-to-Neumann map. It is well-known that this inverse problem is exponentially ill-posed, requiring the implementation of a regularization strategy for numerical solutions. Our focus lies in exploring whether prior knowledge of the conductance being piecewise constant within a partition of the edge set comprising few subsets enables stable conductance recovery. To achieve this, we propose formulating the problem as a polynomial optimization one, incorporating a regularization term that accounts for the piecewise constant hypothesis. We show several experimental examples in which the stable conductance recovery under the aforementioned hypothesis is feasible.",
+  "authors": [
+    "Ángeles Carmona",
+    "Andrés M. Encinas",
+    "María José Jiménez",
+    "Álvaro Samperio"
+  ],
+  "published": "2023-12-18T21:42:55Z",
+  "updated": "2023-12-18T21:42:55Z",
+  "year": "2023",
+  "primary_category": "math.CO",
+  "categories": [
+    "math.CO"
+  ],
+  "doi": "10.1080/00207160.2024.2385631",
+  "journal_ref": "This is an original manuscript of an article published by Taylor & Francis in International Journal of Computer Mathematics on 31 Jul 2024",
+  "abs_url": "https://arxiv.org/abs/2312.11721",
+  "pdf_url": "https://arxiv.org/pdf/2312.11721",
+  "pillar": "inverse",
+  "slug": "2312.11721",
+  "pdf_local": "papers/pdf/2312.11721.pdf"
+}

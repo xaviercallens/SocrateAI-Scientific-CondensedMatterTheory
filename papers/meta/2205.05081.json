@@ -1,0 +1,32 @@
+{
+  "arxiv_id": "2205.05081",
+  "version": "v2",
+  "title": "Breitenlohner-Freedman bound on hyperbolic tilings",
+  "abstract": "We establish how the Breitenlohner-Freedman (BF) bound is realized on tilings of two-dimensional Euclidean Anti-de Sitter space. For the continuum, the BF bound states that on Anti-de Sitter spaces, fluctuation modes remain stable for small negative mass-squared $m^2$. This follows from a real and positive total energy of the gravitational system. For finite cutoff $\\varepsilon$, we solve the Klein-Gordon equation numerically on regular hyperbolic tilings. When $\\varepsilon\\to0$, we find that the continuum BF bound is approached in a manner independent of the tiling. We confirm these results via simulations of a hyperbolic electric circuit. Moreover, we propose a novel circuit including active elements that allows to further scan values of $m^2$ above the BF bound.",
+  "authors": [
+    "Pablo Basteiro",
+    "Felix Dusel",
+    "Johanna Erdmenger",
+    "Dietmar Herdt",
+    "Haye Hinrichsen",
+    "René Meyer",
+    "Manuel Schrauth"
+  ],
+  "published": "2022-05-10T18:00:00Z",
+  "updated": "2022-10-25T16:03:36Z",
+  "year": "2022",
+  "primary_category": "hep-th",
+  "categories": [
+    "hep-th",
+    "cond-mat.other",
+    "gr-qc",
+    "hep-lat"
+  ],
+  "doi": "10.1103/PhysRevLett.130.091604",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2205.05081",
+  "pdf_url": "https://arxiv.org/pdf/2205.05081",
+  "pillar": "hyperbolic",
+  "slug": "2205.05081",
+  "pdf_local": "papers/pdf/2205.05081.pdf"
+}

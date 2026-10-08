@@ -171,3 +171,28 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("2405.05327", "ryu", "Higher Berry Connection for Matrix Product States"),
     ("2601.00761", "ryu", "Exponentially Accelerated Sampling of Pauli Strings"),
 ]
+
+# --- Added 2026-10-08 (literature review of the Track H programme; identifiers verified through alphaXiv/WebSearch by the
+# --- survey subagents, expected title fragments below make a wrong identifier fail loudly) ------------------------------
+# inverse: discrete Calderon problem, resistor-network recovery, exponential instability
+SEED_PAPERS += [
+    ("math/0303126", "inverse", "Examples of exponential instability"),
+    ("2509.18203", "inverse", "discrete Calder"),
+    ("2501.00345", "inverse", "discrete inverse conductivity problem"),
+    ("2312.11721", "inverse", "piecewise constant conductance"),
+    ("1104.4998", "inverse", "cylindrical electrical networks"),
+    ("1609.03041", "inverse", "Optical tomography on graphs"),
+    # conditioning: Vandermonde/Hankel conditioning, potential-theoretic rates, analytic continuation
+    ("1504.02118", "conditioning", "How bad are Vandermonde"),
+    ("1609.09494", "conditioning", "displacement structure"),
+    ("1701.02538", "conditioning", "Vandermonde matrices with nodes in the unit disk"),
+    ("0906.4506", "conditioning", "smallest eigenvalue of Hankel"),
+    ("2107.09326", "conditioning", "smallest singular value of Vandermonde"),
+    ("1908.11097", "conditioning", "ill-conditioning of analytic continuation"),
+    ("1605.09601", "conditioning", "Stable extrapolation of analytic functions"),
+    # hyperbolic circuits and discrete holography on tilings (additions to the hyperbolic pillar)
+    ("2404.03062", "hyperbolic", "Holographic Conformal Field Theories on Hyperbolic Lattices"),
+    ("2305.04862", "hyperbolic", "hyperbolic lattices"),
+    ("2205.05081", "hyperbolic", "Breitenlohner"),
+    ("2205.05106", "hyperbolic", "Hyperbolic matter in electrical circuits"),
+]

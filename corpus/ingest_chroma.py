@@ -193,12 +193,16 @@ def main() -> int:
         action="store_true",
         help="skip chunk ids already present in the collection",
     )
+    parser.add_argument("--ids", default="", help="comma-separated arXiv ids: ingest only these papers of papers/index.json")
     args = parser.parse_args()
 
     index_path = PAPERS / "index.json"
     if not index_path.is_file():
         raise SystemExit("papers/index.json missing - run corpus/fetch_papers.py first")
     papers = json.loads(index_path.read_text(encoding="utf-8"))
+    selected = {x.strip() for x in args.ids.split(",") if x.strip()}
+    if selected:
+        papers = [p for p in papers if p["arxiv_id"] in selected]
     print(f"corpus: {len(papers)} papers")
 
     print("chunking ...")
