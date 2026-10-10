@@ -27,15 +27,17 @@ theorem log_deriv_eq (v w z : ℂ) (hw : w ≠ 0) (hz : v + w * z ≠ 0) :
   have h : v + w * z = w * (z - (-v / w)) := by
     field_simp
     ring
-  rw [h, mul_comm, ← div_div, div_self hw, one_div]
-  -- `z - (-v/w) ≠ 0` follows from `hz`
-  · exact (mul_ne_zero_iff.mp (h ▸ hz)).2
+  have hzp : z - (-v / w) ≠ 0 := by
+    intro h0
+    apply hz
+    rw [h, h0, mul_zero]
+  rw [h, div_mul_eq_div_div, div_self hw, one_div]
 
 /-- Topological phase: `|v| < |w|` puts the pole `-v/w` inside the unit disc and the circle integral is `2πi`. -/
 theorem winding_topological (v w : ℂ) (hw : w ≠ 0) (h : ‖v‖ < ‖w‖) :
     (∮ z in C((0 : ℂ), 1), (z - (-v / w))⁻¹) = 2 * Real.pi * I := by
   apply circleIntegral.integral_sub_inv_of_mem_ball
-  rw [mem_ball_zero_iff, norm_neg, norm_div]
+  rw [mem_ball_zero_iff, neg_div, norm_neg, norm_div]
   exact (div_lt_one (norm_pos_iff.mpr hw)).mpr h
 
 /-- Trivial phase: `|w| < |v|` puts the pole outside the closed unit disc and the circle integral vanishes. -/
@@ -43,7 +45,7 @@ theorem winding_trivial (v w : ℂ) (hw : w ≠ 0) (h : ‖w‖ < ‖v‖) :
     (∮ z in C((0 : ℂ), 1), (z - (-v / w))⁻¹) = 0 := by
   set p : ℂ := -v / w with hp
   have hpn : 1 < ‖p‖ := by
-    rw [hp, norm_neg, norm_div]
+    rw [hp, neg_div, norm_neg, norm_div]
     exact (one_lt_div (norm_pos_iff.mpr hw)).mpr h
   have hne : ∀ z ∈ closedBall (0 : ℂ) 1, z - p ≠ 0 := by
     intro z hz hzp
@@ -54,6 +56,6 @@ theorem winding_trivial (v w : ℂ) (hw : w ≠ 0) (h : ‖w‖ < ‖v‖) :
   have hdiff : DifferentiableOn ℂ (fun z : ℂ => (z - p)⁻¹) (closedBall (0 : ℂ) 1) :=
     (differentiableOn_id.sub_const p).inv hne
   apply DiffContOnCl.circleIntegral_eq_zero zero_le_one
-  exact hdiff.diffContOnCl_ball
+  exact hdiff.diffContOnCl_ball (subset_refl _)
 
 end SSH

@@ -50,3 +50,17 @@ Not formalised: that such a `σ` is a lower bound for the smallest singular valu
 Gates for both modules together, exit codes read from the tools: build `lake build DtNOffsets` exit 0 with no warnings (8765 jobs); `sorry_grep.py` on both files exit 0; `axiom_audit.py` on both files exit 0, 7 theorems, each depending only on propext, Classical.choice, Quot.sound;
 `statement_lock.py --update` locked 9 declarations, then `--check` exit 0. Separate read-only audit of the wording by another agent: statements correct, three docstring overstatements and one miscount, all fixed (comments only) and the gates rerun after the fix.
 Two compile errors on the first attempt (a rewrite in the wrong direction for the inverse of a transpose; a renamed Mathlib constant) were repaired before any statement was locked.
+
+
+## Third module `SSHWinding.lean` (2026-10-10): bulk half of target T2 of axis 1
+
+| Declaration | Statement in words |
+|---|---|
+| `SSH.log_deriv_eq` | For `w ≠ 0` and `v + w z ≠ 0`, `w / (v + w z) = (z − (−v/w))⁻¹` (the logarithmic derivative of the symbol through its pole). |
+| `SSH.winding_topological` | For `w ≠ 0` and `‖v‖ < ‖w‖`, `∮_{|z|=1} (z − (−v/w))⁻¹ dz = 2πi` (counter-clockwise, Mathlib's `circleMap`). |
+| `SSH.winding_trivial` | For `w ≠ 0` and `‖w‖ < ‖v‖`, the same integral is `0`. |
+
+Hypotheses are over `ℂ` with strict norm inequalities, which include the README's real nonzero `v, w` with `|v| ≠ |w|`. Not formalised: the normalisation by `(2πi)⁻¹` as a named winding number, the identification of the integral with the degree of the map, the boundary half of T2 (exact arithmetic on instances in `ssh_exact.py`, Tier B), and the correspondence between the two halves.
+First attempt had four errors (a rewrite on `w / w` that was not in the goal, two `norm_neg` rewrites on `−v / w` which parses as `(−v)/w`, and a missing subset argument to `diffContOnCl_ball`), repaired before any statement was locked.
+
+Gates for the three modules together: `lake build DtNOffsets` exit 0, no warnings (8766 jobs); `sorry_grep.py` on the three files exit 0; `axiom_audit.py` on the three files exit 0, 10 theorems, each depending only on propext, Classical.choice, Quot.sound; `statement_lock.py --update SSHWinding.lean` locked 3, `--check` on all three files exit 0. Independent read-only wording audit: see the entry appended below once received.

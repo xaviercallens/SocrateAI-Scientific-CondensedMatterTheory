@@ -11,5 +11,10 @@
     "dtn_transpose": "f827bbd1bc6efa11",
     "dtn_vecMul_one": "8bbdfac3310b5ac0",
     "le_residual": "f12acfba3c112d54"
+  },
+  "SSHWinding.lean": {
+    "log_deriv_eq": "fb5e3133fcafbbac",
+    "winding_topological": "8ac1ac5ab7b59de4",
+    "winding_trivial": "199ca6cf1b3e7ff8"
   }
 }

@@ -116,6 +116,11 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** a literature review of the method, not only of the subject, before the first preregistration that uses a new tool; the vector store had no TDA paper at all until this review.
 - **Evidence:** docs/LITERATURE_REVIEW_TDA.md, `PREREGISTRATION_33.md` Amendment 1.
 
+**LL-A23: a control gate that states the wrong physics fails for the right reason; and a statistic coded without a test of its own fires on nothing.**
+- **What happened:** in preregistration N1-L the trivial-control clause asked the unperturbed trivial odd chain for a large smallest eigenvalue. An odd chain has an exact zero mode in both phases (its chiral block is 20×21); in the trivial phase it sits at the right end, which is what the theorem says. The gate failed because my clause was wrong, not the chain. In the same card the spectral-symmetry statistic was coded as max|sort(ev) + sort(−ev)|, which never vanishes, so it reported 3.9 for an exactly symmetric spectrum.
+- **Rule:** (1) a control clause is derived from the theorem, not from intuition; write the theorem's statement for the control case beside the clause. (2) every statistic in a gate is run once on a case whose answer is known (a symmetric spectrum must give 0) before the card is committed; `ssh_exact.py`'s negative and positive controls are the model.
+- **Evidence:** `experiments/axis1_topological_waves/evidence/n1_limit_gate_diag.json`, PREREGISTRATION_N1_LIMIT.md Deviation 1.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.
