@@ -94,3 +94,14 @@ Related identifiers: isSupplementTo 10.5281/zenodo.23241463 and 10.5281/zenodo.2
 Title: Ill-conditioning of the discrete inverse conductance problem as exponential dependence on the earlier span: a column-residual certificate, partly machine-checked, and its measurement (5 pages). Built by
 `python3 release/paper3/export_paper3.py`; MD5 of paper.pdf 0dc928d7bfcd7a619f03de59eefe209f, dataset.zip 4654c20d9f2c729f75fd09041649ca9e, code.zip 67db9a1111d801cea8b0c0b1d4466945, verified against the draft by
 `release/paper3/zenodo_paper3.py publish` before publishing and against the public record without a token. Published on the author's instruction ("publish, merge and prepare ..."). Related identifiers: isSupplementTo 10.5281/zenodo.23244556, 23241463 and 23228685.
+
+## Programme manifesto (2026-10-10, a separate record)
+
+| Where | Identifier |
+|---|---|
+| Zenodo (paper.pdf, dataset.zip, code.zip) | DOI [10.5281/zenodo.23283365](https://doi.org/10.5281/zenodo.23283365), record https://zenodo.org/record/23283365, concept DOI 10.5281/zenodo.23283364 |
+
+Title: Topology constrains, under a gap, what geometry and spectrum then determine: a programme for testing where topology drives physics, with a verified history, a measured first node, and the tools to continue (9 pages). Built by
+`python3 release/manifesto/export_manifesto.py`; MD5 of paper.pdf 31a11fb5569fa97ac57f53d6652ab605, dataset.zip a8e44f1ec37064d893489740c760a502, code.zip 748d7ebacda1d9c0137dca4d973d2897, verified against the draft before publishing and against the public record without a token.
+Published on the author's instruction after node N1-L2 was run and read. The bundle holds both N1 runs (the first, unread, with its failed gates; the repeat, read), the Lean project (three modules, 12 locked declarations, 10 theorems), the two protocols, the programme document and the two literature reviews. Related identifiers: isSupplementTo the four earlier records.
+The paper was revised after an adversarial read by a separate model instance (failure count corrected to 8 gates by design error and 12 refuted predictions; Lean claim narrowed; slogans removed). The title's phrase "a measured first node" refers to a diagonalisation of a model, which the paper says in its first sentence on the node.
