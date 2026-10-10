@@ -54,6 +54,16 @@ def sine_dist(X):
     return np.sqrt(np.clip(1 - c2, 0, 1))
 
 
+def lap_feats(dist):
+    """Amendment 1: lowest non-zero eigenvalues of the weighted Laplacian of the complete graph with weights 1 - dist^2 (cosine squared)."""
+    W = 1.0 - dist ** 2
+    np.fill_diagonal(W, 0.0)
+    Lw = np.diag(W.sum(1)) - W
+    ev = np.sort(np.linalg.eigvalsh(Lw))
+    nz = ev[1:6]
+    return np.log10(np.clip(nz, 1e-300, None))
+
+
 def layers_flat(g):
     """Explicit route: unit-normalised columns, sigma_min by SVD, rho by Householder QR."""
     dep = edge_depth(g)
@@ -78,7 +88,8 @@ def layers_flat(g):
         Q, _ = np.linalg.qr(Jn[:, prev]) if len(prev) else (np.zeros((Jn.shape[0], 0)), None)
         Y = X - Q @ (Q.T @ X)
         Y = Y / np.maximum(np.linalg.norm(Y, axis=0, keepdims=True), 1e-300)
-        rows.append({"k": k, "n": int(len(lay)), "sigma_min": sig, "rho": float(rjj[lay_s].min()), "DA": diagrams(sine_dist(X)), "DB": diagrams(sine_dist(Y))})
+        dA_ = sine_dist(X)
+        rows.append({"k": k, "n": int(len(lay)), "sigma_min": sig, "rho": float(rjj[lay_s].min()), "DA": diagrams(dA_), "DB": diagrams(sine_dist(Y)), "L": lap_feats(dA_)})
     return rows
 
 
@@ -114,7 +125,7 @@ def layers_gram(g):
         d = np.sqrt(np.clip(np.diag(S), 1e-300, None))
         Cb = S / np.outer(d, d)
         dB = np.sqrt(np.clip(1 - np.clip(Cb ** 2, 0, 1), 0, 1))
-        rows.append({"k": k, "n": int(len(lay)), "sigma_min": sig, "rho": float(rjj[lay].min()), "DA": diagrams(dA), "DB": diagrams(dB)})
+        rows.append({"k": k, "n": int(len(lay)), "sigma_min": sig, "rho": float(rjj[lay].min()), "DA": diagrams(dA), "DB": diagrams(dB), "L": lap_feats(dA)})
     return rows
 
 
@@ -186,18 +197,19 @@ def main():
     X = {}
     for s in sets:
         XA, XB = feats["A"].transform(sets[s], "DA"), feats["B"].transform(sets[s], "DB")
-        X[s] = {"A": XA, "B": XB, "AB": np.hstack([XA, XB]), "depth": np.array([[r["k"]] for r in sets[s]], float),
+        XL = np.array([r["L"] for r in sets[s]])
+        X[s] = {"A": XA, "B": XB, "AB": np.hstack([XA, XB]), "L": XL, "depth": np.array([[r["k"]] for r in sets[s]], float),
                 "median": XA[:, :1], "size": np.array([[r["n"]] for r in sets[s]], float), "rho": np.array([[np.log10(r["rho"])] for r in sets[s]])}
     y = {s: {"y1": np.array([np.log10(r["sigma_min"]) for r in sets[s]]), "y2": np.array([np.log10(r["rho"]) for r in sets[s]])} for s in sets}
     mu, sd = {}, {}
-    for key in ("A", "B", "AB"):
+    for key in ("A", "B", "AB", "L"):
         mu[key], sd[key] = X["train"][key].mean(0), X["train"][key].std(0) + 1e-12
 
     def norm(s, key):
         return (X[s][key] - mu[key]) / sd[key] if key in mu else X[s][key]
 
     table = {}
-    for key in ("A", "B", "AB", "depth", "median", "size", "rho"):
+    for key in ("A", "B", "AB", "L", "depth", "median", "size", "rho"):
         for tgt in ("y1", "y2"):
             m = fit_models(norm("train", key), y["train"][tgt])
             for mn in ("ridge", "gbr"):
@@ -237,9 +249,12 @@ def main():
     ok5 = all(table[k]["test_flat"]["rmse"] < table[k]["test_hyp"]["rmse"] for k in topo_keys)
     r54 = per.get("hyperbolic544", {}).get("r2")
     res["P5"] = {"flat_lt_hyp_all_models": ok5, "r2_54": r54, "pass": bool(ok5 and r54 is not None and r54 <= BANDS["P5_r2"])}
+    lr = table["L|y1|ridge"]
+    res["P6"] = {"L_ridge_flat_rmse": lr["test_flat"]["rmse"], "best_persistence_flat_rmse": bt, "L_hyp_r2": lr["test_hyp"]["r2"],
+                 "pass": bool(bt - lr["test_flat"]["rmse"] >= 0.1 and lr["test_hyp"]["r2"] is not None and lr["test_hyp"]["r2"] <= 0.5)}
     res["sets"] = {s: [{"geom": r["geom"], "k": r["k"], "n": r["n"], "sigma_min": r["sigma_min"], "rho": r["rho"]} for r in sets[s]] for s in sets}
     OUT.write_text(json.dumps(res, indent=2, default=float), encoding="utf-8")
-    for k in ("G1", "G2", "G3", "P1", "P2", "P3", "P4", "P5"):
+    for k in ("G1", "G2", "G3", "P1", "P2", "P3", "P4", "P5", "P6"):
         print(k, res[k])
     print("best topo", best_topo, "hyp per geometry", per)
     return 0

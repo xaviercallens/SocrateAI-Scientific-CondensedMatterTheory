@@ -40,3 +40,12 @@ G1 failed: features leak the target and nothing is read. G2 failed: the models a
 
 ## Not claimed
 Anything about noisy data; that persistence features are a practical conditioning estimator (the certificate is cheaper); a topological invariant of the inverse problem; that the tiling list is representative; anything about holography.
+
+## Amendment 1 (2026-10-10, written after the literature review and before any feature or model was computed)
+The review (docs/LITERATURE_REVIEW_TDA.md, section 4) found that the persistent-Laplacian literature (Memoli-Wan-Wang arXiv:2012.02808; Wang-Nguyen-Wei arXiv:1912.04135) states that persistent homology is blind by design to the non-harmonic
+spectral content of a filtration, and that the persistent Laplacian carries it. That is the natural objection to paper 2. It is pre-empted here by one more measured quantity and one more prediction, fixed now.
+**Quantity.** For the column cloud (a) of each layer, the weighted graph Laplacian of the complete graph with edge weights w_ef = 1 − δ(e,f)² = c_ef² (the squared cosine between column lines; w = 1 for identical lines, 0 for orthogonal ones), and its spectrum. Its smallest
+non-zero eigenvalue λ₂ (the algebraic connectivity of the cosine-squared graph) is a zero-dimensional spectral quantity in the sense of the persistent-Laplacian framework at the full filtration level; it depends on the whole weighted graph and not on nearest neighbours. Feature: log₁₀ λ₂ and the lowest five non-zero eigenvalues, appended as a fourth feature block "L".
+**Prediction P6 (spectral features carry more than persistence).** On the flat test disk, ridge regression on the block L alone predicts y₁ with RMSE at least 0.1 decades lower than the best persistence-only model (A, B or AB); and its hyperbolic R² is also ≤ 0.5 (the geometry dependence is not removed by the spectral route).
+**What a refutation would mean.** First clause refuted: the spectral quantity of the column graph does no better than persistence, and the objection is answered the other way (the information is not in the pairwise structure at all, spectral or topological, but in the ordered span). Second clause refuted: the spectral features transfer, which would be a regularity worth its own card.
+No other prediction, gate or band is changed. Gate G1 (leak check) is applied to the best model over all blocks.
