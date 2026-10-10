@@ -61,6 +61,8 @@ def lap_feats(dist):
     Lw = np.diag(W.sum(1)) - W
     ev = np.sort(np.linalg.eigvalsh(Lw))
     nz = ev[1:6]
+    if len(nz) < 5:   # Deviation 1: pad small layers with the largest available eigenvalue
+        nz = np.concatenate([nz, np.full(5 - len(nz), nz[-1] if len(nz) else 1e-300)])
     return np.log10(np.clip(nz, 1e-300, None))
 
 
