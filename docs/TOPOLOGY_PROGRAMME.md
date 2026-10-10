@@ -62,3 +62,20 @@ collects successes of topology is not a test.
 
 ## 6. Rules carried over
 Commit before run; refutations kept; numbers from stored data; never edit a published artefact; say what is not claimed; nothing concerns holography (docs/rigor_protocol.md; LL.md LL-A13 to LL-A22).
+
+## 7. The thesis after the first survey and the first node (2026-10-10)
+
+A verified survey (sources in the vector store, pillar `topoprog`; the four already present are under `topology` and `hyperbolic`) gives, for each domain, the theorem, the measurement and the limit:
+- **Condensed matter.** Theorems: Kitaev's periodic table (arXiv:0901.2686), the ten-fold way (0912.2157), Graf–Porta bulk-edge correspondence under a spectral gap (1207.5989), Prodan–Schulz-Baldes bulk index under a *mobility* gap but bulk-boundary equality only under a *spectral* gap (1510.08744), Bellissard–van Elst–Schulz-Baldes: Hall conductance is a Fredholm index, quantised while the Fermi level sits in localised spectrum (cond-mat/9411052). Measurements: von Klitzing 1980; the Zak phase difference 0.97(2)π between SSH dimerisations (Atala et al., 1212.0572). Limits: interactions reduce Z to Z₈ (Fidkowski–Kitaev, 0904.2197); non-Hermitian point-gap topology produces skin modes and no protected boundary states (Okuma et al., 1910.02878); disorder can create a quantised phase from a trivial metal (topological Anderson insulator, 0811.3045).
+- **Classical waves.** Kane–Lubensky index theorem for isostatic lattices (1308.0554); Delplace–Marston–Venaille equatorial waves (1702.07583); limits: the edge-mode count of a continuum depends on the boundary condition (Tauber–Delplace–Venaille, 1902.10050), and the best photonic measurement finds no protection against real roughness (Rosiek et al., 2206.11741).
+- **Fluids.** Helicity is conserved through reconnection because the reconnecting strands are anti-parallel; the *topology* (linking) is exactly what is not conserved (Scheeler et al., 1404.6513).
+- **Field theory.** Anomaly inflow (Callan–Harvey 1985); Witten's η-invariant cancellation and the Z₁₆ reduction (1508.04715).
+- **Statistical mechanics.** The strongest "topological origin of phase transitions" theorem is false: Kastner–Mehta's 2D φ⁴ transition with constant Euler characteristic (1108.2345). Persistence signals are necessary, not sufficient.
+- **Hyperbolic lattices.** Chern numbers exist (Urwyler et al., 2203.07292) but a macroscopic fraction of states is boundary, and the known gaps are geometric (Kollar et al.: "the origin of the spectral gap remains unknown").
+
+**The reviewer's verdict, adopted.** Every theorem carries a gap hypothesis, spectral or mobility; the invariant decides a discrete fact and the gap decides the margin. The defensible thesis is therefore:
+
+> **Topology constrains, under a gap, what geometry and spectrum then determine.**
+
+Node N1's first measurement says exactly this (`experiments/axis1_topological_waves/RESULTS_N1_LIMIT.md`): the winding fixes the side of the end mode; chiral symmetry fixes its energy at zero for any coupling disorder short of gap closing; the gap fixes how far a symmetry-breaking term may go (a third of the gap for on-site terms, a fifth for same-sublattice hopping) before the mode leaves the end.
+The programme's title is weakened accordingly, and each remaining node must report its margin, not only its invariant.
