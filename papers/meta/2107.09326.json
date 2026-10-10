@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "2107.09326",
+  "version": "v2",
+  "title": "Single-exponential bounds for the smallest singular value of Vandermonde matrices in the sub-Rayleigh regime",
+  "abstract": "Following recent interest by the community, the scaling of the minimal singular value of a Vandermonde matrix with nodes forming clusters on the length scale of Rayleigh distance on the complex unit circle is studied. Using approximation theoretic properties of exponential sums, we show that the decay is only single exponential in the size of the largest cluster, and the bound holds for arbitrary small minimal separation distance. We also obtain a generalization of well-known bounds on the smallest eigenvalue of the generalized prolate matrix in the multi-cluster geometry. Finally, the results are extended to the entire spectrum.",
+  "authors": [
+    "Dmitry Batenkov",
+    "Gil Goldman"
+  ],
+  "published": "2021-07-20T08:33:40Z",
+  "updated": "2021-07-26T08:37:55Z",
+  "year": "2021",
+  "primary_category": "math.NA",
+  "categories": [
+    "math.NA"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2107.09326",
+  "pdf_url": "https://arxiv.org/pdf/2107.09326",
+  "pillar": "conditioning",
+  "slug": "2107.09326",
+  "pdf_local": "papers/pdf/2107.09326.pdf"
+}

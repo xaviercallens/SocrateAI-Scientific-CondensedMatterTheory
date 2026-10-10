@@ -1,0 +1,23 @@
+{
+  "arxiv_id": "1507.05379",
+  "version": "v4",
+  "title": "Hodge Laplacians on graphs",
+  "abstract": "This is an elementary introduction to the Hodge Laplacian on a graph, a higher-order generalization of the graph Laplacian. We will discuss basic properties including cohomology and Hodge theory. The main feature of our approach is simplicity, requiring only knowledge of linear algebra and graph theory. We have also isolated the algebra from the topology to show that a large part of cohomology and Hodge theory is nothing more than the linear algebra of matrices satisfying $AB = 0$. For the remaining topological aspect, we cast our discussions entirely in terms of graphs as opposed to less-familiar topological objects like simplicial complexes.",
+  "authors": [
+    "Lek-Heng Lim"
+  ],
+  "published": "2015-07-20T03:55:06Z",
+  "updated": "2019-08-18T05:40:26Z",
+  "year": "2015",
+  "primary_category": "cs.IT",
+  "categories": [
+    "cs.IT"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1507.05379",
+  "pdf_url": "https://arxiv.org/pdf/1507.05379",
+  "pillar": "tda",
+  "slug": "1507.05379",
+  "pdf_local": "papers/pdf/1507.05379.pdf"
+}

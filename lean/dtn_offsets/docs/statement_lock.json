@@ -1,0 +1,20 @@
+{
+  "DtNOffsets.lean": {
+    "col_offset_orthogonal": "4c969da362c41266",
+    "decision_invariant": "193cb415f682e7fd",
+    "dtn": "3676b204c21123c0",
+    "dtn_mulVec_one": "88334a11a6fd217e",
+    "row_offset_orthogonal": "fb28949e1a4bc88d"
+  },
+  "GramSchmidtBound.lean": {
+    "dtn": "17b556700d3e911d",
+    "dtn_transpose": "f827bbd1bc6efa11",
+    "dtn_vecMul_one": "8bbdfac3310b5ac0",
+    "le_residual": "f12acfba3c112d54"
+  },
+  "SSHWinding.lean": {
+    "log_deriv_eq": "fb5e3133fcafbbac",
+    "winding_topological": "8ac1ac5ab7b59de4",
+    "winding_trivial": "199ca6cf1b3e7ff8"
+  }
+}

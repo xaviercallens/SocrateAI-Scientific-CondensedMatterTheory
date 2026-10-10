@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "1108.2345",
+  "version": "v2",
+  "title": "Phase transitions detached from stationary points of the energy landscape",
+  "abstract": "The stationary points of the potential energy function V are studied for the φ^4 model on a two-dimensional square lattice with nearest-neighbor interactions. On the basis of analytical and numerical results, we explore the relation of stationary points to the occurrence of thermodynamic phase transitions. We find that the phase transition potential energy of the φ^4 model does in general not coincide with the potential energy of any of the stationary points of V. This disproves earlier, allegedly rigorous, claims in the literature on necessary conditions for the existence of phase transitions. Moreover, we find evidence that the indices of stationary points scale extensively with the system size, and therefore the index density can be used to characterize features of the energy landscape in the infinite-system limit. We conclude that the finite-system stationary points provide one possible mechanism of how a phase transition can arise, but not the only one.",
+  "authors": [
+    "Michael Kastner",
+    "Dhagash Mehta"
+  ],
+  "published": "2011-08-11T08:28:25Z",
+  "updated": "2011-10-13T15:14:17Z",
+  "year": "2011",
+  "primary_category": "cond-mat.stat-mech",
+  "categories": [
+    "cond-mat.stat-mech"
+  ],
+  "doi": "10.1103/PhysRevLett.107.160602",
+  "journal_ref": "Phys. Rev. Lett. 107, 160602 (2011)",
+  "abs_url": "https://arxiv.org/abs/1108.2345",
+  "pdf_url": "https://arxiv.org/pdf/1108.2345",
+  "pillar": "topoprog",
+  "slug": "1108.2345",
+  "pdf_local": "papers/pdf/1108.2345.pdf"
+}

@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "0906.4506",
+  "version": "v1",
+  "title": "The smallest eigenvalue of Hankel matrices",
+  "abstract": "Let H_N=(s_{n+m}),n,m\\le N denote the Hankel matrix of moments of a positive measure with moments of any order. We study the large N behaviour of the smallest eigenvalue lambda_N of H_N. It is proved that lambda_N has exponential decay to zero for any measure with compact support. For general determinate moment problems the decay to 0 of lambda_N can be arbitrarily slow or arbitrarily fast. In the indeterminate case, where lambda_N is known to be bounded below by a positive constant, we prove that the limit of the n'th smallest eigenvalue of H_N for N tending to infinity tends rapidly to infinity with n. The special case of the Stieltjes-Wigert polynomials is discussed.",
+  "authors": [
+    "Christian Berg",
+    "Ryszard Szwarc"
+  ],
+  "published": "2009-06-24T15:51:37Z",
+  "updated": "2009-06-24T15:51:37Z",
+  "year": "2009",
+  "primary_category": "math.CA",
+  "categories": [
+    "math.CA"
+  ],
+  "doi": "10.1007/s00365-010-9109-4",
+  "journal_ref": "Constr. Approx. 34 (2011), 107-133",
+  "abs_url": "https://arxiv.org/abs/0906.4506",
+  "pdf_url": "https://arxiv.org/pdf/0906.4506",
+  "pillar": "conditioning",
+  "slug": "0906.4506",
+  "pdf_local": "papers/pdf/0906.4506.pdf"
+}

@@ -1,0 +1,7 @@
+.lake/
+build.log
+g2.log
+g3.log
+g4.log
+build*.log
+g[234].log

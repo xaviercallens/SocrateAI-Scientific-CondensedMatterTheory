@@ -1,0 +1,31 @@
+{
+  "arxiv_id": "1904.09378",
+  "version": "v4",
+  "title": "PersLay: A Neural Network Layer for Persistence Diagrams and New Graph Topological Signatures",
+  "abstract": "Persistence diagrams, the most common descriptors of Topological Data Analysis, encode topological properties of data and have already proved pivotal in many different applications of data science. However, since the (metric) space of persistence diagrams is not Hilbert, they end up being difficult inputs for most Machine Learning techniques. To address this concern, several vectorization methods have been put forward that embed persistence diagrams into either finite-dimensional Euclidean space or (implicit) infinite dimensional Hilbert space with kernels. In this work, we focus on persistence diagrams built on top of graphs. Relying on extended persistence theory and the so-called heat kernel signature, we show how graphs can be encoded by (extended) persistence diagrams in a provably stable way. We then propose a general and versatile framework for learning vectorizations of persistence diagrams, which encompasses most of the vectorization techniques used in the literature. We finally showcase the experimental strength of our setup by achieving competitive scores on classification tasks on real-life graph datasets.",
+  "authors": [
+    "Mathieu Carrière",
+    "Frédéric Chazal",
+    "Yuichi Ike",
+    "Théo Lacombe",
+    "Martin Royer",
+    "Yuhei Umeda"
+  ],
+  "published": "2019-04-20T00:21:59Z",
+  "updated": "2020-03-09T03:15:26Z",
+  "year": "2019",
+  "primary_category": "stat.ML",
+  "categories": [
+    "stat.ML",
+    "cs.CG",
+    "cs.LG",
+    "math.AT"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1904.09378",
+  "pdf_url": "https://arxiv.org/pdf/1904.09378",
+  "pillar": "tda",
+  "slug": "1904.09378",
+  "pdf_local": "papers/pdf/1904.09378.pdf"
+}

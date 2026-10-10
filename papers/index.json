@@ -2647,5 +2647,1394 @@
     "pillar": "ryu",
     "slug": "2601.00761",
     "pdf_local": "papers/pdf/2601.00761.pdf"
+  },
+  {
+    "arxiv_id": "math/0303126",
+    "version": "v1",
+    "title": "Examples of exponential instability for elliptic inverse problems",
+    "abstract": "Following a recent paper by N. Mandache (Inverse Problems 17 (2001), pp. 1435-1444), we establish a general procedure for determining the instability character of inverse problems. We apply this procedure to many elliptic inverse problems concerning the determination of defects of various types by different kinds of boundary measurements and we show that these problems are exponentially ill-posed.",
+    "authors": [
+      "Michele Di Cristo",
+      "Luca Rondi"
+    ],
+    "published": "2003-03-11T16:23:11Z",
+    "updated": "2003-03-11T16:23:11Z",
+    "year": "2003",
+    "primary_category": "math.AP",
+    "categories": [
+      "math.AP"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/math/0303126",
+    "pdf_url": "https://arxiv.org/pdf/math/0303126",
+    "pillar": "inverse",
+    "slug": "math_0303126",
+    "pdf_local": "papers/pdf/math_0303126.pdf"
+  },
+  {
+    "arxiv_id": "2509.18203",
+    "version": "v2",
+    "title": "On the uniqueness of the discrete Calderon problem on multi-dimensional lattices",
+    "abstract": "In this work, we investigate the discrete Calderón problem on grid graphs of dimension three or higher, formed by hypercubic structures. The discrete Calderón problem is concerned with determining whether the discrete Dirichlet-to-Neumann (DtN) operator, which links boundary potentials to boundary current responses, can uniquely identify the conductivity values on the graph edges. We provide an affirmative answer to the question, thereby extending the classical uniqueness result of Curtis and Morrow for two-dimensional square lattices. The proof employs a novel slicing technique that decomposes the problem into lower-dimensional components. Additionally, we support the theoretical finding with numerical experiments that illustrate the effectiveness of the approach.",
+    "authors": [
+      "Maolin Deng",
+      "Bangti Jin"
+    ],
+    "published": "2025-09-20T14:12:12Z",
+    "updated": "2026-03-05T22:59:31Z",
+    "year": "2025",
+    "primary_category": "math-ph",
+    "categories": [
+      "math-ph",
+      "math.NA"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2509.18203",
+    "pdf_url": "https://arxiv.org/pdf/2509.18203",
+    "pillar": "inverse",
+    "slug": "2509.18203",
+    "pdf_local": "papers/pdf/2509.18203.pdf"
+  },
+  {
+    "arxiv_id": "2501.00345",
+    "version": "v1",
+    "title": "The discrete inverse conductivity problem solved by the weights of an interpretable neural network",
+    "abstract": "In this work, we develop a novel neural network (NN) approach to solve the discrete inverse conductivity problem of recovering the conductivity profile on network edges from the discrete Dirichlet-to-Neumann map on a square lattice. The novelty of the approach lies in the fact that the sought-after conductivity is not provided directly as the output of the NN but is instead encoded in the weights of the post-trainig NN in the second layer. Hence the weights of the trained NN acquire a clear physical meaning, which contrasts with most existing neural network approaches, where the weights are typically not interpretable. This work represents a step toward designing NNs with interpretable post-training weights. Numerically, we observe that the method outperforms the conventional Curtis-Morrow algorithm for both noisy full and partial data.",
+    "authors": [
+      "Elena Beretta",
+      "Maolin Deng",
+      "Alberto Gandolfi",
+      "Bangti Jin"
+    ],
+    "published": "2024-12-31T08:42:53Z",
+    "updated": "2024-12-31T08:42:53Z",
+    "year": "2024",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "math.AP"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2501.00345",
+    "pdf_url": "https://arxiv.org/pdf/2501.00345",
+    "pillar": "inverse",
+    "slug": "2501.00345",
+    "pdf_local": "papers/pdf/2501.00345.pdf"
+  },
+  {
+    "arxiv_id": "2312.11721",
+    "version": "v1",
+    "title": "Stable recovery of piecewise constant conductance on spider networks",
+    "abstract": "We address the discrete inverse conductance problem for well-connected spider networks; that is, to recover the conductance function on a well-connected spider network from the Dirichlet-to-Neumann map. It is well-known that this inverse problem is exponentially ill-posed, requiring the implementation of a regularization strategy for numerical solutions. Our focus lies in exploring whether prior knowledge of the conductance being piecewise constant within a partition of the edge set comprising few subsets enables stable conductance recovery. To achieve this, we propose formulating the problem as a polynomial optimization one, incorporating a regularization term that accounts for the piecewise constant hypothesis. We show several experimental examples in which the stable conductance recovery under the aforementioned hypothesis is feasible.",
+    "authors": [
+      "Ángeles Carmona",
+      "Andrés M. Encinas",
+      "María José Jiménez",
+      "Álvaro Samperio"
+    ],
+    "published": "2023-12-18T21:42:55Z",
+    "updated": "2023-12-18T21:42:55Z",
+    "year": "2023",
+    "primary_category": "math.CO",
+    "categories": [
+      "math.CO"
+    ],
+    "doi": "10.1080/00207160.2024.2385631",
+    "journal_ref": "This is an original manuscript of an article published by Taylor & Francis in International Journal of Computer Mathematics on 31 Jul 2024",
+    "abs_url": "https://arxiv.org/abs/2312.11721",
+    "pdf_url": "https://arxiv.org/pdf/2312.11721",
+    "pillar": "inverse",
+    "slug": "2312.11721",
+    "pdf_local": "papers/pdf/2312.11721.pdf"
+  },
+  {
+    "arxiv_id": "1104.4998",
+    "version": "v1",
+    "title": "Inverse problem in cylindrical electrical networks",
+    "abstract": "In this paper we study the inverse Dirichlet-to-Neumann problem for certain cylindrical electrical networks. We define and study a birational transformation acting on cylindrical electrical networks called the electrical $R$-matrix. We use this transformation to formulate a general conjectural solution to this inverse problem on the cylinder. This conjecture extends work of Curtis, Ingerman, and Morrow, and of de Verdière, Gitler, and Vertigan for circular planar electrical networks. We show that our conjectural solution holds for certain \"purely cylindrical\" networks. Here we apply the grove combinatorics introduced by Kenyon and Wilson.",
+    "authors": [
+      "Thomas Lam",
+      "Pavlo Pylyavskyy"
+    ],
+    "published": "2011-04-26T19:24:49Z",
+    "updated": "2011-04-26T19:24:49Z",
+    "year": "2011",
+    "primary_category": "math.CO",
+    "categories": [
+      "math.CO"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1104.4998",
+    "pdf_url": "https://arxiv.org/pdf/1104.4998",
+    "pillar": "inverse",
+    "slug": "1104.4998",
+    "pdf_local": "papers/pdf/1104.4998.pdf"
+  },
+  {
+    "arxiv_id": "1609.03041",
+    "version": "v1",
+    "title": "Optical tomography on graphs",
+    "abstract": "We present an algorithm for solving inverse problems on graphs analogous to those arising in diffuse optical tomography for continuous media. In particular, we formulate and analyze a discrete version of the inverse Born series, proving estimates characterizing the domain of convergence, approximation errors, and stability of our approach. We also present a modification which allows additional information on the structure of the potential to be incorporated, facilitating recovery for a broader class of problems.",
+    "authors": [
+      "Francis J. Chung",
+      "Anna C. Gilbert",
+      "Jeremy G. Hoskins",
+      "John C. Schotland"
+    ],
+    "published": "2016-09-10T12:49:36Z",
+    "updated": "2016-09-10T12:49:36Z",
+    "year": "2016",
+    "primary_category": "math.CO",
+    "categories": [
+      "math.CO"
+    ],
+    "doi": "10.1088/1361-6420/aa66d1",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1609.03041",
+    "pdf_url": "https://arxiv.org/pdf/1609.03041",
+    "pillar": "inverse",
+    "slug": "1609.03041",
+    "pdf_local": "papers/pdf/1609.03041.pdf"
+  },
+  {
+    "arxiv_id": "1504.02118",
+    "version": "v3",
+    "title": "How Bad Are Vandermonde Matrices?",
+    "abstract": "The work on the estimation of the condition numbers of Vandermonde matrices, motivated by applications to interpolation and quadrature, can be traced back at least to the 1970s. Empirical study has shown consistently that Vandermonde matrices tend to be badly ill-conditioned, with a narrow class of notable exceptions, such as the matrices of the discrete Fourier transform (hereafter referred to as DFT). So far formal support for this empirical observation, however, has been limited to the matrices defined by the real set of knots. We prove that, more generally, any Vandermonde matrix of a large size is badly ill-conditioned unless its knots are more or less equally spaced on or about the circle $C(0,1)=\\{x:\\,|x|=1\\}$. The matrices of DFT are perfectly conditioned, being defined by a cyclic sequence of knots, equally spaced on that circle, but we prove that even a slight modification of the knots into the so called quasi-cyclic sequence on this circle defines badly ill-conditioned Vandermonde matrices. Likewise we prove that the half-size leading block of a large DFT matrix is badly ill-conditioned. (This result was motivated by an application to pre-conditioning of an input matrix for Gaussian elimination with no pivoting.) Our analysis involves the Ekkart--Young theorem, the Vandermonde-to-Cauchy transformation of matrix structure, our new inversion formula for a Cauchy matrix, and low-rank approximation of its large submatrices.",
+    "authors": [
+      "Victor Y. Pan"
+    ],
+    "published": "2015-04-08T20:29:02Z",
+    "updated": "2015-07-10T08:11:18Z",
+    "year": "2015",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1504.02118",
+    "pdf_url": "https://arxiv.org/pdf/1504.02118",
+    "pillar": "conditioning",
+    "slug": "1504.02118",
+    "pdf_local": "papers/pdf/1504.02118.pdf"
+  },
+  {
+    "arxiv_id": "1609.09494",
+    "version": "v1",
+    "title": "On the singular values of matrices with displacement structure",
+    "abstract": "Matrices with displacement structure such as Pick, Vandermonde, and Hankel matrices appear in a diverse range of applications. In this paper, we use an extremal problem involving rational functions to derive explicit bounds on the singular values of such matrices. For example, we show that the $k$th singular value of a real $n\\times n$ positive definite Hankel matrix, $H_n$, is bounded by $Cρ^{-k/\\log n}\\|H\\|_2$ with explicitly given constants $C>0$ and $ρ>1$, where $\\|H_n\\|_2$ is the spectral norm. This means that a real $n\\times n$ positive definite Hankel matrix can be approximated, up to an accuracy of $ε\\|H_n\\|_2$ with $0<ε<1$, by a rank $\\mathcal{O}(\\log n\\log(1/ε) )$ matrix. Analogous results are obtained for Pick, Cauchy, real Vandermonde, Löwner, and certain Krylov matrices.",
+    "authors": [
+      "Bernhard Beckermann",
+      "Alex Townsend"
+    ],
+    "published": "2016-09-29T12:26:08Z",
+    "updated": "2016-09-29T12:26:08Z",
+    "year": "2016",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "math.RA"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1609.09494",
+    "pdf_url": "https://arxiv.org/pdf/1609.09494",
+    "pillar": "conditioning",
+    "slug": "1609.09494",
+    "pdf_local": "papers/pdf/1609.09494.pdf"
+  },
+  {
+    "arxiv_id": "1701.02538",
+    "version": "v3",
+    "title": "Vandermonde Matrices with Nodes in the Unit Disk and the Large Sieve",
+    "abstract": "We derive bounds on the extremal singular values and the condition number of NxK, with N>=K, Vandermonde matrices with nodes in the unit disk. The mathematical techniques we develop to prove our main results are inspired by a link---first established by by Selberg [1] and later extended by Moitra [2]---between the extremal singular values of Vandermonde matrices with nodes on the unit circle and large sieve inequalities. Our main conceptual contribution lies in establishing a connection between the extremal singular values of Vandermonde matrices with nodes in the unit disk and a novel large sieve inequality involving polynomials in z \\in C with |z|<=1. Compared to Bazán's upper bound on the condition number [3], which, to the best of our knowledge, constitutes the only analytical result---available in the literature---on the condition number of Vandermonde matrices with nodes in the unit disk, our bound not only takes a much simpler form, but is also sharper for certain node configurations. Moreover, the bound we obtain can be evaluated consistently in a numerically stable fashion, whereas the evaluation of Bazán's bound requires the solution of a linear system of equations which has the same condition number as the Vandermonde matrix under consideration and can therefore lead to numerical instability in practice. As a byproduct, our result---when particularized to the case of nodes on the unit circle---slightly improves upon the Selberg-Moitra bound.",
+    "authors": [
+      "Céline Aubel",
+      "Helmut Bölcskei"
+    ],
+    "published": "2017-01-10T12:09:37Z",
+    "updated": "2017-08-03T22:11:56Z",
+    "year": "2017",
+    "primary_category": "cs.IT",
+    "categories": [
+      "cs.IT",
+      "math.FA",
+      "math.NA",
+      "math.NT"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1701.02538",
+    "pdf_url": "https://arxiv.org/pdf/1701.02538",
+    "pillar": "conditioning",
+    "slug": "1701.02538",
+    "pdf_local": "papers/pdf/1701.02538.pdf"
+  },
+  {
+    "arxiv_id": "0906.4506",
+    "version": "v1",
+    "title": "The smallest eigenvalue of Hankel matrices",
+    "abstract": "Let H_N=(s_{n+m}),n,m\\le N denote the Hankel matrix of moments of a positive measure with moments of any order. We study the large N behaviour of the smallest eigenvalue lambda_N of H_N. It is proved that lambda_N has exponential decay to zero for any measure with compact support. For general determinate moment problems the decay to 0 of lambda_N can be arbitrarily slow or arbitrarily fast. In the indeterminate case, where lambda_N is known to be bounded below by a positive constant, we prove that the limit of the n'th smallest eigenvalue of H_N for N tending to infinity tends rapidly to infinity with n. The special case of the Stieltjes-Wigert polynomials is discussed.",
+    "authors": [
+      "Christian Berg",
+      "Ryszard Szwarc"
+    ],
+    "published": "2009-06-24T15:51:37Z",
+    "updated": "2009-06-24T15:51:37Z",
+    "year": "2009",
+    "primary_category": "math.CA",
+    "categories": [
+      "math.CA"
+    ],
+    "doi": "10.1007/s00365-010-9109-4",
+    "journal_ref": "Constr. Approx. 34 (2011), 107-133",
+    "abs_url": "https://arxiv.org/abs/0906.4506",
+    "pdf_url": "https://arxiv.org/pdf/0906.4506",
+    "pillar": "conditioning",
+    "slug": "0906.4506",
+    "pdf_local": "papers/pdf/0906.4506.pdf"
+  },
+  {
+    "arxiv_id": "2107.09326",
+    "version": "v2",
+    "title": "Single-exponential bounds for the smallest singular value of Vandermonde matrices in the sub-Rayleigh regime",
+    "abstract": "Following recent interest by the community, the scaling of the minimal singular value of a Vandermonde matrix with nodes forming clusters on the length scale of Rayleigh distance on the complex unit circle is studied. Using approximation theoretic properties of exponential sums, we show that the decay is only single exponential in the size of the largest cluster, and the bound holds for arbitrary small minimal separation distance. We also obtain a generalization of well-known bounds on the smallest eigenvalue of the generalized prolate matrix in the multi-cluster geometry. Finally, the results are extended to the entire spectrum.",
+    "authors": [
+      "Dmitry Batenkov",
+      "Gil Goldman"
+    ],
+    "published": "2021-07-20T08:33:40Z",
+    "updated": "2021-07-26T08:37:55Z",
+    "year": "2021",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2107.09326",
+    "pdf_url": "https://arxiv.org/pdf/2107.09326",
+    "pillar": "conditioning",
+    "slug": "2107.09326",
+    "pdf_local": "papers/pdf/2107.09326.pdf"
+  },
+  {
+    "arxiv_id": "1908.11097",
+    "version": "v1",
+    "title": "Quantifying the ill-conditioning of analytic continuation",
+    "abstract": "Analytic continuation is ill-posed, but becomes merely ill-conditioned (although with an infinite condition number) if it is known that the function in question is bounded in a given region of the complex plane. In an annulus, the Hadamard three-circles theorem implies that the ill-conditioning is not too severe, and we show how this explains the effectiveness of Chebfun and related numerical methods in evaluating analytic functions off the interval of definition. By contrast, we show that analytic continuation is far more ill-conditioned in a strip or a channel, with exponential loss of digits of accuracy at the rate $\\exp(-πx/2)$ as one moves along. The classical Weierstrass chain-of-disks method loses digits at the faster rate $\\exp(-e\\kern .3pt x)$.",
+    "authors": [
+      "Lloyd N. Trefethen"
+    ],
+    "published": "2019-08-29T08:30:31Z",
+    "updated": "2019-08-29T08:30:31Z",
+    "year": "2019",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "math.CV"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1908.11097",
+    "pdf_url": "https://arxiv.org/pdf/1908.11097",
+    "pillar": "conditioning",
+    "slug": "1908.11097",
+    "pdf_local": "papers/pdf/1908.11097.pdf"
+  },
+  {
+    "arxiv_id": "1605.09601",
+    "version": "v1",
+    "title": "Stable extrapolation of analytic functions",
+    "abstract": "This paper examines the problem of extrapolation of an analytic function for $x > 1$ given perturbed samples from an equally spaced grid on $[-1,1]$. Mathematical folklore states that extrapolation is in general hopelessly ill-conditioned, but we show that a more precise statement carries an interesting nuance. For a function $f$ on $[-1,1]$ that is analytic in a Bernstein ellipse with parameter $ρ> 1$, and for a uniform perturbation level $ε$ on the function samples, we construct an asymptotically best extrapolant $e(x)$ as a least squares polynomial approximant of degree $M^*$ given explicitly. We show that the extrapolant $e(x)$ converges to $f(x)$ pointwise in the interval $I_ρ\\in[1,(ρ+ρ^{-1})/2)$ as $ε\\to 0$, at a rate given by a $x$-dependent fractional power of $ε$. More precisely, for each $x \\in I_ρ$ we have \\[ |f(x) - e(x)| = \\mathcal{O}\\left( ε^{-\\log r(x) / \\logρ} \\right), \\qquad\\qquad r(x) = \\frac{x+\\sqrt{x^2-1}}ρ, \\] up to log factors, provided that the oversampling conditioning is satisfied. That is, \\[ M^* \\leq \\frac{1}{2} \\sqrt{N}, \\] which is known to be needed from approximation theory. In short, extrapolation enjoys a weak form of stability, up to a fraction of the characteristic smoothness length. The number of function samples, $N+1$, does not bear on the size of the extrapolation error provided that it obeys the oversampling condition. We also show that one cannot construct an asymptotically more accurate extrapolant from $N+1$ equally spaced samples than $e(x)$, using any other linear or nonlinear procedure. The proofs involve original statements on the stability of polynomial approximation in the Chebyshev basis from equally spaced samples and these are expected to be of independent interest.",
+    "authors": [
+      "Laurent Demanet",
+      "Alex Townsend"
+    ],
+    "published": "2016-05-31T12:35:33Z",
+    "updated": "2016-05-31T12:35:33Z",
+    "year": "2016",
+    "primary_category": "cs.IT",
+    "categories": [
+      "cs.IT",
+      "math.NA"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1605.09601",
+    "pdf_url": "https://arxiv.org/pdf/1605.09601",
+    "pillar": "conditioning",
+    "slug": "1605.09601",
+    "pdf_local": "papers/pdf/1605.09601.pdf"
+  },
+  {
+    "arxiv_id": "2404.03062",
+    "version": "v2",
+    "title": "Simulating Holographic Conformal Field Theories on Hyperbolic Lattices",
+    "abstract": "We demonstrate how table-top settings combining hyperbolic lattices with nonlinear dynamics universally encode aspects of the bulk-boundary-correspondence between gravity in anti-de-Sitter (AdS) space and conformal field theory (CFT). Our concrete and broadly applicable holographic toy model simulates gravitational self-interactions in the bulk and features an emergent CFT with nontrivial correlations on the boundary. We measure the CFT data contained in the two- and three-point functions and clarify how a thermal CFT is simulated through an effective black hole geometry. As a concrete example, we propose and simulate an experimentally feasible protocol to measure the holographic CFT using electrical circuits.",
+    "authors": [
+      "Santanu Dey",
+      "Anffany Chen",
+      "Pablo Basteiro",
+      "Alexander Fritzsche",
+      "Martin Greiter",
+      "Matthias Kaminski",
+      "Patrick M. Lenggenhager",
+      "Rene Meyer",
+      "Riccardo Sorbello",
+      "Alexander Stegmaier",
+      "Ronny Thomale",
+      "Johanna Erdmenger",
+      "Igor Boettcher"
+    ],
+    "published": "2024-04-03T21:04:56Z",
+    "updated": "2024-08-13T19:45:41Z",
+    "year": "2024",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.stat-mech",
+      "gr-qc",
+      "hep-th",
+      "math-ph"
+    ],
+    "doi": "10.1103/PhysRevLett.133.061603",
+    "journal_ref": "Phys. Rev. Lett. 133, 061603 (2024)",
+    "abs_url": "https://arxiv.org/abs/2404.03062",
+    "pdf_url": "https://arxiv.org/pdf/2404.03062",
+    "pillar": "hyperbolic",
+    "slug": "2404.03062",
+    "pdf_local": "papers/pdf/2404.03062.pdf"
+  },
+  {
+    "arxiv_id": "2305.04862",
+    "version": "v3",
+    "title": "Testing holographic duality in hyperbolic lattices",
+    "abstract": "The celebrated holographic duality posits a correspondence between a quantum gravity in a bulk spacetime and a quantum field theory (QFT) defined on its lower-dimensional boundary. This duality not only offers deep insights into the enigmatic nature of quantum gravity but also provides an efficient methodology for studying strongly correlated systems. However, despite its profound significance in modern physics, holographic duality remains a conjecture, and further experimental exploration is highly sought after. Here, we present the first experimental test of holographic duality between a three-dimensional bulk gravity and a two-dimensional boundary QFT using hyperbolic lattices. By experimentally measuring the classical scalar field propagator in hyperbolic circuits, we reproduce the equal-time two-point correlation function of the dual boundary conformal field theory (CFT), verifying its exponential dependence on the boundary separation and the conformal dimension-scalar mass relation. Furthermore, by leveraging the two-point correlation function, we reconstruct the entanglement entropy for a boundary CFT subsystem, confirming that it follows the Ryu-Takayanagi formula. These results constitute the first direct experimental evidence that quantum properties of the QFT can be holographically reproduced through its dual classical field in curved space. This heuristic experimental effort opens a new avenue for in-depth investigations on the holographic duality and extensive exploration of quantum-gravity-inspired phenomena in classical systems.",
+    "authors": [
+      "Jingming Chen",
+      "Feiyu Chen",
+      "Linyun Yang",
+      "Yuting Yang",
+      "Liren Chen",
+      "Zihan Chen",
+      "Ying Wu",
+      "Yan Meng",
+      "Bei Yan",
+      "Xiang Xi",
+      "Zhenxiao Zhu",
+      "Minqi Cheng",
+      "Gui-Geng Liu",
+      "Perry Ping Shum",
+      "Hongsheng Chen",
+      "Rong-Gen Cai",
+      "Run-Qiu Yang",
+      "Yihao Yang",
+      "Zhen Gao"
+    ],
+    "published": "2023-05-05T15:35:30Z",
+    "updated": "2026-04-16T16:50:37Z",
+    "year": "2023",
+    "primary_category": "hep-lat",
+    "categories": [
+      "hep-lat",
+      "gr-qc"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2305.04862",
+    "pdf_url": "https://arxiv.org/pdf/2305.04862",
+    "pillar": "hyperbolic",
+    "slug": "2305.04862",
+    "pdf_local": "papers/pdf/2305.04862.pdf"
+  },
+  {
+    "arxiv_id": "2205.05081",
+    "version": "v2",
+    "title": "Breitenlohner-Freedman bound on hyperbolic tilings",
+    "abstract": "We establish how the Breitenlohner-Freedman (BF) bound is realized on tilings of two-dimensional Euclidean Anti-de Sitter space. For the continuum, the BF bound states that on Anti-de Sitter spaces, fluctuation modes remain stable for small negative mass-squared $m^2$. This follows from a real and positive total energy of the gravitational system. For finite cutoff $\\varepsilon$, we solve the Klein-Gordon equation numerically on regular hyperbolic tilings. When $\\varepsilon\\to0$, we find that the continuum BF bound is approached in a manner independent of the tiling. We confirm these results via simulations of a hyperbolic electric circuit. Moreover, we propose a novel circuit including active elements that allows to further scan values of $m^2$ above the BF bound.",
+    "authors": [
+      "Pablo Basteiro",
+      "Felix Dusel",
+      "Johanna Erdmenger",
+      "Dietmar Herdt",
+      "Haye Hinrichsen",
+      "René Meyer",
+      "Manuel Schrauth"
+    ],
+    "published": "2022-05-10T18:00:00Z",
+    "updated": "2022-10-25T16:03:36Z",
+    "year": "2022",
+    "primary_category": "hep-th",
+    "categories": [
+      "hep-th",
+      "cond-mat.other",
+      "gr-qc",
+      "hep-lat"
+    ],
+    "doi": "10.1103/PhysRevLett.130.091604",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2205.05081",
+    "pdf_url": "https://arxiv.org/pdf/2205.05081",
+    "pillar": "hyperbolic",
+    "slug": "2205.05081",
+    "pdf_local": "papers/pdf/2205.05081.pdf"
+  },
+  {
+    "arxiv_id": "2205.05106",
+    "version": "v3",
+    "title": "Hyperbolic Matter in Electrical Circuits with Tunable Complex Phases",
+    "abstract": "Curved spaces play a fundamental role in many areas of modern physics, from cosmological length scales to subatomic structures related to quantum information and quantum gravity. In tabletop experiments, negatively curved spaces can be simulated with hyperbolic lattices. Here we introduce and experimentally realize hyperbolic matter as a paradigm for topological states through topolectrical circuit networks relying on a complex-phase circuit element. The experiment is based on hyperbolic band theory that we confirm here in an unprecedented numerical survey of finite hyperbolic lattices. We implement hyperbolic graphene as an example of topologically nontrivial hyperbolic matter. Our work sets the stage to realize more complex forms of hyperbolic matter to challenge our established theories of physics in curved space, while the tunable complex-phase element developed here can be a key ingredient for future experimental simulation of various Hamiltonians with topological ground states.",
+    "authors": [
+      "Anffany Chen",
+      "Hauke Brand",
+      "Tobias Helbig",
+      "Tobias Hofmann",
+      "Stefan Imhof",
+      "Alexander Fritzsche",
+      "Tobias Kießling",
+      "Alexander Stegmaier",
+      "Lavi K. Upreti",
+      "Titus Neupert",
+      "Tomáš Bzdušek",
+      "Martin Greiter",
+      "Ronny Thomale",
+      "Igor Boettcher"
+    ],
+    "published": "2022-05-10T18:08:37Z",
+    "updated": "2023-02-23T21:40:14Z",
+    "year": "2022",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el"
+    ],
+    "doi": "10.1038/s41467-023-36359-6",
+    "journal_ref": "Nat. Commun. 14, 622 (2023)",
+    "abs_url": "https://arxiv.org/abs/2205.05106",
+    "pdf_url": "https://arxiv.org/pdf/2205.05106",
+    "pillar": "hyperbolic",
+    "slug": "2205.05106",
+    "pdf_local": "papers/pdf/2205.05106.pdf"
+  },
+  {
+    "arxiv_id": "1507.06217",
+    "version": "v3",
+    "title": "Persistence Images: A Stable Vector Representation of Persistent Homology",
+    "abstract": "Many datasets can be viewed as a noisy sampling of an underlying space, and tools from topological data analysis can characterize this structure for the purpose of knowledge discovery. One such tool is persistent homology, which provides a multiscale description of the homological features within a dataset. A useful representation of this homological information is a persistence diagram (PD). Efforts have been made to map PDs into spaces with additional structure valuable to machine learning tasks. We convert a PD to a finite-dimensional vector representation which we call a persistence image (PI), and prove the stability of this transformation with respect to small perturbations in the inputs. The discriminatory power of PIs is compared against existing methods, showing significant performance gains. We explore the use of PIs with vector-based machine learning tools, such as linear sparse support vector machines, which identify features containing discriminating topological information. Finally, high accuracy inference of parameter values from the dynamic output of a discrete dynamical system (the linked twist map) and a partial differential equation (the anisotropic Kuramoto-Sivashinsky equation) provide a novel application of the discriminatory power of PIs.",
+    "authors": [
+      "Henry Adams",
+      "Sofya Chepushtanova",
+      "Tegan Emerson",
+      "Eric Hanson",
+      "Michael Kirby",
+      "Francis Motta",
+      "Rachel Neville",
+      "Chris Peterson",
+      "Patrick Shipman",
+      "Lori Ziegelmeier"
+    ],
+    "published": "2015-07-22T14:59:02Z",
+    "updated": "2016-07-11T14:52:14Z",
+    "year": "2015",
+    "primary_category": "cs.CG",
+    "categories": [
+      "cs.CG",
+      "math.AT",
+      "stat.ML"
+    ],
+    "doi": "",
+    "journal_ref": "Journal of Machine Learning Research 18 (2017), Number 8, 1-35",
+    "abs_url": "https://arxiv.org/abs/1507.06217",
+    "pdf_url": "https://arxiv.org/pdf/1507.06217",
+    "pillar": "tda",
+    "slug": "1507.06217",
+    "pdf_local": "papers/pdf/1507.06217.pdf"
+  },
+  {
+    "arxiv_id": "1207.6437",
+    "version": "v4",
+    "title": "Statistical topological data analysis using persistence landscapes",
+    "abstract": "We define a new topological summary for data that we call the persistence landscape. Since this summary lies in a vector space, it is easy to combine with tools from statistics and machine learning, in contrast to the standard topological summaries. Viewed as a random variable with values in a Banach space, this summary obeys a strong law of large numbers and a central limit theorem. We show how a number of standard statistical tests can be used for statistical inference using this summary. We also prove that this summary is stable and that it can be used to provide lower bounds for the bottleneck and Wasserstein distances.",
+    "authors": [
+      "Peter Bubenik"
+    ],
+    "published": "2012-07-27T02:25:28Z",
+    "updated": "2015-01-23T21:59:53Z",
+    "year": "2012",
+    "primary_category": "math.AT",
+    "categories": [
+      "math.AT",
+      "cs.CG",
+      "math.MG",
+      "math.ST"
+    ],
+    "doi": "",
+    "journal_ref": "Journal of Machine Learning Research, 16 (2015), 77-102",
+    "abs_url": "https://arxiv.org/abs/1207.6437",
+    "pdf_url": "https://arxiv.org/pdf/1207.6437",
+    "pillar": "tda",
+    "slug": "1207.6437",
+    "pdf_local": "papers/pdf/1207.6437.pdf"
+  },
+  {
+    "arxiv_id": "1706.03358",
+    "version": "v3",
+    "title": "Sliced Wasserstein Kernel for Persistence Diagrams",
+    "abstract": "Persistence diagrams (PDs) play a key role in topological data analysis (TDA), in which they are routinely used to describe topological properties of complicated shapes. PDs enjoy strong stability properties and have proven their utility in various learning contexts. They do not, however, live in a space naturally endowed with a Hilbert structure and are usually compared with specific distances, such as the bottleneck distance. To incorporate PDs in a learning pipeline, several kernels have been proposed for PDs with a strong emphasis on the stability of the RKHS distance w.r.t. perturbations of the PDs. In this article, we use the Sliced Wasserstein approximation SW of the Wasserstein distance to define a new kernel for PDs, which is not only provably stable but also provably discriminative (depending on the number of points in the PDs) w.r.t. the Wasserstein distance $d_1$ between PDs. We also demonstrate its practicality, by developing an approximation technique to reduce kernel computation time, and show that our proposal compares favorably to existing kernels for PDs on several benchmarks.",
+    "authors": [
+      "Mathieu Carrière",
+      "Marco Cuturi",
+      "Steve Oudot"
+    ],
+    "published": "2017-06-11T14:47:19Z",
+    "updated": "2017-11-09T14:47:06Z",
+    "year": "2017",
+    "primary_category": "cs.CG",
+    "categories": [
+      "cs.CG",
+      "math.AT",
+      "stat.ML"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1706.03358",
+    "pdf_url": "https://arxiv.org/pdf/1706.03358",
+    "pillar": "tda",
+    "slug": "1706.03358",
+    "pdf_local": "papers/pdf/1706.03358.pdf"
+  },
+  {
+    "arxiv_id": "1909.13472",
+    "version": "v3",
+    "title": "ATOL: Measure Vectorization for Automatic Topologically-Oriented Learning",
+    "abstract": "Robust topological information commonly comes in the form of a set of persistence diagrams, finite measures that are in nature uneasy to affix to generic machine learning frameworks. We introduce a fast, learnt, unsupervised vectorization method for measures in Euclidean spaces and use it for reflecting underlying changes in topological behaviour in machine learning contexts. The algorithm is simple and efficiently discriminates important space regions where meaningful differences to the mean measure arise. It is proven to be able to separate clusters of persistence diagrams. We showcase the strength and robustness of our approach on a number of applications, from emulous and modern graph collections where the method reaches state-of-the-art performance to a geometric synthetic dynamical orbits problem. The proposed methodology comes with a single high level tuning parameter: the total measure encoding budget. We provide a completely open access software.",
+    "authors": [
+      "Martin Royer",
+      "Frédéric Chazal",
+      "Clément Levrard",
+      "Umeda Yuhei",
+      "Ike Yuichi"
+    ],
+    "published": "2019-09-30T06:30:33Z",
+    "updated": "2020-10-15T08:13:12Z",
+    "year": "2019",
+    "primary_category": "cs.CG",
+    "categories": [
+      "cs.CG",
+      "cs.DS",
+      "stat.ML"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1909.13472",
+    "pdf_url": "https://arxiv.org/pdf/1909.13472",
+    "pillar": "tda",
+    "slug": "1909.13472",
+    "pdf_local": "papers/pdf/1909.13472.pdf"
+  },
+  {
+    "arxiv_id": "1904.09378",
+    "version": "v4",
+    "title": "PersLay: A Neural Network Layer for Persistence Diagrams and New Graph Topological Signatures",
+    "abstract": "Persistence diagrams, the most common descriptors of Topological Data Analysis, encode topological properties of data and have already proved pivotal in many different applications of data science. However, since the (metric) space of persistence diagrams is not Hilbert, they end up being difficult inputs for most Machine Learning techniques. To address this concern, several vectorization methods have been put forward that embed persistence diagrams into either finite-dimensional Euclidean space or (implicit) infinite dimensional Hilbert space with kernels. In this work, we focus on persistence diagrams built on top of graphs. Relying on extended persistence theory and the so-called heat kernel signature, we show how graphs can be encoded by (extended) persistence diagrams in a provably stable way. We then propose a general and versatile framework for learning vectorizations of persistence diagrams, which encompasses most of the vectorization techniques used in the literature. We finally showcase the experimental strength of our setup by achieving competitive scores on classification tasks on real-life graph datasets.",
+    "authors": [
+      "Mathieu Carrière",
+      "Frédéric Chazal",
+      "Yuichi Ike",
+      "Théo Lacombe",
+      "Martin Royer",
+      "Yuhei Umeda"
+    ],
+    "published": "2019-04-20T00:21:59Z",
+    "updated": "2020-03-09T03:15:26Z",
+    "year": "2019",
+    "primary_category": "stat.ML",
+    "categories": [
+      "stat.ML",
+      "cs.CG",
+      "cs.LG",
+      "math.AT"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1904.09378",
+    "pdf_url": "https://arxiv.org/pdf/1904.09378",
+    "pillar": "tda",
+    "slug": "1904.09378",
+    "pdf_local": "papers/pdf/1904.09378.pdf"
+  },
+  {
+    "arxiv_id": "2010.08356",
+    "version": "v2",
+    "title": "Optimizing persistent homology based functions",
+    "abstract": "Solving optimization tasks based on functions and losses with a topological flavor is a very active, growing field of research in data science and Topological Data Analysis, with applications in non-convex optimization, statistics and machine learning. However, the approaches proposed in the literature are usually anchored to a specific application and/or topological construction, and do not come with theoretical guarantees. To address this issue, we study the differentiability of a general map associated with the most common topological construction, that is, the persistence map. Building on real analytic geometry arguments, we propose a general framework that allows us to define and compute gradients for persistence-based functions in a very simple way. We also provide a simple, explicit and sufficient condition for convergence of stochastic subgradient methods for such functions. This result encompasses all the constructions and applications of topological optimization in the literature. Finally, we provide associated code, that is easy to handle and to mix with other non-topological methods and constraints, as well as some experiments showcasing the versatility of our approach.",
+    "authors": [
+      "Mathieu Carrière",
+      "Frédéric Chazal",
+      "Marc Glisse",
+      "Yuichi Ike",
+      "Hariprasad Kannan"
+    ],
+    "published": "2020-10-16T12:48:30Z",
+    "updated": "2021-02-17T19:35:59Z",
+    "year": "2020",
+    "primary_category": "cs.CG",
+    "categories": [
+      "cs.CG",
+      "math.AT",
+      "math.OC"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2010.08356",
+    "pdf_url": "https://arxiv.org/pdf/2010.08356",
+    "pillar": "tda",
+    "slug": "2010.08356",
+    "pdf_local": "papers/pdf/2010.08356.pdf"
+  },
+  {
+    "arxiv_id": "1910.00960",
+    "version": "v4",
+    "title": "A Framework for Differential Calculus on Persistence Barcodes",
+    "abstract": "We define notions of differentiability for maps from and to the space of persistence barcodes. Inspired by the theory of diffeological spaces, the proposed framework uses lifts to the space of ordered barcodes, from which derivatives can be computed. The two derived notions of differentiability (respectively from and to the space of barcodes) combine together naturally to produce a chain rule that enables the use of gradient descent for objective functions factoring through the space of barcodes. We illustrate the versatility of this framework by showing how it can be used to analyze the smoothness of various parametrized families of filtrations arising in topological data analysis.",
+    "authors": [
+      "Jacob Leygonie",
+      "Steve Oudot",
+      "Ulrike Tillmann"
+    ],
+    "published": "2019-10-02T14:00:11Z",
+    "updated": "2021-05-04T17:19:05Z",
+    "year": "2019",
+    "primary_category": "math.AT",
+    "categories": [
+      "math.AT",
+      "cs.CG",
+      "math.DG",
+      "math.OC"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1910.00960",
+    "pdf_url": "https://arxiv.org/pdf/1910.00960",
+    "pillar": "tda",
+    "slug": "1910.00960",
+    "pdf_local": "papers/pdf/1910.00960.pdf"
+  },
+  {
+    "arxiv_id": "1207.3674",
+    "version": "v3",
+    "title": "The structure and stability of persistence modules",
+    "abstract": "We give a self-contained treatment of the theory of persistence modules indexed over the real line. We give new proofs of the standard results. Persistence diagrams are constructed using measure theory. Linear algebra lemmas are simplified using a new notation for calculations on quiver representations. We show that the stringent finiteness conditions required by traditional methods are not necessary to prove the existence and stability of the persistence diagram. We introduce weaker hypotheses for taming persistence modules, which are met in practice and are strong enough for the theory still to work. The constructions and proofs enabled by our framework are, we claim, cleaner and simpler.",
+    "authors": [
+      "Frederic Chazal",
+      "Vin de Silva",
+      "Marc Glisse",
+      "Steve Oudot"
+    ],
+    "published": "2012-07-16T13:27:14Z",
+    "updated": "2013-03-20T19:57:02Z",
+    "year": "2012",
+    "primary_category": "math.AT",
+    "categories": [
+      "math.AT",
+      "cs.CG",
+      "math.CT"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1207.3674",
+    "pdf_url": "https://arxiv.org/pdf/1207.3674",
+    "pillar": "tda",
+    "slug": "1207.3674",
+    "pdf_local": "papers/pdf/1207.3674.pdf"
+  },
+  {
+    "arxiv_id": "1207.3885",
+    "version": "v3",
+    "title": "Persistence stability for geometric complexes",
+    "abstract": "In this paper we study the properties of the homology of different geometric filtered complexes (such as Vietoris-Rips, Cech and witness complexes) built on top of precompact spaces. Using recent developments in the theory of topological persistence we provide simple and natural proofs of the stability of the persistent homology of such complexes with respect to the Gromov--Hausdorff distance. We also exhibit a few noteworthy properties of the homology of the Rips and Cech complexes built on top of compact spaces.",
+    "authors": [
+      "Frederic Chazal",
+      "Vin de Silva",
+      "Steve Oudot"
+    ],
+    "published": "2012-07-17T05:36:56Z",
+    "updated": "2013-11-15T06:32:40Z",
+    "year": "2012",
+    "primary_category": "math.AT",
+    "categories": [
+      "math.AT",
+      "cs.CG"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1207.3885",
+    "pdf_url": "https://arxiv.org/pdf/1207.3885",
+    "pillar": "tda",
+    "slug": "1207.3885",
+    "pdf_local": "papers/pdf/1207.3885.pdf"
+  },
+  {
+    "arxiv_id": "2006.16824",
+    "version": "v7",
+    "title": "Wasserstein Stability for Persistence Diagrams",
+    "abstract": "The stability of persistence diagrams is among the most important results in applied and computational topology. Most results in the literature phrase stability in terms of the bottleneck distance between diagrams and the $\\infty$-norm of perturbations. This has two main implications: it makes the space of persistence diagrams rather pathological and it is often provides very pessimistic bounds with respect to outliers. In this paper, we provide new stability results with respect to the $p$-Wasserstein distance between persistence diagrams. This includes an elementary proof for the setting of functions on sufficiently finite spaces in terms of the $p$-norm of the perturbations, along with an algebraic framework for $p$-Wasserstein distance which extends the results to wider class of modules. We also provide apply the results to a wide range of applications in topological data analysis (TDA) including topological summaries, persistence transforms and the special but important case of Vietoris-Rips complexes.",
+    "authors": [
+      "Primoz Skraba",
+      "Katharine Turner"
+    ],
+    "published": "2020-06-30T14:01:05Z",
+    "updated": "2025-07-10T07:26:30Z",
+    "year": "2020",
+    "primary_category": "math.AT",
+    "categories": [
+      "math.AT"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2006.16824",
+    "pdf_url": "https://arxiv.org/pdf/2006.16824",
+    "pillar": "tda",
+    "slug": "2006.16824",
+    "pdf_local": "papers/pdf/2006.16824.pdf"
+  },
+  {
+    "arxiv_id": "1812.09764",
+    "version": "v3",
+    "title": "Neural Persistence: A Complexity Measure for Deep Neural Networks Using Algebraic Topology",
+    "abstract": "While many approaches to make neural networks more fathomable have been proposed, they are restricted to interrogating the network with input data. Measures for characterizing and monitoring structural properties, however, have not been developed. In this work, we propose neural persistence, a complexity measure for neural network architectures based on topological data analysis on weighted stratified graphs. To demonstrate the usefulness of our approach, we show that neural persistence reflects best practices developed in the deep learning community such as dropout and batch normalization. Moreover, we derive a neural persistence-based stopping criterion that shortens the training process while achieving comparable accuracies as early stopping based on validation loss.",
+    "authors": [
+      "Bastian Rieck",
+      "Matteo Togninalli",
+      "Christian Bock",
+      "Michael Moor",
+      "Max Horn",
+      "Thomas Gumbsch",
+      "Karsten Borgwardt"
+    ],
+    "published": "2018-12-23T19:41:02Z",
+    "updated": "2019-09-27T06:54:59Z",
+    "year": "2018",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "math.AT",
+      "stat.ML"
+    ],
+    "doi": "10.3929/ethz-b-000327207",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1812.09764",
+    "pdf_url": "https://arxiv.org/pdf/1812.09764",
+    "pillar": "tda",
+    "slug": "1812.09764",
+    "pdf_local": "papers/pdf/1812.09764.pdf"
+  },
+  {
+    "arxiv_id": "2302.11446",
+    "version": "v1",
+    "title": "Singular value decomposition based matrix surgery",
+    "abstract": "This paper aims to develop a simple procedure to reduce and control the condition number of random matrices, and investigate the effect on the persistent homology (PH) of point clouds of well- and ill-conditioned matrices. For a square matrix generated randomly using Gaussian/Uniform distribution, the SVD-Surgery procedure works by: (1) computing its singular value decomposition (SVD), (2) replacing the diagonal factor by changing a list of the smaller singular values by a convex linear combination of the entries in the list, and (3) compute the new matrix by reversing the SVD. Applying SVD-Surgery on a matrix often results in having different diagonal factor to those of the input matrix. The spatial distribution of random square matrices are known to be correlated to the distribution of their condition numbers. The persistent homology (PH) investigations, therefore, are focused on comparing the effect of SVD-Surgery on point clouds of large datasets of randomly generated well-conditioned and ill-conditioned matrices, as well as that of the point clouds formed by their inverses. This work is motivated by the desire to stabilise the impact of Deep Learning (DL) training on medical images in terms of the condition numbers of their sets of convolution filters as a mean of reducing overfitting and improving robustness against tolerable amounts of image noise. When applied to convolution filters during training, the SVD-Surgery acts as a spectral regularisation of the DL model without the need for learning extra parameters. We shall demonstrate that for several point clouds of sufficiently large convolution filters our simple strategy preserve filters norm and reduces the norm of its inverse depending on the chosen linear combination parameters. Moreover, our approach showed significant improvements towards the well-conditioning of matrices and stable topological behaviour.",
+    "authors": [
+      "Jehan Ghafuri",
+      "Sabah Jassim"
+    ],
+    "published": "2023-02-22T15:30:08Z",
+    "updated": "2023-02-22T15:30:08Z",
+    "year": "2023",
+    "primary_category": "math.AT",
+    "categories": [
+      "math.AT",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2302.11446",
+    "pdf_url": "https://arxiv.org/pdf/2302.11446",
+    "pillar": "tda",
+    "slug": "2302.11446",
+    "pdf_local": "papers/pdf/2302.11446.pdf"
+  },
+  {
+    "arxiv_id": "1502.06172",
+    "version": "v1",
+    "title": "Clique topology reveals intrinsic geometric structure in neural correlations",
+    "abstract": "Detecting meaningful structure in neural activity and connectivity data is challenging in the presence of hidden nonlinearities, where traditional eigenvalue-based methods may be misleading. We introduce a novel approach to matrix analysis, called clique topology, that extracts features of the data invariant under nonlinear monotone transformations. These features can be used to detect both random and geometric structure, and depend only on the relative ordering of matrix entries. We then analyzed the activity of pyramidal neurons in rat hippocampus, recorded while the animal was exploring a two-dimensional environment, and confirmed that our method is able to detect geometric organization using only the intrinsic pattern of neural correlations. Remarkably, we found similar results during non-spatial behaviors such as wheel running and REM sleep. This suggests that the geometric structure of correlations is shaped by the underlying hippocampal circuits, and is not merely a consequence of position coding. We propose that clique topology is a powerful new tool for matrix analysis in biological settings, where the relationship of observed quantities to more meaningful variables is often nonlinear and unknown.",
+    "authors": [
+      "Chad Giusti",
+      "Eva Pastalkova",
+      "Carina Curto",
+      "Vladimir Itskov"
+    ],
+    "published": "2015-02-22T03:17:24Z",
+    "updated": "2015-02-22T03:17:24Z",
+    "year": "2015",
+    "primary_category": "q-bio.NC",
+    "categories": [
+      "q-bio.NC"
+    ],
+    "doi": "10.1073/pnas.1506407112",
+    "journal_ref": "PNAS, vol. 112 no. 44, pp. 13455-13460, 2015",
+    "abs_url": "https://arxiv.org/abs/1502.06172",
+    "pdf_url": "https://arxiv.org/pdf/1502.06172",
+    "pillar": "tda",
+    "slug": "1502.06172",
+    "pdf_local": "papers/pdf/1502.06172.pdf"
+  },
+  {
+    "arxiv_id": "2012.02808",
+    "version": "v3",
+    "title": "Persistent Laplacians: properties, algorithms and implications",
+    "abstract": "We present a thorough study of the theoretical properties and devise efficient algorithms for the \\emph{persistent Laplacian}, an extension of the standard combinatorial Laplacian to the setting of pairs (or, in more generality, sequences) of simplicial complexes $K \\hookrightarrow L$, which was independently introduced by Lieutier et al. and by Wang et al. In particular, in analogy with the non-persistent case, we first prove that the nullity of the $q$-th persistent Laplacian $Δ_q^{K,L}$ equals the $q$-th persistent Betti number of the inclusion $(K \\hookrightarrow L)$. We then present an initial algorithm for finding a matrix representation of $Δ_q^{K,L}$, which itself helps interpret the persistent Laplacian. We exhibit a novel relationship between the persistent Laplacian and the notion of Schur complement of a matrix which has several important implications. In the graph case, it both uncovers a link with the notion of effective resistance and leads to a persistent version of the Cheeger inequality. This relationship also yields an additional, very simple algorithm for finding (a matrix representation of) the $q$-th persistent Laplacian which in turn leads to a novel and fundamentally different algorithm for computing the $q$-th persistent Betti number for a pair $(K,L)$ which can be significantly more efficient than standard algorithms. Finally, we study persistent Laplacians for simplicial filtrations and present novel stability results for their eigenvalues. Our work brings methods from spectral graph theory, circuit theory, and persistent homology together with a topological view of the combinatorial Laplacian on simplicial complexes.",
+    "authors": [
+      "Facundo Mémoli",
+      "Zhengchao Wan",
+      "Yusu Wang"
+    ],
+    "published": "2020-12-04T19:21:52Z",
+    "updated": "2022-06-08T19:25:11Z",
+    "year": "2020",
+    "primary_category": "math.CO",
+    "categories": [
+      "math.CO",
+      "cs.CG"
+    ],
+    "doi": "10.1137/21M1435471",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2012.02808",
+    "pdf_url": "https://arxiv.org/pdf/2012.02808",
+    "pillar": "tda",
+    "slug": "2012.02808",
+    "pdf_local": "papers/pdf/2012.02808.pdf"
+  },
+  {
+    "arxiv_id": "1912.04135",
+    "version": "v2",
+    "title": "Persistent spectral graph",
+    "abstract": "Persistent homology is constrained to purely topological persistence while multiscale graphs account only for geometric information. This work introduces persistent spectral theory to create a unified low-dimensional multiscale paradigm for revealing topological persistence and extracting geometric shape from high-dimensional datasets. For a point-cloud dataset, a filtration procedure is used to generate a sequence of chain complexes and associated families of simplicial complexes and chains, from which we construct persistent combinatorial Laplacian matrices. We show that a full set of topological persistence can be completely recovered from the harmonic persistent spectra, i.e., the spectra that have zero eigenvalues, of the persistent combinatorial Laplacian matrices. However, non-harmonic spectra of the Laplacian matrices induced by the filtration offer another power tool for data analysis, modeling, and prediction. In this work, non-harmonic persistent spectra are successfully devised to analyze the structure and stability of fullerenes and predict the B-factors of a protein, which cannot be straightforwardly extracted from the current persistent homology. Extensive numerical experiments indicate the tremendous potential of the proposed persistent spectral analysis in data science.",
+    "authors": [
+      "Rui Wang",
+      "Duc Duy Nguyen",
+      "Guo-Wei Wei"
+    ],
+    "published": "2019-12-09T15:47:10Z",
+    "updated": "2019-12-11T19:21:31Z",
+    "year": "2019",
+    "primary_category": "math.CO",
+    "categories": [
+      "math.CO"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1912.04135",
+    "pdf_url": "https://arxiv.org/pdf/1912.04135",
+    "pillar": "tda",
+    "slug": "1912.04135",
+    "pdf_local": "papers/pdf/1912.04135.pdf"
+  },
+  {
+    "arxiv_id": "2311.03087",
+    "version": "v3",
+    "title": "Persistent Homology for High-dimensional Data Based on Spectral Methods",
+    "abstract": "Persistent homology is a popular computational tool for analyzing the topology of point clouds, such as the presence of loops or voids. However, many real-world datasets with low intrinsic dimensionality reside in an ambient space of much higher dimensionality. We show that in this case traditional persistent homology becomes very sensitive to noise and fails to detect the correct topology. The same holds true for existing refinements of persistent homology. As a remedy, we find that spectral distances on the k-nearest-neighbor graph of the data, such as diffusion distance and effective resistance, allow to detect the correct topology even in the presence of high-dimensional noise. Moreover, we derive a novel closed-form formula for effective resistance, and describe its relation to diffusion distances. Finally, we apply these methods to high-dimensional single-cell RNA-sequencing data and show that spectral distances allow robust detection of cell cycle loops.",
+    "authors": [
+      "Sebastian Damrich",
+      "Philipp Berens",
+      "Dmitry Kobak"
+    ],
+    "published": "2023-11-06T13:18:08Z",
+    "updated": "2024-10-31T11:01:08Z",
+    "year": "2023",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "math.AT"
+    ],
+    "doi": "",
+    "journal_ref": "Conference on Neural Information Processing Systems (NeurIPS) 2024",
+    "abs_url": "https://arxiv.org/abs/2311.03087",
+    "pdf_url": "https://arxiv.org/pdf/2311.03087",
+    "pillar": "tda",
+    "slug": "2311.03087",
+    "pdf_local": "papers/pdf/2311.03087.pdf"
+  },
+  {
+    "arxiv_id": "2312.07563",
+    "version": "v2",
+    "title": "Persistent Topological Laplacians -- a Survey",
+    "abstract": "Persistent topological Laplacians constitute a new class of tools in topological data analysis (TDA). They are motivated by the necessity to address challenges encountered in persistent homology when handling complex data. These Laplacians combines multiscale analysis with topological techniques to characterize the topological and geometrical features of functions and data. Their kernels fully retrieve the topological invariants of corresponding persistent homology, while their non-harmonic spectra provide supplementary information. Persistent topological Laplacians have demonstrated superior performance over persistent homology in analyzing large-scale protein engineering datasets. In this survey, we offer a pedagogical review of persistent topological Laplacians formulated in various mathematical settings, including simplicial complexes, path complexes, flag complexes, digraphs, hypergraphs, hyperdigraphs, cellular sheaves, as well as $N$-chain complexes.",
+    "authors": [
+      "Xiaoqi Wei",
+      "Guo-Wei Wei"
+    ],
+    "published": "2023-12-09T20:45:17Z",
+    "updated": "2024-12-11T01:22:57Z",
+    "year": "2023",
+    "primary_category": "math.AT",
+    "categories": [
+      "math.AT"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2312.07563",
+    "pdf_url": "https://arxiv.org/pdf/2312.07563",
+    "pillar": "tda",
+    "slug": "2312.07563",
+    "pdf_local": "papers/pdf/2312.07563.pdf"
+  },
+  {
+    "arxiv_id": "1507.05379",
+    "version": "v4",
+    "title": "Hodge Laplacians on graphs",
+    "abstract": "This is an elementary introduction to the Hodge Laplacian on a graph, a higher-order generalization of the graph Laplacian. We will discuss basic properties including cohomology and Hodge theory. The main feature of our approach is simplicity, requiring only knowledge of linear algebra and graph theory. We have also isolated the algebra from the topology to show that a large part of cohomology and Hodge theory is nothing more than the linear algebra of matrices satisfying $AB = 0$. For the remaining topological aspect, we cast our discussions entirely in terms of graphs as opposed to less-familiar topological objects like simplicial complexes.",
+    "authors": [
+      "Lek-Heng Lim"
+    ],
+    "published": "2015-07-20T03:55:06Z",
+    "updated": "2019-08-18T05:40:26Z",
+    "year": "2015",
+    "primary_category": "cs.IT",
+    "categories": [
+      "cs.IT"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1507.05379",
+    "pdf_url": "https://arxiv.org/pdf/1507.05379",
+    "pillar": "tda",
+    "slug": "1507.05379",
+    "pdf_local": "papers/pdf/1507.05379.pdf"
+  },
+  {
+    "arxiv_id": "2606.17632",
+    "version": "v1",
+    "title": "Unveiling topology in imaging problems via quasi-isometry and persistent homology",
+    "abstract": "We show that the topological structures, such as loops, voids, and higher-dimensional holes of unknown objects (of flow of an object in space-time) can be recovered from noisy and indirect measurements. More precisely, we describe how the part of the persistent homology of a space can be determined from a noise-prone and discretized model space when there is a quasi-isometry between the original space and the space modeling indirect measurements. The result not only guarantees the existence of the structures but also provides size bounds for them. The structure is studied using persistent homology, and the results assume the existence of a quasi-isometry between a model space and the noisy measurements. We explore imaging problems, particularly X-ray imaging and EIT, that are well-suited to this framework.",
+    "authors": [
+      "Elli Karvonen",
+      "Matti Lassas",
+      "Pekka Pankka"
+    ],
+    "published": "2026-06-16T07:43:29Z",
+    "updated": "2026-06-16T07:43:29Z",
+    "year": "2026",
+    "primary_category": "math.AT",
+    "categories": [
+      "math.AT"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2606.17632",
+    "pdf_url": "https://arxiv.org/pdf/2606.17632",
+    "pillar": "tda",
+    "slug": "2606.17632",
+    "pdf_local": "papers/pdf/2606.17632.pdf"
+  },
+  {
+    "arxiv_id": "1601.03641",
+    "version": "v1",
+    "title": "Persistent Homology analysis of Phase Transitions",
+    "abstract": "Persistent homology analysis, a recently developed computational method in algebraic topology, is applied to the study of the phase transitions undergone by the so-called XY-mean field model and by the phi^4 lattice model, respectively. For both models the relationship between phase transitions and the topological properties of certain submanifolds of configuration space are exactly known. It turns out that these a-priori known facts are clearly retrieved by persistent homology analysis of dynamically sampled submanifolds of configuration space.",
+    "authors": [
+      "Irene Donato",
+      "Matteo Gori",
+      "Marco Pettini",
+      "Giovanni Petri",
+      "Sarah De Nigris",
+      "Roberto Franzosi",
+      "Francesco Vaccarino"
+    ],
+    "published": "2016-01-14T16:08:17Z",
+    "updated": "2016-01-14T16:08:17Z",
+    "year": "2016",
+    "primary_category": "cond-mat.stat-mech",
+    "categories": [
+      "cond-mat.stat-mech"
+    ],
+    "doi": "10.1103/PhysRevE.93.052138",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1601.03641",
+    "pdf_url": "https://arxiv.org/pdf/1601.03641",
+    "pillar": "tda",
+    "slug": "1601.03641",
+    "pdf_local": "papers/pdf/1601.03641.pdf"
+  },
+  {
+    "arxiv_id": "2009.14231",
+    "version": "v1",
+    "title": "Quantitative and Interpretable Order Parameters for Phase Transitions from Persistent Homology",
+    "abstract": "We apply modern methods in computational topology to the task of discovering and characterizing phase transitions. As illustrations, we apply our method to four two-dimensional lattice spin models: the Ising, square ice, XY, and fully-frustrated XY models. In particular, we use persistent homology, which computes the births and deaths of individual topological features as a coarse-graining scale or sublevel threshold is increased, to summarize multiscale and high-point correlations in a spin configuration. We employ vector representations of this information called persistence images to formulate and perform the statistical task of distinguishing phases. For the models we consider, a simple logistic regression on these images is sufficient to identify the phase transition. Interpretable order parameters are then read from the weights of the regression. This method suffices to identify magnetization, frustration, and vortex-antivortex structure as relevant features for phase transitions in our models. We also define \"persistence\" critical exponents and study how they are related to those critical exponents usually considered.",
+    "authors": [
+      "Alex Cole",
+      "Gregory J. Loges",
+      "Gary Shiu"
+    ],
+    "published": "2020-09-29T18:06:14Z",
+    "updated": "2020-09-29T18:06:14Z",
+    "year": "2020",
+    "primary_category": "cond-mat.stat-mech",
+    "categories": [
+      "cond-mat.stat-mech",
+      "math.AT"
+    ],
+    "doi": "10.1103/PhysRevB.104.104426",
+    "journal_ref": "Phys. Rev. B 104, 104426 (2021)",
+    "abs_url": "https://arxiv.org/abs/2009.14231",
+    "pdf_url": "https://arxiv.org/pdf/2009.14231",
+    "pillar": "tda",
+    "slug": "2009.14231",
+    "pdf_local": "papers/pdf/2009.14231.pdf"
+  },
+  {
+    "arxiv_id": "2009.05141",
+    "version": "v1",
+    "title": "Finding hidden order in spin models with persistent homology",
+    "abstract": "Persistent homology (PH) is a relatively new field in applied mathematics that studies the components and shapes of discrete data. In this work, we demonstrate that PH can be used as a universal framework to identify phases in spin models, including hidden order such as spin nematic ordering and spin liquids. By converting a small number of spin configurations to barcodes we obtain a descriptive picture of configuration space. Using dimensionality reduction to reduce the barcode space to color space leads to a visualization of the phase diagram.",
+    "authors": [
+      "Bart Olsthoorn",
+      "Johan Hellsvik",
+      "Alexander V. Balatsky"
+    ],
+    "published": "2020-09-10T20:34:42Z",
+    "updated": "2020-09-10T20:34:42Z",
+    "year": "2020",
+    "primary_category": "cond-mat.stat-mech",
+    "categories": [
+      "cond-mat.stat-mech",
+      "cond-mat.mtrl-sci"
+    ],
+    "doi": "10.1103/PhysRevResearch.2.043308",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2009.05141",
+    "pdf_url": "https://arxiv.org/pdf/2009.05141",
+    "pillar": "tda",
+    "slug": "2009.05141",
+    "pdf_local": "papers/pdf/2009.05141.pdf"
+  },
+  {
+    "arxiv_id": "2603.10277",
+    "version": "v5",
+    "title": "Estimating Condition Number with Graph Neural Networks",
+    "abstract": "In this paper, we propose a fast method for estimating the condition number of sparse matrices using graph neural networks (GNNs). For efficient deployment of GNNs, we introduce a graph feature construction with $\\mathrm{O}(\\mathrm{nnz} + n)$ complexity, where $\\mathrm{nnz}$ is the number of non-zero elements in the matrix and $n$ denotes the matrix dimension. We propose two schemes for estimating the matrix condition number using GNNs; one follows by decomposing the condition number and predicts the relatively more computationally intensive part $\\|\\mathbf{A}^{-1}\\|$, without explicitly forming the inverse, while the other is to predict the whole condition number $κ$. Our approach can be extended to an arbitrary norm. Extensive experiments are conducted for the estimation of the 1-norm and 2-norm condition numbers, which show that our method achieves a significant speedup over the traditional numerical estimation methods. Our software for GNN condition number estimator is made publicly available at https://github.com/inEXASCALE/sparse-kappa.",
+    "authors": [
+      "Erin Carson",
+      "Xinye Chen"
+    ],
+    "published": "2026-03-10T23:38:48Z",
+    "updated": "2026-08-09T23:58:06Z",
+    "year": "2026",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "math.NA"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/2603.10277",
+    "pdf_url": "https://arxiv.org/pdf/2603.10277",
+    "pillar": "tda",
+    "slug": "2603.10277",
+    "pdf_local": "papers/pdf/2603.10277.pdf"
+  },
+  {
+    "arxiv_id": "1307.1539",
+    "version": "v2",
+    "title": "Inverse problems and invisibility cloaking for FEM models and resistor networks",
+    "abstract": "In this paper we consider inverse problems for resistor networks and for models obtained via the Finite Element Method (FEM) for the conductivity equation. These correspond to discrete versions of the inverse conductivity problem of Calderón. We characterize FEM models corresponding to a given triangulation of the domain that are equivalent to certain resistor networks, and apply the results to study nonuniqueness of the discrete inverse problem. It turns out that the degree of nonuniqueness for the discrete problem is larger than the one for the partial differential equation. We also study invisibility cloaking for FEM models, and show how an arbitrary body can be surrounded with a layer so that the cloaked body has the same boundary measurements as a given background medium.",
+    "authors": [
+      "Matti Lassas",
+      "Mikko Salo",
+      "Leo Tzou"
+    ],
+    "published": "2013-07-05T07:57:57Z",
+    "updated": "2013-07-09T06:04:58Z",
+    "year": "2013",
+    "primary_category": "math.AP",
+    "categories": [
+      "math.AP",
+      "math.NA"
+    ],
+    "doi": "",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1307.1539",
+    "pdf_url": "https://arxiv.org/pdf/1307.1539",
+    "pillar": "inverse",
+    "slug": "1307.1539",
+    "pdf_local": "papers/pdf/1307.1539.pdf"
+  },
+  {
+    "arxiv_id": "1207.5989",
+    "version": "v2",
+    "title": "Bulk-edge correspondence for two-dimensional topological insulators",
+    "abstract": "Topological insulators can be characterized alternatively in terms of bulk or edge properties. We prove the equivalence between the two descriptions for two-dimensional solids in the single-particle picture. We give a new formulation of the $\\mathbb{Z}_{2}$-invariant, which allows for a bulk index not relying on a (two-dimensional) Brillouin zone. When available though, that index is shown to agree with known formulations. The method also applies to integer quantum Hall systems. We discuss a further variant of the correspondence, based on scattering theory.",
+    "authors": [
+      "G. M. Graf",
+      "M. Porta"
+    ],
+    "published": "2012-07-25T13:46:27Z",
+    "updated": "2013-03-19T18:38:31Z",
+    "year": "2012",
+    "primary_category": "math-ph",
+    "categories": [
+      "math-ph",
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1007/s00220-013-1819-6",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1207.5989",
+    "pdf_url": "https://arxiv.org/pdf/1207.5989",
+    "pillar": "topoprog",
+    "slug": "1207.5989",
+    "pdf_local": "papers/pdf/1207.5989.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/9411052",
+    "version": "v1",
+    "title": "The Non-Commutative Geometry of the Quantum Hall Effect",
+    "abstract": "We give an overview of the Integer Quantum Hall Effect. We propose a mathematical framework using Non-Commutative Geometry as defined by A. Connes. Within this framework, it is proved that the Hall conductivity is quantized and that plateaux occur when the Fermi energy varies in a region of localized states.",
+    "authors": [
+      "J. Bellissard",
+      "A. van Elst",
+      "H. Schulz-Baldes"
+    ],
+    "published": "1994-11-14T18:28:40Z",
+    "updated": "1994-11-14T18:28:40Z",
+    "year": "1994",
+    "primary_category": "cond-mat",
+    "categories": [
+      "cond-mat"
+    ],
+    "doi": "10.1063/1.530758",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/cond-mat/9411052",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/9411052",
+    "pillar": "topoprog",
+    "slug": "cond-mat_9411052",
+    "pdf_local": "papers/pdf/cond-mat_9411052.pdf"
+  },
+  {
+    "arxiv_id": "1510.08744",
+    "version": "v3",
+    "title": "Bulk and Boundary Invariants for Complex Topological Insulators: From K-Theory to Physics",
+    "abstract": "This monograph offers an overview on the topological invariants in fermionic topological insulators from the complex classes. Tools from K-theory and non-commutative geometry are used to define bulk and boundary invariants, to establish the bulk-boundary correspondence and to link the invariants to physical observables.",
+    "authors": [
+      "Emil Prodan",
+      "Hermann Schulz-Baldes"
+    ],
+    "published": "2015-10-29T15:44:02Z",
+    "updated": "2016-02-16T12:23:54Z",
+    "year": "2015",
+    "primary_category": "math-ph",
+    "categories": [
+      "math-ph",
+      "cond-mat.dis-nn"
+    ],
+    "doi": "10.1007/978-3-319-29351-6",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1510.08744",
+    "pdf_url": "https://arxiv.org/pdf/1510.08744",
+    "pillar": "topoprog",
+    "slug": "1510.08744",
+    "pdf_local": "papers/pdf/1510.08744.pdf"
+  },
+  {
+    "arxiv_id": "1910.02878",
+    "version": "v4",
+    "title": "Topological Origin of Non-Hermitian Skin Effects",
+    "abstract": "A unique feature of non-Hermitian systems is the skin effect, which is the extreme sensitivity to the boundary conditions. Here, we reveal that the skin effect originates from intrinsic non-Hermitian topology. Such a topological origin not merely explains the universal feature of the known skin effect, but also leads to new types of the skin effects---symmetry-protected skin effects. In particular, we discover the $\\mathbb{Z}_{2}$ skin effect protected by time-reversal symmetry. On the basis of topological classification, we also discuss possible other skin effects in arbitrary dimensions. Our work provides a unified understanding about the bulk-boundary correspondence and the skin effects in non-Hermitian systems.",
+    "authors": [
+      "Nobuyuki Okuma",
+      "Kohei Kawabata",
+      "Ken Shiozaki",
+      "Masatoshi Sato"
+    ],
+    "published": "2019-10-07T16:03:33Z",
+    "updated": "2020-02-26T15:56:25Z",
+    "year": "2019",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el",
+      "math-ph",
+      "physics.optics",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PhysRevLett.124.086801",
+    "journal_ref": "Phys. Rev. Lett. 124, 086801 (2020)",
+    "abs_url": "https://arxiv.org/abs/1910.02878",
+    "pdf_url": "https://arxiv.org/pdf/1910.02878",
+    "pillar": "topoprog",
+    "slug": "1910.02878",
+    "pdf_local": "papers/pdf/1910.02878.pdf"
+  },
+  {
+    "arxiv_id": "1902.10050",
+    "version": "v1",
+    "title": "Anomalous bulk-edge correspondence in continuous media",
+    "abstract": "Topology plays an increasing role in physics beyond the realm of topological insulators in condensed mater. From geophysical fluids to active matter, acoustics or photonics, a growing family of systems presents topologically protected chiral edge modes. The number of such modes should coincide with the bulk topological invariant (e.g. Chern number) defined for a sample without boundary, in agreement with the bulk-edge correspondence. However this is not always the case when dealing with continuous media where there is no small scale cut-off. The number of edge modes actually depends on the boundary condition, even when the bulk is properly regularized, showing an apparent paradox where the bulk-edge correspondence is violated. In this paper we solve this paradox by showing that the anomaly is due to {ghost} edge modes hidden in the asymptotic part of the spectrum. We provide a general formalism based on scattering theory to detect all edge modes properly, so that the bulk-edge correspondence is restored. We illustrate this approach through the odd-viscous shallow-water model and the massive Dirac Hamiltonian, and discuss the physical consequences.",
+    "authors": [
+      "Clément Tauber",
+      "Pierre Delplace",
+      "Antoine Venaille"
+    ],
+    "published": "2019-02-26T16:54:38Z",
+    "updated": "2019-02-26T16:54:38Z",
+    "year": "2019",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "math-ph",
+      "physics.ao-ph",
+      "physics.flu-dyn"
+    ],
+    "doi": "10.1103/PhysRevResearch.2.013147",
+    "journal_ref": "Phys. Rev. Research 2, 013147 (2020)",
+    "abs_url": "https://arxiv.org/abs/1902.10050",
+    "pdf_url": "https://arxiv.org/pdf/1902.10050",
+    "pillar": "topoprog",
+    "slug": "1902.10050",
+    "pdf_local": "papers/pdf/1902.10050.pdf"
+  },
+  {
+    "arxiv_id": "1404.6513",
+    "version": "v3",
+    "title": "Helicity conservation by flow across scales in reconnecting vortex links and knots",
+    "abstract": "The conjecture that helicity (or knottedness) is a fundamental conserved quantity has a rich history in fluid mechanics, but the nature of this conservation in the presence of dissipation has proven difficult to resolve. Making use of recent advances, we create vortex knots and links in viscous fluids and simulated superfluids and track their geometry through topology changing reconnections. We find that the reassociation of vortex lines through a reconnection enables the transfer of helicity from links and knots to helical coils. This process is remarkably efficient, owing to the anti-parallel orientation spontaneously adopted by the reconnecting vortices. Using a new method for quantifying the spatial helicity spectrum, we find that the reconnection process can be viewed as transferring helicity between scales, rather than dissipating it. We also infer the presence of geometric deformations which convert helical coils into even smaller scale twist, where it may ultimately be dissipated. Our results suggest that helicity conservation plays an important role in fluids and related fields, even in the presence of dissipation.",
+    "authors": [
+      "Martin W. Scheeler",
+      "Dustin Kleckner",
+      "Davide Proment",
+      "Gordon L. Kindlmann",
+      "William T. M. Irvine"
+    ],
+    "published": "2014-04-25T19:43:59Z",
+    "updated": "2014-09-18T16:33:09Z",
+    "year": "2014",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "doi": "10.1073/pnas.1407232111",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1404.6513",
+    "pdf_url": "https://arxiv.org/pdf/1404.6513",
+    "pillar": "topoprog",
+    "slug": "1404.6513",
+    "pdf_local": "papers/pdf/1404.6513.pdf"
+  },
+  {
+    "arxiv_id": "1508.04715",
+    "version": "v2",
+    "title": "Fermion Path Integrals And Topological Phases",
+    "abstract": "Symmetry-protected topological (SPT) phases of matter have been interpreted in terms of anomalies, and it has been expected that a similar picture should hold for SPT phases with fermions. Here, we describe in detail what this picture means for phases of quantum matter that can be understood via band theory and free fermions. The main examples we consider are time-reversal invariant topological insulators and superconductors in 2 or 3 space dimensions. Along the way, we clarify the precise meaning of the statement that in the bulk of a 3d topological insulator, the electromagnetic $θ$-angle is equal to $π$.",
+    "authors": [
+      "Edward Witten"
+    ],
+    "published": "2015-08-19T17:40:50Z",
+    "updated": "2015-12-19T00:28:06Z",
+    "year": "2015",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.other",
+      "hep-th"
+    ],
+    "doi": "10.1103/RevModPhys.88.035001",
+    "journal_ref": "Rev. Mod. Phys. 88, 35001 (2016)",
+    "abs_url": "https://arxiv.org/abs/1508.04715",
+    "pdf_url": "https://arxiv.org/pdf/1508.04715",
+    "pillar": "topoprog",
+    "slug": "1508.04715",
+    "pdf_local": "papers/pdf/1508.04715.pdf"
+  },
+  {
+    "arxiv_id": "1108.2345",
+    "version": "v2",
+    "title": "Phase transitions detached from stationary points of the energy landscape",
+    "abstract": "The stationary points of the potential energy function V are studied for the φ^4 model on a two-dimensional square lattice with nearest-neighbor interactions. On the basis of analytical and numerical results, we explore the relation of stationary points to the occurrence of thermodynamic phase transitions. We find that the phase transition potential energy of the φ^4 model does in general not coincide with the potential energy of any of the stationary points of V. This disproves earlier, allegedly rigorous, claims in the literature on necessary conditions for the existence of phase transitions. Moreover, we find evidence that the indices of stationary points scale extensively with the system size, and therefore the index density can be used to characterize features of the energy landscape in the infinite-system limit. We conclude that the finite-system stationary points provide one possible mechanism of how a phase transition can arise, but not the only one.",
+    "authors": [
+      "Michael Kastner",
+      "Dhagash Mehta"
+    ],
+    "published": "2011-08-11T08:28:25Z",
+    "updated": "2011-10-13T15:14:17Z",
+    "year": "2011",
+    "primary_category": "cond-mat.stat-mech",
+    "categories": [
+      "cond-mat.stat-mech"
+    ],
+    "doi": "10.1103/PhysRevLett.107.160602",
+    "journal_ref": "Phys. Rev. Lett. 107, 160602 (2011)",
+    "abs_url": "https://arxiv.org/abs/1108.2345",
+    "pdf_url": "https://arxiv.org/pdf/1108.2345",
+    "pillar": "topoprog",
+    "slug": "1108.2345",
+    "pdf_local": "papers/pdf/1108.2345.pdf"
+  },
+  {
+    "arxiv_id": "2206.11741",
+    "version": "v3",
+    "title": "Observation of strong backscattering in valley-Hall photonic topological interface modes",
+    "abstract": "The unique properties of light underpin the visions of photonic quantum technologies, optical interconnects, and a wide range of novel sensors, but a key limiting factor today is losses due to either absorption or backscattering on defects. Recent developments in topological photonics have fostered the vision of backscattering-protected waveguides made from topological interface modes, but, surprisingly, measurements of their propagation losses were so far missing. Here we report on measurements of losses in the slow-light regime of valley-Hall topological waveguides and find no indications of topological protection against backscattering on ubiquitous structural defects. We image the light scattered out from the topological waveguides and find that the propagation losses are due to Anderson localization. The only photonic topological waveguides proposed for materials without intrinsic absorption in the optical domain are quantum spin-Hall and valley-Hall interface states, but the former exhibits strong out-of-plane losses, and our work therefore raises fundamental questions about the real-world value of topological protection in reciprocal photonics.",
+    "authors": [
+      "Christian Anker Rosiek",
+      "Guillermo Arregui",
+      "Anastasiia Vladimirova",
+      "Marcus Albrechtsen",
+      "Babak Vosoughi Lahijani",
+      "Rasmus Ellebæk Christiansen",
+      "Søren Stobbe"
+    ],
+    "published": "2022-06-23T14:38:05Z",
+    "updated": "2024-04-16T16:18:48Z",
+    "year": "2022",
+    "primary_category": "physics.optics",
+    "categories": [
+      "physics.optics"
+    ],
+    "doi": "10.1038/s41566-023-01189-x",
+    "journal_ref": "Nat. Photon. 17 (2023) 386-392",
+    "abs_url": "https://arxiv.org/abs/2206.11741",
+    "pdf_url": "https://arxiv.org/pdf/2206.11741",
+    "pillar": "topoprog",
+    "slug": "2206.11741",
+    "pdf_local": "papers/pdf/2206.11741.pdf"
+  },
+  {
+    "arxiv_id": "1212.0572",
+    "version": "v1",
+    "title": "Direct Measurement of the Zak phase in Topological Bloch Bands",
+    "abstract": "Geometric phases that characterize the topological properties of Bloch bands play a fundamental role in the modern band theory of solids. Here we report on the direct measurement of the geometric phase acquired by cold atoms moving in one-dimensional optical lattices. Using a combination of Bloch oscillations and Ramsey interferometry, we extract the Zak phase - the Berry phase acquired during an adiabatic motion of a particle across the Brillouin zone - which can be viewed as an invariant characterizing the topological properties of the band. For a dimerized optical lattice, which models polyacetylene, we measure a difference of the Zak phase equal to phi_Zak=0.97(2)pi for the two possible polyacetylene phases with different dimerization. This indicates that the two dimerized phases belong to different topological classes, such that for a filled band, domain walls have fractional quantum numbers. Our work establishes a new general approach for probing the topological structure of Bloch bands in optical lattices.",
+    "authors": [
+      "Marcos Atala",
+      "Monika Aidelsburger",
+      "Julio T. Barreiro",
+      "Dmitry Abanin",
+      "Takuya Kitagawa",
+      "Eugene Demler",
+      "Immanuel Bloch"
+    ],
+    "published": "2012-12-03T21:52:21Z",
+    "updated": "2012-12-03T21:52:21Z",
+    "year": "2012",
+    "primary_category": "cond-mat.quant-gas",
+    "categories": [
+      "cond-mat.quant-gas",
+      "cond-mat.mes-hall",
+      "quant-ph"
+    ],
+    "doi": "10.1038/nphys2790",
+    "journal_ref": "Nature Physics 9, 795-800 (2013)",
+    "abs_url": "https://arxiv.org/abs/1212.0572",
+    "pdf_url": "https://arxiv.org/pdf/1212.0572",
+    "pillar": "topoprog",
+    "slug": "1212.0572",
+    "pdf_local": "papers/pdf/1212.0572.pdf"
   }
 ]

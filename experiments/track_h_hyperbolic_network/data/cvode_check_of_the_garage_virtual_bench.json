@@ -1,0 +1,191 @@
+{
+  "bands": {
+    "P1": 1e-06,
+    "P2": 0.0001,
+    "P3_center": 0.604,
+    "P3_half": 0.03,
+    "P3_spread": 0.02,
+    "G1": 1e-07
+  },
+  "NT": 2000,
+  "G1": {
+    "max_rel_diff": 5.3141779192621856e-08,
+    "pass": true
+  },
+  "waveform_draws": [
+    {
+      "board": "{7,3} L=2",
+      "seed": 3100,
+      "max_rel_waveform_diff": 5.366156071684111e-08,
+      "tau_cvode": 0.2723122332213935,
+      "tau_modal": 0.27231205474604164,
+      "tolerances_used": [
+        1e-10,
+        1e-10
+      ],
+      "tau_rel_diff": 6.5540745890682e-07
+    },
+    {
+      "board": "{7,3} L=2",
+      "seed": 3101,
+      "max_rel_waveform_diff": 6.053033064678072e-08,
+      "tau_cvode": 0.27478882738439764,
+      "tau_modal": 0.2747886495429186,
+      "tolerances_used": [
+        1e-10,
+        1e-10
+      ],
+      "tau_rel_diff": 6.471936862713438e-07
+    },
+    {
+      "board": "{7,3} L=2",
+      "seed": 3102,
+      "max_rel_waveform_diff": 5.40583062488915e-08,
+      "tau_cvode": 0.2789146159341353,
+      "tau_modal": 0.27891444716802677,
+      "tolerances_used": [
+        1e-10,
+        1e-10
+      ],
+      "tau_rel_diff": 6.050819892842937e-07
+    },
+    {
+      "board": "{7,3} L=2",
+      "seed": 3103,
+      "max_rel_waveform_diff": 5.600968725853288e-08,
+      "tau_cvode": 0.27625765997804913,
+      "tau_modal": 0.2762574815971763,
+      "tolerances_used": [
+        1e-10,
+        1e-10
+      ],
+      "tau_rel_diff": 6.457051292124224e-07
+    },
+    {
+      "board": "{7,3} L=2",
+      "seed": 3104,
+      "max_rel_waveform_diff": 5.120528593730948e-08,
+      "tau_cvode": 0.2694120726066391,
+      "tau_modal": 0.2694119271143594,
+      "tolerances_used": [
+        1e-10,
+        1e-10
+      ],
+      "tau_rel_diff": 5.40036520382656e-07
+    },
+    {
+      "board": "{7,3} L=2",
+      "seed": 3105,
+      "max_rel_waveform_diff": 5.362809146253705e-08,
+      "tau_cvode": 0.2756180994311725,
+      "tau_modal": 0.27561793422039993,
+      "tolerances_used": [
+        1e-10,
+        1e-10
+      ],
+      "tau_rel_diff": 5.994195299003045e-07
+    },
+    {
+      "board": "square R=6",
+      "seed": 3100,
+      "max_rel_waveform_diff": 1.7670612776388488e-06,
+      "tau_cvode": 0.4585284674025603,
+      "tau_modal": 0.45854233967205954,
+      "tolerances_used": [
+        1e-08,
+        1e-08
+      ],
+      "tau_rel_diff": 3.025297404193421e-05
+    },
+    {
+      "board": "square R=6",
+      "seed": 3101,
+      "max_rel_waveform_diff": 1.808697188519487e-06,
+      "tau_cvode": 0.45641119840874866,
+      "tau_modal": 0.4564255307605689,
+      "tolerances_used": [
+        1e-08,
+        1e-08
+      ],
+      "tau_rel_diff": 3.140129299156983e-05
+    },
+    {
+      "board": "square R=6",
+      "seed": 3102,
+      "max_rel_waveform_diff": 1.6690642361807868e-06,
+      "tau_cvode": 0.4582183894788501,
+      "tau_modal": 0.45823137392495156,
+      "tolerances_used": [
+        1e-08,
+        1e-08
+      ],
+      "tau_rel_diff": 2.8336004124434577e-05
+    },
+    {
+      "board": "square R=6",
+      "seed": 3103,
+      "max_rel_waveform_diff": 1.6671464073221018e-06,
+      "tau_cvode": 0.45793833578948906,
+      "tau_modal": 0.45795137383220347,
+      "tolerances_used": [
+        1e-08,
+        1e-08
+      ],
+      "tau_rel_diff": 2.847036488897087e-05
+    },
+    {
+      "board": "square R=6",
+      "seed": 3104,
+      "max_rel_waveform_diff": 1.747670417004494e-06,
+      "tau_cvode": 0.4482593669777793,
+      "tau_modal": 0.44827296487699914,
+      "tolerances_used": [
+        1e-08,
+        1e-08
+      ],
+      "tau_rel_diff": 3.0333971230169242e-05
+    },
+    {
+      "board": "square R=6",
+      "seed": 3105,
+      "max_rel_waveform_diff": 1.8203047185408245e-06,
+      "tau_cvode": 0.4564594890093692,
+      "tau_modal": 0.4564738148995919,
+      "tolerances_used": [
+        1e-08,
+        1e-08
+      ],
+      "tau_rel_diff": 3.138381601539676e-05
+    }
+  ],
+  "P1": {
+    "max": 1.8203047185408245e-06,
+    "pass": false
+  },
+  "P2": {
+    "max": 3.140129299156983e-05,
+    "pass": true
+  },
+  "ratios": [
+    0.6069278292090561,
+    0.6038813176196026,
+    0.6042132235009965,
+    0.605222338889276,
+    0.6053027141414905,
+    0.6044956128792748,
+    0.6052410644447148,
+    0.6053408280483725,
+    0.6083031701937117,
+    0.600142451966839,
+    0.605579909526937,
+    0.6044376248846012
+  ],
+  "P3": {
+    "mean": 0.6049240071087394,
+    "min": 0.600142451966839,
+    "max": 0.6083031701937117,
+    "spread": 0.013490484971620165,
+    "all_in_band": true,
+    "pass": true
+  }
+}

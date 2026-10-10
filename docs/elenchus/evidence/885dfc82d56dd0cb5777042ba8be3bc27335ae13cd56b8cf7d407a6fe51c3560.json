@@ -1,0 +1,816 @@
+{
+ "rows": [
+  {
+   "name": "square R=6",
+   "family": "square",
+   "R": 6,
+   "N": 113,
+   "E": 200,
+   "boundary": 44,
+   "d_max": 4,
+   "d_star": 4,
+   "log10_kappa_by_depth": [
+    1.5379419128131313,
+    2.598460133772627,
+    3.3865217523470825,
+    4.494876400236565,
+    5.072443594703144
+   ],
+   "window_nominal": [
+    1,
+    2
+   ],
+   "window_used": [
+    1,
+    2,
+    3
+   ],
+   "window_extended": true,
+   "window_truncated": false,
+   "rate": 0.9482081332319692,
+   "by_depth": {
+    "0": {
+     "n_edges": 80,
+     "lambda_min_normalised_gram": 0.014920872034502779,
+     "eff_dim_fraction": 0.7225930175962567
+    },
+    "1": {
+     "n_edges": 44,
+     "lambda_min_normalised_gram": 0.14944931184024368,
+     "eff_dim_fraction": 0.7973564950599606
+    },
+    "2": {
+     "n_edges": 36,
+     "lambda_min_normalised_gram": 0.07210751628248417,
+     "eff_dim_fraction": 0.6521924734001032
+    },
+    "3": {
+     "n_edges": 28,
+     "lambda_min_normalised_gram": 0.011191746529451506,
+     "eff_dim_fraction": 0.36146398625866266
+    },
+    "4": {
+     "n_edges": 12,
+     "lambda_min_normalised_gram": 0.010871529145540655,
+     "eff_dim_fraction": 0.2702155322050512
+    }
+   }
+  },
+  {
+   "name": "square R=10",
+   "family": "square",
+   "R": 10,
+   "N": 317,
+   "E": 592,
+   "boundary": 76,
+   "d_max": 8,
+   "d_star": 8,
+   "log10_kappa_by_depth": [
+    1.8284571045225952,
+    2.848921161628999,
+    4.161984091328154,
+    5.778794757195534,
+    6.621440588245387,
+    7.408471543879033,
+    8.51220735383057,
+    9.16573949301386,
+    9.717820796894493
+   ],
+   "window_nominal": [
+    2,
+    4
+   ],
+   "window_used": [
+    2,
+    3,
+    4
+   ],
+   "window_extended": false,
+   "window_truncated": false,
+   "rate": 1.2297282484586165,
+   "by_depth": {
+    "0": {
+     "n_edges": 144,
+     "lambda_min_normalised_gram": 0.004084913330971713,
+     "eff_dim_fraction": 0.7061889962784815
+    },
+    "1": {
+     "n_edges": 92,
+     "lambda_min_normalised_gram": 0.061169957333005134,
+     "eff_dim_fraction": 0.7533623674431805
+    },
+    "2": {
+     "n_edges": 84,
+     "lambda_min_normalised_gram": 0.043817812986350076,
+     "eff_dim_fraction": 0.5786566890465428
+    },
+    "3": {
+     "n_edges": 76,
+     "lambda_min_normalised_gram": 0.006040328462833163,
+     "eff_dim_fraction": 0.3856136222029925
+    },
+    "4": {
+     "n_edges": 60,
+     "lambda_min_normalised_gram": 0.0006678565163020248,
+     "eff_dim_fraction": 0.3183155730644152
+    },
+    "5": {
+     "n_edges": 52,
+     "lambda_min_normalised_gram": 5.8341884622205345e-05,
+     "eff_dim_fraction": 0.247222725469962
+    },
+    "6": {
+     "n_edges": 44,
+     "lambda_min_normalised_gram": 7.83907096051031e-06,
+     "eff_dim_fraction": 0.17218353384956017
+    },
+    "7": {
+     "n_edges": 28,
+     "lambda_min_normalised_gram": 1.8418960862726186e-05,
+     "eff_dim_fraction": 0.1404331951192684
+    },
+    "8": {
+     "n_edges": 12,
+     "lambda_min_normalised_gram": 0.00033367013063669915,
+     "eff_dim_fraction": 0.19682237928121712
+    }
+   }
+  },
+  {
+   "name": "square R=16",
+   "family": "square",
+   "R": 16,
+   "N": 797,
+   "E": 1528,
+   "boundary": 124,
+   "d_max": 14,
+   "d_star": 8,
+   "log10_kappa_by_depth": [
+    2.0226469775178666,
+    3.5972007333530933,
+    4.84705560741716,
+    6.184575821201529,
+    7.411062993610969,
+    9.265130184956892,
+    10.158814262503789,
+    10.996394087808012,
+    12.407577903392365,
+    13.246774665724626,
+    13.840381245854385,
+    14.799272374200834,
+    15.61321230353917,
+    16.463507276742,
+    Infinity
+   ],
+   "window_nominal": [
+    3,
+    7
+   ],
+   "window_used": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "window_extended": false,
+   "window_truncated": false,
+   "rate": 1.2029545666516208,
+   "by_depth": {
+    "0": {
+     "n_edges": 240,
+     "lambda_min_normalised_gram": 0.0016092994711292845,
+     "eff_dim_fraction": 0.6993698342508536
+    },
+    "1": {
+     "n_edges": 156,
+     "lambda_min_normalised_gram": 0.018067838169498068,
+     "eff_dim_fraction": 0.7386649020828197
+    },
+    "2": {
+     "n_edges": 148,
+     "lambda_min_normalised_gram": 0.025675911790224507,
+     "eff_dim_fraction": 0.5545485585931921
+    },
+    "3": {
+     "n_edges": 140,
+     "lambda_min_normalised_gram": 0.005268113448670776,
+     "eff_dim_fraction": 0.3802860603802143
+    },
+    "4": {
+     "n_edges": 132,
+     "lambda_min_normalised_gram": 0.0004946123513300461,
+     "eff_dim_fraction": 0.28824587808496716
+    },
+    "5": {
+     "n_edges": 124,
+     "lambda_min_normalised_gram": 3.680188178503658e-05,
+     "eff_dim_fraction": 0.23164409387445023
+    },
+    "6": {
+     "n_edges": 108,
+     "lambda_min_normalised_gram": 2.656954922967327e-06,
+     "eff_dim_fraction": 0.20703617048457248
+    },
+    "7": {
+     "n_edges": 100,
+     "lambda_min_normalised_gram": 1.6831309608805245e-07,
+     "eff_dim_fraction": 0.17982478808551325
+    },
+    "8": {
+     "n_edges": 92,
+     "lambda_min_normalised_gram": 1.3533478100276824e-08,
+     "eff_dim_fraction": 0.15487202239907774
+    },
+    "9": {
+     "n_edges": 76,
+     "lambda_min_normalised_gram": 1.621830991804112e-09,
+     "eff_dim_fraction": 0.14181261379238458
+    },
+    "10": {
+     "n_edges": 68,
+     "lambda_min_normalised_gram": 1.4893622388373862e-10,
+     "eff_dim_fraction": 0.11630728370418046
+    },
+    "11": {
+     "n_edges": 60,
+     "lambda_min_normalised_gram": 1.8131816193093532e-10,
+     "eff_dim_fraction": 0.09270561940760665
+    },
+    "12": {
+     "n_edges": 44,
+     "lambda_min_normalised_gram": 3.2260159886730097e-09,
+     "eff_dim_fraction": 0.08475799900821551
+    },
+    "13": {
+     "n_edges": 28,
+     "lambda_min_normalised_gram": 1.0607447982097032e-07,
+     "eff_dim_fraction": 0.0946919513112088
+    },
+    "14": {
+     "n_edges": 12,
+     "lambda_min_normalised_gram": 1.7839974518571288e-05,
+     "eff_dim_fraction": 0.17787847372030152
+    }
+   }
+  },
+  {
+   "name": "square R=22",
+   "family": "square",
+   "R": 22,
+   "N": 1517,
+   "E": 2944,
+   "boundary": 172,
+   "d_max": 20,
+   "d_star": 8,
+   "log10_kappa_by_depth": [
+    1.9228742931827434,
+    3.7262980762174274,
+    6.054367226447277,
+    7.29959241799757,
+    8.64129554173042,
+    9.809516357821416,
+    10.880928641938384,
+    11.883903251235902,
+    12.951248121409982,
+    14.82314665745819,
+    15.6949828654635,
+    17.44564047976573,
+    17.772787280518294,
+    17.653181366820125,
+    18.301041527522383,
+    18.52117875669942,
+    18.500088576703213,
+    32.47856039573179,
+    18.977686897515472,
+    19.081675188634538,
+    19.47371502286669
+   ],
+   "window_nominal": [
+    4,
+    10
+   ],
+   "window_used": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "window_extended": false,
+   "window_truncated": true,
+   "rate": 1.0774881449198905,
+   "by_depth": {
+    "0": {
+     "n_edges": 336,
+     "lambda_min_normalised_gram": 0.002660290451668184,
+     "eff_dim_fraction": 0.6836384969925169
+    },
+    "1": {
+     "n_edges": 228,
+     "lambda_min_normalised_gram": 0.012274273202826315,
+     "eff_dim_fraction": 0.7211643028742748
+    },
+    "2": {
+     "n_edges": 220,
+     "lambda_min_normalised_gram": 0.014091911954081394,
+     "eff_dim_fraction": 0.5342312669079442
+    },
+    "3": {
+     "n_edges": 204,
+     "lambda_min_normalised_gram": 0.004605644426164883,
+     "eff_dim_fraction": 0.37547428570207864
+    },
+    "4": {
+     "n_edges": 196,
+     "lambda_min_normalised_gram": 0.0004736247903425355,
+     "eff_dim_fraction": 0.28437701638324187
+    },
+    "5": {
+     "n_edges": 188,
+     "lambda_min_normalised_gram": 3.575292545581834e-05,
+     "eff_dim_fraction": 0.2312276064638315
+    },
+    "6": {
+     "n_edges": 180,
+     "lambda_min_normalised_gram": 2.2324898601158617e-06,
+     "eff_dim_fraction": 0.19566228061152088
+    },
+    "7": {
+     "n_edges": 172,
+     "lambda_min_normalised_gram": 1.2030734138281073e-07,
+     "eff_dim_fraction": 0.1698437786281821
+    },
+    "8": {
+     "n_edges": 164,
+     "lambda_min_normalised_gram": 6.0126026463592875e-09,
+     "eff_dim_fraction": 0.14989015133980982
+    },
+    "9": {
+     "n_edges": 156,
+     "lambda_min_normalised_gram": 3.195165947824047e-10,
+     "eff_dim_fraction": 0.1336427512409616
+    },
+    "10": {
+     "n_edges": 140,
+     "lambda_min_normalised_gram": 2.1159614201586896e-11,
+     "eff_dim_fraction": 0.12572855356008525
+    },
+    "11": {
+     "n_edges": 132,
+     "lambda_min_normalised_gram": 1.882399747325345e-12,
+     "eff_dim_fraction": 0.11315573314941382
+    },
+    "12": {
+     "n_edges": 124,
+     "lambda_min_normalised_gram": 1.7880464874074302e-13,
+     "eff_dim_fraction": 0.10027352541928856
+    },
+    "13": {
+     "n_edges": 108,
+     "lambda_min_normalised_gram": 4.6702152797031974e-14,
+     "eff_dim_fraction": 0.09273308854128409
+    },
+    "14": {
+     "n_edges": 92,
+     "lambda_min_normalised_gram": 7.548061005722065e-15,
+     "eff_dim_fraction": 0.08601553391546689
+    },
+    "15": {
+     "n_edges": 84,
+     "lambda_min_normalised_gram": 2.2525500853140758e-15,
+     "eff_dim_fraction": 0.07389849335827962
+    },
+    "16": {
+     "n_edges": 76,
+     "lambda_min_normalised_gram": 7.39665532387348e-15,
+     "eff_dim_fraction": 0.06324128549953957
+    },
+    "17": {
+     "n_edges": 60,
+     "lambda_min_normalised_gram": 2.6714668271988796e-13,
+     "eff_dim_fraction": 0.06034826058810695
+    },
+    "18": {
+     "n_edges": 44,
+     "lambda_min_normalised_gram": 1.612626560356018e-11,
+     "eff_dim_fraction": 0.0640202740283475
+    },
+    "19": {
+     "n_edges": 28,
+     "lambda_min_normalised_gram": 3.693357882021166e-09,
+     "eff_dim_fraction": 0.08291077364769146
+    },
+    "20": {
+     "n_edges": 12,
+     "lambda_min_normalised_gram": 2.427767131503656e-06,
+     "eff_dim_fraction": 0.17236736131233824
+    }
+   }
+  },
+  {
+   "name": "triangular R=3.225",
+   "family": "triangular",
+   "R": 3.225,
+   "N": 37,
+   "E": 87,
+   "boundary": 21,
+   "d_max": 2,
+   "d_star": 2,
+   "log10_kappa_by_depth": [
+    1.7299537198311485,
+    3.0132772284228664,
+    3.4232144853431334
+   ],
+   "window_nominal": [
+    1,
+    1
+   ],
+   "window_used": [
+    1,
+    2
+   ],
+   "window_extended": true,
+   "window_truncated": true,
+   "rate": 0.40993725692026706,
+   "by_depth": {
+    "0": {
+     "n_edges": 53,
+     "lambda_min_normalised_gram": 0.005091451069647767,
+     "eff_dim_fraction": 0.5386277171460087
+    },
+    "1": {
+     "n_edges": 27,
+     "lambda_min_normalised_gram": 0.003365456905173286,
+     "eff_dim_fraction": 0.6233631898494295
+    },
+    "2": {
+     "n_edges": 7,
+     "lambda_min_normalised_gram": 0.16533724007410902,
+     "eff_dim_fraction": 0.6651097201092412
+    }
+   }
+  },
+  {
+   "name": "triangular R=6.45",
+   "family": "triangular",
+   "R": 6.45,
+   "N": 151,
+   "E": 401,
+   "boundary": 49,
+   "d_max": 5,
+   "d_star": 5,
+   "log10_kappa_by_depth": [
+    2.2053777632955556,
+    3.8950734971789935,
+    5.790196054720963,
+    7.2814187196593,
+    8.386714402385849,
+    8.672449080228727
+   ],
+   "window_nominal": [
+    1,
+    2
+   ],
+   "window_used": [
+    1,
+    2,
+    3
+   ],
+   "window_extended": true,
+   "window_truncated": false,
+   "rate": 1.693172611240153,
+   "by_depth": {
+    "0": {
+     "n_edges": 133,
+     "lambda_min_normalised_gram": 0.0009060813793629045,
+     "eff_dim_fraction": 0.5181658373473755
+    },
+    "1": {
+     "n_edges": 99,
+     "lambda_min_normalised_gram": 0.0010952844991569564,
+     "eff_dim_fraction": 0.4568171566328901
+    },
+    "2": {
+     "n_edges": 79,
+     "lambda_min_normalised_gram": 0.0002996698655402758,
+     "eff_dim_fraction": 0.30092375299097246
+    },
+    "3": {
+     "n_edges": 54,
+     "lambda_min_normalised_gram": 6.140380894005804e-05,
+     "eff_dim_fraction": 0.23185189531720612
+    },
+    "4": {
+     "n_edges": 29,
+     "lambda_min_normalised_gram": 3.488147961521916e-05,
+     "eff_dim_fraction": 0.19889284249739064
+    },
+    "5": {
+     "n_edges": 7,
+     "lambda_min_normalised_gram": 0.030114086182378336,
+     "eff_dim_fraction": 0.4329165635582085
+    }
+   }
+  },
+  {
+   "name": "triangular R=10.75",
+   "family": "triangular",
+   "R": 10.75,
+   "N": 421,
+   "E": 1176,
+   "boundary": 84,
+   "d_max": 9,
+   "d_star": 6,
+   "log10_kappa_by_depth": [
+    2.2950201957336995,
+    4.363843325619282,
+    6.53304394116285,
+    8.342785954289264,
+    10.153071763213863,
+    11.566613278230847,
+    12.928617799371418,
+    14.147714008629473,
+    15.26999450375864,
+    15.994686408307924
+   ],
+   "window_nominal": [
+    2,
+    4
+   ],
+   "window_used": [
+    2,
+    3,
+    4
+   ],
+   "window_extended": false,
+   "window_truncated": false,
+   "rate": 1.8100139110255062,
+   "by_depth": {
+    "0": {
+     "n_edges": 233,
+     "lambda_min_normalised_gram": 0.0008898002856910687,
+     "eff_dim_fraction": 0.4783321439611933
+    },
+    "1": {
+     "n_edges": 189,
+     "lambda_min_normalised_gram": 0.0006752892732409232,
+     "eff_dim_fraction": 0.43288373845557854
+    },
+    "2": {
+     "n_edges": 171,
+     "lambda_min_normalised_gram": 8.072754941264704e-05,
+     "eff_dim_fraction": 0.27873738314721574
+    },
+    "3": {
+     "n_edges": 151,
+     "lambda_min_normalised_gram": 1.1954333099885124e-05,
+     "eff_dim_fraction": 0.20151294099833303
+    },
+    "4": {
+     "n_edges": 126,
+     "lambda_min_normalised_gram": 6.926219259232884e-07,
+     "eff_dim_fraction": 0.16543067202324405
+    },
+    "5": {
+     "n_edges": 101,
+     "lambda_min_normalised_gram": 1.1440483119818675e-07,
+     "eff_dim_fraction": 0.14791141879365444
+    },
+    "6": {
+     "n_edges": 81,
+     "lambda_min_normalised_gram": 7.490687279346454e-08,
+     "eff_dim_fraction": 0.13182368884316023
+    },
+    "7": {
+     "n_edges": 63,
+     "lambda_min_normalised_gram": 7.308221097773909e-08,
+     "eff_dim_fraction": 0.11315996707799261
+    },
+    "8": {
+     "n_edges": 43,
+     "lambda_min_normalised_gram": 2.109609427146717e-08,
+     "eff_dim_fraction": 0.10345006608932468
+    },
+    "9": {
+     "n_edges": 18,
+     "lambda_min_normalised_gram": 2.6524390426714927e-06,
+     "eff_dim_fraction": 0.16943446691493425
+    }
+   }
+  },
+  {
+   "name": "triangular R=17.2",
+   "family": "triangular",
+   "R": 17.2,
+   "N": 1069,
+   "E": 3071,
+   "boundary": 133,
+   "d_max": 16,
+   "d_star": 5,
+   "log10_kappa_by_depth": [
+    2.429001370867126,
+    4.994707183980378,
+    7.110803334073752,
+    9.287576264022665,
+    11.019382449504937,
+    12.857379713779146,
+    14.34668161511301,
+    16.162182539619163,
+    18.075096671969998,
+    19.86442187279679,
+    21.162897118496048,
+    21.190965040850333,
+    20.41809485051812,
+    20.471271463944685,
+    20.58591428876567,
+    20.97552993180793,
+    20.8198043085361
+   ],
+   "window_nominal": [
+    4,
+    8
+   ],
+   "window_used": [
+    4,
+    5
+   ],
+   "window_extended": false,
+   "window_truncated": true,
+   "rate": 1.8379972642742093,
+   "by_depth": {
+    "0": {
+     "n_edges": 373,
+     "lambda_min_normalised_gram": 0.0003263607203563252,
+     "eff_dim_fraction": 0.45685467742223396
+    },
+    "1": {
+     "n_edges": 315,
+     "lambda_min_normalised_gram": 0.0005496100120318659,
+     "eff_dim_fraction": 0.4354658215083152
+    },
+    "2": {
+     "n_edges": 297,
+     "lambda_min_normalised_gram": 4.821637439655566e-05,
+     "eff_dim_fraction": 0.2778239040777931
+    },
+    "3": {
+     "n_edges": 279,
+     "lambda_min_normalised_gram": 4.89411120217205e-06,
+     "eff_dim_fraction": 0.1984131845266503
+    },
+    "4": {
+     "n_edges": 261,
+     "lambda_min_normalised_gram": 8.244190624987873e-07,
+     "eff_dim_fraction": 0.1547457193080871
+    },
+    "5": {
+     "n_edges": 243,
+     "lambda_min_normalised_gram": 1.2863982307859726e-07,
+     "eff_dim_fraction": 0.1277747147139755
+    },
+    "6": {
+     "n_edges": 225,
+     "lambda_min_normalised_gram": 8.453283772700514e-09,
+     "eff_dim_fraction": 0.10957298252017057
+    },
+    "7": {
+     "n_edges": 207,
+     "lambda_min_normalised_gram": 1.5300406073378272e-09,
+     "eff_dim_fraction": 0.09635466020275513
+    },
+    "8": {
+     "n_edges": 187,
+     "lambda_min_normalised_gram": 1.5106339212400563e-10,
+     "eff_dim_fraction": 0.08696781889798864
+    },
+    "9": {
+     "n_edges": 162,
+     "lambda_min_normalised_gram": 4.379807037952287e-11,
+     "eff_dim_fraction": 0.08164622716048707
+    },
+    "10": {
+     "n_edges": 137,
+     "lambda_min_normalised_gram": 2.3227689349238634e-11,
+     "eff_dim_fraction": 0.07799480033805792
+    },
+    "11": {
+     "n_edges": 117,
+     "lambda_min_normalised_gram": 1.923803798312016e-11,
+     "eff_dim_fraction": 0.07240734012916887
+    },
+    "12": {
+     "n_edges": 99,
+     "lambda_min_normalised_gram": 7.121014995141778e-12,
+     "eff_dim_fraction": 0.06564493798242801
+    },
+    "13": {
+     "n_edges": 79,
+     "lambda_min_normalised_gram": 6.382463276159954e-12,
+     "eff_dim_fraction": 0.06144192009404598
+    },
+    "14": {
+     "n_edges": 54,
+     "lambda_min_normalised_gram": 5.572994502103252e-11,
+     "eff_dim_fraction": 0.06799065176430129
+    },
+    "15": {
+     "n_edges": 29,
+     "lambda_min_normalised_gram": 6.41836774267336e-09,
+     "eff_dim_fraction": 0.10317604760304148
+    },
+    "16": {
+     "n_edges": 7,
+     "lambda_min_normalised_gram": 0.0037439730980074614,
+     "eff_dim_fraction": 0.37704394069545805
+    }
+   }
+  }
+ ],
+ "g2": [
+  {
+   "name": "square R=10",
+   "ours": 9.717820796894493,
+   "h0": 9.717820796894493,
+   "ok": true
+  },
+  {
+   "name": "triangular R=6.45",
+   "ours": 8.672449080228727,
+   "h0": 8.672449080228727,
+   "ok": true
+  }
+ ],
+ "verdicts": {
+  "G1": true,
+  "G2": true,
+  "P1": false,
+  "P2": false,
+  "rate_square": {
+   "6": 0.9482,
+   "10": 1.2297,
+   "16": 1.203,
+   "22": 1.0775
+  },
+  "rate_triangular": {
+   "3.225": 0.4099,
+   "6.45": 1.6932,
+   "10.75": 1.81,
+   "17.2": 1.838
+  },
+  "windows": {
+   "square R=6": [
+    1,
+    2,
+    3
+   ],
+   "square R=10": [
+    2,
+    3,
+    4
+   ],
+   "square R=16": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "square R=22": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "triangular R=3.225": [
+    1,
+    2
+   ],
+   "triangular R=6.45": [
+    1,
+    2,
+    3
+   ],
+   "triangular R=10.75": [
+    2,
+    3,
+    4
+   ],
+   "triangular R=17.2": [
+    4,
+    5
+   ]
+  },
+  "extended": [
+   "square R=6",
+   "triangular R=3.225",
+   "triangular R=6.45"
+  ],
+  "truncated": [
+   "square R=22",
+   "triangular R=3.225",
+   "triangular R=17.2"
+  ]
+ }
+}

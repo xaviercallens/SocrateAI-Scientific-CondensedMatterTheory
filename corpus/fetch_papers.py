@@ -118,13 +118,18 @@ def download_pdf(record: dict, destination: Path) -> bool:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-pdf", action="store_true", help="metadata only")
+    parser.add_argument("--ids", default="", help="comma-separated arXiv ids: fetch only these and MERGE them into papers/index.json")
     args = parser.parse_args()
 
     (PAPERS / "meta").mkdir(parents=True, exist_ok=True)
     (PAPERS / "pdf").mkdir(parents=True, exist_ok=True)
 
-    expected = {pid: (pillar, fragment) for pid, pillar, fragment in SEED_PAPERS}
-    ids = [pid for pid, _, _ in SEED_PAPERS]
+    selected = {x.strip() for x in args.ids.split(",") if x.strip()}
+    seeds = [t for t in SEED_PAPERS if not selected or t[0] in selected]
+    if selected and len(seeds) != len(selected):
+        raise SystemExit("unknown ids: " + ", ".join(sorted(selected - {t[0] for t in seeds})))
+    expected = {pid: (pillar, fragment) for pid, pillar, fragment in seeds}
+    ids = [pid for pid, _, _ in seeds]
 
     fetched: dict[str, dict] = {}
     for start in range(0, len(ids), 10):
@@ -168,6 +173,11 @@ def main() -> int:
         index.append(record)
         print(f"  ok  [{pillar:10}] {arxiv_id:20} {record['title'][:62]}")
 
+    if selected and (PAPERS / "index.json").is_file():
+        # partial run: merge into the existing index instead of overwriting it
+        old = json.loads((PAPERS / "index.json").read_text(encoding="utf-8"))
+        keep = [r for r in old if r["arxiv_id"] not in {x["arxiv_id"] for x in index}]
+        index = keep + index
     (PAPERS / "index.json").write_text(
         json.dumps(index, indent=2, ensure_ascii=False), encoding="utf-8"
     )

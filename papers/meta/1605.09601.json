@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1605.09601",
+  "version": "v1",
+  "title": "Stable extrapolation of analytic functions",
+  "abstract": "This paper examines the problem of extrapolation of an analytic function for $x > 1$ given perturbed samples from an equally spaced grid on $[-1,1]$. Mathematical folklore states that extrapolation is in general hopelessly ill-conditioned, but we show that a more precise statement carries an interesting nuance. For a function $f$ on $[-1,1]$ that is analytic in a Bernstein ellipse with parameter $ρ> 1$, and for a uniform perturbation level $ε$ on the function samples, we construct an asymptotically best extrapolant $e(x)$ as a least squares polynomial approximant of degree $M^*$ given explicitly. We show that the extrapolant $e(x)$ converges to $f(x)$ pointwise in the interval $I_ρ\\in[1,(ρ+ρ^{-1})/2)$ as $ε\\to 0$, at a rate given by a $x$-dependent fractional power of $ε$. More precisely, for each $x \\in I_ρ$ we have \\[ |f(x) - e(x)| = \\mathcal{O}\\left( ε^{-\\log r(x) / \\logρ} \\right), \\qquad\\qquad r(x) = \\frac{x+\\sqrt{x^2-1}}ρ, \\] up to log factors, provided that the oversampling conditioning is satisfied. That is, \\[ M^* \\leq \\frac{1}{2} \\sqrt{N}, \\] which is known to be needed from approximation theory. In short, extrapolation enjoys a weak form of stability, up to a fraction of the characteristic smoothness length. The number of function samples, $N+1$, does not bear on the size of the extrapolation error provided that it obeys the oversampling condition. We also show that one cannot construct an asymptotically more accurate extrapolant from $N+1$ equally spaced samples than $e(x)$, using any other linear or nonlinear procedure. The proofs involve original statements on the stability of polynomial approximation in the Chebyshev basis from equally spaced samples and these are expected to be of independent interest.",
+  "authors": [
+    "Laurent Demanet",
+    "Alex Townsend"
+  ],
+  "published": "2016-05-31T12:35:33Z",
+  "updated": "2016-05-31T12:35:33Z",
+  "year": "2016",
+  "primary_category": "cs.IT",
+  "categories": [
+    "cs.IT",
+    "math.NA"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1605.09601",
+  "pdf_url": "https://arxiv.org/pdf/1605.09601",
+  "pillar": "conditioning",
+  "slug": "1605.09601",
+  "pdf_local": "papers/pdf/1605.09601.pdf"
+}

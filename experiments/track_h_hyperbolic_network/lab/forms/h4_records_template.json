@@ -1,0 +1,119 @@
+{
+ "V0": 3.3,
+ "boards": {
+  "{7,3} L=2": {
+   "records": [
+    "lab/data/hyp73_L2_run00.csv",
+    "lab/data/hyp73_L2_run01.csv",
+    "lab/data/hyp73_L2_run02.csv",
+    "lab/data/hyp73_L2_run03.csv",
+    "lab/data/hyp73_L2_run04.csv"
+   ],
+   "calibration_records": [
+    "lab/data/hyp73_L2_cal00.csv",
+    "lab/data/hyp73_L2_cal01.csv",
+    "lab/data/hyp73_L2_cal02.csv",
+    "lab/data/hyp73_L2_cal03.csv",
+    "lab/data/hyp73_L2_cal04.csv"
+   ],
+   "probe_nodes": [
+    8,
+    7,
+    0
+   ],
+   "temperature_C": null,
+   "humidity_pct": null,
+   "tau_s_nominal": 0.27503123731328566
+  },
+  "square R=6": {
+   "records": [
+    "lab/data/square_R6_run00.csv",
+    "lab/data/square_R6_run01.csv",
+    "lab/data/square_R6_run02.csv",
+    "lab/data/square_R6_run03.csv",
+    "lab/data/square_R6_run04.csv"
+   ],
+   "calibration_records": [
+    "lab/data/square_R6_cal00.csv",
+    "lab/data/square_R6_cal01.csv",
+    "lab/data/square_R6_cal02.csv",
+    "lab/data/square_R6_cal03.csv",
+    "lab/data/square_R6_cal04.csv"
+   ],
+   "probe_nodes": [
+    10,
+    20,
+    31
+   ],
+   "temperature_C": null,
+   "humidity_pct": null,
+   "tau_s_nominal": 0.4550606026209483
+  }
+ },
+ "static_ohms": {
+  "{7,3} L=2": [
+   {
+    "boundary_i": 35,
+    "boundary_j": 36,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 35,
+    "boundary_j": 73,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 70,
+    "boundary_j": 74,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 37,
+    "boundary_j": 107,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 97,
+    "boundary_j": 108,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 58,
+    "boundary_j": 101,
+    "R_meas_ohm": null
+   }
+  ],
+  "square R=6": [
+   {
+    "boundary_i": 0,
+    "boundary_j": 1,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 0,
+    "boundary_j": 61,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 50,
+    "boundary_j": 61,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 1,
+    "boundary_j": 109,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 104,
+    "boundary_j": 110,
+    "R_meas_ohm": null
+   },
+   {
+    "boundary_i": 18,
+    "boundary_j": 107,
+    "R_meas_ohm": null
+   }
+  ]
+ }
+}

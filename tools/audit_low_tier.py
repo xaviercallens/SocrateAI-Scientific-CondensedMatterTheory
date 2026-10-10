@@ -67,7 +67,16 @@ def main():
     # A1 numbers (skip identifiers: preregistration numbers, lattice labels like L=3 / R=10 / {7,3}, ledger ids)
     text = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[LR]=\d+(?:\.\d+)?|\b[GP]\d\b"
                   r"|GF\([^)]*\)|\d+\^\d+(?:-\d+)?", " ", c["statement"])  # identifiers, field names, powers
+    # a number computed from data values (a difference, a ratio) is accepted only if the notes declare it explicitly
+    # as DERIVED(<number>) = <formula>, normally through a CORRECTION appended with ledger_add.py --correct
+    derived = set(re.findall(r"DERIVED\(([^)]+)\)", c.get("notes", "")))
+    # numbers that appear in the claim's own preregistration (thresholds, intervals, reference values) are copied, not new
+    pm0 = re.search(r"PREREGISTRATION_\d+", c["statement"])
+    pre_file = ev.parent.parent / (pm0.group(0) + ".md") if pm0 else None
+    pre_nums = set(NUM.findall(pre_file.read_text())) if pre_file is not None and pre_file.exists() else set()
     for tok in NUM.findall(text):
+        if tok in derived or tok in pre_nums:
+            continue
         if not found(tok, pool):
             fails.append("A1 number not in data: " + tok)
     # A2 verdict words
@@ -108,6 +117,16 @@ def main():
             prereg_text = pf.read_text() if pf.exists() else ""
         added = [l[1:] for l in subprocess.run(["git", "diff", base, "--", rf], cwd=ROOT, capture_output=True, text=True)
                  .stdout.splitlines() if l.startswith("+") and not l.startswith("+++")]
+        # several blocks can be added to the same results file before the next commit: --block "<text in the heading>"
+        # restricts the check to the lines of that block (from its "## " heading to the next "## " heading)
+        if "--block" in a:
+            key = a[a.index("--block") + 1]
+            start = next((i for i, l in enumerate(added) if l.startswith("## ") and key in l), None)
+            if start is None:
+                fails.append("A0 --block heading not found among the added lines: " + key)
+            else:
+                end = next((i for i in range(start + 1, len(added)) if added[i].startswith("## ")), len(added))
+                added = added[start:end]
         # only the low-tier part: lines before the orchestrator's "*Recorded by a low-tier agent" marker
         cut = next((i for i, l in enumerate(added) if l.strip().startswith("*Recorded by")), len(added))
         added = added[:cut]
@@ -116,7 +135,8 @@ def main():
         # A7: the first prose paragraph after the block title (the design/method statement) must be a verbatim copy
         prose = [l.strip() for l in added if l.strip() and not l.strip().startswith(("#", "|", "*Recorded"))]
         if prose:
-            first = norm(re.sub(r"^\*\*[^*]+\*\*\s*", "", prose[0]))
+            # the runbook template (§4) prefixes the paragraph with "Design:"; strip that label before comparing
+            first = norm(re.sub(r"^(?:\*\*[^*]+\*\*\s*|Design:\s*)+", "", prose[0]))
             if first[:120] not in prereg_norm:
                 fails.append("A7 design/method line is not a verbatim copy of the preregistration: " + first[:90])
         prereg_text = prereg_norm
@@ -124,16 +144,22 @@ def main():
             s = line.strip()
             if not s or s.startswith("*Recorded by") or s.startswith("**Scorer") or s.startswith("**Reading"):
                 continue
-            core = norm(re.sub(r"^\*\*[^*]+\*\*\s*", "", s))
+            # strip the runbook §4 labels ("Design:", "Deviations:", "Limits:") and a bold lead before the verbatim test
+            core = norm(re.sub(r"^(?:(?:Design|Deviations|Limits):\s*|\*\*[^*]+\*\*\s*)+", "", s))
             if len(core) > 60 and core[:60] in prereg_text:
                 continue  # verbatim copy from the preregistration
             if s.startswith("|") and ("Prediction" in s or "Threshold" in s or s.startswith("|---")):
                 continue
             cells = s.split("|")
             nums_line = s if not s.startswith("|") else "|".join(cells[:-2] if "HELD" in s or "held" in s or "REFUTED" in s or "refuted" in s else cells)
-            t2 = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[GP]\d\b|GF\([^)]*\)|\d+\^\d+(?:-\d+)?|10⁻\S+|[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+", " ", nums_line)
-            if s.startswith("|") and ("HELD" in s or "held" in s or "REFUTED" in s or "refuted" in s):
-                continue  # verdict rows carry thresholds copied from the preregistration
+            # index labels ("level 12:", "depth 7") are identifiers, not results
+            t2 = re.sub(r"PREREGISTRATION_\d+|[A-Z]\d-[XCLBA]-\d{4}|\{\d+,\d+\}|\b[GP]\d\b|GF\([^)]*\)|\d+\^\d+(?:-\d+)?|10⁻\S+|[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+|\b(?:level|depth|block|row)s?\s+\d+(?:\s*,\s*\d+)*", " ", nums_line)
+            if s.startswith("|") and any(w in s for w in ("HELD", "held", "REFUTED", "refuted", "PASS", "pass", "FAIL", "fail")):
+                continue  # verdict rows (predictions and gates) carry thresholds copied from the preregistration
+            # the runbook template (§4) puts the pre-run commit hash in the block title: drop tokens that resolve to a commit
+            for h in set(re.findall(r"\b[0-9a-f]{7,40}\b", t2)):
+                if subprocess.run(["git", "cat-file", "-e", h + "^{commit}"], cwd=ROOT, capture_output=True).returncode == 0:
+                    t2 = t2.replace(h, " ")
             for tok in NUM.findall(t2):
                 if not found(tok, pool):
                     fails.append("A6 results-block number not in data: %s  (line: %s)" % (tok, s[:90]))

@@ -1,0 +1,66 @@
+{
+ "post_hoc": true,
+ "W": 384,
+ "rows": {
+  "8": {
+   "i": 32,
+   "max_abs_imag_after_phase": 1.468984439331633e-16,
+   "zmin_signed": -0.004295945517812514,
+   "zmax_signed": 0.7690877166432859,
+   "moduli_only_rate": 0.8487622733045448,
+   "signed_rate": 0.8455412155667836,
+   "measured_rate": 0.8384123939713394,
+   "relative_error_signed": 0.008502762657976585
+  },
+  "16": {
+   "i": 64,
+   "max_abs_imag_after_phase": 1.1471083137133503e-16,
+   "zmin_signed": -0.01733238012099927,
+   "zmax_signed": 0.5887907064808641,
+   "moduli_only_rate": 0.938437476413939,
+   "signed_rate": 0.922486592473597,
+   "measured_rate": 0.917130977454198,
+   "relative_error_signed": 0.005839531267677004
+  },
+  "24": {
+   "i": 96,
+   "max_abs_imag_after_phase": 1.1932391348539852e-16,
+   "zmin_signed": -0.03956612989658003,
+   "zmax_signed": 0.4464626921716895,
+   "moduli_only_rate": 1.036121497394401,
+   "signed_rate": 0.9913288799351844,
+   "measured_rate": 0.984818063437603,
+   "relative_error_signed": 0.006611187121055338
+  },
+  "32": {
+   "i": 128,
+   "max_abs_imag_after_phase": 8.573336305449285e-17,
+   "zmin_signed": -0.07179676972449081,
+   "zmax_signed": 0.3333333333333333,
+   "moduli_only_rate": 1.1438950950667188,
+   "signed_rate": 1.0443121772813733,
+   "measured_rate": 1.039326439764013,
+   "relative_error_signed": 0.0047970852338677745
+  },
+  "40": {
+   "i": 160,
+   "max_abs_imag_after_phase": 4.93585065741397e-17,
+   "zmin_signed": -0.11522919386048376,
+   "zmax_signed": 0.2431924112155965,
+   "moduli_only_rate": 1.2646647230445232,
+   "signed_rate": 1.071486396569161,
+   "measured_rate": 1.065106288770627,
+   "relative_error_signed": 0.005990113724610539
+  },
+  "48": {
+   "i": 192,
+   "max_abs_imag_after_phase": 4.055432733649429e-17,
+   "zmin_signed": -0.1715728752538099,
+   "zmax_signed": 0.1715728752538099,
+   "moduli_only_rate": 1.4026764275393242,
+   "signed_rate": 1.069742759266198,
+   "measured_rate": 1.0674047745234607,
+   "relative_error_signed": 0.0021903450298703902
+  }
+ }
+}

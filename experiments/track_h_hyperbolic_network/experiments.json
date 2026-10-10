@@ -114,5 +114,82 @@
   "data": [
    "data/localisation_under_correlated_hardware_n.json"
   ]
+ },
+ "PREREGISTRATION_18.md": {
+  "title": "coherence versus depth across tilings",
+  "script": "exp18_coherence_versus_depth_across_tilings.py",
+  "data": [
+   "data/coherence_versus_depth_across_tilings.json"
+  ]
+ },
+ "PREREGISTRATION_19.md": {
+  "title": "coherence mechanism at matched size",
+  "script": "exp19_coherence_mechanism_at_matched_size.py",
+  "data": [
+   "data/coherence_mechanism_at_matched_size.json"
+  ]
+ },
+ "PREREGISTRATION_20.md": {
+  "title": "coherence mechanism prediction test",
+  "script": "exp20_coherence_mechanism_prediction_test.py",
+  "data": [
+   "data/coherence_mechanism_prediction_test.json"
+  ]
+ },
+ "PREREGISTRATION_21.md": {
+  "title": "flat growth rate over matched relative windows",
+  "script": "exp21_flat_growth_rate_over_matched_relative_w.py",
+  "data": [
+   "data/flat_growth_rate_over_matched_relative_w.json"
+  ]
+ },
+ "PREREGISTRATION_22.md": {
+  "title": "hardware noise failure boundaries",
+  "script": "exp22_hardware_noise_failure_boundaries.py",
+  "data": [
+   "data/hardware_noise_failure_boundaries.json"
+  ]
+ },
+ "PREREGISTRATION_23.md": {
+  "title": "cylinder exponential sum picture",
+  "script": "exp23_cylinder_exponential_sum_picture.py",
+  "data": [
+   "data/cylinder_exponential_sum_picture.json"
+  ]
+ },
+ "PREREGISTRATION_24.md": {
+  "title": "momentum resolved rates on the cylinder",
+  "script": "exp24_momentum_resolved_rates_on_the_cylinder.py",
+  "data": [
+   "data/momentum_resolved_rates_on_the_cylinder.json"
+  ]
+ },
+ "PREREGISTRATION_25.md": {
+  "title": "exact semi infinite blocks asymptotic rates",
+  "script": "exp25_exact_semi_infinite_blocks_asymptotic_ra.py",
+  "data": [
+   "data/exact_semi_infinite_blocks_asymptotic_ra.json"
+  ]
+ },
+ "PREREGISTRATION_26.md": {
+  "title": "diagonal boundary orientation and the growth rate",
+  "script": "exp26_diagonal_boundary_orientation_and_the_gr.py",
+  "data": [
+   "data/diagonal_boundary_orientation_and_the_gr.json"
+  ]
+ },
+ "PREREGISTRATION_27.md": {
+  "title": "aligned strip with unequal conductances",
+  "script": "exp27_aligned_strip_with_unequal_conductances.py",
+  "data": [
+   "data/aligned_strip_with_unequal_conductances.json"
+  ]
+ },
+ "PREREGISTRATION_28.md": {
+  "title": "curvature on a polar grid disk",
+  "script": "exp28_curvature_on_a_polar_grid_disk.py",
+  "data": [
+   "data/curvature_on_a_polar_grid_disk.json"
+  ]
  }
 }

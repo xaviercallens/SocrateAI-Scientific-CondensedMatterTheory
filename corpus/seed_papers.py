@@ -171,3 +171,72 @@ SEED_PAPERS: list[tuple[str, str, str]] = [
     ("2405.05327", "ryu", "Higher Berry Connection for Matrix Product States"),
     ("2601.00761", "ryu", "Exponentially Accelerated Sampling of Pauli Strings"),
 ]
+
+# --- Added 2026-10-08 (literature review of the Track H programme; identifiers verified through alphaXiv/WebSearch by the
+# --- survey subagents, expected title fragments below make a wrong identifier fail loudly) ------------------------------
+# inverse: discrete Calderon problem, resistor-network recovery, exponential instability
+SEED_PAPERS += [
+    ("math/0303126", "inverse", "Examples of exponential instability"),
+    ("2509.18203", "inverse", "discrete Calder"),
+    ("2501.00345", "inverse", "discrete inverse conductivity problem"),
+    ("2312.11721", "inverse", "piecewise constant conductance"),
+    ("1104.4998", "inverse", "cylindrical electrical networks"),
+    ("1609.03041", "inverse", "Optical tomography on graphs"),
+    # conditioning: Vandermonde/Hankel conditioning, potential-theoretic rates, analytic continuation
+    ("1504.02118", "conditioning", "How bad are Vandermonde"),
+    ("1609.09494", "conditioning", "displacement structure"),
+    ("1701.02538", "conditioning", "Vandermonde matrices with nodes in the unit disk"),
+    ("0906.4506", "conditioning", "smallest eigenvalue of Hankel"),
+    ("2107.09326", "conditioning", "smallest singular value of Vandermonde"),
+    ("1908.11097", "conditioning", "ill-conditioning of analytic continuation"),
+    ("1605.09601", "conditioning", "Stable extrapolation of analytic functions"),
+    # hyperbolic circuits and discrete holography on tilings (additions to the hyperbolic pillar)
+    ("2404.03062", "hyperbolic", "Holographic Conformal Field Theories on Hyperbolic Lattices"),
+    ("2305.04862", "hyperbolic", "hyperbolic lattices"),
+    ("2205.05081", "hyperbolic", "Breitenlohner"),
+    ("2205.05106", "hyperbolic", "Hyperbolic matter in electrical circuits"),
+]
+
+# --- Added 2026-10-10 (topological data analysis review; identifiers verified through alphaXiv by the survey subagents) ---------------
+# tda: GUDHI, vectorisations, differentiable persistence, stability, persistent Laplacians, TDA in physics and inverse problems
+SEED_PAPERS += [
+    ("1507.06217", "tda", "Persistence Images: A Stable Vector"),
+    ("1207.6437", "tda", "Persistence Landscapes"),
+    ("1706.03358", "tda", "Sliced Wasserstein Kernel for Persistence Diagrams"),
+    ("1909.13472", "tda", "ATOL: Measure Vectorization for Automatic"),
+    ("1904.09378", "tda", "PersLay: A Neural Network Layer"),
+    ("2010.08356", "tda", "Optimizing persistent homology based functions"),
+    ("1910.00960", "tda", "A Framework for Differential Calculus on Persistence Barcodes"),
+    ("1207.3674", "tda", "The Structure and Stability of Persistence Modules"),
+    ("1207.3885", "tda", "Persistence stability for geometric complexes"),
+    ("2006.16824", "tda", "Wasserstein Stability for Persistence Diagrams"),
+    ("1812.09764", "tda", "Neural Persistence: A Complexity Measure"),
+    ("2302.11446", "tda", "Singular value decomposition based matrix surgery"),
+    ("1502.06172", "tda", "Clique topology reveals intrinsic geometric structure"),
+    ("2012.02808", "tda", "Persistent Laplacians: properties, algorithms"),
+    ("1912.04135", "tda", "Persistent spectral graph"),
+    ("2311.03087", "tda", "Persistent Homology for High-dimensional Data"),
+    ("2312.07563", "tda", "Persistent Topological Laplacians"),
+    ("1507.05379", "tda", "Hodge Laplacians on graphs"),
+    ("2606.17632", "tda", "Unveiling topology in imaging problems"),
+    ("1601.03641", "tda", "Persistent Homology analysis of Phase Transitions"),
+    ("2009.14231", "tda", "Quantitative and Interpretable Order Parameters"),
+    ("2009.05141", "tda", "Finding hidden order in spin models"),
+    ("2603.10277", "tda", "Condition Number with Graph Neural Networks"),
+    ("1307.1539", "inverse", "invisibility cloaking for FEM models and resistor networks"),
+]
+
+# --- Added 2026-10-10 (topology programme review; theorem / experiment / limit items, verified through alphaXiv by the survey subagent) ---
+# topoprog: bulk-boundary theorems and their limits across domains (0904.2197, 1308.0554, 1702.07583, 2203.07292 were already in the corpus under other pillars)
+SEED_PAPERS += [
+    ("1207.5989", "topoprog", "Bulk-edge correspondence for two-dimensional"),
+    ("cond-mat/9411052", "topoprog", "Non-Commutative Geometry of the Quantum Hall"),
+    ("1510.08744", "topoprog", "Bulk and Boundary Invariants"),
+    ("1910.02878", "topoprog", "Topological Origin of Non-Hermitian Skin"),
+    ("1902.10050", "topoprog", "Anomalous bulk-edge correspondence in continuous"),
+    ("1404.6513", "topoprog", "Helicity conservation by flow across scales"),
+    ("1508.04715", "topoprog", "Fermion Path Integrals And Topological"),
+    ("1108.2345", "topoprog", "Phase transitions detached from stationary"),
+    ("2206.11741", "topoprog", "strong backscattering in valley-Hall"),
+    ("1212.0572", "topoprog", "Direct Measurement of the Zak phase"),
+]

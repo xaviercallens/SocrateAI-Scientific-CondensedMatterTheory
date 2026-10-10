@@ -1,0 +1,67 @@
+{
+ "post_hoc": true,
+ "runs": {
+  "v W=64": {
+   "reference_block": "32",
+   "window": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "sigma_min_rate_reference_block": 1.849761037824352,
+   "global_sigma_max_slope_over_window": 1.0933895062622632e-06,
+   "kappa_rate_implied": 1.8497621312138584,
+   "last_resolved_depth_reference_block": 6,
+   "last_resolved_depth_per_block": {
+    "8": 11,
+    "16": 10,
+    "24": 9,
+    "32": 6
+   }
+  },
+  "v W=96": {
+   "reference_block": "48",
+   "window": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "sigma_min_rate_reference_block": 1.8518930168649335,
+   "global_sigma_max_slope_over_window": 1.1922408641154197e-06,
+   "kappa_rate_implied": 1.8518942091057975,
+   "last_resolved_depth_reference_block": 6,
+   "last_resolved_depth_per_block": {
+    "8": 11,
+    "16": 11,
+    "24": 10,
+    "32": 9,
+    "40": 8,
+    "48": 6
+   }
+  },
+  "h W=96": {
+   "reference_block": "48",
+   "window": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "sigma_min_rate_reference_block": 1.7630008774594126,
+   "global_sigma_max_slope_over_window": 1.2620093207500983e-10,
+   "kappa_rate_implied": 1.7630008775856134,
+   "last_resolved_depth_reference_block": 7,
+   "last_resolved_depth_per_block": {
+    "8": 11,
+    "16": 11,
+    "24": 11,
+    "32": 9,
+    "40": 8,
+    "48": 7
+   }
+  }
+ }
+}

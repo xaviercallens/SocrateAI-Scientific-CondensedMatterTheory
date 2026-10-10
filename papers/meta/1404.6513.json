@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "1404.6513",
+  "version": "v3",
+  "title": "Helicity conservation by flow across scales in reconnecting vortex links and knots",
+  "abstract": "The conjecture that helicity (or knottedness) is a fundamental conserved quantity has a rich history in fluid mechanics, but the nature of this conservation in the presence of dissipation has proven difficult to resolve. Making use of recent advances, we create vortex knots and links in viscous fluids and simulated superfluids and track their geometry through topology changing reconnections. We find that the reassociation of vortex lines through a reconnection enables the transfer of helicity from links and knots to helical coils. This process is remarkably efficient, owing to the anti-parallel orientation spontaneously adopted by the reconnecting vortices. Using a new method for quantifying the spatial helicity spectrum, we find that the reconnection process can be viewed as transferring helicity between scales, rather than dissipating it. We also infer the presence of geometric deformations which convert helical coils into even smaller scale twist, where it may ultimately be dissipated. Our results suggest that helicity conservation plays an important role in fluids and related fields, even in the presence of dissipation.",
+  "authors": [
+    "Martin W. Scheeler",
+    "Dustin Kleckner",
+    "Davide Proment",
+    "Gordon L. Kindlmann",
+    "William T. M. Irvine"
+  ],
+  "published": "2014-04-25T19:43:59Z",
+  "updated": "2014-09-18T16:33:09Z",
+  "year": "2014",
+  "primary_category": "physics.flu-dyn",
+  "categories": [
+    "physics.flu-dyn"
+  ],
+  "doi": "10.1073/pnas.1407232111",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1404.6513",
+  "pdf_url": "https://arxiv.org/pdf/1404.6513",
+  "pillar": "topoprog",
+  "slug": "1404.6513",
+  "pdf_local": "papers/pdf/1404.6513.pdf"
+}

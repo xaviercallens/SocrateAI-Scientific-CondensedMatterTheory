@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "1609.03041",
+  "version": "v1",
+  "title": "Optical tomography on graphs",
+  "abstract": "We present an algorithm for solving inverse problems on graphs analogous to those arising in diffuse optical tomography for continuous media. In particular, we formulate and analyze a discrete version of the inverse Born series, proving estimates characterizing the domain of convergence, approximation errors, and stability of our approach. We also present a modification which allows additional information on the structure of the potential to be incorporated, facilitating recovery for a broader class of problems.",
+  "authors": [
+    "Francis J. Chung",
+    "Anna C. Gilbert",
+    "Jeremy G. Hoskins",
+    "John C. Schotland"
+  ],
+  "published": "2016-09-10T12:49:36Z",
+  "updated": "2016-09-10T12:49:36Z",
+  "year": "2016",
+  "primary_category": "math.CO",
+  "categories": [
+    "math.CO"
+  ],
+  "doi": "10.1088/1361-6420/aa66d1",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1609.03041",
+  "pdf_url": "https://arxiv.org/pdf/1609.03041",
+  "pillar": "inverse",
+  "slug": "1609.03041",
+  "pdf_local": "papers/pdf/1609.03041.pdf"
+}

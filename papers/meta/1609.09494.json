@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1609.09494",
+  "version": "v1",
+  "title": "On the singular values of matrices with displacement structure",
+  "abstract": "Matrices with displacement structure such as Pick, Vandermonde, and Hankel matrices appear in a diverse range of applications. In this paper, we use an extremal problem involving rational functions to derive explicit bounds on the singular values of such matrices. For example, we show that the $k$th singular value of a real $n\\times n$ positive definite Hankel matrix, $H_n$, is bounded by $Cρ^{-k/\\log n}\\|H\\|_2$ with explicitly given constants $C>0$ and $ρ>1$, where $\\|H_n\\|_2$ is the spectral norm. This means that a real $n\\times n$ positive definite Hankel matrix can be approximated, up to an accuracy of $ε\\|H_n\\|_2$ with $0<ε<1$, by a rank $\\mathcal{O}(\\log n\\log(1/ε) )$ matrix. Analogous results are obtained for Pick, Cauchy, real Vandermonde, Löwner, and certain Krylov matrices.",
+  "authors": [
+    "Bernhard Beckermann",
+    "Alex Townsend"
+  ],
+  "published": "2016-09-29T12:26:08Z",
+  "updated": "2016-09-29T12:26:08Z",
+  "year": "2016",
+  "primary_category": "math.NA",
+  "categories": [
+    "math.NA",
+    "math.RA"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1609.09494",
+  "pdf_url": "https://arxiv.org/pdf/1609.09494",
+  "pillar": "conditioning",
+  "slug": "1609.09494",
+  "pdf_local": "papers/pdf/1609.09494.pdf"
+}

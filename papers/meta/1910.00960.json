@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "1910.00960",
+  "version": "v4",
+  "title": "A Framework for Differential Calculus on Persistence Barcodes",
+  "abstract": "We define notions of differentiability for maps from and to the space of persistence barcodes. Inspired by the theory of diffeological spaces, the proposed framework uses lifts to the space of ordered barcodes, from which derivatives can be computed. The two derived notions of differentiability (respectively from and to the space of barcodes) combine together naturally to produce a chain rule that enables the use of gradient descent for objective functions factoring through the space of barcodes. We illustrate the versatility of this framework by showing how it can be used to analyze the smoothness of various parametrized families of filtrations arising in topological data analysis.",
+  "authors": [
+    "Jacob Leygonie",
+    "Steve Oudot",
+    "Ulrike Tillmann"
+  ],
+  "published": "2019-10-02T14:00:11Z",
+  "updated": "2021-05-04T17:19:05Z",
+  "year": "2019",
+  "primary_category": "math.AT",
+  "categories": [
+    "math.AT",
+    "cs.CG",
+    "math.DG",
+    "math.OC"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1910.00960",
+  "pdf_url": "https://arxiv.org/pdf/1910.00960",
+  "pillar": "tda",
+  "slug": "1910.00960",
+  "pdf_local": "papers/pdf/1910.00960.pdf"
+}

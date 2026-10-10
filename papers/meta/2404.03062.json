@@ -1,0 +1,39 @@
+{
+  "arxiv_id": "2404.03062",
+  "version": "v2",
+  "title": "Simulating Holographic Conformal Field Theories on Hyperbolic Lattices",
+  "abstract": "We demonstrate how table-top settings combining hyperbolic lattices with nonlinear dynamics universally encode aspects of the bulk-boundary-correspondence between gravity in anti-de-Sitter (AdS) space and conformal field theory (CFT). Our concrete and broadly applicable holographic toy model simulates gravitational self-interactions in the bulk and features an emergent CFT with nontrivial correlations on the boundary. We measure the CFT data contained in the two- and three-point functions and clarify how a thermal CFT is simulated through an effective black hole geometry. As a concrete example, we propose and simulate an experimentally feasible protocol to measure the holographic CFT using electrical circuits.",
+  "authors": [
+    "Santanu Dey",
+    "Anffany Chen",
+    "Pablo Basteiro",
+    "Alexander Fritzsche",
+    "Martin Greiter",
+    "Matthias Kaminski",
+    "Patrick M. Lenggenhager",
+    "Rene Meyer",
+    "Riccardo Sorbello",
+    "Alexander Stegmaier",
+    "Ronny Thomale",
+    "Johanna Erdmenger",
+    "Igor Boettcher"
+  ],
+  "published": "2024-04-03T21:04:56Z",
+  "updated": "2024-08-13T19:45:41Z",
+  "year": "2024",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.stat-mech",
+    "gr-qc",
+    "hep-th",
+    "math-ph"
+  ],
+  "doi": "10.1103/PhysRevLett.133.061603",
+  "journal_ref": "Phys. Rev. Lett. 133, 061603 (2024)",
+  "abs_url": "https://arxiv.org/abs/2404.03062",
+  "pdf_url": "https://arxiv.org/pdf/2404.03062",
+  "pillar": "hyperbolic",
+  "slug": "2404.03062",
+  "pdf_local": "papers/pdf/2404.03062.pdf"
+}

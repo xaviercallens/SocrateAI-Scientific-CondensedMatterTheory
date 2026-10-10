@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue!50!black}
+\setlist{nosep}
+\title{Track H, phase 1 in the garage: assessment, material and the week\\[2pt]
+\large Companion sheet to \texttt{lab/PROTOCOL\_H4.md}, \texttt{lab/LAB\_GUIDE\_H4.md} and \texttt{PREREGISTRATION\_13.md}}
+\author{Xavier Callens (SocrateAI Lab); prepared with Claude (Anthropic)}
+\date{2026-10-08 \quad Preprint v1.2: doi:10.5281/zenodo.23228685}
+\begin{document}
+\maketitle
+
+\section*{1. Where the work stands (an honest reading)}
+The preprint \emph{Logarithmic boundary depth and the conditioning of the discrete inverse conductance problem on
+hyperbolic lattices} (v1.2, 18 pages) establishes, with every computation preregistered and every refutation kept:
+\begin{itemize}
+\item On layer-truncated hyperbolic tilings the condition number $\kappa$ of the Dirichlet-to-Neumann sensitivity
+  Jacobian grows polynomially in $N$ ($\log_{10}\kappa=3.89$ at $N=847$ on $\{7,3\}$); on square and triangular disks it grows
+  as $e^{c\sqrt N}$ (ball arithmetic: $16.0$, $16.5$, $27.0$ decades at $N=421$, $797$, $1069$). All tested networks are
+  exactly full rank over two finite fields: the difference is conditioning, not identifiability.
+\item Across five hyperbolic tilings $\log\kappa$ is nearly a function of maximal depth alone (spread $\le0.56$ decades at
+  equal depth while $N$ varies $15\times$); flat lattices are $\ge1.8$ decades worse at equal depth.
+\item The mechanism is measured: the per-edge boundary signal decays alike on all lattices, but the boundary
+  signatures of equal-depth edges stay nearly independent on hyperbolic tilings (effective dimension fraction $\ge0.79$ at
+  every depth) and collapse on flat disks ($0.14$--$0.39$); the depth-restricted $\kappa$ grows by a lattice constant per
+  unit depth on flat disks ($1.1$--$1.2$ decades square, $1.7$--$1.8$ triangular) against $0.3$--$0.4$ on hyperbolic ones.
+  A harmonic-measure band-counting argument predicts the flat collapse ($d\cdot f_d$ constant within $1.26\times$ on
+  instances it had not seen) but not yet the constant.
+\item In simulation a single-node defect is localised at the $3\times10^{-4}$ precision budget on both geometries; the
+  hyperbolic advantage is a noise margin ($\ge100\times$ at $N\approx316$); component tolerance to $5\%$, offsets to
+  $10\%$, gain drift to $1\%$ and a 10-bit ADC do not break localisation at $N\approx112$.
+\end{itemize}
+\textbf{Assessment.} A solid, modest, well-documented contribution to discrete inverse problems; not a landmark. Its
+strongest feature is the method (preregistration, a claim ledger with evidence digests, refutations in the open), which
+reviewers respect. Its limits are real: at matched probe count the advantage is at most half a decade; the flat growth
+constant is unexplained; there is no theorem; one external review so far. It says nothing about holography or AdS/CFT,
+and must not be presented as if it did. Possible relevance: sensor layouts and tomography on designed graphs.
+
+\section*{2. Why the garage test is a good first experiment}
+One number, fixed before the first solder joint: the ratio of relaxation times of a physical $\{7,3\}$ $L{=}2$ board
+($N=112$, 140 resistors, 35 capacitors) and a square $R{=}6$ board ($N=113$, 200 resistors, 69 capacitors), both built
+from the same component batches and calibrated against a one-resistor, one-capacitor cell from those batches.
+\begin{center}\small
+\begin{tabular}{lll}\toprule
+Prediction & Statement & Band (preregistration 13) \\ \midrule
+T1 & $\tau(\{7,3\}\ L{=}2)\,/\,\tau(\text{square } R{=}6)$ & $0.604\pm0.03$ \\
+T2 & $\tau/\tau_{\mathrm{cal}}$ for $\{7,3\}$ $L{=}2$ and square $R{=}6$ & $2.750\pm0.08$ and $4.551\pm0.14$ \\
+S1 & six boundary-pair resistances per board (DMM) & all within $3\%$ of the predicted ohms \\ \bottomrule
+\end{tabular}
+\end{center}
+Nominal $RC=0.100$ s ($R=100$ k$\Omega$, $C=1\,\mu$F): $\tau=0.275$ s and $0.455$ s. The test is cheap and hard to fool, and
+a refutation with all gates passing would be informative (the board model, not the mathematics, would be wrong). What
+this phase cannot test is the conditioning advantage itself: that is phase 2 (a multiplexed 77-contact map), for which
+the simulations say the chain bought now is sufficient.
+
+\section*{3. Material for the week}
+\subsection*{Components (two boards, two calibration cells)}
+\begin{center}\small
+\begin{tabular}{lrp{8.6cm}}\toprule
+Item & Qty & Specification and note \\ \midrule
+Resistor 100 k$\Omega$ & 352 & metal film $1\%$, \textbf{one batch}: $140+200+2$ calibration $+10$ spare \\
+Capacitor 1 $\mu$F & 112 & film (PET/PP) or C0G, one batch: $35+69+2+6$ spare; \emph{no} class-2 ceramic (DC bias), \emph{no} electrolytic (leakage) \\
+Perfboard or stripboard & 2 & $\ge15\times15$ cm, one per board (or a printed jig following the schematic) \\
+Bus wire, tinned copper & 3 m & boundary rail and ground bus; plus hookup wire in two colours \\
+Quad op-amp, rail-to-rail input & 1 & MCP6004 / TLV2374 class, with a 14-pin socket; unity-gain buffers: 1 driver $+$ 3 probes \\
+ADC module ADS1115 & 1 & 16 bit, 860 SPS; the ESP32 internal ADC (10-bit effective) is excluded ($+20$ to $+80\%$ $\tau$ error on the virtual bench) \\
+Microcontroller & 1 & ESP32 (or Raspberry Pi Pico) with USB cable: step on a GPIO, I$^2$C readout, timestamps \\
+Decoupling & 6 & $4\times100$ nF ceramic at the op-amp and ADC supply pins, $2\times10\,\mu$F on the rails (not in the generated BOM) \\
+Probe pads, terminals & 8 & 6 header pins or pads (nodes 8, 7, 0 and 10, 20, 31), 2 screw terminals (rail, ground) \\ \bottomrule
+\end{tabular}
+\end{center}
+\subsection*{Tools and bench}
+\begin{itemize}
+\item Digital multimeter, 4.5 digits preferred (sorting at $2\%$, static pairs at $3\%$).
+\item Soldering iron with a fine tip, solder, flux, desoldering wick, tip cleaner; flush cutters, needle-nose pliers,
+  tweezers, a board holder (``third hand'').
+\item 3.3 V supply for the step (bench supply or the ESP32 regulator); USB power for the logger.
+\item Laptop with Python~3 and the Arduino IDE, the repository checked out; room thermometer and hygrometer (logged
+  every session).
+\item Ventilation or a fume extractor, safety glasses. Voltages are 3.3--5 V DC: the hazards are the iron and the fumes.
+\end{itemize}
+\subsection*{Printed before session 0 (\texttt{python3 lab/make\_forms.py})}
+\begin{itemize}
+\item both schematics, \texttt{lab/out/hyp73\_L2\_schematic.pdf} and \texttt{square\_R6\_schematic.pdf};
+\item both solder-order tables, \texttt{lab/out/hyp73\_L2\_wiring.md} and \texttt{square\_R6\_wiring.md};
+\item \texttt{lab/forms/components\_form.csv} (342 resistors, 106 capacitors, one line each);
+\item \texttt{lab/forms/static\_pairs\_form.csv} (12 boundary pairs with their predicted resistance);
+\item \texttt{lab/forms/session\_log\_template.md} (one copy per session).
+\end{itemize}
+
+\section*{4. The week, gate by gate}
+\begin{center}\small
+\begin{tabular}{lp{7.2cm}p{5.6cm}}\toprule
+Session & Work & Gate before the next session \\ \midrule
+0 (laptop, 1 h) & run the four lab scripts (netlist, virtual bench, analysis demo, forms); print the forms & the demo prints both verdicts \texttt{True}; \textbf{nothing bought before this} \\
+1 (2 h) & buy; measure every part with the DMM into the component form; sort into piles; keep 2 R $+$ 2 C for the cells & G1: R within $2\%$, C within $10\%$ \\
+2 (4 h) & build $\{7,3\}$ $L{=}2$ per schematic and wiring table, deepest class first, DMM after each row; probe pads 8, 7, 0; calibration cell & G2: $\ge5$ of 6 boundary pairs within $3\%$ (rail disconnected) \\
+3 (5 h) & build square $R{=}6$ likewise; probe pads 10, 20, 31 & G2 on the square board \\
+4 (3 h) & followers, ADS1115, ESP32, flash \texttt{step\_logger.ino}; five records on the calibration cell alone & G4: $\tau_{\mathrm{cal}}$ within $5\%$ of 0.100 s, records within $1\%$ \\
+5 (2 h) & five step records per board, same temperature; fill \texttt{h4\_records.json}; run the analysis; do not open the predictions & G3: three probes agree on $\tau$ within $3\%$ \\
+6 (1 h) & claim \texttt{H4-X-0001}, \texttt{ledger\_add.py}, \texttt{experiment\_gate.py}, results block in \texttt{LAB\_RESULTS.md}, commit & \texttt{ALL PASS}; any verdict is reported with equal prominence \\ \bottomrule
+\end{tabular}
+\end{center}
+A gate that fails stops the sequence: diagnose (guide \S6: $\tau$ too long means an open resistor or a missing
+capacitor's neighbour; too short means leakage or a class-2 ceramic; probes disagreeing means a buffer or a wrong pad),
+fix, re-run the gate. Numbers go from \texttt{h4\_step\_response.json} into the results file and the ledger; none is
+typed from memory.
+\end{document}

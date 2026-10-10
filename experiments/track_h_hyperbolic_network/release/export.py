@@ -170,6 +170,47 @@ def export_tables():
              "null_p95_metric": r["null_p95"]["rel_metric_change"],
              "detected_H1": s["detected"]["bottleneck_H1"], "detected_metric": s["detected"]["rel_metric_change"]}
             for r in d["results"] for cfg, s in r["configs"].items()]),
+        # post-v1.1, low-tier workflow rounds (preregistrations 12, 14-19)
+        ("exact_rank_certificates_for_other_tiling.json", "exact_rank_tilings.csv", lambda d: [
+            {"tiling": r["tiling"], "L": r["L"], "N": r["N"], "E": r["E"], "boundary": r["boundary"], "prime": p,
+             "rank": v["rank"], "rows_used": v["rows_used"], "certified_full": v["certified_full"],
+             "certified_full_both_primes": r["certified_full_both"]}
+            for r in d["rows"] for p, v in r["primes"].items()]),
+        ("rc_benchmark_on_other_tilings.json", "rc_benchmark_tilings.csv", lambda d: [
+            {"tiling": r["tiling"], "L": r["L"], "N": r["N"], "d_max": r["d_max"], "lambda_min": r["lambda_min"],
+             "lambda_max": r["lambda_max"], "tau": r["tau"], "stiffness": r["stiffness"], "backend": b,
+             "K1_rel_err": c["K1_rel_err"], "K1_pass": c["K1_pass"], "K2_rel_err": c["K2_rel_err"], "K2_pass": c["K2_pass"]}
+            for r in d["rows"] for b, c in r["controls"].items()]),
+        ("minimum_detectable_contrast.json", "minimum_contrast.csv", lambda d: [
+            {"lattice": r["lattice"], "N": r["N"], "nodes_in_class": r["nodes_in_class"], "contrast": c["f"],
+             "noise_eps": c["eps"], "top1": c["top1"], "trials": d["trials"]}
+            for r in d["results"] for c in r["cells"].values()]),
+        ("localisation_under_correlated_hardware_n.json", "hardware_noise.csv", lambda d: [
+            {"board": b, "contrast": d["f"], "iid_eps": d["eps_iid"], "trials": d["trials"], "cell": cell, "top1": t}
+            for b, v in d["boards"].items() for cell, t in v["cells"].items()]),
+        ("coherence_versus_depth_across_tilings.json", "coherence_depth.csv", lambda d: [
+            {"family": r["family"], "param": r["param"], "N": r["N"], "E": r["E"], "edge_depth": k, "n_edges": v["n_edges"],
+             "n_pairs": v["n_pairs"], "median_abs_cos": v["median_abs_cos"], "mean_abs_cos": v["mean_abs_cos"],
+             "p90_abs_cos": v["p90_abs_cos"], "participation_ratio": v["participation_ratio"], "eff_dim_fraction": v["eff_dim_fraction"]}
+            for r in d["rows"] for k, v in r["by_depth"].items()]),
+        ("coherence_mechanism_prediction_test.json", "coherence_mechanism_test.csv", lambda d: [
+            {"instance": r["name"], "N": r["N"], "E": r["E"], "d_max": r["d_max"], "kappa_method": r["kappa_method"], "d_star": r["d_star"],
+             "delta_bar": r["delta_bar"], "edge_depth": k, "n_edges": v["n_edges"], "eff_dim_fraction": v["eff_dim_fraction"],
+             "log10_kappa_depth_le_d": r["log10_kappa_by_depth"][int(k)]}
+            for r in d["rows"] for k, v in r["by_depth"].items()]),
+        ("flat_growth_rate_over_matched_relative_w.json", "flat_rate_windows.csv", lambda d: [
+            {"instance": r["name"], "family": r["family"], "R": r["R"], "N": r["N"], "d_max": r["d_max"], "d_star": r["d_star"],
+             "window_used": " ".join(str(x) for x in r["window_used"]), "window_extended": r["window_extended"],
+             "window_truncated": r["window_truncated"], "rate_decades_per_depth": r["rate"], "edge_depth": k,
+             "log10_kappa_depth_le_d": r["log10_kappa_by_depth"][int(k)], "n_edges": v["n_edges"],
+             "eff_dim_fraction": v["eff_dim_fraction"], "lambda_min_normalised_gram": v["lambda_min_normalised_gram"]}
+            for r in d["rows"] for k, v in r["by_depth"].items() if int(k) <= r["d_star"]]),
+        ("coherence_mechanism_at_matched_size.json", "coherence_matched.csv", lambda d: [
+            {"instance": r["name"], "N": r["N"], "E": r["E"], "d_max": r["d_max"], "kappa_method": r["kappa_method"],
+             "delta_bar": r["delta_bar"], "edge_depth": k, "n_edges": v["n_edges"],
+             "log10_kappa_depth_le_d": r["log10_kappa_by_depth"][int(k)], "eff_dim_fraction_full": v["eff_dim_fraction_full"],
+             "matched_pr_fraction_median": v.get("matched_pr_fraction_median", ""), "n_match": d["n_match"], "n_draws": d["n_draws"]}
+            for r in d["rows"] for k, v in r["by_depth"].items()]),
     ):
         p = D / name
         if p.exists():
@@ -253,6 +294,22 @@ configs:
   data_files: localize_tolerance.csv
 - config_name: tilings_kappa
   data_files: tilings_kappa.csv
+- config_name: exact_rank_tilings
+  data_files: exact_rank_tilings.csv
+- config_name: rc_benchmark_tilings
+  data_files: rc_benchmark_tilings.csv
+- config_name: minimum_contrast
+  data_files: minimum_contrast.csv
+- config_name: hardware_noise
+  data_files: hardware_noise.csv
+- config_name: coherence_depth
+  data_files: coherence_depth.csv
+- config_name: coherence_matched
+  data_files: coherence_matched.csv
+- config_name: coherence_mechanism_test
+  data_files: coherence_mechanism_test.csv
+- config_name: flat_rate_windows
+  data_files: flat_rate_windows.csv
 - config_name: spectral_gap
   data_files: spectral_gap.csv
 - config_name: integrator_controls
@@ -286,6 +343,14 @@ inverse conductance problem on hyperbolic lattices* (X. Callens, 2026), included
 | `localize_tolerance.csv` | (post-v1.1, not in the paper) localisation top-1 on random boards with component tolerance 0.1 %, 1 %, 5 % and an ideal-model decoder; tolerance has no effect in this differential setting |
 | `localize_noise.csv` | (post-v1.1, not in the paper) localisation top-1 vs noise level and eps_loc (largest noise with top-1 >= 0.9) at the deepest node, contrasts x1.25 and x2 |
 | `tolerance_null.csv` | (post-v1.1, not in the paper) defect detection vs component tolerance (0.1 %, 1 %, 5 %), model-based and differential regimes; only the extreme x100 contrast is tested |
+| `exact_rank_tilings.csv` | (v1.2) exact full-column-rank certificates (random row-combination method, two primes) for 11 instances of {{7,3}}, {{8,3}}, {{5,4}}, {{6,4}}, {{4,5}} up to E = 1604 |
+| `rc_benchmark_tilings.csv` | (v1.2) RC relaxation time, stiffness and the K1/K2 integrator controls (SciPy BDF and rusty-SUNDIALS CVODE) on {{7,3}} L=2, {{8,3}} L=2, {{5,4}} L=3, {{6,4}} L=2, {{4,5}} L=4 |
+| `minimum_contrast.csv` | (v1.2) localisation top-1 vs true contrast (x0.5 to x2) and noise (1e-4 to 3e-3) at the deepest node of four lattices; both geometries localise +-10 % at the 3e-4 budget |
+| `hardware_noise.csv` | (v1.2) localisation top-1 under common-mode offset, gain drift and ADC quantisation at N~112, contrast x2; a floor (49/50 cells at 1.00), not a failure boundary |
+| `coherence_depth.csv` | (v1.2) per edge depth and instance: exhaustive abs-cosine statistics between Jacobian columns of equal-depth edges and the effective dimension fraction (participation ratio / count) of their normalised Gram matrix |
+| `coherence_matched.csv` | (v1.2) per depth on the largest instance of each family: log10 kappa of the Jacobian restricted to columns of depth <= d, the full-class effective dimension fraction and the six-column matched-size median of 50 draws |
+| `coherence_mechanism_test.csv` | (v1.2) test of the band-counting argument on unseen instances ({{7,3}} L=5, {{4,5}} L=7, square R=16, triangular R=10.75): effective dimension fraction and depth-restricted log10 kappa per depth |
+| `flat_rate_windows.csv` | (v1.2, exploratory) growth rate of the depth-restricted log10 kappa over windows fixed in relative depth on square R=6..22 and triangular R=3.2..17.2, with per-class effective dimension fraction and smallest normalised-Gram eigenvalue |
 | `spectral_gap.csv` | Dirichlet spectral gap, RC relaxation time and stiffness; `exploratory=True` rows were not preregistered |
 | `interior_degree.json` | Integer check that interior nodes of the {{7,3}} truncations have degree 3, and that the interior of G_L is G_(L-1) (coordinates and edge sets) |
 | `integrator_controls.csv` | K1 (matrix-exponential known answer) and K2 (steady state = DtN column) controls per integrator; rows with `status` other than `run` were not executed |
@@ -380,7 +445,9 @@ def main():
         shutil.rmtree(BUILD)
     DS.mkdir(parents=True)
     commit = git_commit()
-    pdf = TRACK / "paper" / "main.pdf"
+    # default: the published v1.1 PDF (keeps the v1.1 bundles reproducible); --v12 bundles the v1.2 draft instead
+    pdf = TRACK / "paper" / ("main_v1_2.pdf" if "--v12" in sys.argv else "main.pdf")
+    print("bundling", pdf.name)
     export_graphs()
     export_tables()
     export_timeseries()

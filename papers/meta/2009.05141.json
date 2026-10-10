@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "2009.05141",
+  "version": "v1",
+  "title": "Finding hidden order in spin models with persistent homology",
+  "abstract": "Persistent homology (PH) is a relatively new field in applied mathematics that studies the components and shapes of discrete data. In this work, we demonstrate that PH can be used as a universal framework to identify phases in spin models, including hidden order such as spin nematic ordering and spin liquids. By converting a small number of spin configurations to barcodes we obtain a descriptive picture of configuration space. Using dimensionality reduction to reduce the barcode space to color space leads to a visualization of the phase diagram.",
+  "authors": [
+    "Bart Olsthoorn",
+    "Johan Hellsvik",
+    "Alexander V. Balatsky"
+  ],
+  "published": "2020-09-10T20:34:42Z",
+  "updated": "2020-09-10T20:34:42Z",
+  "year": "2020",
+  "primary_category": "cond-mat.stat-mech",
+  "categories": [
+    "cond-mat.stat-mech",
+    "cond-mat.mtrl-sci"
+  ],
+  "doi": "10.1103/PhysRevResearch.2.043308",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2009.05141",
+  "pdf_url": "https://arxiv.org/pdf/2009.05141",
+  "pillar": "tda",
+  "slug": "2009.05141",
+  "pdf_local": "papers/pdf/2009.05141.pdf"
+}

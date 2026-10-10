@@ -1,0 +1,53 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "title": "Ill-conditioning of the discrete inverse conductance problem as exponential dependence on the earlier span: a column-residual certificate, partly machine-checked, and its measurement",
+ "creators": [
+  {
+   "name": "Callens, Xavier",
+   "affiliation": "SocrateAI Lab"
+  }
+ ],
+ "description": "<p>The companion preprints measured the exponential growth of the condition number of the Jacobian of the Dirichlet-to-Neumann map of a resistor network with respect to its edge conductances, and found that persistent homology of the nearest-neighbour structure of the Jacobian columns sees the depth only through a slow power law. This preprint measures the quantity that carries the rate: the distance of a column to the span of the columns that precede it, with columns ordered by depth. Such residuals bound the smallest singular value from above; one of the bounds is machine-checked in Lean 4 (any lower bound on the action of the matrix is at most every column residual), the other is the standard leave-one-out identity.</p><p>On a square disk the minimum depth-ordered residual of each layer falls 1.243 decades per layer against 1.272 for the smallest singular value (preregistered band 0.85 to 1.15 of the ratio; measured 0.977), and the median column, not only the worst, falls exponentially (0.656 decades per layer, correlation -0.999), seven times faster than the nearest-neighbour topology. Same-layer dependence costs a further 0.6 to 1.8 decades per layer; a preregistered bound of 1.5 was refuted. On the {7,3} hyperbolic tiling the worst column falls 0.40 decades per layer over four layers, a third of the square's rate, and most columns stay well separated. Two design errors of the author (an explicit Jacobian too large for memory, bands set from a smaller pilot) are recorded with their deviations. Elementary Lean lemmas on the symmetry of the DtN matrix are included. Double precision, no noise; nothing here concerns holography.</p><p>Companions: doi:10.5281/zenodo.23228685, doi:10.5281/zenodo.23241463, doi:10.5281/zenodo.23244556.</p>",
+ "access_right": "open",
+ "license": "cc-by-4.0",
+ "keywords": [
+  "inverse problems",
+  "resistor networks",
+  "condition number",
+  "Gram-Schmidt",
+  "Lean 4",
+  "persistent homology",
+  "hyperbolic lattices",
+  "preregistration"
+ ],
+ "language": "eng",
+ "version": "1.0",
+ "prereserve_doi": true,
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23244556",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "10.5281/zenodo.23241463",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "10.5281/zenodo.23228685",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "https://github.com/xaviercallens/SocrateAI-Scientific-CondensedMatterTheory",
+   "relation": "isSupplementedBy",
+   "resource_type": "software"
+  }
+ ],
+ "notes": "Code in code.zip is MIT-licensed; data and paper are CC BY 4.0. Prepared with AI assistance (Claude, Anthropic); the author reviewed all claims."
+}

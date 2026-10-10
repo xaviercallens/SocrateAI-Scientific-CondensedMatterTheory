@@ -1,0 +1,27 @@
+{
+  "arxiv_id": "1701.02538",
+  "version": "v3",
+  "title": "Vandermonde Matrices with Nodes in the Unit Disk and the Large Sieve",
+  "abstract": "We derive bounds on the extremal singular values and the condition number of NxK, with N>=K, Vandermonde matrices with nodes in the unit disk. The mathematical techniques we develop to prove our main results are inspired by a link---first established by by Selberg [1] and later extended by Moitra [2]---between the extremal singular values of Vandermonde matrices with nodes on the unit circle and large sieve inequalities. Our main conceptual contribution lies in establishing a connection between the extremal singular values of Vandermonde matrices with nodes in the unit disk and a novel large sieve inequality involving polynomials in z \\in C with |z|<=1. Compared to Bazán's upper bound on the condition number [3], which, to the best of our knowledge, constitutes the only analytical result---available in the literature---on the condition number of Vandermonde matrices with nodes in the unit disk, our bound not only takes a much simpler form, but is also sharper for certain node configurations. Moreover, the bound we obtain can be evaluated consistently in a numerically stable fashion, whereas the evaluation of Bazán's bound requires the solution of a linear system of equations which has the same condition number as the Vandermonde matrix under consideration and can therefore lead to numerical instability in practice. As a byproduct, our result---when particularized to the case of nodes on the unit circle---slightly improves upon the Selberg-Moitra bound.",
+  "authors": [
+    "Céline Aubel",
+    "Helmut Bölcskei"
+  ],
+  "published": "2017-01-10T12:09:37Z",
+  "updated": "2017-08-03T22:11:56Z",
+  "year": "2017",
+  "primary_category": "cs.IT",
+  "categories": [
+    "cs.IT",
+    "math.FA",
+    "math.NA",
+    "math.NT"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1701.02538",
+  "pdf_url": "https://arxiv.org/pdf/1701.02538",
+  "pillar": "conditioning",
+  "slug": "1701.02538",
+  "pdf_local": "papers/pdf/1701.02538.pdf"
+}

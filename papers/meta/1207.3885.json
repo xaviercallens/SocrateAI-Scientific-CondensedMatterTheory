@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "1207.3885",
+  "version": "v3",
+  "title": "Persistence stability for geometric complexes",
+  "abstract": "In this paper we study the properties of the homology of different geometric filtered complexes (such as Vietoris-Rips, Cech and witness complexes) built on top of precompact spaces. Using recent developments in the theory of topological persistence we provide simple and natural proofs of the stability of the persistent homology of such complexes with respect to the Gromov--Hausdorff distance. We also exhibit a few noteworthy properties of the homology of the Rips and Cech complexes built on top of compact spaces.",
+  "authors": [
+    "Frederic Chazal",
+    "Vin de Silva",
+    "Steve Oudot"
+  ],
+  "published": "2012-07-17T05:36:56Z",
+  "updated": "2013-11-15T06:32:40Z",
+  "year": "2012",
+  "primary_category": "math.AT",
+  "categories": [
+    "math.AT",
+    "cs.CG"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1207.3885",
+  "pdf_url": "https://arxiv.org/pdf/1207.3885",
+  "pillar": "tda",
+  "slug": "1207.3885",
+  "pdf_local": "papers/pdf/1207.3885.pdf"
+}

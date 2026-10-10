@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Merge PR #2 (merge commit, keeps every commit) and create the GitHub release v1.1.
+# Merge PR #2 (merge commit, keeps every commit) and create the GitHub release v1.2 (v1.1 PDF attached as well).
 # RUN THIS IN YOUR OWN TERMINAL with your own gh login (gh auth login) or GH_TOKEN.
 # It refuses to continue if anything looks off, never uses --admin, and is safe to re-run:
 # steps that are already done are skipped. Log: release/merge_release.log
@@ -12,8 +12,8 @@ cd "$ROOT"
 REL=experiments/track_h_hyperbolic_network/release
 exec > >(tee -a "$ROOT/$REL/merge_release.log") 2>&1
 PR=2
-TAG=v1.1
-TITLE="v1.1: Track H preprint (revised after peer review), data, simulator and follow-up experiments"
+TAG=v1.2
+TITLE="v1.2: Track H preprint (mechanism of the depth dependence, defects, other tilings), data, simulator, lab protocol"
 
 step() { echo; echo "== $*"; }
 fail() { echo "STOP: $*"; exit 1; }
@@ -43,8 +43,9 @@ if gh release view "$TAG" >/dev/null 2>&1; then
   echo "release $TAG already exists; not recreating it"
 else
   step "create release $TAG on main"
-  gh release create "$TAG" --target main --title "$TITLE" --notes-file "$REL/RELEASE_NOTES_v1.1.md" \
-    "experiments/track_h_hyperbolic_network/paper/main.pdf#Preprint v1.1 (PDF)" || fail "release creation failed"
+  gh release create "$TAG" --target main --title "$TITLE" --notes-file "$REL/RELEASE_NOTES_v1.2.md" \
+    "experiments/track_h_hyperbolic_network/paper/main_v1_2.pdf#Preprint v1.2 (PDF, DOI 10.5281/zenodo.23228685)" \
+    "experiments/track_h_hyperbolic_network/paper/main.pdf#Preprint v1.1 (PDF, DOI 10.5281/zenodo.23002378)" || fail "release creation failed"
 fi
 
 step "verify"

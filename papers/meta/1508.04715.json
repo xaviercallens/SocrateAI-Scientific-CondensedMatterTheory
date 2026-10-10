@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1508.04715",
+  "version": "v2",
+  "title": "Fermion Path Integrals And Topological Phases",
+  "abstract": "Symmetry-protected topological (SPT) phases of matter have been interpreted in terms of anomalies, and it has been expected that a similar picture should hold for SPT phases with fermions. Here, we describe in detail what this picture means for phases of quantum matter that can be understood via band theory and free fermions. The main examples we consider are time-reversal invariant topological insulators and superconductors in 2 or 3 space dimensions. Along the way, we clarify the precise meaning of the statement that in the bulk of a 3d topological insulator, the electromagnetic $θ$-angle is equal to $π$.",
+  "authors": [
+    "Edward Witten"
+  ],
+  "published": "2015-08-19T17:40:50Z",
+  "updated": "2015-12-19T00:28:06Z",
+  "year": "2015",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "cond-mat.other",
+    "hep-th"
+  ],
+  "doi": "10.1103/RevModPhys.88.035001",
+  "journal_ref": "Rev. Mod. Phys. 88, 35001 (2016)",
+  "abs_url": "https://arxiv.org/abs/1508.04715",
+  "pdf_url": "https://arxiv.org/pdf/1508.04715",
+  "pillar": "topoprog",
+  "slug": "1508.04715",
+  "pdf_local": "papers/pdf/1508.04715.pdf"
+}

@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "1909.13472",
+  "version": "v3",
+  "title": "ATOL: Measure Vectorization for Automatic Topologically-Oriented Learning",
+  "abstract": "Robust topological information commonly comes in the form of a set of persistence diagrams, finite measures that are in nature uneasy to affix to generic machine learning frameworks. We introduce a fast, learnt, unsupervised vectorization method for measures in Euclidean spaces and use it for reflecting underlying changes in topological behaviour in machine learning contexts. The algorithm is simple and efficiently discriminates important space regions where meaningful differences to the mean measure arise. It is proven to be able to separate clusters of persistence diagrams. We showcase the strength and robustness of our approach on a number of applications, from emulous and modern graph collections where the method reaches state-of-the-art performance to a geometric synthetic dynamical orbits problem. The proposed methodology comes with a single high level tuning parameter: the total measure encoding budget. We provide a completely open access software.",
+  "authors": [
+    "Martin Royer",
+    "Frédéric Chazal",
+    "Clément Levrard",
+    "Umeda Yuhei",
+    "Ike Yuichi"
+  ],
+  "published": "2019-09-30T06:30:33Z",
+  "updated": "2020-10-15T08:13:12Z",
+  "year": "2019",
+  "primary_category": "cs.CG",
+  "categories": [
+    "cs.CG",
+    "cs.DS",
+    "stat.ML"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1909.13472",
+  "pdf_url": "https://arxiv.org/pdf/1909.13472",
+  "pillar": "tda",
+  "slug": "1909.13472",
+  "pdf_local": "papers/pdf/1909.13472.pdf"
+}

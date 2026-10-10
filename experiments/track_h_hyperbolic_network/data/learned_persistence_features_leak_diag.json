@@ -1,0 +1,12 @@
+{
+  "corr_depth_target_train": -0.8717237697297749,
+  "corr_size_target_train": 0.38119372255852474,
+  "corr_logsize_target_train": 0.40171367240363565,
+  "n_train": 56,
+  "n_test_flat": 7,
+  "note": "features were not stored; the permutation test is rerun by exp33 only; this file records the nuisance correlations",
+  "target_var_explained_by_depth_train": 0.8041811673607882,
+  "depth_only_flat_rmse": 0.8607549318943366,
+  "size_only_flat_rmse": 2.7050108210566353,
+  "median_only_flat_rmse": 0.6452203485350907
+}

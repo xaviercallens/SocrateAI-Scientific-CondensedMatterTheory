@@ -1,0 +1,4 @@
+{"id": "H0-X-0013", "tier": "X", "kind": "numeric", "depends_on": ["H0-X-0012"],
+ "evidence_file": "experiments/track_h_hyperbolic_network/data/flat_growth_rate_over_matched_relative_w.json",
+ "statement": "PREREGISTRATION_21 (EXPLORATORY; flat growth rate of log10 kappa per depth over matched relative depth windows, square R=6..22 and triangular R=3.225..17.2). G1 PASS (amended, Deviation 1), G2 PASS. P1 REFUTED (square 0.948, 1.23, 1.20, 1.08; triangular 0.410, 1.69, 1.81, 1.84). P2 REFUTED (reversed pair: square R=6 0.948 versus triangular R=3.225 0.410).",
+ "notes": "experiments/track_h_hyperbolic_network/exp21_flat_growth_rate_over_matched_relative_w.py. Deviation 1 recorded in the preregistration before the rerun. LIMITS: Any mechanism for the rate; hyperbolic tilings (their rate does not grow with L, H0-X-0012); depths beyond d*; anything about holography."}
