@@ -106,6 +106,16 @@ Scope: the AdS/CMT literature work, the PoC v0.1, and Track H v1.0 (preprint, DO
 - **Rule:** (1) when an exact computation disagrees with a prediction, print the increments and look for structure (oscillation, drift) before refitting; (2) in any Vandermonde-type picture, compute the node values *as complex numbers* and test whether they are real after a common phase, and what signs they take; (3) a fix found after the data is a hypothesis: preregister it on a case it was not fitted to (preregistration 27).
 - **Evidence:** H0-X-0017, `data/diagonal_signed_nodes_diagnostic.json`.
 
+**LL-A21: a leak check with one permutation and a handful of test points cannot separate a leak from a shared nuisance.**
+- **What happened:** preregistration 33's gate G1 trained one model on one plain permutation of the targets and required held-out R² ≤ 0.1; it returned 0.34 and failed. Depth explains 80 % of the target variance and the held-out disk has seven layers, so a single plain permutation keeps depth correlation by chance and R² on seven points is a high-variance statistic. The gate measured my design, not a leak.
+- **Rule:** a permutation gate needs many permutations (hundreds), a null that preserves known nuisances (permute within strata), and a reported fraction of nulls reaching the real score; a single R² on fewer than ten points is not a gate.
+- **Evidence:** `PREREGISTRATION_33.md` Deviation 2, `data/learned_persistence_features_leak_diag.json`.
+
+**LL-A22: before measuring something with persistent homology, check what the persistent-Laplacian literature says the tool is blind to.**
+- **What happened:** papers 2 and 3 reported that nearest-neighbour persistence of the Jacobian column cloud sees depth only as a power law. The literature review done afterwards (docs/LITERATURE_REVIEW_TDA.md §4) found that this blindness to non-harmonic spectral content is stated in the persistent-Laplacian papers as the motivation of that whole field; a referee would have raised it. Preregistration 33 pre-empts it by measuring a spectral block on the same clouds.
+- **Rule:** a literature review of the method, not only of the subject, before the first preregistration that uses a new tool; the vector store had no TDA paper at all until this review.
+- **Evidence:** docs/LITERATURE_REVIEW_TDA.md, `PREREGISTRATION_33.md` Amendment 1.
+
 **LL-A6: two integrators beat one.**
 - **What happened:** the RC model passes a known-answer check (K1, matrix exponential) and a static cross-check (K2, Schur complement) in both SciPy and rusty-SUNDIALS CVODE.
 - **Rule:** a solver result counts only after a known-answer control and a second code.

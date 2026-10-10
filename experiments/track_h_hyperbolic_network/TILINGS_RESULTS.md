@@ -701,3 +701,27 @@ The typical column, not only the worst, also collapses exponentially (median rel
 each deep column lies in an exponentially thin cone around the span of the shallower ones, and it is invisible to nearest-neighbour persistent homology. Dependence within the layer itself costs a further 0.6 to 1.8 decades at each layer (a level, not a rate), more than the pilot suggested. On the {7,3} tiling the worst column falls 0.40 decades per layer over four layers, a third of the square's rate,
 and the median relative residual of layers 1 to 4 is 0.89, 0.54, 0.55 and 0.35, so most hyperbolic columns remain well separated while the worst ones decay; four layers cannot distinguish a polynomial from a slow exponential.
 Limits: double precision, direct current, one square disk, four hyperbolic layers, no noise; the certificate bounds sigma_min from above and says nothing about stability under noise.
+
+## Learned persistence features of the Jacobian column cloud (preregistration 33, task Q18)
+
+Recorded by the orchestrator directly (not through the low-tier loop, not in the Elenchus ledger). Data: `data/learned_persistence_features_of_jacobian_columns.json` (scored run), `..._leak_diag.json` and `..._g1_stratified.json` (post hoc, Deviation 2).
+Training set: square disks of radius 8 to 16 and triangular disks of radius 8 to 12 (56 layers); held-out flat test: square disk of radius 18 (7 layers); hyperbolic tests: {7,3} with 5 layers (9 layers) and {5,4} with 4 layers (3 layers). Features from GUDHI: persistence image, landscape and Atol of H0 and H1
+for the column cloud (A) and the residual cloud (B), the cosine-squared graph Laplacian spectrum (L, Amendment 1), and baselines (depth, median death, layer size, the certified residual rho). Models: ridge (regularisation by cross-validation) and gradient-boosted trees. Target y1 = log10 sigma_min(J_<=k).
+
+| Item | Threshold | Measured | Verdict |
+|---|---|---|---|
+| G1 leak check, as written | one plain permutation, held-out R² ≤ 0.1 | 0.34 | **FAILED** |
+| G1 recomputed (Deviation 2, post hoc rule) | stratified null's 95th-percentile R² < 0.1 and fewer than 5 % of stratified nulls reach the real R² | stratified: median 0.79, 95th percentile 0.95, none reach the real 0.98; plain: median −0.03, 95th percentile 0.33 | **FAILED** (first clause) |
+| G2 seed stability | tree-model RMSE change < 0.1 | 0.675 against 0.686 | PASS |
+| G3 targets reproduce preregistration 32 | 1e-9 relative | 0.0 | PASS |
+
+Because G1 failed, **predictions P1 to P6 are not read as results**. The scored values are kept for the record: best persistence model (A and B, ridge) held-out RMSE 0.356 decades (R² 0.983); the certified residual rho alone 0.475 (ridge) and 0.434 (trees); depth alone 0.588 (trees);
+median death alone 0.594; layer size alone 2.7; the spectral block L alone 1.667; on the hyperbolic tests every persistence and spectral model has negative R² (best RMSE 1.09 decades for the tree model on A and B, 2.4 for ridge) while rho alone has R² 0.55 and RMSE 0.63. Had G1 passed, P1 would have been refuted (the persistence features beat the certificate on the held-out flat disk), P2, P3, P4, P5 held, and P6 refuted (the spectral block is far worse than persistence).
+
+Deviations: Deviation 1 (the first launch crashed in the Amendment 1 code before any feature or model existed; the {7,3} test has nine scored layers under the floor rule, superseding the card's "layers 1 to 4"); Deviation 2 (the gate recomputed as a 200-permutation test with a depth-stratified null, rule fixed before it ran).
+
+**Reading (preregistration 33).** The gate did its job. A model trained on targets shuffled within depth groups still predicts the held-out disk with a median R² of 0.79, so the persistence features recover the target almost entirely through depth, which they encode (layer size, the scale of the death times, the number of H1 classes
+all vary with depth), and the apparent advantage of the persistence model over the certificate on the flat disk (0.36 against 0.48 decades) cannot be attributed to topology. What survives the gate is what does not depend on the learned model: the certified residual transfers to the hyperbolic tilings (R² 0.55) and every learned feature set does not (negative R²),
+which is the direction preregistration 32 predicted. The spectral block of the cosine-squared graph, added to answer the persistent-Laplacian objection, is a poor predictor on its own (1.7 decades), which says that the pairwise structure of a layer, spectral or topological, is not where the conditioning information lives; it lives in the ordered span.
+This closes the learned-topology route for conditioning in this programme unless a feature construction is found that is depth-blind by design (for instance, features of the residual cloud after regressing out depth and layer size, with a stratified gate). My leak check as written (one permutation, seven test points) was a design error (LL-A21), and the field's
+own literature says persistence is blind to spectral content (LL-A22). Limits: double precision, noise-free, direct current, one held-out flat disk, two hyperbolic tilings, 56 training layers.
