@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "2012.02808",
+  "version": "v3",
+  "title": "Persistent Laplacians: properties, algorithms and implications",
+  "abstract": "We present a thorough study of the theoretical properties and devise efficient algorithms for the \\emph{persistent Laplacian}, an extension of the standard combinatorial Laplacian to the setting of pairs (or, in more generality, sequences) of simplicial complexes $K \\hookrightarrow L$, which was independently introduced by Lieutier et al. and by Wang et al. In particular, in analogy with the non-persistent case, we first prove that the nullity of the $q$-th persistent Laplacian $Δ_q^{K,L}$ equals the $q$-th persistent Betti number of the inclusion $(K \\hookrightarrow L)$. We then present an initial algorithm for finding a matrix representation of $Δ_q^{K,L}$, which itself helps interpret the persistent Laplacian. We exhibit a novel relationship between the persistent Laplacian and the notion of Schur complement of a matrix which has several important implications. In the graph case, it both uncovers a link with the notion of effective resistance and leads to a persistent version of the Cheeger inequality. This relationship also yields an additional, very simple algorithm for finding (a matrix representation of) the $q$-th persistent Laplacian which in turn leads to a novel and fundamentally different algorithm for computing the $q$-th persistent Betti number for a pair $(K,L)$ which can be significantly more efficient than standard algorithms. Finally, we study persistent Laplacians for simplicial filtrations and present novel stability results for their eigenvalues. Our work brings methods from spectral graph theory, circuit theory, and persistent homology together with a topological view of the combinatorial Laplacian on simplicial complexes.",
+  "authors": [
+    "Facundo Mémoli",
+    "Zhengchao Wan",
+    "Yusu Wang"
+  ],
+  "published": "2020-12-04T19:21:52Z",
+  "updated": "2022-06-08T19:25:11Z",
+  "year": "2020",
+  "primary_category": "math.CO",
+  "categories": [
+    "math.CO",
+    "cs.CG"
+  ],
+  "doi": "10.1137/21M1435471",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2012.02808",
+  "pdf_url": "https://arxiv.org/pdf/2012.02808",
+  "pillar": "tda",
+  "slug": "2012.02808",
+  "pdf_local": "papers/pdf/2012.02808.pdf"
+}

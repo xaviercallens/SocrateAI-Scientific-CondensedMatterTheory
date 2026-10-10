@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "2009.14231",
+  "version": "v1",
+  "title": "Quantitative and Interpretable Order Parameters for Phase Transitions from Persistent Homology",
+  "abstract": "We apply modern methods in computational topology to the task of discovering and characterizing phase transitions. As illustrations, we apply our method to four two-dimensional lattice spin models: the Ising, square ice, XY, and fully-frustrated XY models. In particular, we use persistent homology, which computes the births and deaths of individual topological features as a coarse-graining scale or sublevel threshold is increased, to summarize multiscale and high-point correlations in a spin configuration. We employ vector representations of this information called persistence images to formulate and perform the statistical task of distinguishing phases. For the models we consider, a simple logistic regression on these images is sufficient to identify the phase transition. Interpretable order parameters are then read from the weights of the regression. This method suffices to identify magnetization, frustration, and vortex-antivortex structure as relevant features for phase transitions in our models. We also define \"persistence\" critical exponents and study how they are related to those critical exponents usually considered.",
+  "authors": [
+    "Alex Cole",
+    "Gregory J. Loges",
+    "Gary Shiu"
+  ],
+  "published": "2020-09-29T18:06:14Z",
+  "updated": "2020-09-29T18:06:14Z",
+  "year": "2020",
+  "primary_category": "cond-mat.stat-mech",
+  "categories": [
+    "cond-mat.stat-mech",
+    "math.AT"
+  ],
+  "doi": "10.1103/PhysRevB.104.104426",
+  "journal_ref": "Phys. Rev. B 104, 104426 (2021)",
+  "abs_url": "https://arxiv.org/abs/2009.14231",
+  "pdf_url": "https://arxiv.org/pdf/2009.14231",
+  "pillar": "tda",
+  "slug": "2009.14231",
+  "pdf_local": "papers/pdf/2009.14231.pdf"
+}

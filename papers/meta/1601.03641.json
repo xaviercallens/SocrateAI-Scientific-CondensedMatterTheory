@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "1601.03641",
+  "version": "v1",
+  "title": "Persistent Homology analysis of Phase Transitions",
+  "abstract": "Persistent homology analysis, a recently developed computational method in algebraic topology, is applied to the study of the phase transitions undergone by the so-called XY-mean field model and by the phi^4 lattice model, respectively. For both models the relationship between phase transitions and the topological properties of certain submanifolds of configuration space are exactly known. It turns out that these a-priori known facts are clearly retrieved by persistent homology analysis of dynamically sampled submanifolds of configuration space.",
+  "authors": [
+    "Irene Donato",
+    "Matteo Gori",
+    "Marco Pettini",
+    "Giovanni Petri",
+    "Sarah De Nigris",
+    "Roberto Franzosi",
+    "Francesco Vaccarino"
+  ],
+  "published": "2016-01-14T16:08:17Z",
+  "updated": "2016-01-14T16:08:17Z",
+  "year": "2016",
+  "primary_category": "cond-mat.stat-mech",
+  "categories": [
+    "cond-mat.stat-mech"
+  ],
+  "doi": "10.1103/PhysRevE.93.052138",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1601.03641",
+  "pdf_url": "https://arxiv.org/pdf/1601.03641",
+  "pillar": "tda",
+  "slug": "1601.03641",
+  "pdf_local": "papers/pdf/1601.03641.pdf"
+}

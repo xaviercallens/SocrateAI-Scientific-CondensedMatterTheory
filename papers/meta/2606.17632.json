@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "2606.17632",
+  "version": "v1",
+  "title": "Unveiling topology in imaging problems via quasi-isometry and persistent homology",
+  "abstract": "We show that the topological structures, such as loops, voids, and higher-dimensional holes of unknown objects (of flow of an object in space-time) can be recovered from noisy and indirect measurements. More precisely, we describe how the part of the persistent homology of a space can be determined from a noise-prone and discretized model space when there is a quasi-isometry between the original space and the space modeling indirect measurements. The result not only guarantees the existence of the structures but also provides size bounds for them. The structure is studied using persistent homology, and the results assume the existence of a quasi-isometry between a model space and the noisy measurements. We explore imaging problems, particularly X-ray imaging and EIT, that are well-suited to this framework.",
+  "authors": [
+    "Elli Karvonen",
+    "Matti Lassas",
+    "Pekka Pankka"
+  ],
+  "published": "2026-06-16T07:43:29Z",
+  "updated": "2026-06-16T07:43:29Z",
+  "year": "2026",
+  "primary_category": "math.AT",
+  "categories": [
+    "math.AT"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2606.17632",
+  "pdf_url": "https://arxiv.org/pdf/2606.17632",
+  "pillar": "tda",
+  "slug": "2606.17632",
+  "pdf_local": "papers/pdf/2606.17632.pdf"
+}

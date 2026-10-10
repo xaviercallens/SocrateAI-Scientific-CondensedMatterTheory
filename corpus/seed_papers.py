@@ -196,3 +196,32 @@ SEED_PAPERS += [
     ("2205.05081", "hyperbolic", "Breitenlohner"),
     ("2205.05106", "hyperbolic", "Hyperbolic matter in electrical circuits"),
 ]
+
+# --- Added 2026-10-10 (topological data analysis review; identifiers verified through alphaXiv by the survey subagents) ---------------
+# tda: GUDHI, vectorisations, differentiable persistence, stability, persistent Laplacians, TDA in physics and inverse problems
+SEED_PAPERS += [
+    ("1507.06217", "tda", "Persistence Images: A Stable Vector"),
+    ("1207.6437", "tda", "Persistence Landscapes"),
+    ("1706.03358", "tda", "Sliced Wasserstein Kernel for Persistence Diagrams"),
+    ("1909.13472", "tda", "ATOL: Measure Vectorization for Automatic"),
+    ("1904.09378", "tda", "PersLay: A Neural Network Layer"),
+    ("2010.08356", "tda", "Optimizing persistent homology based functions"),
+    ("1910.00960", "tda", "A Framework for Differential Calculus on Persistence Barcodes"),
+    ("1207.3674", "tda", "The Structure and Stability of Persistence Modules"),
+    ("1207.3885", "tda", "Persistence stability for geometric complexes"),
+    ("2006.16824", "tda", "Wasserstein Stability for Persistence Diagrams"),
+    ("1812.09764", "tda", "Neural Persistence: A Complexity Measure"),
+    ("2302.11446", "tda", "Singular value decomposition based matrix surgery"),
+    ("1502.06172", "tda", "Clique topology reveals intrinsic geometric structure"),
+    ("2012.02808", "tda", "Persistent Laplacians: properties, algorithms"),
+    ("1912.04135", "tda", "Persistent spectral graph"),
+    ("2311.03087", "tda", "Persistent Homology for High-dimensional Data"),
+    ("2312.07563", "tda", "Persistent Topological Laplacians"),
+    ("1507.05379", "tda", "Hodge Laplacians on graphs"),
+    ("2606.17632", "tda", "Unveiling topology in imaging problems"),
+    ("1601.03641", "tda", "Persistent Homology analysis of Phase Transitions"),
+    ("2009.14231", "tda", "Quantitative and Interpretable Order Parameters"),
+    ("2009.05141", "tda", "Finding hidden order in spin models"),
+    ("2603.10277", "tda", "Condition Number with Graph Neural Networks"),
+    ("1307.1539", "inverse", "invisibility cloaking for FEM models and resistor networks"),
+]

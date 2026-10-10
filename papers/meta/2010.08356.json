@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "2010.08356",
+  "version": "v2",
+  "title": "Optimizing persistent homology based functions",
+  "abstract": "Solving optimization tasks based on functions and losses with a topological flavor is a very active, growing field of research in data science and Topological Data Analysis, with applications in non-convex optimization, statistics and machine learning. However, the approaches proposed in the literature are usually anchored to a specific application and/or topological construction, and do not come with theoretical guarantees. To address this issue, we study the differentiability of a general map associated with the most common topological construction, that is, the persistence map. Building on real analytic geometry arguments, we propose a general framework that allows us to define and compute gradients for persistence-based functions in a very simple way. We also provide a simple, explicit and sufficient condition for convergence of stochastic subgradient methods for such functions. This result encompasses all the constructions and applications of topological optimization in the literature. Finally, we provide associated code, that is easy to handle and to mix with other non-topological methods and constraints, as well as some experiments showcasing the versatility of our approach.",
+  "authors": [
+    "Mathieu Carrière",
+    "Frédéric Chazal",
+    "Marc Glisse",
+    "Yuichi Ike",
+    "Hariprasad Kannan"
+  ],
+  "published": "2020-10-16T12:48:30Z",
+  "updated": "2021-02-17T19:35:59Z",
+  "year": "2020",
+  "primary_category": "cs.CG",
+  "categories": [
+    "cs.CG",
+    "math.AT",
+    "math.OC"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2010.08356",
+  "pdf_url": "https://arxiv.org/pdf/2010.08356",
+  "pillar": "tda",
+  "slug": "2010.08356",
+  "pdf_local": "papers/pdf/2010.08356.pdf"
+}

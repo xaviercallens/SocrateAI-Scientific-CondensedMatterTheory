@@ -1,0 +1,24 @@
+{
+  "arxiv_id": "2312.07563",
+  "version": "v2",
+  "title": "Persistent Topological Laplacians -- a Survey",
+  "abstract": "Persistent topological Laplacians constitute a new class of tools in topological data analysis (TDA). They are motivated by the necessity to address challenges encountered in persistent homology when handling complex data. These Laplacians combines multiscale analysis with topological techniques to characterize the topological and geometrical features of functions and data. Their kernels fully retrieve the topological invariants of corresponding persistent homology, while their non-harmonic spectra provide supplementary information. Persistent topological Laplacians have demonstrated superior performance over persistent homology in analyzing large-scale protein engineering datasets. In this survey, we offer a pedagogical review of persistent topological Laplacians formulated in various mathematical settings, including simplicial complexes, path complexes, flag complexes, digraphs, hypergraphs, hyperdigraphs, cellular sheaves, as well as $N$-chain complexes.",
+  "authors": [
+    "Xiaoqi Wei",
+    "Guo-Wei Wei"
+  ],
+  "published": "2023-12-09T20:45:17Z",
+  "updated": "2024-12-11T01:22:57Z",
+  "year": "2023",
+  "primary_category": "math.AT",
+  "categories": [
+    "math.AT"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2312.07563",
+  "pdf_url": "https://arxiv.org/pdf/2312.07563",
+  "pillar": "tda",
+  "slug": "2312.07563",
+  "pdf_local": "papers/pdf/2312.07563.pdf"
+}

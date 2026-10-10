@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1912.04135",
+  "version": "v2",
+  "title": "Persistent spectral graph",
+  "abstract": "Persistent homology is constrained to purely topological persistence while multiscale graphs account only for geometric information. This work introduces persistent spectral theory to create a unified low-dimensional multiscale paradigm for revealing topological persistence and extracting geometric shape from high-dimensional datasets. For a point-cloud dataset, a filtration procedure is used to generate a sequence of chain complexes and associated families of simplicial complexes and chains, from which we construct persistent combinatorial Laplacian matrices. We show that a full set of topological persistence can be completely recovered from the harmonic persistent spectra, i.e., the spectra that have zero eigenvalues, of the persistent combinatorial Laplacian matrices. However, non-harmonic spectra of the Laplacian matrices induced by the filtration offer another power tool for data analysis, modeling, and prediction. In this work, non-harmonic persistent spectra are successfully devised to analyze the structure and stability of fullerenes and predict the B-factors of a protein, which cannot be straightforwardly extracted from the current persistent homology. Extensive numerical experiments indicate the tremendous potential of the proposed persistent spectral analysis in data science.",
+  "authors": [
+    "Rui Wang",
+    "Duc Duy Nguyen",
+    "Guo-Wei Wei"
+  ],
+  "published": "2019-12-09T15:47:10Z",
+  "updated": "2019-12-11T19:21:31Z",
+  "year": "2019",
+  "primary_category": "math.CO",
+  "categories": [
+    "math.CO"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1912.04135",
+  "pdf_url": "https://arxiv.org/pdf/1912.04135",
+  "pillar": "tda",
+  "slug": "1912.04135",
+  "pdf_local": "papers/pdf/1912.04135.pdf"
+}

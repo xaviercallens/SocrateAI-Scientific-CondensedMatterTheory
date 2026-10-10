@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "1207.3674",
+  "version": "v3",
+  "title": "The structure and stability of persistence modules",
+  "abstract": "We give a self-contained treatment of the theory of persistence modules indexed over the real line. We give new proofs of the standard results. Persistence diagrams are constructed using measure theory. Linear algebra lemmas are simplified using a new notation for calculations on quiver representations. We show that the stringent finiteness conditions required by traditional methods are not necessary to prove the existence and stability of the persistence diagram. We introduce weaker hypotheses for taming persistence modules, which are met in practice and are strong enough for the theory still to work. The constructions and proofs enabled by our framework are, we claim, cleaner and simpler.",
+  "authors": [
+    "Frederic Chazal",
+    "Vin de Silva",
+    "Marc Glisse",
+    "Steve Oudot"
+  ],
+  "published": "2012-07-16T13:27:14Z",
+  "updated": "2013-03-20T19:57:02Z",
+  "year": "2012",
+  "primary_category": "math.AT",
+  "categories": [
+    "math.AT",
+    "cs.CG",
+    "math.CT"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1207.3674",
+  "pdf_url": "https://arxiv.org/pdf/1207.3674",
+  "pillar": "tda",
+  "slug": "1207.3674",
+  "pdf_local": "papers/pdf/1207.3674.pdf"
+}

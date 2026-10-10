@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "2302.11446",
+  "version": "v1",
+  "title": "Singular value decomposition based matrix surgery",
+  "abstract": "This paper aims to develop a simple procedure to reduce and control the condition number of random matrices, and investigate the effect on the persistent homology (PH) of point clouds of well- and ill-conditioned matrices. For a square matrix generated randomly using Gaussian/Uniform distribution, the SVD-Surgery procedure works by: (1) computing its singular value decomposition (SVD), (2) replacing the diagonal factor by changing a list of the smaller singular values by a convex linear combination of the entries in the list, and (3) compute the new matrix by reversing the SVD. Applying SVD-Surgery on a matrix often results in having different diagonal factor to those of the input matrix. The spatial distribution of random square matrices are known to be correlated to the distribution of their condition numbers. The persistent homology (PH) investigations, therefore, are focused on comparing the effect of SVD-Surgery on point clouds of large datasets of randomly generated well-conditioned and ill-conditioned matrices, as well as that of the point clouds formed by their inverses. This work is motivated by the desire to stabilise the impact of Deep Learning (DL) training on medical images in terms of the condition numbers of their sets of convolution filters as a mean of reducing overfitting and improving robustness against tolerable amounts of image noise. When applied to convolution filters during training, the SVD-Surgery acts as a spectral regularisation of the DL model without the need for learning extra parameters. We shall demonstrate that for several point clouds of sufficiently large convolution filters our simple strategy preserve filters norm and reduces the norm of its inverse depending on the chosen linear combination parameters. Moreover, our approach showed significant improvements towards the well-conditioning of matrices and stable topological behaviour.",
+  "authors": [
+    "Jehan Ghafuri",
+    "Sabah Jassim"
+  ],
+  "published": "2023-02-22T15:30:08Z",
+  "updated": "2023-02-22T15:30:08Z",
+  "year": "2023",
+  "primary_category": "math.AT",
+  "categories": [
+    "math.AT",
+    "cs.CV",
+    "cs.LG"
+  ],
+  "doi": "",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/2302.11446",
+  "pdf_url": "https://arxiv.org/pdf/2302.11446",
+  "pillar": "tda",
+  "slug": "2302.11446",
+  "pdf_local": "papers/pdf/2302.11446.pdf"
+}

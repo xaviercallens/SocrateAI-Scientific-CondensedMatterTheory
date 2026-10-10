@@ -1,0 +1,26 @@
+{
+  "arxiv_id": "1207.6437",
+  "version": "v4",
+  "title": "Statistical topological data analysis using persistence landscapes",
+  "abstract": "We define a new topological summary for data that we call the persistence landscape. Since this summary lies in a vector space, it is easy to combine with tools from statistics and machine learning, in contrast to the standard topological summaries. Viewed as a random variable with values in a Banach space, this summary obeys a strong law of large numbers and a central limit theorem. We show how a number of standard statistical tests can be used for statistical inference using this summary. We also prove that this summary is stable and that it can be used to provide lower bounds for the bottleneck and Wasserstein distances.",
+  "authors": [
+    "Peter Bubenik"
+  ],
+  "published": "2012-07-27T02:25:28Z",
+  "updated": "2015-01-23T21:59:53Z",
+  "year": "2012",
+  "primary_category": "math.AT",
+  "categories": [
+    "math.AT",
+    "cs.CG",
+    "math.MG",
+    "math.ST"
+  ],
+  "doi": "",
+  "journal_ref": "Journal of Machine Learning Research, 16 (2015), 77-102",
+  "abs_url": "https://arxiv.org/abs/1207.6437",
+  "pdf_url": "https://arxiv.org/pdf/1207.6437",
+  "pillar": "tda",
+  "slug": "1207.6437",
+  "pdf_local": "papers/pdf/1207.6437.pdf"
+}
