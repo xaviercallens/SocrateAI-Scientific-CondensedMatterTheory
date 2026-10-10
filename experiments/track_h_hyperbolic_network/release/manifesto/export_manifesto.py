@@ -15,7 +15,7 @@ DATA = ["depth_ordered_residuals_of_jacobian_columns", "jacobian_column_cloud_ho
 PREREGS = [f"PREREGISTRATION_{n}.md" for n in (30, 32, 33)]
 SCRIPTS = ["hyperbolic_network.py"]
 LEAN = ["DtNOffsets.lean", "GramSchmidtBound.lean", "SSHWinding.lean", "lakefile.lean", "lean-toolchain", "lake-manifest.json", "STATUS.md", "docs/statement_lock.json"]
-AX1 = ["PREREGISTRATION_N1_LIMIT.md", "RESULTS_N1_LIMIT.md", "exp_n1_limit.py", "exp_n1_diag_gates.py", "ssh_exact.py", "ssh_check.py", "evidence/n1_limit.json", "evidence/n1_limit_gate_diag.json", "evidence/ssh_exact.json"]
+AX1 = ["PREREGISTRATION_N1_LIMIT.md", "RESULTS_N1_LIMIT.md", "PREREGISTRATION_N1_LIMIT2.md", "RESULTS_N1_LIMIT2.md", "exp_n1_limit.py", "exp_n1_limit2.py", "exp_n1_diag_gates.py", "ssh_exact.py", "ssh_check.py", "evidence/n1_limit.json", "evidence/n1_limit2.json", "evidence/n1_limit_gate_diag.json", "evidence/ssh_exact.json"]
 DOCS = ["TOPOLOGY_PROGRAMME.md", "LITERATURE_REVIEW_TDA.md", "LITERATURE_REVIEW_INVERSE.md", "TASK_QUEUE.md"]
 
 README = """Programme manifesto: bundle contents

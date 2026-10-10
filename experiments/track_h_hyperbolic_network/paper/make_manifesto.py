@@ -20,7 +20,7 @@ def load(p):
     return json.loads(Path(p).read_text())
 
 
-n1 = load(AX1 / "evidence" / "n1_limit.json")
+n1 = load(AX1 / "evidence" / "n1_limit2.json")
 c32 = load(TRACK / "data" / "depth_ordered_residuals_of_jacobian_columns.json")
 c30 = load(TRACK / "data" / "jacobian_column_cloud_homology.json")
 c33 = load(TRACK / "data" / "learned_persistence_features_of_jacobian_columns.json")
@@ -54,7 +54,7 @@ def table_n1():
         rows.append(f"{lab}, end fraction & {fr} \\\\")
     head = "Perturbation, statistic & " + " & ".join(str(e) for e in eps) + " \\\\ \\midrule"
     return "\n".join(["\\begin{table}[t]\\centering\\scriptsize",
-                      "\\caption{Node N1, the finite SSH chain (41 sites, $v=1/2$, $w=1$, gap 1, 50 draws per cell): median energy of the mode closest to zero and fraction of draws in which it carries at least $90\\,\\%$ of its weight on the left quarter, against the perturbation strength. From \\texttt{evidence/n1\\_limit.json}.}",
+                      "\\caption{Node N1, the finite SSH chain (41 sites, $v=1/2$, $w=1$, gap 1, 50 draws per cell): median energy of the mode closest to zero and fraction of draws in which it carries at least $90\\,\\%$ of its weight on the left quarter, against the perturbation strength. From \\texttt{evidence/n1\\_limit2.json} (the repeat run, whose gates pass).}",
                       "\\label{tab:n1}", "\\resizebox{\\linewidth}{!}{%", "\\begin{tabular}{l" + "c" * len(eps) + "}\\toprule", head, *rows, "\\bottomrule\\end{tabular}}\\end{table}"])
 
 
