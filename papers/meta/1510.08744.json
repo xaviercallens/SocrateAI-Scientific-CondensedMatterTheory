@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1510.08744",
+  "version": "v3",
+  "title": "Bulk and Boundary Invariants for Complex Topological Insulators: From K-Theory to Physics",
+  "abstract": "This monograph offers an overview on the topological invariants in fermionic topological insulators from the complex classes. Tools from K-theory and non-commutative geometry are used to define bulk and boundary invariants, to establish the bulk-boundary correspondence and to link the invariants to physical observables.",
+  "authors": [
+    "Emil Prodan",
+    "Hermann Schulz-Baldes"
+  ],
+  "published": "2015-10-29T15:44:02Z",
+  "updated": "2016-02-16T12:23:54Z",
+  "year": "2015",
+  "primary_category": "math-ph",
+  "categories": [
+    "math-ph",
+    "cond-mat.dis-nn"
+  ],
+  "doi": "10.1007/978-3-319-29351-6",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1510.08744",
+  "pdf_url": "https://arxiv.org/pdf/1510.08744",
+  "pillar": "topoprog",
+  "slug": "1510.08744",
+  "pdf_local": "papers/pdf/1510.08744.pdf"
+}

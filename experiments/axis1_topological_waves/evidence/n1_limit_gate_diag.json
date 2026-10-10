@@ -1,0 +1,15 @@
+{
+  "topological": {
+    "E0": 6.731646117537782e-17,
+    "weight_left_quarter": 0.999023437500227,
+    "weight_right_quarter": 2.3260326997860584e-10
+  },
+  "trivial": {
+    "E0": 4.534067310885375e-16,
+    "weight_left_quarter": 2.326032699784434e-10,
+    "weight_right_quarter": 0.9990234375002278
+  },
+  "asym_chiral_correct_max": 5.995204332975845e-15,
+  "asym_chiral_as_coded_max": 3.8645213485544945,
+  "asym_onsite_correct_max": 0.8119879309364958
+}

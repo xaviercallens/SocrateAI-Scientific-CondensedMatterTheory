@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "cond-mat/9411052",
+  "version": "v1",
+  "title": "The Non-Commutative Geometry of the Quantum Hall Effect",
+  "abstract": "We give an overview of the Integer Quantum Hall Effect. We propose a mathematical framework using Non-Commutative Geometry as defined by A. Connes. Within this framework, it is proved that the Hall conductivity is quantized and that plateaux occur when the Fermi energy varies in a region of localized states.",
+  "authors": [
+    "J. Bellissard",
+    "A. van Elst",
+    "H. Schulz-Baldes"
+  ],
+  "published": "1994-11-14T18:28:40Z",
+  "updated": "1994-11-14T18:28:40Z",
+  "year": "1994",
+  "primary_category": "cond-mat",
+  "categories": [
+    "cond-mat"
+  ],
+  "doi": "10.1063/1.530758",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/cond-mat/9411052",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/9411052",
+  "pillar": "topoprog",
+  "slug": "cond-mat_9411052",
+  "pdf_local": "papers/pdf/cond-mat_9411052.pdf"
+}

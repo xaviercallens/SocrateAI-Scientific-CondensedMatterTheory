@@ -3767,5 +3767,274 @@
     "pillar": "inverse",
     "slug": "1307.1539",
     "pdf_local": "papers/pdf/1307.1539.pdf"
+  },
+  {
+    "arxiv_id": "1207.5989",
+    "version": "v2",
+    "title": "Bulk-edge correspondence for two-dimensional topological insulators",
+    "abstract": "Topological insulators can be characterized alternatively in terms of bulk or edge properties. We prove the equivalence between the two descriptions for two-dimensional solids in the single-particle picture. We give a new formulation of the $\\mathbb{Z}_{2}$-invariant, which allows for a bulk index not relying on a (two-dimensional) Brillouin zone. When available though, that index is shown to agree with known formulations. The method also applies to integer quantum Hall systems. We discuss a further variant of the correspondence, based on scattering theory.",
+    "authors": [
+      "G. M. Graf",
+      "M. Porta"
+    ],
+    "published": "2012-07-25T13:46:27Z",
+    "updated": "2013-03-19T18:38:31Z",
+    "year": "2012",
+    "primary_category": "math-ph",
+    "categories": [
+      "math-ph",
+      "cond-mat.mes-hall"
+    ],
+    "doi": "10.1007/s00220-013-1819-6",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1207.5989",
+    "pdf_url": "https://arxiv.org/pdf/1207.5989",
+    "pillar": "topoprog",
+    "slug": "1207.5989",
+    "pdf_local": "papers/pdf/1207.5989.pdf"
+  },
+  {
+    "arxiv_id": "cond-mat/9411052",
+    "version": "v1",
+    "title": "The Non-Commutative Geometry of the Quantum Hall Effect",
+    "abstract": "We give an overview of the Integer Quantum Hall Effect. We propose a mathematical framework using Non-Commutative Geometry as defined by A. Connes. Within this framework, it is proved that the Hall conductivity is quantized and that plateaux occur when the Fermi energy varies in a region of localized states.",
+    "authors": [
+      "J. Bellissard",
+      "A. van Elst",
+      "H. Schulz-Baldes"
+    ],
+    "published": "1994-11-14T18:28:40Z",
+    "updated": "1994-11-14T18:28:40Z",
+    "year": "1994",
+    "primary_category": "cond-mat",
+    "categories": [
+      "cond-mat"
+    ],
+    "doi": "10.1063/1.530758",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/cond-mat/9411052",
+    "pdf_url": "https://arxiv.org/pdf/cond-mat/9411052",
+    "pillar": "topoprog",
+    "slug": "cond-mat_9411052",
+    "pdf_local": "papers/pdf/cond-mat_9411052.pdf"
+  },
+  {
+    "arxiv_id": "1510.08744",
+    "version": "v3",
+    "title": "Bulk and Boundary Invariants for Complex Topological Insulators: From K-Theory to Physics",
+    "abstract": "This monograph offers an overview on the topological invariants in fermionic topological insulators from the complex classes. Tools from K-theory and non-commutative geometry are used to define bulk and boundary invariants, to establish the bulk-boundary correspondence and to link the invariants to physical observables.",
+    "authors": [
+      "Emil Prodan",
+      "Hermann Schulz-Baldes"
+    ],
+    "published": "2015-10-29T15:44:02Z",
+    "updated": "2016-02-16T12:23:54Z",
+    "year": "2015",
+    "primary_category": "math-ph",
+    "categories": [
+      "math-ph",
+      "cond-mat.dis-nn"
+    ],
+    "doi": "10.1007/978-3-319-29351-6",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1510.08744",
+    "pdf_url": "https://arxiv.org/pdf/1510.08744",
+    "pillar": "topoprog",
+    "slug": "1510.08744",
+    "pdf_local": "papers/pdf/1510.08744.pdf"
+  },
+  {
+    "arxiv_id": "1910.02878",
+    "version": "v4",
+    "title": "Topological Origin of Non-Hermitian Skin Effects",
+    "abstract": "A unique feature of non-Hermitian systems is the skin effect, which is the extreme sensitivity to the boundary conditions. Here, we reveal that the skin effect originates from intrinsic non-Hermitian topology. Such a topological origin not merely explains the universal feature of the known skin effect, but also leads to new types of the skin effects---symmetry-protected skin effects. In particular, we discover the $\\mathbb{Z}_{2}$ skin effect protected by time-reversal symmetry. On the basis of topological classification, we also discuss possible other skin effects in arbitrary dimensions. Our work provides a unified understanding about the bulk-boundary correspondence and the skin effects in non-Hermitian systems.",
+    "authors": [
+      "Nobuyuki Okuma",
+      "Kohei Kawabata",
+      "Ken Shiozaki",
+      "Masatoshi Sato"
+    ],
+    "published": "2019-10-07T16:03:33Z",
+    "updated": "2020-02-26T15:56:25Z",
+    "year": "2019",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.str-el",
+      "math-ph",
+      "physics.optics",
+      "quant-ph"
+    ],
+    "doi": "10.1103/PhysRevLett.124.086801",
+    "journal_ref": "Phys. Rev. Lett. 124, 086801 (2020)",
+    "abs_url": "https://arxiv.org/abs/1910.02878",
+    "pdf_url": "https://arxiv.org/pdf/1910.02878",
+    "pillar": "topoprog",
+    "slug": "1910.02878",
+    "pdf_local": "papers/pdf/1910.02878.pdf"
+  },
+  {
+    "arxiv_id": "1902.10050",
+    "version": "v1",
+    "title": "Anomalous bulk-edge correspondence in continuous media",
+    "abstract": "Topology plays an increasing role in physics beyond the realm of topological insulators in condensed mater. From geophysical fluids to active matter, acoustics or photonics, a growing family of systems presents topologically protected chiral edge modes. The number of such modes should coincide with the bulk topological invariant (e.g. Chern number) defined for a sample without boundary, in agreement with the bulk-edge correspondence. However this is not always the case when dealing with continuous media where there is no small scale cut-off. The number of edge modes actually depends on the boundary condition, even when the bulk is properly regularized, showing an apparent paradox where the bulk-edge correspondence is violated. In this paper we solve this paradox by showing that the anomaly is due to {ghost} edge modes hidden in the asymptotic part of the spectrum. We provide a general formalism based on scattering theory to detect all edge modes properly, so that the bulk-edge correspondence is restored. We illustrate this approach through the odd-viscous shallow-water model and the massive Dirac Hamiltonian, and discuss the physical consequences.",
+    "authors": [
+      "Clément Tauber",
+      "Pierre Delplace",
+      "Antoine Venaille"
+    ],
+    "published": "2019-02-26T16:54:38Z",
+    "updated": "2019-02-26T16:54:38Z",
+    "year": "2019",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "math-ph",
+      "physics.ao-ph",
+      "physics.flu-dyn"
+    ],
+    "doi": "10.1103/PhysRevResearch.2.013147",
+    "journal_ref": "Phys. Rev. Research 2, 013147 (2020)",
+    "abs_url": "https://arxiv.org/abs/1902.10050",
+    "pdf_url": "https://arxiv.org/pdf/1902.10050",
+    "pillar": "topoprog",
+    "slug": "1902.10050",
+    "pdf_local": "papers/pdf/1902.10050.pdf"
+  },
+  {
+    "arxiv_id": "1404.6513",
+    "version": "v3",
+    "title": "Helicity conservation by flow across scales in reconnecting vortex links and knots",
+    "abstract": "The conjecture that helicity (or knottedness) is a fundamental conserved quantity has a rich history in fluid mechanics, but the nature of this conservation in the presence of dissipation has proven difficult to resolve. Making use of recent advances, we create vortex knots and links in viscous fluids and simulated superfluids and track their geometry through topology changing reconnections. We find that the reassociation of vortex lines through a reconnection enables the transfer of helicity from links and knots to helical coils. This process is remarkably efficient, owing to the anti-parallel orientation spontaneously adopted by the reconnecting vortices. Using a new method for quantifying the spatial helicity spectrum, we find that the reconnection process can be viewed as transferring helicity between scales, rather than dissipating it. We also infer the presence of geometric deformations which convert helical coils into even smaller scale twist, where it may ultimately be dissipated. Our results suggest that helicity conservation plays an important role in fluids and related fields, even in the presence of dissipation.",
+    "authors": [
+      "Martin W. Scheeler",
+      "Dustin Kleckner",
+      "Davide Proment",
+      "Gordon L. Kindlmann",
+      "William T. M. Irvine"
+    ],
+    "published": "2014-04-25T19:43:59Z",
+    "updated": "2014-09-18T16:33:09Z",
+    "year": "2014",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "doi": "10.1073/pnas.1407232111",
+    "journal_ref": "",
+    "abs_url": "https://arxiv.org/abs/1404.6513",
+    "pdf_url": "https://arxiv.org/pdf/1404.6513",
+    "pillar": "topoprog",
+    "slug": "1404.6513",
+    "pdf_local": "papers/pdf/1404.6513.pdf"
+  },
+  {
+    "arxiv_id": "1508.04715",
+    "version": "v2",
+    "title": "Fermion Path Integrals And Topological Phases",
+    "abstract": "Symmetry-protected topological (SPT) phases of matter have been interpreted in terms of anomalies, and it has been expected that a similar picture should hold for SPT phases with fermions. Here, we describe in detail what this picture means for phases of quantum matter that can be understood via band theory and free fermions. The main examples we consider are time-reversal invariant topological insulators and superconductors in 2 or 3 space dimensions. Along the way, we clarify the precise meaning of the statement that in the bulk of a 3d topological insulator, the electromagnetic $θ$-angle is equal to $π$.",
+    "authors": [
+      "Edward Witten"
+    ],
+    "published": "2015-08-19T17:40:50Z",
+    "updated": "2015-12-19T00:28:06Z",
+    "year": "2015",
+    "primary_category": "cond-mat.mes-hall",
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.other",
+      "hep-th"
+    ],
+    "doi": "10.1103/RevModPhys.88.035001",
+    "journal_ref": "Rev. Mod. Phys. 88, 35001 (2016)",
+    "abs_url": "https://arxiv.org/abs/1508.04715",
+    "pdf_url": "https://arxiv.org/pdf/1508.04715",
+    "pillar": "topoprog",
+    "slug": "1508.04715",
+    "pdf_local": "papers/pdf/1508.04715.pdf"
+  },
+  {
+    "arxiv_id": "1108.2345",
+    "version": "v2",
+    "title": "Phase transitions detached from stationary points of the energy landscape",
+    "abstract": "The stationary points of the potential energy function V are studied for the φ^4 model on a two-dimensional square lattice with nearest-neighbor interactions. On the basis of analytical and numerical results, we explore the relation of stationary points to the occurrence of thermodynamic phase transitions. We find that the phase transition potential energy of the φ^4 model does in general not coincide with the potential energy of any of the stationary points of V. This disproves earlier, allegedly rigorous, claims in the literature on necessary conditions for the existence of phase transitions. Moreover, we find evidence that the indices of stationary points scale extensively with the system size, and therefore the index density can be used to characterize features of the energy landscape in the infinite-system limit. We conclude that the finite-system stationary points provide one possible mechanism of how a phase transition can arise, but not the only one.",
+    "authors": [
+      "Michael Kastner",
+      "Dhagash Mehta"
+    ],
+    "published": "2011-08-11T08:28:25Z",
+    "updated": "2011-10-13T15:14:17Z",
+    "year": "2011",
+    "primary_category": "cond-mat.stat-mech",
+    "categories": [
+      "cond-mat.stat-mech"
+    ],
+    "doi": "10.1103/PhysRevLett.107.160602",
+    "journal_ref": "Phys. Rev. Lett. 107, 160602 (2011)",
+    "abs_url": "https://arxiv.org/abs/1108.2345",
+    "pdf_url": "https://arxiv.org/pdf/1108.2345",
+    "pillar": "topoprog",
+    "slug": "1108.2345",
+    "pdf_local": "papers/pdf/1108.2345.pdf"
+  },
+  {
+    "arxiv_id": "2206.11741",
+    "version": "v3",
+    "title": "Observation of strong backscattering in valley-Hall photonic topological interface modes",
+    "abstract": "The unique properties of light underpin the visions of photonic quantum technologies, optical interconnects, and a wide range of novel sensors, but a key limiting factor today is losses due to either absorption or backscattering on defects. Recent developments in topological photonics have fostered the vision of backscattering-protected waveguides made from topological interface modes, but, surprisingly, measurements of their propagation losses were so far missing. Here we report on measurements of losses in the slow-light regime of valley-Hall topological waveguides and find no indications of topological protection against backscattering on ubiquitous structural defects. We image the light scattered out from the topological waveguides and find that the propagation losses are due to Anderson localization. The only photonic topological waveguides proposed for materials without intrinsic absorption in the optical domain are quantum spin-Hall and valley-Hall interface states, but the former exhibits strong out-of-plane losses, and our work therefore raises fundamental questions about the real-world value of topological protection in reciprocal photonics.",
+    "authors": [
+      "Christian Anker Rosiek",
+      "Guillermo Arregui",
+      "Anastasiia Vladimirova",
+      "Marcus Albrechtsen",
+      "Babak Vosoughi Lahijani",
+      "Rasmus Ellebæk Christiansen",
+      "Søren Stobbe"
+    ],
+    "published": "2022-06-23T14:38:05Z",
+    "updated": "2024-04-16T16:18:48Z",
+    "year": "2022",
+    "primary_category": "physics.optics",
+    "categories": [
+      "physics.optics"
+    ],
+    "doi": "10.1038/s41566-023-01189-x",
+    "journal_ref": "Nat. Photon. 17 (2023) 386-392",
+    "abs_url": "https://arxiv.org/abs/2206.11741",
+    "pdf_url": "https://arxiv.org/pdf/2206.11741",
+    "pillar": "topoprog",
+    "slug": "2206.11741",
+    "pdf_local": "papers/pdf/2206.11741.pdf"
+  },
+  {
+    "arxiv_id": "1212.0572",
+    "version": "v1",
+    "title": "Direct Measurement of the Zak phase in Topological Bloch Bands",
+    "abstract": "Geometric phases that characterize the topological properties of Bloch bands play a fundamental role in the modern band theory of solids. Here we report on the direct measurement of the geometric phase acquired by cold atoms moving in one-dimensional optical lattices. Using a combination of Bloch oscillations and Ramsey interferometry, we extract the Zak phase - the Berry phase acquired during an adiabatic motion of a particle across the Brillouin zone - which can be viewed as an invariant characterizing the topological properties of the band. For a dimerized optical lattice, which models polyacetylene, we measure a difference of the Zak phase equal to phi_Zak=0.97(2)pi for the two possible polyacetylene phases with different dimerization. This indicates that the two dimerized phases belong to different topological classes, such that for a filled band, domain walls have fractional quantum numbers. Our work establishes a new general approach for probing the topological structure of Bloch bands in optical lattices.",
+    "authors": [
+      "Marcos Atala",
+      "Monika Aidelsburger",
+      "Julio T. Barreiro",
+      "Dmitry Abanin",
+      "Takuya Kitagawa",
+      "Eugene Demler",
+      "Immanuel Bloch"
+    ],
+    "published": "2012-12-03T21:52:21Z",
+    "updated": "2012-12-03T21:52:21Z",
+    "year": "2012",
+    "primary_category": "cond-mat.quant-gas",
+    "categories": [
+      "cond-mat.quant-gas",
+      "cond-mat.mes-hall",
+      "quant-ph"
+    ],
+    "doi": "10.1038/nphys2790",
+    "journal_ref": "Nature Physics 9, 795-800 (2013)",
+    "abs_url": "https://arxiv.org/abs/1212.0572",
+    "pdf_url": "https://arxiv.org/pdf/1212.0572",
+    "pillar": "topoprog",
+    "slug": "1212.0572",
+    "pdf_local": "papers/pdf/1212.0572.pdf"
   }
 ]

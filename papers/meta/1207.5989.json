@@ -1,0 +1,25 @@
+{
+  "arxiv_id": "1207.5989",
+  "version": "v2",
+  "title": "Bulk-edge correspondence for two-dimensional topological insulators",
+  "abstract": "Topological insulators can be characterized alternatively in terms of bulk or edge properties. We prove the equivalence between the two descriptions for two-dimensional solids in the single-particle picture. We give a new formulation of the $\\mathbb{Z}_{2}$-invariant, which allows for a bulk index not relying on a (two-dimensional) Brillouin zone. When available though, that index is shown to agree with known formulations. The method also applies to integer quantum Hall systems. We discuss a further variant of the correspondence, based on scattering theory.",
+  "authors": [
+    "G. M. Graf",
+    "M. Porta"
+  ],
+  "published": "2012-07-25T13:46:27Z",
+  "updated": "2013-03-19T18:38:31Z",
+  "year": "2012",
+  "primary_category": "math-ph",
+  "categories": [
+    "math-ph",
+    "cond-mat.mes-hall"
+  ],
+  "doi": "10.1007/s00220-013-1819-6",
+  "journal_ref": "",
+  "abs_url": "https://arxiv.org/abs/1207.5989",
+  "pdf_url": "https://arxiv.org/pdf/1207.5989",
+  "pillar": "topoprog",
+  "slug": "1207.5989",
+  "pdf_local": "papers/pdf/1207.5989.pdf"
+}

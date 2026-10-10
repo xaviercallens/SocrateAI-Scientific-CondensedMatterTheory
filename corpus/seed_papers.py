@@ -225,3 +225,18 @@ SEED_PAPERS += [
     ("2603.10277", "tda", "Condition Number with Graph Neural Networks"),
     ("1307.1539", "inverse", "invisibility cloaking for FEM models and resistor networks"),
 ]
+
+# --- Added 2026-10-10 (topology programme review; theorem / experiment / limit items, verified through alphaXiv by the survey subagent) ---
+# topoprog: bulk-boundary theorems and their limits across domains (0904.2197, 1308.0554, 1702.07583, 2203.07292 were already in the corpus under other pillars)
+SEED_PAPERS += [
+    ("1207.5989", "topoprog", "Bulk-edge correspondence for two-dimensional"),
+    ("cond-mat/9411052", "topoprog", "Non-Commutative Geometry of the Quantum Hall"),
+    ("1510.08744", "topoprog", "Bulk and Boundary Invariants"),
+    ("1910.02878", "topoprog", "Topological Origin of Non-Hermitian Skin"),
+    ("1902.10050", "topoprog", "Anomalous bulk-edge correspondence in continuous"),
+    ("1404.6513", "topoprog", "Helicity conservation by flow across scales"),
+    ("1508.04715", "topoprog", "Fermion Path Integrals And Topological"),
+    ("1108.2345", "topoprog", "Phase transitions detached from stationary"),
+    ("2206.11741", "topoprog", "strong backscattering in valley-Hall"),
+    ("1212.0572", "topoprog", "Direct Measurement of the Zak phase"),
+]

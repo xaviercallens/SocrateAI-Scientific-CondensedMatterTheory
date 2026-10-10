@@ -1,0 +1,31 @@
+{
+  "arxiv_id": "1212.0572",
+  "version": "v1",
+  "title": "Direct Measurement of the Zak phase in Topological Bloch Bands",
+  "abstract": "Geometric phases that characterize the topological properties of Bloch bands play a fundamental role in the modern band theory of solids. Here we report on the direct measurement of the geometric phase acquired by cold atoms moving in one-dimensional optical lattices. Using a combination of Bloch oscillations and Ramsey interferometry, we extract the Zak phase - the Berry phase acquired during an adiabatic motion of a particle across the Brillouin zone - which can be viewed as an invariant characterizing the topological properties of the band. For a dimerized optical lattice, which models polyacetylene, we measure a difference of the Zak phase equal to phi_Zak=0.97(2)pi for the two possible polyacetylene phases with different dimerization. This indicates that the two dimerized phases belong to different topological classes, such that for a filled band, domain walls have fractional quantum numbers. Our work establishes a new general approach for probing the topological structure of Bloch bands in optical lattices.",
+  "authors": [
+    "Marcos Atala",
+    "Monika Aidelsburger",
+    "Julio T. Barreiro",
+    "Dmitry Abanin",
+    "Takuya Kitagawa",
+    "Eugene Demler",
+    "Immanuel Bloch"
+  ],
+  "published": "2012-12-03T21:52:21Z",
+  "updated": "2012-12-03T21:52:21Z",
+  "year": "2012",
+  "primary_category": "cond-mat.quant-gas",
+  "categories": [
+    "cond-mat.quant-gas",
+    "cond-mat.mes-hall",
+    "quant-ph"
+  ],
+  "doi": "10.1038/nphys2790",
+  "journal_ref": "Nature Physics 9, 795-800 (2013)",
+  "abs_url": "https://arxiv.org/abs/1212.0572",
+  "pdf_url": "https://arxiv.org/pdf/1212.0572",
+  "pillar": "topoprog",
+  "slug": "1212.0572",
+  "pdf_local": "papers/pdf/1212.0572.pdf"
+}

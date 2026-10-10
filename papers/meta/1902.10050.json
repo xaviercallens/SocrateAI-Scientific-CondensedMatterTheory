@@ -1,0 +1,28 @@
+{
+  "arxiv_id": "1902.10050",
+  "version": "v1",
+  "title": "Anomalous bulk-edge correspondence in continuous media",
+  "abstract": "Topology plays an increasing role in physics beyond the realm of topological insulators in condensed mater. From geophysical fluids to active matter, acoustics or photonics, a growing family of systems presents topologically protected chiral edge modes. The number of such modes should coincide with the bulk topological invariant (e.g. Chern number) defined for a sample without boundary, in agreement with the bulk-edge correspondence. However this is not always the case when dealing with continuous media where there is no small scale cut-off. The number of edge modes actually depends on the boundary condition, even when the bulk is properly regularized, showing an apparent paradox where the bulk-edge correspondence is violated. In this paper we solve this paradox by showing that the anomaly is due to {ghost} edge modes hidden in the asymptotic part of the spectrum. We provide a general formalism based on scattering theory to detect all edge modes properly, so that the bulk-edge correspondence is restored. We illustrate this approach through the odd-viscous shallow-water model and the massive Dirac Hamiltonian, and discuss the physical consequences.",
+  "authors": [
+    "Clément Tauber",
+    "Pierre Delplace",
+    "Antoine Venaille"
+  ],
+  "published": "2019-02-26T16:54:38Z",
+  "updated": "2019-02-26T16:54:38Z",
+  "year": "2019",
+  "primary_category": "cond-mat.mes-hall",
+  "categories": [
+    "cond-mat.mes-hall",
+    "math-ph",
+    "physics.ao-ph",
+    "physics.flu-dyn"
+  ],
+  "doi": "10.1103/PhysRevResearch.2.013147",
+  "journal_ref": "Phys. Rev. Research 2, 013147 (2020)",
+  "abs_url": "https://arxiv.org/abs/1902.10050",
+  "pdf_url": "https://arxiv.org/pdf/1902.10050",
+  "pillar": "topoprog",
+  "slug": "1902.10050",
+  "pdf_local": "papers/pdf/1902.10050.pdf"
+}

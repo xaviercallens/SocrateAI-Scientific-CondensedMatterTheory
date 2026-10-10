@@ -31,3 +31,8 @@ P4 refuted: same-sublattice hopping is no worse than on-site terms. P5 refuted: 
 
 ## Not claimed
 That the physical channel of axis 1a is described by this Hamiltonian (that is the experiment's own question); anything about the infinite chain (Toeplitz index, T3); interacting systems; anything about the quantum Hall or Chern cases; anything about holography.
+
+## Deviation 1 (2026-10-10, written after the run; the run's data are the result of record and are not recomputed)
+Both gates **failed as written**, and the post hoc diagnostic (`exp_n1_diag_gates.py`, `evidence/n1_limit_gate_diag.json`) shows both failures are mine:
+- G1 asked the unperturbed *trivial* odd chain for |E₀| ≥ 0.4. That is wrong physics on my part: an odd open chain has an exact zero mode in both phases (the chiral block is 20×21), and in the trivial phase it sits at the **right** end (weight 0.999 on the right quarter, 2e-10 on the left). The theorem's statement 3 says exactly this (left end iff ν ≠ 0). The trivial control therefore must be stated through the *side*, which P5's observable (left weight ≥ 0.9) already does correctly; the G1 clause on |E₀| is withdrawn. All other G1 clauses held (exact harness exit 0; topological E₀ 7e-17, left weight 0.999, polarisation 1).
+- G2's asymmetry statistic was coded as max|sort(ev) + sort(−ev)|, which pairs the k-th smallest with the k-th largest negated, i.e. never vanishes (3.9 even for an exactly symmetric spectrum). The correct statistic max|ev_k + ev_{n−1−k}| gives 6e-15 under chiral disorder at ε = 0.5 and 0.81 under on-site disorder: the perturbations do what they are meant to do and G2 holds in substance, post hoc.

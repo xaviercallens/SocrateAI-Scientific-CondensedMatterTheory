@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "2206.11741",
+  "version": "v3",
+  "title": "Observation of strong backscattering in valley-Hall photonic topological interface modes",
+  "abstract": "The unique properties of light underpin the visions of photonic quantum technologies, optical interconnects, and a wide range of novel sensors, but a key limiting factor today is losses due to either absorption or backscattering on defects. Recent developments in topological photonics have fostered the vision of backscattering-protected waveguides made from topological interface modes, but, surprisingly, measurements of their propagation losses were so far missing. Here we report on measurements of losses in the slow-light regime of valley-Hall topological waveguides and find no indications of topological protection against backscattering on ubiquitous structural defects. We image the light scattered out from the topological waveguides and find that the propagation losses are due to Anderson localization. The only photonic topological waveguides proposed for materials without intrinsic absorption in the optical domain are quantum spin-Hall and valley-Hall interface states, but the former exhibits strong out-of-plane losses, and our work therefore raises fundamental questions about the real-world value of topological protection in reciprocal photonics.",
+  "authors": [
+    "Christian Anker Rosiek",
+    "Guillermo Arregui",
+    "Anastasiia Vladimirova",
+    "Marcus Albrechtsen",
+    "Babak Vosoughi Lahijani",
+    "Rasmus Ellebæk Christiansen",
+    "Søren Stobbe"
+  ],
+  "published": "2022-06-23T14:38:05Z",
+  "updated": "2024-04-16T16:18:48Z",
+  "year": "2022",
+  "primary_category": "physics.optics",
+  "categories": [
+    "physics.optics"
+  ],
+  "doi": "10.1038/s41566-023-01189-x",
+  "journal_ref": "Nat. Photon. 17 (2023) 386-392",
+  "abs_url": "https://arxiv.org/abs/2206.11741",
+  "pdf_url": "https://arxiv.org/pdf/2206.11741",
+  "pillar": "topoprog",
+  "slug": "2206.11741",
+  "pdf_local": "papers/pdf/2206.11741.pdf"
+}
