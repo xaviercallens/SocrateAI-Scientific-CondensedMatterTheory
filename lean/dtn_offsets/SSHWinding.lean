@@ -1,19 +1,23 @@
 import Mathlib
 
 /-!
-# The winding number of the SSH symbol `z ↦ v + w z` on the unit circle
+# Toward the bulk half of target T2 of axis 1: the two residue integrals of the SSH symbol
 
-Target T2 (bulk half) of axis 1 of the programme (`lean/README.md`). For real `v, w ≠ 0` with `|v| ≠ |w|`, the winding
-number of `h(z) = v + w z` around `0` along the unit circle traversed counter-clockwise (the orientation of Mathlib's
-`circleMap`), `ν = (2πi)⁻¹ ∮_{|z|=1} h'(z)/h(z) dz`, is `0` when `|v| > |w|` and `1` when `|w| > |v|`.
+Target T2 (bulk half, `lean/README.md`) says: for real `v, w ≠ 0` with `|v| ≠ |w|`, the winding number of `h(z) = v + w z` around `0`
+along the unit circle traversed counter-clockwise (the orientation of Mathlib's `circleMap`), `ν = (2πi)⁻¹ ∮_{|z|=1} h'(z)/h(z) dz`, is `0` when
+`|v| > |w|` and `1` when `|w| > |v|`.
 
-Since `h'(z)/h(z) = (z - (-v/w))⁻¹`, the integral is `∮ (z - p)⁻¹` with the pole `p = -v/w`: inside the disc in the
-topological phase (Mathlib's `circleIntegral.integral_sub_inv_of_mem_ball`), outside it in the trivial phase, where the
-integrand is holomorphic on the closed disc and the Cauchy–Goursat theorem (`DiffContOnCl.circleIntegral_eq_zero`) gives zero.
+This module proves only the two residue integrals that the plan reduces T2 to. Taking for granted (not formalised here) that `h'(z) = w` and
+that `h` does not vanish on the circle when `‖v‖ ≠ ‖w‖`, the pointwise identity `SSH.log_deriv_eq` rewrites `h'/h` as `(z - p)⁻¹` with the pole
+`p = -v/w`; `SSH.winding_topological` evaluates `∮ (z - p)⁻¹` to `2πi` when the pole is inside the disc (Mathlib's
+`circleIntegral.integral_sub_inv_of_mem_ball`), and `SSH.winding_trivial` evaluates it to `0` when the pole is outside the closed disc
+(Cauchy–Goursat, `DiffContOnCl.circleIntegral_eq_zero`).
 
-What is proved: exactly the two integrals. Not proved here: the identity of this integral with the degree of the map
-`S¹ → ℂ∖{0}`, the boundary half of T2 (the finite open chain, decided in exact arithmetic by
-`experiments/axis1_topological_waves/ssh_exact.py` on instances, not in Lean), and the correspondence between the two.
+Not formalised: `h' = w`; the non-vanishing of `h` on the circle; the transfer of the pointwise identity under the integral
+(`circleIntegral.integral_congr`); the normalisation by `(2πi)⁻¹` and the name "winding number"; the identification of the integral with the degree of
+the map; the boundary half of T2 (the finite open chain, decided in exact arithmetic on instances by `experiments/axis1_topological_waves/ssh_exact.py`,
+not in Lean); and the correspondence between the two halves. The hypotheses here are over `ℂ` with `w ≠ 0` and a strict norm inequality, which is more
+general than the README's real nonzero `v, w` (in particular `v = 0` is allowed). The names `winding_*` refer to the plan, not to a formalised winding number.
 Nothing here concerns a physical system.
 -/
 
