@@ -1,0 +1,60 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "title": "Topology constrains, under a gap, what geometry and spectrum then determine: a programme for testing where topology drives physics, with a verified history, a measured first node, and the tools to continue",
+ "creators": [
+  {
+   "name": "Callens, Xavier",
+   "affiliation": "SocrateAI Lab"
+  }
+ ],
+ "description": "<p>'Physics is driven by topology' is a slogan with three centuries of results behind it and no testable content as written. This programme paper states the programme that tests it: a family of statements in which an integer invariant of a bulk determines a discrete fact at a boundary, robust inside a class of perturbations and failing outside it, each node carrying the theorem (kernel-checked in Lean 4 where reachable), a preregistered measurement, and the measured limit. A verified history (Euler to hyperbolic circuits) and a verified map of what is proved, measured and refuted in each domain lead to the defensible thesis: topology constrains, under a gap, what geometry and spectrum then determine.</p><p>A counter-programme is already further advanced than the thesis: on the discrete inverse conductance problem geometry and spectrum decide and the topology of the data does not (the author's earlier records). The first thesis node, the finite Su-Schrieffer-Heeger chain, is measured: the invariant fixes the side of the end mode, chiral symmetry fixes its energy, the gap fixes the margin (a third of the gap for on-site terms, a fifth for same-sublattice hopping); the two residue integrals of the chain's symbol are machine-checked against Mathlib, with the remaining links to the winding number listed as not formalised. Research and experimental directions for seven nodes (three of them controls without an invariant), and a verified map of tools with a proposed topology solver and simulator pipeline for classical-wave laboratories, close the paper. Every failed gate and refuted prediction of the base is kept. Nothing here concerns holography.</p>",
+ "access_right": "open",
+ "license": "cc-by-4.0",
+ "keywords": [
+  "topology in physics",
+  "bulk-boundary correspondence",
+  "SSH chain",
+  "Lean 4",
+  "preregistration",
+  "topological data analysis",
+  "resistor networks",
+  "classical waves",
+  "research programme"
+ ],
+ "language": "eng",
+ "version": "1.0",
+ "prereserve_doi": true,
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23248393",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "10.5281/zenodo.23244556",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "10.5281/zenodo.23241463",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "10.5281/zenodo.23228685",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "publication-preprint"
+  },
+  {
+   "identifier": "https://github.com/xaviercallens/SocrateAI-Scientific-CondensedMatterTheory",
+   "relation": "isSupplementedBy",
+   "resource_type": "software"
+  }
+ ],
+ "notes": "Code in code.zip is MIT-licensed; data and paper are CC BY 4.0. Prepared with AI assistance (Claude, Anthropic); the author reviewed all claims."
+}
