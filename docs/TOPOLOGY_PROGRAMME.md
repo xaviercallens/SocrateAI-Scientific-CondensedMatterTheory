@@ -77,5 +77,5 @@ A verified survey (sources in the vector store, pillar `topoprog`; the four alre
 
 > **Topology constrains, under a gap, what geometry and spectrum then determine.**
 
-Node N1's first measurement says exactly this (`experiments/axis1_topological_waves/RESULTS_N1_LIMIT.md`): the winding fixes the side of the end mode; chiral symmetry fixes its energy at zero for any coupling disorder short of gap closing; the gap fixes how far a symmetry-breaking term may go (a third of the gap for on-site terms, a fifth for same-sublattice hopping) before the mode leaves the end.
+Node N1's readable run says exactly this (`experiments/axis1_topological_waves/RESULTS_N1_LIMIT2.md`; the first run, N1-L, had both gates fail through my errors and is kept unread): the winding fixes the side of the end mode; chiral symmetry fixes its energy at zero for any coupling disorder short of gap closing; the gap fixes how far a symmetry-breaking term may go (a third of the gap for on-site terms, a fifth for same-sublattice hopping) before the mode leaves the end.
 The programme's title is weakened accordingly, and each remaining node must report its margin, not only its invariant.
